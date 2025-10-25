@@ -1,0 +1,171 @@
+---
+title: "Syllabus"
+editor: source
+navbar: false
+format:
+  html: 
+    code-fold: true
+    html-math-method: katex
+  typst:
+    margin:
+      x: 1cm
+      y: 1cm
+---
+
+## Math 201: Elementary Statistics
+
+### Course Information
+
+**Term:** Spring 2026
+
+**Instructor:** Isaac Quintanilla Salinas
+
+**Email:** isaac.qs\@csuci.edu
+
+**Office Location:** Marin Hall 2326
+
+**Office Hours:**
+
+
+**Lecture:** 
+
+### Course Description
+
+Critical reasoning using a quantitative and statistical, problem-solving approach to solving real-world problems. Topics include: probability and statistics, sample data, probability and empirical data distributions, sampling techniques, estimation and hypothesis testing, ANOVA, and correlation and regression analysis. Students will use standard statistical software to analyze real-world and simulated data. GenEd: 2
+
+### Learning Outcomes
+
+-   Prepare students for advanced courses in data-management and statistics
+-   Reason both inductively and deductively with quantitative information and data
+-   Use statistical software for complex statistical analysis of real-world and simulated data
+-   Empower students to apply computational and inferential thinking to address real-world problems
+-   Write the results of a statistical study and draw conclusion in reports
+
+### Textbook
+
+[Introduction to Modern Statistics](https://openintro-ims.netlify.app/) (IMS)
+
+[Statistical Modeling](https://statistical-modeling.netlify.app/) (SM)
+
+### Course Grading
+
+| Category             | Percentage |
+|:---------------------|:-----------|
+| Participation        | 5%         |
+| Classwork            | 10%        |
+| Video Assignments    | 20%        | 
+| Notebook Assignments | 20%        |
+| Exam 1               | 15%        |
+| Exam 2               | 15%        |
+| Exam 3               | 15%        |
+
+At the end of the quarter, course grades will be assigned according to the following scale:
+
+|         |            |        |            |         |            |         |            |       |       |
+|:-------|:-------|:-------|:-------|:-------|:-------|:-------|:-------|:-------|:-------|
+| **A+**  | 98 -- 100  | **B+** | 87 -- \<90 | **C+**  | 77 -- \<80 | **D+**  | 67 -- \<70 |       |       |
+| **A**   | 93 -- \<98 | **B**  | 83 -- \<87 | **C**   | 73 -- \<77 | **D**   | 63 -- \<67 | **F** | \< 60 |
+| **A--** | 90 - \<93  | **B-** | 80 -- \<83 | **C--** | 70 -- \<73 | **D--** | 60 -- \<63 |       |       |
+
+#### Participation
+
+Participation is based on short writing assignments conducted in class. There will be no make ups for these writing prompts.
+
+#### Classwork Assignments
+
+Classwork assignmets are designed to give you an opportunity to practice conceptual topics from the  video assignments. The assignments will require you to program in R. The 3 lowest homework assignments will be dropped. Homework assignments will be due every Friday at 11:59 PM.
+
+#### Notebook Assignments
+
+Notebook assignments are designed to expand your statistical knowledge. These will be completed in Google Colab which can be accessed from Canvas. There is one notebook assignments every week that you can be completed during class time. Notebook assignments will be due on Thursday at 11:59 PM every week. The 3 lowest notebook assignments will be dropped.
+
+#### Video Assignments
+
+Videos are used to teach statistical concepts related to the course. Students are expected to watch at least one video a week. The videos are implemented using VoiceThreads. The 3 lowest video assignments will be dropped. Video assignments will be due every Sunday at 11:59 PM.
+
+
+#### Exams
+
+There will be three in exams. Exam #1 will be on September 29, 2025, Exam #2 will be on November 3, and Exam #3 will be on December 10, 2025 from 4-6 PM. While the exams are not considered cumulative, the material builds on each other. Developing a strong understanding of the material through out the course is important for your success. At the end of the semester, your lowest exam grade will be replaced by your median average of all 3 exam grades. This course will operate under a zero-tolerance policy. Talking during the time of the exam, sharing materials, looking at another students' exam, or not following directions given will be subject to the University's academic integrity policy.
+
+#### Extra Credit
+
+There will be **4** extra credit opportunities worth a total of 10% of your overall grade. (There are no make-ups for missed extra credit assignments!) More information will be provided on the extra credit assignments on a later date. Information on the extra credit can be found [here](ec.html).
+
+### Class Schedule
+
+The following outline may be subject to change. Any changes will be announced in class.
+
+| Week  | Topic                            | Readings  | NB Due | Video Due |
+|:------|:---------------------------------|:----------|:-------|:----------|
+| 8/25  | Welcome/Intro to Stats and R     | SM 3      | 1      | 1         |
+| 9/1   | Holiday/ Data Generating Process | IMS 4     | 2      | 2         |
+| 9/8   | Categorical Data                 | IMS 5     | 3      | 3         |
+| 9/15  | Numerical Data                   | SM 11     | 4      | 4         |
+| 9/22  | Distribution Functions           |           | 5      |           |
+| 9/29  | Exam 1/ Simple Linear Regression | IMS 7     |        | 5         |
+| 10/6  | Simple Linear Regression         | IMS 8     | 6      | 6         |
+|       | Group Models                     | IMS 8     | 7      | 7         |
+| 10/13 | Multi Linear Regression          | IMS 9     | 8      | 8         |
+| 10/20 | Logistic Regression              |           | 9      |           |
+| 11/3  | Exam 2/ Sampling Distribution    | SM 12     |        | 9         |
+| 11/10 | Holiday/ Sampling Distribution   | SM 13     | 10     | 10        |
+| 11/17 | Inference                        | IMS 24/26 | 11     | 11        |
+| 11/24 | Model Inference                  |           | 12     | 12        |
+| 12/1  | Traditional Statistics           |           |        |           |
+| 12/8  | Exam 3                           |           |        |           |
+
+### Generative Artificial Intelligence Policy
+
+The use of generative artificial intelligence (AI) in an ethical manner is permitted for this course.
+
+#### Permitted Uses
+
+You may use AI for:
+
+- Obtain clarification 
+
+- Brainstorming ideas, examples, outlines, and strategies
+
+- Generating questions for practice or exploration
+
+- Identifying keywords or phrasing to match professional goals
+
+#### Prohibited Uses
+
+You may not:
+
+- Submit AI-generated work 
+
+- Use AI to complete assignments, quizzes, exams, or other assessments meant to reflect only your own work
+
+- Use AI to generate code
+
+Any AI-generated work will receive a 0 in the class. Severe cases will be reported to Academic Misconduct.
+
+**You may not upload any course material to any AI platforms such as ChatGPT, Claude, Meta AI, and Google Gemini.  Exceptions are allowed for [DASS](https://www.csuci.edu/dass/)-approved services.**
+
+## University Policies
+
+### Syllabus Policies and Assistance
+
+CSUCI’s [Syllabus Policies and Assistance Website](https://www.csuci.edu/studentsupport/syllabus.htm) provides important details about academic policies, campus expectations, and student support services that are all highly applicable to your success as a student both in and outside of the classroom. Ensure that you review this site on a regular basis to stay informed about the policies and resources that support your success, as campus resources or policies may change semester to semester.
+
+### Academic Honesty
+
+Conduct yourself with honesty and integrity. Do not submit others' work as your own. Foassignments and quizzes that allow you to work with a group, only put your name on what the group submits if you genuinely contributed to the work. Work completely independently on exams, using only the materials that are indicated as allowed. Failure to observe academic honesty results in substantial penalties that can include failing the course.
+
+### CSUCI Basic Need
+
+Please use the link to the Basic Needs Program on the Syllabus Policies and Assistance website (<go.csuci.edu/syllabuspolicies>) for information on emergency food, housing accommodations, toiletries, and connections to critical resources. 
+
+
+### CSUCI Disability Statement
+
+If you are a student with a disability requesting reasonable accommodations in this course, you need to contact Disability Accommodations and Support Services (DASS) located on the second floor of Arroyo Hall, via email accommodations\@csuci.edu or call 805-437-3331. All requests for reasonable accommodations require registration with DASS in advance of need: <https://www.csuci.edu/dass/students/apply-for-services.htm>. Faculty, students and DASS will work together regarding classroom accommodations. You are encouraged to discuss approved.
+
+### Disruption
+
+1.  **If I Am Out:** I will communicate via email and will hold classes asynchronously.
+2.  **If You Are Out:** Contact me as soon as possible to talk about your options. Reasonable accommodations will be provided for a brief absence. With proper documentation, extended accommodations will be provided.
+
