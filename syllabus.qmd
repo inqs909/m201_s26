@@ -96,24 +96,25 @@ There will be **4** extra credit opportunities worth a total of 10% of your over
 
 The following outline may be subject to change. Any changes will be announced in class.
 
-| Week  | Topic                            | Readings  | NB Due | Video Due |
-|:------|:---------------------------------|:----------|:-------|:----------|
-| 8/25  | Welcome/Intro to Stats and R     | SM 3      | 1      | 1         |
-| 9/1   | Holiday/ Data Generating Process | IMS 4     | 2      | 2         |
-| 9/8   | Categorical Data                 | IMS 5     | 3      | 3         |
-| 9/15  | Numerical Data                   | SM 11     | 4      | 4         |
-| 9/22  | Distribution Functions           |           | 5      |           |
-| 9/29  | Exam 1/ Simple Linear Regression | IMS 7     |        | 5         |
-| 10/6  | Simple Linear Regression         | IMS 8     | 6      | 6         |
-|       | Group Models                     | IMS 8     | 7      | 7         |
-| 10/13 | Multi Linear Regression          | IMS 9     | 8      | 8         |
-| 10/20 | Logistic Regression              |           | 9      |           |
-| 11/3  | Exam 2/ Sampling Distribution    | SM 12     |        | 9         |
-| 11/10 | Holiday/ Sampling Distribution   | SM 13     | 10     | 10        |
-| 11/17 | Inference                        | IMS 24/26 | 11     | 11        |
-| 11/24 | Model Inference                  |           | 12     | 12        |
-| 12/1  | Traditional Statistics           |           |        |           |
-| 12/8  | Exam 3                           |           |        |           |
+| Week  | Topic                            | NB Due | Video Due |
+|:------|:---------------------------------|:-------|:----------|
+| 1/26  | Welcome/Intro to Stats and R     | 1      | 1         |
+| 2/2   | Holiday/ Data Generating Process | 2      | 2         |
+| 2/9   | Categorical Data                 | 3      | 3         |
+| 2/16  | Numerical Data                   | 4      | 4         |
+| 2/23  | Distribution Functions           | 5      |           |
+| 3/2   | Exam 1/ Simple Linear Regression |        | 5         |
+| 3/9   | Simple Linear Regression         | 6      | 6         |
+| 3/16  | Spring Break                     |        |           |
+| 3/23  | Simple Logistic Regression       | 7      | 7         |
+| 3/30  | Holiday/ Group Models            | 8      | 8         |
+| 4/6   | Multivariable Regression         | 9      |           |
+| 4/13  | Modeling Approaches/Exam 2       |        | 9         |
+| 4/20  | Sampling Distributions           | 10     | 10        |
+| 4/27  | Inference                        | 11     | 11        |
+| 5/4   | Inference                        | 12     | 12        |
+| 5/11  | Inference                        | 13     |           |
+| 5/18  | Exam 3                           |        |           |
 
 ### Generative Artificial Intelligence Policy
 

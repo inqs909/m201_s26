@@ -4,14 +4,14 @@
     "href": "syllabus.html",
     "title": "Syllabus",
     "section": "",
-    "text": "Term: Spring 2026\nInstructor: Isaac Quintanilla Salinas\nEmail: isaac.qs@csuci.edu\nOffice Location: Marin Hall 2326\nOffice Hours:\nLecture:\n\n\n\nCritical reasoning using a quantitative and statistical, problem-solving approach to solving real-world problems. Topics include: probability and statistics, sample data, probability and empirical data distributions, sampling techniques, estimation and hypothesis testing, ANOVA, and correlation and regression analysis. Students will use standard statistical software to analyze real-world and simulated data. GenEd: 2\n\n\n\n\nPrepare students for advanced courses in data-management and statistics\nReason both inductively and deductively with quantitative information and data\nUse statistical software for complex statistical analysis of real-world and simulated data\nEmpower students to apply computational and inferential thinking to address real-world problems\nWrite the results of a statistical study and draw conclusion in reports\n\n\n\n\nIntroduction to Modern Statistics (IMS)\nStatistical Modeling (SM)\n\n\n\n\n\n\nCategory\nPercentage\n\n\n\n\nParticipation\n5%\n\n\nClasswork\n10%\n\n\nVideo Assignments\n20%\n\n\nNotebook Assignments\n20%\n\n\nExam 1\n15%\n\n\nExam 2\n15%\n\n\nExam 3\n15%\n\n\n\nAt the end of the quarter, course grades will be assigned according to the following scale:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA+\n98 – 100\nB+\n87 – &lt;90\nC+\n77 – &lt;80\nD+\n67 – &lt;70\n\n\n\n\nA\n93 – &lt;98\nB\n83 – &lt;87\nC\n73 – &lt;77\nD\n63 – &lt;67\nF\n&lt; 60\n\n\nA–\n90 - &lt;93\nB-\n80 – &lt;83\nC–\n70 – &lt;73\nD–\n60 – &lt;63\n\n\n\n\n\n\n\nParticipation is based on short writing assignments conducted in class. There will be no make ups for these writing prompts.\n\n\n\nClasswork assignmets are designed to give you an opportunity to practice conceptual topics from the video assignments. The assignments will require you to program in R. The 3 lowest homework assignments will be dropped. Homework assignments will be due every Friday at 11:59 PM.\n\n\n\nNotebook assignments are designed to expand your statistical knowledge. These will be completed in Google Colab which can be accessed from Canvas. There is one notebook assignments every week that you can be completed during class time. Notebook assignments will be due on Thursday at 11:59 PM every week. The 3 lowest notebook assignments will be dropped.\n\n\n\nVideos are used to teach statistical concepts related to the course. Students are expected to watch at least one video a week. The videos are implemented using VoiceThreads. The 3 lowest video assignments will be dropped. Video assignments will be due every Sunday at 11:59 PM.\n\n\n\nThere will be three in exams. Exam #1 will be on September 29, 2025, Exam #2 will be on November 3, and Exam #3 will be on December 10, 2025 from 4-6 PM. While the exams are not considered cumulative, the material builds on each other. Developing a strong understanding of the material through out the course is important for your success. At the end of the semester, your lowest exam grade will be replaced by your median average of all 3 exam grades. This course will operate under a zero-tolerance policy. Talking during the time of the exam, sharing materials, looking at another students’ exam, or not following directions given will be subject to the University’s academic integrity policy.\n\n\n\nThere will be 4 extra credit opportunities worth a total of 10% of your overall grade. (There are no make-ups for missed extra credit assignments!) More information will be provided on the extra credit assignments on a later date. Information on the extra credit can be found here.\n\n\n\n\nThe following outline may be subject to change. Any changes will be announced in class.\n\n\n\n\n\n\n\n\n\n\nWeek\nTopic\nReadings\nNB Due\nVideo Due\n\n\n\n\n8/25\nWelcome/Intro to Stats and R\nSM 3\n1\n1\n\n\n9/1\nHoliday/ Data Generating Process\nIMS 4\n2\n2\n\n\n9/8\nCategorical Data\nIMS 5\n3\n3\n\n\n9/15\nNumerical Data\nSM 11\n4\n4\n\n\n9/22\nDistribution Functions\n\n5\n\n\n\n9/29\nExam 1/ Simple Linear Regression\nIMS 7\n\n5\n\n\n10/6\nSimple Linear Regression\nIMS 8\n6\n6\n\n\n\nGroup Models\nIMS 8\n7\n7\n\n\n10/13\nMulti Linear Regression\nIMS 9\n8\n8\n\n\n10/20\nLogistic Regression\n\n9\n\n\n\n11/3\nExam 2/ Sampling Distribution\nSM 12\n\n9\n\n\n11/10\nHoliday/ Sampling Distribution\nSM 13\n10\n10\n\n\n11/17\nInference\nIMS 24/26\n11\n11\n\n\n11/24\nModel Inference\n\n12\n12\n\n\n12/1\nTraditional Statistics\n\n\n\n\n\n12/8\nExam 3\n\n\n\n\n\n\n\n\n\nThe use of generative artificial intelligence (AI) in an ethical manner is permitted for this course.\n\n\nYou may use AI for:\n\nObtain clarification\nBrainstorming ideas, examples, outlines, and strategies\nGenerating questions for practice or exploration\nIdentifying keywords or phrasing to match professional goals\n\n\n\n\nYou may not:\n\nSubmit AI-generated work\nUse AI to complete assignments, quizzes, exams, or other assessments meant to reflect only your own work\nUse AI to generate code\n\nAny AI-generated work will receive a 0 in the class. Severe cases will be reported to Academic Misconduct.\nYou may not upload any course material to any AI platforms such as ChatGPT, Claude, Meta AI, and Google Gemini. Exceptions are allowed for DASS-approved services."
+    "text": "Term: Spring 2026\nInstructor: Isaac Quintanilla Salinas\nEmail: isaac.qs@csuci.edu\nOffice Location: Marin Hall 2326\nOffice Hours:\nLecture:\n\n\n\nCritical reasoning using a quantitative and statistical, problem-solving approach to solving real-world problems. Topics include: probability and statistics, sample data, probability and empirical data distributions, sampling techniques, estimation and hypothesis testing, ANOVA, and correlation and regression analysis. Students will use standard statistical software to analyze real-world and simulated data. GenEd: 2\n\n\n\n\nPrepare students for advanced courses in data-management and statistics\nReason both inductively and deductively with quantitative information and data\nUse statistical software for complex statistical analysis of real-world and simulated data\nEmpower students to apply computational and inferential thinking to address real-world problems\nWrite the results of a statistical study and draw conclusion in reports\n\n\n\n\nIntroduction to Modern Statistics (IMS)\nStatistical Modeling (SM)\n\n\n\n\n\n\nCategory\nPercentage\n\n\n\n\nParticipation\n5%\n\n\nClasswork\n10%\n\n\nVideo Assignments\n20%\n\n\nNotebook Assignments\n20%\n\n\nExam 1\n15%\n\n\nExam 2\n15%\n\n\nExam 3\n15%\n\n\n\nAt the end of the quarter, course grades will be assigned according to the following scale:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA+\n98 – 100\nB+\n87 – &lt;90\nC+\n77 – &lt;80\nD+\n67 – &lt;70\n\n\n\n\nA\n93 – &lt;98\nB\n83 – &lt;87\nC\n73 – &lt;77\nD\n63 – &lt;67\nF\n&lt; 60\n\n\nA–\n90 - &lt;93\nB-\n80 – &lt;83\nC–\n70 – &lt;73\nD–\n60 – &lt;63\n\n\n\n\n\n\n\nParticipation is based on short writing assignments conducted in class. There will be no make ups for these writing prompts.\n\n\n\nClasswork assignmets are designed to give you an opportunity to practice conceptual topics from the video assignments. The assignments will require you to program in R. The 3 lowest homework assignments will be dropped. Homework assignments will be due every Friday at 11:59 PM.\n\n\n\nNotebook assignments are designed to expand your statistical knowledge. These will be completed in Google Colab which can be accessed from Canvas. There is one notebook assignments every week that you can be completed during class time. Notebook assignments will be due on Thursday at 11:59 PM every week. The 3 lowest notebook assignments will be dropped.\n\n\n\nVideos are used to teach statistical concepts related to the course. Students are expected to watch at least one video a week. The videos are implemented using VoiceThreads. The 3 lowest video assignments will be dropped. Video assignments will be due every Sunday at 11:59 PM.\n\n\n\nThere will be three in exams. Exam #1 will be on September 29, 2025, Exam #2 will be on November 3, and Exam #3 will be on December 10, 2025 from 4-6 PM. While the exams are not considered cumulative, the material builds on each other. Developing a strong understanding of the material through out the course is important for your success. At the end of the semester, your lowest exam grade will be replaced by your median average of all 3 exam grades. This course will operate under a zero-tolerance policy. Talking during the time of the exam, sharing materials, looking at another students’ exam, or not following directions given will be subject to the University’s academic integrity policy.\n\n\n\nThere will be 4 extra credit opportunities worth a total of 10% of your overall grade. (There are no make-ups for missed extra credit assignments!) More information will be provided on the extra credit assignments on a later date. Information on the extra credit can be found here.\n\n\n\n\nThe following outline may be subject to change. Any changes will be announced in class.\n\n\n\nWeek\nTopic\nNB Due\nVideo Due\n\n\n\n\n1/26\nWelcome/Intro to Stats and R\n1\n1\n\n\n2/2\nHoliday/ Data Generating Process\n2\n2\n\n\n2/9\nCategorical Data\n3\n3\n\n\n2/16\nNumerical Data\n4\n4\n\n\n2/23\nDistribution Functions\n5\n\n\n\n3/2\nExam 1/ Simple Linear Regression\n\n5\n\n\n3/9\nSimple Linear Regression\n6\n6\n\n\n3/16\nSpring Break\n\n\n\n\n3/23\nSimple Logistic Regression\n7\n7\n\n\n3/30\nHoliday/ Group Models\n8\n8\n\n\n4/6\nMultivariable Regression\n9\n\n\n\n4/13\nModeling Approaches/Exam 2\n\n9\n\n\n4/20\nSampling Distributions\n10\n10\n\n\n4/27\nInference\n11\n11\n\n\n5/4\nInference\n12\n12\n\n\n5/11\nInference\n13\n\n\n\n5/18\nExam 3\n\n\n\n\n\n\n\n\nThe use of generative artificial intelligence (AI) in an ethical manner is permitted for this course.\n\n\nYou may use AI for:\n\nObtain clarification\nBrainstorming ideas, examples, outlines, and strategies\nGenerating questions for practice or exploration\nIdentifying keywords or phrasing to match professional goals\n\n\n\n\nYou may not:\n\nSubmit AI-generated work\nUse AI to complete assignments, quizzes, exams, or other assessments meant to reflect only your own work\nUse AI to generate code\n\nAny AI-generated work will receive a 0 in the class. Severe cases will be reported to Academic Misconduct.\nYou may not upload any course material to any AI platforms such as ChatGPT, Claude, Meta AI, and Google Gemini. Exceptions are allowed for DASS-approved services."
   },
   {
     "objectID": "syllabus.html#math-201-elementary-statistics",
     "href": "syllabus.html#math-201-elementary-statistics",
     "title": "Syllabus",
     "section": "",
-    "text": "Term: Spring 2026\nInstructor: Isaac Quintanilla Salinas\nEmail: isaac.qs@csuci.edu\nOffice Location: Marin Hall 2326\nOffice Hours:\nLecture:\n\n\n\nCritical reasoning using a quantitative and statistical, problem-solving approach to solving real-world problems. Topics include: probability and statistics, sample data, probability and empirical data distributions, sampling techniques, estimation and hypothesis testing, ANOVA, and correlation and regression analysis. Students will use standard statistical software to analyze real-world and simulated data. GenEd: 2\n\n\n\n\nPrepare students for advanced courses in data-management and statistics\nReason both inductively and deductively with quantitative information and data\nUse statistical software for complex statistical analysis of real-world and simulated data\nEmpower students to apply computational and inferential thinking to address real-world problems\nWrite the results of a statistical study and draw conclusion in reports\n\n\n\n\nIntroduction to Modern Statistics (IMS)\nStatistical Modeling (SM)\n\n\n\n\n\n\nCategory\nPercentage\n\n\n\n\nParticipation\n5%\n\n\nClasswork\n10%\n\n\nVideo Assignments\n20%\n\n\nNotebook Assignments\n20%\n\n\nExam 1\n15%\n\n\nExam 2\n15%\n\n\nExam 3\n15%\n\n\n\nAt the end of the quarter, course grades will be assigned according to the following scale:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA+\n98 – 100\nB+\n87 – &lt;90\nC+\n77 – &lt;80\nD+\n67 – &lt;70\n\n\n\n\nA\n93 – &lt;98\nB\n83 – &lt;87\nC\n73 – &lt;77\nD\n63 – &lt;67\nF\n&lt; 60\n\n\nA–\n90 - &lt;93\nB-\n80 – &lt;83\nC–\n70 – &lt;73\nD–\n60 – &lt;63\n\n\n\n\n\n\n\nParticipation is based on short writing assignments conducted in class. There will be no make ups for these writing prompts.\n\n\n\nClasswork assignmets are designed to give you an opportunity to practice conceptual topics from the video assignments. The assignments will require you to program in R. The 3 lowest homework assignments will be dropped. Homework assignments will be due every Friday at 11:59 PM.\n\n\n\nNotebook assignments are designed to expand your statistical knowledge. These will be completed in Google Colab which can be accessed from Canvas. There is one notebook assignments every week that you can be completed during class time. Notebook assignments will be due on Thursday at 11:59 PM every week. The 3 lowest notebook assignments will be dropped.\n\n\n\nVideos are used to teach statistical concepts related to the course. Students are expected to watch at least one video a week. The videos are implemented using VoiceThreads. The 3 lowest video assignments will be dropped. Video assignments will be due every Sunday at 11:59 PM.\n\n\n\nThere will be three in exams. Exam #1 will be on September 29, 2025, Exam #2 will be on November 3, and Exam #3 will be on December 10, 2025 from 4-6 PM. While the exams are not considered cumulative, the material builds on each other. Developing a strong understanding of the material through out the course is important for your success. At the end of the semester, your lowest exam grade will be replaced by your median average of all 3 exam grades. This course will operate under a zero-tolerance policy. Talking during the time of the exam, sharing materials, looking at another students’ exam, or not following directions given will be subject to the University’s academic integrity policy.\n\n\n\nThere will be 4 extra credit opportunities worth a total of 10% of your overall grade. (There are no make-ups for missed extra credit assignments!) More information will be provided on the extra credit assignments on a later date. Information on the extra credit can be found here.\n\n\n\n\nThe following outline may be subject to change. Any changes will be announced in class.\n\n\n\n\n\n\n\n\n\n\nWeek\nTopic\nReadings\nNB Due\nVideo Due\n\n\n\n\n8/25\nWelcome/Intro to Stats and R\nSM 3\n1\n1\n\n\n9/1\nHoliday/ Data Generating Process\nIMS 4\n2\n2\n\n\n9/8\nCategorical Data\nIMS 5\n3\n3\n\n\n9/15\nNumerical Data\nSM 11\n4\n4\n\n\n9/22\nDistribution Functions\n\n5\n\n\n\n9/29\nExam 1/ Simple Linear Regression\nIMS 7\n\n5\n\n\n10/6\nSimple Linear Regression\nIMS 8\n6\n6\n\n\n\nGroup Models\nIMS 8\n7\n7\n\n\n10/13\nMulti Linear Regression\nIMS 9\n8\n8\n\n\n10/20\nLogistic Regression\n\n9\n\n\n\n11/3\nExam 2/ Sampling Distribution\nSM 12\n\n9\n\n\n11/10\nHoliday/ Sampling Distribution\nSM 13\n10\n10\n\n\n11/17\nInference\nIMS 24/26\n11\n11\n\n\n11/24\nModel Inference\n\n12\n12\n\n\n12/1\nTraditional Statistics\n\n\n\n\n\n12/8\nExam 3\n\n\n\n\n\n\n\n\n\nThe use of generative artificial intelligence (AI) in an ethical manner is permitted for this course.\n\n\nYou may use AI for:\n\nObtain clarification\nBrainstorming ideas, examples, outlines, and strategies\nGenerating questions for practice or exploration\nIdentifying keywords or phrasing to match professional goals\n\n\n\n\nYou may not:\n\nSubmit AI-generated work\nUse AI to complete assignments, quizzes, exams, or other assessments meant to reflect only your own work\nUse AI to generate code\n\nAny AI-generated work will receive a 0 in the class. Severe cases will be reported to Academic Misconduct.\nYou may not upload any course material to any AI platforms such as ChatGPT, Claude, Meta AI, and Google Gemini. Exceptions are allowed for DASS-approved services."
+    "text": "Term: Spring 2026\nInstructor: Isaac Quintanilla Salinas\nEmail: isaac.qs@csuci.edu\nOffice Location: Marin Hall 2326\nOffice Hours:\nLecture:\n\n\n\nCritical reasoning using a quantitative and statistical, problem-solving approach to solving real-world problems. Topics include: probability and statistics, sample data, probability and empirical data distributions, sampling techniques, estimation and hypothesis testing, ANOVA, and correlation and regression analysis. Students will use standard statistical software to analyze real-world and simulated data. GenEd: 2\n\n\n\n\nPrepare students for advanced courses in data-management and statistics\nReason both inductively and deductively with quantitative information and data\nUse statistical software for complex statistical analysis of real-world and simulated data\nEmpower students to apply computational and inferential thinking to address real-world problems\nWrite the results of a statistical study and draw conclusion in reports\n\n\n\n\nIntroduction to Modern Statistics (IMS)\nStatistical Modeling (SM)\n\n\n\n\n\n\nCategory\nPercentage\n\n\n\n\nParticipation\n5%\n\n\nClasswork\n10%\n\n\nVideo Assignments\n20%\n\n\nNotebook Assignments\n20%\n\n\nExam 1\n15%\n\n\nExam 2\n15%\n\n\nExam 3\n15%\n\n\n\nAt the end of the quarter, course grades will be assigned according to the following scale:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA+\n98 – 100\nB+\n87 – &lt;90\nC+\n77 – &lt;80\nD+\n67 – &lt;70\n\n\n\n\nA\n93 – &lt;98\nB\n83 – &lt;87\nC\n73 – &lt;77\nD\n63 – &lt;67\nF\n&lt; 60\n\n\nA–\n90 - &lt;93\nB-\n80 – &lt;83\nC–\n70 – &lt;73\nD–\n60 – &lt;63\n\n\n\n\n\n\n\nParticipation is based on short writing assignments conducted in class. There will be no make ups for these writing prompts.\n\n\n\nClasswork assignmets are designed to give you an opportunity to practice conceptual topics from the video assignments. The assignments will require you to program in R. The 3 lowest homework assignments will be dropped. Homework assignments will be due every Friday at 11:59 PM.\n\n\n\nNotebook assignments are designed to expand your statistical knowledge. These will be completed in Google Colab which can be accessed from Canvas. There is one notebook assignments every week that you can be completed during class time. Notebook assignments will be due on Thursday at 11:59 PM every week. The 3 lowest notebook assignments will be dropped.\n\n\n\nVideos are used to teach statistical concepts related to the course. Students are expected to watch at least one video a week. The videos are implemented using VoiceThreads. The 3 lowest video assignments will be dropped. Video assignments will be due every Sunday at 11:59 PM.\n\n\n\nThere will be three in exams. Exam #1 will be on September 29, 2025, Exam #2 will be on November 3, and Exam #3 will be on December 10, 2025 from 4-6 PM. While the exams are not considered cumulative, the material builds on each other. Developing a strong understanding of the material through out the course is important for your success. At the end of the semester, your lowest exam grade will be replaced by your median average of all 3 exam grades. This course will operate under a zero-tolerance policy. Talking during the time of the exam, sharing materials, looking at another students’ exam, or not following directions given will be subject to the University’s academic integrity policy.\n\n\n\nThere will be 4 extra credit opportunities worth a total of 10% of your overall grade. (There are no make-ups for missed extra credit assignments!) More information will be provided on the extra credit assignments on a later date. Information on the extra credit can be found here.\n\n\n\n\nThe following outline may be subject to change. Any changes will be announced in class.\n\n\n\nWeek\nTopic\nNB Due\nVideo Due\n\n\n\n\n1/26\nWelcome/Intro to Stats and R\n1\n1\n\n\n2/2\nHoliday/ Data Generating Process\n2\n2\n\n\n2/9\nCategorical Data\n3\n3\n\n\n2/16\nNumerical Data\n4\n4\n\n\n2/23\nDistribution Functions\n5\n\n\n\n3/2\nExam 1/ Simple Linear Regression\n\n5\n\n\n3/9\nSimple Linear Regression\n6\n6\n\n\n3/16\nSpring Break\n\n\n\n\n3/23\nSimple Logistic Regression\n7\n7\n\n\n3/30\nHoliday/ Group Models\n8\n8\n\n\n4/6\nMultivariable Regression\n9\n\n\n\n4/13\nModeling Approaches/Exam 2\n\n9\n\n\n4/20\nSampling Distributions\n10\n10\n\n\n4/27\nInference\n11\n11\n\n\n5/4\nInference\n12\n12\n\n\n5/11\nInference\n13\n\n\n\n5/18\nExam 3\n\n\n\n\n\n\n\n\nThe use of generative artificial intelligence (AI) in an ethical manner is permitted for this course.\n\n\nYou may use AI for:\n\nObtain clarification\nBrainstorming ideas, examples, outlines, and strategies\nGenerating questions for practice or exploration\nIdentifying keywords or phrasing to match professional goals\n\n\n\n\nYou may not:\n\nSubmit AI-generated work\nUse AI to complete assignments, quizzes, exams, or other assessments meant to reflect only your own work\nUse AI to generate code\n\nAny AI-generated work will receive a 0 in the class. Severe cases will be reported to Academic Misconduct.\nYou may not upload any course material to any AI platforms such as ChatGPT, Claude, Meta AI, and Google Gemini. Exceptions are allowed for DASS-approved services."
   },
   {
     "objectID": "syllabus.html#university-policies",
@@ -26,5 +26,1986 @@
     "title": "Welcome to Elementary Statistics!",
     "section": "",
     "text": "Brief Introduction\n\n\n\n\n\nWelcome to the course! This is the home page of the course where I will provide a recap on what was covered in the week. Here I will post any documents or videos for your reference. If you have any questions, please email me at isaac.qs@csuci.edu."
+  },
+  {
+    "objectID": "lectures/2.html#observations",
+    "href": "lectures/2.html#observations",
+    "title": "Data Generating Process",
+    "section": "Observations",
+    "text": "Observations\nAn observation is the unit which contains information to be obtained.\n\n\nAlso known as experimental unit."
+  },
+  {
+    "objectID": "lectures/2.html#data-1",
+    "href": "lectures/2.html#data-1",
+    "title": "Data Generating Process",
+    "section": "Data",
+    "text": "Data\nData is information from a particular experimental unit. There can be more that one piece of information per experimental unit."
+  },
+  {
+    "objectID": "lectures/2.html#data-structure",
+    "href": "lectures/2.html#data-structure",
+    "title": "Data Generating Process",
+    "section": "Data Structure",
+    "text": "Data Structure\nThe structure of the data can be represented in various forms:\n\nA list of long numbers\nTable"
+  },
+  {
+    "objectID": "lectures/2.html#tabular-form",
+    "href": "lectures/2.html#tabular-form",
+    "title": "Data Generating Process",
+    "section": "Tabular Form",
+    "text": "Tabular Form"
+  },
+  {
+    "objectID": "lectures/2.html#measurements-1",
+    "href": "lectures/2.html#measurements-1",
+    "title": "Data Generating Process",
+    "section": "Measurements",
+    "text": "Measurements\nMeasurements are the processes where we represent an attribute of an experimental unit as either a number or category."
+  },
+  {
+    "objectID": "lectures/2.html#quantitative-measurements",
+    "href": "lectures/2.html#quantitative-measurements",
+    "title": "Data Generating Process",
+    "section": "Quantitative Measurements",
+    "text": "Quantitative Measurements\nQuantitative measurements are data measurements that take a numeric form."
+  },
+  {
+    "objectID": "lectures/2.html#qualitative-measurements",
+    "href": "lectures/2.html#qualitative-measurements",
+    "title": "Data Generating Process",
+    "section": "Qualitative Measurements",
+    "text": "Qualitative Measurements\nQualitative measurements are data measurements that take a certain category."
+  },
+  {
+    "objectID": "lectures/2.html#value",
+    "href": "lectures/2.html#value",
+    "title": "Data Generating Process",
+    "section": "Value",
+    "text": "Value\nA value is a description (number or category) of a specific attribute of an experimental unit."
+  },
+  {
+    "objectID": "lectures/2.html#variable",
+    "href": "lectures/2.html#variable",
+    "title": "Data Generating Process",
+    "section": "Variable",
+    "text": "Variable\nA variable is the descriptive attribute that we want to obtain from an experimental unit. In terms of a data set, the variable contains all the values of specific attribute in a sample."
+  },
+  {
+    "objectID": "lectures/2.html#research-question",
+    "href": "lectures/2.html#research-question",
+    "title": "Data Generating Process",
+    "section": "Research Question",
+    "text": "Research Question\nA research question is designed to create new knowledge of certain phenomenons observed in the world.\n\nThis is designed by conducting a research projects that systematically answers the question.\n\n\nThe study design is the procedure in which data is collected to answer the question, while reducing any potential bias while conducting the study."
+  },
+  {
+    "objectID": "lectures/2.html#study-design-1",
+    "href": "lectures/2.html#study-design-1",
+    "title": "Data Generating Process",
+    "section": "Study Design",
+    "text": "Study Design\nThis is the procedure designed to answer a research question.\n\nEntails procedures to collect data that answers a research question.\n\n\nDictates how the data will be analyzed.\n\n\nDetermines how the data is quanitified and what is the experimental unit."
+  },
+  {
+    "objectID": "lectures/2.html#sampling-1",
+    "href": "lectures/2.html#sampling-1",
+    "title": "Data Generating Process",
+    "section": "Sampling",
+    "text": "Sampling\nSampling is the process of selecting units from a population interest to collect data from.\n\nImage Provided by Simply Psychology."
+  },
+  {
+    "objectID": "lectures/2.html#sampling-2",
+    "href": "lectures/2.html#sampling-2",
+    "title": "Data Generating Process",
+    "section": "Sampling",
+    "text": "Sampling\nWhen Sampling you want to maintain these properties:\n\nRepresentative sample\nLarge enough sample size"
+  },
+  {
+    "objectID": "lectures/2.html#sampling-example",
+    "href": "lectures/2.html#sampling-example",
+    "title": "Data Generating Process",
+    "section": "Sampling Example",
+    "text": "Sampling Example\nWe want to answer the question, are people happy?"
+  },
+  {
+    "objectID": "lectures/2.html#random-sampling",
+    "href": "lectures/2.html#random-sampling",
+    "title": "Data Generating Process",
+    "section": "Random Sampling",
+    "text": "Random Sampling\nWhen sampling, we strive for random sampling\n\nEach unit in the population of interest must have an equal probability of being selected for the study.\nThis ensures a representative population"
+  },
+  {
+    "objectID": "lectures/2.html#independent-sampling",
+    "href": "lectures/2.html#independent-sampling",
+    "title": "Data Generating Process",
+    "section": "Independent Sampling",
+    "text": "Independent Sampling\nIn addition to random sampling, we strive to make sure each unit is independent from each other.\n\nThe probability of UNIT A being sampled will not affect the probability of UNIT B to be sampled."
+  },
+  {
+    "objectID": "lectures/2.html#sampling-variation",
+    "href": "lectures/2.html#sampling-variation",
+    "title": "Data Generating Process",
+    "section": "Sampling Variation",
+    "text": "Sampling Variation\n\nRandom samples may vary from the population of interest.\nDue to randomness, samples many not look the or biased.\nHowever, this is to be expected as because the sample will not be biased in one way or another.\nSamples are then considered unbiased as long as experimental units were collected randomly."
+  },
+  {
+    "objectID": "lectures/2.html#data-2",
+    "href": "lectures/2.html#data-2",
+    "title": "Data Generating Process",
+    "section": "Data",
+    "text": "Data\nThe measurement collected from an experimental unit."
+  },
+  {
+    "objectID": "lectures/2.html#data-distribution",
+    "href": "lectures/2.html#data-distribution",
+    "title": "Data Generating Process",
+    "section": "Data Distribution",
+    "text": "Data Distribution\nWhen thinking about data, we know an attribute is allowed to vary. With this variation, some numbers are more likely to be observed than others."
+  },
+  {
+    "objectID": "lectures/2.html#forest-from-the-trees",
+    "href": "lectures/2.html#forest-from-the-trees",
+    "title": "Data Generating Process",
+    "section": "Forest from the trees",
+    "text": "Forest from the trees\n\nImage provided by pexels.com."
+  },
+  {
+    "objectID": "lectures/2.html#sample",
+    "href": "lectures/2.html#sample",
+    "title": "Data Generating Process",
+    "section": "Sample",
+    "text": "Sample\nWhen inspecting data:\n\nDo not focus on one individual data point.\nSee how data points is in relation to other data points.\nSee what is common\nSee what is rare"
+  },
+  {
+    "objectID": "lectures/2.html#data-generation-process-dgp",
+    "href": "lectures/2.html#data-generation-process-dgp",
+    "title": "Data Generating Process",
+    "section": "Data Generation Process (DGP)",
+    "text": "Data Generation Process (DGP)\nThe data generation process is understanding how variation from the population is transferred to the data collected.\n\nA population has a mechanism to produce data, understanding this mechanism is essential understanding the data."
+  },
+  {
+    "objectID": "lectures/2.html#dgp",
+    "href": "lectures/2.html#dgp",
+    "title": "Data Generating Process",
+    "section": "DGP",
+    "text": "DGP\nA populations DGP can be defined with the following characteristics:\n\nThe potential outcomes that can be observed when measuring\nEach potential outcome will have a probability of being observed\n\nThe probability must be between 0 and 1\n\nSum of all the probabilities of each outcome will add up to 1"
+  },
+  {
+    "objectID": "lectures/2.html#flipping-a-coin",
+    "href": "lectures/2.html#flipping-a-coin",
+    "title": "Data Generating Process",
+    "section": "Flipping a Coin",
+    "text": "Flipping a Coin\nFlipping a coin results in either heads or tail. The probability for heads is 50%\n\nThe DGP of flipping a coin is the process of selecting an outcome, given the probability of both options are 50%."
+  },
+  {
+    "objectID": "lectures/2.html#rolling-a-die",
+    "href": "lectures/2.html#rolling-a-die",
+    "title": "Data Generating Process",
+    "section": "Rolling a die",
+    "text": "Rolling a die\n\n\n\n\n\nImage provided by pexels.com"
+  },
+  {
+    "objectID": "lectures/2.html#measuring-body-temperature",
+    "href": "lectures/2.html#measuring-body-temperature",
+    "title": "Data Generating Process",
+    "section": "Measuring Body Temperature",
+    "text": "Measuring Body Temperature\n\n\n\n\n\nImage provided by pexels.com"
+  },
+  {
+    "objectID": "lectures/2.html#inference",
+    "href": "lectures/2.html#inference",
+    "title": "Data Generating Process",
+    "section": "Inference",
+    "text": "Inference\nHow do we use DGP and sampling to understand the world?\n\nWe can use a sample to understand the DGP.\n\n\nWe can use the DGP to understand the sample."
+  },
+  {
+    "objectID": "lectures/2.html#visualizing-a-dgp",
+    "href": "lectures/2.html#visualizing-a-dgp",
+    "title": "Data Generating Process",
+    "section": "Visualizing a DGP",
+    "text": "Visualizing a DGP"
+  },
+  {
+    "objectID": "lectures/2.html#visualizing-dgp",
+    "href": "lectures/2.html#visualizing-dgp",
+    "title": "Data Generating Process",
+    "section": "Visualizing DGP",
+    "text": "Visualizing DGP"
+  },
+  {
+    "objectID": "lectures/2.html#example",
+    "href": "lectures/2.html#example",
+    "title": "Data Generating Process",
+    "section": "Example",
+    "text": "Example"
+  },
+  {
+    "objectID": "lectures/2.html#statistical-model-1",
+    "href": "lectures/2.html#statistical-model-1",
+    "title": "Data Generating Process",
+    "section": "Statistical Model",
+    "text": "Statistical Model\n\\[\nY \\sim F(\\theta)\n\\]\n\n\\(Y\\): A data value generated for DGP\n\\(F\\): A generic mathematical model that describes the DGP\n\\(\\theta\\): Parameter controlling the shape and form of the DGP"
+  },
+  {
+    "objectID": "lectures/2.html#statistical-model-2",
+    "href": "lectures/2.html#statistical-model-2",
+    "title": "Data Generating Process",
+    "section": "Statistical Model",
+    "text": "Statistical Model\n\\[\nY = \\mu + \\varepsilon\n\\]\n\n\\(\\mu\\): The average value we expect to see\n\\(\\varepsilon \\sim F(\\cdot)\\): Error Term"
+  },
+  {
+    "objectID": "lectures/2.html#statistical-model-3",
+    "href": "lectures/2.html#statistical-model-3",
+    "title": "Data Generating Process",
+    "section": "Statistical Model",
+    "text": "Statistical Model\n\\[\nY = \\mu + \\varepsilon\n\\]\n\n\n\\(\\mu\\): Explained Part\n\nThis is what we expect to see if we took an educated guess\nThe educated guess can incorporate information that is related to \\(Y\\)\n\n\n\\(\\varepsilon\\): Unexplained Part\n\nRandomness\nIncorporates several types of variation\n\nMeasurement Error\nBiological Error\nEnvironmental Error"
+  },
+  {
+    "objectID": "lectures/3.html#r-packages",
+    "href": "lectures/3.html#r-packages",
+    "title": "Categorical Data",
+    "section": "R Packages",
+    "text": "R Packages\n\ncsucistats\ntidyverse"
+  },
+  {
+    "objectID": "lectures/3.html#background",
+    "href": "lectures/3.html#background",
+    "title": "Categorical Data",
+    "section": "Background",
+    "text": "Background\nIn October 2023, James Hoffman and Cometeer held the “Great American Coffee Taste Test” on YouTube, asking viewers to fill out a survey and coffee ordered from Cometeer."
+  },
+  {
+    "objectID": "lectures/3.html#data",
+    "href": "lectures/3.html#data",
+    "title": "Categorical Data",
+    "section": "Data",
+    "text": "Data\nThe data is part of DSLC Tidy Tuesday program where data sets are provided to help data science learners how to create graphics.\nInformation on the data sets variables (columns) can be found here."
+  },
+  {
+    "objectID": "lectures/3.html#data-1",
+    "href": "lectures/3.html#data-1",
+    "title": "Categorical Data",
+    "section": "Data",
+    "text": "Data\n\n\nCode\nlibrary(csucistats)\nlibrary(ggtricks)\nlibrary(tidyverse)\nlibrary(ThemePark)\nlibrary(DT)\ncoffee &lt;- read_csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-05-14/coffee_survey.csv\")\ndatatable(slice_sample(coffee, n = 10), options = list(dom = \"p\", pageLength = 5))"
+  },
+  {
+    "objectID": "lectures/3.html#categorical-data-1",
+    "href": "lectures/3.html#categorical-data-1",
+    "title": "Categorical Data",
+    "section": "Categorical Data",
+    "text": "Categorical Data\nCategorical data are data recordings that represented a category.\n\nData may be recorded as a “character” or “string” data.\n\n\nData may be recorded as a whole number, with an attached code book indicating the categories each number belongs to."
+  },
+  {
+    "objectID": "lectures/3.html#examples-of-categorical-data",
+    "href": "lectures/3.html#examples-of-categorical-data",
+    "title": "Categorical Data",
+    "section": "Examples of Categorical Data",
+    "text": "Examples of Categorical Data\n\nAre you a student?\nWhat city do you live in?\nWhat is your major?"
+  },
+  {
+    "objectID": "lectures/3.html#likert-scale",
+    "href": "lectures/3.html#likert-scale",
+    "title": "Categorical Data",
+    "section": "Likert Scale",
+    "text": "Likert Scale\nLikert scales are the rating systems you may have answered in surveys.\n\n\nStrongly Disagree\nDisagree\nNeutral\nAgree\nStrongly Agree"
+  },
+  {
+    "objectID": "lectures/3.html#likert-scales",
+    "href": "lectures/3.html#likert-scales",
+    "title": "Categorical Data",
+    "section": "Likert Scales",
+    "text": "Likert Scales\nLikert scales may be treated as numerical data if the jumps between scales are equal."
+  },
+  {
+    "objectID": "lectures/3.html#summarizing-categorical-data",
+    "href": "lectures/3.html#summarizing-categorical-data",
+    "title": "Categorical Data",
+    "section": "Summarizing Categorical Data",
+    "text": "Summarizing Categorical Data\nOnce we have the data, how do we summarize it to other people."
+  },
+  {
+    "objectID": "lectures/3.html#continguency-tables-1",
+    "href": "lectures/3.html#continguency-tables-1",
+    "title": "Categorical Data",
+    "section": "Continguency Tables",
+    "text": "Continguency Tables\nContinguency tables display how often a category is seen in the data.\n\nThere are two types of statistics that are reported in a table, the frequency and proportion."
+  },
+  {
+    "objectID": "lectures/3.html#frequencey",
+    "href": "lectures/3.html#frequencey",
+    "title": "Categorical Data",
+    "section": "Frequencey",
+    "text": "Frequencey\nFrequency represents the count of observing a specific category in your sample.\n\n\n#&gt;  [1] \"1\"           \"1\"           \"Less than 1\" \"2\"           \"More than 4\"\n#&gt;  [6] \"3\"           \"1\"           \"3\"           \"2\"           \"1\""
+  },
+  {
+    "objectID": "lectures/3.html#proportions-relative-frequencey",
+    "href": "lectures/3.html#proportions-relative-frequencey",
+    "title": "Categorical Data",
+    "section": "Proportions (relative frequencey)",
+    "text": "Proportions (relative frequencey)\nProportions represent the percentage that the category represents the sample.\n\nThis allows you to generalize your sample to the population, regardless of sample size."
+  },
+  {
+    "objectID": "lectures/3.html#continguency-tables-in-r",
+    "href": "lectures/3.html#continguency-tables-in-r",
+    "title": "Categorical Data",
+    "section": "Continguency Tables in R",
+    "text": "Continguency Tables in R\nThe variable caffeine indicates how much caffeine a participant prefers.\n\ncat_stats(coffee$caffeine)"
+  },
+  {
+    "objectID": "lectures/3.html#plotting-in-r",
+    "href": "lectures/3.html#plotting-in-r",
+    "title": "Categorical Data",
+    "section": "Plotting in R",
+    "text": "Plotting in R\nPlotting in R can be done via the ggplot2, a powerful library based on the Grammar of Graphics."
+  },
+  {
+    "objectID": "lectures/3.html#plotting-in-r-1",
+    "href": "lectures/3.html#plotting-in-r-1",
+    "title": "Categorical Data",
+    "section": "Plotting in R",
+    "text": "Plotting in R\n\nYou need to create a base plot using the ggplot()\nUse the + to change the look of the base plot\nIndicate how to transform the base plot to the desired plot\ngeom_*\nstat_*\nChange the look of the plot with other functions\nUse a theme_* function to add a theme to the plot"
+  },
+  {
+    "objectID": "lectures/3.html#bar-plots-1",
+    "href": "lectures/3.html#bar-plots-1",
+    "title": "Categorical Data",
+    "section": "Bar Plots",
+    "text": "Bar Plots\nBar Plots can be used to display the frequency or proportions on the data."
+  },
+  {
+    "objectID": "lectures/3.html#frequency-bar-plots-in-r",
+    "href": "lectures/3.html#frequency-bar-plots-in-r",
+    "title": "Categorical Data",
+    "section": "Frequency Bar Plots in R",
+    "text": "Frequency Bar Plots in R\n\nggplot(data = DATA, aes(x = VARIABLE)) +\n  geom_bar()"
+  },
+  {
+    "objectID": "lectures/3.html#frequency-bar-plots-in-r-1",
+    "href": "lectures/3.html#frequency-bar-plots-in-r-1",
+    "title": "Categorical Data",
+    "section": "Frequency Bar Plots in R",
+    "text": "Frequency Bar Plots in R\n\n\nCode\nggplot(coffee, aes(caffeine)) +\n  geom_bar()"
+  },
+  {
+    "objectID": "lectures/3.html#relative-frequency-bar-plots-in-r",
+    "href": "lectures/3.html#relative-frequency-bar-plots-in-r",
+    "title": "Categorical Data",
+    "section": "Relative Frequency Bar Plots in R",
+    "text": "Relative Frequency Bar Plots in R\n\nggplot(data = DATA, aes(x = VARIABLE, y = after_stat(prop), group = 1)) +\n  geom_bar()"
+  },
+  {
+    "objectID": "lectures/3.html#relative-frequency-bar-plots-in-r-1",
+    "href": "lectures/3.html#relative-frequency-bar-plots-in-r-1",
+    "title": "Categorical Data",
+    "section": "Relative Frequency Bar Plots in R",
+    "text": "Relative Frequency Bar Plots in R\n\n\nCode\nggplot(coffee, aes(caffeine, after_stat(prop), group = 1)) +\n  geom_bar()"
+  },
+  {
+    "objectID": "lectures/3.html#data-2",
+    "href": "lectures/3.html#data-2",
+    "title": "Categorical Data",
+    "section": "Data",
+    "text": "Data\nThe variable taste indicates if the participants like the taste of coffee.\n\ncat_stats(coffee$taste)"
+  },
+  {
+    "objectID": "lectures/3.html#cross-tabulation-1",
+    "href": "lectures/3.html#cross-tabulation-1",
+    "title": "Categorical Data",
+    "section": "Cross-Tabulation",
+    "text": "Cross-Tabulation\nCross-tabulations, also known as contingency tables, are statistical tools used to analyze the relationship between two or more categorical variables by displaying their frequency distribution in a table format. Each cell in the table represents the count or frequency of observations that fall into a particular combination of categories for the variables."
+  },
+  {
+    "objectID": "lectures/3.html#key-features-of-cross-tabulations",
+    "href": "lectures/3.html#key-features-of-cross-tabulations",
+    "title": "Categorical Data",
+    "section": "Key Features of Cross-Tabulations",
+    "text": "Key Features of Cross-Tabulations\n\nRows and Columns:\n\nRows represent the categories of one variable.\nColumns represent the categories of another variable.\n\nCells:\n\nEach cell displays the frequency or count of data points that belong to the intersection of a row and column category.\n\nMargins:\n\nRow and column totals provide summaries for each variable.\nThe grand total shows the overall sample size."
+  },
+  {
+    "objectID": "lectures/3.html#types-of-proportions-in-cross-tabulations",
+    "href": "lectures/3.html#types-of-proportions-in-cross-tabulations",
+    "title": "Categorical Data",
+    "section": "Types of Proportions in Cross-Tabulations",
+    "text": "Types of Proportions in Cross-Tabulations\n\nRow Proportions: Show the percentage of each row total represented by a cell.\nColumn Proportions: Show the percentage of each column total represented by a cell.\nTable Proportions: Show the percentage of the overall total represented by a cell."
+  },
+  {
+    "objectID": "lectures/3.html#table-proportions",
+    "href": "lectures/3.html#table-proportions",
+    "title": "Categorical Data",
+    "section": "Table Proportions",
+    "text": "Table Proportions\nTable proportions in cross-tabulations refer to the relative frequency or percentage of counts within the entire table, calculated by dividing each cell’s count by the total sum of all counts in the table. These proportions allow you to examine the contribution of each cell to the overall data set."
+  },
+  {
+    "objectID": "lectures/3.html#table-proportions-1",
+    "href": "lectures/3.html#table-proportions-1",
+    "title": "Categorical Data",
+    "section": "Table Proportions",
+    "text": "Table Proportions\n\ncat_stats(coffee$caffeine, coffee$taste, prop = \"table\")"
+  },
+  {
+    "objectID": "lectures/3.html#row-proportions",
+    "href": "lectures/3.html#row-proportions",
+    "title": "Categorical Data",
+    "section": "Row Proportions",
+    "text": "Row Proportions\nRow proportions refer to the relative frequency or percentage of counts within each row of a contingency table. In a cross-tabulation, row proportions allow you to compare how the distribution of one variable varies within each category of another variable, within a row."
+  },
+  {
+    "objectID": "lectures/3.html#row-proportions-1",
+    "href": "lectures/3.html#row-proportions-1",
+    "title": "Categorical Data",
+    "section": "Row Proportions",
+    "text": "Row Proportions\n\ncat_stats(coffee$caffeine, coffee$taste, prop = \"row\")"
+  },
+  {
+    "objectID": "lectures/3.html#column-proportions",
+    "href": "lectures/3.html#column-proportions",
+    "title": "Categorical Data",
+    "section": "Column Proportions",
+    "text": "Column Proportions\nColumn proportions refer to the relative frequency or percentage of counts within each column of a contingency table. These proportions allow you to compare how the distribution of one variable varies across different categories of another variable, within a column."
+  },
+  {
+    "objectID": "lectures/3.html#column-proportions-1",
+    "href": "lectures/3.html#column-proportions-1",
+    "title": "Categorical Data",
+    "section": "Column Proportions",
+    "text": "Column Proportions\n\ncat_stats(coffee$caffeine, coffee$taste, prop = \"col\")"
+  },
+  {
+    "objectID": "lectures/3.html#stacked-bar-plot-in-r",
+    "href": "lectures/3.html#stacked-bar-plot-in-r",
+    "title": "Categorical Data",
+    "section": "Stacked Bar Plot in R",
+    "text": "Stacked Bar Plot in R\n\nggplot(DATA, aes(x = VAR1, y = after_stat(count), fill = VAR2)) +\n  geom_bar()"
+  },
+  {
+    "objectID": "lectures/3.html#stacked-bar-plot-in-r-1",
+    "href": "lectures/3.html#stacked-bar-plot-in-r-1",
+    "title": "Categorical Data",
+    "section": "Stacked Bar Plot in R",
+    "text": "Stacked Bar Plot in R\n\nggplot(coffee, aes(x = caffeine, y = after_stat(count), fill = taste)) +\n  geom_bar()"
+  },
+  {
+    "objectID": "lectures/3.html#stacked-bar-plot-in-r-2",
+    "href": "lectures/3.html#stacked-bar-plot-in-r-2",
+    "title": "Categorical Data",
+    "section": "Stacked Bar Plot in R",
+    "text": "Stacked Bar Plot in R\n\nggplot(coffee, aes(y = caffeine, x = after_stat(count), fill = taste)) +\n  geom_bar()"
+  },
+  {
+    "objectID": "lectures/3.html#pie-charts",
+    "href": "lectures/3.html#pie-charts",
+    "title": "Categorical Data",
+    "section": "Pie Charts",
+    "text": "Pie Charts\nA pie chart is a circular statistical graphic divided into slices, where each slice represents a proportion or percentage of the whole. The size of each slice is proportional to the relative frequency or magnitude of the category it represents."
+  },
+  {
+    "objectID": "lectures/3.html#pie-charts-1",
+    "href": "lectures/3.html#pie-charts-1",
+    "title": "Categorical Data",
+    "section": "Pie Charts",
+    "text": "Pie Charts"
+  },
+  {
+    "objectID": "lectures/3.html#key-features-of-pie-charts",
+    "href": "lectures/3.html#key-features-of-pie-charts",
+    "title": "Categorical Data",
+    "section": "Key Features of Pie Charts",
+    "text": "Key Features of Pie Charts\n\nCircular Format:\n\nThe chart is shaped like a circle, symbolizing a whole (100% or 1).\n\nSlices:\n\nEach slice corresponds to a category and its size represents the contribution of that category to the total.\n\nLabels:\n\nSlices are often labeled with the category name and the percentage or value they represent."
+  },
+  {
+    "objectID": "lectures/3.html#pie-chart-in-r",
+    "href": "lectures/3.html#pie-chart-in-r",
+    "title": "Categorical Data",
+    "section": "Pie Chart in R",
+    "text": "Pie Chart in R\n\ndf_pie &lt;- cat_stats(coffee$caffeine, tbl_df = TRUE)$table\nggplot(df_pie, aes(cat = Category, val = n, fill = Category)) +\n  geom_pie()"
+  },
+  {
+    "objectID": "lectures/3.html#pie-chart-in-r-1",
+    "href": "lectures/3.html#pie-chart-in-r-1",
+    "title": "Categorical Data",
+    "section": "Pie Chart in R",
+    "text": "Pie Chart in R\n\ncoffee_pie &lt;- cat_stats(coffee$caffeine, tbl_df = TRUE)$table\nggplot(coffee_pie, aes(cat = Category, val = n, fill = Category)) +\n  geom_pie()"
+  },
+  {
+    "objectID": "lectures/3.html#mosaic-plots",
+    "href": "lectures/3.html#mosaic-plots",
+    "title": "Categorical Data",
+    "section": "Mosaic Plots",
+    "text": "Mosaic Plots\nA mosaic plot is a graphical representation of two categorical variables. It uses rectangles to visualize the proportions of data categories while simultaneously showing the relationships between multiple variables. The size of each rectangle corresponds to the relative frequency or proportion of the data in a particular category combination."
+  },
+  {
+    "objectID": "lectures/3.html#key-features-of-mosaic-plots",
+    "href": "lectures/3.html#key-features-of-mosaic-plots",
+    "title": "Categorical Data",
+    "section": "Key Features of Mosaic Plots",
+    "text": "Key Features of Mosaic Plots\n\nRectangular Tiles:\n\nThe plot is divided into rectangles, with each tile representing a unique combination of categories.\n\nProportional Areas:\n\nThe area of each rectangle is proportional to the frequency or proportion of the data it represents.\n\nHierarchical Arrangement:\n\nVariables are arranged hierarchically along the axes, with the tiles subdivided to represent relationships between variables.\n\nColor Coding (Optional):\n\nDifferent colors can be used to highlight specific patterns, emphasize groups, or indicate significance."
+  },
+  {
+    "objectID": "lectures/3.html#themes",
+    "href": "lectures/3.html#themes",
+    "title": "Categorical Data",
+    "section": "Themes",
+    "text": "Themes\nThe R packages ThemePark and ggthemes allows you to change the overall look of a plot.\n\nAll you need to do is add the theme to the plot."
+  },
+  {
+    "objectID": "lectures/4.html#r-packages",
+    "href": "lectures/4.html#r-packages",
+    "title": "Numerical Data",
+    "section": "R Packages",
+    "text": "R Packages\n\ncsucistats\ntidyverse"
+  },
+  {
+    "objectID": "lectures/4.html#motivating-example",
+    "href": "lectures/4.html#motivating-example",
+    "title": "Numerical Data",
+    "section": "Motivating Example",
+    "text": "Motivating Example"
+  },
+  {
+    "objectID": "lectures/4.html#what-is-numerical-data",
+    "href": "lectures/4.html#what-is-numerical-data",
+    "title": "Numerical Data",
+    "section": "What is numerical data?",
+    "text": "What is numerical data?\n\ntrashwheel$PlasticBottles\n\n#&gt;   [1] 1450 1120 2450 2380  980 1430  910 3580 2400 1340  740  950  530  840 1130\n#&gt;  [16] 1640 1350 1640 1730 5960 2170 1930 3200 2500 2140 1630 3640 1430  570 4800\n#&gt;  [31]  550 2240 4220 1400 2820 1900 3650  760 1250  880 1800 1370  550  640 1160\n#&gt;  [46] 1570 1340 1740 2870 3120 2780 2240 2550 1470 1240 1150 2850  960  870 1340\n#&gt;  [61] 2630 1850 2830 1740 2780 1260 2340 3240  940  830  960  870  920 1130 1060\n#&gt;  [76]  740  950 2340 2660 2430 2690 1540 1240 2870 2450 1830 2360 2640 2840 2640\n#&gt;  [91] 3070 2820 2640  870 3220 1980  410  640 2730 1360  760 1240  800 2540 2130\n#&gt; [106] 2670 1940 2140 1960 1640 1850 2370 2530 2720 2250 3240 3530 2340 2460 1340\n#&gt; [121]  950 2240 3050 1630 1120 3340 3560 2460 3860 3230 3760 3640 4230 3590 3740\n#&gt; [136] 4200 3840 4350 3960 4150 4450 3460 2850 3560 4130 4350 4420 2130 2450 2300\n#&gt; [151] 2850 2640 3250 2530 2780 2740 2530 1876 2340 2244 2980 3460 1840 1360 1880\n#&gt; [166] 2460 2260 2890 2140 2570 2030 1940 1870 1920 1920 2230  980  650  430  390\n#&gt; [181]  490  210  560  470  390  460  530  460  340  360 2540 2870 2230 2340 2560\n#&gt; [196] 2340 2480 2540 2980 3250 3340 2850 3220 2110 3670 2890 1460 3240 3530 2760\n#&gt; [211] 2980 2430 1500 1270 1340 2780 2910 2760 2950 2550 2720 2540 2370 2250 1260\n#&gt; [226]  950 1020 2250 1130 1240 1950 1460 2210 2470 2150  970  840  790  750  810\n#&gt; [241]  790  670  710  730  820  760  670  730  750  820 1580 2130 2350 2460 1220\n#&gt; [256]  950  400 1050 1480 1300 1650 2130 2340 1890 1420 1280 1140  870  940  620\n#&gt; [271] 1560 1720 1890 1760  890  710  620  780  540  670  820  540  730  910  710\n#&gt; [286] 1750 1320 2740 1120 2100 3110 1200 1390  940 1220 1960 2150 2380 1440 1080\n#&gt; [301] 1840 2100 1500  660  590 1200 2610 1820 1080  790 1240  780  480  300  990\n#&gt; [316] 1110  580 2200 1900 2800  840  680  300  240 1015 2150  580 1400  800 1110\n#&gt; [331] 1980 1040  940  600  460  980 1880  900 1740 1140 2040 2800 1800 3300 1880\n#&gt; [346] 2000 2680  950 3700 1900 3600 2400 4400  980 1980 3600 2200 2800 4200  800\n#&gt; [361] 1400 1800 2210  980 2800 1900 2780 2440 3400  920 1260 1980 1000  960  640\n#&gt; [376]  860  590 1800 3600 2300 3900 2900 1850 3400  980  750  500 3200 3800 1850\n#&gt; [391] 2800  980 3200 2800 2640 1200  510  660  480 2900 2300 1980 1040  900 3400\n#&gt; [406] 1800 3000 2800  950 3800  800  760  540  340  600  480 2100 1840 1100 2650\n#&gt; [421] 1900  900 1880 1240 3000 2300 1400 2050 3250 2100 2450 4050 3800 3000 2200\n#&gt; [436] 3500 1800 1250 2200 1640 1080 1790 2080 1600 2200 2000 1200  980  800 1200\n#&gt; [451] 1800 1440 1600 2400 1900 2100 1200  720  800 2200 1600 1000 3000 2700 2300\n#&gt; [466] 1900 5800 1800 2200 3400 4400 3400 2500 1600 1200 1040 4400 4800 1800 3600\n#&gt; [481] 3000 4200 1400 2800 1800 3400 2600 3300 4100 1800 3500 2900  850  680 3100\n#&gt; [496] 1750  980 2800 1200  840 1040  500  800  640  900  660  750 3800 2900 1800\n#&gt; [511] 2700 4200 3000 1200  600 4400 3100 2800 1100 3400 2800  800 1800  540 3300\n#&gt; [526] 2800  900 2100 3200 1440  800  540 2900 2000  960 3200 1250 2900 2100 3600\n#&gt; [541] 1400 3900 3000 1800 2700 2400 2900 1400 3900 4200 2800 1900  960  640  750\n#&gt; [556]  500 3500 2900 2100 3200 1800 1500 2100 1000 2900 1600 2100 1700 2400 3600\n#&gt; [571] 2700 2900 1800 2200 3000 2100 1000 2700 2200 3100 3400 4000 2100 1900 2300\n#&gt; [586] 3200 1200 3400 2100  980  540 1100  750 1800 2300 3400 2700 3000 3800 4200\n#&gt; [601] 1800 2000 3300 4200 1200 2200  850  980  300  450   80 1800 2200 3400 3100\n#&gt; [616] 2600 1800 1200 2200 1400 2100 1600 2000 3200 2100 1400  880 2000 1200 1950\n#&gt; [631] 9540 8350 8590 7830 8210 9830 9240 9540 8230 7540 8490 9610 7960 8870 7420\n#&gt; [646] 8250 8472 7530 2340 2210 2670  657 2290 2110 7340 9230 1020  900 1140 1350\n#&gt; [661] 1200 1090  920 3150 6970 9100 8400 6500 4400 3600 4000 3700 4057 8800 6800\n#&gt; [676] 5900 7500 8000 4400 6600 3800 4800 4400 5200 6400 5900 4800 5600 7200 4400\n#&gt; [691] 5400 4800 6700 6000 6800 5950 7200 6400 5300 4900 4400 5000 4900 4800 5800\n#&gt; [706] 3600 4200 5000 5400 6400 4000 4300 5100 3900 2700 3000 4100 3900 4400 4900\n#&gt; [721] 3600 4500 5000 5400 3400 4800 3800 2900 3200 4200 2900   NA 3400 4100 3900\n#&gt; [736] 4900 3400 5100 4200 2900 3800 3200 4000 1150 2320 3450 1490  920 1010  680\n#&gt; [751] 1800 2700  950  103 1850 1200 1050 1860 1180 1050 1420 1800 1500 1200  860\n#&gt; [766]  640 1400  980 2100 1100 2400 1500 2200 1200 2000 1800 1000 2100 2400 2700\n#&gt; [781] 3000  980  240  840 1800 1000  500   12 2400 1000 1800  300 2100 2400 1200\n#&gt; [796] 1800 2100  280  480  150 1400  980   40  640  800 1000  810  500 1800  840\n#&gt; [811]  500 1500  480 1000 1200  450  280  150    0    0 2100 1800 1400  980 3000\n#&gt; [826] 2400 1100  340 1200  600 2300 1200 3000 4200 1800  980 2100 3200 1050 2700\n#&gt; [841]  980 1400  800  640  240 2100 2800 1600 1200 2200  980  540  320  270 1200\n#&gt; [856]  360  120  480    0 2400 3200 2500 1800  250  240  640  180  540    0    0\n#&gt; [871] 2800 1600  980  480  720    0  360 2100 2900 2100 1800 2900 3200 1800 1600\n#&gt; [886] 2800 1200 2100 2500 1800 1600 2100 1200  980 2500 1900 2100 1200  900  800\n#&gt; [901]  480  720 1600 2400  800  500  640  900 1400 2100 1900  960 2400 1800 2700\n#&gt; [916] 1500  930 2100 3000 1600 1200 4100 5400 4400 5000 3400 4900 2500 2700 1300\n#&gt; [931]  800  440 2100 3200 1100  800  540 4100 3300 1500  850  440 2800 1200 1400\n#&gt; [946]  880  750 1800  400   10 1400  600 2500 1100 2300 1000 1300  500  700   20\n#&gt; [961]    0 1800  680 2800 3300 2900 1800 2800 1000 2500  950  360    0 3400 2700\n#&gt; [976] 3200 2800 1600 2900 2000 2500 1400  800 1500 2100 1400  980 1800  500 1200\n#&gt; [991]  180    0    0"
+  },
+  {
+    "objectID": "lectures/4.html#summary-statistics-1",
+    "href": "lectures/4.html#summary-statistics-1",
+    "title": "Numerical Data",
+    "section": "Summary Statistics",
+    "text": "Summary Statistics\nSummary statistics are used to describe the distribution of data."
+  },
+  {
+    "objectID": "lectures/4.html#central-tendency",
+    "href": "lectures/4.html#central-tendency",
+    "title": "Numerical Data",
+    "section": "Central Tendency",
+    "text": "Central Tendency\nCentral tendency is a statistical concept that refers to the central or typical value around which a set of data points tends to cluster. It is used to summarize and describe a data set by identifying a single representative value that provides insights into the data’s overall characteristics."
+  },
+  {
+    "objectID": "lectures/4.html#variation",
+    "href": "lectures/4.html#variation",
+    "title": "Numerical Data",
+    "section": "Variation",
+    "text": "Variation\nVariation in statistics refers to the extent to which data points in a dataset deviate or differ from a central tendency measure. Understanding variation is crucial for making informed decisions, drawing meaningful conclusions, and assessing the reliability of statistical analyses."
+  },
+  {
+    "objectID": "lectures/4.html#minimum",
+    "href": "lectures/4.html#minimum",
+    "title": "Numerical Data",
+    "section": "Minimum",
+    "text": "Minimum\nThe minimum (min) is the smallest value in the data."
+  },
+  {
+    "objectID": "lectures/4.html#maximum",
+    "href": "lectures/4.html#maximum",
+    "title": "Numerical Data",
+    "section": "Maximum",
+    "text": "Maximum\nThe maximum (max) is the largest value in the data."
+  },
+  {
+    "objectID": "lectures/4.html#quartiles",
+    "href": "lectures/4.html#quartiles",
+    "title": "Numerical Data",
+    "section": "Quartiles",
+    "text": "Quartiles\nQuartiles are three values (Q1, Q2, Q3) that divides the data into four subsets."
+  },
+  {
+    "objectID": "lectures/4.html#q1",
+    "href": "lectures/4.html#q1",
+    "title": "Numerical Data",
+    "section": "Q1",
+    "text": "Q1\nQ1 is the value signifying that a quarter of the data is lower than it."
+  },
+  {
+    "objectID": "lectures/4.html#q2---median",
+    "href": "lectures/4.html#q2---median",
+    "title": "Numerical Data",
+    "section": "Q2 - Median",
+    "text": "Q2 - Median\nQ2 is the value signifying that half of the data is below it.\n\nThe median also represents the central tendency of the data."
+  },
+  {
+    "objectID": "lectures/4.html#q3",
+    "href": "lectures/4.html#q3",
+    "title": "Numerical Data",
+    "section": "Q3",
+    "text": "Q3\nQ3 is the value signifying that 3 quarters of the data is below it."
+  },
+  {
+    "objectID": "lectures/4.html#interquartile-range",
+    "href": "lectures/4.html#interquartile-range",
+    "title": "Numerical Data",
+    "section": "Interquartile Range",
+    "text": "Interquartile Range\n\n\\[\nIQR = Q_3 - Q_1\n\\]"
+  },
+  {
+    "objectID": "lectures/4.html#range",
+    "href": "lectures/4.html#range",
+    "title": "Numerical Data",
+    "section": "Range",
+    "text": "Range\n\n\\[\nR = \\mathrm{max} - \\mathrm{min}\n\\]"
+  },
+  {
+    "objectID": "lectures/4.html#how-to-identify-the-quartiles",
+    "href": "lectures/4.html#how-to-identify-the-quartiles",
+    "title": "Numerical Data",
+    "section": "How to identify the quartiles?",
+    "text": "How to identify the quartiles?\n\nSort the data\nID Max and Min\nFind the amount of data the makes a quarter:\n\n\\(K=N/4\\)\n\nCreate 4 groups using the sorted data\n\ngroup by data size\nIf \\(K\\) has a decimal, the \\(Kth\\) value is quartile of each group."
+  },
+  {
+    "objectID": "lectures/4.html#mean",
+    "href": "lectures/4.html#mean",
+    "title": "Numerical Data",
+    "section": "Mean",
+    "text": "Mean\nDescribe how you will find the mean of these numbers:\n\n\n#&gt; [1] 10 14 22 24 10"
+  },
+  {
+    "objectID": "lectures/4.html#mean-1",
+    "href": "lectures/4.html#mean-1",
+    "title": "Numerical Data",
+    "section": "Mean",
+    "text": "Mean\nThe mean is another measurement for central tendency.\n\\[\n\\bar X = \\frac{1}{n}\\sum^n_{i=1}X_i\n\\]\n\n\\(n\\): total data points\n\\(X_i\\): data points\n\\(i\\): indexing data\n\\(\\sum\\): add all from first (bottom) to last (up)"
+  },
+  {
+    "objectID": "lectures/4.html#variance",
+    "href": "lectures/4.html#variance",
+    "title": "Numerical Data",
+    "section": "Variance",
+    "text": "Variance\nThe variance is a measurement on the average squared distance the data points are from the central tendency.\n\\[\ns^2 = \\frac{1}{n-1}\\sum^n_{i=1}(X_i-\\bar X)^2\n\\]"
+  },
+  {
+    "objectID": "lectures/4.html#standard-deviation",
+    "href": "lectures/4.html#standard-deviation",
+    "title": "Numerical Data",
+    "section": "Standard Deviation",
+    "text": "Standard Deviation\nThe standard deviation is a measurement on the average distance the data points are from the central tendency.\n\\[\ns=\\sqrt{s^2}\n\\]"
+  },
+  {
+    "objectID": "lectures/4.html#outliers",
+    "href": "lectures/4.html#outliers",
+    "title": "Numerical Data",
+    "section": "Outliers",
+    "text": "Outliers\nThese are data points that seem to be highly distant from all other variables."
+  },
+  {
+    "objectID": "lectures/4.html#numerical-statistics-in-r-1",
+    "href": "lectures/4.html#numerical-statistics-in-r-1",
+    "title": "Numerical Data",
+    "section": "Numerical Statistics in R",
+    "text": "Numerical Statistics in R"
+  },
+  {
+    "objectID": "lectures/4.html#mean-2",
+    "href": "lectures/4.html#mean-2",
+    "title": "Numerical Data",
+    "section": "Mean",
+    "text": "Mean\n\nmean(DATA$VAR)"
+  },
+  {
+    "objectID": "lectures/4.html#median",
+    "href": "lectures/4.html#median",
+    "title": "Numerical Data",
+    "section": "Median",
+    "text": "Median\n\nmedian(DATA$VAR)"
+  },
+  {
+    "objectID": "lectures/4.html#standard-deviation-1",
+    "href": "lectures/4.html#standard-deviation-1",
+    "title": "Numerical Data",
+    "section": "Standard Deviation",
+    "text": "Standard Deviation\n\nsd(DATA$VAR)"
+  },
+  {
+    "objectID": "lectures/4.html#variance-1",
+    "href": "lectures/4.html#variance-1",
+    "title": "Numerical Data",
+    "section": "Variance",
+    "text": "Variance\n\nvar(DATA$VAR)"
+  },
+  {
+    "objectID": "lectures/4.html#quartiles-1",
+    "href": "lectures/4.html#quartiles-1",
+    "title": "Numerical Data",
+    "section": "Quartiles",
+    "text": "Quartiles\n\nquantile(DATA$VAR, probs = c(0.25, 0.5, 0.75))"
+  },
+  {
+    "objectID": "lectures/4.html#max-and-min",
+    "href": "lectures/4.html#max-and-min",
+    "title": "Numerical Data",
+    "section": "Max and Min",
+    "text": "Max and Min\n\nmax(DATA$VAR)\nmin(DATA$VAR)"
+  },
+  {
+    "objectID": "lectures/4.html#summary-statistics-2",
+    "href": "lectures/4.html#summary-statistics-2",
+    "title": "Numerical Data",
+    "section": "Summary Statistics",
+    "text": "Summary Statistics\n\nnum_stats(DATA$VAR)"
+  },
+  {
+    "objectID": "lectures/4.html#mr.-trash-wheel",
+    "href": "lectures/4.html#mr.-trash-wheel",
+    "title": "Numerical Data",
+    "section": "Mr. Trash Wheel",
+    "text": "Mr. Trash Wheel\n\nnum_stats(trashwheel$PlasticBottles)\n\n#&gt;   min   q25     mean median  q75  max       sd     var    iqr missing\n#&gt; 1   0 987.5 2219.331   1900 2900 9830 1650.449 2723984 1912.5       1"
+  },
+  {
+    "objectID": "lectures/4.html#histogram",
+    "href": "lectures/4.html#histogram",
+    "title": "Numerical Data",
+    "section": "Histogram",
+    "text": "Histogram\nA histogram is a graphical representation of the distribution or frequency of data points in a dataset. It provides a visual way to understand the shape, central tendency, and spread of a dataset by dividing the data into intervals or bins and showing how many data points fall into each bin as a bar."
+  },
+  {
+    "objectID": "lectures/4.html#histogram-r-code",
+    "href": "lectures/4.html#histogram-r-code",
+    "title": "Numerical Data",
+    "section": "Histogram R Code",
+    "text": "Histogram R Code\n\nggplot(DATA, aes(VARIABLE)) +\n  geom_histogram(bins = X)"
+  },
+  {
+    "objectID": "lectures/4.html#histogram-1",
+    "href": "lectures/4.html#histogram-1",
+    "title": "Numerical Data",
+    "section": "Histogram",
+    "text": "Histogram\n\n\nCode\ny &lt;- rnorm(1000)\nggplot(tibble(y), aes(y)) +\n  geom_histogram(bins = 15)"
+  },
+  {
+    "objectID": "lectures/4.html#histogram-2",
+    "href": "lectures/4.html#histogram-2",
+    "title": "Numerical Data",
+    "section": "Histogram",
+    "text": "Histogram\n\n\nCode\ny &lt;- rgamma(1000, 2)\nggplot(tibble(y), aes(y)) +\n  geom_histogram(bins = 15)"
+  },
+  {
+    "objectID": "lectures/4.html#histograms",
+    "href": "lectures/4.html#histograms",
+    "title": "Numerical Data",
+    "section": "Histograms",
+    "text": "Histograms\n\n\nCode\ny &lt;- rbeta(1000, 5, 1)\nggplot(tibble(y), aes(y)) +\n  geom_histogram(bins = 15)"
+  },
+  {
+    "objectID": "lectures/4.html#histograms-1",
+    "href": "lectures/4.html#histograms-1",
+    "title": "Numerical Data",
+    "section": "Histograms",
+    "text": "Histograms\n\n\nCode\ny &lt;- rbinom(1000, 1, 0.4)\nz &lt;- (y == 0) * rnorm(1000, 23) + (y == 1) * rnorm(1000, 27)\nggplot(tibble(z), aes(z)) +\n  geom_histogram(bins = 15)"
+  },
+  {
+    "objectID": "lectures/4.html#mr.-trash-wheel-1",
+    "href": "lectures/4.html#mr.-trash-wheel-1",
+    "title": "Numerical Data",
+    "section": "Mr. Trash Wheel",
+    "text": "Mr. Trash Wheel\n\nggplot(trashwheel, aes(PlasticBottles)) +\n  geom_histogram()"
+  },
+  {
+    "objectID": "lectures/4.html#box-plot",
+    "href": "lectures/4.html#box-plot",
+    "title": "Numerical Data",
+    "section": "Box Plot",
+    "text": "Box Plot\nA box plot, also known as a box-and-whisker plot, is a graphical representation of the distribution and key statistical characteristics of a dataset. It provides a visual summary of the data’s central tendency, spread, and potential outliers."
+  },
+  {
+    "objectID": "lectures/4.html#box-plot-1",
+    "href": "lectures/4.html#box-plot-1",
+    "title": "Numerical Data",
+    "section": "Box Plot",
+    "text": "Box Plot"
+  },
+  {
+    "objectID": "lectures/4.html#box-plot-r-code",
+    "href": "lectures/4.html#box-plot-r-code",
+    "title": "Numerical Data",
+    "section": "Box Plot R Code",
+    "text": "Box Plot R Code\n\nggplot(DATA, aes(VARIABLE)) +\n  geom_boxplot()"
+  },
+  {
+    "objectID": "lectures/4.html#box-plot-2",
+    "href": "lectures/4.html#box-plot-2",
+    "title": "Numerical Data",
+    "section": "Box Plot",
+    "text": "Box Plot\n\nggplot(trashwheel, aes(PlasticBottles)) +\n  geom_boxplot()"
+  },
+  {
+    "objectID": "lectures/4.html#box-plot-3",
+    "href": "lectures/4.html#box-plot-3",
+    "title": "Numerical Data",
+    "section": "Box Plot",
+    "text": "Box Plot\n\nggplot(trashwheel, aes(y = PlasticBottles)) +\n  geom_boxplot()"
+  },
+  {
+    "objectID": "lectures/4.html#dot-plots",
+    "href": "lectures/4.html#dot-plots",
+    "title": "Numerical Data",
+    "section": "Dot Plots",
+    "text": "Dot Plots\nDot Plots are similar to histograms, but they incorporate dots to count how many data points fall within bins."
+  },
+  {
+    "objectID": "lectures/4.html#dot-plots-in-r",
+    "href": "lectures/4.html#dot-plots-in-r",
+    "title": "Numerical Data",
+    "section": "Dot Plots in R",
+    "text": "Dot Plots in R\n\nggplot(DATA, aes(VARIABLE)) +\n  geom_dotplot(binwidth = X)"
+  },
+  {
+    "objectID": "lectures/4.html#dot-plots-1",
+    "href": "lectures/4.html#dot-plots-1",
+    "title": "Numerical Data",
+    "section": "Dot Plots",
+    "text": "Dot Plots\n\n\nCode\nggplot(trashwheel, aes(PlasticBottles)) +\n  geom_dotplot(binwidth = 100)"
+  },
+  {
+    "objectID": "lectures/4.html#transformed-data-1",
+    "href": "lectures/4.html#transformed-data-1",
+    "title": "Numerical Data",
+    "section": "Transformed Data",
+    "text": "Transformed Data\nWhen working with skewed data, it may be beneficial to transform the data to identify trends.\n\n\n\\(Y = \\ln(X)\\)\n\\(Y = \\frac{1}{X}\\)\n\\(Y = \\sqrt X\\)"
+  },
+  {
+    "objectID": "lectures/4.html#example",
+    "href": "lectures/4.html#example",
+    "title": "Numerical Data",
+    "section": "Example",
+    "text": "Example\n\n\nCode\nlibrary(patchwork)\ny &lt;- rlnorm(1000, mean = 0, sd = 2)\nly &lt;- log(y)\n\np1 &lt;- ggplot(tibble(y), aes(y)) +\n  geom_histogram() +\n  ggtitle(\"Skewed Data\")\np2 &lt;- ggplot(tibble(y = ly), aes(y)) +\n  geom_histogram() +\n  ggtitle(\"Log-Transformed Data\")\n\np1 + p2"
+  },
+  {
+    "objectID": "lectures/4.html#scatter-plots-1",
+    "href": "lectures/4.html#scatter-plots-1",
+    "title": "Numerical Data",
+    "section": "Scatter Plots",
+    "text": "Scatter Plots\nScatter plots demonstrate how two variables behave with each other. They can tell you any postive or negative trends, if they exist, with the combination of the plots."
+  },
+  {
+    "objectID": "lectures/4.html#positive-relationship",
+    "href": "lectures/4.html#positive-relationship",
+    "title": "Numerical Data",
+    "section": "Positive Relationship",
+    "text": "Positive Relationship"
+  },
+  {
+    "objectID": "lectures/4.html#negative-relationship",
+    "href": "lectures/4.html#negative-relationship",
+    "title": "Numerical Data",
+    "section": "Negative Relationship",
+    "text": "Negative Relationship"
+  },
+  {
+    "objectID": "lectures/4.html#no-relationship",
+    "href": "lectures/4.html#no-relationship",
+    "title": "Numerical Data",
+    "section": "No Relationship",
+    "text": "No Relationship"
+  },
+  {
+    "objectID": "lectures/4.html#weak-positive-or-negative-relationship",
+    "href": "lectures/4.html#weak-positive-or-negative-relationship",
+    "title": "Numerical Data",
+    "section": "Weak Positive or Negative Relationship",
+    "text": "Weak Positive or Negative Relationship"
+  },
+  {
+    "objectID": "lectures/4.html#scatter-plots-in-r",
+    "href": "lectures/4.html#scatter-plots-in-r",
+    "title": "Numerical Data",
+    "section": "Scatter Plots in R",
+    "text": "Scatter Plots in R\n\nggplot(DATA, aes(x = VAR1, y = VAR2)) +\n  geom_point()"
+  },
+  {
+    "objectID": "lectures/4.html#mr.-trash-wheel-2",
+    "href": "lectures/4.html#mr.-trash-wheel-2",
+    "title": "Numerical Data",
+    "section": "Mr. Trash Wheel",
+    "text": "Mr. Trash Wheel\n\nggplot(trashwheel, aes(PlasticBottles, PlasticBags)) +\n  geom_point()"
+  },
+  {
+    "objectID": "lectures/4.html#transformed-data-2",
+    "href": "lectures/4.html#transformed-data-2",
+    "title": "Numerical Data",
+    "section": "Transformed Data",
+    "text": "Transformed Data\n\nggplot(trashwheel, aes(log(PlasticBottles), log(PlasticBags))) +\n  geom_point()"
+  },
+  {
+    "objectID": "lectures/5.html#what-is-probability",
+    "href": "lectures/5.html#what-is-probability",
+    "title": "Distribution Functions",
+    "section": "What is Probability?",
+    "text": "What is Probability?\nProbability is the measure of how likely an event is to occur. It ranges from 0 to 1:\n\n\\(P(A) = 0\\): The event \\(A\\) will definitely not happen.\n\\(P(A) = 1\\): The event \\(A\\) will definitely happen.\nValues between 0 and 1 represent varying degrees of likelihood."
+  },
+  {
+    "objectID": "lectures/5.html#everyday-examples",
+    "href": "lectures/5.html#everyday-examples",
+    "title": "Distribution Functions",
+    "section": "Everyday Examples",
+    "text": "Everyday Examples\n\nWhat’s the probability it will rain tomorrow?\nWhat are the chances of rolling a 6 on a standard die?\nHow likely is it that a randomly chosen student has a GPA above 3.0?"
+  },
+  {
+    "objectID": "lectures/5.html#key-terms-and-definitions",
+    "href": "lectures/5.html#key-terms-and-definitions",
+    "title": "Distribution Functions",
+    "section": "Key Terms and Definitions",
+    "text": "Key Terms and Definitions\n\nExperimentSample SpaceEventProb. of an Event\n\n\nAn action or process that generates outcomes.\n- Example: Rolling a die.\n\n\nThe set of all possible outcomes of an experiment.\n- Example: For rolling a die, \\(S = \\{1, 2, 3, 4, 5, 6\\}\\).\n\n\nA subset of the sample space, representing outcomes of interest.\n\nExample: Rolling an even number (\\(A = \\{2, 4, 6\\}\\)).\n\n\n\nThe proportion of times an event is expected to occur if the experiment is repeated many times."
+  },
+  {
+    "objectID": "lectures/5.html#the-probability-formula",
+    "href": "lectures/5.html#the-probability-formula",
+    "title": "Distribution Functions",
+    "section": "The Probability Formula",
+    "text": "The Probability Formula\nThe probability of an event \\(A\\) is defined as:\n\\[\nP(A) = \\frac{\\text{Number of favorable outcomes}}{\\text{Total number of possible outcomes}}\n\\]"
+  },
+  {
+    "objectID": "lectures/5.html#example",
+    "href": "lectures/5.html#example",
+    "title": "Distribution Functions",
+    "section": "Example",
+    "text": "Example\nIf we roll a die, what is the probability of rolling a 4?\n\nFavorable outcomes: 1 (rolling a 4).\nTotal outcomes: 6 (since \\(S = \\{1, 2, 3, 4, 5, 6\\}\\)).\n\n\\[\nP(\\text{rolling a 4}) = \\frac{1}{6} \\approx 0.167\n\\]"
+  },
+  {
+    "objectID": "lectures/5.html#rules-of-probability",
+    "href": "lectures/5.html#rules-of-probability",
+    "title": "Distribution Functions",
+    "section": "Rules of Probability",
+    "text": "Rules of Probability\n\nRule 1Rule 2Rule 3\n\n\nProbability of the Sample Space\nThe probability of the sample space is always 1: \\[\nP(S) = 1\n\\]\n\n\nProbability of Impossible Events\nThe probability of an event that cannot happen is 0:\n\\[\nP(\\emptyset) = 0\n\\]\n\n\nComplement Rule\nThe probability of the complement of an event \\(A\\) (not \\(A\\)) is:\n\\[\nP(A^c) = 1 - P(A)\n\\]\n\nExample: If \\(P(\\text{rain}) = 0.3\\), then \\(P(\\text{no rain}) = 1 - 0.3 = 0.7\\)."
+  },
+  {
+    "objectID": "lectures/5.html#applications",
+    "href": "lectures/5.html#applications",
+    "title": "Distribution Functions",
+    "section": "Applications",
+    "text": "Applications\n\nDrawing a CardTossing a Coin TwiceTraffic Lights\n\n\nIf you draw a card from a standard deck of 52 cards, what is the probability of drawing:\n\nA heart?\n\\[\nP(\\text{heart}) = \\frac{13}{52} = 0.25\n  \\]\nA red card (heart or diamond)?\n\\[\nP(\\text{red card}) = \\frac{26}{52} = 0.5\n  \\]\n\n\n\nWhat is the probability of getting:\n\nExactly one head?\nSample space: \\(S = \\{\\text{HH, HT, TH, TT}\\}\\).\nEvent: \\(A = \\{\\text{HT, TH}\\}\\).\n\\[\nP(A) = \\frac{2}{4} = 0.5\n\\]\nAt least one head?\nEvent: \\(B = \\{\\text{HH, HT, TH}\\}\\).\n\\[\nP(B) = \\frac{3}{4} = 0.75\n\\]\n\n\n\nA commuter encounters three traffic lights, each with a 70% chance of being green. Assuming independence, what is the probability that all three lights are green?\n\\[\nP(\\text{all green}) = 0.7 \\cdot 0.7 \\cdot 0.7 = 0.343\n\\]"
+  },
+  {
+    "objectID": "lectures/5.html#more-problems",
+    "href": "lectures/5.html#more-problems",
+    "title": "Distribution Functions",
+    "section": "More Problems",
+    "text": "More Problems\n\nRolling a Die1234\n\n\n\n\n\n1\n2\n3\n4\n5\n6\n\n\n\n\n1/6\n1/6\n1/6\n1/6\n1/6\n1/6\n\n\n\n\n\n\\[\nP(X = 2)\n\\]\n\n\n\\[\nP(1 \\le X \\le 3)\n\\]\n\n\n\\[\nP(1 &lt; X &lt; 3)\n\\]\n\n\n\\[\nP(X &gt; 1)\n\\]"
+  },
+  {
+    "objectID": "lectures/5.html#joint-probability-1",
+    "href": "lectures/5.html#joint-probability-1",
+    "title": "Distribution Functions",
+    "section": "Joint Probability",
+    "text": "Joint Probability\n\nOften, we’re interested in the probabilities of multiple events occurring.\nThis presentation focuses on calculating probabilities involving two events.\nWe’ll explore key concepts like:\n\nJoint Probability\nUnion of Events\nConditional Probability\nIndependence"
+  },
+  {
+    "objectID": "lectures/5.html#joint-probability-2",
+    "href": "lectures/5.html#joint-probability-2",
+    "title": "Distribution Functions",
+    "section": "Joint Probability",
+    "text": "Joint Probability\n\nThe probability of both events A and B occurring.\nDenoted as \\(P(A\\ \\mathrm{and}\\ B)\\) or \\(P(A \\cap B)\\).\nExamples:\n\nDrawing a King and a Heart from a deck of cards.\nFlipping two coins and getting heads on both."
+  },
+  {
+    "objectID": "lectures/5.html#union-of-events",
+    "href": "lectures/5.html#union-of-events",
+    "title": "Distribution Functions",
+    "section": "Union of Events",
+    "text": "Union of Events\n\nThe probability of either event A or event B (or both) occurring.\nDenoted as \\(P(A\\ \\mathrm{or}\\ B)\\) or \\(P(A \\cup B)\\).\nExamples:\n\nRolling a 3 or a 5 on a die.\nDrawing a red card or a face card."
+  },
+  {
+    "objectID": "lectures/5.html#calculating-union-probability",
+    "href": "lectures/5.html#calculating-union-probability",
+    "title": "Distribution Functions",
+    "section": "Calculating Union Probability",
+    "text": "Calculating Union Probability\n\nGeneral Case: \\(P(A \\cup B) = P(A) + P(B) - P(A \\cap B)\\) (Inclusion-Exclusion Principle)\nMutually Exclusive Events: If A and B are mutually exclusive (cannot both occur), then \\(P(A \\cap B) = 0\\), and \\(P(A \\cup B) = P(A) + P(B)\\)"
+  },
+  {
+    "objectID": "lectures/5.html#example-union-probability",
+    "href": "lectures/5.html#example-union-probability",
+    "title": "Distribution Functions",
+    "section": "Example: Union Probability",
+    "text": "Example: Union Probability\n\nWhat is the probability of rolling a number greater than 4 or an even number on a six-sided die?\n\nEvent A: Rolling a number greater than 4 (5 or 6).\nEvent B: Rolling an even number (2, 4, or 6).\n\n\n\n\n\\(P(A) = 2/6\\)\n\\(P(B) = 3/6\\)\n\\(P(A \\cap B) = 1/6\\) (rolling a 6)\n\\(P(A \\cup B) = (2/6) + (3/6) - (1/6) = 4/6 = 2/3\\)"
+  },
+  {
+    "objectID": "lectures/5.html#conditional-probability",
+    "href": "lectures/5.html#conditional-probability",
+    "title": "Distribution Functions",
+    "section": "Conditional Probability",
+    "text": "Conditional Probability\n\nThe conditional probability of event A occurring given that event B has occurred: \\(P(A|B)\\) (read as “the probability of A given B”).\nFormula: \\(P(A|B) =\\frac{P(A \\cap B)}{P(B)}\\)\n\n\\(P(A|B)\\): Conditional probability of A given B.\n\\(P(A \\cap B)\\): Probability of both A and B occurring.\n\\(P(B)\\): Probability of B occurring."
+  },
+  {
+    "objectID": "lectures/5.html#independence",
+    "href": "lectures/5.html#independence",
+    "title": "Distribution Functions",
+    "section": "Independence",
+    "text": "Independence\n\nTwo events are independent if the occurrence of one does not affect the probability of the other.\nIf A and B are independent:\n\n\\(P(A|B) = P(A)\\)\n\\(P(B|A) = P(B)\\)\n\\(P(A \\cap B) = P(A) P(B)\\)"
+  },
+  {
+    "objectID": "lectures/5.html#bayes-theorem",
+    "href": "lectures/5.html#bayes-theorem",
+    "title": "Distribution Functions",
+    "section": "Bayes’ Theorem",
+    "text": "Bayes’ Theorem\n\nReverses the conditioning: Relates P(A|B) to P(B|A).\n\\(P(A|B) = \\frac{P(B|A) * P(A)}{P(B)}\\)\nUseful when we know P(B|A) but want P(A|B)."
+  },
+  {
+    "objectID": "lectures/5.html#random-variable",
+    "href": "lectures/5.html#random-variable",
+    "title": "Distribution Functions",
+    "section": "Random Variable",
+    "text": "Random Variable\nA random variable is a variable whose value is a numerical outcome of a random phenomenon. It’s a way to map the outcomes of a probabilistic event to numbers. This allows us to analyze these outcomes mathematically."
+  },
+  {
+    "objectID": "lectures/5.html#rv-key-concepts",
+    "href": "lectures/5.html#rv-key-concepts",
+    "title": "Distribution Functions",
+    "section": "RV: Key Concepts",
+    "text": "RV: Key Concepts\n\nRandom Phenomenon: This is any process or experiment whose outcome is uncertain.\nOutcomes: The possible results of a random phenomenon are called outcomes.\nNumerical Value: A random variable assigns a numerical value to each outcome."
+  },
+  {
+    "objectID": "lectures/5.html#types-of-random-variables",
+    "href": "lectures/5.html#types-of-random-variables",
+    "title": "Distribution Functions",
+    "section": "Types of Random Variables",
+    "text": "Types of Random Variables\n\nDiscrete Random VariableContinuous Random Variable\n\n\nA discrete random variable can only take on a finite number of values or a countably infinite number of values. The values are often integers. Examples:\n\nThe number of heads in three coin flips (0, 1, 2, or 3).\nThe number of defective light bulbs in a box of 100.\nThe number of customers entering a store in an hour.\n\n\n\nA continuous random variable can take on any value within a given range. Examples:\n\nThe height of a person.\nThe temperature of a room.\nThe time it takes to complete a task."
+  },
+  {
+    "objectID": "lectures/5.html#distribution-functions-1",
+    "href": "lectures/5.html#distribution-functions-1",
+    "title": "Distribution Functions",
+    "section": "Distribution Functions",
+    "text": "Distribution Functions\nA distribution function describes the probabilities of a random variable across its possible values. It answers questions like:\n\nHow likely is a random variable to take on a specific value or fall within a range?\nWhat is the overall “shape” of the distribution of outcomes?"
+  },
+  {
+    "objectID": "lectures/5.html#cumulative-distribution-function",
+    "href": "lectures/5.html#cumulative-distribution-function",
+    "title": "Distribution Functions",
+    "section": "Cumulative Distribution Function",
+    "text": "Cumulative Distribution Function\nThe Cumulative Distribution Function (CDF) describes the probability that a random variable \\(X\\) is less than or equal to a certain value \\(x\\): \\[\nF_X(x) = P(X \\leq x)\n\\]"
+  },
+  {
+    "objectID": "lectures/5.html#properties-of-the-cdf",
+    "href": "lectures/5.html#properties-of-the-cdf",
+    "title": "Distribution Functions",
+    "section": "Properties of the CDF",
+    "text": "Properties of the CDF\n\nRange: The CDF is always between 0 and 1: \\[\n0 \\leq F_X(x) \\leq 1\n\\]\nNon-Decreasing: The CDF never decreases as \\(x\\) increases.\nLimits:\n\n\\(\\lim_{x \\to -\\infty} F_X(x) = 0\\)\n\\(\\lim_{x \\to \\infty} F_X(x) = 1\\)"
+  },
+  {
+    "objectID": "lectures/5.html#cdf-example",
+    "href": "lectures/5.html#cdf-example",
+    "title": "Distribution Functions",
+    "section": "CDF Example",
+    "text": "CDF Example\nFor a die roll (discrete case):\n\n\\(F_X(2) = P(X \\leq 2) = P(X = 1) + P(X = 2) = \\frac{1}{6} + \\frac{1}{6} = \\frac{2}{6}\\).\n\nFor a normal distribution (continuous case):\n\nUse the CDF to find probabilities, typically provided via tables or software."
+  },
+  {
+    "objectID": "lectures/5.html#probability-density-function-pdf",
+    "href": "lectures/5.html#probability-density-function-pdf",
+    "title": "Distribution Functions",
+    "section": "Probability Density Function (PDF)",
+    "text": "Probability Density Function (PDF)\nThe Probability Density Function (PDF) is used for continuous random variables and describes the likelihood of the variable falling within a small interval.\n\\[\nP(a \\leq X \\leq b) = \\int_a^b f_X(x) \\, dx\n\\]\n\n\n\n\n\n\n\nImportant\n\n\n\\[\nP(X = a) = P(a \\leq X \\leq a) = \\int_a^a f_X(x) \\, dx = 0\n\\]"
+  },
+  {
+    "objectID": "lectures/5.html#properties-of-the-pdf",
+    "href": "lectures/5.html#properties-of-the-pdf",
+    "title": "Distribution Functions",
+    "section": "Properties of the PDF:",
+    "text": "Properties of the PDF:\n\nNon-Negative: \\[\nf_X(x) \\geq 0 \\quad \\forall x\n\\]\nTotal Area Under Curve: \\[\n\\int_{-\\infty}^\\infty f_X(x) \\, dx = 1\n\\]"
+  },
+  {
+    "objectID": "lectures/5.html#pdf-examples",
+    "href": "lectures/5.html#pdf-examples",
+    "title": "Distribution Functions",
+    "section": "PDF Examples",
+    "text": "PDF Examples\nThe PDF of the normal distribution is: \\[\nf_X(x) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}} e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}\n\\]\nHere, \\(\\mu\\) is the mean and \\(\\sigma\\) is the standard deviation."
+  },
+  {
+    "objectID": "lectures/5.html#probability-mass-function-pmf",
+    "href": "lectures/5.html#probability-mass-function-pmf",
+    "title": "Distribution Functions",
+    "section": "Probability Mass Function (PMF)",
+    "text": "Probability Mass Function (PMF)\nThe Probability Mass Function (PMF) is used for discrete random variables and gives the probability of each possible value: \\[\nP(X = x) = p_X(x)\n\\]"
+  },
+  {
+    "objectID": "lectures/5.html#properties-of-the-pmf",
+    "href": "lectures/5.html#properties-of-the-pmf",
+    "title": "Distribution Functions",
+    "section": "Properties of the PMF",
+    "text": "Properties of the PMF\n\nNon-Negative: \\[\np_X(x) \\geq 0 \\quad \\forall x\n\\]\nSum of Probabilities: \\[\n\\sum_x p_X(x) = 1\n\\]"
+  },
+  {
+    "objectID": "lectures/5.html#pmf-example",
+    "href": "lectures/5.html#pmf-example",
+    "title": "Distribution Functions",
+    "section": "PMF Example",
+    "text": "PMF Example\nFor a fair die, the PMF is: \\[\np_X(x) = \\frac{1}{6}, \\quad x \\in \\{1, 2, 3, 4, 5, 6\\}\n\\]"
+  },
+  {
+    "objectID": "lectures/5.html#percentiles",
+    "href": "lectures/5.html#percentiles",
+    "title": "Distribution Functions",
+    "section": "Percentiles",
+    "text": "Percentiles\nA percentile is a measure indicating the value below which a given percentage of observations in a group of observations falls. It is used in statistics to provide information about the relative standing of a particular value within a dataset."
+  },
+  {
+    "objectID": "lectures/5.html#percentile-example",
+    "href": "lectures/5.html#percentile-example",
+    "title": "Distribution Functions",
+    "section": "Percentile Example",
+    "text": "Percentile Example\nSuppose we have a random variable X representing the height of adults in a population. If the 90th percentile of X is 180 cm, it means that the probability of a randomly selected adult being 180 cm or shorter is 90%."
+  },
+  {
+    "objectID": "lectures/5.html#precentile",
+    "href": "lectures/5.html#precentile",
+    "title": "Distribution Functions",
+    "section": "Precentile",
+    "text": "Precentile\n\n\nCode\ndata &lt;- rnorm(500000, mean = 100, sd = 15) |&gt; data.frame(x = _)  # Example: normally distributed data\n\n# Calculate the 75th percentile\npercentile_75 &lt;- qnorm(0.75, 100, 15)\n\nggplot(data = data, aes(x = x)) +\n  geom_density(fill = \"skyblue\", alpha = 0.5) +  # Density curve\n  geom_vline(xintercept = percentile_75, color = \"red\", linetype = \"dashed\", size = 1) +\n  labs(title = \"Density Plot with 75th Percentile Highlighted\", x = \"Data Value\", y = \"Density\") +\n  theme_bw()"
+  },
+  {
+    "objectID": "lectures/5.html#applications-1",
+    "href": "lectures/5.html#applications-1",
+    "title": "Distribution Functions",
+    "section": "Applications",
+    "text": "Applications\n\nPMF of a Coin TossCDF of an Exp. Dist.Apps. in Real Life\n\n\nFor a fair coin tossed once:\n\n\\(X = 0\\): Tails, \\(P(X = 0) = 0.5\\)\n\\(X = 1\\): Heads, \\(P(X = 1) = 0.5\\)\n\nThe PMF is: \\[\np_X(x) =\n\\begin{cases}\n0.5 & x = 0 \\text{ or } x = 1 \\\\\n0 & \\text{otherwise}\n\\end{cases}\n\\]\n\n\nAn exponential random variable with rate \\(\\lambda &gt; 0\\) has a CDF: \\[\nF_X(x) =\n\\begin{cases}\n1 - e^{-\\lambda x}, & x \\geq 0 \\\\\n0, & x &lt; 0\n\\end{cases}\n\\]\nThis can be used to model waiting times between events.\n\n\n\nPMF:\n\nNumber of emails received per hour.\n\nPDF:\n\nHeights of students in a class.\n\nCDF:\n\nThe likelihood of completing a task within a certain time frame."
+  },
+  {
+    "objectID": "lectures/5.html#common-contisuous-rv",
+    "href": "lectures/5.html#common-contisuous-rv",
+    "title": "Distribution Functions",
+    "section": "Common Contisuous RV",
+    "text": "Common Contisuous RV\n\n\n\n\n\n\n\n\n\nContinuous RV\nParameters\nNotation\nSupport\n\n\n\n\nUniform\na (minimum), b (maximum)\nUnif(a, b)\n[a, b]\n\n\nNormal (Gaussian)\nμ (mean), σ (standard deviation)\nN(μ, σ²)\n(-∞, ∞)\n\n\nExponential\nλ (rate)\nExp(λ)\n[0, ∞)\n\n\nGamma\nk (shape), θ (scale)\nΓ(k, θ)\n[0, ∞)\n\n\nBeta\nα (shape 1), β (shape 2)\nBeta(α, β)\n[0,1]\n\n\nChi-Squared\nk (degrees of freedom)\nχ²(k)\n[0, ∞)\n\n\nt-distribution\nν (degrees of freedom)\nt(ν)\n(-∞, ∞)\n\n\nF-distribution\nν₁ (degrees of freedom 1), ν₂ (degrees of freedom 2)\nF(ν₁, ν₂)\n[0, ∞)\n\n\nWeibull\nk (shape), λ (scale)\nWeibull(k, λ)\n[0, ∞)\n\n\nLognormal\nμ (location), σ (scale)\nLognormal(μ, σ)\n[0, ∞)"
+  },
+  {
+    "objectID": "lectures/5.html#common-discrete-rv",
+    "href": "lectures/5.html#common-discrete-rv",
+    "title": "Distribution Functions",
+    "section": "Common Discrete RV",
+    "text": "Common Discrete RV\n\n\n\n\n\n\n\n\n\nDiscrete RV\nParameters\nNotation\nSupport\n\n\n\n\nBernoulli\np (probability of success)\nBernoulli(p)\n{0, 1}\n\n\nBinomial\nn (number of trials), p (probability of success)\nBin(n, p)\n{0, 1, 2, …, n}\n\n\nGeometric\np (probability of success)\nGeo(p)\n{1, 2, 3, …}\n\n\nPoisson\nλ (average rate of events)\nPois(λ)\n{0, 1, 2, …}\n\n\nNegative Binomial\nr (number of successes), p (probability of success)\nNB(r, p)\n{r, r+1, r+2, …}\n\n\nDiscrete Uniform\nn (number of possible outcomes)\nDUnif(1, n)\n{1, 2, …, n} or a set of n values"
+  },
+  {
+    "objectID": "lectures/5.html#probability-and-pdmf",
+    "href": "lectures/5.html#probability-and-pdmf",
+    "title": "Distribution Functions",
+    "section": "Probability and PD/MF",
+    "text": "Probability and PD/MF\n\nContinuousDiscrete\n\n\n\n\nCode\nmean &lt;- 0  # Mean of the distribution\nsd &lt;- 1   # Standard deviation of the distribution\n\n# Generate data points for the curve (more points = smoother curve)\nx &lt;- seq(mean - 3*sd, mean + 3*sd, length.out = 100)  # Range covering most of the distribution\ny &lt;- dnorm(x, mean = mean, sd = sd)  # Calculate the density at each x value\n\n# Create the plot\nggplot(data = data.frame(x, y), aes(x = x, y = y)) +\n  geom_line(color = \"blue\", size = 1) +  # Line for the distribution curve\n  labs(x = \"X\",\n       y = \"Probability Density\") +\n  theme_bw() + # A clean theme\n  scale_x_continuous(breaks = seq(mean - 3*sd, mean + 3*sd, by = sd)) # Ticks at standard deviations\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nn &lt;- 10   # Number of trials\np &lt;- 0.3  # Probability of success on each trial\n\n# Generate the data for the plot\nx &lt;- 0:n  # Possible values for the random variable (number of successes)\ny &lt;- dbinom(x, size = n, prob = p)  # Calculate the probabilities\n\n# Create the plot using geom_col (for discrete data)\nggplot(data = data.frame(x, y), aes(x = factor(x), y = y)) +  # x as factor for discrete bars\n  geom_col(fill = \"skyblue\", color = \"black\") +\n  labs(title = paste(\"Binomial Distribution (n =\", n, \", p =\", p, \")\"),\n       x = \"Number of Successes (x)\",\n       y = \"Probability P(X = x)\") +\n  theme_bw()"
+  },
+  {
+    "objectID": "lectures/5.html#normal-distribution-1",
+    "href": "lectures/5.html#normal-distribution-1",
+    "title": "Distribution Functions",
+    "section": "Normal Distribution",
+    "text": "Normal Distribution\nThe Normal Distribution is a probability distribution that is symmetric, with most of the data points clustering around the mean.\n\nIt’s bell-shaped and is defined mathematically by two parameters:\n\nMean (\\(\\mu\\)): The center or peak of the distribution.\nStandard Deviation (\\(\\sigma\\)): Controls the spread of the distribution.\n\n\n\n\n\n\n\n\n\nImportant\n\n\nFor any normally distributed data, the highest probability density is at the mean, and as you move away from the mean, the probability density gradually decreases."
+  },
+  {
+    "objectID": "lectures/5.html#properties",
+    "href": "lectures/5.html#properties",
+    "title": "Distribution Functions",
+    "section": "Properties",
+    "text": "Properties\n\nSymmetry: It is perfectly symmetric about the mean, meaning the left side is a mirror image of the right.\nUnimodal: There is a single peak at the mean.\nMean, Median, and Mode are Equal: In a normal distribution, these three measures of central tendency are located at the same point.\n68-95-99.7 Rule (Empirical Rule)\n\n\nThis rule helps us understand how data is distributed in a normal curve and provides a quick way to estimate probabilities for normally distributed data."
+  },
+  {
+    "objectID": "lectures/5.html#normal-distribution-2",
+    "href": "lectures/5.html#normal-distribution-2",
+    "title": "Distribution Functions",
+    "section": "Normal Distribution",
+    "text": "Normal Distribution\n\n\\[\nX\\sim N(\\mu, \\sigma)\n\\]\n\\[\n-\\infty &lt; X &lt; \\infty\n\\]\n\n\\[\nf_X(x) = \\frac{1}{\\sqrt{2\\pi \\sigma}} e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}\n\\]"
+  },
+  {
+    "objectID": "lectures/5.html#the-standard-normal-distribution",
+    "href": "lectures/5.html#the-standard-normal-distribution",
+    "title": "Distribution Functions",
+    "section": "The Standard Normal Distribution",
+    "text": "The Standard Normal Distribution\nThe Standard Normal Distribution is a special type of normal distribution with a mean of 0 and a standard deviation of 1. It’s often used as a reference to convert any normal distribution to a standard form."
+  },
+  {
+    "objectID": "lectures/5.html#z-scores",
+    "href": "lectures/5.html#z-scores",
+    "title": "Distribution Functions",
+    "section": "Z-Scores",
+    "text": "Z-Scores\nA Z-score (or standard score) tells us how many standard deviations an individual data point is from the mean. It’s calculated as:\n\\[\nZ = \\frac{X - \\mu}{\\sigma}\n\\]\n\nIf \\(Z\\) is positive, the data point is above the mean.\nIf \\(Z\\) is negative, the data point is below the mean.\nUsing Z-scores, we can compare values across different normal distributions or find the probability associated with a particular score."
+  },
+  {
+    "objectID": "lectures/5.html#why-the-normal-distribution-is-important",
+    "href": "lectures/5.html#why-the-normal-distribution-is-important",
+    "title": "Distribution Functions",
+    "section": "Why the Normal Distribution is Important",
+    "text": "Why the Normal Distribution is Important\n\nIt Describes Many Natural Phenomena: Heights, weights, test scores, measurement errors, and countless other variables follow a normal distribution, especially when influenced by many small, random factors.\nPredictive Power: With normally distributed data, we can make predictions and infer probabilities, thanks to the 68-95-99.7 rule.\nCentral Limit Theorem: The normal distribution is foundational to the Central Limit Theorem, which tells us that, regardless of the original data distribution, the sampling distribution of the sample mean will approach a normal distribution as sample size increases.\nEase of Use in Statistical Methods: Many statistical tests and methods assume normality, allowing for simplified calculations and reliable inferences."
+  },
+  {
+    "objectID": "lectures/5.html#apps-of-the-normal-dist.",
+    "href": "lectures/5.html#apps-of-the-normal-dist.",
+    "title": "Distribution Functions",
+    "section": "Apps of the Normal Dist.",
+    "text": "Apps of the Normal Dist.\n\nStandardized TestingFinance\n\n\nScores on standardized tests, such as IQ tests or the SAT, are often designed to follow a normal distribution. By knowing a student’s score in terms of Z-scores, we can determine their percentile or how they compare to other test-takers.\n\n\nIn finance, stock returns and other economic factors are often modeled with a normal distribution to estimate risk, forecast trends, and make informed investment decisions."
+  },
+  {
+    "objectID": "lectures/5.html#finding-probability",
+    "href": "lectures/5.html#finding-probability",
+    "title": "Distribution Functions",
+    "section": "Finding Probability",
+    "text": "Finding Probability\n\\[\nX \\sim N(\\mu, \\sigma)\n\\]\n\n\\[\nP(a \\leq X \\leq b) = P(a &lt; X &lt; b) = \\int_a^b \\frac{1}{\\sqrt{2\\pi\\sigma^2}} e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}} dx\n\\]"
+  },
+  {
+    "objectID": "lectures/5.html#what-is-the-empirical-rule",
+    "href": "lectures/5.html#what-is-the-empirical-rule",
+    "title": "Distribution Functions",
+    "section": "What is the Empirical Rule?",
+    "text": "What is the Empirical Rule?\nThe Empirical Rule provides a way to understand the spread of data in a normal distribution by describing how data points cluster around the mean. According to this rule:\n\nApproximately 68% of data points fall within one standard deviation of the mean.\nApproximately 95% of data points fall within two standard deviations of the mean.\nApproximately 99.7% of data points fall within three standard deviations of the mean.\n\nThe empirical rule is very helpful because, with just the mean and standard deviation, we can quickly estimate how data is distributed within a normal curve."
+  },
+  {
+    "objectID": "lectures/5.html#empirical-rule-to-the-normal-dist.",
+    "href": "lectures/5.html#empirical-rule-to-the-normal-dist.",
+    "title": "Distribution Functions",
+    "section": "Empirical Rule to the Normal Dist.",
+    "text": "Empirical Rule to the Normal Dist.\nLet’s define the key terms and apply the empirical rule to the normal distribution.\n\nMean (μ): This is the central point of the normal distribution where the data clusters around.\nStandard Deviation (σ): This is a measure of how spread out the data points are from the mean."
+  },
+  {
+    "objectID": "lectures/5.html#empirical-rule-to-the-normal-dist.-1",
+    "href": "lectures/5.html#empirical-rule-to-the-normal-dist.-1",
+    "title": "Distribution Functions",
+    "section": "Empirical Rule to the Normal Dist.",
+    "text": "Empirical Rule to the Normal Dist.\nIn a normal distribution:\n\n68% of data lies between \\((\\mu - \\sigma)\\) and \\((\\mu + \\sigma)\\).\n95% of data lies between \\((\\mu - 2\\sigma)\\) and \\((\\mu + 2\\sigma)\\).\n99.7% of data lies between \\((\\mu - 3\\sigma)\\) and \\((\\mu + 3\\sigma)\\).\n\nThese intervals allow us to estimate probabilities for data within each range without needing to calculate exact probabilities."
+  },
+  {
+    "objectID": "lectures/5.html#visualizing-the-empirical-rule",
+    "href": "lectures/5.html#visualizing-the-empirical-rule",
+    "title": "Distribution Functions",
+    "section": "Visualizing the Empirical Rule",
+    "text": "Visualizing the Empirical Rule\nTo better understand the empirical rule, imagine a symmetric, bell-shaped normal curve. Here’s how it would look based on the empirical rule:\n\nThe 68% region represents the middle of the curve, starting one standard deviation left of the mean and ending one standard deviation right.\nThe 95% region stretches further out, covering almost the entire curve except for the outer tails.\nThe 99.7% region includes nearly all data points, covering the entire curve except for a tiny fraction at each extreme.\n\nThis visualization shows how the data is most concentrated around the mean, with less data appearing as we move further away."
+  },
+  {
+    "objectID": "lectures/5.html#using-the-empirical-rule-for-probabilities",
+    "href": "lectures/5.html#using-the-empirical-rule-for-probabilities",
+    "title": "Distribution Functions",
+    "section": "Using the Empirical Rule for Probabilities",
+    "text": "Using the Empirical Rule for Probabilities\nThe empirical rule helps us answer questions like:\n\nWhat percentage of data points fall within a certain range?\nHow unusual is a data point located far from the mean?"
+  },
+  {
+    "objectID": "lectures/5.html#examples",
+    "href": "lectures/5.html#examples",
+    "title": "Distribution Functions",
+    "section": "Examples",
+    "text": "Examples\n\nIf we know that a data point lies more than two standard deviations away from the mean, we know it’s in the outer 5% of the distribution, making it relatively rare.\nUsing the rule, we can estimate that around 95% of values should lie within two standard deviations of the mean. If we observe data points outside of this range, we might consider them outliers."
+  },
+  {
+    "objectID": "lectures/5.html#more-examples",
+    "href": "lectures/5.html#more-examples",
+    "title": "Distribution Functions",
+    "section": "More Examples",
+    "text": "More Examples\n\nExam ScoresHeights of Adults\n\n\nSuppose exam scores are normally distributed with a mean of 70 and a standard deviation of 10.\n\n68% of students scored between 60 and 80 (70 ± 10).\n95% of students scored between 50 and 90 (70 ± 20).\n99.7% of students scored between 40 and 100 (70 ± 30).\n\n\n\nAssume that adult heights follow a normal distribution with a mean height of 170 cm and a standard deviation of 8 cm.\n\n68% of adults have heights between 162 cm and 178 cm (170 ± 8).\n95% of adults have heights between 154 cm and 186 cm (170 ± 16).\n99.7% of adults have heights between 146 cm and 194 cm (170 ± 24)."
+  },
+  {
+    "objectID": "lectures/5.html#binomial-distribution-1",
+    "href": "lectures/5.html#binomial-distribution-1",
+    "title": "Distribution Functions",
+    "section": "Binomial Distribution",
+    "text": "Binomial Distribution\nThe Binomial Distribution is a probability distribution that models the number of successes in a fixed number of trials, where each trial has:\n\nTwo possible outcomes: typically called “success” and “failure.”\nA constant probability of success, \\(p\\), on each trial."
+  },
+  {
+    "objectID": "lectures/5.html#real-world-examples",
+    "href": "lectures/5.html#real-world-examples",
+    "title": "Distribution Functions",
+    "section": "Real-World Examples:",
+    "text": "Real-World Examples:\n\nTossing a coin \\(n\\) times and counting how many heads you get.\nRolling a die \\(n\\) times and counting how many times you roll a 6.\nAdministering a medical treatment to \\(n\\) patients and recording how many recover.\n\n\nThe binomial distribution answers questions like:\n\n“What is the probability of getting exactly 3 heads in 5 coin tosses?”\n“What is the likelihood of at least 4 successes in 10 trials?”"
+  },
+  {
+    "objectID": "lectures/5.html#conditions-for-a-binomial-experiment",
+    "href": "lectures/5.html#conditions-for-a-binomial-experiment",
+    "title": "Distribution Functions",
+    "section": "Conditions for a Binomial Experiment",
+    "text": "Conditions for a Binomial Experiment\n\nFixed Number of Trials (\\(n\\)):\n\nThe experiment consists of a set number of trials.\n\nTwo Possible Outcomes:\n\nEach trial results in either a success (e.g., heads) or a failure (e.g., tails).\n\nConstant Probability of Success (\\(p\\)):\n\nThe probability of success remains the same for each trial.\n\nIndependence:\n\nThe outcome of one trial does not affect the outcomes of other trials."
+  },
+  {
+    "objectID": "lectures/5.html#the-binomial-probability-formula",
+    "href": "lectures/5.html#the-binomial-probability-formula",
+    "title": "Distribution Functions",
+    "section": "The Binomial Probability Formula",
+    "text": "The Binomial Probability Formula\n\\[\nP(X = k) = \\binom{n}{k} p^k (1-p)^{n-k}\n\\]\nWhere:\n\n\\(P(X = k)\\): Probability of exactly \\(k\\) successes.\n\\(n\\): Number of trials.\n\\(k\\): Number of successes.\n\\(p\\): Probability of success on a single trial.\n\\(1-p\\): Probability of failure.\n\\(\\binom{n}{k} = \\frac{n!}{k!(n-k)!}\\): Represents the number of ways to choose \\(k\\) successes from \\(n\\) trials"
+  },
+  {
+    "objectID": "lectures/5.html#example-calculation",
+    "href": "lectures/5.html#example-calculation",
+    "title": "Distribution Functions",
+    "section": "Example Calculation",
+    "text": "Example Calculation\nSuppose you flip a fair coin 5 times (\\(n = 5, p = 0.5\\)) and want to know the probability of getting exactly 3 heads (\\(k = 3\\)).\n\n\\[\nP(X = 3) = \\binom{5}{3} (0.5)^3 (1-0.5)^{5-3}\n\\]"
+  },
+  {
+    "objectID": "lectures/5.html#properties-of-the-binomial-dist.",
+    "href": "lectures/5.html#properties-of-the-binomial-dist.",
+    "title": "Distribution Functions",
+    "section": "Properties of the Binomial Dist.",
+    "text": "Properties of the Binomial Dist.\n\nMean and VarianceShape of the Distribution\n\n\nFor a binomial random variable \\(X\\):\n\nMean (Expected Value): \\(\\mu = n \\cdot p\\)\nVariance: \\(\\sigma^2 = n \\cdot p \\cdot (1-p)\\)\nStandard Deviation: \\(\\sigma = \\sqrt{n \\cdot p \\cdot (1-p)}\\)\n\n\n\n\nIf \\(p = 0.5\\), the distribution is symmetric.\nIf \\(p &gt; 0.5\\), the distribution is skewed left.\nIf \\(p &lt; 0.5\\), the distribution is skewed right."
+  },
+  {
+    "objectID": "lectures/5.html#applications-2",
+    "href": "lectures/5.html#applications-2",
+    "title": "Distribution Functions",
+    "section": "Applications",
+    "text": "Applications\n\nQuality ControlSportsClinical Trials\n\n\nA factory produces lightbulbs, and 95% of them meet quality standards. If you randomly test 10 bulbs, what is the probability that exactly 8 bulbs pass the test?\nHere:\n\n\\(n = 10\\), \\(p = 0.95\\), \\(k = 8\\).\n\n\\[\nP(X = 8) = \\binom{10}{8} (0.95)^8 (0.05)^2\n\\]\n\n\nA basketball player has a 60% chance of making a free throw. If they take 5 shots, what is the probability of making at least 3 shots?\nHere: - \\(n = 5\\), \\(p = 0.6\\).\n\\[\nP(X \\geq 3) = P(X = 3) + P(X = 4) + P(X = 5)\n\\]\n\n\nIn a clinical trial, a new drug has a 70% success rate. If 15 patients are treated, what is the probability that exactly 10 respond positively to the treatment?"
+  },
+  {
+    "objectID": "lectures/5.html#poisson-distribution-1",
+    "href": "lectures/5.html#poisson-distribution-1",
+    "title": "Distribution Functions",
+    "section": "Poisson Distribution",
+    "text": "Poisson Distribution\nThe Poisson Distribution is a discrete probability distribution that models the number of events occurring within a fixed interval. These events must happen independently and at a constant average rate."
+  },
+  {
+    "objectID": "lectures/5.html#real-world-examples-1",
+    "href": "lectures/5.html#real-world-examples-1",
+    "title": "Distribution Functions",
+    "section": "Real-World Examples",
+    "text": "Real-World Examples\n\nThe number of emails you receive in an hour.\nThe number of cars passing through a toll booth in 10 minutes.\nThe number of defects in a square meter of fabric.\n\n\nThe Poisson distribution helps us answer questions like:\n\n“What is the probability of receiving 5 emails in the next hour?”\n“How likely is it to have 2 defects in a single square meter?”"
+  },
+  {
+    "objectID": "lectures/5.html#conditions-for-the-poisson-dist.",
+    "href": "lectures/5.html#conditions-for-the-poisson-dist.",
+    "title": "Distribution Functions",
+    "section": "Conditions for the Poisson Dist.",
+    "text": "Conditions for the Poisson Dist.\n\nEvents Occur Randomly:\n\nThe events are random and unpredictable.\n\nIndependence:\n\nThe occurrence of one event does not affect the probability of another event occurring.\n\nConstant Average Rate (\\(\\lambda\\)):\n\nThe average number of events (\\(\\lambda\\)) over a fixed interval remains constant.\n\nNon-Overlapping Intervals:\n\nEvents in one interval do not influence events in another."
+  },
+  {
+    "objectID": "lectures/5.html#the-poisson-probability-formula",
+    "href": "lectures/5.html#the-poisson-probability-formula",
+    "title": "Distribution Functions",
+    "section": "The Poisson Probability Formula",
+    "text": "The Poisson Probability Formula\n\\[\nP(X = k) = \\frac{\\lambda^k e^{-\\lambda}}{k!}\n\\]\nWhere:\n\n\\(P(X = k)\\): Probability of \\(k\\) events occurring.\n\\(\\lambda\\): Average number of events in the interval.\n\\(e \\approx 2.718\\)\n\\(k!\\): Factorial of \\(k\\), calculated as \\(k \\times (k-1) \\times \\dots \\times 1\\)."
+  },
+  {
+    "objectID": "lectures/5.html#example-calculation-1",
+    "href": "lectures/5.html#example-calculation-1",
+    "title": "Distribution Functions",
+    "section": "Example Calculation",
+    "text": "Example Calculation\nSuppose a call center receives an average of 10 calls per hour (\\(\\lambda = 10\\)). What is the probability of receiving exactly 7 calls in the next hour ($ k = 7 $)?\n\\[\nP(X = 7) = \\frac{10^7 e^{-10}}{7!}\n\\]"
+  },
+  {
+    "objectID": "lectures/5.html#poisson-distribution-properties",
+    "href": "lectures/5.html#poisson-distribution-properties",
+    "title": "Distribution Functions",
+    "section": "Poisson Distribution Properties",
+    "text": "Poisson Distribution Properties\n\nMean: \\(\\mu = \\lambda\\)\nVariance: \\(\\sigma^2 = \\lambda\\)\nStandard Deviation: \\(\\sigma = \\sqrt{\\lambda}\\)"
+  },
+  {
+    "objectID": "lectures/5.html#applications-3",
+    "href": "lectures/5.html#applications-3",
+    "title": "Distribution Functions",
+    "section": "Applications",
+    "text": "Applications\n\nTraffic FlowDefective Products\n\n\nA toll booth observes an average of 3 cars passing through every 5 minutes (\\(\\lambda = 3\\)). What is the probability of seeing exactly 5 cars in the next 5 minutes?\nUsing the formula: \\[\nP(X = 5) = \\frac{3^5 e^{-3}}{5!} = \\frac{243 \\cdot 0.0498}{120} \\approx 0.1008\n\\]\n\n\nA factory produces an average of 2 defective items per day (\\(\\lambda = 2\\)). What is the probability of finding no defective items in a day (\\(k = 0\\))?\n\\[\nP(X = 0) = \\frac{2^0 e^{-2}}{0!} = e^{-2} \\approx 0.1353\n\\]"
+  },
+  {
+    "objectID": "lectures/5.html#distributions-in-r",
+    "href": "lectures/5.html#distributions-in-r",
+    "title": "Distribution Functions",
+    "section": "Distributions in R",
+    "text": "Distributions in R\n\n?Distributions"
+  },
+  {
+    "objectID": "lectures/5.html#function-structure",
+    "href": "lectures/5.html#function-structure",
+    "title": "Distribution Functions",
+    "section": "Function Structure",
+    "text": "Function Structure\n\n\n\nLetter\nFunctionality\n\n\n\n\n“d”\nreturns the height of the probability density function\n\n\n“p”\nreturns the cummulative density function value\n\n\n“q”\nreturns the inverse cummulative density function (percentiles)\n\n\n“r”\nreturns a randomly generated number"
+  },
+  {
+    "objectID": "lectures/5.html#probabilities",
+    "href": "lectures/5.html#probabilities",
+    "title": "Distribution Functions",
+    "section": "Probabilities",
+    "text": "Probabilities\nR can compute the probabilities of a distribution given the correct parameters:\n\nCummulative probability: p is used in front of the distribution R function\nProbability for a discrete distribution: d is used in front of the distribution R function\n\nNote: Continuous Distribution Functions will not yield a valid probability value."
+  },
+  {
+    "objectID": "lectures/5.html#examples-1",
+    "href": "lectures/5.html#examples-1",
+    "title": "Distribution Functions",
+    "section": "Examples",
+    "text": "Examples\n\n123\n\n\nFind \\(P(X \\leq 5 )\\) where \\(X \\sim N(6,2)\\).\n\n\nCode\npnorm(5, mean = 6, sd = 2)\n\n\n\n\nFind \\(P(X \\geq 7 )\\) where \\(X \\sim N(6,2)\\).\n\n\nCode\n1 - pnorm(7, mean = 6, sd = 2)\n\n\n\n\nFind \\(P(X = 20 )\\) where \\(X \\sim Bin(30,0.8)\\).\n\n\nCode\ndbinom(20, size = 30, prob = 0.8)"
+  },
+  {
+    "objectID": "lectures/5.html#more-examples-1",
+    "href": "lectures/5.html#more-examples-1",
+    "title": "Distribution Functions",
+    "section": "More Examples",
+    "text": "More Examples\n\n123\n\n\nFind \\(P(2 \\leq X \\leq 5 )\\) where \\(X \\sim N(6,2)\\).\n\n\nCode\npnorm(5, 6, 2) - pnorm(2, 6, 2) \n\n\n\n\nFind \\(P(14 &lt; X &lt; 20)\\) where \\(X \\sim Pois(16)\\).\n\n\nCode\nppois(19, lambda = 16) - ppois(14, lambda = 16)\n\n## OR\n\ndpois(15, 16) + dpois(16, 16) + dpois(17, 16) + dpois(18, 16) + dpois(19, 16)\n\n\n\n\nFind \\(P(23 &lt; X)\\) where \\(X \\sim Pois(12)\\).\n\n\nCode\n1 - ppois(23, 12)"
+  },
+  {
+    "objectID": "lectures/5.html#percentiles-1",
+    "href": "lectures/5.html#percentiles-1",
+    "title": "Distribution Functions",
+    "section": "Percentiles",
+    "text": "Percentiles\nFinding the values (percentiles) for any distributions can be found by using the q-based distribution R function such as qnorm(), qpois(), and qbinom() functions."
+  },
+  {
+    "objectID": "lectures/5.html#examples-2",
+    "href": "lectures/5.html#examples-2",
+    "title": "Distribution Functions",
+    "section": "Examples",
+    "text": "Examples\n\n123\n\n\nFinding the \\(95^{th}\\) percentile from \\(N(0,1)\\), we will use the qnorm().\n\n\nCode\nqnorm(.95, 0, 1)\n\n\n\n\nFinding the \\(95^{th}\\) percentile from a Poisson distribution with \\(\\lambda = 9.5\\).\n\n\nCode\nqpois(.95, 9.5)\n\n\n\n\nFinding the \\(75^{th}\\) percentile for \\(Bin(45,.4)\\).\n\n\nCode\nqbinom(.75, 45, .4)"
+  },
+  {
+    "objectID": "lectures/5.html#random-number-generator",
+    "href": "lectures/5.html#random-number-generator",
+    "title": "Distribution Functions",
+    "section": "Random Number Generator",
+    "text": "Random Number Generator\nR is capable of generating random numbers. For example if we want to generate a random sample of size fifty from a normal distribution with mean eight and variance three, we will use the rnorm(). If we want to generate a random sample from any distribution, use the distribution function with r in front of it."
+  },
+  {
+    "objectID": "lectures/5.html#examples-3",
+    "href": "lectures/5.html#examples-3",
+    "title": "Distribution Functions",
+    "section": "Examples",
+    "text": "Examples\n\n1234\n\n\nLet’s first generate the random sample of fifty from \\(X \\sim N(8,3)\\).\n\n\nCode\nrnorm(50, 8, sqrt(3))\n\n\n\n\nGenerate a random sample of 100 form an \\(X \\sim Gamma (2,3)\\).\n\n\nCode\nrgamma(100, 2,3)\n\n\n\n\nGenerate a random sample of 100 form an \\(X \\sim Binom (25,.23)\\).\n\n\nCode\nrbinom(n = 100, size  = 25, prob = 0.23)\n\n\n\n\nGenerate a random sample of 100 form an \\(X \\sim Pois (34.4)\\).\n\n\nCode\nrpois(n = 100, lambda = 34.4)"
+  },
+  {
+    "objectID": "lectures/6.html#explaining-variation",
+    "href": "lectures/6.html#explaining-variation",
+    "title": "Simple Linear Regression",
+    "section": "Explaining Variation",
+    "text": "Explaining Variation\n\nThis is the process where we try to reduce the variation with the use of other variables.\n\n\nCan be thought of as getting it less wrong when taking an educated guess."
+  },
+  {
+    "objectID": "lectures/6.html#explaining-variation-1",
+    "href": "lectures/6.html#explaining-variation-1",
+    "title": "Simple Linear Regression",
+    "section": "Explaining Variation",
+    "text": "Explaining Variation\n\n\nCode\nggplot(penguins, aes(body_mass_g)) +\n  geom_density()"
+  },
+  {
+    "objectID": "lectures/6.html#variation-with-one-variable",
+    "href": "lectures/6.html#variation-with-one-variable",
+    "title": "Simple Linear Regression",
+    "section": "Variation with One Variable",
+    "text": "Variation with One Variable\n\n\nCode\nggplot(penguins, aes(body_mass_g, fill = species)) +\n  geom_density(alpha = .5)"
+  },
+  {
+    "objectID": "lectures/6.html#generated-model",
+    "href": "lectures/6.html#generated-model",
+    "title": "Simple Linear Regression",
+    "section": "Generated Model",
+    "text": "Generated Model\n\\[\nY \\sim DGP_1\n\\]"
+  },
+  {
+    "objectID": "lectures/6.html#a-simple-model-1",
+    "href": "lectures/6.html#a-simple-model-1",
+    "title": "Simple Linear Regression",
+    "section": "A Simple Model",
+    "text": "A Simple Model\n\n\nCode\nggplot(penguins, aes(body_mass_g)) +\n  geom_density()"
+  },
+  {
+    "objectID": "lectures/6.html#a-simple-model-2",
+    "href": "lectures/6.html#a-simple-model-2",
+    "title": "Simple Linear Regression",
+    "section": "A Simple Model",
+    "text": "A Simple Model\n\\[\nY = \\_\\_\\_ + error\n\\]"
+  },
+  {
+    "objectID": "lectures/6.html#notation",
+    "href": "lectures/6.html#notation",
+    "title": "Simple Linear Regression",
+    "section": "Notation",
+    "text": "Notation\n\\[\nY = \\ \\ \\ \\ \\ \\ \\ \\ \\ + \\varepsilon\n\\]"
+  },
+  {
+    "objectID": "lectures/6.html#the-simple-generated-model",
+    "href": "lectures/6.html#the-simple-generated-model",
+    "title": "Simple Linear Regression",
+    "section": "The Simple Generated Model",
+    "text": "The Simple Generated Model\n\\[\nY \\sim \\beta_0 + \\varepsilon\n\\]\n\\[\n\\varepsilon \\sim DGP_2\n\\]\n\n\\(DGP_2\\) is not the same as the \\(DGP_1\\), it is transformed due \\(\\beta_0\\). Consider this the NULL \\(DGP\\)."
+  },
+  {
+    "objectID": "lectures/6.html#observing-data",
+    "href": "lectures/6.html#observing-data",
+    "title": "Simple Linear Regression",
+    "section": "Observing Data",
+    "text": "Observing Data\n\\[\nY = \\beta_0 + \\varepsilon\n\\]"
+  },
+  {
+    "objectID": "lectures/6.html#estimated-line",
+    "href": "lectures/6.html#estimated-line",
+    "title": "Simple Linear Regression",
+    "section": "Estimated Line",
+    "text": "Estimated Line\n\\[\n\\hat Y=\\hat\\beta_0\n\\]"
+  },
+  {
+    "objectID": "lectures/6.html#notation-1",
+    "href": "lectures/6.html#notation-1",
+    "title": "Simple Linear Regression",
+    "section": "Notation",
+    "text": "Notation\n\n\nObserved\n\\[\nY = \\beta_0 + \\varepsilon\n\\]\n\nEstimated\n\\[\n\\hat Y = \\hat \\beta_0\n\\]"
+  },
+  {
+    "objectID": "lectures/6.html#indexing-data",
+    "href": "lectures/6.html#indexing-data",
+    "title": "Simple Linear Regression",
+    "section": "Indexing Data",
+    "text": "Indexing Data\nThe data in a data set can be indexed by a number.\n\npenguins[1,-c(1:2)]\n\n#&gt; # A tibble: 1 × 6\n#&gt;   bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex    year\n#&gt;            &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt; &lt;fct&gt; &lt;int&gt;\n#&gt; 1           39.1          18.7               181        3750 male   2007\n\n\n\nMaking the variable “body_mass_g” be represented by \\(Y\\) and “flipper_length_mm” as \\(X\\):\n\\[\nY_1 = 3750 \\ \\ X_1=181\n\\]"
+  },
+  {
+    "objectID": "lectures/6.html#indexing-data-1",
+    "href": "lectures/6.html#indexing-data-1",
+    "title": "Simple Linear Regression",
+    "section": "Indexing Data",
+    "text": "Indexing Data\n\\[\nY_i, X_i\n\\]"
+  },
+  {
+    "objectID": "lectures/6.html#data",
+    "href": "lectures/6.html#data",
+    "title": "Simple Linear Regression",
+    "section": "Data",
+    "text": "Data\nWith the data that we collect from a sample, we hypothesize how the data was generated.\n\nUsing a simple model:\n\\[\nY_i = \\beta_0 + \\varepsilon_i\n\\]"
+  },
+  {
+    "objectID": "lectures/6.html#estimated-value",
+    "href": "lectures/6.html#estimated-value",
+    "title": "Simple Linear Regression",
+    "section": "Estimated Value",
+    "text": "Estimated Value\n\\[\n\\hat Y_i = \\hat \\beta_0\n\\]"
+  },
+  {
+    "objectID": "lectures/6.html#estimation",
+    "href": "lectures/6.html#estimation",
+    "title": "Simple Linear Regression",
+    "section": "Estimation",
+    "text": "Estimation\nTo estimate \\(\\hat \\beta_0\\), we minimize the follow function:\n\\[\n\\sum^n_{i=1} (Y_i-\\hat Y_i)^2\n\\]\n\nThis is known as the sum squared errors, SSE"
+  },
+  {
+    "objectID": "lectures/6.html#residuals",
+    "href": "lectures/6.html#residuals",
+    "title": "Simple Linear Regression",
+    "section": "Residuals",
+    "text": "Residuals\nThe residuals are known as the observed errors from the data in the model:\n\\[\nr_i = Y_i - \\hat Y_i\n\\]"
+  },
+  {
+    "objectID": "lectures/6.html#estimation-in-r",
+    "href": "lectures/6.html#estimation-in-r",
+    "title": "Simple Linear Regression",
+    "section": "Estimation in R",
+    "text": "Estimation in R\n\nlm(Y ~ 1, data = DATA)\n\n\nY: Name Outcome Variable of Interest in data frame DATA\nDATA: Name of the data frame"
+  },
+  {
+    "objectID": "lectures/6.html#modeling-body-mass-in-penguins",
+    "href": "lectures/6.html#modeling-body-mass-in-penguins",
+    "title": "Simple Linear Regression",
+    "section": "Modeling Body Mass in Penguins",
+    "text": "Modeling Body Mass in Penguins\n\nlm(body_mass_g ~ 1, data = penguins)\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = body_mass_g ~ 1, data = penguins)\n#&gt; \n#&gt; Coefficients:\n#&gt; (Intercept)  \n#&gt;        4207\n\n\n\n\\[\n\\hat Y = 4207\n\\]"
+  },
+  {
+    "objectID": "lectures/6.html#visualize",
+    "href": "lectures/6.html#visualize",
+    "title": "Simple Linear Regression",
+    "section": "Visualize",
+    "text": "Visualize\n\n\nCode\nggplot(penguins, aes(body_mass_g)) +\n  geom_density() +\n  geom_vline(xintercept = 4207)"
+  },
+  {
+    "objectID": "lectures/6.html#linear-model-1",
+    "href": "lectures/6.html#linear-model-1",
+    "title": "Simple Linear Regression",
+    "section": "Linear Model",
+    "text": "Linear Model\nThe goal of Statistics is to develop models the have a better explanation of the outcome \\(Y\\).\n\nIn particularly, reduce the sum of squared errors.\n\n\nBy utilizing a bit more of information, \\(X\\), we can increase the predicting capabilities of the model.\n\n\nThus, the linear model is born."
+  },
+  {
+    "objectID": "lectures/6.html#visualization",
+    "href": "lectures/6.html#visualization",
+    "title": "Simple Linear Regression",
+    "section": "Visualization",
+    "text": "Visualization\n\n1-Dimensional2-Dimensional\n\n\n\n\nCode\nggplot(penguins, aes(body_mass_g)) +\n  geom_density()\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, fill = after_stat(level))) +\n  stat_density_2d(geom = \"polygon\")"
+  },
+  {
+    "objectID": "lectures/6.html#linear-model-2",
+    "href": "lectures/6.html#linear-model-2",
+    "title": "Simple Linear Regression",
+    "section": "Linear Model",
+    "text": "Linear Model\n\\[\nY = \\beta_0 + \\beta_1 X + \\varepsilon\n\\]\n\\[\n\\varepsilon \\sim DGP_3\n\\]"
+  },
+  {
+    "objectID": "lectures/6.html#scatter-plot",
+    "href": "lectures/6.html#scatter-plot",
+    "title": "Simple Linear Regression",
+    "section": "Scatter Plot",
+    "text": "Scatter Plot\n\n\nCode\nggplot(penguins, aes(flipper_length_mm, body_mass_g)) + \n  geom_point()"
+  },
+  {
+    "objectID": "lectures/6.html#imposing-a-line",
+    "href": "lectures/6.html#imposing-a-line",
+    "title": "Simple Linear Regression",
+    "section": "Imposing a Line",
+    "text": "Imposing a Line\n\n\nCode\nggplot(penguins, aes(flipper_length_mm, body_mass_g)) + \n  geom_point() +\n  stat_smooth(method = \"lm\", se = F)"
+  },
+  {
+    "objectID": "lectures/6.html#modelling-the-data",
+    "href": "lectures/6.html#modelling-the-data",
+    "title": "Simple Linear Regression",
+    "section": "Modelling the Data",
+    "text": "Modelling the Data\n\\[\nY_i = \\beta_0 + \\beta_1 X_i + \\varepsilon_i\n\\]"
+  },
+  {
+    "objectID": "lectures/6.html#linear-model-3",
+    "href": "lectures/6.html#linear-model-3",
+    "title": "Simple Linear Regression",
+    "section": "Linear Model",
+    "text": "Linear Model\n\\[\n\\hat Y_i = \\hat \\beta_0 + \\hat \\beta_1 X_i\n\\]\n\nGoal is to obtain numerical values for \\(\\hat \\beta_0\\) and \\(\\hat \\beta_1\\) that will minimize the SSE."
+  },
+  {
+    "objectID": "lectures/6.html#sse",
+    "href": "lectures/6.html#sse",
+    "title": "Simple Linear Regression",
+    "section": "SSE",
+    "text": "SSE\n\\[\n\\sum^n_{i=1} (Y_i-\\hat Y_i)^2\n\\]\n\\[\n\\hat Y_i = \\hat \\beta_0 + \\hat \\beta_1 X_i\n\\]"
+  },
+  {
+    "objectID": "lectures/6.html#fitting-a-model-in-r",
+    "href": "lectures/6.html#fitting-a-model-in-r",
+    "title": "Simple Linear Regression",
+    "section": "Fitting a Model in R",
+    "text": "Fitting a Model in R\n\nlm(Y ~ X, data = DATA)\n\n\nX: Name Predictor Variable of Interest in data frame DATA\nY: Name Outcome Variable of Interest in data frame DATA\nDATA: Name of the data frame"
+  },
+  {
+    "objectID": "lectures/6.html#example",
+    "href": "lectures/6.html#example",
+    "title": "Simple Linear Regression",
+    "section": "Example",
+    "text": "Example\nY: “body_mass_g”; X: “flipper_length_mm”\n\nlm(body_mass_g ~ flipper_length_mm, data = penguins)\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = body_mass_g ~ flipper_length_mm, data = penguins)\n#&gt; \n#&gt; Coefficients:\n#&gt;       (Intercept)  flipper_length_mm  \n#&gt;          -5872.09              50.15\n\n\n\\[\n\\hat Y_i = -5872.09 + 50.15 X_i\n\\]"
+  },
+  {
+    "objectID": "lectures/6.html#interpretation-of-hatbeta_0",
+    "href": "lectures/6.html#interpretation-of-hatbeta_0",
+    "title": "Simple Linear Regression",
+    "section": "Interpretation of \\(\\hat\\beta_0\\)",
+    "text": "Interpretation of \\(\\hat\\beta_0\\)\nThe intercept \\(\\hat \\beta_0\\) can be interpreted as the base value when \\(X\\) is set to 0.\n\nSome times the intercept can be interpretable to real world scenarios.\n\n\nOther times it cannot."
+  },
+  {
+    "objectID": "lectures/6.html#interpreting-example",
+    "href": "lectures/6.html#interpreting-example",
+    "title": "Simple Linear Regression",
+    "section": "Interpreting Example",
+    "text": "Interpreting Example\n\\[\n\\hat Y_i = -5872.09 + 50.15 X_i\n\\]\nWhen flipper length is 0 mm, the body mass is -5872 grams."
+  },
+  {
+    "objectID": "lectures/6.html#interpretation-of-hat-beta_1",
+    "href": "lectures/6.html#interpretation-of-hat-beta_1",
+    "title": "Simple Linear Regression",
+    "section": "Interpretation of \\(\\hat \\beta_1\\)",
+    "text": "Interpretation of \\(\\hat \\beta_1\\)\nThe slope \\(\\hat \\beta_1\\) indicates how will y change when x increases by 1 unit.\n\nIt will demonstrate if there is, on average, a positive or negative relationship based on the sign provided."
+  },
+  {
+    "objectID": "lectures/6.html#interpreting-example-1",
+    "href": "lectures/6.html#interpreting-example-1",
+    "title": "Simple Linear Regression",
+    "section": "Interpreting Example",
+    "text": "Interpreting Example\n\\[\n\\hat Y_i = -5872.09 + 50.15 X_i\n\\]\nWhen flipper length increases by 1 mm, the body mass will increase by 50.15 grams."
+  },
+  {
+    "objectID": "lectures/6.html#correlation",
+    "href": "lectures/6.html#correlation",
+    "title": "Simple Linear Regression",
+    "section": "Correlation",
+    "text": "Correlation\nCorrelation is a statistics that can be used to describe the strength of the relationship between 2 continuous variables.\n\n\\[\nr = \\frac{1}{n-1}\\sum^n_{i=1}\\frac{x_i - \\bar x}{s_x}\\frac{y_i - \\bar y}{s_y}\n\\]\n\n\\(\\bar x\\), \\(\\bar y\\): sample means\n\\(s_x\\), \\(s_y\\): sample standard deviations\n\n\n\n\\[\n-1 \\leq r \\leq 1\n\\]"
+  },
+  {
+    "objectID": "lectures/6.html#correlations",
+    "href": "lectures/6.html#correlations",
+    "title": "Simple Linear Regression",
+    "section": "Correlations",
+    "text": "Correlations\n\nFrom IMS 2e"
+  },
+  {
+    "objectID": "lectures/6.html#coefficient-of-determination",
+    "href": "lectures/6.html#coefficient-of-determination",
+    "title": "Simple Linear Regression",
+    "section": "Coefficient of Determination",
+    "text": "Coefficient of Determination\nThe coefficient of determination evaluates the strength between an outcome \\(Y\\) and the linear model, which includes \\(X\\).\n\n\\[\nR^2 = r^2\n\\]\n\n\n\\[\n0 \\leq R^2 \\leq 1\n\\]\n\n\nThe coefficient of determination measures the total variation explained by the linear model. The closer to 1, the better the linear model."
+  },
+  {
+    "objectID": "lectures/6.html#correlation-in-r",
+    "href": "lectures/6.html#correlation-in-r",
+    "title": "Simple Linear Regression",
+    "section": "Correlation in R",
+    "text": "Correlation in R\n\ncor(DATA$Y, DATA$X)\n\n\nX: Name Predictor Variable of Interest in data frame DATA\nY: Name Outcome Variable of Interest in data frame DATA\nDATA: Name of the data frame"
+  },
+  {
+    "objectID": "lectures/6.html#example-1",
+    "href": "lectures/6.html#example-1",
+    "title": "Simple Linear Regression",
+    "section": "Example",
+    "text": "Example\n\ncor(penguins$body_mass_g, penguins$flipper_length_mm)\n\n#&gt; [1] 0.8729789"
+  },
+  {
+    "objectID": "lectures/6.html#coefficient-of-determination-in-r",
+    "href": "lectures/6.html#coefficient-of-determination-in-r",
+    "title": "Simple Linear Regression",
+    "section": "Coefficient of Determination in R",
+    "text": "Coefficient of Determination in R\n\nxlm &lt;- lm(Y ~ X, data = DATA)\nr2(xlm)\n\n\nX: Name Predictor Variable of Interest in data frame DATA\nY: Name Outcome Variable of Interest in data frame DATA\nDATA: Name of the data frame"
+  },
+  {
+    "objectID": "lectures/6.html#example-2",
+    "href": "lectures/6.html#example-2",
+    "title": "Simple Linear Regression",
+    "section": "Example",
+    "text": "Example\n\nxlm &lt;- lm(body_mass_g ~ species, penguins)\nr2(xlm)\n\n#&gt; [1] 0.6744887"
+  },
+  {
+    "objectID": "lectures/6.html#statistical-model",
+    "href": "lectures/6.html#statistical-model",
+    "title": "Simple Linear Regression",
+    "section": "Statistical Model",
+    "text": "Statistical Model\n\\[\n\\hat Y = \\hat \\beta_0 + \\hat \\beta_1 X\n\\]\n\n\\(X\\): Input\n\\(\\hat Y\\): Output"
+  },
+  {
+    "objectID": "lectures/6.html#prediction-1",
+    "href": "lectures/6.html#prediction-1",
+    "title": "Simple Linear Regression",
+    "section": "Prediction",
+    "text": "Prediction\nUsing the equation \\(\\hat Y\\), we can give it a value of \\(X\\) and then, in return, a value of \\(\\hat Y\\) that predicts the true value \\(Y\\)."
+  },
+  {
+    "objectID": "lectures/6.html#prediction-in-r",
+    "href": "lectures/6.html#prediction-in-r",
+    "title": "Simple Linear Regression",
+    "section": "Prediction in R",
+    "text": "Prediction in R\n\nxlm &lt;- lm(Y ~ X,\n            data = DATA)\n\npredict_df &lt;- data.frame(X = VAL)\n\npredict(xlm,\n        predict_df)\n\n\nX: Name Predictor Variable of Interest in data frame DATA\nY: Name Outcome Variable of Interest in data frame DATA\nDATA: Name of the data frame\nVAL: Value for the Predictor Variable"
+  },
+  {
+    "objectID": "lectures/6.html#example-1-1",
+    "href": "lectures/6.html#example-1-1",
+    "title": "Simple Linear Regression",
+    "section": "Example 1",
+    "text": "Example 1\n\nExampleCode\n\n\nPredict the body mass for a gentoo penguin.\n\n\n\nxlm &lt;- lm(body_mass_g ~ species,\n            data = penguins)\n\nxlm\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = body_mass_g ~ species, data = penguins)\n#&gt; \n#&gt; Coefficients:\n#&gt;      (Intercept)  speciesChinstrap     speciesGentoo  \n#&gt;          3706.16             26.92           1386.27\n\npredict_df &lt;- data.frame(species = \"Gentoo\")\n\npredict(xlm,\n        predict_df)\n\n#&gt;        1 \n#&gt; 5092.437"
+  },
+  {
+    "objectID": "lectures/6.html#example-2-1",
+    "href": "lectures/6.html#example-2-1",
+    "title": "Simple Linear Regression",
+    "section": "Example 2",
+    "text": "Example 2\n\nExampleCode\n\n\nPredict the body mass for a penguin with a flipper length of 190.\n\n\n\nxlm &lt;- lm(body_mass_g ~ flipper_length_mm,\n            data = penguins)\n\n\nxlm\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = body_mass_g ~ flipper_length_mm, data = penguins)\n#&gt; \n#&gt; Coefficients:\n#&gt;       (Intercept)  flipper_length_mm  \n#&gt;          -5872.09              50.15\n\npredict_df &lt;- data.frame(flipper_length_mm = 190)\n\npredict(xlm,\n        predict_df)\n\n#&gt;        1 \n#&gt; 3657.028"
+  },
+  {
+    "objectID": "lectures/6.html#interpolation",
+    "href": "lectures/6.html#interpolation",
+    "title": "Simple Linear Regression",
+    "section": "Interpolation",
+    "text": "Interpolation\nInterpolation is the process of estimating a value within the range of the observed input data \\(X\\)."
+  },
+  {
+    "objectID": "lectures/6.html#extrapolation",
+    "href": "lectures/6.html#extrapolation",
+    "title": "Simple Linear Regression",
+    "section": "Extrapolation",
+    "text": "Extrapolation\nExtrapolation is the process of estimating a value beyond the range of observed input data \\(X\\). It’s about venturing into the unknown, using what we know as a guide."
+  },
+  {
+    "objectID": "lectures/6.html#extrapolation-1",
+    "href": "lectures/6.html#extrapolation-1",
+    "title": "Simple Linear Regression",
+    "section": "Extrapolation",
+    "text": "Extrapolation\n\n\nCode\nggplot(penguins, aes(flipper_length_mm, body_mass_g)) + \n  xlim(160, 250) +\n  ylim(2600, 7000) +\n  geom_point() +\n  stat_smooth(method = \"lm\", se = F)"
+  },
+  {
+    "objectID": "lectures/7.html#melanoma",
+    "href": "lectures/7.html#melanoma",
+    "title": "Simple Logistic Regression",
+    "section": "Melanoma",
+    "text": "Melanoma\nMelanoma is a type of skin cancer that causes the cells that produce melanin to grow out of control. What makes Melanoma so dangerous is that it can metastasize to other parts of the body."
+  },
+  {
+    "objectID": "lectures/7.html#outcome-of-interest",
+    "href": "lectures/7.html#outcome-of-interest",
+    "title": "Simple Logistic Regression",
+    "section": "Outcome of Interest",
+    "text": "Outcome of Interest\nWe are interested in learning how do different factors affect and individual’s chances of survival. Therefore, we are measuring patients and if they lived or died during a study period."
+  },
+  {
+    "objectID": "lectures/7.html#data",
+    "href": "lectures/7.html#data",
+    "title": "Simple Logistic Regression",
+    "section": "Data",
+    "text": "Data\nWe will be using the Melanoma data set with the following variables: dead (died by Melanoma, 1=yes, 0= no) and thickness (tumour thickness in mm)."
+  },
+  {
+    "objectID": "lectures/7.html#plot",
+    "href": "lectures/7.html#plot",
+    "title": "Simple Logistic Regression",
+    "section": "Plot",
+    "text": "Plot\n\n\nCode\nMelanoma |&gt; \n  ggplot(aes(thickness, dead)) +\n  geom_point()"
+  },
+  {
+    "objectID": "lectures/7.html#construct-model",
+    "href": "lectures/7.html#construct-model",
+    "title": "Simple Logistic Regression",
+    "section": "Construct Model",
+    "text": "Construct Model\n\\[\n\\left(\\begin{array}{c}\nDead \\\\\nAlive\n\\end{array}\\right) = \\beta_0 + \\beta_1X\n\\]"
+  },
+  {
+    "objectID": "lectures/7.html#let",
+    "href": "lectures/7.html#let",
+    "title": "Simple Logistic Regression",
+    "section": "Let …",
+    "text": "Let …\n\\[\nY = \\left\\{\\begin{array}{cc}\n1 & Dead \\\\\n0 & Alive\n\\end{array}\\right.\n\\]"
+  },
+  {
+    "objectID": "lectures/7.html#construct-a-model",
+    "href": "lectures/7.html#construct-a-model",
+    "title": "Simple Logistic Regression",
+    "section": "Construct a Model",
+    "text": "Construct a Model\n\\[\nP\\left(Y = 1\\right) = \\beta_0 + \\beta_1X\n\\]"
+  },
+  {
+    "objectID": "lectures/7.html#construct-a-model-1",
+    "href": "lectures/7.html#construct-a-model-1",
+    "title": "Simple Logistic Regression",
+    "section": "Construct a Model",
+    "text": "Construct a Model\n\\[\nP\\left(Y = 1\\right) = \\frac{e^{\\beta_0 + \\beta_1X}}{1 + e^{\\beta_0 + \\beta_1X}}\n\\]"
+  },
+  {
+    "objectID": "lectures/7.html#construct-a-model-2",
+    "href": "lectures/7.html#construct-a-model-2",
+    "title": "Simple Logistic Regression",
+    "section": "Construct a Model",
+    "text": "Construct a Model\n\\[\n\\frac{P(Y = 1)}{P(Y = 0)} = e^{\\beta_0 + \\beta_1X}\n\\]\nwhere \\(\\frac{P(Y = 1)}{P(Y = 0)}\\) are considered the odds of observing \\(Y = 1\\)."
+  },
+  {
+    "objectID": "lectures/7.html#the-logistic-model",
+    "href": "lectures/7.html#the-logistic-model",
+    "title": "Simple Logistic Regression",
+    "section": "The Logistic Model",
+    "text": "The Logistic Model\n\\[\n\\log\\left\\{\\frac{P(Y = 1)}{P(Y = 0)}\\right\\} = \\beta_0 + \\beta_1X\n\\]"
+  },
+  {
+    "objectID": "lectures/7.html#logistic-regression-1",
+    "href": "lectures/7.html#logistic-regression-1",
+    "title": "Simple Logistic Regression",
+    "section": "Logistic Regression",
+    "text": "Logistic Regression\nLogistic Regression is used to model the association between a set of predictors and a binary outcome variable.\n\nThis is similar Linear Regression which models the association between a set of predictors and a numerical outcome variable."
+  },
+  {
+    "objectID": "lectures/7.html#logistic-regression-2",
+    "href": "lectures/7.html#logistic-regression-2",
+    "title": "Simple Logistic Regression",
+    "section": "Logistic Regression",
+    "text": "Logistic Regression\nLogistic Regression uses the logistic model to formulate the relationship between the predictors and the outcome.\n\nMore specifically, for an outcome of Y:\n\\[\nY = \\left\\{\\begin{array}{cc}\n1 & \\text{Category 1} \\\\\n0 & \\text{Category 2}\n\\end{array}\\right.\n\\]\nThe Predictors variable will model the probability of observing category 1 (\\(P(Y=1)\\))"
+  },
+  {
+    "objectID": "lectures/7.html#logistic-model",
+    "href": "lectures/7.html#logistic-model",
+    "title": "Simple Logistic Regression",
+    "section": "Logistic Model",
+    "text": "Logistic Model\n\\[\n\\log\\left\\{\\frac{P(Y = 1)}{P(Y = 0)}\\right\\} = \\beta_0 + \\beta_1X\n\\]"
+  },
+  {
+    "objectID": "lectures/7.html#regression-coefficients-beta",
+    "href": "lectures/7.html#regression-coefficients-beta",
+    "title": "Simple Logistic Regression",
+    "section": "Regression Coefficients \\(\\beta\\)",
+    "text": "Regression Coefficients \\(\\beta\\)\nThe regression coefficients quantify how a specific predictor changes the odds of observing the first category of the outcome (\\(Y = 1\\))"
+  },
+  {
+    "objectID": "lectures/7.html#estimating-beta",
+    "href": "lectures/7.html#estimating-beta",
+    "title": "Simple Logistic Regression",
+    "section": "Estimating \\(\\beta\\)",
+    "text": "Estimating \\(\\beta\\)\nTo obtain the numerical value for \\(\\beta\\), denoted as \\(\\hat \\beta\\), we will be finding the values of \\(\\hat \\beta\\) that maximizes the likelihood function:\n\\[\nL(\\boldsymbol \\beta) = \\prod_{i=1}^n \\left(\\frac{e^{\\beta_0 + \\beta_1X}}{1 + e^{\\beta_0 + \\beta_1X}}\\right)^{Y_i}\\left(\\frac{1}{1 + e^{\\beta_0 + \\beta_1X}}\\right)^{1-Y_i}\n\\]\nThe likelihood function can be thought as the probability of observing the entire data set. Therefore, we want to choose the values the \\(\\beta_0\\) and \\(\\beta_1\\) that will result in the highest probability of observing the data."
+  },
+  {
+    "objectID": "lectures/7.html#estimated-parameters",
+    "href": "lectures/7.html#estimated-parameters",
+    "title": "Simple Logistic Regression",
+    "section": "Estimated Parameters",
+    "text": "Estimated Parameters\nThe values you obtain (\\(\\hat \\beta\\)) tell you the relationship between the a predictor variable and the log odds of observing the first category of the outcome \\(Y=1\\).\n\nExponentiating the estimate (\\(e^{\\hat \\beta}\\)) will give you the relationship between a predictor variable and the odds of observing the first category of the outcome \\(Y=1\\)."
+  },
+  {
+    "objectID": "lectures/7.html#interpreting-hat-beta",
+    "href": "lectures/7.html#interpreting-hat-beta",
+    "title": "Simple Logistic Regression",
+    "section": "Interpreting \\(\\hat \\beta\\)",
+    "text": "Interpreting \\(\\hat \\beta\\)\nFor a continuous predictor variable:\nAs X increases by 1 unit, the odds of observing the first category (\\(Y = 1\\)) increases by a factor of \\(e^{\\hat\\beta}\\)."
+  },
+  {
+    "objectID": "lectures/7.html#logistic-regression-in-r",
+    "href": "lectures/7.html#logistic-regression-in-r",
+    "title": "Simple Logistic Regression",
+    "section": "Logistic Regression in R",
+    "text": "Logistic Regression in R\n\n\nCode\nglm(Y ~ X,\n    data = DATA,\n    family = binomial())"
+  },
+  {
+    "objectID": "lectures/7.html#example",
+    "href": "lectures/7.html#example",
+    "title": "Simple Logistic Regression",
+    "section": "Example",
+    "text": "Example\nModelling dead by thickness:\n\n\nCode\nglm(dead ~ thickness,\n    data = Melanoma,\n    family = binomial())\n\n\n#&gt; \n#&gt; Call:  glm(formula = dead ~ thickness, family = binomial(), data = Melanoma)\n#&gt; \n#&gt; Coefficients:\n#&gt; (Intercept)    thickness  \n#&gt;     -1.6140       0.2088  \n#&gt; \n#&gt; Degrees of Freedom: 204 Total (i.e. Null);  203 Residual\n#&gt; Null Deviance:       242.4 \n#&gt; Residual Deviance: 226.1     AIC: 230.1\n\n\n\\[\n\\log(odds\\ of\\ dying ) = -1.614 + 0.21 (thickness)\n\\]"
+  },
+  {
+    "objectID": "lectures/7.html#interpretation",
+    "href": "lectures/7.html#interpretation",
+    "title": "Simple Logistic Regression",
+    "section": "Interpretation",
+    "text": "Interpretation\n\\[\n\\log(odds\\ of\\ dying ) = -1.614 + 0.21 (thickness)\n\\]\n\n\nCode\nexp(0.21)\n\n\n#&gt; [1] 1.233678\n\n\n\nAs age increases by 1 year, the odds of experiencing death increases by a factor of 1.232."
+  },
+  {
+    "objectID": "lectures/7.html#working-with-probabilities",
+    "href": "lectures/7.html#working-with-probabilities",
+    "title": "Simple Logistic Regression",
+    "section": "Working with probabilities",
+    "text": "Working with probabilities\nAs you can see, working with odds may be unintuitive for the average person. It will be better to predict the probability and display those results to individuals."
+  },
+  {
+    "objectID": "lectures/7.html#predicting-probability",
+    "href": "lectures/7.html#predicting-probability",
+    "title": "Simple Logistic Regression",
+    "section": "Predicting Probability",
+    "text": "Predicting Probability\n\\[\n\\hat P\\left(Y = 1\\right) = \\frac{e^{\\hat\\beta_0 + \\hat\\beta_1X}}{1 + e^{\\hat\\beta_0 + \\hat\\beta_1X}}\n\\]"
+  },
+  {
+    "objectID": "lectures/7.html#prediction-in-r",
+    "href": "lectures/7.html#prediction-in-r",
+    "title": "Simple Logistic Regression",
+    "section": "Prediction in R",
+    "text": "Prediction in R\n\n\nCode\nxglm &lt;- glm(Y ~ X,\n            data = DATA,\n            family = binomial())\nndf &lt;- data.frame(X = VAL)\npredict(xglm,\n        ndf,\n        type = \"response\")"
+  },
+  {
+    "objectID": "lectures/7.html#example-1",
+    "href": "lectures/7.html#example-1",
+    "title": "Simple Logistic Regression",
+    "section": "Example 1",
+    "text": "Example 1\nPredict the probability of observing death for a patient with a tumor thickness of 2.9.\n\n\nCode\nxglm &lt;- glm(dead ~ thickness,\n    data = Melanoma,\n    family = binomial())\nndf &lt;- data.frame(thickness = 2.9)\npredict(xglm, ndf, type = \"response\")\n\n\n#&gt;        1 \n#&gt; 0.267291"
+  },
+  {
+    "objectID": "lectures/7.html#example-1-1",
+    "href": "lectures/7.html#example-1-1",
+    "title": "Simple Logistic Regression",
+    "section": "Example 1",
+    "text": "Example 1\nPredict the probability of observing death for a patient who is male, 75 years old, an tumor thickness of 2.9, and without ulcer presence.\n\n\nCode\nxglm &lt;- glm(dead ~ sex + age + thickness + ulcer,\n    data = Melanoma,\n    family = binomial())\npredict_df &lt;- data.frame(sex = 1, age = 75, thickness = 2.9, ulcer = 0)\npredict(xglm, predict_df, type = \"response\")\n\n\n#&gt;         1 \n#&gt; 0.2037438"
+  },
+  {
+    "objectID": "lectures/7.html#example-1-2",
+    "href": "lectures/7.html#example-1-2",
+    "title": "Simple Logistic Regression",
+    "section": "Example 1",
+    "text": "Example 1\n\n\n\n\nUlcer Present\nUlcer not Present\n\n\n\n\nProbabiltiy\n48.7%\n20.3%\n\n\n\nFor a patient who is 75 years old, male, and a tumor thickness of 2.9, when an ulcer is present, the probability a patient dies increases to 48% compared to a patient who does not have an ulcer with a probability of 20%."
+  },
+  {
+    "objectID": "lectures/7.html#example-2",
+    "href": "lectures/7.html#example-2",
+    "title": "Simple Logistic Regression",
+    "section": "Example 2",
+    "text": "Example 2\nPredict the probability of observing death for a patient who a tumor thickness of 1.9.\n\n\nCode\nxglm &lt;- glm(dead ~ thickness,\n    data = Melanoma,\n    family = binomial())\nndf &lt;- data.frame(thickness = 1.9)\npredict(xglm, ndf, type = \"response\")\n\n\n#&gt;         1 \n#&gt; 0.2284212"
+  },
+  {
+    "objectID": "lectures/7.html#example-2-1",
+    "href": "lectures/7.html#example-2-1",
+    "title": "Simple Logistic Regression",
+    "section": "Example 2",
+    "text": "Example 2\nPredict the probability of observing death for a patient who is female, 55 years old, an tumor thickness of 2.9, and with ulcer presence.\n\n\nCode\nxglm &lt;- glm(dead ~ sex + age + thickness + ulcer,\n    data = Melanoma,\n    family = binomial())\npredict_df &lt;- data.frame(sex = 0, age = 55, thickness = 2.9, ulcer = 1)\npredict(xglm, predict_df, type = \"response\")\n\n\n#&gt;         1 \n#&gt; 0.3686531"
+  },
+  {
+    "objectID": "lectures/7.html#example-2-2",
+    "href": "lectures/7.html#example-2-2",
+    "title": "Simple Logistic Regression",
+    "section": "Example 2",
+    "text": "Example 2\n\n\n\n\n55\n75\n\n\n\n\nProbabiltiy\n36.8%\n38.7%\n\n\n\nFor a patient who is female, a tumor thickness of 2.9, and has an ulcer, the probability a 75 year old patient dies increases to 38.7% compared to a 55 year old patient with a probability of 36.8%."
+  },
+  {
+    "objectID": "lectures/7.html#plot-1",
+    "href": "lectures/7.html#plot-1",
+    "title": "Simple Logistic Regression",
+    "section": "Plot",
+    "text": "Plot\n\n\nCode\nMelanoma |&gt; \n  ggplot(aes(thickness, dead)) +\n  geom_point() +\n  stat_smooth(method = \"glm\", se = F,  \n              method.args = list(family = \"binomial\"))"
+  },
+  {
+    "objectID": "lectures/7.html#example-3",
+    "href": "lectures/7.html#example-3",
+    "title": "Simple Logistic Regression",
+    "section": "Example 3",
+    "text": "Example 3\nPredict the probability of observing death for a patient who a tumor thickness of 3.9.\n\n\nCode\nxglm &lt;- glm(dead ~ thickness,\n    data = Melanoma,\n    family = binomial())\nndf &lt;- data.frame(thickness = 3.9)\npredict(xglm, ndf, type = \"response\")\n\n\n#&gt;         1 \n#&gt; 0.3101168"
+  },
+  {
+    "objectID": "lectures/7.html#example-4",
+    "href": "lectures/7.html#example-4",
+    "title": "Simple Logistic Regression",
+    "section": "Example",
+    "text": "Example\n\n\n\nTumor Thickness\n1.9\n2.9\n3.9\n\n\n\n\nProbabiltiy\n22.8%\n26.7%\n31.0%"
   }
 ]
