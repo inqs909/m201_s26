@@ -46,6 +46,14 @@ section.has-light-background {
   }
 }
 
+.reveal .slides section .subtitle {
+  color: #AA4A44;
+  font-size: 1.5em;
+  font-style: italic;
+  text-transform: uppercase;
+  margin-top: -10px;
+}
+
 .agenda {
 }
 
@@ -55,12 +63,18 @@ section.has-light-background {
 }
 
 .agenda-inactive {
-  opacity: 0.15;
+  opacity: 0.25;
   margin-top: -0.5em;
   margin-bottom: -0.5em;
 }
 
 .agenda-active {
+  color: #AA4A44;
+  font-size: 1.5em;
   margin-top: -0.5em;
   margin-bottom: -0.5em;
+}
+
+.reveal .controls button {
+  transform: scale(0.6) !important;       /* adjust size: 0.7 = 70% */
 }

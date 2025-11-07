@@ -77,7 +77,7 @@ Some values will be more common than others. Because of this, they have their ow
 - Different Samples yield different statistics
 
 ::: notes
-If we took many samples, the statistics (like means) would vary. Their distribution helps us quantify uncertainty.
+If we took many samples, the statistics (like mean) would vary. Their distribution helps us quantify uncertainty.
 :::
 
 ## Standard Error
@@ -114,7 +114,7 @@ $$
 
 ## Randomness Effect
 
-The randomness effect is a sampling phenomenom where you will get different samples everytime you sample a population.
+The randomness effect is a sampling phenomenom where you will get different samples every time you sample a population.
 
 ::: fragment
 
@@ -141,7 +141,8 @@ ggplot(tibble(x = x, y = y), aes(x,y)) +
   geom_point() +
   annotate("text", 
            x = -1, y = 15, 
-           label = TeX(sprintf(r'($\hat{\beta}_1 = %g$)', bb)),
+           label = TeX(sprintf(r'($\hat{\beta} = %g$)', bb),
+                       output = "character"),
            parse = TRUE,
            size = 8) 
 ```
@@ -158,7 +159,8 @@ ggplot(tibble(x = x, y = y), aes(x,y)) +
   geom_point() +
   annotate("text", 
            x = -1, y = 15, 
-           label = TeX(sprintf(r'($\hat{\beta}_1 = %g$)', bb)),
+           label = TeX(sprintf(r'($\hat{\beta} = %g$)', bb),
+                       output = "character"),
            parse = TRUE,
            size = 8) 
 ```
@@ -175,7 +177,8 @@ ggplot(tibble(x = x, y = y), aes(x,y)) +
   geom_point() +
   annotate("text", 
            x = -1, y = 15, 
-           label = TeX(sprintf(r'($\hat{\beta}_1 = %g$)', bb)),
+           label = TeX(sprintf(r'($\hat{\beta} = %g$)', bb),
+                       output = "character"),
            parse = TRUE,
            size = 8) 
 ```
@@ -192,7 +195,8 @@ ggplot(tibble(x = x, y = y), aes(x,y)) +
   geom_point() +
   annotate("text", 
            x = -1, y = 15, 
-           label = TeX(sprintf(r'($\hat{\beta}_1 = %g$)', bb)),
+           label = TeX(sprintf(r'($\hat{\beta} = %g$)', bb),
+                       output = "character"),
            parse = TRUE,
            size = 8) 
 ```
@@ -209,7 +213,8 @@ ggplot(tibble(x = x, y = y), aes(x,y)) +
   geom_point() +
   annotate("text", 
            x = -1, y = 15, 
-           label = TeX(sprintf(r'($\hat{\beta}_1 = %g$)', bb)),
+           label = TeX(sprintf(r'($\hat{\beta} = %g$)', bb),
+                       output = "character"),
            parse = TRUE,
            size = 8) 
 ```
@@ -223,7 +228,7 @@ ggplot(tibble(x = x, y = y), aes(x,y)) +
 To better understand the variation in statistics, let's simulate a data set of unicorn characteristics to visualize and understand the variation.
 
 ::: fragment
-We will simulate a data set using the `unicorns` function and only need to specify how many unicorns you want to simulate.
+We will simulate a data set using the `unicorns` function and only we need to specify how many unicorns you want to simulate.
 :::
 
 ## Simulating Unicorn Data

@@ -26,8 +26,9 @@ format:
 
 **Office Hours:**
 
+**Lecture:** Gateway Hall 2501 4:30 - 5:45 PM
 
-**Lecture:** 
+**Website:** Canvas (CI Learn)
 
 ### Course Description
 
@@ -62,10 +63,18 @@ Critical reasoning using a quantitative and statistical, problem-solving approac
 At the end of the quarter, course grades will be assigned according to the following scale:
 
 |         |            |        |            |         |            |         |            |       |       |
-|:-------|:-------|:-------|:-------|:-------|:-------|:-------|:-------|:-------|:-------|
+|:--------|:-----------|:-------|:-----------|:--------|:-----------|:--------|:-----------|:------|:------|
 | **A+**  | 98 -- 100  | **B+** | 87 -- \<90 | **C+**  | 77 -- \<80 | **D+**  | 67 -- \<70 |       |       |
 | **A**   | 93 -- \<98 | **B**  | 83 -- \<87 | **C**   | 73 -- \<77 | **D**   | 63 -- \<67 | **F** | \< 60 |
 | **A--** | 90 - \<93  | **B-** | 80 -- \<83 | **C--** | 70 -- \<73 | **D--** | 60 -- \<63 |       |       |
+
+### Class Attendance
+
+Students are expected to attend in-person to class to learn the material.
+
+### Canvas
+
+Students are expected to check the course Canvas page 3-4 times a week to view assignments, announcements, and other course-related materials.
 
 #### Participation
 
@@ -103,18 +112,18 @@ The following outline may be subject to change. Any changes will be announced in
 | 2/9   | Categorical Data                 | 3      | 3         |
 | 2/16  | Numerical Data                   | 4      | 4         |
 | 2/23  | Distribution Functions           | 5      |           |
-| 3/2   | Exam 1/ Simple Linear Regression |        | 5         |
+| 3/2   | **Exam 1**/ Linear Regression    |        | 5         |
 | 3/9   | Simple Linear Regression         | 6      | 6         |
 | 3/16  | Spring Break                     |        |           |
 | 3/23  | Simple Logistic Regression       | 7      | 7         |
 | 3/30  | Holiday/ Group Models            | 8      | 8         |
 | 4/6   | Multivariable Regression         | 9      |           |
-| 4/13  | Modeling Approaches/Exam 2       |        | 9         |
+| 4/13  | Modeling Approaches/**Exam 2**   |        | 9         |
 | 4/20  | Sampling Distributions           | 10     | 10        |
 | 4/27  | Inference                        | 11     | 11        |
 | 5/4   | Inference                        | 12     | 12        |
 | 5/11  | Inference                        | 13     |           |
-| 5/18  | Exam 3                           |        |           |
+| 5/18  | **Exam 3**                       |        |           |
 
 ### Generative Artificial Intelligence Policy
 

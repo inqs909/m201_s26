@@ -160,30 +160,7 @@ exp(confint(m1, level = 0.95))
 
 We conduct model inference to determine if different models are better at explaining variation. A common example is to compare a linear model ($g(\hat Y)=\hat\beta_0 + \hat\beta_1 X$) to the mean of Y ($\hat \mu_y$). We determine the significance of the variation explained using an Analysis of Variance (ANOVA) table and F test.
 
-## Model Inference
 
-Given 2 models:
-
-$$
-g(\hat Y) = \hat\beta_0 + \hat\beta_1 X_1 + \hat\beta_2 X_2 + \cdots + \hat\beta_p X_p
-$$
-
-or
-
-$$
-g(\hat Y) = \bar y
-$$
-
-::: fragment
-Is the model with predictors do a better job than using the average?
-:::
-
-## Likelihood Ratio Test
-
-The Likelihood Ratio Test is a test to determine whether the likelihood of observing the outcome is significantly bigger in a larger, more complicated model, than a simpler model. 
-
-
-It conducts a hypothesis tests to see if models are significantly different from each other.
 
 ## Conducting an LRT in R
 
