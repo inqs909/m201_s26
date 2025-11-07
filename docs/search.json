@@ -2104,7 +2104,7 @@
     "href": "lectures/10.html#rejection-region",
     "title": "Statistical Inference",
     "section": "Rejection Region",
-    "text": "Rejection Region"
+    "text": "Rejection Region\n\nThe rejection region is the set of all test statistic values that lead to rejecting \\(H_0\\).\nIt’s defined by a significance level (\\(\\alpha\\)) — the probability of rejecting \\(H_0\\), when it’s actually true."
   },
   {
     "objectID": "lectures/10.html#rejection-region-1",
