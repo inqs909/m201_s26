@@ -2111,7 +2111,7 @@
     "href": "lectures/10.html#rejection-region-1",
     "title": "Statistical Inference",
     "section": "Rejection Region",
-    "text": "Rejection Region\n\n\nCode\nalpha &lt;- 0.05\n\n# Critical values for two-tailed test\nz_critical &lt;- qnorm(1 - alpha / 2)\n\n# Create data for the normal curve\nx &lt;- seq(-4, 4, length = 1000)\ny &lt;- dnorm(x)\n\ndf &lt;- data.frame(x = x, y = y)\n\nggplot(df, aes(x = x, y = y)) +\n  geom_line(color = \"deepskyblue\", size = 1) +\n  geom_area(data = subset(df, x &lt;= -z_critical), aes(y = y), fill = \"firebrick\", alpha = 0.5) +\n  geom_area(data = subset(df, x &gt;= z_critical), aes(y = y), fill = \"firebrick\", alpha = 0.5) +\n  geom_vline(xintercept = c(-z_critical, z_critical), linetype = \"dashed\", color = \"black\") +\n  theme_bw()"
+    "text": "Rejection Region\n\n\nCode\nalpha &lt;- 0.05\n\n# Critical values for two-tailed test\nz_critical &lt;- qnorm(1 - alpha / 2)\n\n# Create data for the normal curve\nx &lt;- seq(-4, 4, length = 1000)\ny &lt;- dnorm(x)\n\ndf &lt;- data.frame(x = x, y = y)\n\nggplot(df, aes(x = x, y = y)) +\n  geom_line(color = \"deepskyblue\", linewidth = 1) +\n  geom_area(data = subset(df, x &lt;= -z_critical), aes(y = y), fill = \"firebrick\", alpha = 0.5) +\n  geom_area(data = subset(df, x &gt;= z_critical), aes(y = y), fill = \"firebrick\", alpha = 0.5) +\n  geom_vline(xintercept = c(-z_critical, z_critical), linetype = \"dashed\", color = \"black\") +\n  theme_bw()"
   },
   {
     "objectID": "lectures/10.html#decision-making-1",
@@ -2167,7 +2167,7 @@
     "href": "lectures/10.html#conducting-ht-of-beta_j",
     "title": "Statistical Inference",
     "section": "Conducting HT of \\(\\beta_j\\)",
-    "text": "Conducting HT of \\(\\beta_j\\)\nxlm &lt;- lm(Y ~ X, data = DATA)\nsummary(xlm)\n\nxlm: Object where the model is stored\nY: Name of the outcome variable in DATA\nX: Name of the Predictor Variable(s) in DATA\nDATA: Name of the data set"
+    "text": "Conducting HT of \\(\\beta_j\\)\nxlm &lt;- lm(Y ~ X, data = DATA)\ntidy(xlm)\n\nxlm: Object where the model is stored\nY: Name of the outcome variable in DATA\nX: Name of the Predictor Variable(s) in DATA\nDATA: Name of the data set"
   },
   {
     "objectID": "lectures/10.html#example",
@@ -2181,7 +2181,7 @@
     "href": "lectures/10.html#example-1",
     "title": "Statistical Inference",
     "section": "Example",
-    "text": "Example\n\n\nCode\nm1 &lt;- lm(body_mass ~ flipper_len, penguins)\nsummary(m1)\n\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = body_mass ~ flipper_len, data = penguins)\n#&gt; \n#&gt; Residuals:\n#&gt;      Min       1Q   Median       3Q      Max \n#&gt; -1057.33  -259.79   -12.24   242.97  1293.89 \n#&gt; \n#&gt; Coefficients:\n#&gt;             Estimate Std. Error t value Pr(&gt;|t|)    \n#&gt; (Intercept) -5872.09     310.29  -18.93   &lt;2e-16 ***\n#&gt; flipper_len    50.15       1.54   32.56   &lt;2e-16 ***\n#&gt; ---\n#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n#&gt; \n#&gt; Residual standard error: 393.3 on 331 degrees of freedom\n#&gt; Multiple R-squared:  0.7621, Adjusted R-squared:  0.7614 \n#&gt; F-statistic:  1060 on 1 and 331 DF,  p-value: &lt; 2.2e-16"
+    "text": "Example\n\n\nCode\nm1 &lt;- lm(body_mass ~ flipper_len, penguins)\ntidy(m1)\n\n\n#&gt; # A tibble: 2 × 5\n#&gt;   term        estimate std.error statistic   p.value\n#&gt;   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n#&gt; 1 (Intercept)  -5872.     310.       -18.9 1.18e- 54\n#&gt; 2 flipper_len     50.2      1.54      32.6 3.13e-105"
   },
   {
     "objectID": "lectures/10.html#confidence-interval",
@@ -2195,21 +2195,21 @@
     "href": "lectures/10.html#example-2",
     "title": "Statistical Inference",
     "section": "Example",
-    "text": "Example\n\n\nCode\nconfint(m1, level = 0.90)\n\n\n#&gt;                    5 %        95 %\n#&gt; (Intercept) -6383.8988 -5360.28658\n#&gt; flipper_len    47.6127    52.69383"
+    "text": "Example\n\n\nCode\ntidy(m1, conf.int = TRUE, conf.level = 0.9)\n\n\n#&gt; # A tibble: 2 × 7\n#&gt;   term        estimate std.error statistic   p.value conf.low conf.high\n#&gt;   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n#&gt; 1 (Intercept)  -5872.     310.       -18.9 1.18e- 54  -6384.    -5360. \n#&gt; 2 flipper_len     50.2      1.54      32.6 3.13e-105     47.6      52.7"
   },
   {
     "objectID": "lectures/10.html#red-wine-data",
     "href": "lectures/10.html#red-wine-data",
     "title": "Statistical Inference",
     "section": "Red Wine Data",
-    "text": "Red Wine Data\nThe Wine Quality data set contains data on information on both red and white wine from North Portugal. We are interested in seeing if pH of the red wine (predictor variable) affects the quality (outcome variable).\n\n\nCode\nurl &lt;- \"https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv\"\nwine &lt;- read_delim(url, delim = \";\")\n\nlm(quality ~ pH, wine) |&gt; summary()"
+    "text": "Red Wine Data\nThe Wine Quality data set contains data on information on both red and white wine from North Portugal. We are interested in seeing if pH of the red wine (predictor variable) affects the quality (outcome variable).\n\n\nCode\nurl &lt;- \"https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv\"\nwine &lt;- read_delim(url, delim = \";\")"
   },
   {
     "objectID": "lectures/10.html#conducting-ht-of-beta_j-1",
     "href": "lectures/10.html#conducting-ht-of-beta_j-1",
     "title": "Statistical Inference",
     "section": "Conducting HT of \\(\\beta_j\\)",
-    "text": "Conducting HT of \\(\\beta_j\\)\nxlm &lt;- glm(Y ~ X, data = DATA, family = binomial())\nsummary(xlm)\n\nxlm: Object where the model is stored\nY: Name of the outcome variable in DATA\nX: Name of the Predictor Variable(s) in DATA\nDATA: Name of the data set"
+    "text": "Conducting HT of \\(\\beta_j\\)\nxlm &lt;- glm(Y ~ X, data = DATA, family = binomial())\ntidy(xlm)\n\nxlm: Object where the model is stored\nY: Name of the outcome variable in DATA\nX: Name of the Predictor Variable(s) in DATA\nDATA: Name of the data set"
   },
   {
     "objectID": "lectures/10.html#example-3",
@@ -2223,21 +2223,21 @@
     "href": "lectures/10.html#example-4",
     "title": "Statistical Inference",
     "section": "Example",
-    "text": "Example\n\n\nCode\nm1 &lt;- glm(disease ~ trestbps, heart_disease, family = binomial())\nsummary(m1)\n\n\n#&gt; \n#&gt; Call:\n#&gt; glm(formula = disease ~ trestbps, family = binomial(), data = heart_disease)\n#&gt; \n#&gt; Coefficients:\n#&gt;              Estimate Std. Error z value Pr(&gt;|z|)   \n#&gt; (Intercept) -2.494132   0.905112  -2.756  0.00586 **\n#&gt; trestbps     0.017745   0.006807   2.607  0.00914 **\n#&gt; ---\n#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n#&gt; \n#&gt; (Dispersion parameter for binomial family taken to be 1)\n#&gt; \n#&gt;     Null deviance: 409.95  on 296  degrees of freedom\n#&gt; Residual deviance: 402.88  on 295  degrees of freedom\n#&gt; AIC: 406.88\n#&gt; \n#&gt; Number of Fisher Scoring iterations: 4"
+    "text": "Example\n\n\nCode\nm1 &lt;- glm(disease ~ trestbps, heart_disease, family = binomial())\ntidy(m1)\n\n\n#&gt; # A tibble: 2 × 5\n#&gt;   term        estimate std.error statistic p.value\n#&gt;   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;\n#&gt; 1 (Intercept)  -2.49     0.905       -2.76 0.00586\n#&gt; 2 trestbps      0.0177   0.00681      2.61 0.00914"
   },
   {
     "objectID": "lectures/10.html#confidence-interval-1",
     "href": "lectures/10.html#confidence-interval-1",
     "title": "Statistical Inference",
     "section": "Confidence Interval",
-    "text": "Confidence Interval\nconfint(xlm, level = LEVEL)\n\nxlm: Name of the model saved in R\nLEVEL: A number between 0 and 1 to specify confidence level"
+    "text": "Confidence Interval\ntidy(xlm, conf.int = TRUE, conf.level = LEVEL)\n\nxlm: Name of the model saved in R\nLEVEL: A number between 0 and 1 to specify confidence level\ndefaults to 0.95"
   },
   {
     "objectID": "lectures/10.html#example-5",
     "href": "lectures/10.html#example-5",
     "title": "Statistical Inference",
     "section": "Example",
-    "text": "Example\n\n\nCode\nconfint(m1, level = 0.95)\n\n\n#&gt;                   2.5 %      97.5 %\n#&gt; (Intercept) -4.30710793 -0.74740574\n#&gt; trestbps     0.00461029  0.03139019"
+    "text": "Example\n\n\nCode\ntidy(m1, conf.int = TRUE)\n\n\n#&gt; # A tibble: 2 × 7\n#&gt;   term        estimate std.error statistic p.value conf.low conf.high\n#&gt;   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n#&gt; 1 (Intercept)  -2.49     0.905       -2.76 0.00586 -4.31      -0.747 \n#&gt; 2 trestbps      0.0177   0.00681      2.61 0.00914  0.00461    0.0314"
   },
   {
     "objectID": "lectures/10.html#confidence-interval-for-odds-ratio",
@@ -2251,7 +2251,7 @@
     "href": "lectures/10.html#example-6",
     "title": "Statistical Inference",
     "section": "Example",
-    "text": "Example\n\n\nCode\nexp(confint(m1, level = 0.95))\n\n\n#&gt;                  2.5 %    97.5 %\n#&gt; (Intercept) 0.01347246 0.4735936\n#&gt; trestbps    1.00462093 1.0318881"
+    "text": "Example\n\n\nCode\ntidy(m1, exponentiate = TRUE, conf.int = TRUE)\n\n\n#&gt; # A tibble: 2 × 7\n#&gt;   term        estimate std.error statistic p.value conf.low conf.high\n#&gt;   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n#&gt; 1 (Intercept)   0.0826   0.905       -2.76 0.00586   0.0135     0.474\n#&gt; 2 trestbps      1.02     0.00681      2.61 0.00914   1.00       1.03"
   },
   {
     "objectID": "lectures/10.html#breast-cancer-data",
@@ -4247,5 +4247,26 @@
     "title": "Group Regression Models",
     "section": "Extrapolation",
     "text": "Extrapolation\n\n\nCode\nggplot(penguins, aes(flipper_length_mm, body_mass_g)) + \n  xlim(160, 250) +\n  ylim(2600, 7000) +\n  geom_point() +\n  stat_smooth(method = \"lm\", se = F)"
+  },
+  {
+    "objectID": "lectures/10.html#mammals-sleep-data-set",
+    "href": "lectures/10.html#mammals-sleep-data-set",
+    "title": "Statistical Inference",
+    "section": "Mammals Sleep Data Set",
+    "text": "Mammals Sleep Data Set\nThe msleep data set contains information on sleeping patterns for mammals. We are interested in understanding the relationship of the length of sleep cycle (sleep_cycle; in hours) and rem sleep (sleep_rem; rapid eye movement; in hours).\n\n\nCode\nurl &lt;- \"https://www.openintro.org/data/csv/evals.csv\"\nevals &lt;- read_csv(url)"
+  },
+  {
+    "objectID": "lectures/10.html#odds-ratio",
+    "href": "lectures/10.html#odds-ratio",
+    "title": "Statistical Inference",
+    "section": "Odds Ratio",
+    "text": "Odds Ratio"
+  },
+  {
+    "objectID": "lectures/10.html#odds-ratio-confidence-intervat",
+    "href": "lectures/10.html#odds-ratio-confidence-intervat",
+    "title": "Statistical Inference",
+    "section": "Odds Ratio & Confidence Intervat",
+    "text": "Odds Ratio & Confidence Intervat\ntidy(xlm, exponentiate = TRUE, conf.int = TRUE)\n\nxlm: Name of the model saved in R"
   }
 ]
