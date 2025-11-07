@@ -812,13 +812,6 @@
 <section id="mammals-sleep-data-set" class="slide level2">
 <h2>Mammals Sleep Data Set</h2>
 <p>The <a href="https://ggplot2.tidyverse.org/reference/msleep.html"><code>msleep</code></a> data set contains information on sleeping patterns for mammals. We are interested in understanding the relationship of the length of sleep cycle (<code>sleep_cycle</code>; in hours) and rem sleep (<code>sleep_rem</code>; rapid eye movement; in hours).</p>
-<div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://www.openintro.org/data/csv/evals.csv"</span></span>
-<span id="cb8-2"><a></a>evals <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
 </section>
 <section id="red-wine-data" class="slide level2">
 <h2>Red Wine Data</h2>
@@ -826,8 +819,8 @@
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv"</span></span>
-<span id="cb9-2"><a></a>wine <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(url, <span class="at">delim =</span> <span class="st">";"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv"</span></span>
+<span id="cb8-2"><a></a>wine <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(url, <span class="at">delim =</span> <span class="st">";"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section></section>
@@ -865,8 +858,8 @@
 </section>
 <section id="conducting-ht-of-beta_j-1" class="slide level2">
 <h2>Conducting HT of <span class="math inline">\(\beta_j\)</span></h2>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>xlm <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> DATA, <span class="at">family =</span> <span class="fu">binomial</span>())</span>
-<span id="cb10-2"><a></a><span class="fu">tidy</span>(xlm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>xlm <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> DATA, <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb9-2"><a></a><span class="fu">tidy</span>(xlm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><code>xlm</code>: Object where the model is stored</li>
 <li><code>Y</code>: Name of the outcome variable in <code>DATA</code></li>
@@ -883,8 +876,8 @@
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>m1 <span class="ot">&lt;-</span> <span class="fu">glm</span>(disease <span class="sc">~</span> trestbps, heart_disease, <span class="at">family =</span> <span class="fu">binomial</span>())</span>
-<span id="cb11-2"><a></a><span class="fu">tidy</span>(m1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>m1 <span class="ot">&lt;-</span> <span class="fu">glm</span>(disease <span class="sc">~</span> trestbps, heart_disease, <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb10-2"><a></a><span class="fu">tidy</span>(m1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; # A tibble: 2 × 5
@@ -897,7 +890,7 @@
 </section>
 <section id="confidence-interval-1" class="slide level2">
 <h2>Confidence Interval</h2>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">tidy</span>(xlm, <span class="at">conf.int =</span> <span class="cn">TRUE</span>, <span class="at">conf.level =</span> LEVEL)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">tidy</span>(xlm, <span class="at">conf.int =</span> <span class="cn">TRUE</span>, <span class="at">conf.level =</span> LEVEL)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><code>xlm</code>: Name of the model saved in R</li>
 <li><code>LEVEL</code>: A number between 0 and 1 to specify confidence level</li>
@@ -909,7 +902,7 @@
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">tidy</span>(m1, <span class="at">conf.int =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">tidy</span>(m1, <span class="at">conf.int =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; # A tibble: 2 × 7
@@ -925,7 +918,7 @@
 </section>
 <section id="odds-ratio-confidence-intervat" class="slide level2">
 <h2>Odds Ratio &amp; Confidence Intervat</h2>
-<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">tidy</span>(xlm, <span class="at">exponentiate =</span> <span class="cn">TRUE</span>, <span class="at">conf.int =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">tidy</span>(xlm, <span class="at">exponentiate =</span> <span class="cn">TRUE</span>, <span class="at">conf.int =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><code>xlm</code>: Name of the model saved in R</li>
 </ul>
@@ -935,7 +928,7 @@
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">tidy</span>(m1, <span class="at">exponentiate =</span> <span class="cn">TRUE</span>, <span class="at">conf.int =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">tidy</span>(m1, <span class="at">exponentiate =</span> <span class="cn">TRUE</span>, <span class="at">conf.int =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; # A tibble: 2 × 7
@@ -984,15 +977,15 @@
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/wdbc.data"</span></span>
-<span id="cb19-2"><a></a>bc <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(url, <span class="at">header =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb19-3"><a></a></span>
-<span id="cb19-4"><a></a><span class="co"># Add column names</span></span>
-<span id="cb19-5"><a></a><span class="fu">colnames</span>(bc) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"id"</span>, <span class="st">"diagnosis"</span>, <span class="st">"radius"</span>, <span class="st">"texture"</span>, <span class="st">"perimeter"</span>, <span class="st">"area"</span>, <span class="st">"smoothness"</span>,</span>
-<span id="cb19-6"><a></a>                  <span class="st">"compactness"</span>, <span class="st">"concavity"</span>, <span class="fu">paste0</span>(<span class="st">"V"</span>, <span class="dv">10</span><span class="sc">:</span><span class="dv">32</span>))</span>
-<span id="cb19-7"><a></a></span>
-<span id="cb19-8"><a></a><span class="co"># Convert diagnosis to factor</span></span>
-<span id="cb19-9"><a></a>bc<span class="sc">$</span>diagnosis <span class="ot">&lt;-</span> <span class="fu">factor</span>(bc<span class="sc">$</span>diagnosis, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"B"</span>, <span class="st">"M"</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Benign"</span>, <span class="st">"Malignant"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/wdbc.data"</span></span>
+<span id="cb18-2"><a></a>bc <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(url, <span class="at">header =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb18-3"><a></a></span>
+<span id="cb18-4"><a></a><span class="co"># Add column names</span></span>
+<span id="cb18-5"><a></a><span class="fu">colnames</span>(bc) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"id"</span>, <span class="st">"diagnosis"</span>, <span class="st">"radius"</span>, <span class="st">"texture"</span>, <span class="st">"perimeter"</span>, <span class="st">"area"</span>, <span class="st">"smoothness"</span>,</span>
+<span id="cb18-6"><a></a>                  <span class="st">"compactness"</span>, <span class="st">"concavity"</span>, <span class="fu">paste0</span>(<span class="st">"V"</span>, <span class="dv">10</span><span class="sc">:</span><span class="dv">32</span>))</span>
+<span id="cb18-7"><a></a></span>
+<span id="cb18-8"><a></a><span class="co"># Convert diagnosis to factor</span></span>
+<span id="cb18-9"><a></a>bc<span class="sc">$</span>diagnosis <span class="ot">&lt;-</span> <span class="fu">factor</span>(bc<span class="sc">$</span>diagnosis, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"B"</span>, <span class="st">"M"</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Benign"</span>, <span class="st">"Malignant"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -1002,11 +995,11 @@
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://archive.ics.uci.edu/ml/machine-learning-databases/00267/data_banknote_authentication.txt"</span></span>
-<span id="cb20-2"><a></a>bank <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(url, <span class="at">header =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb20-3"><a></a></span>
-<span id="cb20-4"><a></a><span class="fu">colnames</span>(bank) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"variance"</span>, <span class="st">"skewness"</span>, <span class="st">"curtosis"</span>, <span class="st">"entropy"</span>, <span class="st">"class"</span>)</span>
-<span id="cb20-5"><a></a>bank<span class="sc">$</span>class <span class="ot">&lt;-</span> <span class="fu">factor</span>(bank<span class="sc">$</span>class, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Genuine"</span>, <span class="st">"Forged"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://archive.ics.uci.edu/ml/machine-learning-databases/00267/data_banknote_authentication.txt"</span></span>
+<span id="cb19-2"><a></a>bank <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(url, <span class="at">header =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb19-3"><a></a></span>
+<span id="cb19-4"><a></a><span class="fu">colnames</span>(bank) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"variance"</span>, <span class="st">"skewness"</span>, <span class="st">"curtosis"</span>, <span class="st">"entropy"</span>, <span class="st">"class"</span>)</span>
+<span id="cb19-5"><a></a>bank<span class="sc">$</span>class <span class="ot">&lt;-</span> <span class="fu">factor</span>(bank<span class="sc">$</span>class, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Genuine"</span>, <span class="st">"Forged"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 

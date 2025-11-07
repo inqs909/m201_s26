@@ -2198,6 +2198,13 @@
     "text": "Example\n\n\nCode\ntidy(m1, conf.int = TRUE, conf.level = 0.9)\n\n\n#&gt; # A tibble: 2 × 7\n#&gt;   term        estimate std.error statistic   p.value conf.low conf.high\n#&gt;   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n#&gt; 1 (Intercept)  -5872.     310.       -18.9 1.18e- 54  -6384.    -5360. \n#&gt; 2 flipper_len     50.2      1.54      32.6 3.13e-105     47.6      52.7"
   },
   {
+    "objectID": "lectures/10.html#mammals-sleep-data-set",
+    "href": "lectures/10.html#mammals-sleep-data-set",
+    "title": "Statistical Inference",
+    "section": "Mammals Sleep Data Set",
+    "text": "Mammals Sleep Data Set\nThe msleep data set contains information on sleeping patterns for mammals. We are interested in understanding the relationship of the length of sleep cycle (sleep_cycle; in hours) and rem sleep (sleep_rem; rapid eye movement; in hours)."
+  },
+  {
     "objectID": "lectures/10.html#red-wine-data",
     "href": "lectures/10.html#red-wine-data",
     "title": "Statistical Inference",
@@ -2240,11 +2247,18 @@
     "text": "Example\n\n\nCode\ntidy(m1, conf.int = TRUE)\n\n\n#&gt; # A tibble: 2 × 7\n#&gt;   term        estimate std.error statistic p.value conf.low conf.high\n#&gt;   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n#&gt; 1 (Intercept)  -2.49     0.905       -2.76 0.00586 -4.31      -0.747 \n#&gt; 2 trestbps      0.0177   0.00681      2.61 0.00914  0.00461    0.0314"
   },
   {
-    "objectID": "lectures/10.html#confidence-interval-for-odds-ratio",
-    "href": "lectures/10.html#confidence-interval-for-odds-ratio",
+    "objectID": "lectures/10.html#odds-ratio",
+    "href": "lectures/10.html#odds-ratio",
     "title": "Statistical Inference",
-    "section": "Confidence Interval for Odds Ratio",
-    "text": "Confidence Interval for Odds Ratio\nexp(confint(xlm, level = LEVEL))\n\nxlm: Name of the model saved in R\nLEVEL: A number between 0 and 1 to specify confidence level"
+    "section": "Odds Ratio",
+    "text": "Odds Ratio"
+  },
+  {
+    "objectID": "lectures/10.html#odds-ratio-confidence-intervat",
+    "href": "lectures/10.html#odds-ratio-confidence-intervat",
+    "title": "Statistical Inference",
+    "section": "Odds Ratio & Confidence Intervat",
+    "text": "Odds Ratio & Confidence Intervat\ntidy(xlm, exponentiate = TRUE, conf.int = TRUE)\n\nxlm: Name of the model saved in R"
   },
   {
     "objectID": "lectures/10.html#example-6",
@@ -4247,26 +4261,5 @@
     "title": "Group Regression Models",
     "section": "Extrapolation",
     "text": "Extrapolation\n\n\nCode\nggplot(penguins, aes(flipper_length_mm, body_mass_g)) + \n  xlim(160, 250) +\n  ylim(2600, 7000) +\n  geom_point() +\n  stat_smooth(method = \"lm\", se = F)"
-  },
-  {
-    "objectID": "lectures/10.html#mammals-sleep-data-set",
-    "href": "lectures/10.html#mammals-sleep-data-set",
-    "title": "Statistical Inference",
-    "section": "Mammals Sleep Data Set",
-    "text": "Mammals Sleep Data Set\nThe msleep data set contains information on sleeping patterns for mammals. We are interested in understanding the relationship of the length of sleep cycle (sleep_cycle; in hours) and rem sleep (sleep_rem; rapid eye movement; in hours).\n\n\nCode\nurl &lt;- \"https://www.openintro.org/data/csv/evals.csv\"\nevals &lt;- read_csv(url)"
-  },
-  {
-    "objectID": "lectures/10.html#odds-ratio",
-    "href": "lectures/10.html#odds-ratio",
-    "title": "Statistical Inference",
-    "section": "Odds Ratio",
-    "text": "Odds Ratio"
-  },
-  {
-    "objectID": "lectures/10.html#odds-ratio-confidence-intervat",
-    "href": "lectures/10.html#odds-ratio-confidence-intervat",
-    "title": "Statistical Inference",
-    "section": "Odds Ratio & Confidence Intervat",
-    "text": "Odds Ratio & Confidence Intervat\ntidy(xlm, exponentiate = TRUE, conf.int = TRUE)\n\nxlm: Name of the model saved in R"
   }
 ]

@@ -338,15 +338,6 @@ tidy(m1, conf.int = TRUE, conf.level = 0.9)
 The [`msleep`](https://ggplot2.tidyverse.org/reference/msleep.html) data set contains information on sleeping patterns for mammals. We are interested in understanding the relationship of the length of sleep cycle (`sleep_cycle`; in hours) and rem sleep (`sleep_rem`; rapid eye movement; in hours).
 
 
-```{r}
-#| code-fold: show
-#| eval: false
-
-url <- "https://www.openintro.org/data/csv/evals.csv"
-evals <- read_csv(url)
-
-```
-
 ## Red Wine Data
 
 The [Wine Quality](https://archive.ics.uci.edu/dataset/186/wine+quality) data set contains data on information on both red and white wine from North Portugal. We are interested in seeing if `pH` of the red wine (predictor variable) affects the `quality` (outcome variable).
