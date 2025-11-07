@@ -62,9 +62,7 @@ heart_disease$disease <- factor(ifelse(heart_disease$class == 0, "no", "yes"))
 
 ```
 
-## Learning Outcomes
 
-1. 
 
 # Statistical Inference
 
