@@ -122,7 +122,9 @@ These three concepts are foundational. Understanding them helps us assess how re
 
 -   Probability of observing data as extreme as this if $H_0$ is true
 
-Misinterpretation of p-values is common. Emphasize: low p-value means data is unusual under $H_0$.
+-   Misinterpretation of p-values is common. 
+
+-   Emphasize: low p-value means data is unusual under $H_0$.
 
 ## Confidence Intervals
 
@@ -218,7 +220,7 @@ ggplot(df, aes(x = x, y = y)) +
 Hypothesis Testing will force you to make a decision: Reject $H_0$ **OR** Fail to Reject $H_0$
 
 ::: fragment
-Reject $H_0$: The effect seen is not due to random chance, there is a process making contributing to the effect.
+Reject $H_0$: The effect seen is not due to random chance, there is a process contributing to the effect.
 :::
 
 ::: fragment
@@ -239,7 +241,7 @@ The p-value approach is one of the most common methods to report significant res
 The significance level $\alpha$ is the probability you will reject the null hypothesis given that it was true.
 
 ::: fragment
-In other words, $\alpha$ is the error rate that a research controls.
+In other words, $\alpha$ is the error rate that a researcher controls.
 :::
 
 ::: fragment

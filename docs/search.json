@@ -2048,7 +2048,7 @@
     "href": "lectures/10.html#p-values",
     "title": "Statistical Inference",
     "section": "p-values",
-    "text": "p-values\n\nProbability of observing data as extreme as this if \\(H_0\\) is true\n\nMisinterpretation of p-values is common. Emphasize: low p-value means data is unusual under \\(H_0\\)."
+    "text": "p-values\n\nProbability of observing data as extreme as this if \\(H_0\\) is true\nMisinterpretation of p-values is common.\nEmphasize: low p-value means data is unusual under \\(H_0\\)."
   },
   {
     "objectID": "lectures/10.html#confidence-intervals",
@@ -2118,7 +2118,7 @@
     "href": "lectures/10.html#decision-making-1",
     "title": "Statistical Inference",
     "section": "Decision Making",
-    "text": "Decision Making\nHypothesis Testing will force you to make a decision: Reject \\(H_0\\) OR Fail to Reject \\(H_0\\)\n\nReject \\(H_0\\): The effect seen is not due to random chance, there is a process making contributing to the effect.\n\n\nFail to Reject \\(H_0\\): The effect seen is due to random chance. Random sampling is the reason why an effect is displayed, not an underlying process."
+    "text": "Decision Making\nHypothesis Testing will force you to make a decision: Reject \\(H_0\\) OR Fail to Reject \\(H_0\\)\n\nReject \\(H_0\\): The effect seen is not due to random chance, there is a process contributing to the effect.\n\n\nFail to Reject \\(H_0\\): The effect seen is due to random chance. Random sampling is the reason why an effect is displayed, not an underlying process."
   },
   {
     "objectID": "lectures/10.html#decision-making-p-value",
@@ -2132,7 +2132,7 @@
     "href": "lectures/10.html#significance-level-alpha",
     "title": "Statistical Inference",
     "section": "Significance Level \\(\\alpha\\)",
-    "text": "Significance Level \\(\\alpha\\)\nThe significance level \\(\\alpha\\) is the probability you will reject the null hypothesis given that it was true.\n\nIn other words, \\(\\alpha\\) is the error rate that a research controls.\n\n\nTypically, we want this error rate to be small (\\(\\alpha = 0.05\\))."
+    "text": "Significance Level \\(\\alpha\\)\nThe significance level \\(\\alpha\\) is the probability you will reject the null hypothesis given that it was true.\n\nIn other words, \\(\\alpha\\) is the error rate that a researcher controls.\n\n\nTypically, we want this error rate to be small (\\(\\alpha = 0.05\\))."
   },
   {
     "objectID": "lectures/10.html#confidence-intervals-2",
