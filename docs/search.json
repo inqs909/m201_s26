@@ -2072,25 +2072,25 @@
     "text": "Null Hypothesis \\(H_0\\)\nThe null hypothesis is the claim that is initially believed to be true. For the most part, it is always equal to the hypothesized value."
   },
   {
-    "objectID": "lectures/10.html#alternative-hypothesis-h_a",
-    "href": "lectures/10.html#alternative-hypothesis-h_a",
+    "objectID": "lectures/10.html#alternative-hypothesis-h_1",
+    "href": "lectures/10.html#alternative-hypothesis-h_1",
     "title": "Statistical Inference",
-    "section": "Alternative Hypothesis \\(H_a\\)",
-    "text": "Alternative Hypothesis \\(H_a\\)\nThe alternative hypothesis contradicts the null hypothesis."
+    "section": "Alternative Hypothesis \\(H_1\\)",
+    "text": "Alternative Hypothesis \\(H_1\\)\nThe alternative hypothesis contradicts the null hypothesis."
   },
   {
     "objectID": "lectures/10.html#example-of-null-and-alternative-hypothesis",
     "href": "lectures/10.html#example-of-null-and-alternative-hypothesis",
     "title": "Statistical Inference",
     "section": "Example of Null and Alternative Hypothesis",
-    "text": "Example of Null and Alternative Hypothesis\nWe want to see if \\(\\beta\\) is different from \\(\\beta^*\\)\n\n\n\nNull Hypothesis\nAlternative Hypothesis\n\n\n\n\n\\(H_0: \\beta=\\beta^*\\)\n\\(H_a: \\beta\\ne\\beta^*\\)\n\n\n\\(H_0: \\beta\\le\\beta^*\\)\n\\(H_a: \\beta&gt;\\beta^*\\)\n\n\n\\(H_0: \\beta\\ge\\beta^*\\)\n\\(H_0: \\beta&lt;\\beta^*\\)"
+    "text": "Example of Null and Alternative Hypothesis\nWe want to see if \\(\\beta\\) is different from \\(\\beta^*\\)\n\n\n\nNull Hypothesis\nAlternative Hypothesis\n\n\n\n\n\\(H_0: \\beta=\\beta^*\\)\n\\(H_1: \\beta\\ne\\beta^*\\)\n\n\n\\(H_0: \\beta\\le\\beta^*\\)\n\\(H_1: \\beta&gt;\\beta^*\\)\n\n\n\\(H_0: \\beta\\ge\\beta^*\\)\n\\(H_1: \\beta&lt;\\beta^*\\)"
   },
   {
     "objectID": "lectures/10.html#one-side-vs-two-side-hypothesis-tests",
     "href": "lectures/10.html#one-side-vs-two-side-hypothesis-tests",
     "title": "Statistical Inference",
     "section": "One-Side vs Two-Side Hypothesis Tests",
-    "text": "One-Side vs Two-Side Hypothesis Tests\nNotice how there are 3 types of null and alternative hypothesis, The first type of hypothesis (\\(H_a:\\beta\\ne\\beta^*\\)) is considered a 2-sided hypothesis because the rejection region is located in 2 regions. The remaining two hypotheses are considered 1-sided because the rejection region is located on one side of the distribution.\n\n\n\nNull Hypothesis\nAlternative Hypothesis\nSide\n\n\n\n\n\\(H_0: \\beta=\\beta^*\\)\n\\(H_a: \\beta\\ne\\beta^*\\)\n2-Sided\n\n\n\\(H_0: \\beta\\le\\beta^*\\)\n\\(H_a: \\beta&gt;\\beta^*\\)\n1-Sided\n\n\n\\(H_0: \\beta\\ge\\beta^*\\)\n\\(H_0: \\beta&lt;\\beta^*\\)\n1-Sided"
+    "text": "One-Side vs Two-Side Hypothesis Tests\nNotice how there are 3 types of null and alternative hypothesis, The first type of hypothesis (\\(H_1:\\beta\\ne\\beta^*\\)) is considered a 2-sided hypothesis because the rejection region is located in 2 regions. The remaining two hypotheses are considered 1-sided because the rejection region is located on one side of the distribution.\n\n\n\nNull Hypothesis\nAlternative Hypothesis\nSide\n\n\n\n\n\\(H_0: \\beta=\\beta^*\\)\n\\(H_1: \\beta\\ne\\beta^*\\)\n2-Sided\n\n\n\\(H_0: \\beta\\le\\beta^*\\)\n\\(H_1: \\beta&gt;\\beta^*\\)\n1-Sided\n\n\n\\(H_0: \\beta\\ge\\beta^*\\)\n\\(H_1: \\beta&lt;\\beta^*\\)\n1-Sided"
   },
   {
     "objectID": "lectures/10.html#hypothesis-testing-steps",
@@ -2167,7 +2167,7 @@
     "href": "lectures/10.html#conducting-ht-of-beta_j",
     "title": "Statistical Inference",
     "section": "Conducting HT of \\(\\beta_j\\)",
-    "text": "Conducting HT of \\(\\beta_j\\)\nxlm &lt;- lm(Y ~ X, data = DATA)\ntidy(xlm)\n\nxlm: Object where the model is stored\nY: Name of the outcome variable in DATA\nX: Name of the Predictor Variable(s) in DATA\nDATA: Name of the data set"
+    "text": "Conducting HT of \\(\\beta_j\\)\nXLM &lt;- lm(Y ~ X, data = DATA)\ntidy(XLM)\n\nXLM: Object where the model is stored\nY: Name of the outcome variable in DATA\nX: Name of the Predictor Variable(s) in DATA\nDATA: Name of the data set"
   },
   {
     "objectID": "lectures/10.html#example",
@@ -2188,7 +2188,14 @@
     "href": "lectures/10.html#confidence-interval",
     "title": "Statistical Inference",
     "section": "Confidence Interval",
-    "text": "Confidence Interval\nconfint(xlm, level = LEVEL)\n\nxlm: Name of the model saved in R\nLEVEL: A number between 0 and 1 to specify confidence level"
+    "text": "Confidence Interval\ntidy(XLM, conf.int = TRUE)\n\nXLM: Object where the model is stored"
+  },
+  {
+    "objectID": "lectures/10.html#x-confidence-interval",
+    "href": "lectures/10.html#x-confidence-interval",
+    "title": "Statistical Inference",
+    "section": "X% Confidence Interval",
+    "text": "X% Confidence Interval\ntidy(XLM, conf.int = TRUE, conf.level = X)\n\nXLM: Object where the model is stored\nX: A number between 0 and 1 to specify confidence level"
   },
   {
     "objectID": "lectures/10.html#example-2",
@@ -2216,7 +2223,7 @@
     "href": "lectures/10.html#conducting-ht-of-beta_j-1",
     "title": "Statistical Inference",
     "section": "Conducting HT of \\(\\beta_j\\)",
-    "text": "Conducting HT of \\(\\beta_j\\)\nxlm &lt;- glm(Y ~ X, data = DATA, family = binomial())\ntidy(xlm)\n\nxlm: Object where the model is stored\nY: Name of the outcome variable in DATA\nX: Name of the Predictor Variable(s) in DATA\nDATA: Name of the data set"
+    "text": "Conducting HT of \\(\\beta_j\\)\nXLM &lt;- glm(Y ~ X, data = DATA, family = binomial())\ntidy(XLM)\n\nXLM: Object where the model is stored\nY: Name of the outcome variable in DATA\nX: Name of the Predictor Variable(s) in DATA\nDATA: Name of the data set"
   },
   {
     "objectID": "lectures/10.html#example-3",
@@ -2237,7 +2244,7 @@
     "href": "lectures/10.html#confidence-interval-1",
     "title": "Statistical Inference",
     "section": "Confidence Interval",
-    "text": "Confidence Interval\ntidy(xlm, conf.int = TRUE, conf.level = LEVEL)\n\nxlm: Name of the model saved in R\nLEVEL: A number between 0 and 1 to specify confidence level\ndefaults to 0.95"
+    "text": "Confidence Interval\ntidy(XLM, conf.int = TRUE, conf.level = LEVEL)\n\nXLM: Object where the model is stored\nLEVEL: A number between 0 and 1 to specify confidence level\ndefaults to 0.95"
   },
   {
     "objectID": "lectures/10.html#example-5",
@@ -2258,7 +2265,7 @@
     "href": "lectures/10.html#odds-ratio-confidence-intervat",
     "title": "Statistical Inference",
     "section": "Odds Ratio & Confidence Intervat",
-    "text": "Odds Ratio & Confidence Intervat\ntidy(xlm, exponentiate = TRUE, conf.int = TRUE)\n\nxlm: Name of the model saved in R"
+    "text": "Odds Ratio & Confidence Intervat\ntidy(XLM, exponentiate = TRUE, conf.int = TRUE)\n\nXLM: Object where the model is stored"
   },
   {
     "objectID": "lectures/10.html#example-6",

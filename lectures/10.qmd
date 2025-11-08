@@ -142,7 +142,7 @@ Hypothesis tests are used to test whether claims are valid or not. This is condu
 
 The null hypothesis is the claim that is initially believed to be true. For the most part, it is always equal to the hypothesized value.
 
-## Alternative Hypothesis $H_a$
+## Alternative Hypothesis $H_1$
 
 The alternative hypothesis contradicts the null hypothesis.
 
@@ -152,19 +152,19 @@ We want to see if $\beta$ is different from $\beta^*$
 
 | Null Hypothesis        | Alternative Hypothesis |
 |------------------------|------------------------|
-| $H_0: \beta=\beta^*$   | $H_a: \beta\ne\beta^*$ |
-| $H_0: \beta\le\beta^*$ | $H_a: \beta>\beta^*$   |
-| $H_0: \beta\ge\beta^*$ | $H_0: \beta<\beta^*$   |
+| $H_0: \beta=\beta^*$   | $H_1: \beta\ne\beta^*$ |
+| $H_0: \beta\le\beta^*$ | $H_1: \beta>\beta^*$   |
+| $H_0: \beta\ge\beta^*$ | $H_1: \beta<\beta^*$   |
 
 ## One-Side vs Two-Side Hypothesis Tests
 
-Notice how there are 3 types of null and alternative hypothesis, The first type of hypothesis ($H_a:\beta\ne\beta^*$) is considered a 2-sided hypothesis because the rejection region is located in 2 regions. The remaining two hypotheses are considered 1-sided because the rejection region is located on one side of the distribution.
+Notice how there are 3 types of null and alternative hypothesis, The first type of hypothesis ($H_1:\beta\ne\beta^*$) is considered a 2-sided hypothesis because the rejection region is located in 2 regions. The remaining two hypotheses are considered 1-sided because the rejection region is located on one side of the distribution.
 
 | Null Hypothesis        | Alternative Hypothesis | Side    |
 |------------------------|------------------------|---------|
-| $H_0: \beta=\beta^*$   | $H_a: \beta\ne\beta^*$ | 2-Sided |
-| $H_0: \beta\le\beta^*$ | $H_a: \beta>\beta^*$   | 1-Sided |
-| $H_0: \beta\ge\beta^*$ | $H_0: \beta<\beta^*$   | 1-Sided |
+| $H_0: \beta=\beta^*$   | $H_1: \beta\ne\beta^*$ | 2-Sided |
+| $H_0: \beta\le\beta^*$ | $H_1: \beta>\beta^*$   | 1-Sided |
+| $H_0: \beta\ge\beta^*$ | $H_1: \beta<\beta^*$   | 1-Sided |
 
 ## Hypothesis Testing Steps
 
@@ -292,11 +292,11 @@ The confidence interval approach can evaluate a hypothesis test where the altern
 ## Conducting HT of $\beta_j$
 
 ```r
-xlm <- lm(Y ~ X, data = DATA)
-tidy(xlm)
+XLM <- lm(Y ~ X, data = DATA)
+tidy(XLM)
 ```
 
--   `xlm`: Object where the model is stored
+-   `XLM`: Object where the model is stored
 -   `Y`: Name of the outcome variable in `DATA`
 -   `X`: Name of the Predictor Variable(s) in `DATA`
 -   `DATA`: Name of the data set
@@ -319,11 +319,20 @@ tidy(m1)
 ## Confidence Interval
 
 ```r
-confint(xlm, level = LEVEL)
+tidy(XLM, conf.int = TRUE)
 ```
 
--   `xlm`: Name of the model saved in R
--   `LEVEL`: A number between 0 and 1 to specify confidence level
+-   `XLM`: Object where the model is stored
+
+
+## X% Confidence Interval
+
+```r
+tidy(XLM, conf.int = TRUE, conf.level = X)
+```
+
+-   `XLM`: Object where the model is stored
+-   `X`: A number between 0 and 1 to specify confidence level
 
 ## Example
 
@@ -359,11 +368,11 @@ wine <- read_delim(url, delim = ";")
 ## Conducting HT of $\beta_j$
 
 ```r
-xlm <- glm(Y ~ X, data = DATA, family = binomial())
-tidy(xlm)
+XLM <- glm(Y ~ X, data = DATA, family = binomial())
+tidy(XLM)
 ```
 
--   `xlm`: Object where the model is stored
+-   `XLM`: Object where the model is stored
 -   `Y`: Name of the outcome variable in `DATA`
 -   `X`: Name of the Predictor Variable(s) in `DATA`
 -   `DATA`: Name of the data set
@@ -387,10 +396,10 @@ tidy(m1)
 ## Confidence Interval
 
 ```r
-tidy(xlm, conf.int = TRUE, conf.level = LEVEL)
+tidy(XLM, conf.int = TRUE, conf.level = LEVEL)
 ```
 
--   `xlm`: Name of the model saved in R
+-   `XLM`: Object where the model is stored
 -   `LEVEL`: A number between 0 and 1 to specify confidence level
   - defaults to 0.95
 
@@ -410,10 +419,10 @@ tidy(m1, conf.int = TRUE)
 ## Odds Ratio & Confidence Intervat 
 
 ```r
-tidy(xlm, exponentiate = TRUE, conf.int = TRUE)
+tidy(XLM, exponentiate = TRUE, conf.int = TRUE)
 ```
 
--   `xlm`: Name of the model saved in R
+-   `XLM`: Object where the model is stored
 
 
 
