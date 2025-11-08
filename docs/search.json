@@ -2181,7 +2181,7 @@
     "href": "lectures/10.html#example-1",
     "title": "Statistical Inference",
     "section": "Example",
-    "text": "Example\n\n\nCode\nm1 &lt;- lm(body_mass ~ flipper_len, penguins)\ntidy(m1)\n\n\n#&gt; # A tibble: 2 × 5\n#&gt;   term        estimate std.error statistic   p.value\n#&gt;   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n#&gt; 1 (Intercept)  -5872.     310.       -18.9 1.18e- 54\n#&gt; 2 flipper_len     50.2      1.54      32.6 3.13e-105"
+    "text": "Example\n\n\nCode\nm1 &lt;- lm(body_mass ~ flipper_len, penguins)\ntidy(m1)\n\n\n#&gt; # A tibble: 2 × 5\n#&gt;   term        estimate std.error statistic   p.value\n#&gt;   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n#&gt; 1 (Intercept)  -5781.     306.       -18.9 5.59e- 55\n#&gt; 2 flipper_len     49.7      1.52      32.7 4.37e-107"
   },
   {
     "objectID": "lectures/10.html#confidence-interval",
@@ -2202,7 +2202,7 @@
     "href": "lectures/10.html#example-2",
     "title": "Statistical Inference",
     "section": "Example",
-    "text": "Example\n\n\nCode\ntidy(m1, conf.int = TRUE, conf.level = 0.9)\n\n\n#&gt; # A tibble: 2 × 7\n#&gt;   term        estimate std.error statistic   p.value conf.low conf.high\n#&gt;   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n#&gt; 1 (Intercept)  -5872.     310.       -18.9 1.18e- 54  -6384.    -5360. \n#&gt; 2 flipper_len     50.2      1.54      32.6 3.13e-105     47.6      52.7"
+    "text": "Example\n\n\nCode\ntidy(m1, conf.int = TRUE, conf.level = 0.9)\n\n\n#&gt; # A tibble: 2 × 7\n#&gt;   term        estimate std.error statistic   p.value conf.low conf.high\n#&gt;   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n#&gt; 1 (Intercept)  -5781.     306.       -18.9 5.59e- 55  -6285.    -5276. \n#&gt; 2 flipper_len     49.7      1.52      32.7 4.37e-107     47.2      52.2"
   },
   {
     "objectID": "lectures/10.html#mammals-sleep-data-set",

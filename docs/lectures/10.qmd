@@ -59,7 +59,6 @@ theme_set(theme_bw() +
     legend.text = element_text(size = 24)
   ))
 
-penguins <- penguins |> drop_na()
 heart_disease <- kmed::heart
 heart_disease$disease <- factor(ifelse(heart_disease$class == 0, "no", "yes")) 
 
