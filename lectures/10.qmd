@@ -415,7 +415,6 @@ tidy(m1, conf.int = TRUE)
 ```
 
 
-## Odds Ratio
 
 ## Odds Ratio & Confidence Intervat 
 

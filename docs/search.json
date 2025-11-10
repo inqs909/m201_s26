@@ -2254,13 +2254,6 @@
     "text": "Example\n\n\nCode\ntidy(m1, conf.int = TRUE)\n\n\n#&gt; # A tibble: 2 × 7\n#&gt;   term        estimate std.error statistic p.value conf.low conf.high\n#&gt;   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n#&gt; 1 (Intercept)  -2.49     0.905       -2.76 0.00586 -4.31      -0.747 \n#&gt; 2 trestbps      0.0177   0.00681      2.61 0.00914  0.00461    0.0314"
   },
   {
-    "objectID": "lectures/10.html#odds-ratio",
-    "href": "lectures/10.html#odds-ratio",
-    "title": "Statistical Inference",
-    "section": "Odds Ratio",
-    "text": "Odds Ratio"
-  },
-  {
     "objectID": "lectures/10.html#odds-ratio-confidence-intervat",
     "href": "lectures/10.html#odds-ratio-confidence-intervat",
     "title": "Statistical Inference",
