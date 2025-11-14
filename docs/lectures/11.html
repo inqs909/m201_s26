@@ -12,6 +12,7 @@
 <script src="../site_libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
 <script src="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/sc-sb-title-1.0.0/sc_sb_title.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/grid-no-htext-1.0.0/grid_no_htext.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.31">
@@ -101,7 +102,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-37f608eb8f99b9a402e6ca52b44cf77b.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-5239f6a10343ce9cfdf9462dbcf971bb.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -211,50 +212,6 @@
 </div>
 
 </section>
-<section class="slide level2">
-
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>m <span class="ot">&lt;-</span> <span class="fu">glm</span>(disease <span class="sc">~</span> cp, </span>
-<span id="cb1-2"><a></a>    <span class="at">data =</span> heart_disease, </span>
-<span id="cb1-3"><a></a>    <span class="at">family =</span> binomial) </span>
-<span id="cb1-4"><a></a><span class="fu">anova</span>(m, <span class="at">method =</span> <span class="st">"lrt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>#&gt; Analysis of Deviance Table
-#&gt; 
-#&gt; Model: binomial, link: logit
-#&gt; 
-#&gt; Response: disease
-#&gt; 
-#&gt; Terms added sequentially (first to last)
-#&gt; 
-#&gt; 
-#&gt;      Df Deviance Resid. Df Resid. Dev  Pr(&gt;Chi)    
-#&gt; NULL                   296     409.95              
-#&gt; cp    3   81.195       293     328.75 &lt; 2.2e-16 ***
-#&gt; ---
-#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
-</div>
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>r <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(m, <span class="sc">~</span>cp, <span class="at">trans =</span> <span class="st">"response"</span>)</span>
-<span id="cb3-2"><a></a><span class="fu">pairs</span>(r)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>#&gt;  contrast  estimate     SE  df z.ratio p.value
-#&gt;  cp1 - cp2   0.1207 0.1110 Inf   1.090  0.6959
-#&gt;  cp1 - cp3   0.0875 0.1060 Inf   0.825  0.8428
-#&gt;  cp1 - cp4  -0.4210 0.1030 Inf  -4.088  0.0003
-#&gt;  cp2 - cp3  -0.0332 0.0715 Inf  -0.465  0.9668
-#&gt;  cp2 - cp4  -0.5417 0.0668 Inf  -8.108  &lt;.0001
-#&gt;  cp3 - cp4  -0.5085 0.0587 Inf  -8.658  &lt;.0001
-#&gt; 
-#&gt; P value adjustment: tukey method for comparing a family of 4 estimates</code></pre>
-</div>
-</div>
-</section>
 <section>
 <section id="motivating-example" class="title-slide slide level1 agenda-slide center">
 <h1>Motivating Example</h1>
@@ -264,7 +221,16 @@
 <p>Motivating Example</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Model Hypothesis Testing</p>
+<p>Model Inference</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Family-wise Error Rate</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Linear Model Inference</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Logistic Model Inference</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Significant Difference Between Groups</p>
@@ -272,34 +238,79 @@
 </ul>
 </div>
 </section>
-<section id="motivating-examples" class="slide level2">
-<h2>Motivating Examples</h2>
+<section id="species-and-body-mass" class="slide level2">
+<h2>Species and Body Mass</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li>Is there a difference in body mass between the penguins species?</li>
+<li>Is the difference due to a natural phenomenon or randomness?</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>penguins <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>species, <span class="at">y =</span> body_mass)) <span class="sc">+</span></span>
+<span id="cb1-2"><a></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span> </span>
+<span id="cb1-3"><a></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
+<span id="cb1-4"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Species"</span>, <span class="at">y =</span> <span class="st">"Body Mass"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="11_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="chest-pain-and-heart-disease" class="slide level2">
+<h2>Chest Pain and Heart Disease</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li><p>Is there a difference in proportions between the different chest pains?</p></li>
+<li><p>Is the difference due to a natural phenomenom or randomness?</p></li>
+</ul>
+</div><div class="column" style="width:60%;">
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>p1 <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>species, <span class="at">y =</span> body_mass)) <span class="sc">+</span></span>
-<span id="cb5-2"><a></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span> </span>
-<span id="cb5-3"><a></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
-<span id="cb5-4"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Species"</span>, <span class="at">y =</span> <span class="st">"Body Mass"</span>, <span class="at">title =</span> <span class="st">"Linear"</span>)</span>
-<span id="cb5-5"><a></a>  </span>
-<span id="cb5-6"><a></a>p2 <span class="ot">&lt;-</span> heart_disease <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>cp, <span class="at">fill =</span> disease)) <span class="sc">+</span></span>
-<span id="cb5-7"><a></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"count"</span>, <span class="at">position=</span><span class="fu">position_dodge</span>()) <span class="sc">+</span></span>
-<span id="cb5-8"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Chest Pain"</span>, <span class="at">title =</span> <span class="st">"Logistic"</span>) </span>
-<span id="cb5-9"><a></a>p1 <span class="sc">+</span> p2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>heart_disease <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>cp, <span class="at">fill =</span> disease)) <span class="sc">+</span></span>
+<span id="cb2-2"><a></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
+<span id="cb2-3"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Chest Pain"</span>) <span class="sc">+</span> </span>
+<span id="cb2-4"><a></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="11_files/figure-revealjs/unnamed-chunk-3-1.png" width="960"></p>
+</figure>
 </div>
-<img data-src="11_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section></section>
+</div>
+</div>
+</div></div>
+</section></section>
 <section>
-<section id="model-hypothesis-testing" class="title-slide slide level1 agenda-slide center">
-<h1>Model Hypothesis Testing</h1>
+<section id="model-inference" class="title-slide slide level1 agenda-slide center">
+<h1>Model Inference</h1>
 <div class="agenda">
 <ul>
 <li><div class="agenda-inactive agenda-pre-active">
 <p>Motivating Example</p>
 </div></li>
 <li><div class="agenda-active">
-<p>Model Hypothesis Testing</p>
+<p>Model Inference</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Family-wise Error Rate</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Linear Model Inference</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Logistic Model Inference</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Significant Difference Between Groups</p>
@@ -307,11 +318,166 @@
 </ul>
 </div>
 </section>
-<section id="model-inference" class="slide level2">
-<h2>Model inference</h2>
-<p>We conduct model inference to determine if different models are better at explaining variation. A common example is to compare a linear model (<span class="math inline">\(\hat Y=\hat\beta_0 + \hat\beta_1 X\)</span>) to the mean of Y (<span class="math inline">\(\hat \mu_y\)</span>). We determine the significance of the variation explained using an Analysis of Variance (ANOVA) table and F test.</p>
+<section id="model-inference-1" class="slide level2">
+<h2>Model Inference</h2>
+<p><strong>Model Inference</strong> is the act of conducting a hypothesis test on the entire model (line). We do this to determine if the fully explained model is <strong>significantly</strong> different from the smaller models or average.</p>
+<div class="fragment">
+<p>Model inference determines if more variation is explained by including more predictors.</p>
+</div>
 </section>
-<section id="linear-model-inference" class="slide level2">
+<section id="model-inference-2" class="slide level2">
+<h2>Model inference</h2>
+<ul>
+<li><p>We will conduct model inference to determine if different models are better at explaining variation. Both Linear and Logistic Regression have techniques to test different models.</p></li>
+<li><p>For Linear Regression, we determine the significance of the variation explained using an Analysis of Variance (ANOVA) table and F test.</p></li>
+<li><p>For Logistic Regression, we determine the significance of the variation explained using a Likelihood Ratio test.</p></li>
+<li><p>Conducting Model Inference first ensures that the <strong>Family-wise Error Rate</strong> is controlled.</p></li>
+</ul>
+</section>
+<section id="full-and-reduced-model" class="slide level2">
+<h2>Full and Reduced Model</h2>
+<div class="columns">
+<div class="column">
+<h4 id="full-model">Full Model</h4>
+<p><span class="math display">\[
+Y =  \beta_0 + \beta_1 X_1 + \cdots + \beta_p X_p
+\]</span></p>
+</div><div class="column">
+<h4 id="reduced-model">Reduced Model</h4>
+<p><span class="math display">\[
+Y =  \beta_0 + \beta_1 X_1
+\]</span></p>
+</div></div>
+</section>
+<section id="null-and-alt-hypothesis" class="slide level2">
+<h2>Null and Alt Hypothesis</h2>
+<p><span class="math inline">\(H_0\)</span>: The fully-parameterized model does not explain more variation than the reduced model.</p>
+<p><span class="math inline">\(H_a\)</span>: The fully-parameterized model does explain more variation than the reduced model.</p>
+</section>
+<section id="group-model-inference" class="slide level2">
+<h2>Group Model Inference</h2>
+<ul>
+<li><p><strong>Group Model Inference</strong> tests whether a <strong>categorical</strong> variable significantly reduces the variation of the outcome of interest.</p></li>
+<li><p>This tells us if the group means are different from each other.</p></li>
+</ul>
+</section>
+<section id="group-full-and-reduced-model" class="slide level2">
+<h2>Group Full and Reduced Model</h2>
+<div class="columns">
+<div class="column">
+<h4 id="full-model-1">Full Model</h4>
+<p><span class="math display">\[
+Y =  \beta_0 + \beta_1 C_1 + \cdots + \beta_p C_p
+\]</span></p>
+</div><div class="column">
+<h4 id="reduced-model-1">Reduced Model</h4>
+<p><span class="math display">\[
+Y =  \bar Y
+\]</span></p>
+</div></div>
+</section>
+<section id="null-and-alt-hypothesis-1" class="slide level2">
+<h2>Null and Alt Hypothesis</h2>
+<p><span class="math inline">\(H_0\)</span>: The different categories do not have significantly different means/proportions from each other.</p>
+<p><span class="math inline">\(H_a\)</span>: At least two categories have significantly different means/proportions from each other.</p>
+</section></section>
+<section>
+<section id="family-wise-error-rate" class="title-slide slide level1 agenda-slide center">
+<h1>Family-wise Error Rate</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Motivating Example</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Model Inference</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Family-wise Error Rate</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Linear Model Inference</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Logistic Model Inference</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Significant Difference Between Groups</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="motivation" class="slide level2">
+<h2>Motivation</h2>
+<ul>
+<li>In multiple hypothesis testing, we test several hypotheses simultaneously.</li>
+<li>The probability of making <strong>at least one Type I error</strong> increases with the number of tests.</li>
+<li>Hence, we need <strong>error control</strong> methods.</li>
+</ul>
+</section>
+<section id="type-i-error-and-its-rate" class="slide level2">
+<h2>Type I Error and Its Rate</h2>
+<p><strong>Type I Error (False Positive):</strong> Rejecting a null hypothesis (<span class="math inline">\(H_0\)</span>), when it is true.</p>
+<p><strong>Type I Error Rate (<span class="math inline">\(\alpha\)</span>):</strong> The probability of making a Type I error in a single hypothesis test.</p>
+<p><span class="math display">\[
+\alpha = P(\text{Reject } H_0 \mid H_0 \text{ is true})
+\]</span></p>
+<p>Typically, <span class="math inline">\(\alpha = 0.05\)</span>, meaning a 5% chance of incorrectly rejecting a true null hypothesis.</p>
+</section>
+<section id="definition-of-fwer" class="slide level2">
+<h2>Definition of FWER</h2>
+<p><strong>Family-Wise Error Rate (FWER):</strong> The probability of making <strong>one or more Type I errors</strong> among all hypotheses tested.</p>
+<p><span class="math display">\[
+\text{FWER} = P(\text{At least one false rejection}) = P(V \ge 1)
+\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(V\)</span> = number of false positives (incorrect rejections)</li>
+</ul>
+</section>
+<section id="why-control-fwer" class="slide level2">
+<h2>Why Control FWER?</h2>
+<ul>
+<li>Maintains overall confidence in conclusions.</li>
+<li>Avoids claiming false discoveries when many tests are run.</li>
+<li>Trade-off: Strong control of FWER reduces <strong>power</strong> (increases Type II error).</li>
+</ul>
+</section>
+<section id="methods-to-control-fwer" class="slide level2 scrollable">
+<h2>Methods to Control FWER</h2>
+<ol type="1">
+<li><p>Bonferroni Correction</p></li>
+<li><p>Holm-Bonferroni Procedure (Step-down)</p></li>
+<li><p>Tukey’s Honest Significant Difference (HSD)</p></li>
+</ol>
+</section></section>
+<section>
+<section id="linear-model-inference" class="title-slide slide level1 agenda-slide center">
+<h1>Linear Model Inference</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Motivating Example</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Model Inference</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Family-wise Error Rate</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Linear Model Inference</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Logistic Model Inference</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Significant Difference Between Groups</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="linear-model-inference-1" class="slide level2">
 <h2>Linear Model Inference</h2>
 <p>Given 2 models:</p>
 <p><span class="math display">\[
@@ -325,22 +491,19 @@
 <p>Is the model with predictors do a better job than using the average?</p>
 </div>
 </section>
-<section id="logistic-model-inference" class="slide level2">
-<h2>Logistic Model Inference</h2>
-<p>Given 2 models:</p>
+<section id="linear-models-difference-groups" class="slide level2">
+<h2>Linear Models: Difference Groups</h2>
+<p>Given a categorical variable with 4 categories, which model is better:</p>
 <p><span class="math display">\[
-g(\hat Y) = \hat\beta_0 + \hat\beta_1 X_1 + \hat\beta_2 X_2 + \cdots + \hat\beta_p X_p
+\hat Y = \hat\beta_0 + \hat\beta_1 C_1 + \hat\beta_2 C_2 + \hat\beta_3 C_3  
 \]</span></p>
 <p>or</p>
 <p><span class="math display">\[
-g(\hat Y) = \bar y
+\hat Y = \bar y
 \]</span></p>
 <div class="fragment">
-<p>Is the model with predictors do a better job than using the average?</p>
+<p>Are the 2 models different from each other?</p>
 </div>
-</section>
-<section id="anova-linear" class="slide level2">
-<h2>ANOVA (Linear)</h2>
 </section>
 <section id="anova-table" class="slide level2">
 <h2>ANOVA Table</h2>
@@ -391,12 +554,61 @@ g(\hat Y) = \bar y
 </section>
 <section id="conducting-an-anova-in-r" class="slide level2">
 <h2>Conducting an ANOVA in R</h2>
-<div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>xlm <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> DATA)</span>
-<span id="cb6-2"><a></a><span class="fu">anova</span>(xlm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>xlm <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> DATA)</span>
+<span id="cb3-2"><a></a><span class="fu">anova</span>(xlm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section></section>
+<section>
+<section id="logistic-model-inference" class="title-slide slide level1 agenda-slide center">
+<h1>Logistic Model Inference</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Motivating Example</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Model Inference</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Family-wise Error Rate</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Linear Model Inference</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Logistic Model Inference</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Significant Difference Between Groups</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="logistic-model-inference-1" class="slide level2">
+<h2>Logistic Model Inference</h2>
+<p>Given 2 models:</p>
+<p><span class="math display">\[
+g(\hat Y) = \hat\beta_0 + \hat\beta_1 X_1 + \hat\beta_2 X_2 + \cdots + \hat\beta_p X_p
+\]</span></p>
+<p>or</p>
+<p><span class="math display">\[
+g(\hat Y) = \bar y
+\]</span></p>
+<div class="fragment">
+<p>Is the model with predictors do a better job than using the average?</p>
+</div>
+</section>
+<section id="logistic-model-inference-2" class="slide level2">
+<h2>Logistic Model Inference</h2>
+<p>Given a categorical variable with 4 categories, which model is better:</p>
+<p><span class="math display">\[
+g(\hat Y) = \hat\beta_0 + \hat\beta_1 C_1 + \hat\beta_2 C_2 + \hat\beta_3 C_3  
+\]</span></p>
+<p>or</p>
+<p><span class="math display">\[
+g(\hat Y) = \bar y
+\]</span></p>
+<div class="fragment">
+<p>Are the 2 models different from each other?</p>
 </div>
 </section>
 <section id="likelihood-ratio-test-logistic" class="slide level2">
@@ -409,11 +621,12 @@ g(\hat Y) = \bar y
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>xlm <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> DATA, <span class="at">family =</span> binomial)</span>
-<span id="cb7-2"><a></a><span class="fu">anova</span>(xlm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>xlm <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> DATA, <span class="at">family =</span> binomial)</span>
+<span id="cb4-2"><a></a><span class="fu">anova</span>(xlm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section></section>
+<section>
 <section id="significant-difference-between-groups" class="title-slide slide level1 agenda-slide center">
 <h1>Significant Difference Between Groups</h1>
 <div class="agenda">
@@ -422,12 +635,141 @@ g(\hat Y) = \bar y
 <p>Motivating Example</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Model Hypothesis Testing</p>
+<p>Model Inference</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Family-wise Error Rate</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Linear Model Inference</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Logistic Model Inference</p>
 </div></li>
 <li><div class="agenda-active">
 <p>Significant Difference Between Groups</p>
 </div></li>
 </ul>
+</div>
+</section>
+<section id="post-hoc-analysis" class="slide level2">
+<h2>Post-Hoc Analysis</h2>
+<ul>
+<li><p>If we found to reject the null hypothesis from our model inference, we conduct a <strong>post-hoc</strong> analysis to determine which groups are significantly different from each other.</p></li>
+<li><p>We will conduct multiple comparisons test, while maintaining the family-wise error rate, to determine which groups are different from each other.</p></li>
+</ul>
+</section>
+<section id="group-proportions-or-means" class="slide level2">
+<h2>Group Proportions Or Means</h2>
+<p>We will use the <code>emmeans</code> function from the <code>emmeans</code> R package to obtain the group proportions or means.</p>
+</section>
+<section id="group-means" class="slide level2">
+<h2>Group Means</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>m <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> DATA)</span>
+<span id="cb5-2"><a></a><span class="fu">emmeans</span>(m, <span class="sc">~</span>X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="group-proportions" class="slide level2">
+<h2>Group Proportions</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>m <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> DATA, <span class="at">family =</span> binomial)</span>
+<span id="cb6-2"><a></a><span class="fu">emmeans</span>(m, <span class="sc">~</span>X, <span class="at">type =</span> <span class="st">"response"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="body-mass-by-species" class="slide level2">
+<h2>Body Mass by Species</h2>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>m1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass <span class="sc">~</span> species, <span class="at">data =</span> penguins)</span>
+<span id="cb7-2"><a></a><span class="fu">emmeans</span>(m1, <span class="sc">~</span>species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt;  species   emmean   SE  df lower.CL upper.CL
+#&gt;  Adelie      3706 38.1 330     3631     3781
+#&gt;  Chinstrap   3733 55.9 330     3623     3843
+#&gt;  Gentoo      5092 42.2 330     5009     5176
+#&gt; 
+#&gt; Confidence level used: 0.95</code></pre>
+</div>
+</div>
+</section>
+<section id="heart-disease-by-chest-pain" class="slide level2">
+<h2>Heart Disease by Chest Pain</h2>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>m2 <span class="ot">&lt;-</span> <span class="fu">glm</span>(disease <span class="sc">~</span> cp, <span class="at">data =</span> heart_disease, <span class="at">family =</span> binomial)</span>
+<span id="cb9-2"><a></a><span class="fu">emmeans</span>(m2, <span class="sc">~</span> cp, <span class="at">type =</span> <span class="st">"response"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt;  cp                prob     SE  df asymp.LCL asymp.UCL
+#&gt;  Asymptomatic     0.725 0.0375 Inf    0.6463     0.792
+#&gt;  Atypical Angina  0.184 0.0553 Inf    0.0984     0.317
+#&gt;  Non-anginal Pain 0.217 0.0452 Inf    0.1411     0.318
+#&gt;  Typical Angina   0.304 0.0959 Inf    0.1525     0.515
+#&gt; 
+#&gt; Confidence level used: 0.95 
+#&gt; Intervals are back-transformed from the logit scale</code></pre>
+</div>
+</div>
+</section>
+<section id="multiple-comparisons-test" class="slide level2">
+<h2>Multiple Comparisons Test</h2>
+<ul>
+<li><p>A multi-comparison test can be achieved by using the <code>pairs</code> function from the output of the <code>emmeans</code> function.</p></li>
+<li><p>This function will automatically adjust the p-values using Tukey’s method to fix the family-wise error rate.</p></li>
+</ul>
+</section>
+<section id="multi-comparison-test-means" class="slide level2">
+<h2>Multi-Comparison Test: Means</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>m <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> DATA)</span>
+<span id="cb11-2"><a></a>e <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(m, <span class="sc">~</span>X)</span>
+<span id="cb11-3"><a></a><span class="fu">pairs</span>(e)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="multi-comparison-test-proportions" class="slide level2">
+<h2>Multi-Comparison Test: Proportions</h2>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>m <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> DATA, <span class="at">family =</span> binomial)</span>
+<span id="cb12-2"><a></a>e <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(m, <span class="sc">~</span>X, <span class="at">type =</span> <span class="st">"response"</span>)</span>
+<span id="cb12-3"><a></a><span class="fu">pairs</span>(e)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="body-mass-by-species-1" class="slide level2">
+<h2>Body Mass by Species</h2>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>m1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass <span class="sc">~</span> species, <span class="at">data =</span> penguins)</span>
+<span id="cb13-2"><a></a>e1 <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(m1, <span class="sc">~</span>species)</span>
+<span id="cb13-3"><a></a><span class="fu">pairs</span>(e1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt;  contrast           estimate   SE  df t.ratio p.value
+#&gt;  Adelie - Chinstrap    -26.9 67.7 330  -0.398  0.9164
+#&gt;  Adelie - Gentoo     -1386.3 56.9 330 -24.359  &lt;.0001
+#&gt;  Chinstrap - Gentoo  -1359.3 70.0 330 -19.406  &lt;.0001
+#&gt; 
+#&gt; P value adjustment: tukey method for comparing a family of 3 estimates</code></pre>
+</div>
+</div>
+</section>
+<section id="heart-disease-by-chest-pain-1" class="slide level2">
+<h2>Heart Disease by Chest Pain</h2>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>m2 <span class="ot">&lt;-</span> <span class="fu">glm</span>(disease <span class="sc">~</span> cp, <span class="at">data =</span> heart_disease, <span class="at">family =</span> binomial)</span>
+<span id="cb15-2"><a></a>e2 <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(m2, <span class="sc">~</span> cp, <span class="at">type =</span> <span class="st">"response"</span>)</span>
+<span id="cb15-3"><a></a><span class="fu">pairs</span>(e2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt;  contrast                             odds.ratio    SE  df null z.ratio p.value
+#&gt;  Asymptomatic / Atypical Angina           11.738 4.860 Inf    1   5.948  &lt;.0001
+#&gt;  Asymptomatic / (Non-anginal Pain)         9.537 3.110 Inf    1   6.917  &lt;.0001
+#&gt;  Asymptomatic / Typical Angina             6.037 2.960 Inf    1   3.664  0.0014
+#&gt;  Atypical Angina / (Non-anginal Pain)      0.812 0.370 Inf    1  -0.456  0.9684
+#&gt;  Atypical Angina / Typical Angina          0.514 0.301 Inf    1  -1.138  0.6660
+#&gt;  (Non-anginal Pain) / Typical Angina       0.633 0.333 Inf    1  -0.870  0.8204
+#&gt; 
+#&gt; P value adjustment: tukey method for comparing a family of 4 estimates 
+#&gt; Tests are performed on the log odds ratio scale</code></pre>
+</div>
 </div>
 
 
@@ -445,11 +787,11 @@ g(\hat Y) = \bar y
 <p> </p>
 </div>
 </div>
-</section>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-
+<p>m201.inqs.info/lectures/11</p>
 </div>
 </div></div>
 
@@ -486,7 +828,7 @@ g(\hat Y) = \bar y
 'jumpToSlide': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true,"theme":"whiteboard","chalkWidth":4},
-'pointer': {"key":"q","color":"red","pointerSize":16,"alwaysVisible":false},
+'pointer': {"key":"q","color":"red","pointerSize":32,"alwaysVisible":false},
 'verticator': {"themetag":"h1","color":"","inversecolor":"","skipuncounted":false,"clickable":true,"position":"auto","offset":"3vmin","autogenerate":true,"tooltip":false,"scale":1,"debug":true},
 'smaller': false,
  
@@ -498,7 +840,7 @@ g(\hat Y) = \bar y
         controlsTutorial: true,
 
         // Determines where controls appear, "edges" or "bottom-right"
-        controlsLayout: 'bottom-right',
+        controlsLayout: 'edges',
 
         // Visibility rule for backwards navigation arrows; "faded", "hidden"
         // or "visible"
@@ -508,7 +850,7 @@ g(\hat Y) = \bar y
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'h.v',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',

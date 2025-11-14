@@ -1,7 +1,8 @@
 ---
-title: "Inference with Logistic Regression"
+title: "Statistical Inference"
+subtitle: "Model Inference"
 description: |
-  Begins the discussion on inference for logistic and Poisson regression.
+  Finish the discussion on model inference.
 format:
   revealjs:
     width: 1200
@@ -56,174 +57,139 @@ bladder1$death2 <- ifelse(bladder1$death == 0, "Alive", "Dead")
 
 ```
 
-# Motivating Example
 
-## Motivating Example
 
+
+# Model Conditions
+
+## Model Conditions
+
+When we are conducting inference with regression models, we will have to check the following conditions:
+
+-   Linearity
+-   Independence
+-   Probability Assumption
+-   Equal Variances
+-   Multicollinearity (for Multi-Regression)
+
+## Linearity
+
+There must be a linear relationship between both the outcome variable (y) and a set of predictors ($x_1$, $x_2$, ...).
+
+## Independence
+
+The data points must not influence each other.
+
+## Probability Assumption
+
+The model errors (also known as residuals) must follow a specified distribution.
+
+## Equal Variances
+
+The variability of the data points must be the same for all predictor values.
+
+## Residuals
+
+Residuals are the errors between the observed value and the estimated model. Common residuals include
+
+-   Raw Residual
+
+-   Standardized Residuals
+
+-   Jackknife (studentized) Residuals
+
+-   Deviance Residuals
+
+-   Quantized Residuals
+
+
+
+## Influential Measurements
+
+Influential measures are statistics that determine how much a data point affects the model. Common influential measures are
+
+-   Leverages
+
+-   Cook's Distance
+
+## Raw Residuals
+
+$$
+\hat r_i = y_i - \hat y_i
+$$
+
+## Residual Analysis
+
+A residual analysis is used to test the assumptions of linear regression.
+
+## QQ Plot
+
+A qq (quantile-quantile) plot will plot the estimated quantiles of the residuals against the theoretical quantiles from a normal distribution function. If the points from the qq-plot lie on the $y=x$ line, it is said that the residuals follow a normal distribution.
+
+## Residual vs Fitted Plot
+
+This plot allows you to assess the linearity, constant variance, and identify potential outliers. Create a scatter plot between the fitted values (x-axis) and the raw/standardized residuals (y-axis).
+
+## Variance Inflation Factor
+
+The variance inflation factor is a measurement on how much variables are collinear with each other. A value greater than 10 is a cause for concern and action should be taken.
+
+## Residual Analysis in R
+
+Use the `resid_df` function to obtain the residuals of a model.
 
 ```{r}
-bladder1 |> ggplot(aes(number, color = death2)) +
-  geom_boxplot()
-```
-
-
-# $\beta$ Hypothesis Testing
-
-## Hypothesis
-
-::: columns
-::: {.column width="50%"}
-$$H_0: \beta = \theta$$
-:::
-
-::: {.column width="50%"}
-$$H_0: \beta \ne \theta$$
-:::
-:::
-
-## Testing $\beta_j$
-
-
-$$
-\frac{\hat\beta_j - \theta}{\mathrm{se}(\hat\beta_j)} \sim N(0,1)
-$$
-
-## Confidence Intervals
-
-$$
-PE \pm CV \times SE
-$$
-
--   PE: Point Estimate
-
--   CV: Critical Value $P(X<CV) = 1-\alpha/2$
-
--   $\alpha$: significance level
-
--   SE: Standard Error
-
-
-## Conducting HT of $\beta_j$
-
-```{r}
+#| code-fold: show
 #| eval: false
 
-xlm <- glm(Y ~ X, data = DATA, family = binomial())
-summary(xlm)
+rdf <- resid_df(OBJECT)
+
 ```
+
+## Residual vs Fitted Plot
+
+```{r}
+#| code-fold: show
+#| eval: false
+
+
+ggplot(RDF, aes(fitted, resid)) +
+  geom_point() +
+  geom_hline(yintercept = 0, col = "red")
+
+```
+
+## QQ Plot
+
+```{r}
+#| code-fold: show
+#| eval: false
+
+ggplot(RDF, aes(sample = resid)) + 
+  stat_qq() +
+  stat_qq_line() 
+
+```
+
 
 ## Example
 
 ```{r}
-#| code-fold: show
-#| eval: true
-
-m1 <- glm(death ~ recur + number + size, bladder1, family = binomial())
-summary(m1)
-
-```
-
-## Confidence Interval
-
-```{r}
-#| code-fold: show
+#| code-fold: true
 #| eval: false
 
-confint(xlm, level = LEVEL)
+xlm <- lm(body_mass_g ~   island + species + flipper_length_mm,
+          penguins)
+dfxlm <- resid_df(xlm)
+
+ggplot(dfxlm, aes(fitted, resid)) +
+  geom_point() +
+  geom_hline(yintercept = 0, col = "red")
+
+ggplot(dfxlm, aes(sample = resid)) + 
+  stat_qq() +
+  stat_qq_line() 
+
 
 ```
-
-
-## Example 
-
-```{r}
-#| code-fold: show
-#| eval: true
-
-confint(m1, level = 0.95)
-
-```
-## Confidence Interval for Odds Ratio
-
-```{r}
-#| code-fold: show
-#| eval: true
-
-exp(confint(m1, level = 0.95))
-
-```
-
-
-# Model Hypothesis Testing
-
-## Model inference
-
-We conduct model inference to determine if different models are better at explaining variation. A common example is to compare a linear model ($g(\hat Y)=\hat\beta_0 + \hat\beta_1 X$) to the mean of Y ($\hat \mu_y$). We determine the significance of the variation explained using an Analysis of Variance (ANOVA) table and F test.
-
-
-
-## Conducting an LRT in R
-
-```{r}
-#| code-fold: show
-#| eval: false
-
-xlm <- glm(Y ~ X, data = DATA, family = binomial)
-xlm0 <- glm(Y ~ 1, data = DATA, family = binomial)
-anova(xlm0, xlm, test = "LRT")
-
-```
-
-## Example
-
-```{r}
-m0 <- update(m1, formula. = ~ 1)
-anova(m0, m1, test = "LRT")
-```
-
-## Model Inference
-
-Model inference can be extended to compare models that have different number of predictors.
-
-## Model Inference
-
-Given:
-
-$$
-M1:\ g(\hat y) = \beta_0 + \beta_1 X_1 + \beta_2 X_2 
-$$
-
-$$
-M2:\ g(\hat y) = \beta_0 + \beta_1 X_1  
-$$
-
-Let $M1$ be the FULL (larger) model, and let $M2$ be the RED (Reduced, smaller) model.
-
-## Model Inference
-
-He can test the following Hypothesis:
-
--   $H_0$: The error variations between the FULL and RED model are not different.
--   $H_1$: The error variations between the FULL and RED model are different.
-
-
-## Likelihood Ratio Test in R
-
-```{r}
-#| code-fold: show
-#| eval: false
-
-full <- glm(Y  ~  X1 + X2 + X3 + X4, DATA, family = binomial())
-red <- glm(Y ~ X1 + X2, DATA, family = binomial())
-anova(red, full, test = "LRT")
-```
-
-## Example
-
-```{r}
-m1 <- glm(death ~ number + size + recur, bladder1, family = binomial())
-m2 <- glm(death ~ recur, bladder1, family = binomial())
-anova(m2, m1, test = "LRT")
-```
-
 

@@ -8,10 +8,15 @@ format:
   revealjs:
     width: 1200
     scrollable: true
+    sc-sb-title: true
+    footer: m201.inqs.info/lectures/11
     theme: [default, styles.scss]
     navigation-mode: vertical
-    controls-layout: bottom-right
+    controls-layout: edges
     controls-tutorial: true
+    slide-number: true
+    pointer:
+      pointerSize: 32
     incremental: false 
     chalkboard:
       theme: whiteboard
@@ -33,6 +38,7 @@ filters:
   - reveal-header
   - code-fullscreen
   - reveal-auto-agenda
+
 editor: source
 ---
 
@@ -54,43 +60,209 @@ theme_set(theme_bw() +
 penguins <- penguins |> drop_na()
 heart_disease <- kmed::heart
 heart_disease$disease <- factor(ifelse(heart_disease$class == 0, "no", "yes")) 
+heart_disease <- heart_disease |> 
+  mutate(cp = factor(case_when(cp == 1 ~ "Typical Angina",
+                               cp == 2 ~ "Atypical Angina",
+                               cp == 3 ~ "Non-anginal Pain",
+                               cp == 4 ~ "Asymptomatic")))
 
 
-```
+m1 <- lm(body_mass ~ species, data = penguins)
 
-
-```{r}
-m <- glm(disease ~ cp, 
-    data = heart_disease, 
-    family = binomial) 
-anova(m, method = "lrt")
-
-r <- emmeans(m, ~cp, trans = "response")
-pairs(r)
+m2 <- glm(disease ~ cp, data = heart_disease, family = binomial)
+em1 <- emmeans(m1, ~species)
+em2 <- emmeans(m2, ~cp, type = "response")
+pairs(em1)
+pairs(em2)
 ```
 
 # Motivating Example
 
-## Motivating Examples
+## Species and Body Mass
+
+:::: {.columns}
+::: {.column width="40%"}
+
+- Is there a difference in body mass between the penguins species?
+- Is the difference due to a natural phenomenon or randomness?
+:::
+::: {.column width="60%"}
 
 ```{r}
-p1 <- penguins |> ggplot(aes(x=species, y = body_mass)) +
+#| fig-align: center
+penguins |> ggplot(aes(x=species, y = body_mass)) +
   geom_jitter() + 
   geom_boxplot() + 
-  labs(x = "Species", y = "Body Mass", title = "Linear")
-  
-p2 <- heart_disease |> ggplot(aes(x=cp, fill = disease)) +
-  geom_bar(stat="count", position=position_dodge()) +
-  labs(x = "Chest Pain", title = "Logistic") 
-p1 + p2
-  
+  labs(x = "Species", y = "Body Mass")
 ```
 
-# Model Hypothesis Testing
+:::
+::::
+
+
+
+## Chest Pain and Heart Disease
+
+:::: {.columns}
+::: {.column width="40%"}
+
+- Is there a difference in proportions between the different chest pains?
+
+- Is the difference due to a natural phenomenom or randomness?
+:::
+::: {.column width="60%"}
+
+```{r}
+heart_disease |> ggplot(aes(x=cp, fill = disease)) +
+  geom_bar(position = "fill") +
+  labs(x = "Chest Pain") + 
+  theme(axis.text.x = element_text(size = 14)) 
+```
+
+:::
+::::
+
+# Model Inference
+
+## Model Inference
+
+**Model Inference** is the act of conducting a hypothesis test on the entire model (line). We do this to determine if the fully explained model is **significantly** different from the smaller models or average.
+
+::: fragment
+Model inference determines if more variation is explained by including more predictors.
+:::
 
 ## Model inference
 
-We conduct model inference to determine if different models are better at explaining variation. A common example is to compare a linear model ($\hat Y=\hat\beta_0 + \hat\beta_1 X$) to the mean of Y ($\hat \mu_y$). We determine the significance of the variation explained using an Analysis of Variance (ANOVA) table and F test.
+- We will conduct model inference to determine if different models are better at explaining variation. Both Linear and Logistic Regression have techniques to test different models. 
+
+- For Linear Regression, we determine the significance of the variation explained using an Analysis of Variance (ANOVA) table and F test.
+
+- For Logistic Regression, we determine the significance of the variation explained using a Likelihood Ratio test.
+
+- Conducting Model Inference first ensures that the **Family-wise Error Rate** is controlled.
+
+## Full and Reduced Model
+
+::: {.columns}
+::: {.column}
+
+#### Full Model
+
+$$
+Y =  \beta_0 + \beta_1 X_1 + \cdots + \beta_p X_p
+$$
+
+:::
+::: {.column}
+
+#### Reduced Model
+
+$$
+Y =  \beta_0 + \beta_1 X_1
+$$
+
+:::
+:::
+
+## Null and Alt Hypothesis
+
+$H_0$: The fully-parameterized model does not explain more variation than the reduced model.
+
+$H_a$: The fully-parameterized model does explain more variation than the reduced model.
+
+
+## Group Model Inference
+
+- **Group Model Inference** tests whether a **categorical** variable significantly reduces the variation of the outcome of interest.
+
+- This tells us if the group means are different from each other.
+
+## Group Full and Reduced Model
+
+::: {.columns}
+::: {.column}
+
+#### Full Model
+
+$$
+Y =  \beta_0 + \beta_1 C_1 + \cdots + \beta_p C_p
+$$
+
+:::
+::: {.column}
+
+#### Reduced Model
+
+$$
+Y =  \bar Y
+$$
+
+:::
+:::
+
+
+## Null and Alt Hypothesis
+
+$H_0$: The different categories do not have significantly different means/proportions from each other.
+
+$H_a$: At least two categories have significantly different means/proportions from each other. 
+
+
+# Family-wise Error Rate
+
+## Motivation
+
+* In multiple hypothesis testing, we test several hypotheses simultaneously.
+* The probability of making **at least one Type I error** increases with the number of tests.
+* Hence, we need **error control** methods.
+
+
+## Type I Error and Its Rate
+
+**Type I Error (False Positive):** Rejecting a null hypothesis ($H_0$), when it is true.
+
+**Type I Error Rate ($\alpha$):**
+The probability of making a Type I error in a single hypothesis test.
+
+$$
+\alpha = P(\text{Reject } H_0 \mid H_0 \text{ is true})
+$$
+
+Typically, $\alpha = 0.05$, meaning a 5% chance of incorrectly rejecting a true null hypothesis.
+
+
+## Definition of FWER
+
+**Family-Wise Error Rate (FWER):**
+The probability of making **one or more Type I errors** among all hypotheses tested.
+
+$$
+\text{FWER} = P(\text{At least one false rejection}) = P(V \ge 1)
+$$
+
+where:
+
+* $V$ = number of false positives (incorrect rejections)
+
+## Why Control FWER?
+
+* Maintains overall confidence in conclusions.
+* Avoids claiming false discoveries when many tests are run.
+* Trade-off: Strong control of FWER reduces **power** (increases Type II error).
+
+
+## Methods to Control FWER
+
+1. Bonferroni Correction
+
+2. Holm-Bonferroni Procedure (Step-down)
+
+3. Tukey’s Honest Significant Difference (HSD)
+
+
+
+# Linear Model Inference
 
 ## Linear Model Inference
 
@@ -110,6 +282,48 @@ $$
 Is the model with predictors do a better job than using the average?
 :::
 
+## Linear Models: Difference Groups
+
+Given a categorical variable with 4 categories, which model is better:
+
+$$
+\hat Y = \hat\beta_0 + \hat\beta_1 C_1 + \hat\beta_2 C_2 + \hat\beta_3 C_3  
+$$
+
+or
+
+$$
+\hat Y = \bar y
+$$
+
+
+::: fragment
+Are the 2 models different from each other?
+:::
+
+
+## ANOVA Table
+
+| Source | DF        | SS            | MS                    | F                        |
+|---------------|---------------|---------------|---------------|---------------|
+| Model  | $DFR=k-1$ | $SSR$         | $MSR=\frac{SSM}{DFR}$ | $\hat F=\frac{MSR}{MSE}$ |
+| Error  | $DFE=n-k$ | $SSE$         | $MSE=\frac{SSE}{DFE}$ |                          |
+| Total  | $TDF=n-1$ | $TSS=SSR+SSE$ |                       |                          |
+
+$$
+\hat F \sim F(DFR, DFE)
+$$
+
+## Conducting an ANOVA in R
+
+```r
+xlm <- lm(Y ~ X, data = DATA)
+anova(xlm)
+```
+
+
+# Logistic Model Inference
+
 ## Logistic Model Inference
 
 Given 2 models:
@@ -128,29 +342,23 @@ $$
 Is the model with predictors do a better job than using the average?
 :::
 
+## Logistic Model Inference
 
-## ANOVA (Linear)
-
-## ANOVA Table
-
-| Source | DF        | SS            | MS                    | F                        |
-|---------------|---------------|---------------|---------------|---------------|
-| Model  | $DFR=k-1$ | $SSR$         | $MSR=\frac{SSM}{DFR}$ | $\hat F=\frac{MSR}{MSE}$ |
-| Error  | $DFE=n-k$ | $SSE$         | $MSE=\frac{SSE}{DFE}$ |                          |
-| Total  | $TDF=n-1$ | $TSS=SSR+SSE$ |                       |                          |
+Given a categorical variable with 4 categories, which model is better:
 
 $$
-\hat F \sim F(DFR, DFE)
+g(\hat Y) = \hat\beta_0 + \hat\beta_1 C_1 + \hat\beta_2 C_2 + \hat\beta_3 C_3  
 $$
 
-## Conducting an ANOVA in R
+or
 
-```{r}
-#| code-fold: show
-#| eval: false
-xlm <- lm(Y ~ X, data = DATA)
-anova(xlm)
-```
+$$
+g(\hat Y) = \bar y
+$$
+
+::: fragment
+Are the 2 models different from each other?
+:::
 
 ## Likelihood Ratio Test (Logistic)
 
@@ -170,3 +378,85 @@ anova(xlm)
 ```
 
 # Significant Difference Between Groups
+
+## Post-Hoc Analysis
+
+- If we found to reject the null hypothesis from our model inference, we conduct a **post-hoc** analysis to determine which groups are significantly different from each other.
+
+- We will conduct multiple comparisons test, while maintaining the family-wise error rate, to determine which groups are different from each other.
+
+
+## Group Proportions Or Means
+
+We will use the `emmeans` function from the `emmeans` R package to obtain the group proportions or means.
+
+
+## Group Means
+
+```r
+m <- lm(Y ~ X, data = DATA)
+emmeans(m, ~X)
+```
+
+## Group Proportions
+
+```r
+m <- glm(Y ~ X, data = DATA, family = binomial)
+emmeans(m, ~X, type = "response")
+```
+
+## Body Mass by Species
+
+```{r}
+#| code-fold: show
+m1 <- lm(body_mass ~ species, data = penguins)
+emmeans(m1, ~species)
+```
+
+## Heart Disease by Chest Pain
+
+```{r}
+#| code-fold: show
+m2 <- glm(disease ~ cp, data = heart_disease, family = binomial)
+emmeans(m2, ~ cp, type = "response")
+```
+
+## Multiple Comparisons Test
+
+- A multi-comparison test can be achieved by using the `pairs` function from the output of the `emmeans` function.
+
+- This function will automatically adjust the p-values using Tukey's method to fix the family-wise error rate.
+
+## Multi-Comparison Test: Means
+
+```r
+m <- lm(Y ~ X, data = DATA)
+e <- emmeans(m, ~X)
+pairs(e)
+```
+
+## Multi-Comparison Test: Proportions
+
+```r
+m <- glm(Y ~ X, data = DATA, family = binomial)
+e <- emmeans(m, ~X, type = "response")
+pairs(e)
+```
+
+## Body Mass by Species
+
+```{r}
+#| code-fold: show
+m1 <- lm(body_mass ~ species, data = penguins)
+e1 <- emmeans(m1, ~species)
+pairs(e1)
+```
+
+## Heart Disease by Chest Pain
+
+```{r}
+#| code-fold: show
+m2 <- glm(disease ~ cp, data = heart_disease, family = binomial)
+e2 <- emmeans(m2, ~ cp, type = "response")
+pairs(e2)
+```
