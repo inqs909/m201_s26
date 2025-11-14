@@ -206,7 +206,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Statistical Inference</h1>
-  <p class="subtitle">Testing Different Groups</p>
+  <p class="subtitle">Group Model Inference</p>
 
 <div class="quarto-title-authors">
 </div>
@@ -233,7 +233,7 @@
 <p>Logistic Model Inference</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Significant Difference Between Groups</p>
+<p>Post-Hoc Analysis</p>
 </div></li>
 </ul>
 </div>
@@ -271,7 +271,7 @@
 <div class="column" style="width:40%;">
 <ul>
 <li><p>Is there a difference in proportions between the different chest pains?</p></li>
-<li><p>Is the difference due to a natural phenomenom or randomness?</p></li>
+<li><p>Is the difference due to a natural phenomenon or randomness?</p></li>
 </ul>
 </div><div class="column" style="width:60%;">
 <div class="cell">
@@ -313,7 +313,7 @@
 <p>Logistic Model Inference</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Significant Difference Between Groups</p>
+<p>Post-Hoc Analysis</p>
 </div></li>
 </ul>
 </div>
@@ -376,8 +376,8 @@ Y =  \bar Y
 \]</span></p>
 </div></div>
 </section>
-<section id="null-and-alt-hypothesis-1" class="slide level2">
-<h2>Null and Alt Hypothesis</h2>
+<section id="group-null-and-alt-hypothesis" class="slide level2">
+<h2>Group Null and Alt Hypothesis</h2>
 <p><span class="math inline">\(H_0\)</span>: The different categories do not have significantly different means/proportions from each other.</p>
 <p><span class="math inline">\(H_a\)</span>: At least two categories have significantly different means/proportions from each other.</p>
 </section></section>
@@ -402,7 +402,7 @@ Y =  \bar Y
 <p>Logistic Model Inference</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Significant Difference Between Groups</p>
+<p>Post-Hoc Analysis</p>
 </div></li>
 </ul>
 </div>
@@ -472,7 +472,7 @@ Y =  \bar Y
 <p>Logistic Model Inference</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Significant Difference Between Groups</p>
+<p>Post-Hoc Analysis</p>
 </div></li>
 </ul>
 </div>
@@ -556,6 +556,65 @@ Y =  \bar Y
 <h2>Conducting an ANOVA in R</h2>
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>xlm <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> DATA)</span>
 <span id="cb3-2"><a></a><span class="fu">anova</span>(xlm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>Y</code>: Outcome variable in DATA</li>
+<li><code>X</code>: Categorical variable in DATA</li>
+<li><code>DATA</code>: Name of the data (frame) set</li>
+</ul>
+</section>
+<section id="species-and-body-mass-1" class="slide level2">
+<h2>Species and Body Mass</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li>Is there a difference in body mass between the penguins species?</li>
+<li>Is the difference due to a natural phenomenon or randomness?</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>penguins <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>species, <span class="at">y =</span> body_mass)) <span class="sc">+</span></span>
+<span id="cb4-2"><a></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span> </span>
+<span id="cb4-3"><a></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
+<span id="cb4-4"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Species"</span>, <span class="at">y =</span> <span class="st">"Body Mass"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="11_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="example-hypothesis" class="slide level2">
+<h2>Example: Hypothesis</h2>
+<ul>
+<li><p><span class="math inline">\(H_0\)</span>: The mean body mass are the same between the 3 penguin species.</p></li>
+<li><p><span class="math inline">\(H_1\)</span>: At least one species pairing have different mean body mass.</p></li>
+</ul>
+</section>
+<section id="example-anova" class="slide level2">
+<h2>Example: ANOVA</h2>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>xlm <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass <span class="sc">~</span> species, <span class="at">data =</span> penguins)</span>
+<span id="cb5-2"><a></a><span class="fu">anova</span>(xlm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; Analysis of Variance Table
+#&gt; 
+#&gt; Response: body_mass
+#&gt;            Df    Sum Sq  Mean Sq F value    Pr(&gt;F)    
+#&gt; species     2 145190219 72595110  341.89 &lt; 2.2e-16 ***
+#&gt; Residuals 330  70069447   212332                      
+#&gt; ---
+#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
 </section></section>
 <section>
 <section id="logistic-model-inference" class="title-slide slide level1 agenda-slide center">
@@ -578,7 +637,7 @@ Y =  \bar Y
 <p>Logistic Model Inference</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Significant Difference Between Groups</p>
+<p>Post-Hoc Analysis</p>
 </div></li>
 </ul>
 </div>
@@ -618,17 +677,78 @@ g(\hat Y) = \bar y
 </section>
 <section id="conducting-an-lrt-in-r" class="slide level2">
 <h2>Conducting an LRT in R</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>xlm <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> DATA, <span class="at">family =</span> binomial)</span>
+<span id="cb7-2"><a></a><span class="fu">anova</span>(xlm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>Y</code>: Outcome variable in DATA</li>
+<li><code>X</code>: Categorical variable in DATA</li>
+<li><code>DATA</code>: Name of the data (frame) set</li>
+</ul>
+</section>
+<section id="chest-pain-and-heart-disease-1" class="slide level2">
+<h2>Chest Pain and Heart Disease</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li><p>Is there a difference in proportions between the different chest pains?</p></li>
+<li><p>Is the difference due to a natural phenomenon or randomness?</p></li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>heart_disease <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>cp, <span class="at">fill =</span> disease)) <span class="sc">+</span></span>
+<span id="cb8-2"><a></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
+<span id="cb8-3"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Chest Pain"</span>) <span class="sc">+</span> </span>
+<span id="cb8-4"><a></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="11_files/figure-revealjs/unnamed-chunk-6-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="example-hypothesis-1" class="slide level2">
+<h2>Example: Hypothesis</h2>
+<ul>
+<li><p><span class="math inline">\(H_0\)</span>: The proportion of having heart disease are the same between the 4 chest pain types.</p></li>
+<li><p><span class="math inline">\(H_1\)</span>: At least one chest pain pairing have different proportions of having heart disease.</p></li>
+</ul>
+</section>
+<section id="example-lrt" class="slide level2">
+<h2>Example: LRT</h2>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>xlm <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> DATA, <span class="at">family =</span> binomial)</span>
-<span id="cb4-2"><a></a><span class="fu">anova</span>(xlm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>xglm <span class="ot">&lt;-</span> <span class="fu">glm</span>(disease <span class="sc">~</span> cp, <span class="at">data =</span> heart_disease,</span>
+<span id="cb9-2"><a></a>            <span class="at">family =</span> binomial)</span>
+<span id="cb9-3"><a></a><span class="fu">anova</span>(xglm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; Analysis of Deviance Table
+#&gt; 
+#&gt; Model: binomial, link: logit
+#&gt; 
+#&gt; Response: disease
+#&gt; 
+#&gt; Terms added sequentially (first to last)
+#&gt; 
+#&gt; 
+#&gt;      Df Deviance Resid. Df Resid. Dev  Pr(&gt;Chi)    
+#&gt; NULL                   296     409.95              
+#&gt; cp    3   81.195       293     328.75 &lt; 2.2e-16 ***
+#&gt; ---
+#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
 </div>
 </section></section>
 <section>
-<section id="significant-difference-between-groups" class="title-slide slide level1 agenda-slide center">
-<h1>Significant Difference Between Groups</h1>
+<section id="post-hoc-analysis" class="title-slide slide level1 agenda-slide center">
+<h1>Post-Hoc Analysis</h1>
 <div class="agenda">
 <ul>
 <li><div class="agenda-inactive agenda-pre-active">
@@ -647,12 +767,12 @@ g(\hat Y) = \bar y
 <p>Logistic Model Inference</p>
 </div></li>
 <li><div class="agenda-active">
-<p>Significant Difference Between Groups</p>
+<p>Post-Hoc Analysis</p>
 </div></li>
 </ul>
 </div>
 </section>
-<section id="post-hoc-analysis" class="slide level2">
+<section id="post-hoc-analysis-1" class="slide level2">
 <h2>Post-Hoc Analysis</h2>
 <ul>
 <li><p>If we found to reject the null hypothesis from our model inference, we conduct a <strong>post-hoc</strong> analysis to determine which groups are significantly different from each other.</p></li>
@@ -665,21 +785,31 @@ g(\hat Y) = \bar y
 </section>
 <section id="group-means" class="slide level2">
 <h2>Group Means</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>m <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> DATA)</span>
-<span id="cb5-2"><a></a><span class="fu">emmeans</span>(m, <span class="sc">~</span>X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>m <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> DATA)</span>
+<span id="cb11-2"><a></a><span class="fu">emmeans</span>(m, <span class="sc">~</span>X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>Y</code>: Outcome variable in DATA</li>
+<li><code>X</code>: Categorical variable in DATA</li>
+<li><code>DATA</code>: Name of the data (frame) set</li>
+</ul>
 </section>
 <section id="group-proportions" class="slide level2">
 <h2>Group Proportions</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>m <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> DATA, <span class="at">family =</span> binomial)</span>
-<span id="cb6-2"><a></a><span class="fu">emmeans</span>(m, <span class="sc">~</span>X, <span class="at">type =</span> <span class="st">"response"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>m <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> DATA, <span class="at">family =</span> binomial)</span>
+<span id="cb12-2"><a></a><span class="fu">emmeans</span>(m, <span class="sc">~</span>X, <span class="at">type =</span> <span class="st">"response"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>Y</code>: Outcome variable in DATA</li>
+<li><code>X</code>: Categorical variable in DATA</li>
+<li><code>DATA</code>: Name of the data (frame) set</li>
+</ul>
 </section>
 <section id="body-mass-by-species" class="slide level2">
 <h2>Body Mass by Species</h2>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>m1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass <span class="sc">~</span> species, <span class="at">data =</span> penguins)</span>
-<span id="cb7-2"><a></a><span class="fu">emmeans</span>(m1, <span class="sc">~</span>species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>m1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass <span class="sc">~</span> species, <span class="at">data =</span> penguins)</span>
+<span id="cb13-2"><a></a><span class="fu">emmeans</span>(m1, <span class="sc">~</span>species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt;  species   emmean   SE  df lower.CL upper.CL
@@ -696,8 +826,8 @@ g(\hat Y) = \bar y
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>m2 <span class="ot">&lt;-</span> <span class="fu">glm</span>(disease <span class="sc">~</span> cp, <span class="at">data =</span> heart_disease, <span class="at">family =</span> binomial)</span>
-<span id="cb9-2"><a></a><span class="fu">emmeans</span>(m2, <span class="sc">~</span> cp, <span class="at">type =</span> <span class="st">"response"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>m2 <span class="ot">&lt;-</span> <span class="fu">glm</span>(disease <span class="sc">~</span> cp, <span class="at">data =</span> heart_disease, <span class="at">family =</span> binomial)</span>
+<span id="cb15-2"><a></a><span class="fu">emmeans</span>(m2, <span class="sc">~</span> cp, <span class="at">type =</span> <span class="st">"response"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt;  cp                prob     SE  df asymp.LCL asymp.UCL
@@ -720,24 +850,34 @@ g(\hat Y) = \bar y
 </section>
 <section id="multi-comparison-test-means" class="slide level2">
 <h2>Multi-Comparison Test: Means</h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>m <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> DATA)</span>
-<span id="cb11-2"><a></a>e <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(m, <span class="sc">~</span>X)</span>
-<span id="cb11-3"><a></a><span class="fu">pairs</span>(e)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>m <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> DATA)</span>
+<span id="cb17-2"><a></a>e <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(m, <span class="sc">~</span>X)</span>
+<span id="cb17-3"><a></a><span class="fu">pairs</span>(e)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>Y</code>: Outcome variable in DATA</li>
+<li><code>X</code>: Categorical variable in DATA</li>
+<li><code>DATA</code>: Name of the data (frame) set</li>
+</ul>
 </section>
 <section id="multi-comparison-test-proportions" class="slide level2">
 <h2>Multi-Comparison Test: Proportions</h2>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>m <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> DATA, <span class="at">family =</span> binomial)</span>
-<span id="cb12-2"><a></a>e <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(m, <span class="sc">~</span>X, <span class="at">type =</span> <span class="st">"response"</span>)</span>
-<span id="cb12-3"><a></a><span class="fu">pairs</span>(e)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>m <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> DATA, <span class="at">family =</span> binomial)</span>
+<span id="cb18-2"><a></a>e <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(m, <span class="sc">~</span>X, <span class="at">type =</span> <span class="st">"response"</span>)</span>
+<span id="cb18-3"><a></a><span class="fu">pairs</span>(e)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>Y</code>: Outcome variable in DATA</li>
+<li><code>X</code>: Categorical variable in DATA</li>
+<li><code>DATA</code>: Name of the data (frame) set</li>
+</ul>
 </section>
 <section id="body-mass-by-species-1" class="slide level2">
 <h2>Body Mass by Species</h2>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>m1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass <span class="sc">~</span> species, <span class="at">data =</span> penguins)</span>
-<span id="cb13-2"><a></a>e1 <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(m1, <span class="sc">~</span>species)</span>
-<span id="cb13-3"><a></a><span class="fu">pairs</span>(e1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>m1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass <span class="sc">~</span> species, <span class="at">data =</span> penguins)</span>
+<span id="cb19-2"><a></a>e1 <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(m1, <span class="sc">~</span>species)</span>
+<span id="cb19-3"><a></a><span class="fu">pairs</span>(e1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt;  contrast           estimate   SE  df t.ratio p.value
@@ -754,9 +894,9 @@ g(\hat Y) = \bar y
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>m2 <span class="ot">&lt;-</span> <span class="fu">glm</span>(disease <span class="sc">~</span> cp, <span class="at">data =</span> heart_disease, <span class="at">family =</span> binomial)</span>
-<span id="cb15-2"><a></a>e2 <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(m2, <span class="sc">~</span> cp, <span class="at">type =</span> <span class="st">"response"</span>)</span>
-<span id="cb15-3"><a></a><span class="fu">pairs</span>(e2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>m2 <span class="ot">&lt;-</span> <span class="fu">glm</span>(disease <span class="sc">~</span> cp, <span class="at">data =</span> heart_disease, <span class="at">family =</span> binomial)</span>
+<span id="cb21-2"><a></a>e2 <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(m2, <span class="sc">~</span> cp, <span class="at">type =</span> <span class="st">"response"</span>)</span>
+<span id="cb21-3"><a></a><span class="fu">pairs</span>(e2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt;  contrast                             odds.ratio    SE  df null z.ratio p.value

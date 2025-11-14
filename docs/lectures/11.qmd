@@ -1,6 +1,6 @@
 ---
 title: "Statistical Inference"
-subtitle: "Testing Different Groups"
+subtitle: "Group Model Inference"
 description: |
   Testing the difference in groups.
 
@@ -108,7 +108,7 @@ penguins |> ggplot(aes(x=species, y = body_mass)) +
 
 - Is there a difference in proportions between the different chest pains?
 
-- Is the difference due to a natural phenomenom or randomness?
+- Is the difference due to a natural phenomenon or randomness?
 :::
 ::: {.column width="60%"}
 
@@ -201,8 +201,7 @@ $$
 :::
 :::
 
-
-## Null and Alt Hypothesis
+## Group Null and Alt Hypothesis
 
 $H_0$: The different categories do not have significantly different means/proportions from each other.
 
@@ -321,6 +320,46 @@ xlm <- lm(Y ~ X, data = DATA)
 anova(xlm)
 ```
 
+- `Y`: Outcome variable in DATA
+- `X`: Categorical variable in DATA
+- `DATA`: Name of the data (frame) set
+
+## Species and Body Mass
+
+:::: {.columns}
+::: {.column width="40%"}
+
+- Is there a difference in body mass between the penguins species?
+- Is the difference due to a natural phenomenon or randomness?
+:::
+::: {.column width="60%"}
+
+```{r}
+#| fig-align: center
+penguins |> ggplot(aes(x=species, y = body_mass)) +
+  geom_jitter() + 
+  geom_boxplot() + 
+  labs(x = "Species", y = "Body Mass")
+```
+
+:::
+::::
+
+
+## Example: Hypothesis
+
+- $H_0$: The mean body mass are the same between the 3 penguin species.
+
+- $H_1$: At least one species pairing have different mean body mass.
+
+## Example: ANOVA
+
+```{r}
+#| code-fold: show
+xlm <- lm(body_mass ~ species, data = penguins)
+anova(xlm)
+```
+
 
 # Logistic Model Inference
 
@@ -370,14 +409,54 @@ It conducts a hypothesis tests to see if models are significantly different from
 
 ## Conducting an LRT in R
 
-```{r}
-#| code-fold: show
-#| eval: false
+```r
 xlm <- glm(Y ~ X, data = DATA, family = binomial)
 anova(xlm)
 ```
 
-# Significant Difference Between Groups
+- `Y`: Outcome variable in DATA
+- `X`: Categorical variable in DATA
+- `DATA`: Name of the data (frame) set
+
+## Chest Pain and Heart Disease
+
+:::: {.columns}
+::: {.column width="40%"}
+
+- Is there a difference in proportions between the different chest pains?
+
+- Is the difference due to a natural phenomenon or randomness?
+:::
+::: {.column width="60%"}
+
+```{r}
+heart_disease |> ggplot(aes(x=cp, fill = disease)) +
+  geom_bar(position = "fill") +
+  labs(x = "Chest Pain") + 
+  theme(axis.text.x = element_text(size = 14)) 
+```
+
+:::
+::::
+
+
+## Example: Hypothesis
+
+- $H_0$: The proportion of having heart disease are the same between the 4 chest pain types.
+
+- $H_1$: At least one chest pain pairing have different proportions of having heart disease.
+
+## Example: LRT
+
+```{r}
+#| code-fold: show
+xglm <- glm(disease ~ cp, data = heart_disease,
+            family = binomial)
+anova(xglm)
+```
+
+
+# Post-Hoc Analysis
 
 ## Post-Hoc Analysis
 
@@ -398,12 +477,20 @@ m <- lm(Y ~ X, data = DATA)
 emmeans(m, ~X)
 ```
 
+- `Y`: Outcome variable in DATA
+- `X`: Categorical variable in DATA
+- `DATA`: Name of the data (frame) set
+
 ## Group Proportions
 
 ```r
 m <- glm(Y ~ X, data = DATA, family = binomial)
 emmeans(m, ~X, type = "response")
 ```
+
+- `Y`: Outcome variable in DATA
+- `X`: Categorical variable in DATA
+- `DATA`: Name of the data (frame) set
 
 ## Body Mass by Species
 
@@ -435,6 +522,10 @@ e <- emmeans(m, ~X)
 pairs(e)
 ```
 
+- `Y`: Outcome variable in DATA
+- `X`: Categorical variable in DATA
+- `DATA`: Name of the data (frame) set
+
 ## Multi-Comparison Test: Proportions
 
 ```r
@@ -442,6 +533,10 @@ m <- glm(Y ~ X, data = DATA, family = binomial)
 e <- emmeans(m, ~X, type = "response")
 pairs(e)
 ```
+
+- `Y`: Outcome variable in DATA
+- `X`: Categorical variable in DATA
+- `DATA`: Name of the data (frame) set
 
 ## Body Mass by Species
 

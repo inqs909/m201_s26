@@ -1729,39 +1729,116 @@
     "text": "Logistic Model 2\n\n\nCode\nglm(premie ~ visits, data = ncbirths, family = binomial())\n\nb(glm(premie ~ visits, data = ncbirths, family = binomial()), 1)\nexp(b(glm(premie ~ visits, data = ncbirths, family = binomial()), 1))"
   },
   {
-    "objectID": "lectures/11.html#motivating-examples",
-    "href": "lectures/11.html#motivating-examples",
+    "objectID": "lectures/11.html#species-and-body-mass",
+    "href": "lectures/11.html#species-and-body-mass",
     "title": "Statistical Inference",
-    "section": "Motivating Examples",
-    "text": "Motivating Examples\n\n\nCode\np1 &lt;- penguins |&gt; ggplot(aes(x=species, y = body_mass)) +\n  geom_jitter() + \n  geom_boxplot() + \n  labs(x = \"Species\", y = \"Body Mass\", title = \"Linear\")\n  \np2 &lt;- heart_disease |&gt; ggplot(aes(x=cp, fill = disease)) +\n  geom_bar(stat=\"count\", position=position_dodge()) +\n  labs(x = \"Chest Pain\", title = \"Logistic\") \np1 + p2"
+    "section": "Species and Body Mass",
+    "text": "Species and Body Mass\n\n\n\nIs there a difference in body mass between the penguins species?\nIs the difference due to a natural phenomenon or randomness?\n\n\n\n\nCode\npenguins |&gt; ggplot(aes(x=species, y = body_mass)) +\n  geom_jitter() + \n  geom_boxplot() + \n  labs(x = \"Species\", y = \"Body Mass\")"
   },
   {
-    "objectID": "lectures/11.html#model-inference",
-    "href": "lectures/11.html#model-inference",
+    "objectID": "lectures/11.html#chest-pain-and-heart-disease",
+    "href": "lectures/11.html#chest-pain-and-heart-disease",
+    "title": "Statistical Inference",
+    "section": "Chest Pain and Heart Disease",
+    "text": "Chest Pain and Heart Disease\n\n\n\nIs there a difference in proportions between the different chest pains?\nIs the difference due to a natural phenomenon or randomness?\n\n\n\n\nCode\nheart_disease |&gt; ggplot(aes(x=cp, fill = disease)) +\n  geom_bar(position = \"fill\") +\n  labs(x = \"Chest Pain\") + \n  theme(axis.text.x = element_text(size = 14))"
+  },
+  {
+    "objectID": "lectures/11.html#model-inference-1",
+    "href": "lectures/11.html#model-inference-1",
     "title": "Statistical Inference",
     "section": "Model Inference",
     "text": "Model Inference\nModel Inference is the act of conducting a hypothesis test on the entire model (line). We do this to determine if the fully explained model is significantly different from the smaller models or average.\n\nModel inference determines if more variation is explained by including more predictors."
   },
   {
-    "objectID": "lectures/11.html#linear-model-inference",
-    "href": "lectures/11.html#linear-model-inference",
+    "objectID": "lectures/11.html#model-inference-2",
+    "href": "lectures/11.html#model-inference-2",
+    "title": "Statistical Inference",
+    "section": "Model inference",
+    "text": "Model inference\n\nWe will conduct model inference to determine if different models are better at explaining variation. Both Linear and Logistic Regression have techniques to test different models.\nFor Linear Regression, we determine the significance of the variation explained using an Analysis of Variance (ANOVA) table and F test.\nFor Logistic Regression, we determine the significance of the variation explained using a Likelihood Ratio test.\nConducting Model Inference first ensures that the Family-wise Error Rate is controlled."
+  },
+  {
+    "objectID": "lectures/11.html#full-and-reduced-model",
+    "href": "lectures/11.html#full-and-reduced-model",
+    "title": "Statistical Inference",
+    "section": "Full and Reduced Model",
+    "text": "Full and Reduced Model\n\n\nFull Model\n\\[\nY =  \\beta_0 + \\beta_1 X_1 + \\cdots + \\beta_p X_p\n\\]\n\nReduced Model\n\\[\nY =  \\beta_0 + \\beta_1 X_1\n\\]"
+  },
+  {
+    "objectID": "lectures/11.html#null-and-alt-hypothesis",
+    "href": "lectures/11.html#null-and-alt-hypothesis",
+    "title": "Statistical Inference",
+    "section": "Null and Alt Hypothesis",
+    "text": "Null and Alt Hypothesis\n\\(H_0\\): The fully-parameterized model does not explain more variation than the reduced model.\n\\(H_a\\): The fully-parameterized model does explain more variation than the reduced model."
+  },
+  {
+    "objectID": "lectures/11.html#group-model-inference",
+    "href": "lectures/11.html#group-model-inference",
+    "title": "Statistical Inference",
+    "section": "Group Model Inference",
+    "text": "Group Model Inference\n\nGroup Model Inference tests whether a categorical variable significantly reduces the variation of the outcome of interest.\nThis tells us if the group means are different from each other."
+  },
+  {
+    "objectID": "lectures/11.html#group-full-and-reduced-model",
+    "href": "lectures/11.html#group-full-and-reduced-model",
+    "title": "Statistical Inference",
+    "section": "Group Full and Reduced Model",
+    "text": "Group Full and Reduced Model\n\n\nFull Model\n\\[\nY =  \\beta_0 + \\beta_1 C_1 + \\cdots + \\beta_p C_p\n\\]\n\nReduced Model\n\\[\nY =  \\bar Y\n\\]"
+  },
+  {
+    "objectID": "lectures/11.html#group-null-and-alt-hypothesis",
+    "href": "lectures/11.html#group-null-and-alt-hypothesis",
+    "title": "Statistical Inference",
+    "section": "Group Null and Alt Hypothesis",
+    "text": "Group Null and Alt Hypothesis\n\\(H_0\\): The different categories do not have significantly different means/proportions from each other.\n\\(H_a\\): At least two categories have significantly different means/proportions from each other."
+  },
+  {
+    "objectID": "lectures/11.html#motivation",
+    "href": "lectures/11.html#motivation",
+    "title": "Statistical Inference",
+    "section": "Motivation",
+    "text": "Motivation\n\nIn multiple hypothesis testing, we test several hypotheses simultaneously.\nThe probability of making at least one Type I error increases with the number of tests.\nHence, we need error control methods."
+  },
+  {
+    "objectID": "lectures/11.html#type-i-error-and-its-rate",
+    "href": "lectures/11.html#type-i-error-and-its-rate",
+    "title": "Statistical Inference",
+    "section": "Type I Error and Its Rate",
+    "text": "Type I Error and Its Rate\nType I Error (False Positive): Rejecting a null hypothesis (\\(H_0\\)), when it is true.\nType I Error Rate (\\(\\alpha\\)): The probability of making a Type I error in a single hypothesis test.\n\\[\n\\alpha = P(\\text{Reject } H_0 \\mid H_0 \\text{ is true})\n\\]\nTypically, \\(\\alpha = 0.05\\), meaning a 5% chance of incorrectly rejecting a true null hypothesis."
+  },
+  {
+    "objectID": "lectures/11.html#definition-of-fwer",
+    "href": "lectures/11.html#definition-of-fwer",
+    "title": "Statistical Inference",
+    "section": "Definition of FWER",
+    "text": "Definition of FWER\nFamily-Wise Error Rate (FWER): The probability of making one or more Type I errors among all hypotheses tested.\n\\[\n\\text{FWER} = P(\\text{At least one false rejection}) = P(V \\ge 1)\n\\]\nwhere:\n\n\\(V\\) = number of false positives (incorrect rejections)"
+  },
+  {
+    "objectID": "lectures/11.html#why-control-fwer",
+    "href": "lectures/11.html#why-control-fwer",
+    "title": "Statistical Inference",
+    "section": "Why Control FWER?",
+    "text": "Why Control FWER?\n\nMaintains overall confidence in conclusions.\nAvoids claiming false discoveries when many tests are run.\nTrade-off: Strong control of FWER reduces power (increases Type II error)."
+  },
+  {
+    "objectID": "lectures/11.html#methods-to-control-fwer",
+    "href": "lectures/11.html#methods-to-control-fwer",
+    "title": "Statistical Inference",
+    "section": "Methods to Control FWER",
+    "text": "Methods to Control FWER\n\nBonferroni Correction\nHolm-Bonferroni Procedure (Step-down)\nTukey’s Honest Significant Difference (HSD)"
+  },
+  {
+    "objectID": "lectures/11.html#linear-model-inference-1",
+    "href": "lectures/11.html#linear-model-inference-1",
     "title": "Statistical Inference",
     "section": "Linear Model Inference",
     "text": "Linear Model Inference\nGiven 2 models:\n\\[\n\\hat Y = \\hat\\beta_0 + \\hat\\beta_1 X_1 + \\hat\\beta_2 X_2 + \\cdots + \\hat\\beta_p X_p\n\\]\nor\n\\[\n\\hat Y = \\bar y\n\\]\n\nIs the model with predictors do a better job than using the average?"
   },
   {
-    "objectID": "lectures/11.html#logistic-model-inference",
-    "href": "lectures/11.html#logistic-model-inference",
+    "objectID": "lectures/11.html#linear-models-difference-groups",
+    "href": "lectures/11.html#linear-models-difference-groups",
     "title": "Statistical Inference",
-    "section": "Logistic Model Inference",
-    "text": "Logistic Model Inference\nGiven 2 models:\n\\[\ng(\\hat Y) = \\hat\\beta_0 + \\hat\\beta_1 X_1 + \\hat\\beta_2 X_2 + \\cdots + \\hat\\beta_p X_p\n\\]\nor\n\\[\ng(\\hat Y) = \\bar y\n\\]\n\nIs the model with predictors do a better job than using the average?"
-  },
-  {
-    "objectID": "lectures/11.html#anova-linear",
-    "href": "lectures/11.html#anova-linear",
-    "title": "Statistical Inference",
-    "section": "ANOVA (Linear)",
-    "text": "ANOVA (Linear)"
+    "section": "Linear Models: Difference Groups",
+    "text": "Linear Models: Difference Groups\nGiven a categorical variable with 4 categories, which model is better:\n\\[\n\\hat Y = \\hat\\beta_0 + \\hat\\beta_1 C_1 + \\hat\\beta_2 C_2 + \\hat\\beta_3 C_3  \n\\]\nor\n\\[\n\\hat Y = \\bar y\n\\]\n\nAre the 2 models different from each other?"
   },
   {
     "objectID": "lectures/11.html#anova-table",
@@ -1775,7 +1852,42 @@
     "href": "lectures/11.html#conducting-an-anova-in-r",
     "title": "Statistical Inference",
     "section": "Conducting an ANOVA in R",
-    "text": "Conducting an ANOVA in R\nxlm &lt;- lm(Y ~ X, data = DATA)\nanova(xlm)"
+    "text": "Conducting an ANOVA in R\nxlm &lt;- lm(Y ~ X, data = DATA)\nanova(xlm)\n\nY: Outcome variable in DATA\nX: Categorical variable in DATA\nDATA: Name of the data (frame) set"
+  },
+  {
+    "objectID": "lectures/11.html#species-and-body-mass-1",
+    "href": "lectures/11.html#species-and-body-mass-1",
+    "title": "Statistical Inference",
+    "section": "Species and Body Mass",
+    "text": "Species and Body Mass\n\n\n\nIs there a difference in body mass between the penguins species?\nIs the difference due to a natural phenomenon or randomness?\n\n\n\n\nCode\npenguins |&gt; ggplot(aes(x=species, y = body_mass)) +\n  geom_jitter() + \n  geom_boxplot() + \n  labs(x = \"Species\", y = \"Body Mass\")"
+  },
+  {
+    "objectID": "lectures/11.html#example-hypothesis",
+    "href": "lectures/11.html#example-hypothesis",
+    "title": "Statistical Inference",
+    "section": "Example: Hypothesis",
+    "text": "Example: Hypothesis\n\n\\(H_0\\): The mean body mass are the same between the 3 penguin species.\n\\(H_1\\): At least one species pairing have different mean body mass."
+  },
+  {
+    "objectID": "lectures/11.html#example-anova",
+    "href": "lectures/11.html#example-anova",
+    "title": "Statistical Inference",
+    "section": "Example: ANOVA",
+    "text": "Example: ANOVA\n\n\nCode\nxlm &lt;- lm(body_mass ~ species, data = penguins)\nanova(xlm)\n\n\n#&gt; Analysis of Variance Table\n#&gt; \n#&gt; Response: body_mass\n#&gt;            Df    Sum Sq  Mean Sq F value    Pr(&gt;F)    \n#&gt; species     2 145190219 72595110  341.89 &lt; 2.2e-16 ***\n#&gt; Residuals 330  70069447   212332                      \n#&gt; ---\n#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
+  },
+  {
+    "objectID": "lectures/11.html#logistic-model-inference-1",
+    "href": "lectures/11.html#logistic-model-inference-1",
+    "title": "Statistical Inference",
+    "section": "Logistic Model Inference",
+    "text": "Logistic Model Inference\nGiven 2 models:\n\\[\ng(\\hat Y) = \\hat\\beta_0 + \\hat\\beta_1 X_1 + \\hat\\beta_2 X_2 + \\cdots + \\hat\\beta_p X_p\n\\]\nor\n\\[\ng(\\hat Y) = \\bar y\n\\]\n\nIs the model with predictors do a better job than using the average?"
+  },
+  {
+    "objectID": "lectures/11.html#logistic-model-inference-2",
+    "href": "lectures/11.html#logistic-model-inference-2",
+    "title": "Statistical Inference",
+    "section": "Logistic Model Inference",
+    "text": "Logistic Model Inference\nGiven a categorical variable with 4 categories, which model is better:\n\\[\ng(\\hat Y) = \\hat\\beta_0 + \\hat\\beta_1 C_1 + \\hat\\beta_2 C_2 + \\hat\\beta_3 C_3  \n\\]\nor\n\\[\ng(\\hat Y) = \\bar y\n\\]\n\nAre the 2 models different from each other?"
   },
   {
     "objectID": "lectures/11.html#likelihood-ratio-test-logistic",
@@ -1789,7 +1901,105 @@
     "href": "lectures/11.html#conducting-an-lrt-in-r",
     "title": "Statistical Inference",
     "section": "Conducting an LRT in R",
-    "text": "Conducting an LRT in R\n\n\nCode\nxlm &lt;- glm(Y ~ X, data = DATA, family = binomial)\nanova(xlm)"
+    "text": "Conducting an LRT in R\nxlm &lt;- glm(Y ~ X, data = DATA, family = binomial)\nanova(xlm)\n\nY: Outcome variable in DATA\nX: Categorical variable in DATA\nDATA: Name of the data (frame) set"
+  },
+  {
+    "objectID": "lectures/11.html#chest-pain-and-heart-disease-1",
+    "href": "lectures/11.html#chest-pain-and-heart-disease-1",
+    "title": "Statistical Inference",
+    "section": "Chest Pain and Heart Disease",
+    "text": "Chest Pain and Heart Disease\n\n\n\nIs there a difference in proportions between the different chest pains?\nIs the difference due to a natural phenomenon or randomness?\n\n\n\n\nCode\nheart_disease |&gt; ggplot(aes(x=cp, fill = disease)) +\n  geom_bar(position = \"fill\") +\n  labs(x = \"Chest Pain\") + \n  theme(axis.text.x = element_text(size = 14))"
+  },
+  {
+    "objectID": "lectures/11.html#example-hypothesis-1",
+    "href": "lectures/11.html#example-hypothesis-1",
+    "title": "Statistical Inference",
+    "section": "Example: Hypothesis",
+    "text": "Example: Hypothesis\n\n\\(H_0\\): The proportion of having heart disease are the same between the 4 chest pain types.\n\\(H_1\\): At least one chest pain pairing have different proportions of having heart disease."
+  },
+  {
+    "objectID": "lectures/11.html#example-lrt",
+    "href": "lectures/11.html#example-lrt",
+    "title": "Statistical Inference",
+    "section": "Example: LRT",
+    "text": "Example: LRT\n\n\nCode\nxglm &lt;- glm(disease ~ cp, data = heart_disease,\n            family = binomial)\nanova(xglm)\n\n\n#&gt; Analysis of Deviance Table\n#&gt; \n#&gt; Model: binomial, link: logit\n#&gt; \n#&gt; Response: disease\n#&gt; \n#&gt; Terms added sequentially (first to last)\n#&gt; \n#&gt; \n#&gt;      Df Deviance Resid. Df Resid. Dev  Pr(&gt;Chi)    \n#&gt; NULL                   296     409.95              \n#&gt; cp    3   81.195       293     328.75 &lt; 2.2e-16 ***\n#&gt; ---\n#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
+  },
+  {
+    "objectID": "lectures/11.html#post-hoc-analysis-1",
+    "href": "lectures/11.html#post-hoc-analysis-1",
+    "title": "Statistical Inference",
+    "section": "Post-Hoc Analysis",
+    "text": "Post-Hoc Analysis\n\nIf we found to reject the null hypothesis from our model inference, we conduct a post-hoc analysis to determine which groups are significantly different from each other.\nWe will conduct multiple comparisons test, while maintaining the family-wise error rate, to determine which groups are different from each other."
+  },
+  {
+    "objectID": "lectures/11.html#group-proportions-or-means",
+    "href": "lectures/11.html#group-proportions-or-means",
+    "title": "Statistical Inference",
+    "section": "Group Proportions Or Means",
+    "text": "Group Proportions Or Means\nWe will use the emmeans function from the emmeans R package to obtain the group proportions or means."
+  },
+  {
+    "objectID": "lectures/11.html#group-means",
+    "href": "lectures/11.html#group-means",
+    "title": "Statistical Inference",
+    "section": "Group Means",
+    "text": "Group Means\nm &lt;- lm(Y ~ X, data = DATA)\nemmeans(m, ~X)\n\nY: Outcome variable in DATA\nX: Categorical variable in DATA\nDATA: Name of the data (frame) set"
+  },
+  {
+    "objectID": "lectures/11.html#group-proportions",
+    "href": "lectures/11.html#group-proportions",
+    "title": "Statistical Inference",
+    "section": "Group Proportions",
+    "text": "Group Proportions\nm &lt;- glm(Y ~ X, data = DATA, family = binomial)\nemmeans(m, ~X, type = \"response\")\n\nY: Outcome variable in DATA\nX: Categorical variable in DATA\nDATA: Name of the data (frame) set"
+  },
+  {
+    "objectID": "lectures/11.html#body-mass-by-species",
+    "href": "lectures/11.html#body-mass-by-species",
+    "title": "Statistical Inference",
+    "section": "Body Mass by Species",
+    "text": "Body Mass by Species\n\n\nCode\nm1 &lt;- lm(body_mass ~ species, data = penguins)\nemmeans(m1, ~species)\n\n\n#&gt;  species   emmean   SE  df lower.CL upper.CL\n#&gt;  Adelie      3706 38.1 330     3631     3781\n#&gt;  Chinstrap   3733 55.9 330     3623     3843\n#&gt;  Gentoo      5092 42.2 330     5009     5176\n#&gt; \n#&gt; Confidence level used: 0.95"
+  },
+  {
+    "objectID": "lectures/11.html#heart-disease-by-chest-pain",
+    "href": "lectures/11.html#heart-disease-by-chest-pain",
+    "title": "Statistical Inference",
+    "section": "Heart Disease by Chest Pain",
+    "text": "Heart Disease by Chest Pain\n\n\nCode\nm2 &lt;- glm(disease ~ cp, data = heart_disease, family = binomial)\nemmeans(m2, ~ cp, type = \"response\")\n\n\n#&gt;  cp                prob     SE  df asymp.LCL asymp.UCL\n#&gt;  Asymptomatic     0.725 0.0375 Inf    0.6463     0.792\n#&gt;  Atypical Angina  0.184 0.0553 Inf    0.0984     0.317\n#&gt;  Non-anginal Pain 0.217 0.0452 Inf    0.1411     0.318\n#&gt;  Typical Angina   0.304 0.0959 Inf    0.1525     0.515\n#&gt; \n#&gt; Confidence level used: 0.95 \n#&gt; Intervals are back-transformed from the logit scale"
+  },
+  {
+    "objectID": "lectures/11.html#multiple-comparisons-test",
+    "href": "lectures/11.html#multiple-comparisons-test",
+    "title": "Statistical Inference",
+    "section": "Multiple Comparisons Test",
+    "text": "Multiple Comparisons Test\n\nA multi-comparison test can be achieved by using the pairs function from the output of the emmeans function.\nThis function will automatically adjust the p-values using Tukey’s method to fix the family-wise error rate."
+  },
+  {
+    "objectID": "lectures/11.html#multi-comparison-test-means",
+    "href": "lectures/11.html#multi-comparison-test-means",
+    "title": "Statistical Inference",
+    "section": "Multi-Comparison Test: Means",
+    "text": "Multi-Comparison Test: Means\nm &lt;- lm(Y ~ X, data = DATA)\ne &lt;- emmeans(m, ~X)\npairs(e)\n\nY: Outcome variable in DATA\nX: Categorical variable in DATA\nDATA: Name of the data (frame) set"
+  },
+  {
+    "objectID": "lectures/11.html#multi-comparison-test-proportions",
+    "href": "lectures/11.html#multi-comparison-test-proportions",
+    "title": "Statistical Inference",
+    "section": "Multi-Comparison Test: Proportions",
+    "text": "Multi-Comparison Test: Proportions\nm &lt;- glm(Y ~ X, data = DATA, family = binomial)\ne &lt;- emmeans(m, ~X, type = \"response\")\npairs(e)\n\nY: Outcome variable in DATA\nX: Categorical variable in DATA\nDATA: Name of the data (frame) set"
+  },
+  {
+    "objectID": "lectures/11.html#body-mass-by-species-1",
+    "href": "lectures/11.html#body-mass-by-species-1",
+    "title": "Statistical Inference",
+    "section": "Body Mass by Species",
+    "text": "Body Mass by Species\n\n\nCode\nm1 &lt;- lm(body_mass ~ species, data = penguins)\ne1 &lt;- emmeans(m1, ~species)\npairs(e1)\n\n\n#&gt;  contrast           estimate   SE  df t.ratio p.value\n#&gt;  Adelie - Chinstrap    -26.9 67.7 330  -0.398  0.9164\n#&gt;  Adelie - Gentoo     -1386.3 56.9 330 -24.359  &lt;.0001\n#&gt;  Chinstrap - Gentoo  -1359.3 70.0 330 -19.406  &lt;.0001\n#&gt; \n#&gt; P value adjustment: tukey method for comparing a family of 3 estimates"
+  },
+  {
+    "objectID": "lectures/11.html#heart-disease-by-chest-pain-1",
+    "href": "lectures/11.html#heart-disease-by-chest-pain-1",
+    "title": "Statistical Inference",
+    "section": "Heart Disease by Chest Pain",
+    "text": "Heart Disease by Chest Pain\n\n\nCode\nm2 &lt;- glm(disease ~ cp, data = heart_disease, family = binomial)\ne2 &lt;- emmeans(m2, ~ cp, type = \"response\")\npairs(e2)\n\n\n#&gt;  contrast                             odds.ratio    SE  df null z.ratio p.value\n#&gt;  Asymptomatic / Atypical Angina           11.738 4.860 Inf    1   5.948  &lt;.0001\n#&gt;  Asymptomatic / (Non-anginal Pain)         9.537 3.110 Inf    1   6.917  &lt;.0001\n#&gt;  Asymptomatic / Typical Angina             6.037 2.960 Inf    1   3.664  0.0014\n#&gt;  Atypical Angina / (Non-anginal Pain)      0.812 0.370 Inf    1  -0.456  0.9684\n#&gt;  Atypical Angina / Typical Angina          0.514 0.301 Inf    1  -1.138  0.6660\n#&gt;  (Non-anginal Pain) / Typical Angina       0.633 0.333 Inf    1  -0.870  0.8204\n#&gt; \n#&gt; P value adjustment: tukey method for comparing a family of 4 estimates \n#&gt; Tests are performed on the log odds ratio scale"
   },
   {
     "objectID": "lectures/1.html#statistical-warning",
@@ -2006,7 +2216,7 @@
     "href": "lectures.html",
     "title": "Lectures",
     "section": "",
-    "text": "Categorical Data\n\n\n\n\n\nProvides an overview descriptive statistics and data visualization techniques for categorical data.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDistribution Functions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGroup Regression Models\n\n\n\n\n\nDiscuss using categorical predictor variables.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInference\n\n\n\n\n\nBegins the discussion on Inference.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInference with Linear Regression\n\n\n\n\n\nBegins the discussion for linear regression.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInference with Logistic and Poisson Regression\n\n\n\n\n\nBegins the discussion on inference for logistic and Poisson regression.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstalling R and Rstudio\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nModel Inference\n\n\n\n\n\nMake the connection between traditional statisitcal inference an regression inference.\n\n\n\n\n\nMay 5, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nMultivariable Linear Regression\n\n\n\n\n\nContinues the discussion with multi linear regression.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNumerical Data\n\n\n\n\n\nProvides an overview descriptive statistics and data visualization techniques for numerical data.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSampling Distribution\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSimple Linear Regression\n\n\n\n\n\nBegins the discussion for linear regression.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSimple Logistic Regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Inference\n\n\n\n\n\nStatistical Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Inference\n\n\nTesting Different Groups\n\n\nTesting the difference in groups.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Inference\n\n\nModel Inference\n\n\nFinish the discussion on model inference.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics\n\n\nA Math? A Science? An Art? Or Something Else?\n\n\n\n\n\n\n\n\nIsaac Quintanilla Salinas\n\n\n\n\n\nNo matching items"
+    "text": "Categorical Data\n\n\n\n\n\nProvides an overview descriptive statistics and data visualization techniques for categorical data.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDistribution Functions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGroup Regression Models\n\n\n\n\n\nDiscuss using categorical predictor variables.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInference\n\n\n\n\n\nBegins the discussion on Inference.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInference with Linear Regression\n\n\n\n\n\nBegins the discussion for linear regression.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInference with Logistic and Poisson Regression\n\n\n\n\n\nBegins the discussion on inference for logistic and Poisson regression.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstalling R and Rstudio\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nModel Inference\n\n\n\n\n\nMake the connection between traditional statisitcal inference an regression inference.\n\n\n\n\n\nMay 5, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nMultivariable Linear Regression\n\n\n\n\n\nContinues the discussion with multi linear regression.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNumerical Data\n\n\n\n\n\nProvides an overview descriptive statistics and data visualization techniques for numerical data.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSampling Distribution\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSimple Linear Regression\n\n\n\n\n\nBegins the discussion for linear regression.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSimple Logistic Regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Inference\n\n\n\n\n\nStatistical Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Inference\n\n\nGroup Model Inference\n\n\nTesting the difference in groups.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Inference\n\n\nModel Inference\n\n\nFinish the discussion on model inference.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics\n\n\nA Math? A Science? An Art? Or Something Else?\n\n\n\n\n\n\n\n\nIsaac Quintanilla Salinas\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "lectures/10.html#what-is-statistical-inference",
@@ -2282,123 +2492,116 @@
     "text": "Bank Note Classification\nThe Bank Note data set contains information about bank note authentication based on images. We are interested in seeing if class (outcome variable; real or fake) is associated by image entropy (predictor).\n\n\nCode\nurl &lt;- \"https://archive.ics.uci.edu/ml/machine-learning-databases/00267/data_banknote_authentication.txt\"\nbank &lt;- read.csv(url, header = FALSE)\n\ncolnames(bank) &lt;- c(\"variance\", \"skewness\", \"curtosis\", \"entropy\", \"class\")\nbank$class &lt;- factor(bank$class, levels = c(0, 1), labels = c(\"Genuine\", \"Forged\"))"
   },
   {
-    "objectID": "lectures/12.html#motivating-example-1",
-    "href": "lectures/12.html#motivating-example-1",
-    "title": "Inference with Logistic Regression",
-    "section": "Motivating Example",
-    "text": "Motivating Example\n\n\nCode\nbladder1 |&gt; ggplot(aes(number, color = death2)) +\n  geom_boxplot()"
+    "objectID": "lectures/12.html#model-conditions-1",
+    "href": "lectures/12.html#model-conditions-1",
+    "title": "Statistical Inference",
+    "section": "Model Conditions",
+    "text": "Model Conditions\nWhen we are conducting inference with regression models, we will have to check the following conditions:\n\nLinearity\nIndependence\nProbability Assumption\nEqual Variances\nMulticollinearity (for Multi-Regression)"
   },
   {
-    "objectID": "lectures/12.html#hypothesis",
-    "href": "lectures/12.html#hypothesis",
-    "title": "Inference with Logistic Regression",
-    "section": "Hypothesis",
-    "text": "Hypothesis\n\n\n\\[H_0: \\beta = \\theta\\]\n\n\\[H_0: \\beta \\ne \\theta\\]"
+    "objectID": "lectures/12.html#linearity",
+    "href": "lectures/12.html#linearity",
+    "title": "Statistical Inference",
+    "section": "Linearity",
+    "text": "Linearity\nThere must be a linear relationship between both the outcome variable (y) and a set of predictors (\\(x_1\\), \\(x_2\\), …)."
   },
   {
-    "objectID": "lectures/12.html#testing-beta_j",
-    "href": "lectures/12.html#testing-beta_j",
-    "title": "Inference with Logistic Regression",
-    "section": "Testing \\(\\beta_j\\)",
-    "text": "Testing \\(\\beta_j\\)\n\\[\n\\frac{\\hat\\beta_j - \\theta}{\\mathrm{se}(\\hat\\beta_j)} \\sim N(0,1)\n\\]"
+    "objectID": "lectures/12.html#independence",
+    "href": "lectures/12.html#independence",
+    "title": "Statistical Inference",
+    "section": "Independence",
+    "text": "Independence\nThe data points must not influence each other."
   },
   {
-    "objectID": "lectures/12.html#confidence-intervals",
-    "href": "lectures/12.html#confidence-intervals",
-    "title": "Inference with Logistic Regression",
-    "section": "Confidence Intervals",
-    "text": "Confidence Intervals\n\\[\nPE \\pm CV \\times SE\n\\]\n\nPE: Point Estimate\nCV: Critical Value \\(P(X&lt;CV) = 1-\\alpha/2\\)\n\\(\\alpha\\): significance level\nSE: Standard Error"
+    "objectID": "lectures/12.html#probability-assumption",
+    "href": "lectures/12.html#probability-assumption",
+    "title": "Statistical Inference",
+    "section": "Probability Assumption",
+    "text": "Probability Assumption\nThe model errors (also known as residuals) must follow a specified distribution."
   },
   {
-    "objectID": "lectures/12.html#conducting-ht-of-beta_j",
-    "href": "lectures/12.html#conducting-ht-of-beta_j",
-    "title": "Inference with Logistic Regression",
-    "section": "Conducting HT of \\(\\beta_j\\)",
-    "text": "Conducting HT of \\(\\beta_j\\)\n\n\nCode\nxlm &lt;- glm(Y ~ X, data = DATA, family = binomial())\nsummary(xlm)"
+    "objectID": "lectures/12.html#equal-variances",
+    "href": "lectures/12.html#equal-variances",
+    "title": "Statistical Inference",
+    "section": "Equal Variances",
+    "text": "Equal Variances\nThe variability of the data points must be the same for all predictor values."
+  },
+  {
+    "objectID": "lectures/12.html#residuals",
+    "href": "lectures/12.html#residuals",
+    "title": "Statistical Inference",
+    "section": "Residuals",
+    "text": "Residuals\nResiduals are the errors between the observed value and the estimated model. Common residuals include\n\nRaw Residual\nStandardized Residuals\nJackknife (studentized) Residuals\nDeviance Residuals\nQuantized Residuals"
+  },
+  {
+    "objectID": "lectures/12.html#influential-measurements",
+    "href": "lectures/12.html#influential-measurements",
+    "title": "Statistical Inference",
+    "section": "Influential Measurements",
+    "text": "Influential Measurements\nInfluential measures are statistics that determine how much a data point affects the model. Common influential measures are\n\nLeverages\nCook’s Distance"
+  },
+  {
+    "objectID": "lectures/12.html#raw-residuals",
+    "href": "lectures/12.html#raw-residuals",
+    "title": "Statistical Inference",
+    "section": "Raw Residuals",
+    "text": "Raw Residuals\n\\[\n\\hat r_i = y_i - \\hat y_i\n\\]"
+  },
+  {
+    "objectID": "lectures/12.html#residual-analysis",
+    "href": "lectures/12.html#residual-analysis",
+    "title": "Statistical Inference",
+    "section": "Residual Analysis",
+    "text": "Residual Analysis\nA residual analysis is used to test the assumptions of linear regression."
+  },
+  {
+    "objectID": "lectures/12.html#qq-plot",
+    "href": "lectures/12.html#qq-plot",
+    "title": "Statistical Inference",
+    "section": "QQ Plot",
+    "text": "QQ Plot\nA qq (quantile-quantile) plot will plot the estimated quantiles of the residuals against the theoretical quantiles from a normal distribution function. If the points from the qq-plot lie on the \\(y=x\\) line, it is said that the residuals follow a normal distribution."
+  },
+  {
+    "objectID": "lectures/12.html#residual-vs-fitted-plot",
+    "href": "lectures/12.html#residual-vs-fitted-plot",
+    "title": "Statistical Inference",
+    "section": "Residual vs Fitted Plot",
+    "text": "Residual vs Fitted Plot\nThis plot allows you to assess the linearity, constant variance, and identify potential outliers. Create a scatter plot between the fitted values (x-axis) and the raw/standardized residuals (y-axis)."
+  },
+  {
+    "objectID": "lectures/12.html#variance-inflation-factor",
+    "href": "lectures/12.html#variance-inflation-factor",
+    "title": "Statistical Inference",
+    "section": "Variance Inflation Factor",
+    "text": "Variance Inflation Factor\nThe variance inflation factor is a measurement on how much variables are collinear with each other. A value greater than 10 is a cause for concern and action should be taken."
+  },
+  {
+    "objectID": "lectures/12.html#residual-analysis-in-r",
+    "href": "lectures/12.html#residual-analysis-in-r",
+    "title": "Statistical Inference",
+    "section": "Residual Analysis in R",
+    "text": "Residual Analysis in R\nUse the resid_df function to obtain the residuals of a model.\n\n\nCode\nrdf &lt;- resid_df(OBJECT)"
+  },
+  {
+    "objectID": "lectures/12.html#residual-vs-fitted-plot-1",
+    "href": "lectures/12.html#residual-vs-fitted-plot-1",
+    "title": "Statistical Inference",
+    "section": "Residual vs Fitted Plot",
+    "text": "Residual vs Fitted Plot\n\n\nCode\nggplot(RDF, aes(fitted, resid)) +\n  geom_point() +\n  geom_hline(yintercept = 0, col = \"red\")"
+  },
+  {
+    "objectID": "lectures/12.html#qq-plot-1",
+    "href": "lectures/12.html#qq-plot-1",
+    "title": "Statistical Inference",
+    "section": "QQ Plot",
+    "text": "QQ Plot\n\n\nCode\nggplot(RDF, aes(sample = resid)) + \n  stat_qq() +\n  stat_qq_line()"
   },
   {
     "objectID": "lectures/12.html#example",
     "href": "lectures/12.html#example",
-    "title": "Inference with Logistic Regression",
+    "title": "Statistical Inference",
     "section": "Example",
-    "text": "Example\n\n\nCode\nm1 &lt;- glm(death ~ recur + number + size, bladder1, family = binomial())\nsummary(m1)\n\n\n#&gt; \n#&gt; Call:\n#&gt; glm(formula = death ~ recur + number + size, family = binomial(), \n#&gt;     data = bladder1)\n#&gt; \n#&gt; Coefficients:\n#&gt;               Estimate Std. Error z value Pr(&gt;|z|)    \n#&gt; (Intercept) -0.8525259  0.4462559  -1.910 0.056082 .  \n#&gt; recur       -0.3897480  0.1062848  -3.667 0.000245 ***\n#&gt; number       0.0008451  0.1124503   0.008 0.994004    \n#&gt; size        -0.2240419  0.1626749  -1.377 0.168439    \n#&gt; ---\n#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n#&gt; \n#&gt; (Dispersion parameter for binomial family taken to be 1)\n#&gt; \n#&gt;     Null deviance: 189.38  on 293  degrees of freedom\n#&gt; Residual deviance: 166.43  on 290  degrees of freedom\n#&gt; AIC: 174.43\n#&gt; \n#&gt; Number of Fisher Scoring iterations: 6"
-  },
-  {
-    "objectID": "lectures/12.html#confidence-interval",
-    "href": "lectures/12.html#confidence-interval",
-    "title": "Inference with Logistic Regression",
-    "section": "Confidence Interval",
-    "text": "Confidence Interval\n\n\nCode\nconfint(xlm, level = LEVEL)"
-  },
-  {
-    "objectID": "lectures/12.html#example-1",
-    "href": "lectures/12.html#example-1",
-    "title": "Inference with Logistic Regression",
-    "section": "Example",
-    "text": "Example\n\n\nCode\nconfint(m1, level = 0.95)\n\n\n#&gt;                  2.5 %      97.5 %\n#&gt; (Intercept) -1.7353779  0.02529523\n#&gt; recur       -0.6217831 -0.20078281\n#&gt; number      -0.2421738  0.20731479\n#&gt; size        -0.5880581  0.06061498"
-  },
-  {
-    "objectID": "lectures/12.html#confidence-interval-for-odds-ratio",
-    "href": "lectures/12.html#confidence-interval-for-odds-ratio",
-    "title": "Inference with Logistic Regression",
-    "section": "Confidence Interval for Odds Ratio",
-    "text": "Confidence Interval for Odds Ratio\n\n\nCode\nexp(confint(m1, level = 0.95))\n\n\n#&gt;                 2.5 %    97.5 %\n#&gt; (Intercept) 0.1763335 1.0256179\n#&gt; recur       0.5369861 0.8180901\n#&gt; number      0.7849197 1.2303698\n#&gt; size        0.5554048 1.0624898"
-  },
-  {
-    "objectID": "lectures/12.html#model-inference",
-    "href": "lectures/12.html#model-inference",
-    "title": "Inference with Logistic Regression",
-    "section": "Model inference",
-    "text": "Model inference\nWe conduct model inference to determine if different models are better at explaining variation. A common example is to compare a linear model (\\(g(\\hat Y)=\\hat\\beta_0 + \\hat\\beta_1 X\\)) to the mean of Y (\\(\\hat \\mu_y\\)). We determine the significance of the variation explained using an Analysis of Variance (ANOVA) table and F test."
-  },
-  {
-    "objectID": "lectures/12.html#conducting-an-lrt-in-r",
-    "href": "lectures/12.html#conducting-an-lrt-in-r",
-    "title": "Inference with Logistic Regression",
-    "section": "Conducting an LRT in R",
-    "text": "Conducting an LRT in R\n\n\nCode\nxlm &lt;- glm(Y ~ X, data = DATA, family = binomial)\nxlm0 &lt;- glm(Y ~ 1, data = DATA, family = binomial)\nanova(xlm0, xlm, test = \"LRT\")"
-  },
-  {
-    "objectID": "lectures/12.html#example-2",
-    "href": "lectures/12.html#example-2",
-    "title": "Inference with Logistic Regression",
-    "section": "Example",
-    "text": "Example\n\n\nCode\nm0 &lt;- update(m1, formula. = ~ 1)\nanova(m0, m1, test = \"LRT\")\n\n\n#&gt; Analysis of Deviance Table\n#&gt; \n#&gt; Model 1: death ~ 1\n#&gt; Model 2: death ~ recur + number + size\n#&gt;   Resid. Df Resid. Dev Df Deviance Pr(&gt;Chi)    \n#&gt; 1       293     189.38                         \n#&gt; 2       290     166.43  3   22.953 4.13e-05 ***\n#&gt; ---\n#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
-  },
-  {
-    "objectID": "lectures/12.html#model-inference-1",
-    "href": "lectures/12.html#model-inference-1",
-    "title": "Inference with Logistic Regression",
-    "section": "Model Inference",
-    "text": "Model Inference\nModel inference can be extended to compare models that have different number of predictors."
-  },
-  {
-    "objectID": "lectures/12.html#model-inference-2",
-    "href": "lectures/12.html#model-inference-2",
-    "title": "Inference with Logistic Regression",
-    "section": "Model Inference",
-    "text": "Model Inference\nGiven:\n\\[\nM1:\\ g(\\hat y) = \\beta_0 + \\beta_1 X_1 + \\beta_2 X_2\n\\]\n\\[\nM2:\\ g(\\hat y) = \\beta_0 + \\beta_1 X_1  \n\\]\nLet \\(M1\\) be the FULL (larger) model, and let \\(M2\\) be the RED (Reduced, smaller) model."
-  },
-  {
-    "objectID": "lectures/12.html#model-inference-3",
-    "href": "lectures/12.html#model-inference-3",
-    "title": "Inference with Logistic Regression",
-    "section": "Model Inference",
-    "text": "Model Inference\nHe can test the following Hypothesis:\n\n\\(H_0\\): The error variations between the FULL and RED model are not different.\n\\(H_1\\): The error variations between the FULL and RED model are different."
-  },
-  {
-    "objectID": "lectures/12.html#likelihood-ratio-test-in-r",
-    "href": "lectures/12.html#likelihood-ratio-test-in-r",
-    "title": "Inference with Logistic Regression",
-    "section": "Likelihood Ratio Test in R",
-    "text": "Likelihood Ratio Test in R\n\n\nCode\nfull &lt;- glm(Y  ~  X1 + X2 + X3 + X4, DATA, family = binomial())\nred &lt;- glm(Y ~ X1 + X2, DATA, family = binomial())\nanova(red, full, test = \"LRT\")"
-  },
-  {
-    "objectID": "lectures/12.html#example-3",
-    "href": "lectures/12.html#example-3",
-    "title": "Inference with Logistic Regression",
-    "section": "Example",
-    "text": "Example\n\n\nCode\nm1 &lt;- glm(death ~ number + size + recur, bladder1, family = binomial())\nm2 &lt;- glm(death ~ recur, bladder1, family = binomial())\nanova(m2, m1, test = \"LRT\")\n\n\n#&gt; Analysis of Deviance Table\n#&gt; \n#&gt; Model 1: death ~ recur\n#&gt; Model 2: death ~ number + size + recur\n#&gt;   Resid. Df Resid. Dev Df Deviance Pr(&gt;Chi)\n#&gt; 1       292     168.72                     \n#&gt; 2       290     166.43  2   2.2883   0.3185"
+    "text": "Example\n\n\nCode\nxlm &lt;- lm(body_mass_g ~   island + species + flipper_length_mm,\n          penguins)\ndfxlm &lt;- resid_df(xlm)\n\nggplot(dfxlm, aes(fitted, resid)) +\n  geom_point() +\n  geom_hline(yintercept = 0, col = \"red\")\n\nggplot(dfxlm, aes(sample = resid)) + \n  stat_qq() +\n  stat_qq_line()"
   },
   {
     "objectID": "lectures/14.html#motivating-example-1",
@@ -4261,208 +4464,5 @@
     "title": "Group Regression Models",
     "section": "Extrapolation",
     "text": "Extrapolation\n\n\nCode\nggplot(penguins, aes(flipper_length_mm, body_mass_g)) + \n  xlim(160, 250) +\n  ylim(2600, 7000) +\n  geom_point() +\n  stat_smooth(method = \"lm\", se = F)"
-  },
-  {
-    "objectID": "lectures/11.html#species-and-body-mass",
-    "href": "lectures/11.html#species-and-body-mass",
-    "title": "Statistical Inference",
-    "section": "Species and Body Mass",
-    "text": "Species and Body Mass\n\n\n\nIs there a difference in body mass between the penguins species?\nIs the difference due to a natural phenomenon or randomness?\n\n\n\n\nCode\npenguins |&gt; ggplot(aes(x=species, y = body_mass)) +\n  geom_jitter() + \n  geom_boxplot() + \n  labs(x = \"Species\", y = \"Body Mass\")"
-  },
-  {
-    "objectID": "lectures/11.html#chest-pain-and-heart-disease",
-    "href": "lectures/11.html#chest-pain-and-heart-disease",
-    "title": "Statistical Inference",
-    "section": "Chest Pain and Heart Disease",
-    "text": "Chest Pain and Heart Disease\n\n\n\nIs there a difference in proportions between the different chest pains?\nIs the difference due to a natural phenomenom or randomness?\n\n\n\n\nCode\nheart_disease |&gt; ggplot(aes(x=cp, fill = disease)) +\n  geom_bar(position = \"fill\") +\n  labs(x = \"Chest Pain\") + \n  theme(axis.text.x = element_text(size = 14))"
-  },
-  {
-    "objectID": "lectures/11.html#linear-model-inference-1",
-    "href": "lectures/11.html#linear-model-inference-1",
-    "title": "Statistical Inference",
-    "section": "Linear Model Inference",
-    "text": "Linear Model Inference\nGiven 2 models:\n\\[\n\\hat Y = \\hat\\beta_0 + \\hat\\beta_1 X_1 + \\hat\\beta_2 X_2 + \\cdots + \\hat\\beta_p X_p\n\\]\nor\n\\[\n\\hat Y = \\bar y\n\\]\n\nIs the model with predictors do a better job than using the average?"
-  },
-  {
-    "objectID": "lectures/11.html#linear-models-difference-groups",
-    "href": "lectures/11.html#linear-models-difference-groups",
-    "title": "Statistical Inference",
-    "section": "Linear Models: Difference Groups",
-    "text": "Linear Models: Difference Groups\nGiven a categorical variable with 4 categories, which model is better:\n\\[\n\\hat Y = \\hat\\beta_0 + \\hat\\beta_1 C_1 + \\hat\\beta_2 C_2 + \\hat\\beta_3 C_3  \n\\]\nor\n\\[\n\\hat Y = \\bar y\n\\]\n\nAre the 2 models different from each other?"
-  },
-  {
-    "objectID": "lectures/11.html#logistic-model-inference-1",
-    "href": "lectures/11.html#logistic-model-inference-1",
-    "title": "Statistical Inference",
-    "section": "Logistic Model Inference",
-    "text": "Logistic Model Inference\nGiven 2 models:\n\\[\ng(\\hat Y) = \\hat\\beta_0 + \\hat\\beta_1 X_1 + \\hat\\beta_2 X_2 + \\cdots + \\hat\\beta_p X_p\n\\]\nor\n\\[\ng(\\hat Y) = \\bar y\n\\]\n\nIs the model with predictors do a better job than using the average?"
-  },
-  {
-    "objectID": "lectures/11.html#logistic-model-inference-2",
-    "href": "lectures/11.html#logistic-model-inference-2",
-    "title": "Statistical Inference",
-    "section": "Logistic Model Inference",
-    "text": "Logistic Model Inference\nGiven a categorical variable with 4 categories, which model is better:\n\\[\ng(\\hat Y) = \\hat\\beta_0 + \\hat\\beta_1 C_1 + \\hat\\beta_2 C_2 + \\hat\\beta_3 C_3  \n\\]\nor\n\\[\ng(\\hat Y) = \\bar y\n\\]\n\nAre the 2 models different from each other?"
-  },
-  {
-    "objectID": "lectures/11.html#model-inference-1",
-    "href": "lectures/11.html#model-inference-1",
-    "title": "Statistical Inference",
-    "section": "Model Inference",
-    "text": "Model Inference\nModel Inference is the act of conducting a hypothesis test on the entire model (line). We do this to determine if the fully explained model is significantly different from the smaller models or average.\n\nModel inference determines if more variation is explained by including more predictors."
-  },
-  {
-    "objectID": "lectures/11.html#motivation",
-    "href": "lectures/11.html#motivation",
-    "title": "Statistical Inference",
-    "section": "Motivation",
-    "text": "Motivation\n\nIn multiple hypothesis testing, we test several hypotheses simultaneously.\nThe probability of making at least one Type I error increases with the number of tests.\nHence, we need error control methods."
-  },
-  {
-    "objectID": "lectures/11.html#definition-of-fwer",
-    "href": "lectures/11.html#definition-of-fwer",
-    "title": "Statistical Inference",
-    "section": "Definition of FWER",
-    "text": "Definition of FWER\nFamily-Wise Error Rate (FWER): The probability of making one or more Type I errors among all hypotheses tested.\n\\[\n\\text{FWER} = P(\\text{At least one false rejection}) = P(V \\ge 1)\n\\]\nwhere:\n\n\\(V\\) = number of false positives (incorrect rejections)"
-  },
-  {
-    "objectID": "lectures/11.html#why-control-fwer",
-    "href": "lectures/11.html#why-control-fwer",
-    "title": "Statistical Inference",
-    "section": "Why Control FWER?",
-    "text": "Why Control FWER?\n\nMaintains overall confidence in conclusions.\nAvoids claiming false discoveries when many tests are run.\nTrade-off: Strong control of FWER reduces power (increases Type II error)."
-  },
-  {
-    "objectID": "lectures/11.html#methods-to-control-fwer",
-    "href": "lectures/11.html#methods-to-control-fwer",
-    "title": "Statistical Inference",
-    "section": "Methods to Control FWER",
-    "text": "Methods to Control FWER\n\nBonferroni Correction\nHolm-Bonferroni Procedure (Step-down)\nTukey’s Honest Significant Difference (HSD)"
-  },
-  {
-    "objectID": "lectures/11.html#type-i-error-and-its-rate",
-    "href": "lectures/11.html#type-i-error-and-its-rate",
-    "title": "Statistical Inference",
-    "section": "Type I Error and Its Rate",
-    "text": "Type I Error and Its Rate\nType I Error (False Positive): Rejecting a null hypothesis (\\(H_0\\)), when it is true.\nType I Error Rate (\\(\\alpha\\)): The probability of making a Type I error in a single hypothesis test.\n\\[\n\\alpha = P(\\text{Reject } H_0 \\mid H_0 \\text{ is true})\n\\]\nTypically, \\(\\alpha = 0.05\\), meaning a 5% chance of incorrectly rejecting a true null hypothesis."
-  },
-  {
-    "objectID": "lectures/11.html#model-inference-2",
-    "href": "lectures/11.html#model-inference-2",
-    "title": "Statistical Inference",
-    "section": "Model inference",
-    "text": "Model inference\n\nWe will conduct model inference to determine if different models are better at explaining variation. Both Linear and Logistic Regression have techniques to test different models.\nFor Linear Regression, we determine the significance of the variation explained using an Analysis of Variance (ANOVA) table and F test.\nFor Logistic Regression, we determine the significance of the variation explained using a Likelihood Ratio test.\nConducting Model Inference first ensures that the Family-wise Error Rate is controlled."
-  },
-  {
-    "objectID": "lectures/11.html#full-and-reduced-model",
-    "href": "lectures/11.html#full-and-reduced-model",
-    "title": "Statistical Inference",
-    "section": "Full and Reduced Model",
-    "text": "Full and Reduced Model\n\n\nFull Model\n\\[\nY =  \\beta_0 + \\beta_1 X_1 + \\cdots + \\beta_p X_p\n\\]\n\nReduced Model\n\\[\nY =  \\beta_0 + \\beta_1 X_1\n\\]"
-  },
-  {
-    "objectID": "lectures/11.html#null-and-alt-hypothesis",
-    "href": "lectures/11.html#null-and-alt-hypothesis",
-    "title": "Statistical Inference",
-    "section": "Null and Alt Hypothesis",
-    "text": "Null and Alt Hypothesis\n\\(H_0\\): The fully-parameterized model does not explain more variation than the reduced model.\n\\(H_a\\): The fully-parameterized model does explain more variation than the reduced model."
-  },
-  {
-    "objectID": "lectures/11.html#group-model-inference",
-    "href": "lectures/11.html#group-model-inference",
-    "title": "Statistical Inference",
-    "section": "Group Model Inference",
-    "text": "Group Model Inference\n\nGroup Model Inference tests whether a categorical variable significantly reduces the variation of the outcome of interest.\nThis tells us if the group means are different from each other."
-  },
-  {
-    "objectID": "lectures/11.html#group-full-and-reduced-model",
-    "href": "lectures/11.html#group-full-and-reduced-model",
-    "title": "Statistical Inference",
-    "section": "Group Full and Reduced Model",
-    "text": "Group Full and Reduced Model\n\n\nFull Model\n\\[\nY =  \\beta_0 + \\beta_1 C_1 + \\cdots + \\beta_p C_p\n\\]\n\nReduced Model\n\\[\nY =  \\bar Y\n\\]"
-  },
-  {
-    "objectID": "lectures/11.html#null-and-alt-hypothesis-1",
-    "href": "lectures/11.html#null-and-alt-hypothesis-1",
-    "title": "Statistical Inference",
-    "section": "Null and Alt Hypothesis",
-    "text": "Null and Alt Hypothesis\n\\(H_0\\): The different categories do not have significantly different means/proportions from each other.\n\\(H_a\\): At least two categories have significantly different means/proportions from each other."
-  },
-  {
-    "objectID": "lectures/11.html#post-hoc-analysis",
-    "href": "lectures/11.html#post-hoc-analysis",
-    "title": "Statistical Inference",
-    "section": "Post-Hoc Analysis",
-    "text": "Post-Hoc Analysis\n\nIf we found to reject the null hypothesis from our model inference, we conduct a post-hoc analysis to determine which groups are significantly different from each other.\nWe will conduct multiple comparisons test, while maintaining the family-wise error rate, to determine which groups are different from each other."
-  },
-  {
-    "objectID": "lectures/11.html#group-proportions-or-means",
-    "href": "lectures/11.html#group-proportions-or-means",
-    "title": "Statistical Inference",
-    "section": "Group Proportions Or Means",
-    "text": "Group Proportions Or Means\nWe will use the emmeans function from the emmeans R package to obtain the group proportions or means."
-  },
-  {
-    "objectID": "lectures/11.html#group-means",
-    "href": "lectures/11.html#group-means",
-    "title": "Statistical Inference",
-    "section": "Group Means",
-    "text": "Group Means\nm &lt;- lm(Y ~ X, data = DATA)\nemmeans(m, ~X)"
-  },
-  {
-    "objectID": "lectures/11.html#group-proportions",
-    "href": "lectures/11.html#group-proportions",
-    "title": "Statistical Inference",
-    "section": "Group Proportions",
-    "text": "Group Proportions\nm &lt;- glm(Y ~ X, data = DATA, family = binomial)\nemmeans(m, ~X, type = \"response\")"
-  },
-  {
-    "objectID": "lectures/11.html#body-mass-by-species",
-    "href": "lectures/11.html#body-mass-by-species",
-    "title": "Statistical Inference",
-    "section": "Body Mass by Species",
-    "text": "Body Mass by Species\n\n\nCode\nm1 &lt;- lm(body_mass ~ species, data = penguins)\nemmeans(m1, ~species)\n\n\n#&gt;  species   emmean   SE  df lower.CL upper.CL\n#&gt;  Adelie      3706 38.1 330     3631     3781\n#&gt;  Chinstrap   3733 55.9 330     3623     3843\n#&gt;  Gentoo      5092 42.2 330     5009     5176\n#&gt; \n#&gt; Confidence level used: 0.95"
-  },
-  {
-    "objectID": "lectures/11.html#heart-disease-by-chest-pain",
-    "href": "lectures/11.html#heart-disease-by-chest-pain",
-    "title": "Statistical Inference",
-    "section": "Heart Disease by Chest Pain",
-    "text": "Heart Disease by Chest Pain\n\n\nCode\nm2 &lt;- glm(disease ~ cp, data = heart_disease, family = binomial)\nemmeans(m2, ~ cp, type = \"response\")\n\n\n#&gt;  cp                prob     SE  df asymp.LCL asymp.UCL\n#&gt;  Asymptomatic     0.725 0.0375 Inf    0.6463     0.792\n#&gt;  Atypical Angina  0.184 0.0553 Inf    0.0984     0.317\n#&gt;  Non-anginal Pain 0.217 0.0452 Inf    0.1411     0.318\n#&gt;  Typical Angina   0.304 0.0959 Inf    0.1525     0.515\n#&gt; \n#&gt; Confidence level used: 0.95 \n#&gt; Intervals are back-transformed from the logit scale"
-  },
-  {
-    "objectID": "lectures/11.html#multiple-comparisons-test",
-    "href": "lectures/11.html#multiple-comparisons-test",
-    "title": "Statistical Inference",
-    "section": "Multiple Comparisons Test",
-    "text": "Multiple Comparisons Test\n\nA multi-comparison test can be achieved by using the pairs function from the output of the emmeans function.\nThis function will automatically adjust the p-values using Tukey’s method to fix the family-wise error rate."
-  },
-  {
-    "objectID": "lectures/11.html#multi-comparison-test-means",
-    "href": "lectures/11.html#multi-comparison-test-means",
-    "title": "Statistical Inference",
-    "section": "Multi-Comparison Test: Means",
-    "text": "Multi-Comparison Test: Means\nm &lt;- lm(Y ~ X, data = DATA)\ne &lt;- emmeans(m, ~X)\npairs(e)"
-  },
-  {
-    "objectID": "lectures/11.html#multi-comparison-test-proportions",
-    "href": "lectures/11.html#multi-comparison-test-proportions",
-    "title": "Statistical Inference",
-    "section": "Multi-Comparison Test: Proportions",
-    "text": "Multi-Comparison Test: Proportions\nm &lt;- glm(Y ~ X, data = DATA, family = binomial)\ne &lt;- emmeans(m, ~X, type = \"response\")\npairs(e)"
-  },
-  {
-    "objectID": "lectures/11.html#body-mass-by-species-1",
-    "href": "lectures/11.html#body-mass-by-species-1",
-    "title": "Statistical Inference",
-    "section": "Body Mass by Species",
-    "text": "Body Mass by Species\n\n\nCode\nm1 &lt;- lm(body_mass ~ species, data = penguins)\ne1 &lt;- emmeans(m1, ~species)\npairs(e1)\n\n\n#&gt;  contrast           estimate   SE  df t.ratio p.value\n#&gt;  Adelie - Chinstrap    -26.9 67.7 330  -0.398  0.9164\n#&gt;  Adelie - Gentoo     -1386.3 56.9 330 -24.359  &lt;.0001\n#&gt;  Chinstrap - Gentoo  -1359.3 70.0 330 -19.406  &lt;.0001\n#&gt; \n#&gt; P value adjustment: tukey method for comparing a family of 3 estimates"
-  },
-  {
-    "objectID": "lectures/11.html#heart-disease-by-chest-pain-1",
-    "href": "lectures/11.html#heart-disease-by-chest-pain-1",
-    "title": "Statistical Inference",
-    "section": "Heart Disease by Chest Pain",
-    "text": "Heart Disease by Chest Pain\n\n\nCode\nm2 &lt;- glm(disease ~ cp, data = heart_disease, family = binomial)\ne2 &lt;- emmeans(m2, ~ cp, type = \"response\")\npairs(e2)\n\n\n#&gt;  contrast                             odds.ratio    SE  df null z.ratio p.value\n#&gt;  Asymptomatic / Atypical Angina           11.738 4.860 Inf    1   5.948  &lt;.0001\n#&gt;  Asymptomatic / (Non-anginal Pain)         9.537 3.110 Inf    1   6.917  &lt;.0001\n#&gt;  Asymptomatic / Typical Angina             6.037 2.960 Inf    1   3.664  0.0014\n#&gt;  Atypical Angina / (Non-anginal Pain)      0.812 0.370 Inf    1  -0.456  0.9684\n#&gt;  Atypical Angina / Typical Angina          0.514 0.301 Inf    1  -1.138  0.6660\n#&gt;  (Non-anginal Pain) / Typical Angina       0.633 0.333 Inf    1  -0.870  0.8204\n#&gt; \n#&gt; P value adjustment: tukey method for comparing a family of 4 estimates \n#&gt; Tests are performed on the log odds ratio scale"
   }
 ]
