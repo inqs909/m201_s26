@@ -2492,6 +2492,195 @@
     "text": "Bank Note Classification\nThe Bank Note data set contains information about bank note authentication based on images. We are interested in seeing if class (outcome variable; real or fake) is associated by image entropy (predictor).\n\n\nCode\nurl &lt;- \"https://archive.ics.uci.edu/ml/machine-learning-databases/00267/data_banknote_authentication.txt\"\nbank &lt;- read.csv(url, header = FALSE)\n\ncolnames(bank) &lt;- c(\"variance\", \"skewness\", \"curtosis\", \"entropy\", \"class\")\nbank$class &lt;- factor(bank$class, levels = c(0, 1), labels = c(\"Genuine\", \"Forged\"))"
   },
   {
+    "objectID": "lectures/12.html#hypothesis-tests",
+    "href": "lectures/12.html#hypothesis-tests",
+    "title": "Statistical Inference",
+    "section": "Hypothesis Tests",
+    "text": "Hypothesis Tests\nConducting a hypothesis test for coefficients in regression models with more than one predictor is the same as the standard simple approaches.\n\nYou will just need to specify the hypothesis tests are adjusted for the other covariates."
+  },
+  {
+    "objectID": "lectures/12.html#hypothesis-testing-steps",
+    "href": "lectures/12.html#hypothesis-testing-steps",
+    "title": "Statistical Inference",
+    "section": "Hypothesis Testing Steps",
+    "text": "Hypothesis Testing Steps\n\nState \\(H_0\\) and \\(H_1\\)\nChoose \\(\\alpha\\)\nCompute confidence interval/p-value\nMake a decision"
+  },
+  {
+    "objectID": "lectures/12.html#null-hypothesis-h_0",
+    "href": "lectures/12.html#null-hypothesis-h_0",
+    "title": "Statistical Inference",
+    "section": "Null Hypothesis \\(H_0\\)",
+    "text": "Null Hypothesis \\(H_0\\)\nThe null hypothesis is the claim that is initially believed to be true. For the most part, it is always equal to the hypothesized value."
+  },
+  {
+    "objectID": "lectures/12.html#alternative-hypothesis-h_1",
+    "href": "lectures/12.html#alternative-hypothesis-h_1",
+    "title": "Statistical Inference",
+    "section": "Alternative Hypothesis \\(H_1\\)",
+    "text": "Alternative Hypothesis \\(H_1\\)\nThe alternative hypothesis contradicts the null hypothesis."
+  },
+  {
+    "objectID": "lectures/12.html#significance-level",
+    "href": "lectures/12.html#significance-level",
+    "title": "Statistical Inference",
+    "section": "Significance Level",
+    "text": "Significance Level\nChoose a value that represents the probability of being wrong if you decide to reject the \\(H_0\\).\n\n\\[\n\\alpha = 0.05\n\\]\n\n\nWalk through the steps slowly with an example in mind. Emphasize that \\(\\alpha\\) is a threshold, not the actual probability of error."
+  },
+  {
+    "objectID": "lectures/12.html#conducting-ht-of-beta_j-linear-r",
+    "href": "lectures/12.html#conducting-ht-of-beta_j-linear-r",
+    "title": "Statistical Inference",
+    "section": "Conducting HT of \\(\\beta_j\\) Linear R",
+    "text": "Conducting HT of \\(\\beta_j\\) Linear R\nXLM &lt;- lm(Y ~ X1 + X2 + ... + Xp, data = DATA)\ntidy(XLM)\n\nXLM: Object where the model is stored\nY: Name of the outcome variable in DATA\nX1, X2, …, Xp: predictor variables in DATA\nDATA: Name of the data set"
+  },
+  {
+    "objectID": "lectures/12.html#conducting-ht-of-beta_j",
+    "href": "lectures/12.html#conducting-ht-of-beta_j",
+    "title": "Statistical Inference",
+    "section": "Conducting HT of \\(\\beta_j\\)",
+    "text": "Conducting HT of \\(\\beta_j\\)\nXLM &lt;- glm(Y ~ X1 + X2 + ... + Xp, data = DATA, family = binomial())\ntidy(XLM)\n\nXLM: Object where the model is stored\nY: Name of the outcome variable in DATA\nX1, X2, …, Xp: predictor variables in DATA\nDATA: Name of the data set"
+  },
+  {
+    "objectID": "lectures/12.html#penguins-example",
+    "href": "lectures/12.html#penguins-example",
+    "title": "Statistical Inference",
+    "section": "Penguins Example",
+    "text": "Penguins Example\nIs there a significant relationship between penguin body mass (outcome; body_mass) and flipper length (predictor; flipper_len), adjusting for species? Use the penguins data set to determine a significant association."
+  },
+  {
+    "objectID": "lectures/12.html#penguins-hypothesis",
+    "href": "lectures/12.html#penguins-hypothesis",
+    "title": "Statistical Inference",
+    "section": "Penguins: Hypothesis",
+    "text": "Penguins: Hypothesis\n\\(H_0\\): There is no relationship between penguin body mass and flipper length, adjusting for penguin species (\\(\\beta_{flipper\\_len} = 0\\))\n\\(H_1\\): There is a relationship between penguin body mass and flipper length, adjusting for penguin species (\\(\\beta_{flipper\\_len} \\ne 0\\))"
+  },
+  {
+    "objectID": "lectures/12.html#penguins-alpha-level",
+    "href": "lectures/12.html#penguins-alpha-level",
+    "title": "Statistical Inference",
+    "section": "Penguins: \\(\\alpha\\)-level",
+    "text": "Penguins: \\(\\alpha\\)-level\n\\[\n\\alpha = 0.05 = 5.0*10^{-2} = 5.0e-2\n\\]"
+  },
+  {
+    "objectID": "lectures/12.html#penguins-code",
+    "href": "lectures/12.html#penguins-code",
+    "title": "Statistical Inference",
+    "section": "Penguins: Code",
+    "text": "Penguins: Code\n\n\nCode\nm1 &lt;- lm(body_mass ~ flipper_len + species, penguins)\ntidy(m1)\n\n\n#&gt; # A tibble: 4 × 5\n#&gt;   term             estimate std.error statistic  p.value\n#&gt;   &lt;chr&gt;               &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n#&gt; 1 (Intercept)       -4031.     584.       -6.90 2.55e-11\n#&gt; 2 flipper_len          40.7      3.07     13.3  1.40e-32\n#&gt; 3 speciesChinstrap   -207.      57.7      -3.58 3.98e- 4\n#&gt; 4 speciesGentoo       267.      95.3       2.80 5.39e- 3"
+  },
+  {
+    "objectID": "lectures/12.html#penguins-decision-making",
+    "href": "lectures/12.html#penguins-decision-making",
+    "title": "Statistical Inference",
+    "section": "Penguins: Decision Making",
+    "text": "Penguins: Decision Making\n\\[\np = 1.4e-32 &lt; 5e-2 = 0.05 = \\alpha\n\\]\nReject \\(H_0\\)"
+  },
+  {
+    "objectID": "lectures/12.html#penguins-interpretation",
+    "href": "lectures/12.html#penguins-interpretation",
+    "title": "Statistical Inference",
+    "section": "Penguins: Interpretation",
+    "text": "Penguins: Interpretation\nThere is a significant association between penguins flipper length and body mass, after adjusting for species (p &lt; 0.0001; \\(\\beta = 40.7\\)). As flipper length increases by 1 unit, body mass increases by 40.7 units, adjusting for penguin species."
+  },
+  {
+    "objectID": "lectures/12.html#heart-disease-example",
+    "href": "lectures/12.html#heart-disease-example",
+    "title": "Statistical Inference",
+    "section": "Heart Disease Example",
+    "text": "Heart Disease Example\nIs there a significant association between heart disease (outcome; disease) and resting blood pressure (predictor; trestbps), adjusting for chest pain (cp). Use the heart_disease data set to determine a significant association."
+  },
+  {
+    "objectID": "lectures/12.html#heart-hypothesis",
+    "href": "lectures/12.html#heart-hypothesis",
+    "title": "Statistical Inference",
+    "section": "Heart: Hypothesis",
+    "text": "Heart: Hypothesis\n\\(H_0\\): There is no relationship between heart disease probability and resting blood pressure, adjusting for chest pain (\\(\\beta_{bp} = 0\\))\n\\(H_1\\): There is no relationship between heart disease probability and resting blood pressure, adjusting for chest pain (\\(\\beta_{bp} \\ne 0\\))"
+  },
+  {
+    "objectID": "lectures/12.html#heart-alpha-level",
+    "href": "lectures/12.html#heart-alpha-level",
+    "title": "Statistical Inference",
+    "section": "Heart: \\(\\alpha\\)-level",
+    "text": "Heart: \\(\\alpha\\)-level\n\\[\n\\alpha = 0.05 = 5.0*10^{-2} = 5.0e-2\n\\]"
+  },
+  {
+    "objectID": "lectures/12.html#heart-code",
+    "href": "lectures/12.html#heart-code",
+    "title": "Statistical Inference",
+    "section": "Heart: Code",
+    "text": "Heart: Code\n\n\nCode\nm2 &lt;- glm(disease ~ trestbps + cp, heart_disease, family = binomial())\ntidy(m2)\n\n\n#&gt; # A tibble: 5 × 5\n#&gt;   term        estimate std.error statistic   p.value\n#&gt;   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n#&gt; 1 (Intercept)  -3.80     1.25       -3.04  0.00234  \n#&gt; 2 trestbps      0.0209   0.00807     2.59  0.00967  \n#&gt; 3 cp2          -0.409    0.601      -0.681 0.496    \n#&gt; 4 cp3          -0.236    0.540      -0.437 0.662    \n#&gt; 5 cp4           2.04     0.512       3.99  0.0000674"
+  },
+  {
+    "objectID": "lectures/12.html#heart-decision-making",
+    "href": "lectures/12.html#heart-decision-making",
+    "title": "Statistical Inference",
+    "section": "Heart: Decision Making",
+    "text": "Heart: Decision Making\n\\[\np = 0.00967 &lt; 0.05 = \\alpha\n\\]\nReject \\(H_0\\)"
+  },
+  {
+    "objectID": "lectures/12.html#heart-interpretation",
+    "href": "lectures/12.html#heart-interpretation",
+    "title": "Statistical Inference",
+    "section": "Heart: Interpretation",
+    "text": "Heart: Interpretation\nThere is a significant association between heart disease and resting blood pressure, after adjusting for chest pain (p &lt; 0.00967; \\(\\beta = 0.0209\\)). As resting blood pressure increases by 1 unit, the odds of having heart disease increases by a factor of 1.02, adjusting for chest pain."
+  },
+  {
+    "objectID": "lectures/12.html#what-is-statistical-power",
+    "href": "lectures/12.html#what-is-statistical-power",
+    "title": "Statistical Inference",
+    "section": "What is Statistical Power",
+    "text": "What is Statistical Power\n\nStatistical Power is the probability of correctly rejecting a false null hypothesis.\nIn other words, it’s the chance of detecting a real effect when it exists."
+  },
+  {
+    "objectID": "lectures/12.html#why-power-matters",
+    "href": "lectures/12.html#why-power-matters",
+    "title": "Statistical Inference",
+    "section": "Why Power Matters",
+    "text": "Why Power Matters\n\nLow power → high risk of Type II Error (false negatives)\nHigh power → better chance of finding true effects\nCommon threshold: 80% power"
+  },
+  {
+    "objectID": "lectures/12.html#errors-in-inference",
+    "href": "lectures/12.html#errors-in-inference",
+    "title": "Statistical Inference",
+    "section": "Errors in Inference",
+    "text": "Errors in Inference\n\n\n\nType I\nReject \\(H_0\\) when true\nFalse positive\n\n\nType II\nDon’t reject \\(H_0\\) when false\nFalse negative\n\n\nPower\n\\(1 - P(\\text{Type II})\\)\nDetecting a true effect\n\n\n\n\nPower is often overlooked. It’s about how sensitive the test is to real effects. Larger samples increase power."
+  },
+  {
+    "objectID": "lectures/12.html#type-i-error-false-positive",
+    "href": "lectures/12.html#type-i-error-false-positive",
+    "title": "Statistical Inference",
+    "section": "Type I Error (False Positive)",
+    "text": "Type I Error (False Positive)\n\nRejecting \\(H_0\\) when it is actually true\nProbability = \\(\\alpha\\) (significance level)\n\n\nType I errors happen when we detect an effect that doesn’t really exist. This is controlled by our chosen alpha level."
+  },
+  {
+    "objectID": "lectures/12.html#type-ii-error-false-negative",
+    "href": "lectures/12.html#type-ii-error-false-negative",
+    "title": "Statistical Inference",
+    "section": "Type II Error (False Negative)",
+    "text": "Type II Error (False Negative)\n\nFailing to reject \\(H_0\\) when it is actually false\nProbability = \\(\\beta\\)\nPower = \\(1 - \\beta\\)\n\n\nType II errors are often due to small sample sizes or high variability. Power analysis helps us plan to avoid these."
+  },
+  {
+    "objectID": "lectures/12.html#balancing-errors",
+    "href": "lectures/12.html#balancing-errors",
+    "title": "Statistical Inference",
+    "section": "Balancing Errors",
+    "text": "Balancing Errors\n\nLowering \\(\\alpha\\) reduces Type I errors, but increases risk of Type II errors.\nTo reduce both:\n\nIncrease sample size\nUse more appropriate statistical tests\n\n\n\nThere’s a trade-off between these errors. We can’t eliminate both, but we can manage the risk based on the consequences of each type."
+  },
+  {
+    "objectID": "lectures/12.html#what-affects-power",
+    "href": "lectures/12.html#what-affects-power",
+    "title": "Statistical Inference",
+    "section": "What Affects Power?",
+    "text": "What Affects Power?\n\nEffect Size\n\nBigger effects are easier to detect\n\nSample Size (\\(n\\))\n\nLarger samples reduce standard error\n\nSignificance Level (\\(\\alpha\\))\n\nHigher \\(\\alpha\\) increases power (but riskier!)\n\nVariability\n\nLess noise in data = better power"
+  },
+  {
+    "objectID": "lectures/12.html#boosting-power",
+    "href": "lectures/12.html#boosting-power",
+    "title": "Statistical Inference",
+    "section": "Boosting Power",
+    "text": "Boosting Power\n\nPower = Probability of rejecting \\(H_0\\) when it’s false\nHelps avoid Type II Errors\nDriven by:\n\nSample size\nEffect size\n\\(\\alpha\\)\nVariability\n\nAim for 80% or higher"
+  },
+  {
     "objectID": "lectures/12.html#model-conditions-1",
     "href": "lectures/12.html#model-conditions-1",
     "title": "Statistical Inference",
@@ -2517,7 +2706,7 @@
     "href": "lectures/12.html#probability-assumption",
     "title": "Statistical Inference",
     "section": "Probability Assumption",
-    "text": "Probability Assumption\nThe model errors (also known as residuals) must follow a specified distribution."
+    "text": "Probability Assumption\nThe model errors (also known as residuals) must follow a specified distribution.\n\nLinear Regression: Normal Distribution\nLogistic Regression: Binomial Distribution"
   },
   {
     "objectID": "lectures/12.html#equal-variances",
@@ -2569,13 +2758,6 @@
     "text": "Residual vs Fitted Plot\nThis plot allows you to assess the linearity, constant variance, and identify potential outliers. Create a scatter plot between the fitted values (x-axis) and the raw/standardized residuals (y-axis)."
   },
   {
-    "objectID": "lectures/12.html#variance-inflation-factor",
-    "href": "lectures/12.html#variance-inflation-factor",
-    "title": "Statistical Inference",
-    "section": "Variance Inflation Factor",
-    "text": "Variance Inflation Factor\nThe variance inflation factor is a measurement on how much variables are collinear with each other. A value greater than 10 is a cause for concern and action should be taken."
-  },
-  {
     "objectID": "lectures/12.html#residual-analysis-in-r",
     "href": "lectures/12.html#residual-analysis-in-r",
     "title": "Statistical Inference",
@@ -2587,21 +2769,28 @@
     "href": "lectures/12.html#residual-vs-fitted-plot-1",
     "title": "Statistical Inference",
     "section": "Residual vs Fitted Plot",
-    "text": "Residual vs Fitted Plot\n\n\nCode\nggplot(RDF, aes(fitted, resid)) +\n  geom_point() +\n  geom_hline(yintercept = 0, col = \"red\")"
+    "text": "Residual vs Fitted Plot\n\n\nLinear\nggplot(RDF, aes(fitted, resid)) +\n  geom_point() +\n  geom_hline(yintercept = 0, col = \"red\")\n\nLogistic\nggplot(RDF, aes(fitted, quantile_resid)) +\n  geom_point() +\n  geom_hline(yintercept = 0, col = \"red\")\n\n\nRDF: Name of object from resid_df()"
   },
   {
     "objectID": "lectures/12.html#qq-plot-1",
     "href": "lectures/12.html#qq-plot-1",
     "title": "Statistical Inference",
     "section": "QQ Plot",
-    "text": "QQ Plot\n\n\nCode\nggplot(RDF, aes(sample = resid)) + \n  stat_qq() +\n  stat_qq_line()"
+    "text": "QQ Plot\n\n\nLinear\nggplot(RDF, aes(sample = resid)) + \n  stat_qq() +\n  stat_qq_line() \n\nLogistic\nggplot(RDF, aes(sample = quantile_resid)) + \n  stat_qq() +\n  stat_qq_line() \n\n\nRDF: Name of object from resid_df()"
   },
   {
-    "objectID": "lectures/12.html#example",
-    "href": "lectures/12.html#example",
+    "objectID": "lectures/12.html#penguins-example-1",
+    "href": "lectures/12.html#penguins-example-1",
     "title": "Statistical Inference",
-    "section": "Example",
-    "text": "Example\n\n\nCode\nxlm &lt;- lm(body_mass_g ~   island + species + flipper_length_mm,\n          penguins)\ndfxlm &lt;- resid_df(xlm)\n\nggplot(dfxlm, aes(fitted, resid)) +\n  geom_point() +\n  geom_hline(yintercept = 0, col = \"red\")\n\nggplot(dfxlm, aes(sample = resid)) + \n  stat_qq() +\n  stat_qq_line()"
+    "section": "Penguins: Example",
+    "text": "Penguins: Example\n\n\nCode\nm3 &lt;- lm(body_mass ~   island + species + flipper_len,\n          penguins)\ntidy(m3)\n\n\n#&gt; # A tibble: 6 × 5\n#&gt;   term             estimate std.error statistic  p.value\n#&gt;   &lt;chr&gt;               &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n#&gt; 1 (Intercept)       -4048.     586.      -6.91  2.40e-11\n#&gt; 2 islandDream         -59.8     75.7     -0.789 4.31e- 1\n#&gt; 3 islandTorgersen    -102.      77.7     -1.31  1.90e- 1\n#&gt; 4 speciesChinstrap   -206.      70.4     -2.92  3.71e- 3\n#&gt; 5 speciesGentoo       200.     110.       1.82  6.94e- 2\n#&gt; 6 flipper_len          41.1      3.09    13.3   9.26e-33\n\n\nCode\ndfm3 &lt;- resid_df(m3)\nhead(dfm3)\n\n\n#&gt;   obs body_mass    island species flipper_len     resid   fitted      sresid\n#&gt; 1   1      3750 Torgersen  Adelie         181  462.5612 3287.439  1.24797225\n#&gt; 2   2      3800 Torgersen  Adelie         186  307.1225 3492.877  0.82640213\n#&gt; 3   3      3250 Torgersen  Adelie         195 -612.6671 3862.667 -1.64784619\n#&gt; 5   4      3450 Torgersen  Adelie         193 -330.4916 3780.492 -0.88855590\n#&gt; 6   5      3650 Torgersen  Adelie         190   -7.2284 3657.228 -0.01943297\n#&gt; 7   6      3625 Torgersen  Adelie         181  337.5612 3287.439  0.91072706\n#&gt;      hatvals   jackknife        cooks\n#&gt; 1 0.02662612  1.24901185 7.100464e-03\n#&gt; 2 0.02143054  0.82601134 2.492718e-03\n#&gt; 3 0.02058469 -1.65208143 9.511731e-03\n#&gt; 5 0.01982753 -0.88827691 2.661855e-03\n#&gt; 6 0.01970442 -0.01940404 1.265126e-06\n#&gt; 7 0.02662612  0.91049529 3.781407e-03\n\n\n\n\nCode\nggplot(dfm3, aes(fitted, resid)) +\n  geom_point() +\n  geom_hline(yintercept = 0, col = \"red\")\n\n\n\n\n\n\n\n\n\nCode\nggplot(dfm3, aes(sample = resid)) + \n  stat_qq() +\n  stat_qq_line()"
+  },
+  {
+    "objectID": "lectures/12.html#heart-example",
+    "href": "lectures/12.html#heart-example",
+    "title": "Statistical Inference",
+    "section": "Heart: Example",
+    "text": "Heart: Example\n\n\nCode\nm4 &lt;- glm(disease ~ trestbps + cp, heart_disease, family = binomial())\ntidy(m4)\n\n\n#&gt; # A tibble: 5 × 5\n#&gt;   term        estimate std.error statistic   p.value\n#&gt;   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n#&gt; 1 (Intercept)  -3.80     1.25       -3.04  0.00234  \n#&gt; 2 trestbps      0.0209   0.00807     2.59  0.00967  \n#&gt; 3 cp2          -0.409    0.601      -0.681 0.496    \n#&gt; 4 cp3          -0.236    0.540      -0.437 0.662    \n#&gt; 5 cp4           2.04     0.512       3.99  0.0000674\n\n\nCode\ndfm4 &lt;- resid_df(m4)\nhead(dfm4)\n\n\n#&gt;   obs disease trestbps cp    fitted        eta  raw_resid pearson_resid\n#&gt; 1   1      no      145  1 0.3162617 -0.7710053 -0.3162617    -0.6801087\n#&gt; 2   2     yes      160  4 0.8296967  1.5834796  0.1703033     0.4530559\n#&gt; 3   3     yes      120  4 0.6787886  0.7482102  0.3212114     0.6879046\n#&gt; 4   4      no      130  3 0.2107532 -1.3203915 -0.2107532    -0.5167502\n#&gt; 5   5      no      130  2 0.1834250 -1.4933128 -0.1834250    -0.4739486\n#&gt; 6   6      no      120  2 0.1541873 -1.7021301 -0.1541873    -0.4269600\n#&gt;   deviance_resid working_resid partial_resid.trestbps partial_resid.cp\n#&gt; 1     -0.8719863     -2.233553              -1.184687        -2.305014\n#&gt; 2      0.6110565      2.788739               1.796346         2.404052\n#&gt; 3      0.8802790      2.221423               1.229030         2.672005\n#&gt; 4     -0.6880061     -2.587422              -1.302396        -2.345657\n#&gt; 5     -0.6366106     -2.717940              -1.259993        -2.476175\n#&gt; 6     -0.5787181     -2.884425              -1.426478        -2.433842\n#&gt;   std_pear_resid std_dev_resid stud_dev_resid quantile_resid   leverages\n#&gt; 1     -0.6962858    -0.8927274     -0.8846616      0.4271753 0.045927133\n#&gt; 2      0.4562301     0.6153377      0.6134136      0.8346384 0.013866647\n#&gt; 3      0.6910541     0.8843093      0.8827424     -0.2236567 0.009094376\n#&gt; 4     -0.5199246    -0.6922325     -0.6903935      0.1753890 0.012173676\n#&gt; 5     -0.4789686    -0.6433536     -0.6403567     -0.3214378 0.020852010\n#&gt; 6     -0.4311339    -0.5843756     -0.5818043      0.4590958 0.019268922\n#&gt;          cooks\n#&gt; 1 0.0046675922\n#&gt; 2 0.0005853744\n#&gt; 3 0.0008765864\n#&gt; 4 0.0006662724\n#&gt; 5 0.0009771107\n#&gt; 6 0.0007304018\n\n\n\n\nCode\nggplot(dfm4, aes(fitted, quantile_resid)) +\n  geom_point() +\n  geom_hline(yintercept = 0, col = \"red\")\n\n\n\n\n\n\n\n\n\nCode\nggplot(dfm4, aes(sample = quantile_resid)) + \n  stat_qq() +\n  stat_qq_line()"
   },
   {
     "objectID": "lectures/14.html#motivating-example-1",

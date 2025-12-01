@@ -7,14 +7,17 @@ format:
   revealjs:
     width: 1200
     scrollable: true
+    sc-sb-title: true
+    footer: m201.inqs.info/lectures/12
     theme: [default, styles.scss]
     navigation-mode: vertical
-    controls-layout: bottom-right
+    controls-layout: edges
     controls-tutorial: true
+    slide-number: true
+    pointer:
+      pointerSize: 32
     incremental: false 
     chalkboard:
-      src: notes/chalkboard_1a.json
-      storage: chalkboard_pres
       theme: whiteboard
       chalk-width: 4
 knitr:
@@ -34,6 +37,7 @@ filters:
   - reveal-header
   - code-fullscreen
   - reveal-auto-agenda
+
 editor: source
 ---
 
@@ -41,8 +45,7 @@ editor: source
 #| include: false
 library(tidyverse)
 library(csucistats)
-library(survival)
-library(patchwork)
+library(broom)
 theme_set(theme_bw() + 
             theme(
               axis.text.x = element_text(size = 24),
@@ -52,13 +55,243 @@ theme_set(theme_bw() +
               legend.title = element_blank(),
               legend.text = element_text(size = 24)))
 
-bladder1$death <- ifelse(bladder1$status %in% c(0, 1), 0, 1)
-bladder1$death2 <- ifelse(bladder1$death == 0, "Alive", "Dead")
+heart_disease <- kmed::heart
+heart_disease$disease <- factor(ifelse(heart_disease$class == 0, "no", "yes")) 
 
 ```
 
 
 
+# Hypothesis Tests: Multi Regression
+
+## Hypothesis Tests
+
+
+Conducting a hypothesis test for coefficients in regression models with more than one predictor is the same as the standard simple approaches.
+
+::: fragment
+
+You will just need to specify the hypothesis tests are adjusted for the other covariates.
+
+:::
+
+## Hypothesis Testing Steps
+
+1.  State $H_0$ and $H_1$
+2.  Choose $\alpha$
+3.  Compute confidence interval/p-value
+4.  Make a decision
+
+
+## Null Hypothesis $H_0$
+
+The null hypothesis is the claim that is initially believed to be true. For the most part, it is always equal to the hypothesized value.
+
+## Alternative Hypothesis $H_1$
+
+The alternative hypothesis contradicts the null hypothesis.
+
+## Significance Level
+
+Choose a value that represents the probability of being wrong if you decide to reject the $H_0$.
+
+::: fragment
+$$
+\alpha = 0.05
+$$
+:::
+
+::: notes
+Walk through the steps slowly with an example in mind. Emphasize that $\alpha$ is a threshold, not the actual probability of error.
+:::
+
+## Conducting HT of $\beta_j$ Linear R
+
+```r
+XLM <- lm(Y ~ X1 + X2 + ... + Xp, data = DATA)
+tidy(XLM)
+```
+
+-   `XLM`: Object where the model is stored
+-   `Y`: Name of the outcome variable in `DATA`
+-   `X1`, `X2`, …, `Xp`: predictor variables in `DATA`
+-   `DATA`: Name of the data set
+
+
+## Conducting HT of $\beta_j$
+
+```r
+XLM <- glm(Y ~ X1 + X2 + ... + Xp, data = DATA, family = binomial())
+tidy(XLM)
+```
+
+-   `XLM`: Object where the model is stored
+-   `Y`: Name of the outcome variable in `DATA`
+-   `X1`, `X2`, …, `Xp`: predictor variables in `DATA`
+-   `DATA`: Name of the data set
+
+
+# Examples
+
+## Penguins Example
+
+Is there a significant relationship between penguin body mass (outcome; `body_mass`) and flipper length (predictor; `flipper_len`), adjusting for `species`? Use the `penguins` data set to determine a significant association.
+
+## Penguins: Hypothesis
+
+$H_0$: There is no relationship between penguin body mass and flipper length, adjusting for penguin species ($\beta_{flipper\_len} = 0$)
+
+$H_1$: There is a relationship between penguin body mass and flipper length, adjusting for penguin species ($\beta_{flipper\_len} \ne 0$)
+
+## Penguins: $\alpha$-level
+
+$$
+\alpha = 0.05 = 5.0*10^{-2} = 5.0e-2
+$$
+
+## Penguins: Code
+
+```{r}
+#| code-fold: show
+#| eval: true
+
+m1 <- lm(body_mass ~ flipper_len + species, penguins)
+tidy(m1)
+```
+
+## Penguins: Decision Making
+
+$$
+p = 1.4e-32 < 5e-2 = 0.05 = \alpha
+$$
+
+
+**Reject $H_0$**
+
+## Penguins: Interpretation
+
+There is a significant association between penguins flipper length and body mass, after adjusting for species (p < 0.0001; $\beta = 40.7$). As flipper length increases by 1 unit, body mass increases by 40.7 units, adjusting for penguin species.
+
+## Heart Disease Example
+
+Is there a significant association between heart disease (outcome; `disease`) and resting blood pressure (predictor; `trestbps`), adjusting for chest pain (`cp`). Use the `heart_disease` data set to determine a significant association.
+
+
+## Heart: Hypothesis
+
+$H_0$: There is no relationship between heart disease probability and resting blood pressure, adjusting for chest pain ($\beta_{bp} = 0$)
+
+$H_1$: There is no relationship between heart disease probability and resting blood pressure, adjusting for chest pain ($\beta_{bp} \ne 0$)
+
+## Heart: $\alpha$-level
+
+$$
+\alpha = 0.05 = 5.0*10^{-2} = 5.0e-2
+$$
+
+## Heart: Code
+
+```{r}
+#| code-fold: show
+#| eval: true
+
+m2 <- glm(disease ~ trestbps + cp, heart_disease, family = binomial())
+tidy(m2)
+```
+
+## Heart: Decision Making
+
+$$
+p = 0.00967 < 0.05 = \alpha
+$$
+
+
+**Reject $H_0$**
+
+## Heart: Interpretation
+
+There is a significant association between heart disease and resting blood pressure, after adjusting for chest pain (p < 0.00967; $\beta = 0.0209$). As resting blood pressure increases by 1 unit, the odds of having heart disease increases by a factor of 1.02, adjusting for chest pain.
+
+
+# Power Analysis
+
+## What is Statistical Power
+
+- **Statistical Power** is the probability of correctly rejecting a false null hypothesis.
+- In other words, it's the chance of **detecting a real effect** when it exists.
+
+## Why Power Matters
+
+- Low power → high risk of **Type II Error** (false negatives)
+- High power → better chance of finding true effects
+- Common threshold: **80% power**
+
+## Errors in Inference
+
+|         |                               |                         |
+|:--------|:------------------------------|:------------------------|
+| Type I  | Reject $H_0$ when true        | False positive          |
+| Type II | Don't reject $H_0$ when false | False negative          |
+| Power   | $1 - P(\text{Type II})$       | Detecting a true effect |
+
+::: notes
+Power is often overlooked. It's about how sensitive the test is to real effects. Larger samples increase power.
+:::
+
+## Type I Error (False Positive)
+
+-   **Rejecting** $H_0$ when it is actually true
+-   Probability = $\alpha$ (significance level)
+
+::: notes
+Type I errors happen when we detect an effect that doesn't really exist. This is controlled by our chosen alpha level.
+:::
+
+## Type II Error (False Negative)
+
+-   **Failing to reject** $H_0$ when it is actually false
+-   Probability = $\beta$
+-   Power = $1 - \beta$
+
+::: notes
+Type II errors are often due to small sample sizes or high variability. Power analysis helps us plan to avoid these.
+:::
+
+## Balancing Errors
+
+-   Lowering $\alpha$ reduces Type I errors, but **increases** risk of Type II errors.
+-   To reduce both:
+    -   Increase sample size
+    -   Use more appropriate statistical tests
+
+::: notes
+There's a trade-off between these errors. We can't eliminate both, but we can **manage** the risk based on the consequences of each type.
+:::
+
+## What Affects Power?
+
+1. **Effect Size**  
+   - Bigger effects are easier to detect
+
+2. **Sample Size ($n$)**  
+   - Larger samples reduce standard error
+
+3. **Significance Level ($\alpha$)**  
+   - Higher $\alpha$ increases power (but riskier!)
+
+4. **Variability**  
+   - Less noise in data = better power
+
+## Boosting Power
+
+- Power = Probability of rejecting $H_0$ when it's false
+- Helps avoid **Type II Errors**
+- Driven by:
+  - Sample size
+  - Effect size
+  - $\alpha$
+  - Variability
+- Aim for **80% or higher**
 
 # Model Conditions
 
@@ -83,6 +316,10 @@ The data points must not influence each other.
 ## Probability Assumption
 
 The model errors (also known as residuals) must follow a specified distribution.
+
+- Linear Regression: Normal Distribution
+
+- Logistic Regression: Binomial Distribution
 
 ## Equal Variances
 
@@ -130,10 +367,6 @@ A qq (quantile-quantile) plot will plot the estimated quantiles of the residuals
 
 This plot allows you to assess the linearity, constant variance, and identify potential outliers. Create a scatter plot between the fitted values (x-axis) and the raw/standardized residuals (y-axis).
 
-## Variance Inflation Factor
-
-The variance inflation factor is a measurement on how much variables are collinear with each other. A value greater than 10 is a cause for concern and action should be taken.
-
 ## Residual Analysis in R
 
 Use the `resid_df` function to obtain the residuals of a model.
@@ -148,48 +381,103 @@ rdf <- resid_df(OBJECT)
 
 ## Residual vs Fitted Plot
 
-```{r}
-#| code-fold: show
-#| eval: false
+::: {.columns}
+::: {.column}
 
+### Linear
 
+```r
 ggplot(RDF, aes(fitted, resid)) +
   geom_point() +
   geom_hline(yintercept = 0, col = "red")
-
 ```
+
+:::
+::: {.column}
+
+### Logistic
+
+```r
+ggplot(RDF, aes(fitted, quantile_resid)) +
+  geom_point() +
+  geom_hline(yintercept = 0, col = "red")
+```
+
+:::
+:::
+
+- `RDF`: Name of object from `resid_df()`
 
 ## QQ Plot
 
-```{r}
-#| code-fold: show
-#| eval: false
+::: {.columns}
+::: {.column}
 
+### Linear
+
+```r
 ggplot(RDF, aes(sample = resid)) + 
   stat_qq() +
   stat_qq_line() 
-
 ```
 
+:::
+::: {.column}
 
-## Example
+### Logistic
+
+```r
+ggplot(RDF, aes(sample = quantile_resid)) + 
+  stat_qq() +
+  stat_qq_line() 
+```
+:::
+:::
+
+- `RDF`: Name of object from `resid_df()`
+
+## Penguins: Example
 
 ```{r}
-#| code-fold: true
-#| eval: false
-
-xlm <- lm(body_mass_g ~   island + species + flipper_length_mm,
+#| code-fold: show
+m3 <- lm(body_mass ~   island + species + flipper_len,
           penguins)
-dfxlm <- resid_df(xlm)
+tidy(m3)
 
-ggplot(dfxlm, aes(fitted, resid)) +
+dfm3 <- resid_df(m3)
+head(dfm3)
+```
+
+```{r}
+#| code-fold: show
+ggplot(dfm3, aes(fitted, resid)) +
   geom_point() +
   geom_hline(yintercept = 0, col = "red")
 
-ggplot(dfxlm, aes(sample = resid)) + 
+ggplot(dfm3, aes(sample = resid)) + 
   stat_qq() +
   stat_qq_line() 
+```
 
+## Heart: Example
 
+```{r}
+#| code-fold: show
+m4 <- glm(disease ~ trestbps + cp, heart_disease, family = binomial())
+tidy(m4)
+
+dfm4 <- resid_df(m4)
+head(dfm4)
+```
+
+```{r}
+#| code-fold: show
+ggplot(dfm4, aes(fitted, quantile_resid)) +
+  geom_point() +
+  geom_hline(yintercept = 0, col = "red")
+
+ggplot(dfm4, aes(sample = quantile_resid)) + 
+  stat_qq() +
+  stat_qq_line() 
 ```
 

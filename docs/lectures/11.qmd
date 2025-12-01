@@ -90,6 +90,7 @@ pairs(em2)
 
 ```{r}
 #| fig-align: center
+#| fig-alt: "A box plot and jitter plot being displayed for body mass by penguin species."
 penguins |> ggplot(aes(x=species, y = body_mass)) +
   geom_jitter() + 
   geom_boxplot() + 
@@ -113,6 +114,7 @@ penguins |> ggplot(aes(x=species, y = body_mass)) +
 ::: {.column width="60%"}
 
 ```{r}
+#| fig-alt: "A stacked bar plot showing chest pain and count by having heart disease or not."
 heart_disease |> ggplot(aes(x=cp, fill = disease)) +
   geom_bar(position = "fill") +
   labs(x = "Chest Pain") + 
@@ -336,6 +338,7 @@ anova(xlm)
 
 ```{r}
 #| fig-align: center
+#| fig-alt: "A box plot and jitter plot being displayed for body mass by penguin species."
 penguins |> ggplot(aes(x=species, y = body_mass)) +
   geom_jitter() + 
   geom_boxplot() + 
@@ -430,6 +433,7 @@ anova(xlm)
 ::: {.column width="60%"}
 
 ```{r}
+#| fig-alt: "A stacked bar plot showing chest pain and count by having heart disease or not."
 heart_disease |> ggplot(aes(x=cp, fill = disease)) +
   geom_bar(position = "fill") +
   labs(x = "Chest Pain") + 
