@@ -109,16 +109,18 @@ Don't let data influence the methodology during a study/experiment.
 
 # Surveys
 
+## Online Course Evaluation Survey
+
+:::{.timer #UNIQUE-ID seconds=900 starton=interaction}
+:::
+
+
 ## Final Class Survey
 
 [Survery](https://forms.gle/MySA5Pqe6LG67pSs5)
 
 ![](img/final.png){align=center}
 
-## Online Course Evaluation Survey
-
-:::{.timer #UNIQUE-ID seconds=900 starton=interaction}
-:::
 
 
 # Installation
