@@ -111,8 +111,7 @@ Don't let data influence the methodology during a study/experiment.
 
 ## Online Course Evaluation Survey
 
-:::{.timer #UNIQUE-ID seconds=900 starton=interaction}
-:::
+Please fill out the course eval survey from your email.
 
 
 ## Final Class Survey
@@ -120,6 +119,14 @@ Don't let data influence the methodology during a study/experiment.
 [Survery](https://forms.gle/MySA5Pqe6LG67pSs5)
 
 ![](img/final.png){align=center}
+
+## CSUCI Rebranding Survey
+
+**Voice Your Opinion**
+
+[CI Rebranding](https://www.youtube.com/watch?v=pBnOOJp-dfw)
+
+[Survey](https://csuci.qualtrics.com/jfe/form/SV_dgkQ7dqHvde4d4a)
 
 
 
