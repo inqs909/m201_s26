@@ -1,19 +1,22 @@
 ---
-title: "Numerical Data"
+title: "Distribution Functions"
 description: |
-  Provides an overview descriptive statistics and data visualization techniques for numerical data.
-
+  Provides an overview distribution function (mathematical models).
 format:
   revealjs:
+    width: 1200
     scrollable: true
+    sc-sb-title: true
+    footer: m201.inqs.info/lectures/3
     theme: [default, styles.scss]
     navigation-mode: vertical
-    controls-layout: bottom-right
+    controls-layout: edges
     controls-tutorial: true
+    slide-number: true
+    pointer:
+      pointerSize: 32
     incremental: false 
     chalkboard:
-      src: notes/chalkboard_1a.json
-      storage: chalkboard_pres
       theme: whiteboard
       chalk-width: 4
 knitr:
@@ -21,6 +24,7 @@ knitr:
     echo: true
     eval: true
     message: false
+    code-fold: true
     warnings: false
     comment: "#>" 
     
@@ -36,465 +40,1164 @@ filters:
 editor: source
 ---
 
-## R Packages
-
 ```{r}
-#| echo: false
-#| eval: true
-
-library(csucistats)
+#| include: false
+library(MASS)
 library(tidyverse)
-trashwheel <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-03-05/trashwheel.csv')
-
-theme_set(theme_bw())
-
-```
-
--   csucistats
--   tidyverse
-
-## Motivating Example
-
-```{=html}
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Zzjw-Pw5jwQ?si=WUBQTifP1TNSxDoJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-```
-
-# Summary Statistics
-
-## What is numerical data?
-
-```{r}
-#| echo: true
-#| eval: true
-
-trashwheel$PlasticBottles
-```
-
-
-## Summary Statistics
-
-Summary statistics are used to describe the distribution of data.
-
-## Central Tendency
-
-Central tendency is a statistical concept that refers to the central or typical value around which a set of data points tends to cluster. It is used to summarize and describe a data set by identifying a single representative value that provides insights into the data's overall characteristics.
-
-## Variation
-
-Variation in statistics refers to the extent to which data points in a dataset deviate or differ from a central tendency measure. Understanding variation is crucial for making informed decisions, drawing meaningful conclusions, and assessing the reliability of statistical analyses.
-
-## Minimum
-
-The minimum (min) is the smallest value in the data.
-
-## Maximum
-
-The maximum (max) is the largest value in the data.
-
-## Quartiles
-
-Quartiles are three values (Q1, Q2, Q3) that divides the data into four subsets.
-
-::: fragment
-![](https://i.postimg.cc/p2BbKK5t/image.png){fig-align="center"}
-:::
-
-## Q1
-
-Q1 is the value signifying that a quarter of the data is lower than it.
-
-## Q2 - Median
-
-Q2 is the value signifying that half of the data is below it.
-
-::: fragment
-The median also represents the central tendency of the data.
-:::
-
-## Q3
-
-Q3 is the value signifying that 3 quarters of the data is below it.
-
-## Interquartile Range
-
-::: fragment
-$$
-IQR = Q_3 - Q_1
-$$
-:::
-
-## Range
-
-::: fragment
-$$
-R = \mathrm{max} - \mathrm{min}
-$$
-:::
-
-## How to identify the quartiles?
-
-1.  Sort the data
-2.  ID Max and Min
-3.  Find the amount of data the makes a quarter:
-    1.  $K=N/4$
-4.  Create 4 groups using the sorted data
-    1.  group by data size
-    2.  If $K$ has a decimal, the $Kth$ value is quartile of each group.
-
-## Mean
-
-Describe how you will find the mean of these numbers:
-
-```{r}
-#| echo: false
-
-rpois(5, 15)
-
-```
-
-## Mean
-
-The mean is another measurement for central tendency.
-
-$$
-\bar X = \frac{1}{n}\sum^n_{i=1}X_i
-$$
-
--   $n$: total data points
-
--   $X_i$: data points
-
--   $i$: indexing data
-
--   $\sum$: add all from first (bottom) to last (up)
-
-## Variance
-
-The variance is a measurement on the average squared distance the data points are from the central tendency.
-
-$$
-s^2 = \frac{1}{n-1}\sum^n_{i=1}(X_i-\bar X)^2
-$$
-
-## Standard Deviation
-
-The standard deviation is a measurement on the average distance the data points are from the central tendency.
-
-$$
-s=\sqrt{s^2}
-$$
-
-
-## Outliers
-
-These are data points that seem to be highly distant from all other variables.
-
-::: fragment
-![](https://miro.medium.com/v2/resize:fit:697/0*_k9tUMfs2P4CGUA3.png)
-:::
-
-
-# Numerical Statistics in R
-
-## Numerical Statistics in R
-
-## Mean
-
-```{r}
-#| echo: true
-#| eval: false
-
-mean(DATA$VAR)
-```
-
-
-## Median
-
-```{r}
-#| echo: true
-#| eval: false
-
-median(DATA$VAR)
-```
-
-## Standard Deviation
-
-```{r}
-#| echo: true
-#| eval: false
-
-sd(DATA$VAR)
-```
-
-## Variance
-
-```{r}
-#| echo: true
-#| eval: false
-
-var(DATA$VAR)
-```
-
-## Quartiles
-
-```{r}
-#| echo: true
-#| eval: false
-
-quantile(DATA$VAR, probs = c(0.25, 0.5, 0.75))
-
-```
-
-
-## Max and Min
-
-```{r}
-#| echo: true
-#| eval: false
-
-max(DATA$VAR)
-min(DATA$VAR)
-
-```
-
-## Summary Statistics
-
-```{r}
-#| echo: true
-#| eval: false
-num_stats(DATA$VAR)
-```
-
-## Mr. Trash Wheel
-
-```{r}
-num_stats(trashwheel$PlasticBottles)
-```
-
-# Data Visualization
-
-## Histogram
-
-A histogram is a graphical representation of the distribution or frequency of data points in a dataset. It provides a visual way to understand the shape, central tendency, and spread of a dataset by dividing the data into intervals or bins and showing how many data points fall into each bin as a bar.
-
-## Histogram R Code
-
-```{r}
-#| eval: false
-#| echo: true
-
-ggplot(DATA, aes(VARIABLE)) +
-  geom_histogram(bins = X)
-```
-
-
-## Histogram
-
-```{r}
-#| code-fold: true
-#| eval: true
-y <- rnorm(1000)
-ggplot(tibble(y), aes(y)) +
-  geom_histogram(bins = 15)
-
-```
-
-## Histogram
-
-```{r}
-#| code-fold: true
-#| eval: true
-
-y <- rgamma(1000, 2)
-ggplot(tibble(y), aes(y)) +
-  geom_histogram(bins = 15)
-
-
-```
-
-## Histograms
-
-```{r}
-#| code-fold: true
-#| eval: true
-
-y <- rbeta(1000, 5, 1)
-ggplot(tibble(y), aes(y)) +
-  geom_histogram(bins = 15)
-```
-
-## Histograms
-
-```{r}
-#| code-fold: true
-#| eval: true
-y <- rbinom(1000, 1, 0.4)
-z <- (y == 0) * rnorm(1000, 23) + (y == 1) * rnorm(1000, 27)
-ggplot(tibble(z), aes(z)) +
-  geom_histogram(bins = 15)
-```
-
-## Mr. Trash Wheel
-
-```{r}
-ggplot(trashwheel, aes(PlasticBottles)) +
-  geom_histogram()
-```
-
-
-
-## Box Plot
-
-A box plot, also known as a box-and-whisker plot, is a graphical representation of the distribution and key statistical characteristics of a dataset. It provides a visual summary of the data's central tendency, spread, and potential outliers.
-
-## Box Plot
-
-![](https://miro.medium.com/max/9000/1*2c21SkzJMf3frPXPAR_gZA.png){fig-align="center"}
-
-## Box Plot R Code
-
-```{r}
-#| echo: true
-#| eval: false
-
-ggplot(DATA, aes(VARIABLE)) +
-  geom_boxplot()
-
-```
-
-## Box Plot
-
-```{r}
-ggplot(trashwheel, aes(PlasticBottles)) +
-  geom_boxplot() 
-
-```
-
-## Box Plot
-
-```{r}
-ggplot(trashwheel, aes(y = PlasticBottles)) +
-  geom_boxplot() 
-```
-
-## Dot Plots
-
-Dot Plots are similar to histograms, but they incorporate dots to count how many data points fall within bins.
-
-
-## Dot Plots in R
-
-```{r}
-#| echo: true
-#| eval: false
-
-ggplot(DATA, aes(VARIABLE)) +
-  geom_dotplot(binwidth = X)
-
-```
-
-
-## Dot Plots
-
-```{r}
-#| code-fold: true
-#| eval: true
-
-ggplot(trashwheel, aes(PlasticBottles)) +
-  geom_dotplot(binwidth = 100)
-
-```
-
-
-# Scatter Plots
-
-## Scatter Plots
-
-Scatter plots demonstrate how two variables behave with each other. They can tell you any postive or negative trends, if they exist, with the combination of the plots.
-
-## Positive Relationship
-
-```{r}
-#| echo: false
-#| eval: true
-
-x <- rnorm(1000, mean = 3, sd = 1)
-y <- 4 + 4 * x + rnorm(1000, sd = 2.5)
-
-ggplot(tibble(x, y), aes(x, y)) +
-  geom_point() + 
-  theme_bw()
-
-```
-
-## Negative Relationship
-
-```{r}
-#| echo: false
-#| eval: true
-
-x <- rnorm(1000, mean = 3, sd = 1)
-y <- 4 - 4 * x + rnorm(1000, sd = 2.5)
-
-ggplot(tibble(x, y), aes(x, y)) +
-  geom_point() + 
-  theme_bw()
-
-```
-
-## No Relationship
-
-```{r}
-#| echo: false
-#| eval: true
-
-x <- rnorm(1000, mean = 3, sd = 1)
-y <- 4 + rnorm(1000, sd = 2.5)
-
-ggplot(tibble(x, y), aes(x, y)) +
-  geom_point() + 
-  theme_bw()
-
-```
-## Weak Positive or Negative Relationship
-
-```{r}
-#| echo: false
-#| eval: true
+library(csucistats)
 library(patchwork)
-x <- rnorm(1000, mean = 3, sd = 1)
-y <- 4 + 2 * x + rnorm(1000, sd = 6)
-yy <- 4 - 2 * x + rnorm(1000, sd = 6)
 
-p1 <- ggplot(tibble(x, y = y), aes(x, y)) +
-  geom_point() +
-  ggtitle("Weak Positive") +
-  theme_bw()
-
-p2 <- ggplot(tibble(x, y = yy), aes(x, y)) +
-  geom_point() + 
-  ggtitle("Weak Negative") +
-  theme_bw()
-
-p1 + p2
+theme_set(theme_bw() + 
+            theme(
+              axis.text.x = element_text(size = 24),
+              axis.title = element_text(size = 30),
+              plot.title = element_text(size = 48),
+              strip.text = element_text(size = 20),
+              legend.title = element_blank(),
+              legend.text = element_text(size = 24)))
 
 ```
 
-## Scatter Plots in R
+# Probability Theory
+
+## What is Probability?
+
+**Probability** is the measure of how likely an event is to occur. It ranges from 0 to 1:
+
+- $P(A) = 0$: The event $A$ will definitely not happen.
+- $P(A) = 1$: The event $A$ will definitely happen.
+- Values between 0 and 1 represent varying degrees of likelihood.
+
+## Everyday Examples
+- What's the probability it will rain tomorrow?
+- What are the chances of rolling a 6 on a standard die?
+- How likely is it that a randomly chosen student has a GPA above 3.0?
+
+
+## Key Terms and Definitions
+
+::: panel-tabset
+
+### **Experiment**
+An action or process that generates outcomes.  
+- Example: Rolling a die.
+
+### **Sample Space**
+The set of all possible outcomes of an experiment.  
+- Example: For rolling a die, $S = \{1, 2, 3, 4, 5, 6\}$.
+
+### **Event**
+A subset of the sample space, representing outcomes of interest.  
+
+- Example: Rolling an even number ($A = \{2, 4, 6\}$).
+
+### **Prob. of an Event**
+The proportion of times an event is expected to occur if the experiment is repeated many times.
+
+:::
+
+## The Probability Formula
+
+The probability of an event $A$ is defined as:
+
+$$
+P(A) = \frac{\text{Number of favorable outcomes}}{\text{Total number of possible outcomes}}
+$$
+
+## Example
+
+If we roll a die, what is the probability of rolling a 4?
+
+- **Favorable outcomes**: 1 (rolling a 4).
+- **Total outcomes**: 6 (since $S = \{1, 2, 3, 4, 5, 6\}$).
+
+$$
+P(\text{rolling a 4}) = \frac{1}{6} \approx 0.167
+$$
+
+
+## Rules of Probability
+
+::: panel-tabset
+
+### Rule 1
+
+**Probability of the Sample Space**
+
+The probability of the sample space is always 1:
+$$
+P(S) = 1
+$$
+
+### Rule 2 
+
+**Probability of Impossible Events**
+
+The probability of an event that cannot happen is 0:
+
+$$
+P(\emptyset) = 0
+$$
+
+### Rule 3
+
+**Complement Rule**
+
+The probability of the complement of an event $A$ (not $A$) is:
+
+$$
+P(A^c) = 1 - P(A)
+$$
+
+- Example: If $P(\text{rain}) = 0.3$, then $P(\text{no rain}) = 1 - 0.3 = 0.7$.
+
+
+:::
+
+## Applications
+
+::: panel-tabset
+
+### Drawing a Card
+If you draw a card from a standard deck of 52 cards, what is the probability of drawing:
+
+1. A heart?  
+  $$
+   P(\text{heart}) = \frac{13}{52} = 0.25
+  $$
+
+2. A red card (heart or diamond)?  
+  $$
+   P(\text{red card}) = \frac{26}{52} = 0.5
+  $$
+
+### Tossing a Coin Twice
+What is the probability of getting:
+
+1. Exactly one head?  
+   Sample space: $S = \{\text{HH, HT, TH, TT}\}$.  
+   Event: $A = \{\text{HT, TH}\}$.  
+   $$
+   P(A) = \frac{2}{4} = 0.5
+   $$
+
+2. At least one head?  
+   Event: $B = \{\text{HH, HT, TH}\}$.  
+   $$
+   P(B) = \frac{3}{4} = 0.75
+   $$
+
+### Traffic Lights
+A commuter encounters three traffic lights, each with a 70% chance of being green. Assuming independence, what is the probability that all three lights are green?
+
+$$
+P(\text{all green}) = 0.7 \cdot 0.7 \cdot 0.7 = 0.343
+$$
+
+:::
+
+
+## More Problems
+
+::: panel-tabset
+
+### Rolling a Die
+
+|1 | 2 | 3 | 4 | 5 | 6 |
+|-|-|-|-|-|-|
+|1/6| 1/6 | 1/6 | 1/6 | 1/6 | 1/6 |
+
+
+### 1
+
+$$
+P(X = 2)
+$$
+
+### 2
+
+
+$$
+P(1 \le X \le 3)
+$$
+
+
+### 3
+
+$$
+P(1 < X < 3)
+$$
+
+### 4
+
+$$
+P(X > 1)
+$$
+
+:::
+
+
+# Joint Probability
+
+## Joint Probability
+
+*   Often, we're interested in the probabilities of multiple events occurring.
+*   This presentation focuses on calculating probabilities involving two events.
+*   We'll explore key concepts like:
+    *   Joint Probability
+    *   Union of Events
+    *   Conditional Probability
+    *   Independence
+
+
+## Joint Probability
+
+*   The probability of *both* events A and B occurring.
+*   Denoted as $P(A\ \mathrm{and}\ B)$ or $P(A \cap B)$.
+*   Examples:
+    *   Drawing a King *and* a Heart from a deck of cards.
+    *   Flipping two coins and getting heads on both.
+
+## Union of Events
+
+*   The probability of *either* event A *or* event B (or both) occurring.
+*   Denoted as $P(A\ \mathrm{or}\ B)$ or $P(A \cup B)$.
+*   Examples:
+    *   Rolling a 3 or a 5 on a die.
+    *   Drawing a red card or a face card.
+
+
+## Calculating Union Probability
+
+*   **General Case:** $P(A \cup B) = P(A) + P(B) - P(A \cap B)$  (Inclusion-Exclusion Principle)
+*   **Mutually Exclusive Events:** If A and B are mutually exclusive (cannot both occur), then $P(A \cap B) = 0$, and $P(A \cup B) = P(A) + P(B)$
+
+
+## Example: Union Probability
+
+*   What is the probability of rolling a number greater than 4 or an even number on a six-sided die?
+
+    *   Event A: Rolling a number greater than 4 (5 or 6).
+    *   Event B: Rolling an even number (2, 4, or 6).
+
+::: fragment
+
+*   $P(A) = 2/6$
+*   $P(B) = 3/6$
+*   $P(A \cap B) = 1/6$ (rolling a 6)
+*   $P(A \cup B) = (2/6) + (3/6) - (1/6) = 4/6 = 2/3$
+:::
+
+
+## Conditional Probability
+
+*   The conditional probability of event A occurring *given* that event B has occurred:  $P(A|B)$ (read as "the probability of A given B").
+
+*   Formula:  $P(A|B) =\frac{P(A \cap B)}{P(B)}$
+
+    *   $P(A|B)$: Conditional probability of A given B.
+    *   $P(A \cap B)$: Probability of both A and B occurring.
+    *   $P(B)$: Probability of B occurring.
+
+
+## Independence
+
+*   Two events are independent if the occurrence of one does not affect the probability of the other.
+*   If A and B are independent:
+    *   $P(A|B) = P(A)$
+    *   $P(B|A) = P(B)$
+    *   $P(A \cap B) = P(A) P(B)$
+
+## Bayes' Theorem
+
+*   Reverses the conditioning:  Relates P(A|B) to P(B|A).
+*   $P(A|B) = \frac{P(B|A) * P(A)}{P(B)}$
+*   Useful when we know P(B|A) but want P(A|B).
+
+
+# Distribution Functions
+
+## Random Variable
+
+A **random variable** is a variable whose value is a numerical outcome of a random phenomenon. It's a way to map the outcomes of a probabilistic event to numbers. This allows us to analyze these outcomes mathematically.
+
+## RV: Key Concepts
+
+* **Random Phenomenon:** This is any process or experiment whose outcome is uncertain. 
+
+* **Outcomes:** The possible results of a random phenomenon are called outcomes. 
+
+* **Numerical Value:** A random variable assigns a numerical value to each outcome. 
+
+## Types of Random Variables
+
+::: panel-tabset
+
+### Discrete Random Variable 
+
+A discrete random variable can only take on a finite number of values or a countably infinite number of values. The values are often integers. Examples:
+
+- The number of heads in three coin flips (0, 1, 2, or 3).
+- The number of defective light bulbs in a box of 100.
+- The number of customers entering a store in an hour.
+
+### Continuous Random Variable
+
+ A continuous random variable can take on any value within a given range. Examples:
+
+- The height of a person.
+- The temperature of a room.
+- The time it takes to complete a task.
+
+:::
+
+
+## Distribution Functions
+
+A **distribution function** describes the probabilities of a random variable across its possible values. It answers questions like:
+
+- How likely is a random variable to take on a specific value or fall within a range?
+- What is the overall "shape" of the distribution of outcomes?
+
+## Cumulative Distribution Function
+
+The **Cumulative Distribution Function (CDF)** describes the probability that a random variable $X$ is less than or equal to a certain value $x$:
+$$
+F_X(x) = P(X \leq x)
+$$
+
+## Properties of the CDF
+
+1. **Range**: The CDF is always between 0 and 1:
+   $$
+   0 \leq F_X(x) \leq 1
+   $$
+2. **Non-Decreasing**: The CDF never decreases as $x$ increases.
+3. **Limits**:
+   - $\lim_{x \to -\infty} F_X(x) = 0$
+   - $\lim_{x \to \infty} F_X(x) = 1$
+
+## CDF Example
+
+For a die roll (discrete case):
+
+- $F_X(2) = P(X \leq 2) = P(X = 1) + P(X = 2) = \frac{1}{6} + \frac{1}{6} = \frac{2}{6}$.
+
+For a normal distribution (continuous case):
+
+- Use the CDF to find probabilities, typically provided via tables or software.
+
+
+## Probability Density Function (PDF)
+
+The **Probability Density Function (PDF)** is used for **continuous random variables** and describes the likelihood of the variable falling within a small interval.
+
+$$
+P(a \leq X \leq b) = \int_a^b f_X(x) \, dx
+$$
+
+
+::: fragment
+::: callout-important
+$$
+P(X = a) = P(a \leq X \leq a) = \int_a^a f_X(x) \, dx = 0
+$$
+
+:::
+:::
+
+
+## Properties of the PDF:
+
+1. **Non-Negative**:
+   $$
+   f_X(x) \geq 0 \quad \forall x
+   $$
+
+2. **Total Area Under Curve**:
+   $$
+   \int_{-\infty}^\infty f_X(x) \, dx = 1
+   $$
+
+## PDF Examples
+
+The PDF of the normal distribution is:
+$$
+f_X(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+$$
+
+Here, $\mu$ is the mean and $\sigma$ is the standard deviation.
+
+
+
+## Probability Mass Function (PMF)
+
+The **Probability Mass Function (PMF)** is used for **discrete random variables** and gives the probability of each possible value:
+$$
+P(X = x) = p_X(x)
+$$
+
+## Properties of the PMF
+1. **Non-Negative**:
+   $$
+   p_X(x) \geq 0 \quad \forall x
+   $$
+
+2. **Sum of Probabilities**:
+   $$
+   \sum_x p_X(x) = 1
+   $$
+
+## PMF Example
+
+For a fair die, the PMF is:
+$$
+p_X(x) = \frac{1}{6}, \quad x \in \{1, 2, 3, 4, 5, 6\}
+$$
+
+## Percentiles
+
+A **percentile** is a measure indicating the value below which a given percentage of observations in a group of observations falls. It is used in statistics to provide information about the relative standing of a particular value within a dataset.
+
+## Percentile Example
+
+Suppose we have a random variable X representing the height of adults in a population. If the 90th percentile of X is 180 cm, it means that the probability of a randomly selected adult being 180 cm or shorter is 90%.
+
+## Precentile
 
 ```{r}
-#| echo: true
+data <- rnorm(500000, mean = 100, sd = 15) |> data.frame(x = _)  # Example: normally distributed data
+
+# Calculate the 75th percentile
+percentile_75 <- qnorm(0.75, 100, 15)
+
+ggplot(data = data, aes(x = x)) +
+  geom_density(fill = "skyblue", alpha = 0.5) +  # Density curve
+  geom_vline(xintercept = percentile_75, color = "red", linetype = "dashed", size = 1) +
+  labs(title = "Density Plot with 75th Percentile Highlighted", x = "Data Value", y = "Density") +
+  theme_bw()
+
+```
+
+
+## Applications
+
+::: panel-tabset
+
+### PMF of a Coin Toss
+For a fair coin tossed once:
+
+- $X = 0$: Tails, $P(X = 0) = 0.5$
+- $X = 1$: Heads, $P(X = 1) = 0.5$
+
+The PMF is:
+$$
+p_X(x) = 
+\begin{cases} 
+0.5 & x = 0 \text{ or } x = 1 \\
+0 & \text{otherwise}
+\end{cases}
+$$
+
+
+### CDF of an Exp. Dist.
+An exponential random variable with rate $\lambda > 0$ has a CDF:
+$$
+F_X(x) = 
+\begin{cases} 
+1 - e^{-\lambda x}, & x \geq 0 \\
+0, & x < 0
+\end{cases}
+$$
+
+This can be used to model waiting times between events.
+
+### Apps. in Real Life
+
+1. **PMF**:
+
+   - Number of emails received per hour.
+
+2. **PDF**:
+
+   - Heights of students in a class.
+
+3. **CDF**:
+
+   - The likelihood of completing a task within a certain time frame.
+
+:::
+
+
+## Common Contisuous RV
+
+| Continuous RV | Parameters | Notation | Support |
+|---|---|---|---|
+| Uniform | a (minimum), b (maximum) | Unif(a, b) | [a, b] |
+| Normal (Gaussian) | μ (mean), σ (standard deviation) | N(μ, σ²) | (-∞, ∞) |
+| Exponential | λ (rate) | Exp(λ) | [0, ∞) | 
+| Gamma | k (shape), θ (scale) | Γ(k, θ) | [0, ∞) | 
+| Beta | α (shape 1), β (shape 2) | Beta(α, β) | [0,1] | 
+| Chi-Squared | k (degrees of freedom) | χ²(k) | [0, ∞) | 
+| t-distribution | ν (degrees of freedom) | t(ν) | (-∞, ∞) | 
+| F-distribution | ν₁ (degrees of freedom 1), ν₂ (degrees of freedom 2) | F(ν₁, ν₂) | [0, ∞) | 
+| Weibull | k (shape), λ (scale) | Weibull(k, λ) | [0, ∞) | 
+| Lognormal | μ (location), σ (scale) | Lognormal(μ, σ) | [0, ∞) | 
+
+## Common Discrete RV
+
+| Discrete RV | Parameters | Notation | Support |
+|---|---|---|---|
+| Bernoulli | p (probability of success) | Bernoulli(p) | {0, 1} |
+| Binomial | n (number of trials), p (probability of success) | Bin(n, p) | {0, 1, 2, ..., n} |
+| Geometric | p (probability of success) | Geo(p) | {1, 2, 3, ...} |
+| Poisson | λ (average rate of events) | Pois(λ) | {0, 1, 2, ...} |
+| Negative Binomial | r (number of successes), p (probability of success) | NB(r, p) | {r, r+1, r+2, ...} |
+| Discrete Uniform | n (number of possible outcomes) | DUnif(1, n) | {1, 2, ..., n} or a set of n values |
+
+## Probability and PD/MF
+
+::: panel-tabset
+
+### Continuous
+
+```{r}
+mean <- 0  # Mean of the distribution
+sd <- 1   # Standard deviation of the distribution
+
+# Generate data points for the curve (more points = smoother curve)
+x <- seq(mean - 3*sd, mean + 3*sd, length.out = 100)  # Range covering most of the distribution
+y <- dnorm(x, mean = mean, sd = sd)  # Calculate the density at each x value
+
+# Create the plot
+ggplot(data = data.frame(x, y), aes(x = x, y = y)) +
+  geom_line(color = "blue", size = 1) +  # Line for the distribution curve
+  labs(x = "X",
+       y = "Probability Density") +
+  theme_bw() + # A clean theme
+  scale_x_continuous(breaks = seq(mean - 3*sd, mean + 3*sd, by = sd)) # Ticks at standard deviations
+
+```
+
+
+### Discrete
+
+```{r}
+n <- 10   # Number of trials
+p <- 0.3  # Probability of success on each trial
+
+# Generate the data for the plot
+x <- 0:n  # Possible values for the random variable (number of successes)
+y <- dbinom(x, size = n, prob = p)  # Calculate the probabilities
+
+# Create the plot using geom_col (for discrete data)
+ggplot(data = data.frame(x, y), aes(x = factor(x), y = y)) +  # x as factor for discrete bars
+  geom_col(fill = "skyblue", color = "black") +
+  labs(title = paste("Binomial Distribution (n =", n, ", p =", p, ")"),
+       x = "Number of Successes (x)",
+       y = "Probability P(X = x)") +
+  theme_bw()
+
+```
+
+:::
+
+
+# Normal Distribution
+
+## Normal Distribution
+
+The **Normal Distribution** is a probability distribution that is symmetric, with most of the data points clustering around the mean. 
+
+- It's **bell-shaped** and is defined mathematically by two parameters:
+  - **Mean ($\mu$)**: The center or peak of the distribution.
+  - **Standard Deviation ($\sigma$)**: Controls the spread of the distribution.
+
+
+::: fragment
+::: callout-important
+For any normally distributed data, the highest probability density is at the mean, and as you move away from the mean, the probability density gradually decreases.
+:::
+:::
+
+## Properties
+
+
+1. **Symmetry**: It is perfectly symmetric about the mean, meaning the left side is a mirror image of the right.
+2. **Unimodal**: There is a single peak at the mean.
+3. **Mean, Median, and Mode are Equal**: In a normal distribution, these three measures of central tendency are located at the same point.
+4. **68-95-99.7 Rule** (Empirical Rule)
+
+::: notes
+
+This rule helps us understand how data is distributed in a normal curve and provides a quick way to estimate probabilities for normally distributed data.
+
+:::
+
+## Normal Distribution
+
+
+::: {.column}
+
+$$
+X\sim N(\mu, \sigma)
+$$
+
+$$
+-\infty < X < \infty
+$$
+
+:::
+::: {.column}
+
+$$
+f_X(x) = \frac{1}{\sqrt{2\pi \sigma}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+$$
+
+:::
+
+
+## The Standard Normal Distribution
+
+The **Standard Normal Distribution** is a special type of normal distribution with a mean of 0 and a standard deviation of 1. It's often used as a reference to convert any normal distribution to a standard form.
+
+## Z-Scores
+A **Z-score** (or standard score) tells us how many standard deviations an individual data point is from the mean. It’s calculated as:
+
+$$
+Z = \frac{X - \mu}{\sigma}
+$$
+
+- If $Z$ is positive, the data point is above the mean.
+- If $Z$ is negative, the data point is below the mean.
+- Using Z-scores, we can compare values across different normal distributions or find the probability associated with a particular score.
+
+
+## Why the Normal Distribution is Important
+
+
+1. **It Describes Many Natural Phenomena**: Heights, weights, test scores, measurement errors, and countless other variables follow a normal distribution, especially when influenced by many small, random factors.
+2. **Predictive Power**: With normally distributed data, we can make predictions and infer probabilities, thanks to the 68-95-99.7 rule.
+3. **Central Limit Theorem**: The normal distribution is foundational to the Central Limit Theorem, which tells us that, regardless of the original data distribution, the sampling distribution of the sample mean will approach a normal distribution as sample size increases.
+4. **Ease of Use in Statistical Methods**: Many statistical tests and methods assume normality, allowing for simplified calculations and reliable inferences.
+
+
+## Apps of the Normal Dist.
+
+::: panel-tabset
+
+### Standardized Testing
+Scores on standardized tests, such as IQ tests or the SAT, are often designed to follow a normal distribution. By knowing a student’s score in terms of Z-scores, we can determine their percentile or how they compare to other test-takers.
+
+### Finance
+In finance, stock returns and other economic factors are often modeled with a normal distribution to estimate risk, forecast trends, and make informed investment decisions.
+
+:::
+
+## Finding Probability
+
+$$ 
+X \sim N(\mu, \sigma)
+$$
+
+::: fragment
+
+$$
+P(a \leq X \leq b) = P(a < X < b) = \int_a^b \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}} dx
+$$
+
+:::
+
+
+# Empirical Rule
+
+
+## What is the Empirical Rule?
+
+The **Empirical Rule** provides a way to understand the spread of data in a normal distribution by describing how data points cluster around the mean. According to this rule:
+
+1. Approximately **68%** of data points fall within **one standard deviation** of the mean.
+2. Approximately **95%** of data points fall within **two standard deviations** of the mean.
+3. Approximately **99.7%** of data points fall within **three standard deviations** of the mean.
+
+The empirical rule is very helpful because, with just the mean and standard deviation, we can quickly estimate how data is distributed within a normal curve.
+
+
+## Empirical Rule to the Normal Dist.
+
+Let's define the key terms and apply the empirical rule to the normal distribution.
+
+- **Mean (μ)**: This is the central point of the normal distribution where the data clusters around.
+- **Standard Deviation (σ)**: This is a measure of how spread out the data points are from the mean.
+
+## Empirical Rule to the Normal Dist.
+
+In a normal distribution:
+
+- **68% of data** lies between $(\mu - \sigma)$ and $(\mu + \sigma)$.
+- **95% of data** lies between $(\mu - 2\sigma)$ and $(\mu + 2\sigma)$.
+- **99.7% of data** lies between $(\mu - 3\sigma)$ and $(\mu + 3\sigma)$.
+
+These intervals allow us to estimate probabilities for data within each range without needing to calculate exact probabilities.
+
+
+## Visualizing the Empirical Rule
+
+To better understand the empirical rule, imagine a symmetric, bell-shaped normal curve. Here’s how it would look based on the empirical rule:
+
+1. The **68% region** represents the middle of the curve, starting one standard deviation left of the mean and ending one standard deviation right.
+2. The **95% region** stretches further out, covering almost the entire curve except for the outer tails.
+3. The **99.7% region** includes nearly all data points, covering the entire curve except for a tiny fraction at each extreme.
+
+This visualization shows how the data is most concentrated around the mean, with less data appearing as we move further away.
+
+
+## Using the Empirical Rule for Probabilities
+
+The empirical rule helps us answer questions like:
+
+- **What percentage of data points fall within a certain range?**
+- **How unusual is a data point located far from the mean?**
+
+## Examples
+
+- If we know that a data point lies more than two standard deviations away from the mean, we know it’s in the outer 5% of the distribution, making it relatively rare.
+- Using the rule, we can estimate that around 95% of values should lie within two standard deviations of the mean. If we observe data points outside of this range, we might consider them outliers.
+
+
+## More Examples
+
+::: panel-tabset
+
+### Exam Scores
+Suppose exam scores are normally distributed with a mean of 70 and a standard deviation of 10.
+
+- **68% of students** scored between **60 and 80** (70 ± 10).
+- **95% of students** scored between **50 and 90** (70 ± 20).
+- **99.7% of students** scored between **40 and 100** (70 ± 30).
+
+### Heights of Adults
+Assume that adult heights follow a normal distribution with a mean height of 170 cm and a standard deviation of 8 cm.
+
+- **68% of adults** have heights between **162 cm and 178 cm** (170 ± 8).
+- **95% of adults** have heights between **154 cm and 186 cm** (170 ± 16).
+- **99.7% of adults** have heights between **146 cm and 194 cm** (170 ± 24).
+
+:::
+
+# Binomial Distribution
+
+## Binomial Distribution
+
+The **Binomial Distribution** is a probability distribution that models the number of successes in a fixed number of trials, where each trial has:
+
+- **Two possible outcomes**: typically called "success" and "failure."
+- A constant probability of success, $p$, on each trial.
+
+## Real-World Examples:
+
+- Tossing a coin $n$ times and counting how many heads you get.
+- Rolling a die $n$ times and counting how many times you roll a 6.
+- Administering a medical treatment to $n$ patients and recording how many recover.
+
+::: fragment
+
+The binomial distribution answers questions like:
+
+- "What is the probability of getting exactly 3 heads in 5 coin tosses?"
+- "What is the likelihood of at least 4 successes in 10 trials?"
+
+:::
+
+## Conditions for a Binomial Experiment
+
+
+1. **Fixed Number of Trials** ($n$):
+   - The experiment consists of a set number of trials.
+
+2. **Two Possible Outcomes**:
+   - Each trial results in either a success (e.g., heads) or a failure (e.g., tails).
+
+3. **Constant Probability of Success** ($p$):
+   - The probability of success remains the same for each trial.
+
+4. **Independence**:
+   - The outcome of one trial does not affect the outcomes of other trials.
+
+
+
+## The Binomial Probability Formula
+
+$$
+P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}
+$$
+
+Where:
+
+- $P(X = k)$: Probability of exactly $k$ successes.
+- $n$: Number of trials.
+- $k$: Number of successes.
+- $p$: Probability of success on a single trial.
+- $1-p$: Probability of failure.
+- $\binom{n}{k} = \frac{n!}{k!(n-k)!}$: Represents the number of ways to choose $k$ successes from $n$ trials
+
+
+
+## Example Calculation
+Suppose you flip a fair coin 5 times ($n = 5, p = 0.5$) and want to know the probability of getting exactly 3 heads ($k = 3$).
+
+::: fragment
+$$
+P(X = 3) = \binom{5}{3} (0.5)^3 (1-0.5)^{5-3}
+$$
+
+:::
+
+## Properties of the Binomial Dist.
+
+::: panel-tabset
+
+### Mean and Variance
+For a binomial random variable $X$:
+
+- **Mean (Expected Value)**: $\mu = n \cdot p$
+- **Variance**: $\sigma^2 = n \cdot p \cdot (1-p)$
+- **Standard Deviation**: $\sigma = \sqrt{n \cdot p \cdot (1-p)}$
+
+### Shape of the Distribution
+
+- If $p = 0.5$, the distribution is symmetric.
+- If $p > 0.5$, the distribution is skewed left.
+- If $p < 0.5$, the distribution is skewed right.
+
+:::
+
+## Applications
+
+::: panel-tabset
+
+### Quality Control
+A factory produces lightbulbs, and 95% of them meet quality standards. If you randomly test 10 bulbs, what is the probability that exactly 8 bulbs pass the test?
+
+Here:
+
+- $n = 10$, $p = 0.95$, $k = 8$.
+
+
+$$
+P(X = 8) = \binom{10}{8} (0.95)^8 (0.05)^2
+$$
+
+### Sports
+A basketball player has a 60% chance of making a free throw. If they take 5 shots, what is the probability of making at least 3 shots?
+
+Here:
+- $n = 5$, $p = 0.6$.
+
+$$ 
+P(X \geq 3) = P(X = 3) + P(X = 4) + P(X = 5) 
+$$
+
+### Clinical Trials
+
+In a clinical trial, a new drug has a 70% success rate. If 15 patients are treated, what is the probability that exactly 10 respond positively to the treatment?
+
+:::
+
+# Poisson Distribution
+
+
+## Poisson Distribution
+
+The **Poisson Distribution** is a discrete probability distribution that models the number of events occurring within a fixed interval. These events must happen independently and at a constant average rate. 
+
+## Real-World Examples
+
+- The number of emails you receive in an hour.
+- The number of cars passing through a toll booth in 10 minutes.
+- The number of defects in a square meter of fabric.
+
+::: fragment
+
+The Poisson distribution helps us answer questions like:
+
+- "What is the probability of receiving 5 emails in the next hour?"
+- "How likely is it to have 2 defects in a single square meter?"
+
+:::
+
+## Conditions for the Poisson Dist.
+
+1. **Events Occur Randomly**:
+   - The events are random and unpredictable.
+
+2. **Independence**:
+   - The occurrence of one event does not affect the probability of another event occurring.
+
+3. **Constant Average Rate** ($\lambda$):
+   - The average number of events ($\lambda$) over a fixed interval remains constant.
+
+4. **Non-Overlapping Intervals**:
+   - Events in one interval do not influence events in another.
+
+
+## The Poisson Probability Formula
+
+$$
+P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}
+$$
+
+Where:
+
+- $P(X = k)$: Probability of $k$ events occurring.
+- $\lambda$: Average number of events in the interval.
+- $e \approx 2.718$
+- $k!$: Factorial of $k$, calculated as $k \times (k-1) \times \dots \times 1$.
+
+## Example Calculation
+
+Suppose a call center receives an average of 10 calls per hour ($\lambda = 10$). What is the probability of receiving exactly 7 calls in the next hour ($ k = 7 $)?
+
+
+$$
+P(X = 7) = \frac{10^7 e^{-10}}{7!}
+$$
+
+## Poisson Distribution Properties
+
+- **Mean**: $\mu = \lambda$
+- **Variance**: $\sigma^2 = \lambda$
+- **Standard Deviation**: $\sigma = \sqrt{\lambda}$
+
+
+
+## Applications
+
+::: panel-tabset
+
+### Traffic Flow
+A toll booth observes an average of 3 cars passing through every 5 minutes ($\lambda = 3$). What is the probability of seeing exactly 5 cars in the next 5 minutes?
+
+Using the formula:
+$$
+P(X = 5) = \frac{3^5 e^{-3}}{5!} = \frac{243 \cdot 0.0498}{120} \approx 0.1008
+$$
+
+
+### Defective Products
+
+A factory produces an average of 2 defective items per day ($\lambda = 2$). What is the probability of finding no defective items in a day ($k = 0$)?
+
+$$
+P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
+$$
+
+
+
+:::
+
+# Probability in R
+
+## Distributions in R
+
+```{r}
+#| code-fold: false
+?Distributions
+```
+
+
+## Function Structure
+
+|Letter|Functionality|
+|:-|:-|
+|"d"|returns the height of the probability density function|
+|"p"|returns the cummulative density function value|
+|"q"|returns the inverse cummulative density function (percentiles) |
+|"r"|returns a randomly generated number|
+
+
+## Probabilities
+
+R can compute the probabilities of a distribution given the correct parameters:
+
+-  Cummulative probability: `p` is used in front of the distribution R function 
+-  Probability for a discrete distribution: `d` is used in front of the distribution R function
+      - Note: Continuous Distribution Functions will not yield a valid probability value.
+
+
+## Examples
+
+::: panel-tabset
+
+### 1
+
+Find $P(X \leq 5 )$ where $X \sim N(6,2)$. 
+
+```{r}
+#| code-fold: true
+#| eval: false
+pnorm(5, mean = 6, sd = 2)
+```
+
+### 2
+
+Find $P(X \geq 7 )$ where $X \sim N(6,2)$. 
+
+
+```{r}
+#| code-fold: true
+#| eval: false
+1 - pnorm(7, mean = 6, sd = 2)
+```
+
+
+### 3
+
+Find $P(X = 20 )$ where $X \sim Bin(30,0.8)$. 
+
+
+```{r}
+#| code-fold: true
+#| eval: false
+dbinom(20, size = 30, prob = 0.8)
+```
+
+
+:::
+
+## More Examples
+
+::: panel-tabset
+
+### 1
+
+Find $P(2 \leq X \leq 5 )$ where $X \sim N(6,2)$. 
+
+```{r}
+#| code-fold: true
+#| eval: false
+pnorm(5, 6, 2) - pnorm(2, 6, 2) 
+```
+
+### 2
+
+Find $P(14 < X < 20)$ where $X \sim Pois(16)$. 
+
+```{r}
+#| code-fold: true
 #| eval: false
 
-ggplot(DATA, aes(x = VAR1, y = VAR2)) +
-  geom_point()
 
+ppois(19, lambda = 16) - ppois(14, lambda = 16)
+
+## OR
+
+dpois(15, 16) + dpois(16, 16) + dpois(17, 16) + dpois(18, 16) + dpois(19, 16)
 ```
 
-## Mr. Trash Wheel
+### 3
+
+Find $P(23 < X)$ where $X \sim Pois(12)$.
 
 ```{r}
-ggplot(trashwheel, aes(PlasticBottles, PlasticBags)) +
-  geom_point()
+#| code-fold: true
+#| eval: false
+
+1 - ppois(23, 12)
+
 ```
+
+:::
+
+## Percentiles
+
+Finding the values (percentiles) for any distributions can be found by using the q-based distribution R function such as `qnorm()`, `qpois()`, and `qbinom()` functions.
+
+
+## Examples
+
+::: panel-tabset
+
+### 1
+
+Finding the $95^{th}$ percentile from $N(0,1)$, we will use the `qnorm()`. 
+
+```{r}
+#| code-fold: true
+#| eval: false
+qnorm(.95, 0, 1)
+```
+
+### 2
+
+Finding the $95^{th}$ percentile from a Poisson distribution with $\lambda = 9.5$.
+
+
+```{r}
+#| code-fold: true
+#| eval: false
+qpois(.95, 9.5)
+```
+
+### 3
+
+Finding the $75^{th}$ percentile for $Bin(45,.4)$.
+
+```{r}
+#| code-fold: true
+#| eval: false
+qbinom(.75, 45, .4)
+```
+
+:::
+
+## Random Number Generator
+
+R is capable of generating random numbers. For example if we want to generate a random sample of size fifty from a normal distribution with mean eight and variance three, we will use the `rnorm()`. If we want to generate a random sample from any distribution, use the distribution function with `r` in front of it. 
+
+## Examples
+
+::: panel-tabset
+
+### 1
+
+Let's first generate the random sample of fifty from $X \sim N(8,3)$. 
+
+```{r}
+#| code-fold: true
+#| eval: false
+rnorm(50, 8, sqrt(3))
+```
+
+### 2
+
+Generate a random sample of 100 form an $X \sim Gamma (2,3)$.
+
+```{r}
+#| code-fold: true
+#| eval: false
+rgamma(100, 2,3)
+```
+
+### 3
+
+Generate a random sample of 100 form an $X \sim Binom (25,.23)$.
+
+```{r}
+#| code-fold: true
+#| eval: false
+rbinom(n = 100, size  = 25, prob = 0.23)
+```
+
+### 4
+
+Generate a random sample of 100 form an $X \sim Pois (34.4)$. 
+
+```{r}
+#| code-fold: true
+#| eval: false
+rpois(n = 100, lambda = 34.4)
+```
+
+:::
 

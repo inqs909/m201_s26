@@ -52,10 +52,10 @@ Critical reasoning using a quantitative and statistical, problem-solving approac
 
 | Category             | Percentage |
 |:---------------------|:-----------|
-| Participation        | 5%         |
 | Classwork            | 10%        |
-| Video Assignments    | 20%        | 
-| Notebook Assignments | 20%        |
+| Video Assignments    | 15%        | 
+| Discussion Posts     | 15%        |
+| Notebook Assignments | 15%        |
 | Exam 1               | 15%        |
 | Exam 2               | 15%        |
 | Exam 3               | 15%        |
@@ -76,21 +76,22 @@ Students are expected to attend in-person to class to learn the material.
 
 Students are expected to check the course Canvas page 3-4 times a week to view assignments, announcements, and other course-related materials.
 
-#### Participation
-
-Participation is based on short writing assignments conducted in class. There will be no make ups for these writing prompts.
-
 #### Classwork Assignments
 
-Classwork assignmets are designed to give you an opportunity to practice conceptual topics from the  video assignments. The assignments will require you to program in R. The 3 lowest homework assignments will be dropped. Homework assignments will be due every Friday at 11:59 PM.
+Classwork assignmets are designed to give you an opportunity to practice conceptual topics from the  video assignments. The assignments will require you to program in R. The 3 lowest classwork assignments will be dropped. Classwork assignments will be due every Friday at 11:59 PM.
 
-#### Notebook Assignments
-
-Notebook assignments are designed to expand your statistical knowledge. These will be completed in Google Colab which can be accessed from Canvas. There is one notebook assignments every week that you can be completed during class time. Notebook assignments will be due on Thursday at 11:59 PM every week. The 3 lowest notebook assignments will be dropped.
 
 #### Video Assignments
 
 Videos are used to teach statistical concepts related to the course. Students are expected to watch at least one video a week. The videos are implemented using VoiceThreads. The 3 lowest video assignments will be dropped. Video assignments will be due every Sunday at 11:59 PM.
+
+#### Discussion Posts
+
+Discussion posts are designed to continue the conversation based on the video assignments. Absolutely no late posts will be accepted. Discussion posts will be due every Sunday at 11:59 PM.
+
+#### Notebook Assignments
+
+Notebook assignments are designed to expand your statistical knowledge. These will be completed in Google Colab which can be accessed from Canvas. There is one notebook assignments every week that you can be completed during class time. Notebook assignments will be due on Sunday at 11:59 PM every week. The 3 lowest notebook assignments will be dropped.
 
 
 #### Exams

@@ -1,0 +1,379 @@
+---
+title: "Categorical Data"
+description: |
+  Provides an overview descriptive statistics and data visualization techniques for categorical data.
+format:
+  revealjs:
+    width: 1200
+    scrollable: true
+    sc-sb-title: true
+    footer: m201.inqs.info/lectures/2
+    theme: [default, styles.scss]
+    navigation-mode: vertical
+    controls-layout: edges
+    controls-tutorial: true
+    slide-number: true
+    pointer:
+      pointerSize: 32
+    incremental: false 
+    chalkboard:
+      theme: whiteboard
+      chalk-width: 4
+knitr:
+  opts_chunk: 
+    echo: true
+    eval: true
+    message: false
+    code-fold: true
+    warnings: false
+    comment: "#>" 
+    
+revealjs-plugins:
+  - pointer
+  - verticator
+  
+filters: 
+  - reveal-header
+  - code-fullscreen
+  - reveal-auto-agenda
+
+editor: source
+---
+
+## R Packages
+
+-   csucistats
+-   tidyverse
+
+
+# The Great American Coffee Taste Test
+
+## Background
+
+In October 2023, [James Hoffman](https://www.youtube.com/watch?v=bMOOQfeloH0) and [Cometeer](https://cometeer.com/pages/the-great-american-coffee-taste-test) held the "Great American Coffee Taste Test" on YouTube, asking viewers to fill out a survey and coffee ordered from Cometeer.
+
+## Data
+
+The data is part of [DSLC](https://dslc.io/) [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday) program where data sets are provided to help data science learners how to create graphics.
+
+Information on the data sets variables (columns) can be found [here](https://github.com/rfordatascience/tidytuesday/blob/master/data/2024/2024-05-14/readme.md).
+
+## Data
+
+```{r}
+#| code-fold: true
+library(csucistats)
+library(ggtricks)
+library(tidyverse)
+library(ThemePark)
+library(DT)
+coffee <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-05-14/coffee_survey.csv")
+datatable(slice_sample(coffee, n = 10), options = list(dom = "p", pageLength = 5))
+
+```
+
+# Categorical Data
+
+## Categorical Data
+
+Categorical data are data recordings that represented a category.
+
+::: fragment
+Data may be recorded as a "character" or "string" data.
+:::
+
+::: fragment
+Data may be recorded as a whole number, with an attached code book indicating the categories each number belongs to.
+:::
+
+## Examples of Categorical Data
+
+::: incremental
+
+-   Are you a student?
+
+-   What city do you live in?
+
+-   What is your major?
+
+:::
+
+## Likert Scale
+
+Likert scales are the rating systems you may have answered in surveys.
+
+::: fragment
+1.    Strongly Disagree
+2.    Disagree
+3.    Neutral
+4.    Agree
+5.    Strongly Agree
+:::
+
+## Likert Scales
+
+Likert scales may be treated as numerical data if the jumps between scales are equal.
+
+## Summarizing Categorical Data
+
+Once we have the data, how do we summarize it to other people.
+
+# Continguency Tables
+
+## Continguency Tables
+
+Continguency tables display how often a category is seen in the data.
+
+::: fragment
+There are two types of statistics that are reported in a table, the frequency and proportion. 
+:::
+
+
+## Frequencey
+
+Frequency represents the count of observing a specific category in your sample. 
+
+```{r}
+#| echo: false
+sample(coffee$cups, 10)
+```
+
+## Proportions (relative frequencey)
+
+Proportions represent the percentage that the category represents the sample.
+
+::: fragment
+This allows you to generalize your sample to the population, regardless of sample size.
+:::
+
+## Continguency Tables in R
+
+The variable `caffeine` indicates how much caffeine a participant prefers.
+
+```{r}
+#| echo: true
+
+cat_stats(coffee$caffeine)
+```
+
+
+# Bar Plots
+
+## Plotting in R
+
+Plotting in R can be done via the [ggplot2](https://ggplot2.tidyverse.org/), a powerful library based on the [Grammar of Graphics](https://link.springer.com/book/10.1007/0-387-28695-0).
+
+## Plotting in R
+
+1.    You need to create a base plot using the `ggplot()`
+2.    Use the `+` to change the look of the base plot 
+3.    Indicate how to transform the base plot to the desired plot
+  1.    `geom_*`
+  2.    `stat_*`
+4.    Change the look of the plot with other functions
+5.    Use a `theme_*` function to add a theme to the plot
+
+## Bar Plots
+
+Bar Plots can be used to display the frequency or proportions on the data.
+
+```{r}
+#| echo: false
+
+ggplot(coffee) +
+  geom_bar(aes(caffeine))
+```
+
+## Frequency Bar Plots in R
+
+```{r}
+#| echo: true
+#| eval: false
+
+ggplot(data = DATA, aes(x = VARIABLE)) +
+  geom_bar()
+```
+
+## Frequency Bar Plots in R
+
+
+```{r}
+#| code-fold: true
+#| eval: true
+
+ggplot(coffee, aes(caffeine)) +
+  geom_bar()
+```
+
+
+## Relative Frequency Bar Plots in R
+
+```{r}
+#| echo: true
+#| eval: false
+
+ggplot(data = DATA, aes(x = VARIABLE, y = after_stat(prop), group = 1)) +
+  geom_bar()
+```
+
+## Relative Frequency Bar Plots in R
+
+```{r}
+#| code-fold: true
+#| eval: true
+
+ggplot(coffee, aes(caffeine, after_stat(prop), group = 1)) +
+  geom_bar()
+```
+
+# Cross-Tabulation
+
+## Data
+
+The variable `taste` indicates if the participants like the taste of coffee.
+
+```{r}
+cat_stats(coffee$taste)
+```
+
+## Cross-Tabulation
+
+**Cross-tabulations**, also known as **contingency tables**, are statistical tools used to analyze the relationship between two or more categorical variables by displaying their frequency distribution in a table format. Each cell in the table represents the count or frequency of observations that fall into a particular combination of categories for the variables.
+
+## Key Features of Cross-Tabulations
+
+1. **Rows and Columns**: 
+   - Rows represent the categories of one variable.
+   - Columns represent the categories of another variable.
+2. **Cells**:
+   - Each cell displays the frequency or count of data points that belong to the intersection of a row and column category.
+3. **Margins**:
+   - Row and column totals provide summaries for each variable.
+   - The grand total shows the overall sample size.
+
+
+## Types of Proportions in Cross-Tabulations
+
+1. **Row Proportions**: Show the percentage of each row total represented by a cell.
+2. **Column Proportions**: Show the percentage of each column total represented by a cell.
+3. **Table Proportions**: Show the percentage of the overall total represented by a cell.
+
+
+## Table Proportions
+
+Table proportions in cross-tabulations refer to the relative frequency or percentage of counts within the entire table, calculated by dividing each cell’s count by the total sum of all counts in the table. These proportions allow you to examine the contribution of each cell to the overall data set.
+
+## Table Proportions
+
+```{r}
+cat_stats(coffee$caffeine, coffee$taste, prop = "table")
+```
+
+## Row Proportions
+
+Row proportions refer to the relative frequency or percentage of counts within each row of a contingency table. In a cross-tabulation, row proportions allow you to compare how the distribution of one variable varies within each category of another variable, within a row.
+
+## Row Proportions
+
+```{r}
+cat_stats(coffee$caffeine, coffee$taste, prop = "row")
+```
+
+## Column Proportions
+
+Column proportions refer to the relative frequency or percentage of counts within each column of a contingency table. These proportions allow you to compare how the distribution of one variable varies across different categories of another variable, within a column.
+
+## Column Proportions
+
+```{r}
+cat_stats(coffee$caffeine, coffee$taste, prop = "col")
+```
+
+## Stacked Bar Plot in R
+
+```{r}
+#| echo: true
+#| eval: false
+
+ggplot(DATA, aes(x = VAR1, y = after_stat(count), fill = VAR2)) +
+  geom_bar()
+
+```
+
+## Stacked Bar Plot in R
+
+```{r}
+#| echo: true
+#| eval: true
+ggplot(coffee, aes(x = caffeine, y = after_stat(count), fill = taste)) +
+  geom_bar()
+```
+
+## Stacked Bar Plot in R
+
+```{r}
+#| echo: true
+#| eval: true
+ggplot(coffee, aes(y = caffeine, x = after_stat(count), fill = taste)) +
+  geom_bar()
+
+```
+
+
+# Pie Charts
+
+## Pie Charts
+
+A **pie chart** is a circular statistical graphic divided into slices, where each slice represents a proportion or percentage of the whole. The size of each slice is proportional to the relative frequency or magnitude of the category it represents.
+
+## Pie Charts
+
+```{r}
+#| echo: false
+#| eval: true
+coffee_pie <- cat_stats(coffee$caffeine, tbl_df = TRUE)$table
+ggplot(coffee_pie, aes(cat = Category, val = n, fill = Category)) +
+  geom_pie()
+```
+
+
+## Key Features of Pie Charts
+1. **Circular Format**: 
+   - The chart is shaped like a circle, symbolizing a whole (100% or 1).
+2. **Slices**:
+   - Each slice corresponds to a category and its size represents the contribution of that category to the total.
+3. **Labels**:
+   - Slices are often labeled with the category name and the percentage or value they represent.
+
+
+## Pie Chart in R
+
+```{r}
+#| echo: true
+#| eval: false
+df_pie <- cat_stats(coffee$caffeine, tbl_df = TRUE)$table
+ggplot(df_pie, aes(cat = Category, val = n, fill = Category)) +
+  geom_pie()
+```
+
+## Pie Chart in R
+
+```{r}
+#| echo: true
+#| eval: false
+coffee_pie <- cat_stats(coffee$caffeine, tbl_df = TRUE)$table
+ggplot(coffee_pie, aes(cat = Category, val = n, fill = Category)) +
+  geom_pie()
+```
+
+
+
+# Theming
+
+## Themes
+
+The R packages `ThemePark` and `ggthemes` allows you to change the overall look of a plot.
+
+::: fragment
+All you need to do is add the theme to the plot.
+:::

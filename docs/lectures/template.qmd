@@ -35,7 +35,7 @@ auto-agenda:
   bullets: numbered
   heading: Learning Outcomes
   
-editor: visual
+editor: source
 ---
 
 ## Learning Outcomes

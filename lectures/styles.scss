@@ -7,11 +7,11 @@
 // colors
 $body-bg: #F7FCFE !default;
 $body-color: #222 !default;
-$link-color: #cb132a !default;
+$link-color: #0d5151ff !default;
 $selection-bg: $link-color !default;
 $selection-color: #fff !default;
 $input-panel-bg: rgba(233, 236, 239, 0.2) !default;
-$presentation-heading-color: #cb132a !default;
+$presentation-heading-color: #0d5151ff !default;
 $code-block-bg: #FCFCFC  !default;
 
 // headings
@@ -52,13 +52,13 @@ h2 {
 
 .columns h3 {
   font-size: 0.95em;
-  color: #AA4A44;
+  color: #043838ff;
 }
 
 
 
 .reveal .slides section .subtitle {
-  color: #AA4A44;
+  color: #0d5151ff;
   font-size: 1.5em;
   font-style: italic;
   text-transform: uppercase;
@@ -80,7 +80,7 @@ h2 {
 }
 
 .agenda-active {
-  color: #AA4A44;
+  color: #043838ff;
   font-size: 1.5em;
   margin-top: -0.5em;
   margin-bottom: -0.5em;
@@ -88,4 +88,12 @@ h2 {
 
 .reveal .controls button {
   transform: scale(0.5) !important;       /* adjust size: 0.7 = 70% */
+}
+
+.figure-caption, figcaption {
+  text-align: center !important;
+}
+
+a {
+  text-decoration: underline !important;
 }

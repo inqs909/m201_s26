@@ -1,10 +1,8 @@
 ---
-title: "Simple Linear Regression"
-description: |
-  Begins the discussion for linear regression.
-
+title: "Simple Logistic Regression"
 format:
   revealjs:
+    width: 1200
     scrollable: true
     theme: [default, styles.scss]
     navigation-mode: vertical
@@ -19,6 +17,7 @@ knitr:
     echo: true
     eval: true
     message: false
+    code-fold: true
     warnings: false
     comment: "#>" 
     
@@ -35,580 +34,282 @@ editor: source
 
 ```{r}
 #| include: false
+
 library(tidyverse)
 library(csucistats)
-library(ThemePark)
-library(palmerpenguins)
-penguins <- penguins |> drop_na()
+library(MASS)
+Melanoma$dead <- ifelse(Melanoma$status == 1, 1, 0)
+
 theme_set(theme_bw() + 
-          theme(axis.text = element_text(size = 24),
-                axis.title = element_text(size = 30),
-                plot.title = element_text(size = 48),
-                strip.text = element_text(size = 20),
-                legend.title = element_blank(),
-                legend.text = element_text(size = 24)))
-```
-
-
-# Modeling Relationships
-
-## Explaining Variation
-
-::: fragment
-This is the process where we try to reduce the variation with the use of other variables.
-:::
-
-::: fragment
-Can be thought of as getting it less wrong when taking an educated guess.
-:::
-
-## Explaining Variation
-
-```{r}
-#| code-fold: true
-ggplot(penguins, aes(body_mass_g)) +
-  geom_density() 
+            theme(
+              axis.text.x = element_text(size = 24),
+              axis.title = element_text(size = 30),
+              plot.title = element_text(size = 48),
+              strip.text = element_text(size = 20),
+              legend.title = element_blank(),
+              legend.text = element_text(size = 24)))
 
 ```
 
-## Variation with One Variable
+# Motivation
+
+## Melanoma
+
+Melanoma is a type of skin cancer that causes the cells that produce melanin to grow out of control. What makes Melanoma so dangerous is that it can metastasize to other parts of the body.
+
+## Outcome of Interest
+
+We are interested in learning how do different factors affect and individual's chances of survival. Therefore, we are measuring patients and if they lived or died during a study period.
+
+## Data 
+
+We will be using the `Melanoma` data set with the following variables: `dead` (died by Melanoma, 1=yes, 0= no) and `thickness` (tumour thickness in mm).
+
+## Plot
 
 ```{r}
-#| code-fold: true
-ggplot(penguins, aes(body_mass_g, fill = species)) +
-  geom_density(alpha = .5)
+Melanoma |> 
+  ggplot(aes(thickness, dead)) +
+  geom_point()
 ```
 
-
-# A Simple Model
-
-## Generated Model
-
-$$
-Y \sim DGP_1
-$$
-
-## A Simple Model
+## Plot
 
 ```{r}
-#| code-fold: true
-ggplot(penguins, aes(body_mass_g)) +
-  geom_density()
-```
-
-## A Simple Model
-
-$$
-Y = \_\_\_ + error
-$$
-
-## Notation
-
-$$
-Y = \ \ \ \ \ \ \ \ \ + \varepsilon 
-$$
-
-## The Simple Generated Model
-
-$$
-Y \sim \beta_0 + \varepsilon
-$$
-
-$$
-\varepsilon \sim DGP_2
-$$
-
-::: fragment
-$DGP_2$ is not the same as the $DGP_1$, it is transformed due $\beta_0$. Consider this the NULL $DGP$.
-:::
-
-## Observing Data
-
-$$
-Y = \beta_0 + \varepsilon
-$$
-
-## Estimated Line
-
-$$
-\hat Y=\hat\beta_0
-$$
-
-## Notation
-
-::: columns
-::: {.column width="50%"}
-### Observed
-
-$$
-Y = \beta_0 + \varepsilon
-$$
-:::
-
-::: {.column width="50%"}
-### Estimated
-
-$$
-\hat Y = \hat \beta_0
-$$
-:::
-:::
-
-# Modelling Data
-
-## Indexing Data
-
-The data in a data set can be indexed by a number.
-
-```{r}
-penguins[1,-c(1:2)]
-```
-
-::: fragment
-Making the variable "body_mass_g" be represented by $Y$ and "flipper_length_mm" as $X$:
-
-$$
-Y_1 = 3750 \ \ X_1=181
-$$
-
-:::
-
-## Indexing Data
-
-$$
-Y_i, X_i
-$$
-
-## Data
-
-With the data that we collect from a sample, we hypothesize how the data was generated.
-
-::: fragment
-Using a simple model:
-
-$$
-Y_i = \beta_0 + \varepsilon_i
-$$
-
-:::
-
-## Estimated Value
-
-$$
-\hat Y_i = \hat \beta_0
-$$
-
-## Estimation 
-
-To estimate $\hat \beta_0$, we minimize the follow function:
-
-$$
-\sum^n_{i=1} (Y_i-\hat Y_i)^2
-$$
-
-::: fragment
-This is known as the sum squared errors, SSE 
-:::
-
-
-## Residuals
-
-The residuals are known as the observed errors from the data in the model:
-
-$$
-r_i = Y_i - \hat Y_i
-$$
-
-## Estimation in R
-
-```{r}
-#| echo: true
-#| eval: false
-
-lm(Y ~ 1, data = DATA)
-```
-
-
-- `Y`: Name Outcome Variable of Interest in data frame `DATA`
-- `DATA`: Name of the data frame
-
-## Modeling Body Mass in Penguins
-
-```{r}
-lm(body_mass_g ~ 1, data = penguins)
-```
-
-::: fragment
-
-$$
-\hat Y = 4207
-$$
-
-:::
-
-
-## Visualize
-
-```{r}
-#| code-fold: true
-ggplot(penguins, aes(body_mass_g)) +
-  geom_density() +
-  geom_vline(xintercept = 4207)
-```
-
-
-# Linear Model
-
-## Linear Model
-
-The goal of Statistics is to develop models the have a better explanation of the outcome $Y$.
-
-::: fragment
-In particularly, reduce the sum of squared errors.
-:::
-
-::: fragment
-By utilizing a bit more of information, $X$, we can increase the predicting capabilities of the model.
-:::
-
-::: fragment
-Thus, the linear model is born.
-:::
-
-## Visualization
-
-::: panel-tabset
-
-### 1-Dimensional
-
-```{r}
-#| code-fold: true
-ggplot(penguins, aes(body_mass_g)) +
-  geom_density()
-```
-
-### 2-Dimensional
-
-```{r}
-#| code-fold: true
-ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, fill = after_stat(level))) +
-  stat_density_2d(geom = "polygon")
-```
-
-:::
-
-## Linear Model
-
-$$
-Y = \beta_0 + \beta_1 X + \varepsilon
-$$
-
-$$
-\varepsilon \sim DGP_3
-$$
-
-## Scatter Plot
-
-```{r}
-#| code-fold: true
-#| eval: true
-
-ggplot(penguins, aes(flipper_length_mm, body_mass_g)) + 
-  geom_point() 
-```
-
-## Imposing a Line
-
-```{r}
-#| code-fold: true
-#| eval: true
-
-ggplot(penguins, aes(flipper_length_mm, body_mass_g)) + 
+Melanoma |> 
+  ggplot(aes(thickness, dead)) +
   geom_point() +
-  stat_smooth(method = "lm", se = F) 
+  stat_smooth(method = "glm", se = F,  
+              method.args = list(family = "binomial"))
 ```
 
-## Modelling the Data
+# Modeling Binary Outcomes
+
+## Construct Model
 
 $$
-Y_i = \beta_0 + \beta_1 X_i + \varepsilon_i
+\left(\begin{array}{c}
+Dead \\
+Alive
+\end{array}\right) = \beta_0 + \beta_1X
 $$
 
-## Linear Model
+## Let ...
 
 $$
-\hat Y_i = \hat \beta_0 + \hat \beta_1 X_i
+Y = \left\{\begin{array}{cc}
+1 & Dead \\
+0 & Alive
+\end{array}\right.
 $$
+
+## Construct a Model
+
+$$
+P\left(Y = 1\right) = \beta_0 + \beta_1X
+$$
+
+## Construct a Model
+
+$$
+P\left(Y = 1\right) = \frac{e^{\beta_0 + \beta_1X}}{1 + e^{\beta_0 + \beta_1X}}
+$$
+
+## Construct a Model
+
+$$
+\frac{P(Y = 1)}{P(Y = 0)} = e^{\beta_0 + \beta_1X}
+$$
+
+where $\frac{P(Y = 1)}{P(Y = 0)}$ are considered the odds of observing $Y = 1$.
+
+## The Logistic Model
+
+$$
+\log\left\{\frac{P(Y = 1)}{P(Y = 0)}\right\} = \beta_0 + \beta_1X
+$$
+
+
+# Logistic Regression
+
+## Logistic Regression
+
+Logistic Regression is used to model the association between a set of predictors and a **binary** outcome variable.
 
 ::: fragment
-Goal is to obtain numerical values for $\hat \beta_0$ and $\hat \beta_1$ that will minimize the SSE.
+This is similar Linear Regression which models the association between a set of predictors and a **numerical** outcome variable.
 :::
 
-## SSE
+## Logistic Regression
+
+Logistic Regression uses the logistic model to formulate the relationship between the predictors and the outcome.
+
+::: fragment
+
+More specifically, for an outcome of Y:
 
 $$
-\sum^n_{i=1} (Y_i-\hat Y_i)^2
+Y = \left\{\begin{array}{cc}
+1 & \text{Category 1} \\
+0 & \text{Category 2}
+\end{array}\right.
 $$
 
+The Predictors variable will model the probability of observing category 1 ($P(Y=1)$)
+
+:::
+
+
+## Logistic Model
 
 $$
-\hat Y_i = \hat \beta_0 + \hat \beta_1 X_i
+\log\left\{\frac{P(Y = 1)}{P(Y = 0)}\right\} = \beta_0 + \beta_1X
 $$
 
-## Fitting a Model in R
+## Regression Coefficients $\beta$
+
+The regression coefficients quantify how a specific predictor changes the odds of observing the first category of the outcome ($Y = 1$)
+
+## Estimating $\beta$
+
+To obtain the numerical value for $\beta$, denoted as $\hat \beta$, we will be finding the values of $\hat \beta$ that maximizes the likelihood function:
+
+$$
+L(\boldsymbol \beta) = \prod_{i=1}^n \left(\frac{e^{\beta_0 + \beta_1X}}{1 + e^{\beta_0 + \beta_1X}}\right)^{Y_i}\left(\frac{1}{1 + e^{\beta_0 + \beta_1X}}\right)^{1-Y_i}
+$$
+
+The likelihood function can be thought as the probability of observing the entire data set. Therefore, we want to choose the values the $\beta_0$ and $\beta_1$ that will result in the highest probability of observing the data.
+
+
+## Estimated Parameters
+
+The values you obtain ($\hat \beta$) tell you the relationship between the a predictor variable and the log odds of observing the first category of the outcome $Y=1$.
+
+::: fragment
+Exponentiating the estimate ($e^{\hat \beta}$) will give you the relationship between a predictor variable and the odds of observing the first category of the outcome $Y=1$.
+:::
+
+## Interpreting $\hat \beta$
+
+For a continuous predictor variable:
+
+As X increases by 1 unit, the odds of observing the first category ($Y = 1$) increases by a factor of $e^{\hat\beta}$.
+
+
+
+## Logistic Regression in R
 
 ```{r}
 #| echo: true
 #| eval: false
 
-lm(Y ~ X, data = DATA)
+glm(Y ~ X,
+    data = DATA,
+    family = binomial())
 ```
-
-- `X`: Name Predictor Variable of Interest in data frame `DATA`
-- `Y`: Name Outcome Variable of Interest in data frame `DATA`
-- `DATA`: Name of the data frame
-
-## Example
-
-
-Y: "body_mass_g"; X: "flipper_length_mm"
-
-```{r}
-lm(body_mass_g ~ flipper_length_mm, data = penguins)
-```
-
-
-$$
-\hat Y_i = -5872.09 + 50.15 X_i
-$$
-
-
-## Interpretation of $\hat\beta_0$
-
-The intercept $\hat \beta_0$ can be interpreted as the base value when $X$ is set to 0.
-
-::: fragment
-Some times the intercept can be interpretable to real world scenarios.
-:::
-
-::: fragment
-Other times it cannot.
-:::
-
-## Interpreting Example
-
-$$
-\hat Y_i = -5872.09 + 50.15 X_i
-$$
-
-When flipper length is 0 mm, the body mass is -5872 grams.
-
-## Interpretation of $\hat \beta_1$
-
-The slope $\hat \beta_1$ indicates how will y change when x increases by 1 unit.
-
-::: fragment
-It will demonstrate if there is, on average, a positive or negative relationship based on the sign provided.
-:::
-
-## Interpreting Example
-
-$$
-\hat Y_i = -5872.09 + 50.15 X_i
-$$
-
-When flipper length increases by 1 mm, the body mass will increase by 50.15 grams.
-
-
-# Strength and Correlation
-
-## Correlation
-
-Correlation is a statistics that can be used to describe the strength of the relationship between 2 continuous variables.
-
-::: fragment
-$$
-r = \frac{1}{n-1}\sum^n_{i=1}\frac{x_i - \bar x}{s_x}\frac{y_i - \bar y}{s_y}
-$$
-
--   $\bar x$, $\bar y$: sample means
--   $s_x$, $s_y$: sample standard deviations
-
-:::
-
-::: fragment
-$$
--1 \leq r \leq 1
-$$
-:::
-
-
-## Correlations
-
-![From IMS 2e](https://openintro-ims.netlify.app/model-slr_files/figure-html/fig-posNegCorPlots-1.png)
-
-## Coefficient of Determination
-
-The coefficient of determination evaluates the strength between an outcome $Y$ and the linear model, which includes $X$.
-
-::: fragment
-$$
-R^2 = r^2
-$$
-:::
-
-::: fragment
-$$
-0 \leq R^2 \leq 1
-$$
-:::
-
-::: fragment
-The coefficient of determination measures the total variation explained by the linear model. The closer to 1, the better the linear model.
-:::
-
-## Correlation in R
-
-```{r}
-#| eval: false
-cor(DATA$Y, DATA$X)
-```
-
-- `X`: Name Predictor Variable of Interest in data frame `DATA`
-- `Y`: Name Outcome Variable of Interest in data frame `DATA`
-- `DATA`: Name of the data frame
-
-## Example
-
-```{r}
-cor(penguins$body_mass_g, penguins$flipper_length_mm)
-```
-
-## Coefficient of Determination in R
-
-```{r}
-#| eval: false
-xlm <- lm(Y ~ X, data = DATA)
-r2(xlm)
-```
-
-- `X`: Name Predictor Variable of Interest in data frame `DATA`
-- `Y`: Name Outcome Variable of Interest in data frame `DATA`
-- `DATA`: Name of the data frame
 
 
 ## Example
 
+Modelling `dead` by `thickness`: 
+
 ```{r}
-xlm <- lm(body_mass_g ~ species, penguins)
-r2(xlm)
+glm(dead ~ thickness,
+    data = Melanoma,
+    family = binomial())
 ```
 
-# Prediction
-
-## Statistical Model
-
 $$
-\hat Y = \hat \beta_0 + \hat \beta_1 X
+\log(odds\ of\ dying ) = -1.614 + 0.21 (thickness)
 $$
 
-- $X$: Input
-- $\hat Y$: Output
 
-## Prediction
+## Interpretation
 
-Using the equation $\hat Y$, we can give it a value of $X$ and then, in return, a value of $\hat Y$ that predicts the true value $Y$.
+$$
+\log(odds\ of\ dying ) = -1.614 + 0.21 (thickness)
+$$
+
+
+```{r}
+exp(0.21)
+```
+
+::: fragment
+As age increases by 1 year, the odds of experiencing death increases by a factor of 1.232.
+:::
+
+# Prediction with Models
+
+## Working with probabilities
+
+As you can see, working with odds may be unintuitive for the average person. It will be better to predict the probability and display those results to individuals.
+
+## Predicting Probability
+
+
+$$
+\hat P\left(Y = 1\right) = \frac{e^{\hat\beta_0 + \hat\beta_1X}}{1 + e^{\hat\beta_0 + \hat\beta_1X}}
+$$
 
 ## Prediction in R
 
 ```{r}
 #| echo: true
 #| eval: false
-
-xlm <- lm(Y ~ X,
-            data = DATA)
-
-predict_df <- data.frame(X = VAL)
-
-predict(xlm,
-        predict_df)
+xglm <- glm(Y ~ X,
+            data = DATA,
+            family = binomial())
+ndf <- data.frame(X = VAL)
+predict(xglm,
+        ndf,
+        type = "response")
 ```
-- `X`: Name Predictor Variable of Interest in data frame `DATA`
-- `Y`: Name Outcome Variable of Interest in data frame `DATA`
-- `DATA`: Name of the data frame
-- `VAL`: Value for the Predictor Variable
 
 
 ## Example 1
 
-::: panel-tabset
-
-### Example
-
-Predict the body mass for a gentoo penguin.
-
-### Code
+Predict the probability of observing death for a patient with a tumor thickness of 2.9. 
 
 ```{r}
-xlm <- lm(body_mass_g ~ species,
-            data = penguins)
-
-xlm
-
-predict_df <- data.frame(species = "Gentoo")
-
-predict(xlm,
-        predict_df)
+xglm <- glm(dead ~ thickness,
+    data = Melanoma,
+    family = binomial())
+ndf <- data.frame(thickness = 2.9)
+predict(xglm, ndf, type = "response")
 ```
 
-:::
 
 ## Example 2
 
-
-::: panel-tabset
-
-### Example
-
-Predict the body mass for a penguin with a flipper length of 190.
-
-### Code
+Predict the probability of observing death for a patient who a tumor thickness of 1.9. 
 
 ```{r}
-xlm <- lm(body_mass_g ~ flipper_length_mm,
-            data = penguins)
-
-
-xlm
-
-predict_df <- data.frame(flipper_length_mm = 190)
-
-predict(xlm,
-        predict_df)
+xglm <- glm(dead ~ thickness,
+    data = Melanoma,
+    family = binomial())
+ndf <- data.frame(thickness = 1.9)
+predict(xglm, ndf, type = "response")
 ```
 
-:::
+## Example 3
 
-## Interpolation
-
-Interpolation is the process of estimating a value within the range of the observed input data $X$. 
-
-## Extrapolation
-
-Extrapolation is the process of estimating a value beyond the range of observed input data $X$. It's about venturing into the unknown, using what we know as a guide.
-
-## Extrapolation
+Predict the probability of observing death for a patient who a tumor thickness of 3.9. 
 
 ```{r}
-#| code-fold: true
-#| eval: true
-
-ggplot(penguins, aes(flipper_length_mm, body_mass_g)) + 
-  xlim(160, 250) +
-  ylim(2600, 7000) +
-  geom_point() +
-  stat_smooth(method = "lm", se = F) 
+xglm <- glm(dead ~ thickness,
+    data = Melanoma,
+    family = binomial())
+ndf <- data.frame(thickness = 3.9)
+predict(xglm, ndf, type = "response")
 ```
+
+## Example
+
+| Tumor Thickness | 1.9 | 2.9 | 3.9 |
+|:-|:-|:-|:-|
+| Probabiltiy | 22.8% | 26.7% | 31.0% |
+
 
 
 

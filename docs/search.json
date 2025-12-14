@@ -2216,7 +2216,7 @@
     "href": "lectures.html",
     "title": "Lectures",
     "section": "",
-    "text": "Categorical Data\n\n\n\n\n\nProvides an overview descriptive statistics and data visualization techniques for categorical data.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDistribution Functions\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGroup Regression Models\n\n\n\n\n\nDiscuss using categorical predictor variables.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInference\n\n\n\n\n\nBegins the discussion on Inference.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInference with Linear Regression\n\n\n\n\n\nBegins the discussion for linear regression.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInference with Logistic and Poisson Regression\n\n\n\n\n\nBegins the discussion on inference for logistic and Poisson regression.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstalling R and Positron\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nModel Inference\n\n\n\n\n\nMake the connection between traditional statisitcal inference an regression inference.\n\n\n\n\n\nMay 5, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nMultivariable Linear Regression\n\n\n\n\n\nContinues the discussion with multi linear regression.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNumerical Data\n\n\n\n\n\nProvides an overview descriptive statistics and data visualization techniques for numerical data.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSampling Distribution\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSimple Linear Regression\n\n\n\n\n\nBegins the discussion for linear regression.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSimple Logistic Regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Inference\n\n\n\n\n\nStatistical Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Inference\n\n\nGroup Model Inference\n\n\nTesting the difference in groups.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Inference\n\n\nModel Inference\n\n\nFinish the discussion on model inference.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics\n\n\nA Math? A Science? An Art? Or Something Else?\n\n\n\n\n\n\n\n\nIsaac Quintanilla Salinas\n\n\n\n\n\nNo matching items"
+    "text": "Categorical Data\n\n\n\n\n\nProvides an overview descriptive statistics and data visualization techniques for categorical data.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Generating Process\n\n\n\n\n\nProvides a brief introduction of data, study design, and the data generating process.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDistribution Functions\n\n\n\n\n\nProvides an overview distribution function (mathematical models).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGroup Regression Models\n\n\n\n\n\nDiscuss using categorical predictor variables.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstalling R and Positron\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMultivariable Regression\n\n\n\n\n\nContinues the discussion with multi linear regression.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNumerical Data\n\n\n\n\n\nProvides an overview descriptive statistics and data visualization techniques for numerical data.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSampling Distribution\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSimple Linear Regression\n\n\n\n\n\nBegins the discussion for linear regression.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSimple Logistic Regression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Inference\n\n\n\n\n\nStatistical Inference\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Inference\n\n\nGroup Model Inference\n\n\nTesting the difference in groups.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Inference\n\n\nModel Inference\n\n\nFinish the discussion on model inference.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics\n\n\nA Math? A Science? An Art? Or Something Else?\n\n\n\n\n\n\n\n\nIsaac Quintanilla Salinas\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "lectures/10.html#what-is-statistical-inference",
@@ -3215,9 +3215,9 @@
   {
     "objectID": "lectures/3.html#r-packages",
     "href": "lectures/3.html#r-packages",
-    "title": "Categorical Data",
+    "title": "Numerical Data",
     "section": "R Packages",
-    "text": "R Packages\n\ncsucistats\ntidyverse"
+    "text": "R Packages\n\nrcistats\ntidyverse"
   },
   {
     "objectID": "lectures/3.html#background",
@@ -4681,5 +4681,908 @@
     "title": "Group Regression Models",
     "section": "Extrapolation",
     "text": "Extrapolation\n\n\nCode\nggplot(penguins, aes(flipper_length_mm, body_mass_g)) + \n  xlim(160, 250) +\n  ylim(2600, 7000) +\n  geom_point() +\n  stat_smooth(method = \"lm\", se = F)"
+  },
+  {
+    "objectID": "lectures/1.html#observations",
+    "href": "lectures/1.html#observations",
+    "title": "Data Generating Process",
+    "section": "Observations",
+    "text": "Observations\nAn observation is the unit which contains information to be obtained.\n\nAlso known as experimental unit."
+  },
+  {
+    "objectID": "lectures/1.html#data-1",
+    "href": "lectures/1.html#data-1",
+    "title": "Data Generating Process",
+    "section": "Data",
+    "text": "Data\nData is information from a particular experimental unit. There can be more that one piece of information per experimental unit."
+  },
+  {
+    "objectID": "lectures/1.html#data-structure",
+    "href": "lectures/1.html#data-structure",
+    "title": "Data Generating Process",
+    "section": "Data Structure",
+    "text": "Data Structure\nThe structure of the data can be represented in various forms:\n\nA list of long numbers\nTable"
+  },
+  {
+    "objectID": "lectures/1.html#tabular-form",
+    "href": "lectures/1.html#tabular-form",
+    "title": "Data Generating Process",
+    "section": "Tabular Form",
+    "text": "Tabular Form"
+  },
+  {
+    "objectID": "lectures/1.html#measurements-1",
+    "href": "lectures/1.html#measurements-1",
+    "title": "Data Generating Process",
+    "section": "Measurements",
+    "text": "Measurements\nMeasurements are the processes where we represent an attribute of an experimental unit as either a number or category."
+  },
+  {
+    "objectID": "lectures/1.html#quantitative-measurements",
+    "href": "lectures/1.html#quantitative-measurements",
+    "title": "Data Generating Process",
+    "section": "Quantitative Measurements",
+    "text": "Quantitative Measurements\nQuantitative measurements are data measurements that take a numeric form."
+  },
+  {
+    "objectID": "lectures/1.html#qualitative-measurements",
+    "href": "lectures/1.html#qualitative-measurements",
+    "title": "Data Generating Process",
+    "section": "Qualitative Measurements",
+    "text": "Qualitative Measurements\nQualitative measurements are data measurements that take a certain category."
+  },
+  {
+    "objectID": "lectures/1.html#value",
+    "href": "lectures/1.html#value",
+    "title": "Data Generating Process",
+    "section": "Value",
+    "text": "Value\nA value is a description (number or category) of a specific attribute of an experimental unit."
+  },
+  {
+    "objectID": "lectures/1.html#variable",
+    "href": "lectures/1.html#variable",
+    "title": "Data Generating Process",
+    "section": "Variable",
+    "text": "Variable\nA variable is the descriptive attribute that we want to obtain from an experimental unit. In terms of a data set, the variable contains all the values of specific attribute in a sample."
+  },
+  {
+    "objectID": "lectures/1.html#research-question",
+    "href": "lectures/1.html#research-question",
+    "title": "Data Generating Process",
+    "section": "Research Question",
+    "text": "Research Question\n\nA research question is designed to create new knowledge of certain phenomenons observed in the world.\nThis is designed by conducting a research projects that systematically answers the question.\nThe study design is the procedure in which data is collected to answer the question, while reducing any potential bias while conducting the study."
+  },
+  {
+    "objectID": "lectures/1.html#study-design-1",
+    "href": "lectures/1.html#study-design-1",
+    "title": "Data Generating Process",
+    "section": "Study Design",
+    "text": "Study Design\n\nThis is the procedure designed to answer a research question.\nEntails procedures to collect data that answers a research question.\nDictates how the data will be analyzed.\nDetermines how the data is quantified and what is the experimental unit."
+  },
+  {
+    "objectID": "lectures/1.html#sampling-1",
+    "href": "lectures/1.html#sampling-1",
+    "title": "Data Generating Process",
+    "section": "Sampling",
+    "text": "Sampling\nThe process of a selecting a small subset from a large population.\n\n\n\n\n\n\n\nImage Provided by Simply Psychology."
+  },
+  {
+    "objectID": "lectures/1.html#sampling-2",
+    "href": "lectures/1.html#sampling-2",
+    "title": "Data Generating Process",
+    "section": "Sampling",
+    "text": "Sampling\nWhen Sampling you want to maintain these properties:\n\nRepresentative sample\nLarge enough sample size"
+  },
+  {
+    "objectID": "lectures/1.html#sampling-example",
+    "href": "lectures/1.html#sampling-example",
+    "title": "Data Generating Process",
+    "section": "Sampling Example",
+    "text": "Sampling Example\nWe want to answer the question, are people happy?"
+  },
+  {
+    "objectID": "lectures/1.html#random-sampling",
+    "href": "lectures/1.html#random-sampling",
+    "title": "Data Generating Process",
+    "section": "Random Sampling",
+    "text": "Random Sampling\nWhen sampling, we strive for random sampling\n\nEach unit in the population of interest must have an equal probability of being selected for the study.\nThis ensures a representative population"
+  },
+  {
+    "objectID": "lectures/1.html#independent-sampling",
+    "href": "lectures/1.html#independent-sampling",
+    "title": "Data Generating Process",
+    "section": "Independent Sampling",
+    "text": "Independent Sampling\nIn addition to random sampling, we strive to make sure each unit is independent from each other.\n\nThe probability of UNIT A being sampled will not affect the probability of UNIT B to be sampled."
+  },
+  {
+    "objectID": "lectures/1.html#sampling-variation",
+    "href": "lectures/1.html#sampling-variation",
+    "title": "Data Generating Process",
+    "section": "Sampling Variation",
+    "text": "Sampling Variation\n\nRandom samples may vary from the population of interest.\nDue to randomness, samples many not look the or biased.\nHowever, this is to be expected as because the sample will not be biased in one way or another.\nSamples are then considered unbiased as long as experimental units were collected randomly."
+  },
+  {
+    "objectID": "lectures/1.html#data-2",
+    "href": "lectures/1.html#data-2",
+    "title": "Data Generating Process",
+    "section": "Data",
+    "text": "Data\nThe measurement collected from an experimental unit."
+  },
+  {
+    "objectID": "lectures/1.html#data-distribution",
+    "href": "lectures/1.html#data-distribution",
+    "title": "Data Generating Process",
+    "section": "Data Distribution",
+    "text": "Data Distribution\nWhen thinking about data, we know an attribute is allowed to vary. With this variation, some numbers are more likely to be observed than others."
+  },
+  {
+    "objectID": "lectures/1.html#forest-from-the-trees",
+    "href": "lectures/1.html#forest-from-the-trees",
+    "title": "Data Generating Process",
+    "section": "Forest from the trees",
+    "text": "Forest from the trees\n\n\n\n\n\n\n\nImage Provided by Pexels"
+  },
+  {
+    "objectID": "lectures/1.html#sample",
+    "href": "lectures/1.html#sample",
+    "title": "Data Generating Process",
+    "section": "Sample",
+    "text": "Sample\nWhen inspecting data:\n\nDo not focus on one individual data point.\nSee how data points is in relation to other data points.\nSee what is common\nSee what is rare"
+  },
+  {
+    "objectID": "lectures/1.html#data-generation-process-dgp",
+    "href": "lectures/1.html#data-generation-process-dgp",
+    "title": "Data Generating Process",
+    "section": "Data Generation Process (DGP)",
+    "text": "Data Generation Process (DGP)\nThe data generation process is understanding how variation from the population is transferred to the data collected.\n\nA population has a mechanism to produce data, understanding this mechanism is essential understanding the data."
+  },
+  {
+    "objectID": "lectures/1.html#dgp",
+    "href": "lectures/1.html#dgp",
+    "title": "Data Generating Process",
+    "section": "DGP",
+    "text": "DGP\nA populations DGP can be defined with the following characteristics:\n\nThe potential outcomes that can be observed when measuring\nEach potential outcome will have a probability of being observed\n\nThe probability must be between 0 and 1\n\nSum of all the probabilities of each outcome will add up to 1"
+  },
+  {
+    "objectID": "lectures/1.html#flipping-a-coin",
+    "href": "lectures/1.html#flipping-a-coin",
+    "title": "Data Generating Process",
+    "section": "Flipping a Coin",
+    "text": "Flipping a Coin\n\nFlipping a coin results in either heads or tail.\nThe probability for heads is 50%\nThe DGP of flipping a coin is the process of selecting an outcome, given the probability of both options are 50%."
+  },
+  {
+    "objectID": "lectures/1.html#rolling-a-die",
+    "href": "lectures/1.html#rolling-a-die",
+    "title": "Data Generating Process",
+    "section": "Rolling a die",
+    "text": "Rolling a die\n\n\n\n\n\nImage Provided by Pexels"
+  },
+  {
+    "objectID": "lectures/1.html#measuring-body-temperature",
+    "href": "lectures/1.html#measuring-body-temperature",
+    "title": "Data Generating Process",
+    "section": "Measuring Body Temperature",
+    "text": "Measuring Body Temperature\n\n\n\n\n\nImage Provided by Pexels"
+  },
+  {
+    "objectID": "lectures/1.html#inference",
+    "href": "lectures/1.html#inference",
+    "title": "Data Generating Process",
+    "section": "Inference",
+    "text": "Inference\n\nHow do we use DGP and sampling to understand the world?\nWe can use a sample to understand the DGP.\nWe can use the DGP to understand the sample."
+  },
+  {
+    "objectID": "lectures/1.html#visualizing-a-dgp",
+    "href": "lectures/1.html#visualizing-a-dgp",
+    "title": "Data Generating Process",
+    "section": "Visualizing a DGP",
+    "text": "Visualizing a DGP"
+  },
+  {
+    "objectID": "lectures/1.html#visualizing-dgp",
+    "href": "lectures/1.html#visualizing-dgp",
+    "title": "Data Generating Process",
+    "section": "Visualizing DGP",
+    "text": "Visualizing DGP"
+  },
+  {
+    "objectID": "lectures/1.html#example",
+    "href": "lectures/1.html#example",
+    "title": "Data Generating Process",
+    "section": "Example",
+    "text": "Example"
+  },
+  {
+    "objectID": "lectures/1.html#statistical-model-1",
+    "href": "lectures/1.html#statistical-model-1",
+    "title": "Data Generating Process",
+    "section": "Statistical Model",
+    "text": "Statistical Model\n\\[\nY \\sim F(\\theta)\n\\]\n\n\\(Y\\): A data value generated for DGP\n\\(F\\): A generic mathematical model that describes the DGP\n\\(\\theta\\): Parameter controlling the shape and form of the DGP"
+  },
+  {
+    "objectID": "lectures/1.html#statistical-model-2",
+    "href": "lectures/1.html#statistical-model-2",
+    "title": "Data Generating Process",
+    "section": "Statistical Model",
+    "text": "Statistical Model\n\\[\nY = \\beta + \\varepsilon\n\\]\n\n\\(\\beta\\): The average value we expect to see\n\\(\\varepsilon \\sim F(\\cdot)\\): Error Term"
+  },
+  {
+    "objectID": "lectures/1.html#statistical-model-3",
+    "href": "lectures/1.html#statistical-model-3",
+    "title": "Data Generating Process",
+    "section": "Statistical Model",
+    "text": "Statistical Model\n\\[\nY = \\beta + \\varepsilon\n\\]\n\n\n\\(\\beta\\): Explained Part\n\nThis is what we expect to see if we took an educated guess\nThe educated guess can incorporate information that is related to \\(Y\\)\n\n\n\\(\\varepsilon\\): Unexplained Part\n\nRandomness\nIncorporates several types of variation\n\nMeasurement Error\nBiological Error\nEnvironmental Error"
+  },
+  {
+    "objectID": "lectures/2.html#r-packages",
+    "href": "lectures/2.html#r-packages",
+    "title": "Categorical Data",
+    "section": "R Packages",
+    "text": "R Packages\n\ncsucistats\ntidyverse"
+  },
+  {
+    "objectID": "lectures/2.html#background",
+    "href": "lectures/2.html#background",
+    "title": "Categorical Data",
+    "section": "Background",
+    "text": "Background\nIn October 2023, James Hoffman and Cometeer held the “Great American Coffee Taste Test” on YouTube, asking viewers to fill out a survey and coffee ordered from Cometeer."
+  },
+  {
+    "objectID": "lectures/2.html#data",
+    "href": "lectures/2.html#data",
+    "title": "Categorical Data",
+    "section": "Data",
+    "text": "Data\nThe data is part of DSLC Tidy Tuesday program where data sets are provided to help data science learners how to create graphics.\nInformation on the data sets variables (columns) can be found here."
+  },
+  {
+    "objectID": "lectures/2.html#data-1",
+    "href": "lectures/2.html#data-1",
+    "title": "Categorical Data",
+    "section": "Data",
+    "text": "Data\n\n\nCode\nlibrary(csucistats)\nlibrary(ggtricks)\nlibrary(tidyverse)\nlibrary(ThemePark)\nlibrary(DT)\ncoffee &lt;- read_csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-05-14/coffee_survey.csv\")\ndatatable(slice_sample(coffee, n = 10), options = list(dom = \"p\", pageLength = 5))"
+  },
+  {
+    "objectID": "lectures/2.html#categorical-data-1",
+    "href": "lectures/2.html#categorical-data-1",
+    "title": "Categorical Data",
+    "section": "Categorical Data",
+    "text": "Categorical Data\nCategorical data are data recordings that represented a category.\n\nData may be recorded as a “character” or “string” data.\n\n\nData may be recorded as a whole number, with an attached code book indicating the categories each number belongs to."
+  },
+  {
+    "objectID": "lectures/2.html#examples-of-categorical-data",
+    "href": "lectures/2.html#examples-of-categorical-data",
+    "title": "Categorical Data",
+    "section": "Examples of Categorical Data",
+    "text": "Examples of Categorical Data\n\nAre you a student?\nWhat city do you live in?\nWhat is your major?"
+  },
+  {
+    "objectID": "lectures/2.html#likert-scale",
+    "href": "lectures/2.html#likert-scale",
+    "title": "Categorical Data",
+    "section": "Likert Scale",
+    "text": "Likert Scale\nLikert scales are the rating systems you may have answered in surveys.\n\n\nStrongly Disagree\nDisagree\nNeutral\nAgree\nStrongly Agree"
+  },
+  {
+    "objectID": "lectures/2.html#likert-scales",
+    "href": "lectures/2.html#likert-scales",
+    "title": "Categorical Data",
+    "section": "Likert Scales",
+    "text": "Likert Scales\nLikert scales may be treated as numerical data if the jumps between scales are equal."
+  },
+  {
+    "objectID": "lectures/2.html#summarizing-categorical-data",
+    "href": "lectures/2.html#summarizing-categorical-data",
+    "title": "Categorical Data",
+    "section": "Summarizing Categorical Data",
+    "text": "Summarizing Categorical Data\nOnce we have the data, how do we summarize it to other people."
+  },
+  {
+    "objectID": "lectures/2.html#continguency-tables-1",
+    "href": "lectures/2.html#continguency-tables-1",
+    "title": "Categorical Data",
+    "section": "Continguency Tables",
+    "text": "Continguency Tables\nContinguency tables display how often a category is seen in the data.\n\nThere are two types of statistics that are reported in a table, the frequency and proportion."
+  },
+  {
+    "objectID": "lectures/2.html#frequencey",
+    "href": "lectures/2.html#frequencey",
+    "title": "Categorical Data",
+    "section": "Frequencey",
+    "text": "Frequencey\nFrequency represents the count of observing a specific category in your sample.\n\n\n#&gt;  [1] NA  \"1\" \"3\" \"1\" \"3\" \"1\" \"1\" \"1\" \"2\" \"2\""
+  },
+  {
+    "objectID": "lectures/2.html#proportions-relative-frequencey",
+    "href": "lectures/2.html#proportions-relative-frequencey",
+    "title": "Categorical Data",
+    "section": "Proportions (relative frequencey)",
+    "text": "Proportions (relative frequencey)\nProportions represent the percentage that the category represents the sample.\n\nThis allows you to generalize your sample to the population, regardless of sample size."
+  },
+  {
+    "objectID": "lectures/2.html#continguency-tables-in-r",
+    "href": "lectures/2.html#continguency-tables-in-r",
+    "title": "Categorical Data",
+    "section": "Continguency Tables in R",
+    "text": "Continguency Tables in R\nThe variable caffeine indicates how much caffeine a participant prefers.\n\n\nCode\ncat_stats(coffee$caffeine)"
+  },
+  {
+    "objectID": "lectures/2.html#plotting-in-r",
+    "href": "lectures/2.html#plotting-in-r",
+    "title": "Categorical Data",
+    "section": "Plotting in R",
+    "text": "Plotting in R\nPlotting in R can be done via the ggplot2, a powerful library based on the Grammar of Graphics."
+  },
+  {
+    "objectID": "lectures/2.html#plotting-in-r-1",
+    "href": "lectures/2.html#plotting-in-r-1",
+    "title": "Categorical Data",
+    "section": "Plotting in R",
+    "text": "Plotting in R\n\nYou need to create a base plot using the ggplot()\nUse the + to change the look of the base plot\nIndicate how to transform the base plot to the desired plot\ngeom_*\nstat_*\nChange the look of the plot with other functions\nUse a theme_* function to add a theme to the plot"
+  },
+  {
+    "objectID": "lectures/2.html#bar-plots-1",
+    "href": "lectures/2.html#bar-plots-1",
+    "title": "Categorical Data",
+    "section": "Bar Plots",
+    "text": "Bar Plots\nBar Plots can be used to display the frequency or proportions on the data."
+  },
+  {
+    "objectID": "lectures/2.html#frequency-bar-plots-in-r",
+    "href": "lectures/2.html#frequency-bar-plots-in-r",
+    "title": "Categorical Data",
+    "section": "Frequency Bar Plots in R",
+    "text": "Frequency Bar Plots in R\n\n\nCode\nggplot(data = DATA, aes(x = VARIABLE)) +\n  geom_bar()"
+  },
+  {
+    "objectID": "lectures/2.html#frequency-bar-plots-in-r-1",
+    "href": "lectures/2.html#frequency-bar-plots-in-r-1",
+    "title": "Categorical Data",
+    "section": "Frequency Bar Plots in R",
+    "text": "Frequency Bar Plots in R\n\n\nCode\nggplot(coffee, aes(caffeine)) +\n  geom_bar()"
+  },
+  {
+    "objectID": "lectures/2.html#relative-frequency-bar-plots-in-r",
+    "href": "lectures/2.html#relative-frequency-bar-plots-in-r",
+    "title": "Categorical Data",
+    "section": "Relative Frequency Bar Plots in R",
+    "text": "Relative Frequency Bar Plots in R\n\n\nCode\nggplot(data = DATA, aes(x = VARIABLE, y = after_stat(prop), group = 1)) +\n  geom_bar()"
+  },
+  {
+    "objectID": "lectures/2.html#relative-frequency-bar-plots-in-r-1",
+    "href": "lectures/2.html#relative-frequency-bar-plots-in-r-1",
+    "title": "Categorical Data",
+    "section": "Relative Frequency Bar Plots in R",
+    "text": "Relative Frequency Bar Plots in R\n\n\nCode\nggplot(coffee, aes(caffeine, after_stat(prop), group = 1)) +\n  geom_bar()"
+  },
+  {
+    "objectID": "lectures/2.html#data-2",
+    "href": "lectures/2.html#data-2",
+    "title": "Categorical Data",
+    "section": "Data",
+    "text": "Data\nThe variable taste indicates if the participants like the taste of coffee.\n\n\nCode\ncat_stats(coffee$taste)"
+  },
+  {
+    "objectID": "lectures/2.html#cross-tabulation-1",
+    "href": "lectures/2.html#cross-tabulation-1",
+    "title": "Categorical Data",
+    "section": "Cross-Tabulation",
+    "text": "Cross-Tabulation\nCross-tabulations, also known as contingency tables, are statistical tools used to analyze the relationship between two or more categorical variables by displaying their frequency distribution in a table format. Each cell in the table represents the count or frequency of observations that fall into a particular combination of categories for the variables."
+  },
+  {
+    "objectID": "lectures/2.html#key-features-of-cross-tabulations",
+    "href": "lectures/2.html#key-features-of-cross-tabulations",
+    "title": "Categorical Data",
+    "section": "Key Features of Cross-Tabulations",
+    "text": "Key Features of Cross-Tabulations\n\nRows and Columns:\n\nRows represent the categories of one variable.\nColumns represent the categories of another variable.\n\nCells:\n\nEach cell displays the frequency or count of data points that belong to the intersection of a row and column category.\n\nMargins:\n\nRow and column totals provide summaries for each variable.\nThe grand total shows the overall sample size."
+  },
+  {
+    "objectID": "lectures/2.html#types-of-proportions-in-cross-tabulations",
+    "href": "lectures/2.html#types-of-proportions-in-cross-tabulations",
+    "title": "Categorical Data",
+    "section": "Types of Proportions in Cross-Tabulations",
+    "text": "Types of Proportions in Cross-Tabulations\n\nRow Proportions: Show the percentage of each row total represented by a cell.\nColumn Proportions: Show the percentage of each column total represented by a cell.\nTable Proportions: Show the percentage of the overall total represented by a cell."
+  },
+  {
+    "objectID": "lectures/2.html#table-proportions",
+    "href": "lectures/2.html#table-proportions",
+    "title": "Categorical Data",
+    "section": "Table Proportions",
+    "text": "Table Proportions\nTable proportions in cross-tabulations refer to the relative frequency or percentage of counts within the entire table, calculated by dividing each cell’s count by the total sum of all counts in the table. These proportions allow you to examine the contribution of each cell to the overall data set."
+  },
+  {
+    "objectID": "lectures/2.html#table-proportions-1",
+    "href": "lectures/2.html#table-proportions-1",
+    "title": "Categorical Data",
+    "section": "Table Proportions",
+    "text": "Table Proportions\n\n\nCode\ncat_stats(coffee$caffeine, coffee$taste, prop = \"table\")"
+  },
+  {
+    "objectID": "lectures/2.html#row-proportions",
+    "href": "lectures/2.html#row-proportions",
+    "title": "Categorical Data",
+    "section": "Row Proportions",
+    "text": "Row Proportions\nRow proportions refer to the relative frequency or percentage of counts within each row of a contingency table. In a cross-tabulation, row proportions allow you to compare how the distribution of one variable varies within each category of another variable, within a row."
+  },
+  {
+    "objectID": "lectures/2.html#row-proportions-1",
+    "href": "lectures/2.html#row-proportions-1",
+    "title": "Categorical Data",
+    "section": "Row Proportions",
+    "text": "Row Proportions\n\n\nCode\ncat_stats(coffee$caffeine, coffee$taste, prop = \"row\")"
+  },
+  {
+    "objectID": "lectures/2.html#column-proportions",
+    "href": "lectures/2.html#column-proportions",
+    "title": "Categorical Data",
+    "section": "Column Proportions",
+    "text": "Column Proportions\nColumn proportions refer to the relative frequency or percentage of counts within each column of a contingency table. These proportions allow you to compare how the distribution of one variable varies across different categories of another variable, within a column."
+  },
+  {
+    "objectID": "lectures/2.html#column-proportions-1",
+    "href": "lectures/2.html#column-proportions-1",
+    "title": "Categorical Data",
+    "section": "Column Proportions",
+    "text": "Column Proportions\n\n\nCode\ncat_stats(coffee$caffeine, coffee$taste, prop = \"col\")"
+  },
+  {
+    "objectID": "lectures/2.html#stacked-bar-plot-in-r",
+    "href": "lectures/2.html#stacked-bar-plot-in-r",
+    "title": "Categorical Data",
+    "section": "Stacked Bar Plot in R",
+    "text": "Stacked Bar Plot in R\n\n\nCode\nggplot(DATA, aes(x = VAR1, y = after_stat(count), fill = VAR2)) +\n  geom_bar()"
+  },
+  {
+    "objectID": "lectures/2.html#stacked-bar-plot-in-r-1",
+    "href": "lectures/2.html#stacked-bar-plot-in-r-1",
+    "title": "Categorical Data",
+    "section": "Stacked Bar Plot in R",
+    "text": "Stacked Bar Plot in R\n\n\nCode\nggplot(coffee, aes(x = caffeine, y = after_stat(count), fill = taste)) +\n  geom_bar()"
+  },
+  {
+    "objectID": "lectures/2.html#stacked-bar-plot-in-r-2",
+    "href": "lectures/2.html#stacked-bar-plot-in-r-2",
+    "title": "Categorical Data",
+    "section": "Stacked Bar Plot in R",
+    "text": "Stacked Bar Plot in R\n\n\nCode\nggplot(coffee, aes(y = caffeine, x = after_stat(count), fill = taste)) +\n  geom_bar()"
+  },
+  {
+    "objectID": "lectures/2.html#pie-charts",
+    "href": "lectures/2.html#pie-charts",
+    "title": "Categorical Data",
+    "section": "Pie Charts",
+    "text": "Pie Charts\nA pie chart is a circular statistical graphic divided into slices, where each slice represents a proportion or percentage of the whole. The size of each slice is proportional to the relative frequency or magnitude of the category it represents."
+  },
+  {
+    "objectID": "lectures/2.html#pie-charts-1",
+    "href": "lectures/2.html#pie-charts-1",
+    "title": "Categorical Data",
+    "section": "Pie Charts",
+    "text": "Pie Charts"
+  },
+  {
+    "objectID": "lectures/2.html#key-features-of-pie-charts",
+    "href": "lectures/2.html#key-features-of-pie-charts",
+    "title": "Categorical Data",
+    "section": "Key Features of Pie Charts",
+    "text": "Key Features of Pie Charts\n\nCircular Format:\n\nThe chart is shaped like a circle, symbolizing a whole (100% or 1).\n\nSlices:\n\nEach slice corresponds to a category and its size represents the contribution of that category to the total.\n\nLabels:\n\nSlices are often labeled with the category name and the percentage or value they represent."
+  },
+  {
+    "objectID": "lectures/2.html#pie-chart-in-r",
+    "href": "lectures/2.html#pie-chart-in-r",
+    "title": "Categorical Data",
+    "section": "Pie Chart in R",
+    "text": "Pie Chart in R\n\n\nCode\ndf_pie &lt;- cat_stats(coffee$caffeine, tbl_df = TRUE)$table\nggplot(df_pie, aes(cat = Category, val = n, fill = Category)) +\n  geom_pie()"
+  },
+  {
+    "objectID": "lectures/2.html#pie-chart-in-r-1",
+    "href": "lectures/2.html#pie-chart-in-r-1",
+    "title": "Categorical Data",
+    "section": "Pie Chart in R",
+    "text": "Pie Chart in R\n\n\nCode\ncoffee_pie &lt;- cat_stats(coffee$caffeine, tbl_df = TRUE)$table\nggplot(coffee_pie, aes(cat = Category, val = n, fill = Category)) +\n  geom_pie()"
+  },
+  {
+    "objectID": "lectures/2.html#mosaic-plots",
+    "href": "lectures/2.html#mosaic-plots",
+    "title": "Categorical Data",
+    "section": "Mosaic Plots",
+    "text": "Mosaic Plots\nA mosaic plot is a graphical representation of two categorical variables. It uses rectangles to visualize the proportions of data categories while simultaneously showing the relationships between multiple variables. The size of each rectangle corresponds to the relative frequency or proportion of the data in a particular category combination."
+  },
+  {
+    "objectID": "lectures/2.html#key-features-of-mosaic-plots",
+    "href": "lectures/2.html#key-features-of-mosaic-plots",
+    "title": "Categorical Data",
+    "section": "Key Features of Mosaic Plots",
+    "text": "Key Features of Mosaic Plots\n\nRectangular Tiles:\n\nThe plot is divided into rectangles, with each tile representing a unique combination of categories.\n\nProportional Areas:\n\nThe area of each rectangle is proportional to the frequency or proportion of the data it represents.\n\nHierarchical Arrangement:\n\nVariables are arranged hierarchically along the axes, with the tiles subdivided to represent relationships between variables.\n\nColor Coding (Optional):\n\nDifferent colors can be used to highlight specific patterns, emphasize groups, or indicate significance."
+  },
+  {
+    "objectID": "lectures/2.html#themes",
+    "href": "lectures/2.html#themes",
+    "title": "Categorical Data",
+    "section": "Themes",
+    "text": "Themes\nThe R packages ThemePark and ggthemes allows you to change the overall look of a plot.\n\nAll you need to do is add the theme to the plot."
+  },
+  {
+    "objectID": "lectures/3.html#r-packages-and-data",
+    "href": "lectures/3.html#r-packages-and-data",
+    "title": "Numerical Data",
+    "section": "R Packages and Data",
+    "text": "R Packages and Data\n\ncsucistats\ntidyverse"
+  },
+  {
+    "objectID": "lectures/3.html#motivating-example",
+    "href": "lectures/3.html#motivating-example",
+    "title": "Numerical Data",
+    "section": "Motivating Example",
+    "text": "Motivating Example"
+  },
+  {
+    "objectID": "lectures/3.html#what-is-numerical-data",
+    "href": "lectures/3.html#what-is-numerical-data",
+    "title": "Numerical Data",
+    "section": "What is numerical data?",
+    "text": "What is numerical data?\n\n\nCode\ntrashwheel$PlasticBottles\n\n\n#&gt;   [1] 1450 1120 2450 2380  980 1430  910 3580 2400 1340  740  950  530  840 1130\n#&gt;  [16] 1640 1350 1640 1730 5960 2170 1930 3200 2500 2140 1630 3640 1430  570 4800\n#&gt;  [31]  550 2240 4220 1400 2820 1900 3650  760 1250  880 1800 1370  550  640 1160\n#&gt;  [46] 1570 1340 1740 2870 3120 2780 2240 2550 1470 1240 1150 2850  960  870 1340\n#&gt;  [61] 2630 1850 2830 1740 2780 1260 2340 3240  940  830  960  870  920 1130 1060\n#&gt;  [76]  740  950 2340 2660 2430 2690 1540 1240 2870 2450 1830 2360 2640 2840 2640\n#&gt;  [91] 3070 2820 2640  870 3220 1980  410  640 2730 1360  760 1240  800 2540 2130\n#&gt; [106] 2670 1940 2140 1960 1640 1850 2370 2530 2720 2250 3240 3530 2340 2460 1340\n#&gt; [121]  950 2240 3050 1630 1120 3340 3560 2460 3860 3230 3760 3640 4230 3590 3740\n#&gt; [136] 4200 3840 4350 3960 4150 4450 3460 2850 3560 4130 4350 4420 2130 2450 2300\n#&gt; [151] 2850 2640 3250 2530 2780 2740 2530 1876 2340 2244 2980 3460 1840 1360 1880\n#&gt; [166] 2460 2260 2890 2140 2570 2030 1940 1870 1920 1920 2230  980  650  430  390\n#&gt; [181]  490  210  560  470  390  460  530  460  340  360 2540 2870 2230 2340 2560\n#&gt; [196] 2340 2480 2540 2980 3250 3340 2850 3220 2110 3670 2890 1460 3240 3530 2760\n#&gt; [211] 2980 2430 1500 1270 1340 2780 2910 2760 2950 2550 2720 2540 2370 2250 1260\n#&gt; [226]  950 1020 2250 1130 1240 1950 1460 2210 2470 2150  970  840  790  750  810\n#&gt; [241]  790  670  710  730  820  760  670  730  750  820 1580 2130 2350 2460 1220\n#&gt; [256]  950  400 1050 1480 1300 1650 2130 2340 1890 1420 1280 1140  870  940  620\n#&gt; [271] 1560 1720 1890 1760  890  710  620  780  540  670  820  540  730  910  710\n#&gt; [286] 1750 1320 2740 1120 2100 3110 1200 1390  940 1220 1960 2150 2380 1440 1080\n#&gt; [301] 1840 2100 1500  660  590 1200 2610 1820 1080  790 1240  780  480  300  990\n#&gt; [316] 1110  580 2200 1900 2800  840  680  300  240 1015 2150  580 1400  800 1110\n#&gt; [331] 1980 1040  940  600  460  980 1880  900 1740 1140 2040 2800 1800 3300 1880\n#&gt; [346] 2000 2680  950 3700 1900 3600 2400 4400  980 1980 3600 2200 2800 4200  800\n#&gt; [361] 1400 1800 2210  980 2800 1900 2780 2440 3400  920 1260 1980 1000  960  640\n#&gt; [376]  860  590 1800 3600 2300 3900 2900 1850 3400  980  750  500 3200 3800 1850\n#&gt; [391] 2800  980 3200 2800 2640 1200  510  660  480 2900 2300 1980 1040  900 3400\n#&gt; [406] 1800 3000 2800  950 3800  800  760  540  340  600  480 2100 1840 1100 2650\n#&gt; [421] 1900  900 1880 1240 3000 2300 1400 2050 3250 2100 2450 4050 3800 3000 2200\n#&gt; [436] 3500 1800 1250 2200 1640 1080 1790 2080 1600 2200 2000 1200  980  800 1200\n#&gt; [451] 1800 1440 1600 2400 1900 2100 1200  720  800 2200 1600 1000 3000 2700 2300\n#&gt; [466] 1900 5800 1800 2200 3400 4400 3400 2500 1600 1200 1040 4400 4800 1800 3600\n#&gt; [481] 3000 4200 1400 2800 1800 3400 2600 3300 4100 1800 3500 2900  850  680 3100\n#&gt; [496] 1750  980 2800 1200  840 1040  500  800  640  900  660  750 3800 2900 1800\n#&gt; [511] 2700 4200 3000 1200  600 4400 3100 2800 1100 3400 2800  800 1800  540 3300\n#&gt; [526] 2800  900 2100 3200 1440  800  540 2900 2000  960 3200 1250 2900 2100 3600\n#&gt; [541] 1400 3900 3000 1800 2700 2400 2900 1400 3900 4200 2800 1900  960  640  750\n#&gt; [556]  500 3500 2900 2100 3200 1800 1500 2100 1000 2900 1600 2100 1700 2400 3600\n#&gt; [571] 2700 2900 1800 2200 3000 2100 1000 2700 2200 3100 3400 4000 2100 1900 2300\n#&gt; [586] 3200 1200 3400 2100  980  540 1100  750 1800 2300 3400 2700 3000 3800 4200\n#&gt; [601] 1800 2000 3300 4200 1200 2200  850  980  300  450   80 1800 2200 3400 3100\n#&gt; [616] 2600 1800 1200 2200 1400 2100 1600 2000 3200 2100 1400  880 2000 1200 1950\n#&gt; [631] 9540 8350 8590 7830 8210 9830 9240 9540 8230 7540 8490 9610 7960 8870 7420\n#&gt; [646] 8250 8472 7530 2340 2210 2670  657 2290 2110 7340 9230 1020  900 1140 1350\n#&gt; [661] 1200 1090  920 3150 6970 9100 8400 6500 4400 3600 4000 3700 4057 8800 6800\n#&gt; [676] 5900 7500 8000 4400 6600 3800 4800 4400 5200 6400 5900 4800 5600 7200 4400\n#&gt; [691] 5400 4800 6700 6000 6800 5950 7200 6400 5300 4900 4400 5000 4900 4800 5800\n#&gt; [706] 3600 4200 5000 5400 6400 4000 4300 5100 3900 2700 3000 4100 3900 4400 4900\n#&gt; [721] 3600 4500 5000 5400 3400 4800 3800 2900 3200 4200 2900   NA 3400 4100 3900\n#&gt; [736] 4900 3400 5100 4200 2900 3800 3200 4000 1150 2320 3450 1490  920 1010  680\n#&gt; [751] 1800 2700  950  103 1850 1200 1050 1860 1180 1050 1420 1800 1500 1200  860\n#&gt; [766]  640 1400  980 2100 1100 2400 1500 2200 1200 2000 1800 1000 2100 2400 2700\n#&gt; [781] 3000  980  240  840 1800 1000  500   12 2400 1000 1800  300 2100 2400 1200\n#&gt; [796] 1800 2100  280  480  150 1400  980   40  640  800 1000  810  500 1800  840\n#&gt; [811]  500 1500  480 1000 1200  450  280  150    0    0 2100 1800 1400  980 3000\n#&gt; [826] 2400 1100  340 1200  600 2300 1200 3000 4200 1800  980 2100 3200 1050 2700\n#&gt; [841]  980 1400  800  640  240 2100 2800 1600 1200 2200  980  540  320  270 1200\n#&gt; [856]  360  120  480    0 2400 3200 2500 1800  250  240  640  180  540    0    0\n#&gt; [871] 2800 1600  980  480  720    0  360 2100 2900 2100 1800 2900 3200 1800 1600\n#&gt; [886] 2800 1200 2100 2500 1800 1600 2100 1200  980 2500 1900 2100 1200  900  800\n#&gt; [901]  480  720 1600 2400  800  500  640  900 1400 2100 1900  960 2400 1800 2700\n#&gt; [916] 1500  930 2100 3000 1600 1200 4100 5400 4400 5000 3400 4900 2500 2700 1300\n#&gt; [931]  800  440 2100 3200 1100  800  540 4100 3300 1500  850  440 2800 1200 1400\n#&gt; [946]  880  750 1800  400   10 1400  600 2500 1100 2300 1000 1300  500  700   20\n#&gt; [961]    0 1800  680 2800 3300 2900 1800 2800 1000 2500  950  360    0 3400 2700\n#&gt; [976] 3200 2800 1600 2900 2000 2500 1400  800 1500 2100 1400  980 1800  500 1200\n#&gt; [991]  180    0    0"
+  },
+  {
+    "objectID": "lectures/3.html#summary-statistics-1",
+    "href": "lectures/3.html#summary-statistics-1",
+    "title": "Numerical Data",
+    "section": "Summary Statistics",
+    "text": "Summary Statistics\nSummary statistics are used to describe the distribution of data."
+  },
+  {
+    "objectID": "lectures/3.html#central-tendency",
+    "href": "lectures/3.html#central-tendency",
+    "title": "Numerical Data",
+    "section": "Central Tendency",
+    "text": "Central Tendency\nCentral tendency is a statistical concept that refers to the central or typical value around which a set of data points tends to cluster. It is used to summarize and describe a data set by identifying a single representative value that provides insights into the data’s overall characteristics."
+  },
+  {
+    "objectID": "lectures/3.html#variation",
+    "href": "lectures/3.html#variation",
+    "title": "Numerical Data",
+    "section": "Variation",
+    "text": "Variation\nVariation in statistics refers to the extent to which data points in a dataset deviate or differ from a central tendency measure. Understanding variation is crucial for making informed decisions, drawing meaningful conclusions, and assessing the reliability of statistical analyses."
+  },
+  {
+    "objectID": "lectures/3.html#minimum",
+    "href": "lectures/3.html#minimum",
+    "title": "Numerical Data",
+    "section": "Minimum",
+    "text": "Minimum\nThe minimum (min) is the smallest value in the data."
+  },
+  {
+    "objectID": "lectures/3.html#maximum",
+    "href": "lectures/3.html#maximum",
+    "title": "Numerical Data",
+    "section": "Maximum",
+    "text": "Maximum\nThe maximum (max) is the largest value in the data."
+  },
+  {
+    "objectID": "lectures/3.html#quartiles",
+    "href": "lectures/3.html#quartiles",
+    "title": "Numerical Data",
+    "section": "Quartiles",
+    "text": "Quartiles\nQuartiles are three values (Q1, Q2, Q3) that divides the data into four subsets."
+  },
+  {
+    "objectID": "lectures/3.html#q1",
+    "href": "lectures/3.html#q1",
+    "title": "Numerical Data",
+    "section": "Q1",
+    "text": "Q1\nQ1 is the value signifying that a quarter of the data is lower than it."
+  },
+  {
+    "objectID": "lectures/3.html#q2---median",
+    "href": "lectures/3.html#q2---median",
+    "title": "Numerical Data",
+    "section": "Q2 - Median",
+    "text": "Q2 - Median\nQ2 is the value signifying that half of the data is below it.\n\nThe median also represents the central tendency of the data."
+  },
+  {
+    "objectID": "lectures/3.html#q3",
+    "href": "lectures/3.html#q3",
+    "title": "Numerical Data",
+    "section": "Q3",
+    "text": "Q3\nQ3 is the value signifying that 3 quarters of the data is below it."
+  },
+  {
+    "objectID": "lectures/3.html#interquartile-range",
+    "href": "lectures/3.html#interquartile-range",
+    "title": "Numerical Data",
+    "section": "Interquartile Range",
+    "text": "Interquartile Range\n\n\\[\nIQR = Q_3 - Q_1\n\\]"
+  },
+  {
+    "objectID": "lectures/3.html#range",
+    "href": "lectures/3.html#range",
+    "title": "Numerical Data",
+    "section": "Range",
+    "text": "Range\n\n\\[\nR = \\mathrm{max} - \\mathrm{min}\n\\]"
+  },
+  {
+    "objectID": "lectures/3.html#how-to-identify-the-quartiles",
+    "href": "lectures/3.html#how-to-identify-the-quartiles",
+    "title": "Numerical Data",
+    "section": "How to identify the quartiles?",
+    "text": "How to identify the quartiles?\n\nSort the data\nID Max and Min\nFind the amount of data the makes a quarter:\n\n\\(K=N/4\\)\n\nCreate 4 groups using the sorted data\n\ngroup by data size\nIf \\(K\\) has a decimal, the \\(Kth\\) value is quartile of each group."
+  },
+  {
+    "objectID": "lectures/3.html#mean",
+    "href": "lectures/3.html#mean",
+    "title": "Numerical Data",
+    "section": "Mean",
+    "text": "Mean\nDescribe how you will find the mean of these numbers:\n\n\n#&gt; [1] 14 13 19 12 19"
+  },
+  {
+    "objectID": "lectures/3.html#mean-1",
+    "href": "lectures/3.html#mean-1",
+    "title": "Numerical Data",
+    "section": "Mean",
+    "text": "Mean\nThe mean is another measurement for central tendency.\n\\[\n\\bar X = \\frac{1}{n}\\sum^n_{i=1}X_i\n\\]\n\n\\(n\\): total data points\n\\(X_i\\): data points\n\\(i\\): indexing data\n\\(\\sum\\): add all from first (bottom) to last (up)"
+  },
+  {
+    "objectID": "lectures/3.html#variance",
+    "href": "lectures/3.html#variance",
+    "title": "Numerical Data",
+    "section": "Variance",
+    "text": "Variance\nThe variance is a measurement on the average squared distance the data points are from the central tendency.\n\\[\ns^2 = \\frac{1}{n-1}\\sum^n_{i=1}(X_i-\\bar X)^2\n\\]"
+  },
+  {
+    "objectID": "lectures/3.html#standard-deviation",
+    "href": "lectures/3.html#standard-deviation",
+    "title": "Numerical Data",
+    "section": "Standard Deviation",
+    "text": "Standard Deviation\nThe standard deviation is a measurement on the average distance the data points are from the central tendency.\n\\[\ns=\\sqrt{s^2}\n\\]"
+  },
+  {
+    "objectID": "lectures/3.html#outliers",
+    "href": "lectures/3.html#outliers",
+    "title": "Numerical Data",
+    "section": "Outliers",
+    "text": "Outliers\nThese are data points that seem to be highly distant from all other variables."
+  },
+  {
+    "objectID": "lectures/3.html#numerical-statistics-in-r-1",
+    "href": "lectures/3.html#numerical-statistics-in-r-1",
+    "title": "Numerical Data",
+    "section": "Numerical Statistics in R",
+    "text": "Numerical Statistics in R"
+  },
+  {
+    "objectID": "lectures/3.html#mean-2",
+    "href": "lectures/3.html#mean-2",
+    "title": "Numerical Data",
+    "section": "Mean",
+    "text": "Mean\n\n\nCode\nmean(DATA$VAR)"
+  },
+  {
+    "objectID": "lectures/3.html#median",
+    "href": "lectures/3.html#median",
+    "title": "Numerical Data",
+    "section": "Median",
+    "text": "Median\n\n\nCode\nmedian(DATA$VAR)"
+  },
+  {
+    "objectID": "lectures/3.html#standard-deviation-1",
+    "href": "lectures/3.html#standard-deviation-1",
+    "title": "Numerical Data",
+    "section": "Standard Deviation",
+    "text": "Standard Deviation\n\n\nCode\nsd(DATA$VAR)"
+  },
+  {
+    "objectID": "lectures/3.html#variance-1",
+    "href": "lectures/3.html#variance-1",
+    "title": "Numerical Data",
+    "section": "Variance",
+    "text": "Variance\n\n\nCode\nvar(DATA$VAR)"
+  },
+  {
+    "objectID": "lectures/3.html#quartiles-1",
+    "href": "lectures/3.html#quartiles-1",
+    "title": "Numerical Data",
+    "section": "Quartiles",
+    "text": "Quartiles\n\n\nCode\nquantile(DATA$VAR, probs = c(0.25, 0.5, 0.75))"
+  },
+  {
+    "objectID": "lectures/3.html#max-and-min",
+    "href": "lectures/3.html#max-and-min",
+    "title": "Numerical Data",
+    "section": "Max and Min",
+    "text": "Max and Min\n\n\nCode\nmax(DATA$VAR)\nmin(DATA$VAR)"
+  },
+  {
+    "objectID": "lectures/3.html#summary-statistics-2",
+    "href": "lectures/3.html#summary-statistics-2",
+    "title": "Numerical Data",
+    "section": "Summary Statistics",
+    "text": "Summary Statistics\n\n\nCode\nnum_stats(DATA$VAR)"
+  },
+  {
+    "objectID": "lectures/3.html#mr.-trash-wheel",
+    "href": "lectures/3.html#mr.-trash-wheel",
+    "title": "Numerical Data",
+    "section": "Mr. Trash Wheel",
+    "text": "Mr. Trash Wheel\n\n\nCode\nnum_stats(trashwheel$PlasticBottles)\n\n\n#&gt;   min   q25     mean median  q75  max       sd     var    iqr missing\n#&gt; 1   0 987.5 2219.331   1900 2900 9830 1650.449 2723984 1912.5       1"
+  },
+  {
+    "objectID": "lectures/3.html#histogram",
+    "href": "lectures/3.html#histogram",
+    "title": "Numerical Data",
+    "section": "Histogram",
+    "text": "Histogram\nA histogram is a graphical representation of the distribution or frequency of data points in a dataset. It provides a visual way to understand the shape, central tendency, and spread of a dataset by dividing the data into intervals or bins and showing how many data points fall into each bin as a bar."
+  },
+  {
+    "objectID": "lectures/3.html#histogram-r-code",
+    "href": "lectures/3.html#histogram-r-code",
+    "title": "Numerical Data",
+    "section": "Histogram R Code",
+    "text": "Histogram R Code\n\n\nCode\nggplot(DATA, aes(VARIABLE)) +\n  geom_histogram(bins = X)"
+  },
+  {
+    "objectID": "lectures/3.html#histogram-1",
+    "href": "lectures/3.html#histogram-1",
+    "title": "Numerical Data",
+    "section": "Histogram",
+    "text": "Histogram\n\n\nCode\ny &lt;- rnorm(1000)\nggplot(tibble(y), aes(y)) +\n  geom_histogram(bins = 15)"
+  },
+  {
+    "objectID": "lectures/3.html#histogram-2",
+    "href": "lectures/3.html#histogram-2",
+    "title": "Numerical Data",
+    "section": "Histogram",
+    "text": "Histogram\n\n\nCode\ny &lt;- rgamma(1000, 2)\nggplot(tibble(y), aes(y)) +\n  geom_histogram(bins = 15)"
+  },
+  {
+    "objectID": "lectures/3.html#histograms",
+    "href": "lectures/3.html#histograms",
+    "title": "Numerical Data",
+    "section": "Histograms",
+    "text": "Histograms\n\n\nCode\ny &lt;- rbeta(1000, 5, 1)\nggplot(tibble(y), aes(y)) +\n  geom_histogram(bins = 15)"
+  },
+  {
+    "objectID": "lectures/3.html#histograms-1",
+    "href": "lectures/3.html#histograms-1",
+    "title": "Numerical Data",
+    "section": "Histograms",
+    "text": "Histograms\n\n\nCode\ny &lt;- rbinom(1000, 1, 0.4)\nz &lt;- (y == 0) * rnorm(1000, 23) + (y == 1) * rnorm(1000, 27)\nggplot(tibble(z), aes(z)) +\n  geom_histogram(bins = 15)"
+  },
+  {
+    "objectID": "lectures/3.html#mr.-trash-wheel-1",
+    "href": "lectures/3.html#mr.-trash-wheel-1",
+    "title": "Numerical Data",
+    "section": "Mr. Trash Wheel",
+    "text": "Mr. Trash Wheel\n\n\nCode\nggplot(trashwheel, aes(PlasticBottles)) +\n  geom_histogram()"
+  },
+  {
+    "objectID": "lectures/3.html#box-plot",
+    "href": "lectures/3.html#box-plot",
+    "title": "Numerical Data",
+    "section": "Box Plot",
+    "text": "Box Plot\nA box plot, also known as a box-and-whisker plot, is a graphical representation of the distribution and key statistical characteristics of a dataset. It provides a visual summary of the data’s central tendency, spread, and potential outliers."
+  },
+  {
+    "objectID": "lectures/3.html#box-plot-1",
+    "href": "lectures/3.html#box-plot-1",
+    "title": "Numerical Data",
+    "section": "Box Plot",
+    "text": "Box Plot"
+  },
+  {
+    "objectID": "lectures/3.html#box-plot-r-code",
+    "href": "lectures/3.html#box-plot-r-code",
+    "title": "Numerical Data",
+    "section": "Box Plot R Code",
+    "text": "Box Plot R Code\n\n\nCode\nggplot(DATA, aes(VARIABLE)) +\n  geom_boxplot()"
+  },
+  {
+    "objectID": "lectures/3.html#box-plot-2",
+    "href": "lectures/3.html#box-plot-2",
+    "title": "Numerical Data",
+    "section": "Box Plot",
+    "text": "Box Plot\n\n\nCode\nggplot(trashwheel, aes(PlasticBottles)) +\n  geom_boxplot()"
+  },
+  {
+    "objectID": "lectures/3.html#box-plot-3",
+    "href": "lectures/3.html#box-plot-3",
+    "title": "Numerical Data",
+    "section": "Box Plot",
+    "text": "Box Plot\n\n\nCode\nggplot(trashwheel, aes(y = PlasticBottles)) +\n  geom_boxplot()"
+  },
+  {
+    "objectID": "lectures/3.html#dot-plots",
+    "href": "lectures/3.html#dot-plots",
+    "title": "Numerical Data",
+    "section": "Dot Plots",
+    "text": "Dot Plots\nDot Plots are similar to histograms, but they incorporate dots to count how many data points fall within bins."
+  },
+  {
+    "objectID": "lectures/3.html#dot-plots-in-r",
+    "href": "lectures/3.html#dot-plots-in-r",
+    "title": "Numerical Data",
+    "section": "Dot Plots in R",
+    "text": "Dot Plots in R\n\n\nCode\nggplot(DATA, aes(VARIABLE)) +\n  geom_dotplot(binwidth = X)"
+  },
+  {
+    "objectID": "lectures/3.html#dot-plots-1",
+    "href": "lectures/3.html#dot-plots-1",
+    "title": "Numerical Data",
+    "section": "Dot Plots",
+    "text": "Dot Plots\n\n\nCode\nggplot(trashwheel, aes(PlasticBottles)) +\n  geom_dotplot(binwidth = 100)"
+  },
+  {
+    "objectID": "lectures/3.html#scatter-plots-1",
+    "href": "lectures/3.html#scatter-plots-1",
+    "title": "Numerical Data",
+    "section": "Scatter Plots",
+    "text": "Scatter Plots\nScatter plots demonstrate how two variables behave with each other. They can tell you any postive or negative trends, if they exist, with the combination of the plots."
+  },
+  {
+    "objectID": "lectures/3.html#positive-relationship",
+    "href": "lectures/3.html#positive-relationship",
+    "title": "Numerical Data",
+    "section": "Positive Relationship",
+    "text": "Positive Relationship"
+  },
+  {
+    "objectID": "lectures/3.html#negative-relationship",
+    "href": "lectures/3.html#negative-relationship",
+    "title": "Numerical Data",
+    "section": "Negative Relationship",
+    "text": "Negative Relationship"
+  },
+  {
+    "objectID": "lectures/3.html#no-relationship",
+    "href": "lectures/3.html#no-relationship",
+    "title": "Numerical Data",
+    "section": "No Relationship",
+    "text": "No Relationship"
+  },
+  {
+    "objectID": "lectures/3.html#weak-positive-or-negative-relationship",
+    "href": "lectures/3.html#weak-positive-or-negative-relationship",
+    "title": "Numerical Data",
+    "section": "Weak Positive or Negative Relationship",
+    "text": "Weak Positive or Negative Relationship"
+  },
+  {
+    "objectID": "lectures/3.html#scatter-plots-in-r",
+    "href": "lectures/3.html#scatter-plots-in-r",
+    "title": "Numerical Data",
+    "section": "Scatter Plots in R",
+    "text": "Scatter Plots in R\n\n\nCode\nggplot(DATA, aes(x = VAR1, y = VAR2)) +\n  geom_point()"
+  },
+  {
+    "objectID": "lectures/3.html#mr.-trash-wheel-2",
+    "href": "lectures/3.html#mr.-trash-wheel-2",
+    "title": "Numerical Data",
+    "section": "Mr. Trash Wheel",
+    "text": "Mr. Trash Wheel\n\n\nCode\nggplot(trashwheel, aes(PlasticBottles, PlasticBags)) +\n  geom_point()"
+  },
+  {
+    "objectID": "lectures/3.html#central-tendency-1",
+    "href": "lectures/3.html#central-tendency-1",
+    "title": "Numerical Data",
+    "section": "Central Tendency",
+    "text": "Central Tendency"
+  },
+  {
+    "objectID": "lectures/3.html#variation-1",
+    "href": "lectures/3.html#variation-1",
+    "title": "Numerical Data",
+    "section": "Variation",
+    "text": "Variation"
+  },
+  {
+    "objectID": "lectures/3.html#central-tendency-2",
+    "href": "lectures/3.html#central-tendency-2",
+    "title": "Numerical Data",
+    "section": "Central Tendency",
+    "text": "Central Tendency\nCentral tendency is a statistical concept that refers to the central or typical value around which a set of data points tends to cluster. It is used to summarize and describe a data set by identifying a single representative value that provides insights into the data’s overall characteristics."
+  },
+  {
+    "objectID": "lectures/3.html#variation-2",
+    "href": "lectures/3.html#variation-2",
+    "title": "Numerical Data",
+    "section": "Variation",
+    "text": "Variation\nVariation in statistics refers to the extent to which data points in a dataset deviate or differ from a central tendency measure. Understanding variation is crucial for making informed decisions, drawing meaningful conclusions, and assessing the reliability of statistical analyses."
   }
 ]

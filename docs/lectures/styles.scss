@@ -89,3 +89,7 @@ h2 {
 .reveal .controls button {
   transform: scale(0.5) !important;       /* adjust size: 0.7 = 70% */
 }
+
+.figure-caption, figcaption {
+  text-align: center !important;
+}

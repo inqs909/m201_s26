@@ -1,15 +1,20 @@
 ---
-title: "Categorical Data"
+title: "Numerical Data"
 description: |
-  Provides an overview descriptive statistics and data visualization techniques for categorical data.
-
+  Provides an overview descriptive statistics and data visualization techniques for numerical data.
 format:
   revealjs:
+    width: 1200
     scrollable: true
+    sc-sb-title: true
+    footer: m201.inqs.info/lectures/3
     theme: [default, styles.scss]
     navigation-mode: vertical
-    controls-layout: bottom-right
+    controls-layout: edges
     controls-tutorial: true
+    slide-number: true
+    pointer:
+      pointerSize: 32
     incremental: false 
     chalkboard:
       theme: whiteboard
@@ -19,6 +24,7 @@ knitr:
     echo: true
     eval: true
     message: false
+    code-fold: true
     warnings: false
     comment: "#>" 
     
@@ -36,351 +42,470 @@ editor: source
 
 ## R Packages
 
--   csucistats
+```{r}
+#| echo: false
+#| eval: true
+
+library(csucistats)
+library(tidyverse)
+trashwheel <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-03-05/trashwheel.csv')
+
+theme_set(theme_bw())
+
+```
+
+-   rcistats
 -   tidyverse
 
+## Motivating Example
 
-# The Great American Coffee Taste Test
-
-## Background
-
-In October 2023, [James Hoffman](https://www.youtube.com/watch?v=bMOOQfeloH0) and [Cometeer](https://cometeer.com/pages/the-great-american-coffee-taste-test) held the "Great American Coffee Taste Test" on YouTube, asking viewers to fill out a survey and coffee ordered from Cometeer.
-
-## Data
-
-The data is part of [DSLC](https://dslc.io/) [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday) program where data sets are provided to help data science learners how to create graphics.
-
-Information on the data sets variables (columns) can be found [here](https://github.com/rfordatascience/tidytuesday/blob/master/data/2024/2024-05-14/readme.md).
-
-## Data
-
-```{r}
-#| code-fold: true
-library(csucistats)
-library(ggtricks)
-library(tidyverse)
-library(ThemePark)
-library(DT)
-coffee <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-05-14/coffee_survey.csv")
-datatable(slice_sample(coffee, n = 10), options = list(dom = "p", pageLength = 5))
-
+```{=html}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Zzjw-Pw5jwQ?si=WUBQTifP1TNSxDoJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ```
 
-# Categorical Data
+# Central Tendency
 
-## Categorical Data
+## Central Tendency
 
-Categorical data are data recordings that represented a category.
+# Variation
 
-::: fragment
-Data may be recorded as a "character" or "string" data.
-:::
+## Variation
 
-::: fragment
-Data may be recorded as a whole number, with an attached code book indicating the categories each number belongs to.
-:::
+# Summary Statistics
 
-## Examples of Categorical Data
-
-::: incremental
-
--   Are you a student?
-
--   What city do you live in?
-
--   What is your major?
-
-:::
-
-## Likert Scale
-
-Likert scales are the rating systems you may have answered in surveys.
-
-::: fragment
-1.    Strongly Disagree
-2.    Disagree
-3.    Neutral
-4.    Agree
-5.    Strongly Agree
-:::
-
-## Likert Scales
-
-Likert scales may be treated as numerical data if the jumps between scales are equal.
-
-## Summarizing Categorical Data
-
-Once we have the data, how do we summarize it to other people.
-
-# Continguency Tables
-
-## Continguency Tables
-
-Continguency tables display how often a category is seen in the data.
-
-::: fragment
-There are two types of statistics that are reported in a table, the frequency and proportion. 
-:::
-
-
-## Frequencey
-
-Frequency represents the count of observing a specific category in your sample. 
-
-```{r}
-#| echo: false
-sample(coffee$cups, 10)
-```
-
-## Proportions (relative frequencey)
-
-Proportions represent the percentage that the category represents the sample.
-
-::: fragment
-This allows you to generalize your sample to the population, regardless of sample size.
-:::
-
-## Continguency Tables in R
-
-The variable `caffeine` indicates how much caffeine a participant prefers.
+## What is numerical data?
 
 ```{r}
 #| echo: true
+#| eval: true
 
-cat_stats(coffee$caffeine)
+trashwheel$PlasticBottles
 ```
 
 
-# Bar Plots
+## Summary Statistics
 
-## Plotting in R
+Summary statistics are used to describe the distribution of data.
 
-Plotting in R can be done via the [ggplot2](https://ggplot2.tidyverse.org/), a powerful library based on the [Grammar of Graphics](https://link.springer.com/book/10.1007/0-387-28695-0).
+## Central Tendency
 
-## Plotting in R
+Central tendency is a statistical concept that refers to the central or typical value around which a set of data points tends to cluster. It is used to summarize and describe a data set by identifying a single representative value that provides insights into the data's overall characteristics.
 
-1.    You need to create a base plot using the `ggplot()`
-2.    Use the `+` to change the look of the base plot 
-3.    Indicate how to transform the base plot to the desired plot
-  1.    `geom_*`
-  2.    `stat_*`
-4.    Change the look of the plot with other functions
-5.    Use a `theme_*` function to add a theme to the plot
+## Variation
 
-## Bar Plots
+Variation in statistics refers to the extent to which data points in a dataset deviate or differ from a central tendency measure. Understanding variation is crucial for making informed decisions, drawing meaningful conclusions, and assessing the reliability of statistical analyses.
 
-Bar Plots can be used to display the frequency or proportions on the data.
+## Minimum
+
+The minimum (min) is the smallest value in the data.
+
+## Maximum
+
+The maximum (max) is the largest value in the data.
+
+## Quartiles
+
+Quartiles are three values (Q1, Q2, Q3) that divides the data into four subsets.
+
+::: fragment
+![](https://i.postimg.cc/p2BbKK5t/image.png){fig-align="center"}
+:::
+
+## Q1
+
+Q1 is the value signifying that a quarter of the data is lower than it.
+
+## Q2 - Median
+
+Q2 is the value signifying that half of the data is below it.
+
+::: fragment
+The median also represents the central tendency of the data.
+:::
+
+## Q3
+
+Q3 is the value signifying that 3 quarters of the data is below it.
+
+## Interquartile Range
+
+::: fragment
+$$
+IQR = Q_3 - Q_1
+$$
+:::
+
+## Range
+
+::: fragment
+$$
+R = \mathrm{max} - \mathrm{min}
+$$
+:::
+
+## How to identify the quartiles?
+
+1.  Sort the data
+2.  ID Max and Min
+3.  Find the amount of data the makes a quarter:
+    1.  $K=N/4$
+4.  Create 4 groups using the sorted data
+    1.  group by data size
+    2.  If $K$ has a decimal, the $Kth$ value is quartile of each group.
+
+## Mean
+
+Describe how you will find the mean of these numbers:
 
 ```{r}
 #| echo: false
 
-ggplot(coffee) +
-  geom_bar(aes(caffeine))
+rpois(5, 15)
+
 ```
 
-## Frequency Bar Plots in R
+## Mean
+
+The mean is another measurement for central tendency.
+
+$$
+\bar X = \frac{1}{n}\sum^n_{i=1}X_i
+$$
+
+-   $n$: total data points
+
+-   $X_i$: data points
+
+-   $i$: indexing data
+
+-   $\sum$: add all from first (bottom) to last (up)
+
+## Variance
+
+The variance is a measurement on the average squared distance the data points are from the central tendency.
+
+$$
+s^2 = \frac{1}{n-1}\sum^n_{i=1}(X_i-\bar X)^2
+$$
+
+## Standard Deviation
+
+The standard deviation is a measurement on the average distance the data points are from the central tendency.
+
+$$
+s=\sqrt{s^2}
+$$
+
+
+## Outliers
+
+These are data points that seem to be highly distant from all other variables.
+
+::: fragment
+![](https://miro.medium.com/v2/resize:fit:697/0*_k9tUMfs2P4CGUA3.png)
+:::
+
+# Numerical Statistics in R
+
+## Numerical Statistics in R
+
+## Mean
 
 ```{r}
 #| echo: true
 #| eval: false
 
-ggplot(data = DATA, aes(x = VARIABLE)) +
-  geom_bar()
+mean(DATA$VAR)
 ```
 
-## Frequency Bar Plots in R
 
+## Median
+
+```{r}
+#| echo: true
+#| eval: false
+
+median(DATA$VAR)
+```
+
+## Standard Deviation
+
+```{r}
+#| echo: true
+#| eval: false
+
+sd(DATA$VAR)
+```
+
+## Variance
+
+```{r}
+#| echo: true
+#| eval: false
+
+var(DATA$VAR)
+```
+
+## Quartiles
+
+```{r}
+#| echo: true
+#| eval: false
+
+quantile(DATA$VAR, probs = c(0.25, 0.5, 0.75))
+
+```
+
+
+## Max and Min
+
+```{r}
+#| echo: true
+#| eval: false
+
+max(DATA$VAR)
+min(DATA$VAR)
+
+```
+
+## Summary Statistics
+
+```{r}
+#| echo: true
+#| eval: false
+num_stats(DATA$VAR)
+```
+
+## Mr. Trash Wheel
+
+```{r}
+num_stats(trashwheel$PlasticBottles)
+```
+
+# Data Visualization
+
+## Histogram
+
+A histogram is a graphical representation of the distribution or frequency of data points in a dataset. It provides a visual way to understand the shape, central tendency, and spread of a dataset by dividing the data into intervals or bins and showing how many data points fall into each bin as a bar.
+
+## Histogram R Code
+
+```{r}
+#| eval: false
+#| echo: true
+
+ggplot(DATA, aes(VARIABLE)) +
+  geom_histogram(bins = X)
+```
+
+
+## Histogram
+
+```{r}
+#| code-fold: true
+#| eval: true
+y <- rnorm(1000)
+ggplot(tibble(y), aes(y)) +
+  geom_histogram(bins = 15)
+
+```
+
+## Histogram
 
 ```{r}
 #| code-fold: true
 #| eval: true
 
-ggplot(coffee, aes(caffeine)) +
-  geom_bar()
+y <- rgamma(1000, 2)
+ggplot(tibble(y), aes(y)) +
+  geom_histogram(bins = 15)
+
+
 ```
 
-
-## Relative Frequency Bar Plots in R
-
-```{r}
-#| echo: true
-#| eval: false
-
-ggplot(data = DATA, aes(x = VARIABLE, y = after_stat(prop), group = 1)) +
-  geom_bar()
-```
-
-## Relative Frequency Bar Plots in R
+## Histograms
 
 ```{r}
 #| code-fold: true
 #| eval: true
 
-ggplot(coffee, aes(caffeine, after_stat(prop), group = 1)) +
-  geom_bar()
+y <- rbeta(1000, 5, 1)
+ggplot(tibble(y), aes(y)) +
+  geom_histogram(bins = 15)
 ```
 
-# Cross-Tabulation
-
-## Data
-
-The variable `taste` indicates if the participants like the taste of coffee.
+## Histograms
 
 ```{r}
-cat_stats(coffee$taste)
+#| code-fold: true
+#| eval: true
+y <- rbinom(1000, 1, 0.4)
+z <- (y == 0) * rnorm(1000, 23) + (y == 1) * rnorm(1000, 27)
+ggplot(tibble(z), aes(z)) +
+  geom_histogram(bins = 15)
 ```
 
-## Cross-Tabulation
-
-**Cross-tabulations**, also known as **contingency tables**, are statistical tools used to analyze the relationship between two or more categorical variables by displaying their frequency distribution in a table format. Each cell in the table represents the count or frequency of observations that fall into a particular combination of categories for the variables.
-
-## Key Features of Cross-Tabulations
-
-1. **Rows and Columns**: 
-   - Rows represent the categories of one variable.
-   - Columns represent the categories of another variable.
-2. **Cells**:
-   - Each cell displays the frequency or count of data points that belong to the intersection of a row and column category.
-3. **Margins**:
-   - Row and column totals provide summaries for each variable.
-   - The grand total shows the overall sample size.
-
-
-## Types of Proportions in Cross-Tabulations
-
-1. **Row Proportions**: Show the percentage of each row total represented by a cell.
-2. **Column Proportions**: Show the percentage of each column total represented by a cell.
-3. **Table Proportions**: Show the percentage of the overall total represented by a cell.
-
-
-## Table Proportions
-
-Table proportions in cross-tabulations refer to the relative frequency or percentage of counts within the entire table, calculated by dividing each cell’s count by the total sum of all counts in the table. These proportions allow you to examine the contribution of each cell to the overall data set.
-
-## Table Proportions
+## Mr. Trash Wheel
 
 ```{r}
-cat_stats(coffee$caffeine, coffee$taste, prop = "table")
+ggplot(trashwheel, aes(PlasticBottles)) +
+  geom_histogram()
 ```
 
-## Row Proportions
 
-Row proportions refer to the relative frequency or percentage of counts within each row of a contingency table. In a cross-tabulation, row proportions allow you to compare how the distribution of one variable varies within each category of another variable, within a row.
 
-## Row Proportions
+## Box Plot
 
-```{r}
-cat_stats(coffee$caffeine, coffee$taste, prop = "row")
-```
+A box plot, also known as a box-and-whisker plot, is a graphical representation of the distribution and key statistical characteristics of a dataset. It provides a visual summary of the data's central tendency, spread, and potential outliers.
 
-## Column Proportions
+## Box Plot
 
-Column proportions refer to the relative frequency or percentage of counts within each column of a contingency table. These proportions allow you to compare how the distribution of one variable varies across different categories of another variable, within a column.
+![](https://miro.medium.com/max/9000/1*2c21SkzJMf3frPXPAR_gZA.png){fig-align="center"}
 
-## Column Proportions
-
-```{r}
-cat_stats(coffee$caffeine, coffee$taste, prop = "col")
-```
-
-## Stacked Bar Plot in R
+## Box Plot R Code
 
 ```{r}
 #| echo: true
 #| eval: false
 
-ggplot(DATA, aes(x = VAR1, y = after_stat(count), fill = VAR2)) +
-  geom_bar()
+ggplot(DATA, aes(VARIABLE)) +
+  geom_boxplot()
 
 ```
 
-## Stacked Bar Plot in R
+## Box Plot
+
+```{r}
+ggplot(trashwheel, aes(PlasticBottles)) +
+  geom_boxplot() 
+
+```
+
+## Box Plot
+
+```{r}
+ggplot(trashwheel, aes(y = PlasticBottles)) +
+  geom_boxplot() 
+```
+
+## Dot Plots
+
+Dot Plots are similar to histograms, but they incorporate dots to count how many data points fall within bins.
+
+
+## Dot Plots in R
 
 ```{r}
 #| echo: true
-#| eval: true
-ggplot(coffee, aes(x = caffeine, y = after_stat(count), fill = taste)) +
-  geom_bar()
+#| eval: false
+
+ggplot(DATA, aes(VARIABLE)) +
+  geom_dotplot(binwidth = X)
+
 ```
 
-## Stacked Bar Plot in R
+
+## Dot Plots
 
 ```{r}
-#| echo: true
+#| code-fold: true
 #| eval: true
-ggplot(coffee, aes(y = caffeine, x = after_stat(count), fill = taste)) +
-  geom_bar()
+
+ggplot(trashwheel, aes(PlasticBottles)) +
+  geom_dotplot(binwidth = 100)
 
 ```
 
 
-# Other Plots
+# Scatter Plots
 
-## Pie Charts
+## Scatter Plots
 
-A **pie chart** is a circular statistical graphic divided into slices, where each slice represents a proportion or percentage of the whole. The size of each slice is proportional to the relative frequency or magnitude of the category it represents.
+Scatter plots demonstrate how two variables behave with each other. They can tell you any postive or negative trends, if they exist, with the combination of the plots.
 
-## Pie Charts
+## Positive Relationship
 
 ```{r}
 #| echo: false
 #| eval: true
-coffee_pie <- cat_stats(coffee$caffeine, tbl_df = TRUE)$table
-ggplot(coffee_pie, aes(cat = Category, val = n, fill = Category)) +
-  geom_pie()
+
+x <- rnorm(1000, mean = 3, sd = 1)
+y <- 4 + 4 * x + rnorm(1000, sd = 2.5)
+
+ggplot(tibble(x, y), aes(x, y)) +
+  geom_point() + 
+  theme_bw()
+
 ```
 
+## Negative Relationship
 
-## Key Features of Pie Charts
-1. **Circular Format**: 
-   - The chart is shaped like a circle, symbolizing a whole (100% or 1).
-2. **Slices**:
-   - Each slice corresponds to a category and its size represents the contribution of that category to the total.
-3. **Labels**:
-   - Slices are often labeled with the category name and the percentage or value they represent.
+```{r}
+#| echo: false
+#| eval: true
 
+x <- rnorm(1000, mean = 3, sd = 1)
+y <- 4 - 4 * x + rnorm(1000, sd = 2.5)
 
-## Pie Chart in R
+ggplot(tibble(x, y), aes(x, y)) +
+  geom_point() + 
+  theme_bw()
+
+```
+
+## No Relationship
+
+```{r}
+#| echo: false
+#| eval: true
+
+x <- rnorm(1000, mean = 3, sd = 1)
+y <- 4 + rnorm(1000, sd = 2.5)
+
+ggplot(tibble(x, y), aes(x, y)) +
+  geom_point() + 
+  theme_bw()
+
+```
+## Weak Positive or Negative Relationship
+
+```{r}
+#| echo: false
+#| eval: true
+library(patchwork)
+x <- rnorm(1000, mean = 3, sd = 1)
+y <- 4 + 2 * x + rnorm(1000, sd = 6)
+yy <- 4 - 2 * x + rnorm(1000, sd = 6)
+
+p1 <- ggplot(tibble(x, y = y), aes(x, y)) +
+  geom_point() +
+  ggtitle("Weak Positive") +
+  theme_bw()
+
+p2 <- ggplot(tibble(x, y = yy), aes(x, y)) +
+  geom_point() + 
+  ggtitle("Weak Negative") +
+  theme_bw()
+
+p1 + p2
+
+```
+
+## Scatter Plots in R
 
 ```{r}
 #| echo: true
 #| eval: false
-df_pie <- cat_stats(coffee$caffeine, tbl_df = TRUE)$table
-ggplot(df_pie, aes(cat = Category, val = n, fill = Category)) +
-  geom_pie()
+
+ggplot(DATA, aes(x = VAR1, y = VAR2)) +
+  geom_point()
+
 ```
 
-## Pie Chart in R
+## Mr. Trash Wheel
 
 ```{r}
-#| echo: true
-#| eval: false
-coffee_pie <- cat_stats(coffee$caffeine, tbl_df = TRUE)$table
-ggplot(coffee_pie, aes(cat = Category, val = n, fill = Category)) +
-  geom_pie()
+ggplot(trashwheel, aes(PlasticBottles, PlasticBags)) +
+  geom_point()
 ```
 
-## Mosaic Plots
-
-A **mosaic plot** is a graphical representation of two categorical variables. It uses rectangles to visualize the proportions of data categories while simultaneously showing the relationships between multiple variables. The size of each rectangle corresponds to the relative frequency or proportion of the data in a particular category combination.
-
-## Key Features of Mosaic Plots
-1. **Rectangular Tiles**:
-   - The plot is divided into rectangles, with each tile representing a unique combination of categories.
-2. **Proportional Areas**:
-   - The area of each rectangle is proportional to the frequency or proportion of the data it represents.
-3. **Hierarchical Arrangement**:
-   - Variables are arranged hierarchically along the axes, with the tiles subdivided to represent relationships between variables.
-4. **Color Coding (Optional)**:
-   - Different colors can be used to highlight specific patterns, emphasize groups, or indicate significance.
-
-
-# Theming
-
-## Themes
-
-The R packages `ThemePark` and `ggthemes` allows you to change the overall look of a plot.
-
-::: fragment
-All you need to do is add the theme to the plot.
-:::
