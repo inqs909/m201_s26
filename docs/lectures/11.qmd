@@ -45,7 +45,7 @@ editor: source
 ```{r}
 #| include: false
 library(tidyverse)
-library(csucistats)
+library(rcistats)
 library(patchwork)
 library(emmeans)
 theme_set(theme_bw() + 

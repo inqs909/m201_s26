@@ -42,7 +42,7 @@ editor: source
 #| include: false
 
 library(tidyverse)
-library(csucistats)
+library(rcistats)
 library(broom)
 library(patchwork)
 

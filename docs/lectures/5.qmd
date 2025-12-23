@@ -36,9 +36,8 @@ editor: source
 ```{r}
 #| include: false
 library(tidyverse)
-library(csucistats)
+library(rcistats)
 library(ThemePark)
-library(palmerpenguins)
 penguins <- penguins |> drop_na()
 theme_set(theme_bw() + 
           theme(axis.text = element_text(size = 24),
@@ -66,7 +65,7 @@ Can be thought of as getting it less wrong when taking an educated guess.
 
 ```{r}
 #| code-fold: true
-ggplot(penguins, aes(body_mass_g)) +
+ggplot(penguins, aes(body_mass)) +
   geom_density() 
 
 ```
@@ -75,7 +74,7 @@ ggplot(penguins, aes(body_mass_g)) +
 
 ```{r}
 #| code-fold: true
-ggplot(penguins, aes(body_mass_g, fill = species)) +
+ggplot(penguins, aes(body_mass, fill = species)) +
   geom_density(alpha = .5)
 ```
 
@@ -92,7 +91,7 @@ $$
 
 ```{r}
 #| code-fold: true
-ggplot(penguins, aes(body_mass_g)) +
+ggplot(penguins, aes(body_mass)) +
   geom_density()
 ```
 
@@ -235,7 +234,7 @@ lm(Y ~ 1, data = DATA)
 ## Modeling Body Mass in Penguins
 
 ```{r}
-lm(body_mass_g ~ 1, data = penguins)
+lm(body_mass ~ 1, data = penguins)
 ```
 
 ::: fragment
@@ -251,7 +250,7 @@ $$
 
 ```{r}
 #| code-fold: true
-ggplot(penguins, aes(body_mass_g)) +
+ggplot(penguins, aes(body_mass)) +
   geom_density() +
   geom_vline(xintercept = 4207)
 ```
@@ -283,7 +282,7 @@ Thus, the linear model is born.
 
 ```{r}
 #| code-fold: true
-ggplot(penguins, aes(body_mass_g)) +
+ggplot(penguins, aes(body_mass)) +
   geom_density()
 ```
 
@@ -291,7 +290,7 @@ ggplot(penguins, aes(body_mass_g)) +
 
 ```{r}
 #| code-fold: true
-ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, fill = after_stat(level))) +
+ggplot(penguins, aes(x = flipper_len, y = body_mass, fill = after_stat(level))) +
   stat_density_2d(geom = "polygon")
 ```
 
@@ -313,7 +312,7 @@ $$
 #| code-fold: true
 #| eval: true
 
-ggplot(penguins, aes(flipper_length_mm, body_mass_g)) + 
+ggplot(penguins, aes(flipper_len, body_mass)) + 
   geom_point() 
 ```
 
@@ -323,7 +322,7 @@ ggplot(penguins, aes(flipper_length_mm, body_mass_g)) +
 #| code-fold: true
 #| eval: true
 
-ggplot(penguins, aes(flipper_length_mm, body_mass_g)) + 
+ggplot(penguins, aes(flipper_len, body_mass)) + 
   geom_point() +
   stat_smooth(method = "lm", se = F) 
 ```
@@ -374,7 +373,7 @@ lm(Y ~ X, data = DATA)
 Y: "body_mass_g"; X: "flipper_length_mm"
 
 ```{r}
-lm(body_mass_g ~ flipper_length_mm, data = penguins)
+lm(body_mass ~ flipper_len, data = penguins)
 ```
 
 
@@ -449,6 +448,7 @@ predict_df <- data.frame(X = VAL)
 predict(xlm,
         predict_df)
 ```
+
 - `X`: Name Predictor Variable of Interest in data frame `DATA`
 - `Y`: Name Outcome Variable of Interest in data frame `DATA`
 - `DATA`: Name of the data frame
@@ -466,7 +466,7 @@ Predict the body mass for a gentoo penguin.
 ### Code
 
 ```{r}
-xlm <- lm(body_mass_g ~ species,
+xlm <- lm(body_mass ~ species,
             data = penguins)
 
 xlm
@@ -491,13 +491,13 @@ Predict the body mass for a penguin with a flipper length of 190.
 ### Code
 
 ```{r}
-xlm <- lm(body_mass_g ~ flipper_length_mm,
+xlm <- lm(body_mass ~ flipper_len,
             data = penguins)
 
 
 xlm
 
-predict_df <- data.frame(flipper_length_mm = 190)
+predict_df <- data.frame(flipper_len = 190)
 
 predict(xlm,
         predict_df)
@@ -519,7 +519,7 @@ Extrapolation is the process of estimating a value beyond the range of observed 
 #| code-fold: true
 #| eval: true
 
-ggplot(penguins, aes(flipper_length_mm, body_mass_g)) + 
+ggplot(penguins, aes(flipper_len, body_mass)) + 
   xlim(160, 250) +
   ylim(2600, 7000) +
   geom_point() +

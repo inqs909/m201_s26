@@ -1,0 +1,71 @@
+---
+title: "R Packages"
+format: html
+description: "A list of R packages used to run this course."
+---
+
+### tidyverse
+
+```r
+install.packages("tidyverse")
+```
+
+### emmeans Package
+
+```r
+install.packages("emmeans")
+```
+
+### broom Package
+
+```r
+install.packages("broom")
+```
+
+## Data Packages
+
+### taylor
+
+```r
+install.packages("taylor")
+```
+
+### kmed 
+
+```r
+install.packages("kmed")
+```
+
+
+## Miscellaneous Packages
+
+### latex2exp
+
+```r
+install.packages("latex2exp")
+```
+
+### patchwork
+
+```r
+install.packages("patchwork")
+```
+
+### DT
+
+```r
+install.packages("DT")
+```
+
+### ThemePark
+
+```r
+install.packages("remotes")
+remotes::install_github("MatthewBJane/ThemePark")
+```
+
+### ggthemes
+
+```r
+install.packages("ggthemes")
+```

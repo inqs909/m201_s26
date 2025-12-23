@@ -1,5 +1,7 @@
 ---
 title: "Sampling Distribution"
+description: |
+  Discuss for sampling distributions.
 format:
   revealjs:
     width: 1200
@@ -41,9 +43,7 @@ editor: source
 library(MASS)
 library(tidyverse)
 library(latex2exp)
-library(csucistats)
-library(waffle)
-library(patchwork)
+library(rcistats)
 
 theme_set(theme_bw() + 
             theme(

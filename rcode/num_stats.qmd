@@ -1,0 +1,469 @@
+---
+title: "Numerical Data"
+description: "Descriptive stats & visualizations for quantitative variables (mean/median, spread, hist/box/scatter)"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    code-fold: false
+    smooth-scroll: true
+editor: source
+image: img/num.png
+knitr:
+  opts_chunk: 
+    echo: true
+    eval: true
+    message: true
+    error: true
+    warnings: false
+    comment: "#>" 
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(tidyverse)
+library(rcistats)
+theme_set(theme_bw())
+```
+
+# Introduction
+
+- Identify **numerical (quantitative)** variables and read their distributions.
+- Compute core descriptive statistics: **min, Q1, median (Q2), mean, Q3, max, IQR, variance, sd**.
+- Make and interpret **histograms**, **box plots**, **dot plots**, and **scatter plots**.
+- Recognize **outliers** and what they may indicate.
+- Use copy‑paste **templates** and replace placeholders with your data/columns.
+
+::: callout-tip
+Use the **Copy** button on each code chunk. Most topics have a **template** first and a **worked example** using the *Mr. Trash Wheel* dataset.
+:::
+
+# Google Colab Setup
+
+Copy the following code and put it in a code cell in Google Colab. Only do this if you are using a completely new notebook.
+
+```{r}
+#| eval: false
+# This code will load the R packages we will use
+install.packages(c("rcistats"),
+                 repos = c("https://inqs909.r-universe.dev", "https://cloud.r-project.org"))
+library(rcistats)
+library(tidyverse)
+
+
+# Uncomment and run for themes
+# csucistats::install_themes()
+# library(ThemePark)
+# library(ggthemes)
+```
+
+
+## Data for this handout
+
+We will use the **Mr. Trash Wheel** dataset from TidyTuesday.
+
+```{r}
+#| label: load-data
+#| code-fold: true
+#| message: false
+trashwheel <- read_csv(
+  "https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-03-05/trashwheel.csv")
+```
+
+```{r}
+#| echo: false
+DT::datatable(dplyr::slice_sample(trashwheel, n = 10), options = list(dom = "p", pageLength = 5))
+```
+
+## Using the templates: what to change
+
+Use this legend whenever you see a **Template** code block.
+
+- **`DATA`** → replace with your data frame/tibble name (e.g., `trashwheel`).
+
+- **`VAR`** → replace with the **single numerical variable** you want (e.g., `PlasticBottles`).
+
+  - In `ggplot(DATA, aes(x = VAR))`, write `ggplot(trashwheel, aes(x = PlasticBottles))`.
+
+  - In functions that take a vector (e.g., `mean(DATA$VAR)`), write `mean(trashwheel$PlasticBottles)`.
+
+- **`VAR1`** and **`VAR2`** → replace with the **x** and **y** variables for scatter plots (e.g., `PlasticBottles`, `PlasticBags`).
+
+- **`bins = X`**, **`binwidth = X`** → choose a sensible number/width for your data scale.
+
+
+### Quick replace checklist
+1. Swap **`DATA`** for your data frame (usually `trashwheel`).
+
+2. Swap **`VAR`** for your numerical column (e.g., `PlasticBottles`).
+
+3. For scatter plots, set **`VAR1`** and **`VAR2`**.
+
+4. Adjust **`bins`** or **`binwidth`** for histograms/dot plots to show the distribution clearly.
+
+
+# Summary (descriptive) statistics
+
+## What is numerical data?
+
+Numerical (quantitative) variables record numbers for which arithmetic makes sense (e.g., items collected, weights, costs).
+
+**Example (first few values):**
+```{r}
+head(trashwheel$PlasticBottles)
+```
+
+## Central tendency
+
+**Central tendency** summarizes a distribution with a representative value (mean or median).
+
+- **Median (Q2)** is the 50th percentile: half the data lie below it.
+
+- **Mean** is the arithmetic average: sensitive to outliers/skew.
+
+
+## Variation (spread)
+
+**Variation** describes how far data tend to fall from the center.
+
+- **Range** = max − min
+
+- **IQR** = Q3 − Q1 (middle 50%)
+
+- **Variance/SD** measure average squared/root‑mean‑squared distance from the mean.
+
+
+## Summary Statistics
+
+**Template:**
+
+```r
+num_stats(DATA$VAR)           # five-number summary + mean
+```
+
+**Example:**
+
+```{r}
+num_stats(trashwheel$PlasticBottles)
+```
+
+**Alternative:**
+
+```r
+summary(DATA$VAR)           # five-number summary + mean
+```
+
+
+## Mean, median, variance, sd
+
+**Template:**
+
+```r
+mean(DATA$VAR)
+median(DATA$VAR)
+var(DATA$VAR)
+sd(DATA$VAR)
+```
+
+**With Missing Data:**
+
+```r
+mean(DATA$VAR, na.rm = TRUE)
+median(DATA$VAR, na.rm = TRUE)
+var(DATA$VAR, na.rm = TRUE)
+sd(DATA$VAR, na.rm = TRUE)
+```
+
+**Example:**
+
+```{r}
+mean(trashwheel$PlasticBottles, na.rm = TRUE)
+median(trashwheel$PlasticBottles, na.rm = TRUE)
+var(trashwheel$PlasticBottles, na.rm = TRUE)
+sd(trashwheel$PlasticBottles, na.rm = TRUE)
+```
+
+
+
+
+## Quantiles
+
+**Template:**
+
+```r
+quantile(DATA$VAR, probs = c(0.25, 0.5, 0.75))
+```
+
+**Example:**
+
+```{r}
+quantile(trashwheel$PlasticBottles, 
+         probs = c(0.25, 0.5, 0.75), 
+         na.rm = TRUE)
+```
+
+
+# Data visualization
+
+## Histograms
+
+A **histogram** shows the distribution by binning values and counting how many fall in each bin.
+
+**Template (Frequency-based):**
+
+```r
+ggplot(DATA, aes(x = VAR)) +
+  geom_histogram(bins = X) 
+```
+
+**Example:**
+
+```{r}
+ggplot(trashwheel, aes(x = PlasticBottles)) +
+  geom_histogram(bins = 20)
+```
+
+
+**Template (Density-based):**
+
+```r
+ggplot(DATA, aes(x = VAR, y = after_stat(density))) +
+  geom_histogram(bins = X)
+```
+
+
+
+**Example:**
+
+```{r}
+ggplot(trashwheel, aes(x = PlasticBottles, y = after_stat(density))) +
+  geom_histogram(bins = 20)
+```
+
+
+## Density plot
+
+A **density plot** is a way to visualize the distribution of a continuous variable — it shows where data values are concentrated (dense) and where they are sparse.
+
+**Template:**
+
+```r
+ggplot(DATA, aes(x = VAR)) +
+  geom_density()
+```
+
+**Example:**
+
+```{r}
+ggplot(trashwheel, aes(x = PlasticBottles)) +
+  geom_density()
+```
+
+## Box plots
+
+A **box plot** summarizes median, quartiles, and potential outliers.
+
+**Template:**
+
+```r
+ggplot(DATA, aes(VAR)) +
+  geom_boxplot()
+```
+
+**Example:**
+
+```{r}
+ggplot(trashwheel, aes(PlasticBottles)) +
+  geom_boxplot() 
+```
+
+## Dot plots
+
+A **dot plot** stacks dots within bins to show distribution.
+
+**Template:**
+
+```r
+ggplot(DATA, aes(x = VAR)) +
+  geom_dotplot(binwidth = X)  # choose a sensible binwidth
+```
+
+**Example:**
+
+```{r}
+ggplot(trashwheel, aes(x = PlasticBottles)) +
+  geom_dotplot(binwidth = 100)
+```
+
+## Scatter plots (two numerical variables)
+
+A **scatter plot** reveals association, trend direction, and form.
+
+**Template:**
+
+```r
+ggplot(DATA, aes(x = VAR1, y = VAR2)) +
+  geom_point()
+```
+
+**Example:**
+
+```{r}
+ggplot(trashwheel, aes(x = PlasticBottles, y = PlasticBags)) +
+  geom_point()
+```
+
+**Add a trend line (optional):**
+
+```{r}
+ggplot(trashwheel, aes(x = PlasticBottles, y = PlasticBags)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = TRUE)
+```
+
+# Quick troubleshooting
+
+- **Lots of NAs?** Add `na.rm = TRUE` where available or filter rows with `drop_na(VAR)`.
+
+- **Histogram looks too blocky/smooth?** Tune `bins` or `binwidth`.
+
+- **Weird axis or units?** Check for unit conversions or outliers dominating the scale.
+
+- **Outliers change the mean a lot.** Consider reporting **median** or using **robust** summaries.
+
+
+# Appendix: minimal templates (copy‑paste)
+
+Each template below has **placeholders** in ALL CAPS (e.g., `DATA`, `VAR`, `VAR1`, `VAR2`). Replace them with your dataset name and variable names.
+
+
+## Basic Statistics
+
+```r
+# Mean / Median / Var / SD
+mean(DATA$VAR)
+median(DATA$VAR)
+var(DATA$VAR)
+sd(DATA$VAR)
+```
+
+- `DATA` → the name of your dataset (e.g., `trashwheel`).
+- `VAR` → a single categorical variable (e.g., `PlasticBottles`).
+
+
+```r
+# Quantiles
+quantile(DATA$VAR, probs = c(0.25, 0.5, 0.75))
+```
+
+- `DATA` → the name of your dataset (e.g., `trashwheel`).
+- `VAR` → a single categorical variable (e.g., `PlasticBottles`).
+
+## Summary Statistics (csucistats)
+
+```r
+num_stats(DATA$VAR)
+```
+
+- `DATA` → the name of your dataset (e.g., `trashwheel`).
+- `VAR` → a single categorical variable (e.g., `PlasticBottles`).
+
+## Histogram (Frequency-based)
+
+```r
+ggplot(DATA, aes(VAR)) + 
+    geom_histogram()
+```
+
+- `DATA` → the name of your dataset (e.g., `trashwheel`).
+- `VAR` → a single categorical variable (e.g., `PlasticBottles`).
+
+## Histogram (density-based)
+
+```r
+ggplot(DATA, aes(x = VAR, y = after_stat(density))) +
+  geom_histogram()
+```
+
+- `DATA` → the name of your dataset (e.g., `trashwheel`).
+- `VAR` → a single categorical variable (e.g., `PlasticBottles`).
+
+## Histogram (Frequency-based) with bins
+
+```r
+ggplot(DATA, aes(VAR)) + 
+    geom_histogram(bins = X)
+```
+
+- `DATA` → the name of your dataset (e.g., `trashwheel`).
+- `VAR` → a single categorical variable (e.g., `PlasticBottles`).
+- `X` → the number of bins (e.g., 15-30)
+
+
+## Histogram (Density-based) with bins
+
+```r
+ggplot(DATA, aes(x = VAR, y = after_stat(density))) +
+    geom_histogram(bins = X)
+```
+
+- `DATA` → the name of your dataset (e.g., `trashwheel`).
+- `VAR` → a single categorical variable (e.g., `PlasticBottles`).
+- `X` → the number of bins (e.g., 15-30)
+
+
+## Density Plot
+
+```r
+ggplot(DATA, aes(VAR)) + 
+    geom_density()
+```
+
+- `DATA` → the name of your dataset (e.g., `trashwheel`).
+- `VAR` → a single categorical variable (e.g., `PlasticBottles`).
+
+## Box plot
+
+```r
+ggplot(DATA, aes(VAR)) + 
+    geom_boxplot() 
+```
+
+- `DATA` → the name of your dataset (e.g., `trashwheel`).
+- `VAR` → a single categorical variable (e.g., `PlasticBottles`).
+
+## Dot plot
+
+```r
+ggplot(DATA, aes(x = VAR)) + 
+    geom_dotplot(binwidth = X)
+```
+
+- `DATA` → the name of your dataset (e.g., `trashwheel`).
+- `VAR` → a single categorical variable (e.g., `PlasticBottles`).
+
+## Scatter Plot
+
+```r
+ggplot(DATA, aes(x = VAR1, y = VAR2)) + 
+    geom_point()
+```
+
+- `DATA` → the name of your dataset (e.g., `trashwheel`).
+- `VAR1` → a single categorical variable (e.g., `PlasticBottles`).
+- `VAR2` → a single categorical variable (e.g., `PlasticBags`).
+
+## Scatter Plot + trend line
+
+```r
+ggplot(DATA, aes(x = VAR1, y = VAR2)) + 
+    geom_point() + 
+    geom_smooth(method = "lm", se = TRUE)
+```
+
+- `DATA` → the name of your dataset (e.g., `trashwheel`).
+- `VAR1` → a single categorical variable (e.g., `PlasticBottles`).
+- `VAR2` → a single categorical variable (e.g., `PlasticBags`).

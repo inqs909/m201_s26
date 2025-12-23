@@ -1,5 +1,6 @@
 ---
 title: "Installing R and Positron"
+subtitle: "Class Lecture"
 format:
   revealjs:
     scrollable: true

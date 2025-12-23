@@ -1,9 +1,11 @@
 {
-  "hash": "142f704ef2a98597040c63e681c25d09",
+  "hash": "447989f6896d21a400740bbf3c47a441",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"Welcome!\"\ndraft: true\nformat:\n  revealjs:\n    scrollable: true\n    theme: [default, styles.scss]\n    navigation-mode: vertical\n    controls-layout: bottom-right\n    controls-tutorial: true\n    incremental: false \n    chalkboard:\n      src: notes/chalkboard_1a.json\n      storage: chalkboard_pres\n      theme: whiteboard\n      chalk-width: 4\nknitr:\n  opts_chunk: \n    echo: true\n    eval: true\n    message: false\n    warnings: false\n    comment: \"#>\" \n    \nrevealjs-plugins:\n  - pointer\n  - verticator\n  \nfilters: \n  - reveal-header\n  - code-fullscreen\n  - reveal-auto-agenda\n  \nauto-agenda:\n  bullets: numbered\n  heading: Learning Outcomes\n  \neditor: visual\n---\n\n## Learning Outcomes\n",
-    "supporting": [],
+    "markdown": "---\ntitle: \"Welcome!\"\ndraft: true\nformat:\n  revealjs:\n    scrollable: true\n    theme: [default, styles.scss]\n    navigation-mode: vertical\n    controls-layout: bottom-right\n    controls-tutorial: true\n    incremental: false \n    chalkboard:\n      src: notes/chalkboard_1a.json\n      storage: chalkboard_pres\n      theme: whiteboard\n      chalk-width: 4\nknitr:\n  opts_chunk: \n    echo: true\n    eval: true\n    message: false\n    warnings: false\n    comment: \"#>\" \n    \nrevealjs-plugins:\n  - pointer\n  - verticator\n  \nfilters: \n  - reveal-header\n  - code-fullscreen\n  - reveal-auto-agenda\n  \nauto-agenda:\n  bullets: numbered\n  heading: Learning Outcomes\n  \neditor: source\n---\n\n## Learning Outcomes",
+    "supporting": [
+      "template_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],

@@ -6,7 +6,7 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
@@ -14,9 +14,9 @@
 <link href="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/grid-no-htext-1.0.0/grid_no_htext.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.31">
+  <meta name="generator" content="quarto-1.7.32">
 
-  <title>MATH 201 – Distribution Functions</title>
+  <title>MATH 201 – Simple Linear Regression</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -101,7 +101,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-18a2653b721b6eb23654738472aec010.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-3250d136a9637f5f47522e41b35ed4ce.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -204,798 +204,409 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Distribution Functions</h1>
+  <h1 class="title">Simple Linear Regression</h1>
 
 <div class="quarto-title-authors">
 </div>
 
+</section><section id="TOC">
+<nav role="doc-toc"> 
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a href="#/modeling-relationships" id="/toc-modeling-relationships">Modeling Relationships</a>
+<ul>
+<li><a href="#/explaining-variation" id="/toc-explaining-variation">Explaining Variation</a></li>
+<li><a href="#/explaining-variation-1" id="/toc-explaining-variation-1">Explaining Variation</a></li>
+<li><a href="#/variation-with-one-variable" id="/toc-variation-with-one-variable">Variation with One Variable</a></li>
+</ul></li>
+<li><a href="#/a-simple-model" id="/toc-a-simple-model">A Simple Model</a>
+<ul>
+<li><a href="#/generated-model" id="/toc-generated-model">Generated Model</a></li>
+<li><a href="#/a-simple-model-1" id="/toc-a-simple-model-1">A Simple Model</a></li>
+<li><a href="#/a-simple-model-2" id="/toc-a-simple-model-2">A Simple Model</a></li>
+<li><a href="#/notation" id="/toc-notation">Notation</a></li>
+<li><a href="#/the-simple-generated-model" id="/toc-the-simple-generated-model">The Simple Generated Model</a></li>
+<li><a href="#/observing-data" id="/toc-observing-data">Observing Data</a></li>
+<li><a href="#/estimated-line" id="/toc-estimated-line">Estimated Line</a></li>
+<li><a href="#/notation-1" id="/toc-notation-1">Notation</a></li>
+</ul></li>
+<li><a href="#/modelling-data" id="/toc-modelling-data">Modelling Data</a>
+<ul>
+<li><a href="#/indexing-data" id="/toc-indexing-data">Indexing Data</a></li>
+<li><a href="#/indexing-data-1" id="/toc-indexing-data-1">Indexing Data</a></li>
+<li><a href="#/data" id="/toc-data">Data</a></li>
+<li><a href="#/estimated-value" id="/toc-estimated-value">Estimated Value</a></li>
+<li><a href="#/estimation" id="/toc-estimation">Estimation</a></li>
+<li><a href="#/residuals" id="/toc-residuals">Residuals</a></li>
+<li><a href="#/estimation-in-r" id="/toc-estimation-in-r">Estimation in R</a></li>
+<li><a href="#/modeling-body-mass-in-penguins" id="/toc-modeling-body-mass-in-penguins">Modeling Body Mass in Penguins</a></li>
+<li><a href="#/visualize" id="/toc-visualize">Visualize</a></li>
+</ul></li>
+<li><a href="#/linear-model" id="/toc-linear-model">Linear Model</a>
+<ul>
+<li><a href="#/linear-model-1" id="/toc-linear-model-1">Linear Model</a></li>
+<li><a href="#/visualization" id="/toc-visualization">Visualization</a></li>
+<li><a href="#/linear-model-2" id="/toc-linear-model-2">Linear Model</a></li>
+<li><a href="#/scatter-plot" id="/toc-scatter-plot">Scatter Plot</a></li>
+<li><a href="#/imposing-a-line" id="/toc-imposing-a-line">Imposing a Line</a></li>
+<li><a href="#/modelling-the-data" id="/toc-modelling-the-data">Modelling the Data</a></li>
+<li><a href="#/linear-model-3" id="/toc-linear-model-3">Linear Model</a></li>
+<li><a href="#/sse" id="/toc-sse">SSE</a></li>
+<li><a href="#/fitting-a-model-in-r" id="/toc-fitting-a-model-in-r">Fitting a Model in R</a></li>
+<li><a href="#/example" id="/toc-example">Example</a></li>
+<li><a href="#/interpretation-of-hatbeta_0" id="/toc-interpretation-of-hatbeta_0">Interpretation of <span class="math inline">\(\hat\beta_0\)</span></a></li>
+<li><a href="#/interpreting-example" id="/toc-interpreting-example">Interpreting Example</a></li>
+<li><a href="#/interpretation-of-hat-beta_1" id="/toc-interpretation-of-hat-beta_1">Interpretation of <span class="math inline">\(\hat \beta_1\)</span></a></li>
+<li><a href="#/interpreting-example-1" id="/toc-interpreting-example-1">Interpreting Example</a></li>
+</ul></li>
+<li><a href="#/prediction" id="/toc-prediction">Prediction</a>
+<ul>
+<li><a href="#/statistical-model" id="/toc-statistical-model">Statistical Model</a></li>
+<li><a href="#/prediction-1" id="/toc-prediction-1">Prediction</a></li>
+<li><a href="#/prediction-in-r" id="/toc-prediction-in-r">Prediction in R</a></li>
+<li><a href="#/example-1" id="/toc-example-1">Example 1</a></li>
+<li><a href="#/example-2-1" id="/toc-example-2-1">Example 2</a></li>
+<li><a href="#/interpolation" id="/toc-interpolation">Interpolation</a></li>
+<li><a href="#/extrapolation" id="/toc-extrapolation">Extrapolation</a></li>
+<li><a href="#/extrapolation-1" id="/toc-extrapolation-1">Extrapolation</a></li>
+</ul></li>
+</ul>
+</nav>
 </section>
 <section>
-<section id="probability-theory" class="title-slide slide level1 agenda-slide center">
-<h1>Probability Theory</h1>
+<section id="modeling-relationships" class="title-slide slide level1 agenda-slide center">
+<h1>Modeling Relationships</h1>
 <div class="agenda">
 <ul>
 <li><div class="agenda-active">
-<p>Probability Theory</p>
+<p>Modeling Relationships</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Joint Probability</p>
+<p>A Simple Model</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Distribution Functions</p>
+<p>Modelling Data</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Normal Distribution</p>
+<p>Linear Model</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Empirical Rule</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Binomial Distribution</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Poisson Distribution</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Probability in R</p>
+<p>Prediction</p>
 </div></li>
 </ul>
 </div>
 </section>
-<section id="what-is-probability" class="slide level2">
-<h2>What is Probability?</h2>
-<p><strong>Probability</strong> is the measure of how likely an event is to occur. It ranges from 0 to 1:</p>
-<ul>
-<li><span class="math inline">\(P(A) = 0\)</span>: The event <span class="math inline">\(A\)</span> will definitely not happen.</li>
-<li><span class="math inline">\(P(A) = 1\)</span>: The event <span class="math inline">\(A\)</span> will definitely happen.</li>
-<li>Values between 0 and 1 represent varying degrees of likelihood.</li>
-</ul>
-</section>
-<section id="everyday-examples" class="slide level2">
-<h2>Everyday Examples</h2>
-<ul>
-<li>What’s the probability it will rain tomorrow?</li>
-<li>What are the chances of rolling a 6 on a standard die?</li>
-<li>How likely is it that a randomly chosen student has a GPA above 3.0?</li>
-</ul>
-</section>
-<section id="key-terms-and-definitions" class="slide level2">
-<h2>Key Terms and Definitions</h2>
-<div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1"><strong>Experiment</strong></a></li><li><a href="#tabset-1-2"><strong>Sample Space</strong></a></li><li><a href="#tabset-1-3"><strong>Event</strong></a></li><li><a href="#tabset-1-4"><strong>Prob. of an Event</strong></a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1">
-<p>An action or process that generates outcomes.<br>
-- Example: Rolling a die.</p>
-</div>
-<div id="tabset-1-2">
-<p>The set of all possible outcomes of an experiment.<br>
-- Example: For rolling a die, <span class="math inline">\(S = \{1, 2, 3, 4, 5, 6\}\)</span>.</p>
-</div>
-<div id="tabset-1-3">
-<p>A subset of the sample space, representing outcomes of interest.</p>
-<ul>
-<li>Example: Rolling an even number (<span class="math inline">\(A = \{2, 4, 6\}\)</span>).</li>
-</ul>
-</div>
-<div id="tabset-1-4">
-<p>The proportion of times an event is expected to occur if the experiment is repeated many times.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="the-probability-formula" class="slide level2">
-<h2>The Probability Formula</h2>
-<p>The probability of an event <span class="math inline">\(A\)</span> is defined as:</p>
-<p><span class="math display">\[
-P(A) = \frac{\text{Number of favorable outcomes}}{\text{Total number of possible outcomes}}
-\]</span></p>
-</section>
-<section id="example" class="slide level2">
-<h2>Example</h2>
-<p>If we roll a die, what is the probability of rolling a 4?</p>
-<ul>
-<li><strong>Favorable outcomes</strong>: 1 (rolling a 4).</li>
-<li><strong>Total outcomes</strong>: 6 (since <span class="math inline">\(S = \{1, 2, 3, 4, 5, 6\}\)</span>).</li>
-</ul>
-<p><span class="math display">\[
-P(\text{rolling a 4}) = \frac{1}{6} \approx 0.167
-\]</span></p>
-</section>
-<section id="rules-of-probability" class="slide level2">
-<h2>Rules of Probability</h2>
-<div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Rule 1</a></li><li><a href="#tabset-2-2">Rule 2</a></li><li><a href="#tabset-2-3">Rule 3</a></li></ul>
-<div class="tab-content">
-<div id="tabset-2-1">
-<p><strong>Probability of the Sample Space</strong></p>
-<p>The probability of the sample space is always 1: <span class="math display">\[
-P(S) = 1
-\]</span></p>
-</div>
-<div id="tabset-2-2">
-<p><strong>Probability of Impossible Events</strong></p>
-<p>The probability of an event that cannot happen is 0:</p>
-<p><span class="math display">\[
-P(\emptyset) = 0
-\]</span></p>
-</div>
-<div id="tabset-2-3">
-<p><strong>Complement Rule</strong></p>
-<p>The probability of the complement of an event <span class="math inline">\(A\)</span> (not <span class="math inline">\(A\)</span>) is:</p>
-<p><span class="math display">\[
-P(A^c) = 1 - P(A)
-\]</span></p>
-<ul>
-<li>Example: If <span class="math inline">\(P(\text{rain}) = 0.3\)</span>, then <span class="math inline">\(P(\text{no rain}) = 1 - 0.3 = 0.7\)</span>.</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="applications" class="slide level2 scrollable">
-<h2>Applications</h2>
-<div class="panel-tabset">
-<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Drawing a Card</a></li><li><a href="#tabset-3-2">Tossing a Coin Twice</a></li><li><a href="#tabset-3-3">Traffic Lights</a></li></ul>
-<div class="tab-content">
-<div id="tabset-3-1">
-<p>If you draw a card from a standard deck of 52 cards, what is the probability of drawing:</p>
-<ol type="1">
-<li><p>A heart?<br>
-<span class="math display">\[
-P(\text{heart}) = \frac{13}{52} = 0.25
-  \]</span></p></li>
-<li><p>A red card (heart or diamond)?<br>
-<span class="math display">\[
-P(\text{red card}) = \frac{26}{52} = 0.5
-  \]</span></p></li>
-</ol>
-</div>
-<div id="tabset-3-2">
-<p>What is the probability of getting:</p>
-<ol type="1">
-<li><p>Exactly one head?<br>
-Sample space: <span class="math inline">\(S = \{\text{HH, HT, TH, TT}\}\)</span>.<br>
-Event: <span class="math inline">\(A = \{\text{HT, TH}\}\)</span>.<br>
-<span class="math display">\[
-P(A) = \frac{2}{4} = 0.5
-\]</span></p></li>
-<li><p>At least one head?<br>
-Event: <span class="math inline">\(B = \{\text{HH, HT, TH}\}\)</span>.<br>
-<span class="math display">\[
-P(B) = \frac{3}{4} = 0.75
-\]</span></p></li>
-</ol>
-</div>
-<div id="tabset-3-3">
-<p>A commuter encounters three traffic lights, each with a 70% chance of being green. Assuming independence, what is the probability that all three lights are green?</p>
-<p><span class="math display">\[
-P(\text{all green}) = 0.7 \cdot 0.7 \cdot 0.7 = 0.343
-\]</span></p>
-</div>
-</div>
-</div>
-</section>
-<section id="more-problems" class="slide level2">
-<h2>More Problems</h2>
-<div class="panel-tabset">
-<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Rolling a Die</a></li><li><a href="#tabset-4-2">1</a></li><li><a href="#tabset-4-3">2</a></li><li><a href="#tabset-4-4">3</a></li><li><a href="#tabset-4-5">4</a></li></ul>
-<div class="tab-content">
-<div id="tabset-4-1">
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>5</th>
-<th>6</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1/6</td>
-<td>1/6</td>
-<td>1/6</td>
-<td>1/6</td>
-<td>1/6</td>
-<td>1/6</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="tabset-4-2">
-<p><span class="math display">\[
-P(X = 2)
-\]</span></p>
-</div>
-<div id="tabset-4-3">
-<p><span class="math display">\[
-P(1 \le X \le 3)
-\]</span></p>
-</div>
-<div id="tabset-4-4">
-<p><span class="math display">\[
-P(1 &lt; X &lt; 3)
-\]</span></p>
-</div>
-<div id="tabset-4-5">
-<p><span class="math display">\[
-P(X &gt; 1)
-\]</span></p>
-</div>
-</div>
-</div>
-</section></section>
-<section>
-<section id="joint-probability" class="title-slide slide level1 agenda-slide center">
-<h1>Joint Probability</h1>
-<div class="agenda">
-<ul>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Probability Theory</p>
-</div></li>
-<li><div class="agenda-active">
-<p>Joint Probability</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Distribution Functions</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Normal Distribution</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Empirical Rule</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Binomial Distribution</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Poisson Distribution</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Probability in R</p>
-</div></li>
-</ul>
-</div>
-</section>
-<section id="joint-probability-1" class="slide level2">
-<h2>Joint Probability</h2>
-<ul>
-<li>Often, we’re interested in the probabilities of multiple events occurring.</li>
-<li>This presentation focuses on calculating probabilities involving two events.</li>
-<li>We’ll explore key concepts like:
-<ul>
-<li>Joint Probability</li>
-<li>Union of Events</li>
-<li>Conditional Probability</li>
-<li>Independence</li>
-</ul></li>
-</ul>
-</section>
-<section id="joint-probability-2" class="slide level2">
-<h2>Joint Probability</h2>
-<ul>
-<li>The probability of <em>both</em> events A and B occurring.</li>
-<li>Denoted as <span class="math inline">\(P(A\ \mathrm{and}\ B)\)</span> or <span class="math inline">\(P(A \cap B)\)</span>.</li>
-<li>Examples:
-<ul>
-<li>Drawing a King <em>and</em> a Heart from a deck of cards.</li>
-<li>Flipping two coins and getting heads on both.</li>
-</ul></li>
-</ul>
-</section>
-<section id="union-of-events" class="slide level2">
-<h2>Union of Events</h2>
-<ul>
-<li>The probability of <em>either</em> event A <em>or</em> event B (or both) occurring.</li>
-<li>Denoted as <span class="math inline">\(P(A\ \mathrm{or}\ B)\)</span> or <span class="math inline">\(P(A \cup B)\)</span>.</li>
-<li>Examples:
-<ul>
-<li>Rolling a 3 or a 5 on a die.</li>
-<li>Drawing a red card or a face card.</li>
-</ul></li>
-</ul>
-</section>
-<section id="calculating-union-probability" class="slide level2">
-<h2>Calculating Union Probability</h2>
-<ul>
-<li><strong>General Case:</strong> <span class="math inline">\(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)</span> (Inclusion-Exclusion Principle)</li>
-<li><strong>Mutually Exclusive Events:</strong> If A and B are mutually exclusive (cannot both occur), then <span class="math inline">\(P(A \cap B) = 0\)</span>, and <span class="math inline">\(P(A \cup B) = P(A) + P(B)\)</span></li>
-</ul>
-</section>
-<section id="example-union-probability" class="slide level2">
-<h2>Example: Union Probability</h2>
-<ul>
-<li><p>What is the probability of rolling a number greater than 4 or an even number on a six-sided die?</p>
-<ul>
-<li>Event A: Rolling a number greater than 4 (5 or 6).</li>
-<li>Event B: Rolling an even number (2, 4, or 6).</li>
-</ul></li>
-</ul>
+<section id="explaining-variation" class="slide level2">
+<h2>Explaining Variation</h2>
 <div class="fragment">
-<ul>
-<li><span class="math inline">\(P(A) = 2/6\)</span></li>
-<li><span class="math inline">\(P(B) = 3/6\)</span></li>
-<li><span class="math inline">\(P(A \cap B) = 1/6\)</span> (rolling a 6)</li>
-<li><span class="math inline">\(P(A \cup B) = (2/6) + (3/6) - (1/6) = 4/6 = 2/3\)</span></li>
-</ul>
+<p>This is the process where we try to reduce the variation with the use of other variables.</p>
 </div>
-</section>
-<section id="conditional-probability" class="slide level2">
-<h2>Conditional Probability</h2>
-<ul>
-<li><p>The conditional probability of event A occurring <em>given</em> that event B has occurred: <span class="math inline">\(P(A|B)\)</span> (read as “the probability of A given B”).</p></li>
-<li><p>Formula: <span class="math inline">\(P(A|B) =\frac{P(A \cap B)}{P(B)}\)</span></p>
-<ul>
-<li><span class="math inline">\(P(A|B)\)</span>: Conditional probability of A given B.</li>
-<li><span class="math inline">\(P(A \cap B)\)</span>: Probability of both A and B occurring.</li>
-<li><span class="math inline">\(P(B)\)</span>: Probability of B occurring.</li>
-</ul></li>
-</ul>
-</section>
-<section id="independence" class="slide level2">
-<h2>Independence</h2>
-<ul>
-<li>Two events are independent if the occurrence of one does not affect the probability of the other.</li>
-<li>If A and B are independent:
-<ul>
-<li><span class="math inline">\(P(A|B) = P(A)\)</span></li>
-<li><span class="math inline">\(P(B|A) = P(B)\)</span></li>
-<li><span class="math inline">\(P(A \cap B) = P(A) P(B)\)</span></li>
-</ul></li>
-</ul>
-</section>
-<section id="bayes-theorem" class="slide level2">
-<h2>Bayes’ Theorem</h2>
-<ul>
-<li>Reverses the conditioning: Relates P(A|B) to P(B|A).</li>
-<li><span class="math inline">\(P(A|B) = \frac{P(B|A) * P(A)}{P(B)}\)</span></li>
-<li>Useful when we know P(B|A) but want P(A|B).</li>
-</ul>
-</section></section>
-<section>
-<section id="distribution-functions" class="title-slide slide level1 agenda-slide center">
-<h1>Distribution Functions</h1>
-<div class="agenda">
-<ul>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Probability Theory</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Joint Probability</p>
-</div></li>
-<li><div class="agenda-active">
-<p>Distribution Functions</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Normal Distribution</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Empirical Rule</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Binomial Distribution</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Poisson Distribution</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Probability in R</p>
-</div></li>
-</ul>
-</div>
-</section>
-<section id="random-variable" class="slide level2">
-<h2>Random Variable</h2>
-<p>A <strong>random variable</strong> is a variable whose value is a numerical outcome of a random phenomenon. It’s a way to map the outcomes of a probabilistic event to numbers. This allows us to analyze these outcomes mathematically.</p>
-</section>
-<section id="rv-key-concepts" class="slide level2">
-<h2>RV: Key Concepts</h2>
-<ul>
-<li><p><strong>Random Phenomenon:</strong> This is any process or experiment whose outcome is uncertain.</p></li>
-<li><p><strong>Outcomes:</strong> The possible results of a random phenomenon are called outcomes.</p></li>
-<li><p><strong>Numerical Value:</strong> A random variable assigns a numerical value to each outcome.</p></li>
-</ul>
-</section>
-<section id="types-of-random-variables" class="slide level2">
-<h2>Types of Random Variables</h2>
-<div class="panel-tabset">
-<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Discrete Random Variable</a></li><li><a href="#tabset-5-2">Continuous Random Variable</a></li></ul>
-<div class="tab-content">
-<div id="tabset-5-1">
-<p>A discrete random variable can only take on a finite number of values or a countably infinite number of values. The values are often integers. Examples:</p>
-<ul>
-<li>The number of heads in three coin flips (0, 1, 2, or 3).</li>
-<li>The number of defective light bulbs in a box of 100.</li>
-<li>The number of customers entering a store in an hour.</li>
-</ul>
-</div>
-<div id="tabset-5-2">
-<p>A continuous random variable can take on any value within a given range. Examples:</p>
-<ul>
-<li>The height of a person.</li>
-<li>The temperature of a room.</li>
-<li>The time it takes to complete a task.</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="distribution-functions-1" class="slide level2">
-<h2>Distribution Functions</h2>
-<p>A <strong>distribution function</strong> describes the probabilities of a random variable across its possible values. It answers questions like:</p>
-<ul>
-<li>How likely is a random variable to take on a specific value or fall within a range?</li>
-<li>What is the overall “shape” of the distribution of outcomes?</li>
-</ul>
-</section>
-<section id="cumulative-distribution-function" class="slide level2">
-<h2>Cumulative Distribution Function</h2>
-<p>The <strong>Cumulative Distribution Function (CDF)</strong> describes the probability that a random variable <span class="math inline">\(X\)</span> is less than or equal to a certain value <span class="math inline">\(x\)</span>: <span class="math display">\[
-F_X(x) = P(X \leq x)
-\]</span></p>
-</section>
-<section id="properties-of-the-cdf" class="slide level2 scrollable">
-<h2>Properties of the CDF</h2>
-<ol type="1">
-<li><strong>Range</strong>: The CDF is always between 0 and 1: <span class="math display">\[
-0 \leq F_X(x) \leq 1
-\]</span></li>
-<li><strong>Non-Decreasing</strong>: The CDF never decreases as <span class="math inline">\(x\)</span> increases.</li>
-<li><strong>Limits</strong>:
-<ul>
-<li><span class="math inline">\(\lim_{x \to -\infty} F_X(x) = 0\)</span></li>
-<li><span class="math inline">\(\lim_{x \to \infty} F_X(x) = 1\)</span></li>
-</ul></li>
-</ol>
-</section>
-<section id="cdf-example" class="slide level2">
-<h2>CDF Example</h2>
-<p>For a die roll (discrete case):</p>
-<ul>
-<li><span class="math inline">\(F_X(2) = P(X \leq 2) = P(X = 1) + P(X = 2) = \frac{1}{6} + \frac{1}{6} = \frac{2}{6}\)</span>.</li>
-</ul>
-<p>For a normal distribution (continuous case):</p>
-<ul>
-<li>Use the CDF to find probabilities, typically provided via tables or software.</li>
-</ul>
-</section>
-<section id="probability-density-function-pdf" class="slide level2">
-<h2>Probability Density Function (PDF)</h2>
-<p>The <strong>Probability Density Function (PDF)</strong> is used for <strong>continuous random variables</strong> and describes the likelihood of the variable falling within a small interval.</p>
-<p><span class="math display">\[
-P(a \leq X \leq b) = \int_a^b f_X(x) \, dx
-\]</span></p>
 <div class="fragment">
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Important</strong></p>
-</div>
-<div class="callout-content">
-<p><span class="math display">\[
-P(X = a) = P(a \leq X \leq a) = \int_a^a f_X(x) \, dx = 0
-\]</span></p>
-</div>
-</div>
-</div>
+<p>Can be thought of as getting it less wrong when taking an educated guess.</p>
 </div>
 </section>
-<section id="properties-of-the-pdf" class="slide level2 scrollable">
-<h2>Properties of the PDF:</h2>
-<ol type="1">
-<li><p><strong>Non-Negative</strong>: <span class="math display">\[
-f_X(x) \geq 0 \quad \forall x
-\]</span></p></li>
-<li><p><strong>Total Area Under Curve</strong>: <span class="math display">\[
-\int_{-\infty}^\infty f_X(x) \, dx = 1
-\]</span></p></li>
-</ol>
-</section>
-<section id="pdf-examples" class="slide level2">
-<h2>PDF Examples</h2>
-<p>The PDF of the normal distribution is: <span class="math display">\[
-f_X(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
-\]</span></p>
-<p>Here, <span class="math inline">\(\mu\)</span> is the mean and <span class="math inline">\(\sigma\)</span> is the standard deviation.</p>
-</section>
-<section id="probability-mass-function-pmf" class="slide level2">
-<h2>Probability Mass Function (PMF)</h2>
-<p>The <strong>Probability Mass Function (PMF)</strong> is used for <strong>discrete random variables</strong> and gives the probability of each possible value: <span class="math display">\[
-P(X = x) = p_X(x)
-\]</span></p>
-</section>
-<section id="properties-of-the-pmf" class="slide level2 scrollable">
-<h2>Properties of the PMF</h2>
-<ol type="1">
-<li><p><strong>Non-Negative</strong>: <span class="math display">\[
-p_X(x) \geq 0 \quad \forall x
-\]</span></p></li>
-<li><p><strong>Sum of Probabilities</strong>: <span class="math display">\[
-\sum_x p_X(x) = 1
-\]</span></p></li>
-</ol>
-</section>
-<section id="pmf-example" class="slide level2">
-<h2>PMF Example</h2>
-<p>For a fair die, the PMF is: <span class="math display">\[
-p_X(x) = \frac{1}{6}, \quad x \in \{1, 2, 3, 4, 5, 6\}
-\]</span></p>
-</section>
-<section id="percentiles" class="slide level2">
-<h2>Percentiles</h2>
-<p>A <strong>percentile</strong> is a measure indicating the value below which a given percentage of observations in a group of observations falls. It is used in statistics to provide information about the relative standing of a particular value within a dataset.</p>
-</section>
-<section id="percentile-example" class="slide level2">
-<h2>Percentile Example</h2>
-<p>Suppose we have a random variable X representing the height of adults in a population. If the 90th percentile of X is 180 cm, it means that the probability of a randomly selected adult being 180 cm or shorter is 90%.</p>
-</section>
-<section id="precentile" class="slide level2">
-<h2>Precentile</h2>
+<section id="explaining-variation-1" class="slide level2">
+<h2>Explaining Variation</h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>data <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">500000</span>, <span class="at">mean =</span> <span class="dv">100</span>, <span class="at">sd =</span> <span class="dv">15</span>) <span class="sc">|&gt;</span> <span class="fu">data.frame</span>(<span class="at">x =</span> _)  <span class="co"># Example: normally distributed data</span></span>
-<span id="cb1-2"><a></a></span>
-<span id="cb1-3"><a></a><span class="co"># Calculate the 75th percentile</span></span>
-<span id="cb1-4"><a></a>percentile_75 <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="fl">0.75</span>, <span class="dv">100</span>, <span class="dv">15</span>)</span>
-<span id="cb1-5"><a></a></span>
-<span id="cb1-6"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
-<span id="cb1-7"><a></a>  <span class="fu">geom_density</span>(<span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span>  <span class="co"># Density curve</span></span>
-<span id="cb1-8"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> percentile_75, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb1-9"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Density Plot with 75th Percentile Highlighted"</span>, <span class="at">x =</span> <span class="st">"Data Value"</span>, <span class="at">y =</span> <span class="st">"Density"</span>) <span class="sc">+</span></span>
-<span id="cb1-10"><a></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(body_mass)) <span class="sc">+</span></span>
+<span id="cb1-2"><a></a>  <span class="fu">geom_density</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
 <img data-src="5_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
-<section id="applications-1" class="slide level2 scrollable">
-<h2>Applications</h2>
-<div class="panel-tabset">
-<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">PMF of a Coin Toss</a></li><li><a href="#tabset-6-2">CDF of an Exp. Dist.</a></li><li><a href="#tabset-6-3">Apps. in Real Life</a></li></ul>
-<div class="tab-content">
-<div id="tabset-6-1">
-<p>For a fair coin tossed once:</p>
-<ul>
-<li><span class="math inline">\(X = 0\)</span>: Tails, <span class="math inline">\(P(X = 0) = 0.5\)</span></li>
-<li><span class="math inline">\(X = 1\)</span>: Heads, <span class="math inline">\(P(X = 1) = 0.5\)</span></li>
-</ul>
-<p>The PMF is: <span class="math display">\[
-p_X(x) =
-\begin{cases}
-0.5 &amp; x = 0 \text{ or } x = 1 \\
-0 &amp; \text{otherwise}
-\end{cases}
-\]</span></p>
-</div>
-<div id="tabset-6-2">
-<p>An exponential random variable with rate <span class="math inline">\(\lambda &gt; 0\)</span> has a CDF: <span class="math display">\[
-F_X(x) =
-\begin{cases}
-1 - e^{-\lambda x}, &amp; x \geq 0 \\
-0, &amp; x &lt; 0
-\end{cases}
-\]</span></p>
-<p>This can be used to model waiting times between events.</p>
-</div>
-<div id="tabset-6-3">
-<ol type="1">
-<li><p><strong>PMF</strong>:</p>
-<ul>
-<li>Number of emails received per hour.</li>
-</ul></li>
-<li><p><strong>PDF</strong>:</p>
-<ul>
-<li>Heights of students in a class.</li>
-</ul></li>
-<li><p><strong>CDF</strong>:</p>
-<ul>
-<li>The likelihood of completing a task within a certain time frame.</li>
-</ul></li>
-</ol>
-</div>
-</div>
-</div>
-</section>
-<section id="common-contisuous-rv" class="slide level2">
-<h2>Common Contisuous RV</h2>
-<table class="caption-top">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Continuous RV</th>
-<th>Parameters</th>
-<th>Notation</th>
-<th>Support</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Uniform</td>
-<td>a (minimum), b (maximum)</td>
-<td>Unif(a, b)</td>
-<td>[a, b]</td>
-</tr>
-<tr class="even">
-<td>Normal (Gaussian)</td>
-<td>μ (mean), σ (standard deviation)</td>
-<td>N(μ, σ²)</td>
-<td>(-∞, ∞)</td>
-</tr>
-<tr class="odd">
-<td>Exponential</td>
-<td>λ (rate)</td>
-<td>Exp(λ)</td>
-<td>[0, ∞)</td>
-</tr>
-<tr class="even">
-<td>Gamma</td>
-<td>k (shape), θ (scale)</td>
-<td>Γ(k, θ)</td>
-<td>[0, ∞)</td>
-</tr>
-<tr class="odd">
-<td>Beta</td>
-<td>α (shape 1), β (shape 2)</td>
-<td>Beta(α, β)</td>
-<td>[0,1]</td>
-</tr>
-<tr class="even">
-<td>Chi-Squared</td>
-<td>k (degrees of freedom)</td>
-<td>χ²(k)</td>
-<td>[0, ∞)</td>
-</tr>
-<tr class="odd">
-<td>t-distribution</td>
-<td>ν (degrees of freedom)</td>
-<td>t(ν)</td>
-<td>(-∞, ∞)</td>
-</tr>
-<tr class="even">
-<td>F-distribution</td>
-<td>ν₁ (degrees of freedom 1), ν₂ (degrees of freedom 2)</td>
-<td>F(ν₁, ν₂)</td>
-<td>[0, ∞)</td>
-</tr>
-<tr class="odd">
-<td>Weibull</td>
-<td>k (shape), λ (scale)</td>
-<td>Weibull(k, λ)</td>
-<td>[0, ∞)</td>
-</tr>
-<tr class="even">
-<td>Lognormal</td>
-<td>μ (location), σ (scale)</td>
-<td>Lognormal(μ, σ)</td>
-<td>[0, ∞)</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="common-discrete-rv" class="slide level2">
-<h2>Common Discrete RV</h2>
-<table class="caption-top">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Discrete RV</th>
-<th>Parameters</th>
-<th>Notation</th>
-<th>Support</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Bernoulli</td>
-<td>p (probability of success)</td>
-<td>Bernoulli(p)</td>
-<td>{0, 1}</td>
-</tr>
-<tr class="even">
-<td>Binomial</td>
-<td>n (number of trials), p (probability of success)</td>
-<td>Bin(n, p)</td>
-<td>{0, 1, 2, …, n}</td>
-</tr>
-<tr class="odd">
-<td>Geometric</td>
-<td>p (probability of success)</td>
-<td>Geo(p)</td>
-<td>{1, 2, 3, …}</td>
-</tr>
-<tr class="even">
-<td>Poisson</td>
-<td>λ (average rate of events)</td>
-<td>Pois(λ)</td>
-<td>{0, 1, 2, …}</td>
-</tr>
-<tr class="odd">
-<td>Negative Binomial</td>
-<td>r (number of successes), p (probability of success)</td>
-<td>NB(r, p)</td>
-<td>{r, r+1, r+2, …}</td>
-</tr>
-<tr class="even">
-<td>Discrete Uniform</td>
-<td>n (number of possible outcomes)</td>
-<td>DUnif(1, n)</td>
-<td>{1, 2, …, n} or a set of n values</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="probability-and-pdmf" class="slide level2">
-<h2>Probability and PD/MF</h2>
-<div class="panel-tabset">
-<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1">Continuous</a></li><li><a href="#tabset-7-2">Discrete</a></li></ul>
-<div class="tab-content">
-<div id="tabset-7-1">
+<section id="variation-with-one-variable" class="slide level2">
+<h2>Variation with One Variable</h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>mean <span class="ot">&lt;-</span> <span class="dv">0</span>  <span class="co"># Mean of the distribution</span></span>
-<span id="cb2-2"><a></a>sd <span class="ot">&lt;-</span> <span class="dv">1</span>   <span class="co"># Standard deviation of the distribution</span></span>
-<span id="cb2-3"><a></a></span>
-<span id="cb2-4"><a></a><span class="co"># Generate data points for the curve (more points = smoother curve)</span></span>
-<span id="cb2-5"><a></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(mean <span class="sc">-</span> <span class="dv">3</span><span class="sc">*</span>sd, mean <span class="sc">+</span> <span class="dv">3</span><span class="sc">*</span>sd, <span class="at">length.out =</span> <span class="dv">100</span>)  <span class="co"># Range covering most of the distribution</span></span>
-<span id="cb2-6"><a></a>y <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x, <span class="at">mean =</span> mean, <span class="at">sd =</span> sd)  <span class="co"># Calculate the density at each x value</span></span>
-<span id="cb2-7"><a></a></span>
-<span id="cb2-8"><a></a><span class="co"># Create the plot</span></span>
-<span id="cb2-9"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(x, y), <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
-<span id="cb2-10"><a></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span>  <span class="co"># Line for the distribution curve</span></span>
-<span id="cb2-11"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"X"</span>,</span>
-<span id="cb2-12"><a></a>       <span class="at">y =</span> <span class="st">"Probability Density"</span>) <span class="sc">+</span></span>
-<span id="cb2-13"><a></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="co"># A clean theme</span></span>
-<span id="cb2-14"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(mean <span class="sc">-</span> <span class="dv">3</span><span class="sc">*</span>sd, mean <span class="sc">+</span> <span class="dv">3</span><span class="sc">*</span>sd, <span class="at">by =</span> sd)) <span class="co"># Ticks at standard deviations</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(body_mass, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
+<span id="cb2-2"><a></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> .<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="5_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section></section>
+<section>
+<section id="a-simple-model" class="title-slide slide level1 agenda-slide center">
+<h1>A Simple Model</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Modeling Relationships</p>
+</div></li>
+<li><div class="agenda-active">
+<p>A Simple Model</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Modelling Data</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Linear Model</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Prediction</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="generated-model" class="slide level2">
+<h2>Generated Model</h2>
+<p><span class="math display">\[
+Y \sim DGP_1
+\]</span></p>
+</section>
+<section id="a-simple-model-1" class="slide level2">
+<h2>A Simple Model</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(body_mass)) <span class="sc">+</span></span>
+<span id="cb3-2"><a></a>  <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="5_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
+<section id="a-simple-model-2" class="slide level2">
+<h2>A Simple Model</h2>
+<p><span class="math display">\[
+Y = \_\_\_ + error
+\]</span></p>
+</section>
+<section id="notation" class="slide level2">
+<h2>Notation</h2>
+<p><span class="math display">\[
+Y = \ \ \ \ \ \ \ \ \ + \varepsilon
+\]</span></p>
+</section>
+<section id="the-simple-generated-model" class="slide level2">
+<h2>The Simple Generated Model</h2>
+<p><span class="math display">\[
+Y \sim \beta_0 + \varepsilon
+\]</span></p>
+<p><span class="math display">\[
+\varepsilon \sim DGP_2
+\]</span></p>
+<div class="fragment">
+<p><span class="math inline">\(DGP_2\)</span> is not the same as the <span class="math inline">\(DGP_1\)</span>, it is transformed due <span class="math inline">\(\beta_0\)</span>. Consider this the NULL <span class="math inline">\(DGP\)</span>.</p>
+</div>
+</section>
+<section id="observing-data" class="slide level2">
+<h2>Observing Data</h2>
+<p><span class="math display">\[
+Y = \beta_0 + \varepsilon
+\]</span></p>
+</section>
+<section id="estimated-line" class="slide level2">
+<h2>Estimated Line</h2>
+<p><span class="math display">\[
+\hat Y=\hat\beta_0
+\]</span></p>
+</section>
+<section id="notation-1" class="slide level2">
+<h2>Notation</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="observed">Observed</h3>
+<p><span class="math display">\[
+Y = \beta_0 + \varepsilon
+\]</span></p>
+</div><div class="column" style="width:50%;">
+<h3 id="estimated">Estimated</h3>
+<p><span class="math display">\[
+\hat Y = \hat \beta_0
+\]</span></p>
+</div></div>
+</section></section>
+<section>
+<section id="modelling-data" class="title-slide slide level1 agenda-slide center">
+<h1>Modelling Data</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Modeling Relationships</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>A Simple Model</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Modelling Data</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Linear Model</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Prediction</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="indexing-data" class="slide level2">
+<h2>Indexing Data</h2>
+<p>The data in a data set can be indexed by a number.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>penguins[<span class="dv">1</span>,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt;   bill_len bill_dep flipper_len body_mass  sex year
+#&gt; 1     39.1     18.7         181      3750 male 2007</code></pre>
+</div>
+</div>
+<div class="fragment">
+<p>Making the variable “body_mass_g” be represented by <span class="math inline">\(Y\)</span> and “flipper_length_mm” as <span class="math inline">\(X\)</span>:</p>
+<p><span class="math display">\[
+Y_1 = 3750 \ \ X_1=181
+\]</span></p>
+</div>
+</section>
+<section id="indexing-data-1" class="slide level2">
+<h2>Indexing Data</h2>
+<p><span class="math display">\[
+Y_i, X_i
+\]</span></p>
+</section>
+<section id="data" class="slide level2">
+<h2>Data</h2>
+<p>With the data that we collect from a sample, we hypothesize how the data was generated.</p>
+<div class="fragment">
+<p>Using a simple model:</p>
+<p><span class="math display">\[
+Y_i = \beta_0 + \varepsilon_i
+\]</span></p>
+</div>
+</section>
+<section id="estimated-value" class="slide level2">
+<h2>Estimated Value</h2>
+<p><span class="math display">\[
+\hat Y_i = \hat \beta_0
+\]</span></p>
+</section>
+<section id="estimation" class="slide level2">
+<h2>Estimation</h2>
+<p>To estimate <span class="math inline">\(\hat \beta_0\)</span>, we minimize the follow function:</p>
+<p><span class="math display">\[
+\sum^n_{i=1} (Y_i-\hat Y_i)^2
+\]</span></p>
+<div class="fragment">
+<p>This is known as the sum squared errors, SSE</p>
+</div>
+</section>
+<section id="residuals" class="slide level2">
+<h2>Residuals</h2>
+<p>The residuals are known as the observed errors from the data in the model:</p>
+<p><span class="math display">\[
+r_i = Y_i - \hat Y_i
+\]</span></p>
+</section>
+<section id="estimation-in-r" class="slide level2">
+<h2>Estimation in R</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">lm</span>(Y <span class="sc">~</span> <span class="dv">1</span>, <span class="at">data =</span> DATA)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><code>Y</code>: Name Outcome Variable of Interest in data frame <code>DATA</code></li>
+<li><code>DATA</code>: Name of the data frame</li>
+</ul>
+</section>
+<section id="modeling-body-mass-in-penguins" class="slide level2">
+<h2>Modeling Body Mass in Penguins</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">lm</span>(body_mass <span class="sc">~</span> <span class="dv">1</span>, <span class="at">data =</span> penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; 
+#&gt; Call:
+#&gt; lm(formula = body_mass ~ 1, data = penguins)
+#&gt; 
+#&gt; Coefficients:
+#&gt; (Intercept)  
+#&gt;        4207</code></pre>
+</div>
+</div>
+<div class="fragment">
+<p><span class="math display">\[
+\hat Y = 4207
+\]</span></p>
+</div>
+</section>
+<section id="visualize" class="slide level2">
+<h2>Visualize</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(body_mass)) <span class="sc">+</span></span>
+<span id="cb9-2"><a></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb9-3"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">4207</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="5_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section></section>
+<section>
+<section id="linear-model" class="title-slide slide level1 agenda-slide center">
+<h1>Linear Model</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Modeling Relationships</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>A Simple Model</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Modelling Data</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Linear Model</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Prediction</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="linear-model-1" class="slide level2">
+<h2>Linear Model</h2>
+<p>The goal of Statistics is to develop models the have a better explanation of the outcome <span class="math inline">\(Y\)</span>.</p>
+<div class="fragment">
+<p>In particularly, reduce the sum of squared errors.</p>
+</div>
+<div class="fragment">
+<p>By utilizing a bit more of information, <span class="math inline">\(X\)</span>, we can increase the predicting capabilities of the model.</p>
+</div>
+<div class="fragment">
+<p>Thus, the linear model is born.</p>
+</div>
+</section>
+<section id="visualization" class="slide level2">
+<h2>Visualization</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">1-Dimensional</a></li><li><a href="#tabset-1-2">2-Dimensional</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(body_mass)) <span class="sc">+</span></span>
+<span id="cb10-2"><a></a>  <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="5_files/figure-revealjs/unnamed-chunk-3-1.png" width="960"></p>
+<p><img data-src="5_files/figure-revealjs/unnamed-chunk-9-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
-<div id="tabset-7-2">
+<div id="tabset-1-2">
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>n <span class="ot">&lt;-</span> <span class="dv">10</span>   <span class="co"># Number of trials</span></span>
-<span id="cb3-2"><a></a>p <span class="ot">&lt;-</span> <span class="fl">0.3</span>  <span class="co"># Probability of success on each trial</span></span>
-<span id="cb3-3"><a></a></span>
-<span id="cb3-4"><a></a><span class="co"># Generate the data for the plot</span></span>
-<span id="cb3-5"><a></a>x <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span>n  <span class="co"># Possible values for the random variable (number of successes)</span></span>
-<span id="cb3-6"><a></a>y <span class="ot">&lt;-</span> <span class="fu">dbinom</span>(x, <span class="at">size =</span> n, <span class="at">prob =</span> p)  <span class="co"># Calculate the probabilities</span></span>
-<span id="cb3-7"><a></a></span>
-<span id="cb3-8"><a></a><span class="co"># Create the plot using geom_col (for discrete data)</span></span>
-<span id="cb3-9"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(x, y), <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(x), <span class="at">y =</span> y)) <span class="sc">+</span>  <span class="co"># x as factor for discrete bars</span></span>
-<span id="cb3-10"><a></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb3-11"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Binomial Distribution (n ="</span>, n, <span class="st">", p ="</span>, p, <span class="st">")"</span>),</span>
-<span id="cb3-12"><a></a>       <span class="at">x =</span> <span class="st">"Number of Successes (x)"</span>,</span>
-<span id="cb3-13"><a></a>       <span class="at">y =</span> <span class="st">"Probability P(X = x)"</span>) <span class="sc">+</span></span>
-<span id="cb3-14"><a></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> flipper_len, <span class="at">y =</span> body_mass, <span class="at">fill =</span> <span class="fu">after_stat</span>(level))) <span class="sc">+</span></span>
+<span id="cb11-2"><a></a>  <span class="fu">stat_density_2d</span>(<span class="at">geom =</span> <span class="st">"polygon"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="5_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
+<p><img data-src="5_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1003,766 +614,276 @@ F_X(x) =
 </div>
 </div>
 </div>
+</section>
+<section id="linear-model-2" class="slide level2">
+<h2>Linear Model</h2>
+<p><span class="math display">\[
+Y = \beta_0 + \beta_1 X + \varepsilon
+\]</span></p>
+<p><span class="math display">\[
+\varepsilon \sim DGP_3
+\]</span></p>
+</section>
+<section id="scatter-plot" class="slide level2">
+<h2>Scatter Plot</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(flipper_len, body_mass)) <span class="sc">+</span> </span>
+<span id="cb12-2"><a></a>  <span class="fu">geom_point</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="5_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
+<section id="imposing-a-line" class="slide level2">
+<h2>Imposing a Line</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(flipper_len, body_mass)) <span class="sc">+</span> </span>
+<span id="cb13-2"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb13-3"><a></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> F) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="5_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section>
+<section id="modelling-the-data" class="slide level2">
+<h2>Modelling the Data</h2>
+<p><span class="math display">\[
+Y_i = \beta_0 + \beta_1 X_i + \varepsilon_i
+\]</span></p>
+</section>
+<section id="linear-model-3" class="slide level2">
+<h2>Linear Model</h2>
+<p><span class="math display">\[
+\hat Y_i = \hat \beta_0 + \hat \beta_1 X_i
+\]</span></p>
+<div class="fragment">
+<p>Goal is to obtain numerical values for <span class="math inline">\(\hat \beta_0\)</span> and <span class="math inline">\(\hat \beta_1\)</span> that will minimize the SSE.</p>
+</div>
+</section>
+<section id="sse" class="slide level2">
+<h2>SSE</h2>
+<p><span class="math display">\[
+\sum^n_{i=1} (Y_i-\hat Y_i)^2
+\]</span></p>
+<p><span class="math display">\[
+\hat Y_i = \hat \beta_0 + \hat \beta_1 X_i
+\]</span></p>
+</section>
+<section id="fitting-a-model-in-r" class="slide level2">
+<h2>Fitting a Model in R</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">lm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> DATA)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><code>X</code>: Name Predictor Variable of Interest in data frame <code>DATA</code></li>
+<li><code>Y</code>: Name Outcome Variable of Interest in data frame <code>DATA</code></li>
+<li><code>DATA</code>: Name of the data frame</li>
+</ul>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<p>Y: “body_mass_g”; X: “flipper_length_mm”</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">lm</span>(body_mass <span class="sc">~</span> flipper_len, <span class="at">data =</span> penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; 
+#&gt; Call:
+#&gt; lm(formula = body_mass ~ flipper_len, data = penguins)
+#&gt; 
+#&gt; Coefficients:
+#&gt; (Intercept)  flipper_len  
+#&gt;    -5872.09        50.15</code></pre>
+</div>
+</div>
+<p><span class="math display">\[
+\hat Y_i = -5872.09 + 50.15 X_i
+\]</span></p>
+</section>
+<section id="interpretation-of-hatbeta_0" class="slide level2">
+<h2>Interpretation of <span class="math inline">\(\hat\beta_0\)</span></h2>
+<p>The intercept <span class="math inline">\(\hat \beta_0\)</span> can be interpreted as the base value when <span class="math inline">\(X\)</span> is set to 0.</p>
+<div class="fragment">
+<p>Some times the intercept can be interpretable to real world scenarios.</p>
+</div>
+<div class="fragment">
+<p>Other times it cannot.</p>
+</div>
+</section>
+<section id="interpreting-example" class="slide level2">
+<h2>Interpreting Example</h2>
+<p><span class="math display">\[
+\hat Y_i = -5872.09 + 50.15 X_i
+\]</span></p>
+<p>When flipper length is 0 mm, the body mass is -5872 grams.</p>
+</section>
+<section id="interpretation-of-hat-beta_1" class="slide level2">
+<h2>Interpretation of <span class="math inline">\(\hat \beta_1\)</span></h2>
+<p>The slope <span class="math inline">\(\hat \beta_1\)</span> indicates how will y change when x increases by 1 unit.</p>
+<div class="fragment">
+<p>It will demonstrate if there is, on average, a positive or negative relationship based on the sign provided.</p>
+</div>
+</section>
+<section id="interpreting-example-1" class="slide level2">
+<h2>Interpreting Example</h2>
+<p><span class="math display">\[
+\hat Y_i = -5872.09 + 50.15 X_i
+\]</span></p>
+<p>When flipper length increases by 1 mm, the body mass will increase by 50.15 grams.</p>
 </section></section>
 <section>
-<section id="normal-distribution" class="title-slide slide level1 agenda-slide center">
-<h1>Normal Distribution</h1>
+<section id="prediction" class="title-slide slide level1 agenda-slide center">
+<h1>Prediction</h1>
 <div class="agenda">
 <ul>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Probability Theory</p>
+<p>Modeling Relationships</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Joint Probability</p>
+<p>A Simple Model</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Distribution Functions</p>
+<p>Modelling Data</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Linear Model</p>
 </div></li>
 <li><div class="agenda-active">
-<p>Normal Distribution</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Empirical Rule</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Binomial Distribution</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Poisson Distribution</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Probability in R</p>
+<p>Prediction</p>
 </div></li>
 </ul>
 </div>
 </section>
-<section id="normal-distribution-1" class="slide level2">
-<h2>Normal Distribution</h2>
-<p>The <strong>Normal Distribution</strong> is a probability distribution that is symmetric, with most of the data points clustering around the mean.</p>
-<ul>
-<li>It’s <strong>bell-shaped</strong> and is defined mathematically by two parameters:
-<ul>
-<li><strong>Mean (<span class="math inline">\(\mu\)</span>)</strong>: The center or peak of the distribution.</li>
-<li><strong>Standard Deviation (<span class="math inline">\(\sigma\)</span>)</strong>: Controls the spread of the distribution.</li>
-</ul></li>
-</ul>
-<div class="fragment">
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Important</strong></p>
-</div>
-<div class="callout-content">
-<p>For any normally distributed data, the highest probability density is at the mean, and as you move away from the mean, the probability density gradually decreases.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="properties" class="slide level2 scrollable">
-<h2>Properties</h2>
-<ol type="1">
-<li><strong>Symmetry</strong>: It is perfectly symmetric about the mean, meaning the left side is a mirror image of the right.</li>
-<li><strong>Unimodal</strong>: There is a single peak at the mean.</li>
-<li><strong>Mean, Median, and Mode are Equal</strong>: In a normal distribution, these three measures of central tendency are located at the same point.</li>
-<li><strong>68-95-99.7 Rule</strong> (Empirical Rule)</li>
-</ol>
-<aside class="notes">
-<p>This rule helps us understand how data is distributed in a normal curve and provides a quick way to estimate probabilities for normally distributed data.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="normal-distribution-2" class="slide level2">
-<h2>Normal Distribution</h2>
-<div class="column">
+<section id="statistical-model" class="slide level2">
+<h2>Statistical Model</h2>
 <p><span class="math display">\[
-X\sim N(\mu, \sigma)
-\]</span></p>
-<p><span class="math display">\[
--\infty &lt; X &lt; \infty
-\]</span></p>
-</div><div class="column">
-<p><span class="math display">\[
-f_X(x) = \frac{1}{\sqrt{2\pi \sigma}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
-\]</span></p>
-</div></section>
-<section id="the-standard-normal-distribution" class="slide level2">
-<h2>The Standard Normal Distribution</h2>
-<p>The <strong>Standard Normal Distribution</strong> is a special type of normal distribution with a mean of 0 and a standard deviation of 1. It’s often used as a reference to convert any normal distribution to a standard form.</p>
-</section>
-<section id="z-scores" class="slide level2">
-<h2>Z-Scores</h2>
-<p>A <strong>Z-score</strong> (or standard score) tells us how many standard deviations an individual data point is from the mean. It’s calculated as:</p>
-<p><span class="math display">\[
-Z = \frac{X - \mu}{\sigma}
+\hat Y = \hat \beta_0 + \hat \beta_1 X
 \]</span></p>
 <ul>
-<li>If <span class="math inline">\(Z\)</span> is positive, the data point is above the mean.</li>
-<li>If <span class="math inline">\(Z\)</span> is negative, the data point is below the mean.</li>
-<li>Using Z-scores, we can compare values across different normal distributions or find the probability associated with a particular score.</li>
+<li><span class="math inline">\(X\)</span>: Input</li>
+<li><span class="math inline">\(\hat Y\)</span>: Output</li>
 </ul>
 </section>
-<section id="why-the-normal-distribution-is-important" class="slide level2 scrollable">
-<h2>Why the Normal Distribution is Important</h2>
-<ol type="1">
-<li><strong>It Describes Many Natural Phenomena</strong>: Heights, weights, test scores, measurement errors, and countless other variables follow a normal distribution, especially when influenced by many small, random factors.</li>
-<li><strong>Predictive Power</strong>: With normally distributed data, we can make predictions and infer probabilities, thanks to the 68-95-99.7 rule.</li>
-<li><strong>Central Limit Theorem</strong>: The normal distribution is foundational to the Central Limit Theorem, which tells us that, regardless of the original data distribution, the sampling distribution of the sample mean will approach a normal distribution as sample size increases.</li>
-<li><strong>Ease of Use in Statistical Methods</strong>: Many statistical tests and methods assume normality, allowing for simplified calculations and reliable inferences.</li>
-</ol>
+<section id="prediction-1" class="slide level2">
+<h2>Prediction</h2>
+<p>Using the equation <span class="math inline">\(\hat Y\)</span>, we can give it a value of <span class="math inline">\(X\)</span> and then, in return, a value of <span class="math inline">\(\hat Y\)</span> that predicts the true value <span class="math inline">\(Y\)</span>.</p>
 </section>
-<section id="apps-of-the-normal-dist." class="slide level2">
-<h2>Apps of the Normal Dist.</h2>
+<section id="prediction-in-r" class="slide level2">
+<h2>Prediction in R</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>xlm <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> X,</span>
+<span id="cb17-2"><a></a>            <span class="at">data =</span> DATA)</span>
+<span id="cb17-3"><a></a></span>
+<span id="cb17-4"><a></a>predict_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">X =</span> VAL)</span>
+<span id="cb17-5"><a></a></span>
+<span id="cb17-6"><a></a><span class="fu">predict</span>(xlm,</span>
+<span id="cb17-7"><a></a>        predict_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><code>X</code>: Name Predictor Variable of Interest in data frame <code>DATA</code></li>
+<li><code>Y</code>: Name Outcome Variable of Interest in data frame <code>DATA</code></li>
+<li><code>DATA</code>: Name of the data frame</li>
+<li><code>VAL</code>: Value for the Predictor Variable</li>
+</ul>
+</section>
+<section id="example-1" class="slide level2">
+<h2>Example 1</h2>
 <div class="panel-tabset">
-<ul id="tabset-8" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-8-1">Standardized Testing</a></li><li><a href="#tabset-8-2">Finance</a></li></ul>
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Example</a></li><li><a href="#tabset-2-2">Code</a></li></ul>
 <div class="tab-content">
-<div id="tabset-8-1">
-<p>Scores on standardized tests, such as IQ tests or the SAT, are often designed to follow a normal distribution. By knowing a student’s score in terms of Z-scores, we can determine their percentile or how they compare to other test-takers.</p>
+<div id="tabset-2-1">
+<p>Predict the body mass for a gentoo penguin.</p>
 </div>
-<div id="tabset-8-2">
-<p>In finance, stock returns and other economic factors are often modeled with a normal distribution to estimate risk, forecast trends, and make informed investment decisions.</p>
+<div id="tabset-2-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>xlm <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass <span class="sc">~</span> species,</span>
+<span id="cb18-2"><a></a>            <span class="at">data =</span> penguins)</span>
+<span id="cb18-3"><a></a></span>
+<span id="cb18-4"><a></a>xlm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; 
+#&gt; Call:
+#&gt; lm(formula = body_mass ~ species, data = penguins)
+#&gt; 
+#&gt; Coefficients:
+#&gt;      (Intercept)  speciesChinstrap     speciesGentoo  
+#&gt;          3706.16             26.92           1386.27</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>predict_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">species =</span> <span class="st">"Gentoo"</span>)</span>
+<span id="cb20-2"><a></a></span>
+<span id="cb20-3"><a></a><span class="fu">predict</span>(xlm,</span>
+<span id="cb20-4"><a></a>        predict_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt;        1 
+#&gt; 5092.437</code></pre>
 </div>
 </div>
 </div>
-</section>
-<section id="finding-probability" class="slide level2">
-<h2>Finding Probability</h2>
-<p><span class="math display">\[
-X \sim N(\mu, \sigma)
-\]</span></p>
-<div class="fragment">
-<p><span class="math display">\[
-P(a \leq X \leq b) = P(a &lt; X &lt; b) = \int_a^b \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}} dx
-\]</span></p>
 </div>
-</section></section>
-<section>
-<section id="empirical-rule" class="title-slide slide level1 agenda-slide center">
-<h1>Empirical Rule</h1>
-<div class="agenda">
-<ul>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Probability Theory</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Joint Probability</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Distribution Functions</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Normal Distribution</p>
-</div></li>
-<li><div class="agenda-active">
-<p>Empirical Rule</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Binomial Distribution</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Poisson Distribution</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Probability in R</p>
-</div></li>
-</ul>
 </div>
 </section>
-<section id="what-is-the-empirical-rule" class="slide level2 scrollable">
-<h2>What is the Empirical Rule?</h2>
-<p>The <strong>Empirical Rule</strong> provides a way to understand the spread of data in a normal distribution by describing how data points cluster around the mean. According to this rule:</p>
-<ol type="1">
-<li>Approximately <strong>68%</strong> of data points fall within <strong>one standard deviation</strong> of the mean.</li>
-<li>Approximately <strong>95%</strong> of data points fall within <strong>two standard deviations</strong> of the mean.</li>
-<li>Approximately <strong>99.7%</strong> of data points fall within <strong>three standard deviations</strong> of the mean.</li>
-</ol>
-<p>The empirical rule is very helpful because, with just the mean and standard deviation, we can quickly estimate how data is distributed within a normal curve.</p>
-</section>
-<section id="empirical-rule-to-the-normal-dist." class="slide level2">
-<h2>Empirical Rule to the Normal Dist.</h2>
-<p>Let’s define the key terms and apply the empirical rule to the normal distribution.</p>
-<ul>
-<li><strong>Mean (μ)</strong>: This is the central point of the normal distribution where the data clusters around.</li>
-<li><strong>Standard Deviation (σ)</strong>: This is a measure of how spread out the data points are from the mean.</li>
-</ul>
-</section>
-<section id="empirical-rule-to-the-normal-dist.-1" class="slide level2">
-<h2>Empirical Rule to the Normal Dist.</h2>
-<p>In a normal distribution:</p>
-<ul>
-<li><strong>68% of data</strong> lies between <span class="math inline">\((\mu - \sigma)\)</span> and <span class="math inline">\((\mu + \sigma)\)</span>.</li>
-<li><strong>95% of data</strong> lies between <span class="math inline">\((\mu - 2\sigma)\)</span> and <span class="math inline">\((\mu + 2\sigma)\)</span>.</li>
-<li><strong>99.7% of data</strong> lies between <span class="math inline">\((\mu - 3\sigma)\)</span> and <span class="math inline">\((\mu + 3\sigma)\)</span>.</li>
-</ul>
-<p>These intervals allow us to estimate probabilities for data within each range without needing to calculate exact probabilities.</p>
-</section>
-<section id="visualizing-the-empirical-rule" class="slide level2 scrollable">
-<h2>Visualizing the Empirical Rule</h2>
-<p>To better understand the empirical rule, imagine a symmetric, bell-shaped normal curve. Here’s how it would look based on the empirical rule:</p>
-<ol type="1">
-<li>The <strong>68% region</strong> represents the middle of the curve, starting one standard deviation left of the mean and ending one standard deviation right.</li>
-<li>The <strong>95% region</strong> stretches further out, covering almost the entire curve except for the outer tails.</li>
-<li>The <strong>99.7% region</strong> includes nearly all data points, covering the entire curve except for a tiny fraction at each extreme.</li>
-</ol>
-<p>This visualization shows how the data is most concentrated around the mean, with less data appearing as we move further away.</p>
-</section>
-<section id="using-the-empirical-rule-for-probabilities" class="slide level2">
-<h2>Using the Empirical Rule for Probabilities</h2>
-<p>The empirical rule helps us answer questions like:</p>
-<ul>
-<li><strong>What percentage of data points fall within a certain range?</strong></li>
-<li><strong>How unusual is a data point located far from the mean?</strong></li>
-</ul>
-</section>
-<section id="examples" class="slide level2">
-<h2>Examples</h2>
-<ul>
-<li>If we know that a data point lies more than two standard deviations away from the mean, we know it’s in the outer 5% of the distribution, making it relatively rare.</li>
-<li>Using the rule, we can estimate that around 95% of values should lie within two standard deviations of the mean. If we observe data points outside of this range, we might consider them outliers.</li>
-</ul>
-</section>
-<section id="more-examples" class="slide level2">
-<h2>More Examples</h2>
+<section id="example-2-1" class="slide level2">
+<h2>Example 2</h2>
 <div class="panel-tabset">
-<ul id="tabset-9" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-9-1">Exam Scores</a></li><li><a href="#tabset-9-2">Heights of Adults</a></li></ul>
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Example</a></li><li><a href="#tabset-3-2">Code</a></li></ul>
 <div class="tab-content">
-<div id="tabset-9-1">
-<p>Suppose exam scores are normally distributed with a mean of 70 and a standard deviation of 10.</p>
-<ul>
-<li><strong>68% of students</strong> scored between <strong>60 and 80</strong> (70 ± 10).</li>
-<li><strong>95% of students</strong> scored between <strong>50 and 90</strong> (70 ± 20).</li>
-<li><strong>99.7% of students</strong> scored between <strong>40 and 100</strong> (70 ± 30).</li>
-</ul>
+<div id="tabset-3-1">
+<p>Predict the body mass for a penguin with a flipper length of 190.</p>
 </div>
-<div id="tabset-9-2">
-<p>Assume that adult heights follow a normal distribution with a mean height of 170 cm and a standard deviation of 8 cm.</p>
-<ul>
-<li><strong>68% of adults</strong> have heights between <strong>162 cm and 178 cm</strong> (170 ± 8).</li>
-<li><strong>95% of adults</strong> have heights between <strong>154 cm and 186 cm</strong> (170 ± 16).</li>
-<li><strong>99.7% of adults</strong> have heights between <strong>146 cm and 194 cm</strong> (170 ± 24).</li>
-</ul>
-</div>
-</div>
-</div>
-</section></section>
-<section>
-<section id="binomial-distribution" class="title-slide slide level1 agenda-slide center">
-<h1>Binomial Distribution</h1>
-<div class="agenda">
-<ul>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Probability Theory</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Joint Probability</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Distribution Functions</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Normal Distribution</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Empirical Rule</p>
-</div></li>
-<li><div class="agenda-active">
-<p>Binomial Distribution</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Poisson Distribution</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Probability in R</p>
-</div></li>
-</ul>
-</div>
-</section>
-<section id="binomial-distribution-1" class="slide level2">
-<h2>Binomial Distribution</h2>
-<p>The <strong>Binomial Distribution</strong> is a probability distribution that models the number of successes in a fixed number of trials, where each trial has:</p>
-<ul>
-<li><strong>Two possible outcomes</strong>: typically called “success” and “failure.”</li>
-<li>A constant probability of success, <span class="math inline">\(p\)</span>, on each trial.</li>
-</ul>
-</section>
-<section id="real-world-examples" class="slide level2">
-<h2>Real-World Examples:</h2>
-<ul>
-<li>Tossing a coin <span class="math inline">\(n\)</span> times and counting how many heads you get.</li>
-<li>Rolling a die <span class="math inline">\(n\)</span> times and counting how many times you roll a 6.</li>
-<li>Administering a medical treatment to <span class="math inline">\(n\)</span> patients and recording how many recover.</li>
-</ul>
-<div class="fragment">
-<p>The binomial distribution answers questions like:</p>
-<ul>
-<li>“What is the probability of getting exactly 3 heads in 5 coin tosses?”</li>
-<li>“What is the likelihood of at least 4 successes in 10 trials?”</li>
-</ul>
-</div>
-</section>
-<section id="conditions-for-a-binomial-experiment" class="slide level2 scrollable">
-<h2>Conditions for a Binomial Experiment</h2>
-<ol type="1">
-<li><strong>Fixed Number of Trials</strong> (<span class="math inline">\(n\)</span>):
-<ul>
-<li>The experiment consists of a set number of trials.</li>
-</ul></li>
-<li><strong>Two Possible Outcomes</strong>:
-<ul>
-<li>Each trial results in either a success (e.g., heads) or a failure (e.g., tails).</li>
-</ul></li>
-<li><strong>Constant Probability of Success</strong> (<span class="math inline">\(p\)</span>):
-<ul>
-<li>The probability of success remains the same for each trial.</li>
-</ul></li>
-<li><strong>Independence</strong>:
-<ul>
-<li>The outcome of one trial does not affect the outcomes of other trials.</li>
-</ul></li>
-</ol>
-</section>
-<section id="the-binomial-probability-formula" class="slide level2">
-<h2>The Binomial Probability Formula</h2>
-<p><span class="math display">\[
-P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}
-\]</span></p>
-<p>Where:</p>
-<ul>
-<li><span class="math inline">\(P(X = k)\)</span>: Probability of exactly <span class="math inline">\(k\)</span> successes.</li>
-<li><span class="math inline">\(n\)</span>: Number of trials.</li>
-<li><span class="math inline">\(k\)</span>: Number of successes.</li>
-<li><span class="math inline">\(p\)</span>: Probability of success on a single trial.</li>
-<li><span class="math inline">\(1-p\)</span>: Probability of failure.</li>
-<li><span class="math inline">\(\binom{n}{k} = \frac{n!}{k!(n-k)!}\)</span>: Represents the number of ways to choose <span class="math inline">\(k\)</span> successes from <span class="math inline">\(n\)</span> trials</li>
-</ul>
-</section>
-<section id="example-calculation" class="slide level2">
-<h2>Example Calculation</h2>
-<p>Suppose you flip a fair coin 5 times (<span class="math inline">\(n = 5, p = 0.5\)</span>) and want to know the probability of getting exactly 3 heads (<span class="math inline">\(k = 3\)</span>).</p>
-<div class="fragment">
-<p><span class="math display">\[
-P(X = 3) = \binom{5}{3} (0.5)^3 (1-0.5)^{5-3}
-\]</span></p>
-</div>
-</section>
-<section id="properties-of-the-binomial-dist." class="slide level2">
-<h2>Properties of the Binomial Dist.</h2>
-<div class="panel-tabset">
-<ul id="tabset-10" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-10-1">Mean and Variance</a></li><li><a href="#tabset-10-2">Shape of the Distribution</a></li></ul>
-<div class="tab-content">
-<div id="tabset-10-1">
-<p>For a binomial random variable <span class="math inline">\(X\)</span>:</p>
-<ul>
-<li><strong>Mean (Expected Value)</strong>: <span class="math inline">\(\mu = n \cdot p\)</span></li>
-<li><strong>Variance</strong>: <span class="math inline">\(\sigma^2 = n \cdot p \cdot (1-p)\)</span></li>
-<li><strong>Standard Deviation</strong>: <span class="math inline">\(\sigma = \sqrt{n \cdot p \cdot (1-p)}\)</span></li>
-</ul>
-</div>
-<div id="tabset-10-2">
-<ul>
-<li>If <span class="math inline">\(p = 0.5\)</span>, the distribution is symmetric.</li>
-<li>If <span class="math inline">\(p &gt; 0.5\)</span>, the distribution is skewed left.</li>
-<li>If <span class="math inline">\(p &lt; 0.5\)</span>, the distribution is skewed right.</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="applications-2" class="slide level2">
-<h2>Applications</h2>
-<div class="panel-tabset">
-<ul id="tabset-11" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-11-1">Quality Control</a></li><li><a href="#tabset-11-2">Sports</a></li><li><a href="#tabset-11-3">Clinical Trials</a></li></ul>
-<div class="tab-content">
-<div id="tabset-11-1">
-<p>A factory produces lightbulbs, and 95% of them meet quality standards. If you randomly test 10 bulbs, what is the probability that exactly 8 bulbs pass the test?</p>
-<p>Here:</p>
-<ul>
-<li><span class="math inline">\(n = 10\)</span>, <span class="math inline">\(p = 0.95\)</span>, <span class="math inline">\(k = 8\)</span>.</li>
-</ul>
-<p><span class="math display">\[
-P(X = 8) = \binom{10}{8} (0.95)^8 (0.05)^2
-\]</span></p>
-</div>
-<div id="tabset-11-2">
-<p>A basketball player has a 60% chance of making a free throw. If they take 5 shots, what is the probability of making at least 3 shots?</p>
-<p>Here: - <span class="math inline">\(n = 5\)</span>, <span class="math inline">\(p = 0.6\)</span>.</p>
-<p><span class="math display">\[
-P(X \geq 3) = P(X = 3) + P(X = 4) + P(X = 5)
-\]</span></p>
-</div>
-<div id="tabset-11-3">
-<p>In a clinical trial, a new drug has a 70% success rate. If 15 patients are treated, what is the probability that exactly 10 respond positively to the treatment?</p>
-</div>
-</div>
-</div>
-</section></section>
-<section>
-<section id="poisson-distribution" class="title-slide slide level1 agenda-slide center">
-<h1>Poisson Distribution</h1>
-<div class="agenda">
-<ul>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Probability Theory</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Joint Probability</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Distribution Functions</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Normal Distribution</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Empirical Rule</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Binomial Distribution</p>
-</div></li>
-<li><div class="agenda-active">
-<p>Poisson Distribution</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Probability in R</p>
-</div></li>
-</ul>
-</div>
-</section>
-<section id="poisson-distribution-1" class="slide level2">
-<h2>Poisson Distribution</h2>
-<p>The <strong>Poisson Distribution</strong> is a discrete probability distribution that models the number of events occurring within a fixed interval. These events must happen independently and at a constant average rate.</p>
-</section>
-<section id="real-world-examples-1" class="slide level2">
-<h2>Real-World Examples</h2>
-<ul>
-<li>The number of emails you receive in an hour.</li>
-<li>The number of cars passing through a toll booth in 10 minutes.</li>
-<li>The number of defects in a square meter of fabric.</li>
-</ul>
-<div class="fragment">
-<p>The Poisson distribution helps us answer questions like:</p>
-<ul>
-<li>“What is the probability of receiving 5 emails in the next hour?”</li>
-<li>“How likely is it to have 2 defects in a single square meter?”</li>
-</ul>
-</div>
-</section>
-<section id="conditions-for-the-poisson-dist." class="slide level2 scrollable">
-<h2>Conditions for the Poisson Dist.</h2>
-<ol type="1">
-<li><strong>Events Occur Randomly</strong>:
-<ul>
-<li>The events are random and unpredictable.</li>
-</ul></li>
-<li><strong>Independence</strong>:
-<ul>
-<li>The occurrence of one event does not affect the probability of another event occurring.</li>
-</ul></li>
-<li><strong>Constant Average Rate</strong> (<span class="math inline">\(\lambda\)</span>):
-<ul>
-<li>The average number of events (<span class="math inline">\(\lambda\)</span>) over a fixed interval remains constant.</li>
-</ul></li>
-<li><strong>Non-Overlapping Intervals</strong>:
-<ul>
-<li>Events in one interval do not influence events in another.</li>
-</ul></li>
-</ol>
-</section>
-<section id="the-poisson-probability-formula" class="slide level2">
-<h2>The Poisson Probability Formula</h2>
-<p><span class="math display">\[
-P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}
-\]</span></p>
-<p>Where:</p>
-<ul>
-<li><span class="math inline">\(P(X = k)\)</span>: Probability of <span class="math inline">\(k\)</span> events occurring.</li>
-<li><span class="math inline">\(\lambda\)</span>: Average number of events in the interval.</li>
-<li><span class="math inline">\(e \approx 2.718\)</span></li>
-<li><span class="math inline">\(k!\)</span>: Factorial of <span class="math inline">\(k\)</span>, calculated as <span class="math inline">\(k \times (k-1) \times \dots \times 1\)</span>.</li>
-</ul>
-</section>
-<section id="example-calculation-1" class="slide level2">
-<h2>Example Calculation</h2>
-<p>Suppose a call center receives an average of 10 calls per hour (<span class="math inline">\(\lambda = 10\)</span>). What is the probability of receiving exactly 7 calls in the next hour ($ k = 7 $)?</p>
-<p><span class="math display">\[
-P(X = 7) = \frac{10^7 e^{-10}}{7!}
-\]</span></p>
-</section>
-<section id="poisson-distribution-properties" class="slide level2">
-<h2>Poisson Distribution Properties</h2>
-<ul>
-<li><strong>Mean</strong>: <span class="math inline">\(\mu = \lambda\)</span></li>
-<li><strong>Variance</strong>: <span class="math inline">\(\sigma^2 = \lambda\)</span></li>
-<li><strong>Standard Deviation</strong>: <span class="math inline">\(\sigma = \sqrt{\lambda}\)</span></li>
-</ul>
-</section>
-<section id="applications-3" class="slide level2">
-<h2>Applications</h2>
-<div class="panel-tabset">
-<ul id="tabset-12" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-12-1">Traffic Flow</a></li><li><a href="#tabset-12-2">Defective Products</a></li></ul>
-<div class="tab-content">
-<div id="tabset-12-1">
-<p>A toll booth observes an average of 3 cars passing through every 5 minutes (<span class="math inline">\(\lambda = 3\)</span>). What is the probability of seeing exactly 5 cars in the next 5 minutes?</p>
-<p>Using the formula: <span class="math display">\[
-P(X = 5) = \frac{3^5 e^{-3}}{5!} = \frac{243 \cdot 0.0498}{120} \approx 0.1008
-\]</span></p>
-</div>
-<div id="tabset-12-2">
-<p>A factory produces an average of 2 defective items per day (<span class="math inline">\(\lambda = 2\)</span>). What is the probability of finding no defective items in a day (<span class="math inline">\(k = 0\)</span>)?</p>
-<p><span class="math display">\[
-P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
-\]</span></p>
-</div>
-</div>
-</div>
-</section></section>
-<section>
-<section id="probability-in-r" class="title-slide slide level1 agenda-slide center">
-<h1>Probability in R</h1>
-<div class="agenda">
-<ul>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Probability Theory</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Joint Probability</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Distribution Functions</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Normal Distribution</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Empirical Rule</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Binomial Distribution</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Poisson Distribution</p>
-</div></li>
-<li><div class="agenda-active">
-<p>Probability in R</p>
-</div></li>
-</ul>
-</div>
-</section>
-<section id="distributions-in-r" class="slide level2">
-<h2>Distributions in R</h2>
+<div id="tabset-3-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>?Distributions</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>xlm <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass <span class="sc">~</span> flipper_len,</span>
+<span id="cb22-2"><a></a>            <span class="at">data =</span> penguins)</span>
+<span id="cb22-3"><a></a></span>
+<span id="cb22-4"><a></a></span>
+<span id="cb22-5"><a></a>xlm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; 
+#&gt; Call:
+#&gt; lm(formula = body_mass ~ flipper_len, data = penguins)
+#&gt; 
+#&gt; Coefficients:
+#&gt; (Intercept)  flipper_len  
+#&gt;    -5872.09        50.15</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>predict_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">flipper_len =</span> <span class="dv">190</span>)</span>
+<span id="cb24-2"><a></a></span>
+<span id="cb24-3"><a></a><span class="fu">predict</span>(xlm,</span>
+<span id="cb24-4"><a></a>        predict_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt;        1 
+#&gt; 3657.028</code></pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section>
-<section id="function-structure" class="slide level2">
-<h2>Function Structure</h2>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Letter</th>
-<th style="text-align: left;">Functionality</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">“d”</td>
-<td style="text-align: left;">returns the height of the probability density function</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">“p”</td>
-<td style="text-align: left;">returns the cummulative density function value</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">“q”</td>
-<td style="text-align: left;">returns the inverse cummulative density function (percentiles)</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">“r”</td>
-<td style="text-align: left;">returns a randomly generated number</td>
-</tr>
-</tbody>
-</table>
+<section id="interpolation" class="slide level2">
+<h2>Interpolation</h2>
+<p>Interpolation is the process of estimating a value within the range of the observed input data <span class="math inline">\(X\)</span>.</p>
 </section>
-<section id="probabilities" class="slide level2">
-<h2>Probabilities</h2>
-<p>R can compute the probabilities of a distribution given the correct parameters:</p>
-<ul>
-<li>Cummulative probability: <code>p</code> is used in front of the distribution R function</li>
-<li>Probability for a discrete distribution: <code>d</code> is used in front of the distribution R function
-<ul>
-<li>Note: Continuous Distribution Functions will not yield a valid probability value.</li>
-</ul></li>
-</ul>
+<section id="extrapolation" class="slide level2">
+<h2>Extrapolation</h2>
+<p>Extrapolation is the process of estimating a value beyond the range of observed input data <span class="math inline">\(X\)</span>. It’s about venturing into the unknown, using what we know as a guide.</p>
 </section>
-<section id="examples-1" class="slide level2">
-<h2>Examples</h2>
-<div class="panel-tabset">
-<ul id="tabset-13" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-13-1">1</a></li><li><a href="#tabset-13-2">2</a></li><li><a href="#tabset-13-3">3</a></li></ul>
-<div class="tab-content">
-<div id="tabset-13-1">
-<p>Find <span class="math inline">\(P(X \leq 5 )\)</span> where <span class="math inline">\(X \sim N(6,2)\)</span>.</p>
+<section id="extrapolation-1" class="slide level2">
+<h2>Extrapolation</h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">pnorm</span>(<span class="dv">5</span>, <span class="at">mean =</span> <span class="dv">6</span>, <span class="at">sd =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(flipper_len, body_mass)) <span class="sc">+</span> </span>
+<span id="cb26-2"><a></a>  <span class="fu">xlim</span>(<span class="dv">160</span>, <span class="dv">250</span>) <span class="sc">+</span></span>
+<span id="cb26-3"><a></a>  <span class="fu">ylim</span>(<span class="dv">2600</span>, <span class="dv">7000</span>) <span class="sc">+</span></span>
+<span id="cb26-4"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb26-5"><a></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> F) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-</div>
-</div>
-<div id="tabset-13-2">
-<p>Find <span class="math inline">\(P(X \geq 7 )\)</span> where <span class="math inline">\(X \sim N(6,2)\)</span>.</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">7</span>, <span class="at">mean =</span> <span class="dv">6</span>, <span class="at">sd =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</div>
-<div id="tabset-13-3">
-<p>Find <span class="math inline">\(P(X = 20 )\)</span> where <span class="math inline">\(X \sim Bin(30,0.8)\)</span>.</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">dbinom</span>(<span class="dv">20</span>, <span class="at">size =</span> <span class="dv">30</span>, <span class="at">prob =</span> <span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="more-examples-1" class="slide level2">
-<h2>More Examples</h2>
-<div class="panel-tabset">
-<ul id="tabset-14" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-14-1">1</a></li><li><a href="#tabset-14-2">2</a></li><li><a href="#tabset-14-3">3</a></li></ul>
-<div class="tab-content">
-<div id="tabset-14-1">
-<p>Find <span class="math inline">\(P(2 \leq X \leq 5 )\)</span> where <span class="math inline">\(X \sim N(6,2)\)</span>.</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">pnorm</span>(<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">2</span>) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">2</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</div>
-<div id="tabset-14-2">
-<p>Find <span class="math inline">\(P(14 &lt; X &lt; 20)\)</span> where <span class="math inline">\(X \sim Pois(16)\)</span>.</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">ppois</span>(<span class="dv">19</span>, <span class="at">lambda =</span> <span class="dv">16</span>) <span class="sc">-</span> <span class="fu">ppois</span>(<span class="dv">14</span>, <span class="at">lambda =</span> <span class="dv">16</span>)</span>
-<span id="cb9-2"><a></a></span>
-<span id="cb9-3"><a></a><span class="do">## OR</span></span>
-<span id="cb9-4"><a></a></span>
-<span id="cb9-5"><a></a><span class="fu">dpois</span>(<span class="dv">15</span>, <span class="dv">16</span>) <span class="sc">+</span> <span class="fu">dpois</span>(<span class="dv">16</span>, <span class="dv">16</span>) <span class="sc">+</span> <span class="fu">dpois</span>(<span class="dv">17</span>, <span class="dv">16</span>) <span class="sc">+</span> <span class="fu">dpois</span>(<span class="dv">18</span>, <span class="dv">16</span>) <span class="sc">+</span> <span class="fu">dpois</span>(<span class="dv">19</span>, <span class="dv">16</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</div>
-<div id="tabset-14-3">
-<p>Find <span class="math inline">\(P(23 &lt; X)\)</span> where <span class="math inline">\(X \sim Pois(12)\)</span>.</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">ppois</span>(<span class="dv">23</span>, <span class="dv">12</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="percentiles-1" class="slide level2">
-<h2>Percentiles</h2>
-<p>Finding the values (percentiles) for any distributions can be found by using the q-based distribution R function such as <code>qnorm()</code>, <code>qpois()</code>, and <code>qbinom()</code> functions.</p>
-</section>
-<section id="examples-2" class="slide level2">
-<h2>Examples</h2>
-<div class="panel-tabset">
-<ul id="tabset-15" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-15-1">1</a></li><li><a href="#tabset-15-2">2</a></li><li><a href="#tabset-15-3">3</a></li></ul>
-<div class="tab-content">
-<div id="tabset-15-1">
-<p>Finding the <span class="math inline">\(95^{th}\)</span> percentile from <span class="math inline">\(N(0,1)\)</span>, we will use the <code>qnorm()</code>.</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">qnorm</span>(.<span class="dv">95</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</div>
-<div id="tabset-15-2">
-<p>Finding the <span class="math inline">\(95^{th}\)</span> percentile from a Poisson distribution with <span class="math inline">\(\lambda = 9.5\)</span>.</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">qpois</span>(.<span class="dv">95</span>, <span class="fl">9.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</div>
-<div id="tabset-15-3">
-<p>Finding the <span class="math inline">\(75^{th}\)</span> percentile for <span class="math inline">\(Bin(45,.4)\)</span>.</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">qbinom</span>(.<span class="dv">75</span>, <span class="dv">45</span>, .<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="random-number-generator" class="slide level2">
-<h2>Random Number Generator</h2>
-<p>R is capable of generating random numbers. For example if we want to generate a random sample of size fifty from a normal distribution with mean eight and variance three, we will use the <code>rnorm()</code>. If we want to generate a random sample from any distribution, use the distribution function with <code>r</code> in front of it.</p>
-</section>
-<section id="examples-3" class="slide level2">
-<h2>Examples</h2>
-<div class="panel-tabset">
-<ul id="tabset-16" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-16-1">1</a></li><li><a href="#tabset-16-2">2</a></li><li><a href="#tabset-16-3">3</a></li><li><a href="#tabset-16-4">4</a></li></ul>
-<div class="tab-content">
-<div id="tabset-16-1">
-<p>Let’s first generate the random sample of fifty from <span class="math inline">\(X \sim N(8,3)\)</span>.</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="dv">8</span>, <span class="fu">sqrt</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</div>
-<div id="tabset-16-2">
-<p>Generate a random sample of 100 form an <span class="math inline">\(X \sim Gamma (2,3)\)</span>.</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">rgamma</span>(<span class="dv">100</span>, <span class="dv">2</span>,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</div>
-<div id="tabset-16-3">
-<p>Generate a random sample of 100 form an <span class="math inline">\(X \sim Binom (25,.23)\)</span>.</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">rbinom</span>(<span class="at">n =</span> <span class="dv">100</span>, <span class="at">size  =</span> <span class="dv">25</span>, <span class="at">prob =</span> <span class="fl">0.23</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</div>
-<div id="tabset-16-4">
-<p>Generate a random sample of 100 form an <span class="math inline">\(X \sim Pois (34.4)\)</span>.</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">rpois</span>(<span class="at">n =</span> <span class="dv">100</span>, <span class="at">lambda =</span> <span class="fl">34.4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="5_files/figure-revealjs/unnamed-chunk-18-1.png" width="960"></p>
+</figure>
 </div>
 </div>
 </div>
@@ -1970,7 +1091,7 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1200,
+        width: 1050,
 
         height: 700,
 

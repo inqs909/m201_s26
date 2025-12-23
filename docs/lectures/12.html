@@ -6,7 +6,7 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
@@ -15,7 +15,7 @@
 <script src="../site_libs/quarto-contrib/sc-sb-title-1.0.0/sc_sb_title.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/grid-no-htext-1.0.0/grid_no_htext.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.31">
+  <meta name="generator" content="quarto-1.7.32">
 
   <title>MATH 201 – Statistical Inference</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -102,7 +102,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-18a2653b721b6eb23654738472aec010.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-3250d136a9637f5f47522e41b35ed4ce.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -211,6 +211,67 @@
 <div class="quarto-title-authors">
 </div>
 
+</section><section id="TOC">
+<nav role="doc-toc"> 
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a href="#/hypothesis-tests-multi-regression" id="/toc-hypothesis-tests-multi-regression">Hypothesis Tests: Multi Regression</a>
+<ul>
+<li><a href="#/hypothesis-tests" id="/toc-hypothesis-tests">Hypothesis Tests</a></li>
+<li><a href="#/hypothesis-testing-steps" id="/toc-hypothesis-testing-steps">Hypothesis Testing Steps</a></li>
+<li><a href="#/null-hypothesis-h_0" id="/toc-null-hypothesis-h_0">Null Hypothesis <span class="math inline">\(H_0\)</span></a></li>
+<li><a href="#/alternative-hypothesis-h_1" id="/toc-alternative-hypothesis-h_1">Alternative Hypothesis <span class="math inline">\(H_1\)</span></a></li>
+<li><a href="#/significance-level" id="/toc-significance-level">Significance Level</a></li>
+<li><a href="#/conducting-ht-of-beta_j-linear-r" id="/toc-conducting-ht-of-beta_j-linear-r">Conducting HT of <span class="math inline">\(\beta_j\)</span> Linear R</a></li>
+<li><a href="#/conducting-ht-of-beta_j" id="/toc-conducting-ht-of-beta_j">Conducting HT of <span class="math inline">\(\beta_j\)</span></a></li>
+</ul></li>
+<li><a href="#/examples" id="/toc-examples">Examples</a>
+<ul>
+<li><a href="#/penguins-example" id="/toc-penguins-example">Penguins Example</a></li>
+<li><a href="#/penguins-hypothesis" id="/toc-penguins-hypothesis">Penguins: Hypothesis</a></li>
+<li><a href="#/penguins-alpha-level" id="/toc-penguins-alpha-level">Penguins: <span class="math inline">\(\alpha\)</span>-level</a></li>
+<li><a href="#/penguins-code" id="/toc-penguins-code">Penguins: Code</a></li>
+<li><a href="#/penguins-decision-making" id="/toc-penguins-decision-making">Penguins: Decision Making</a></li>
+<li><a href="#/penguins-interpretation" id="/toc-penguins-interpretation">Penguins: Interpretation</a></li>
+<li><a href="#/heart-disease-example" id="/toc-heart-disease-example">Heart Disease Example</a></li>
+<li><a href="#/heart-hypothesis" id="/toc-heart-hypothesis">Heart: Hypothesis</a></li>
+<li><a href="#/heart-alpha-level" id="/toc-heart-alpha-level">Heart: <span class="math inline">\(\alpha\)</span>-level</a></li>
+<li><a href="#/heart-code" id="/toc-heart-code">Heart: Code</a></li>
+<li><a href="#/heart-decision-making" id="/toc-heart-decision-making">Heart: Decision Making</a></li>
+<li><a href="#/heart-interpretation" id="/toc-heart-interpretation">Heart: Interpretation</a></li>
+</ul></li>
+<li><a href="#/power-analysis" id="/toc-power-analysis">Power Analysis</a>
+<ul>
+<li><a href="#/what-is-statistical-power" id="/toc-what-is-statistical-power">What is Statistical Power</a></li>
+<li><a href="#/why-power-matters" id="/toc-why-power-matters">Why Power Matters</a></li>
+<li><a href="#/errors-in-inference" id="/toc-errors-in-inference">Errors in Inference</a></li>
+<li><a href="#/type-i-error-false-positive" id="/toc-type-i-error-false-positive">Type I Error (False Positive)</a></li>
+<li><a href="#/type-ii-error-false-negative" id="/toc-type-ii-error-false-negative">Type II Error (False Negative)</a></li>
+<li><a href="#/balancing-errors" id="/toc-balancing-errors">Balancing Errors</a></li>
+<li><a href="#/what-affects-power" id="/toc-what-affects-power">What Affects Power?</a></li>
+<li><a href="#/boosting-power" id="/toc-boosting-power">Boosting Power</a></li>
+</ul></li>
+<li><a href="#/model-conditions" id="/toc-model-conditions">Model Conditions</a>
+<ul>
+<li><a href="#/model-conditions-1" id="/toc-model-conditions-1">Model Conditions</a></li>
+<li><a href="#/linearity" id="/toc-linearity">Linearity</a></li>
+<li><a href="#/independence" id="/toc-independence">Independence</a></li>
+<li><a href="#/probability-assumption" id="/toc-probability-assumption">Probability Assumption</a></li>
+<li><a href="#/equal-variances" id="/toc-equal-variances">Equal Variances</a></li>
+<li><a href="#/residuals" id="/toc-residuals">Residuals</a></li>
+<li><a href="#/influential-measurements" id="/toc-influential-measurements">Influential Measurements</a></li>
+<li><a href="#/raw-residuals" id="/toc-raw-residuals">Raw Residuals</a></li>
+<li><a href="#/residual-analysis" id="/toc-residual-analysis">Residual Analysis</a></li>
+<li><a href="#/qq-plot" id="/toc-qq-plot">QQ Plot</a></li>
+<li><a href="#/residual-vs-fitted-plot" id="/toc-residual-vs-fitted-plot">Residual vs Fitted Plot</a></li>
+<li><a href="#/residual-analysis-in-r" id="/toc-residual-analysis-in-r">Residual Analysis in R</a></li>
+<li><a href="#/residual-vs-fitted-plot-1" id="/toc-residual-vs-fitted-plot-1">Residual vs Fitted Plot</a></li>
+<li><a href="#/qq-plot-1" id="/toc-qq-plot-1">QQ Plot</a></li>
+<li><a href="#/penguins-example-1" id="/toc-penguins-example-1">Penguins: Example</a></li>
+<li><a href="#/heart-example" id="/toc-heart-example">Heart: Example</a></li>
+</ul></li>
+</ul>
+</nav>
 </section>
 <section>
 <section id="hypothesis-tests-multi-regression" class="title-slide slide level1 agenda-slide center">
@@ -826,12 +887,12 @@ p = 0.00967 &lt; 0.05 = \alpha
 #&gt; 5     -0.6366106     -2.717940              -1.259993        -2.476175
 #&gt; 6     -0.5787181     -2.884425              -1.426478        -2.433842
 #&gt;   std_pear_resid std_dev_resid stud_dev_resid quantile_resid   leverages
-#&gt; 1     -0.6962858    -0.8927274     -0.8846616      0.4271753 0.045927133
-#&gt; 2      0.4562301     0.6153377      0.6134136      0.8346384 0.013866647
-#&gt; 3      0.6910541     0.8843093      0.8827424     -0.2236567 0.009094376
-#&gt; 4     -0.5199246    -0.6922325     -0.6903935      0.1753890 0.012173676
-#&gt; 5     -0.4789686    -0.6433536     -0.6403567     -0.3214378 0.020852010
-#&gt; 6     -0.4311339    -0.5843756     -0.5818043      0.4590958 0.019268922
+#&gt; 1     -0.6962858    -0.8927274     -0.8846616     -1.3402462 0.045927133
+#&gt; 2      0.4562301     0.6153377      0.6134136      0.4534013 0.013866647
+#&gt; 3      0.6910541     0.8843093      0.8827424      0.2192157 0.009094376
+#&gt; 4     -0.5199246    -0.6922325     -0.6903935     -0.3003890 0.012173676
+#&gt; 5     -0.4789686    -0.6433536     -0.6403567      0.3764186 0.020852010
+#&gt; 6     -0.4311339    -0.5843756     -0.5818043      0.1518214 0.019268922
 #&gt;          cooks
 #&gt; 1 0.0046675922
 #&gt; 2 0.0005853744

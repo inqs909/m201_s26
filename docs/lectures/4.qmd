@@ -44,8 +44,8 @@ editor: source
 #| include: false
 library(MASS)
 library(tidyverse)
-library(csucistats)
-library(patchwork)
+library(rcistats)
+
 
 theme_set(theme_bw() + 
             theme(

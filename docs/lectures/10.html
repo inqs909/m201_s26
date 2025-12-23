@@ -6,7 +6,7 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
@@ -15,7 +15,7 @@
 <script src="../site_libs/quarto-contrib/sc-sb-title-1.0.0/sc_sb_title.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/grid-no-htext-1.0.0/grid_no_htext.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.31">
+  <meta name="generator" content="quarto-1.7.32">
 
   <title>MATH 201 – Statistical Inference</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -102,7 +102,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-18a2653b721b6eb23654738472aec010.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-3250d136a9637f5f47522e41b35ed4ce.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -210,6 +210,75 @@
 <div class="quarto-title-authors">
 </div>
 
+</section><section id="TOC">
+<nav role="doc-toc"> 
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a href="#/statistical-inference" id="/toc-statistical-inference">Statistical Inference</a>
+<ul>
+<li><a href="#/what-is-statistical-inference" id="/toc-what-is-statistical-inference">What is Statistical Inference?</a></li>
+<li><a href="#/two-main-types-of-inference" id="/toc-two-main-types-of-inference">Two Main Types of Inference</a></li>
+<li><a href="#/estimation" id="/toc-estimation">Estimation</a></li>
+<li><a href="#/hypothesis-testing" id="/toc-hypothesis-testing">Hypothesis Testing</a></li>
+<li><a href="#/key-concepts-and-tools" id="/toc-key-concepts-and-tools">Key Concepts and Tools</a></li>
+<li><a href="#/p-values" id="/toc-p-values">p-values</a></li>
+<li><a href="#/confidence-intervals" id="/toc-confidence-intervals">Confidence Intervals</a></li>
+</ul></li>
+<li><a href="#/hypothesis-testing-1" id="/toc-hypothesis-testing-1">Hypothesis Testing</a>
+<ul>
+<li><a href="#/hypothesis-tests" id="/toc-hypothesis-tests">Hypothesis Tests</a></li>
+<li><a href="#/null-hypothesis-h_0" id="/toc-null-hypothesis-h_0">Null Hypothesis <span class="math inline">\(H_0\)</span></a></li>
+<li><a href="#/alternative-hypothesis-h_1" id="/toc-alternative-hypothesis-h_1">Alternative Hypothesis <span class="math inline">\(H_1\)</span></a></li>
+<li><a href="#/example-of-null-and-alternative-hypothesis" id="/toc-example-of-null-and-alternative-hypothesis">Example of Null and Alternative Hypothesis</a></li>
+<li><a href="#/one-side-vs-two-side-hypothesis-tests" id="/toc-one-side-vs-two-side-hypothesis-tests">One-Side vs Two-Side Hypothesis Tests</a></li>
+<li><a href="#/hypothesis-testing-steps" id="/toc-hypothesis-testing-steps">Hypothesis Testing Steps</a></li>
+<li><a href="#/rejection-region" id="/toc-rejection-region">Rejection Region</a></li>
+<li><a href="#/rejection-region-1" id="/toc-rejection-region-1">Rejection Region</a></li>
+</ul></li>
+<li><a href="#/decision-making" id="/toc-decision-making">Decision Making</a>
+<ul>
+<li><a href="#/decision-making-1" id="/toc-decision-making-1">Decision Making</a></li>
+<li><a href="#/decision-making-p-value" id="/toc-decision-making-p-value">Decision Making: P-Value</a></li>
+<li><a href="#/significance-level-alpha" id="/toc-significance-level-alpha">Significance Level <span class="math inline">\(\alpha\)</span></a></li>
+</ul></li>
+<li><a href="#/confidence-intervals-1" id="/toc-confidence-intervals-1">Confidence Intervals</a>
+<ul>
+<li><a href="#/confidence-intervals-2" id="/toc-confidence-intervals-2">Confidence Intervals</a></li>
+<li><a href="#/interpretation" id="/toc-interpretation">Interpretation</a></li>
+<li><a href="#/factors-affecting-ci-width" id="/toc-factors-affecting-ci-width">Factors Affecting CI Width</a></li>
+<li><a href="#/decision-making-confidence-interval-approach" id="/toc-decision-making-confidence-interval-approach">Decision Making: Confidence Interval Approach</a></li>
+</ul></li>
+<li><a href="#/linear-regression-inference-in-r" id="/toc-linear-regression-inference-in-r">Linear Regression Inference in R</a>
+<ul>
+<li><a href="#/conducting-ht-of-beta_j" id="/toc-conducting-ht-of-beta_j">Conducting HT of <span class="math inline">\(\beta_j\)</span></a></li>
+<li><a href="#/example" id="/toc-example">Example</a></li>
+<li><a href="#/example-1" id="/toc-example-1">Example</a></li>
+<li><a href="#/confidence-interval" id="/toc-confidence-interval">Confidence Interval</a></li>
+<li><a href="#/x-confidence-interval" id="/toc-x-confidence-interval">X% Confidence Interval</a></li>
+<li><a href="#/example-2" id="/toc-example-2">Example</a></li>
+</ul></li>
+<li><a href="#/linear-regression-example" id="/toc-linear-regression-example">Linear Regression Example</a>
+<ul>
+<li><a href="#/mammals-sleep-data-set" id="/toc-mammals-sleep-data-set">Mammals Sleep Data Set</a></li>
+<li><a href="#/red-wine-data" id="/toc-red-wine-data">Red Wine Data</a></li>
+</ul></li>
+<li><a href="#/logistic-regression-inference-in-r" id="/toc-logistic-regression-inference-in-r">Logistic Regression Inference in R</a>
+<ul>
+<li><a href="#/conducting-ht-of-beta_j-1" id="/toc-conducting-ht-of-beta_j-1">Conducting HT of <span class="math inline">\(\beta_j\)</span></a></li>
+<li><a href="#/example-3" id="/toc-example-3">Example</a></li>
+<li><a href="#/example-4" id="/toc-example-4">Example</a></li>
+<li><a href="#/confidence-interval-1" id="/toc-confidence-interval-1">Confidence Interval</a></li>
+<li><a href="#/example-5" id="/toc-example-5">Example</a></li>
+<li><a href="#/odds-ratio-confidence-intervat" id="/toc-odds-ratio-confidence-intervat">Odds Ratio &amp; Confidence Intervat</a></li>
+<li><a href="#/example-6" id="/toc-example-6">Example</a></li>
+</ul></li>
+<li><a href="#/logistic-regression-example" id="/toc-logistic-regression-example">Logistic Regression Example</a>
+<ul>
+<li><a href="#/breast-cancer-data" id="/toc-breast-cancer-data">Breast Cancer Data</a></li>
+<li><a href="#/bank-note-classification" id="/toc-bank-note-classification">Bank Note Classification</a></li>
+</ul></li>
+</ul>
+</nav>
 </section>
 <section>
 <section id="statistical-inference" class="title-slide slide level1 agenda-slide center">

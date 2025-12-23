@@ -6,7 +6,7 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
@@ -15,7 +15,7 @@
 <script src="../site_libs/quarto-contrib/sc-sb-title-1.0.0/sc_sb_title.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/grid-no-htext-1.0.0/grid_no_htext.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.31">
+  <meta name="generator" content="quarto-1.7.32">
 
   <title>MATH 201 – Statistical Inference</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -102,7 +102,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-18a2653b721b6eb23654738472aec010.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-3250d136a9637f5f47522e41b35ed4ce.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -211,6 +211,69 @@
 <div class="quarto-title-authors">
 </div>
 
+</section><section id="TOC">
+<nav role="doc-toc"> 
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a href="#/motivating-example" id="/toc-motivating-example">Motivating Example</a>
+<ul>
+<li><a href="#/species-and-body-mass" id="/toc-species-and-body-mass">Species and Body Mass</a></li>
+<li><a href="#/chest-pain-and-heart-disease" id="/toc-chest-pain-and-heart-disease">Chest Pain and Heart Disease</a></li>
+</ul></li>
+<li><a href="#/model-inference" id="/toc-model-inference">Model Inference</a>
+<ul>
+<li><a href="#/model-inference-1" id="/toc-model-inference-1">Model Inference</a></li>
+<li><a href="#/model-inference-2" id="/toc-model-inference-2">Model inference</a></li>
+<li><a href="#/full-and-reduced-model" id="/toc-full-and-reduced-model">Full and Reduced Model</a></li>
+<li><a href="#/null-and-alt-hypothesis" id="/toc-null-and-alt-hypothesis">Null and Alt Hypothesis</a></li>
+<li><a href="#/group-model-inference" id="/toc-group-model-inference">Group Model Inference</a></li>
+<li><a href="#/group-full-and-reduced-model" id="/toc-group-full-and-reduced-model">Group Full and Reduced Model</a></li>
+<li><a href="#/group-null-and-alt-hypothesis" id="/toc-group-null-and-alt-hypothesis">Group Null and Alt Hypothesis</a></li>
+</ul></li>
+<li><a href="#/family-wise-error-rate" id="/toc-family-wise-error-rate">Family-wise Error Rate</a>
+<ul>
+<li><a href="#/motivation" id="/toc-motivation">Motivation</a></li>
+<li><a href="#/type-i-error-and-its-rate" id="/toc-type-i-error-and-its-rate">Type I Error and Its Rate</a></li>
+<li><a href="#/definition-of-fwer" id="/toc-definition-of-fwer">Definition of FWER</a></li>
+<li><a href="#/why-control-fwer" id="/toc-why-control-fwer">Why Control FWER?</a></li>
+<li><a href="#/methods-to-control-fwer" id="/toc-methods-to-control-fwer">Methods to Control FWER</a></li>
+</ul></li>
+<li><a href="#/linear-model-inference" id="/toc-linear-model-inference">Linear Model Inference</a>
+<ul>
+<li><a href="#/linear-model-inference-1" id="/toc-linear-model-inference-1">Linear Model Inference</a></li>
+<li><a href="#/linear-models-difference-groups" id="/toc-linear-models-difference-groups">Linear Models: Difference Groups</a></li>
+<li><a href="#/anova-table" id="/toc-anova-table">ANOVA Table</a></li>
+<li><a href="#/conducting-an-anova-in-r" id="/toc-conducting-an-anova-in-r">Conducting an ANOVA in R</a></li>
+<li><a href="#/species-and-body-mass-1" id="/toc-species-and-body-mass-1">Species and Body Mass</a></li>
+<li><a href="#/example-hypothesis" id="/toc-example-hypothesis">Example: Hypothesis</a></li>
+<li><a href="#/example-anova" id="/toc-example-anova">Example: ANOVA</a></li>
+</ul></li>
+<li><a href="#/logistic-model-inference" id="/toc-logistic-model-inference">Logistic Model Inference</a>
+<ul>
+<li><a href="#/logistic-model-inference-1" id="/toc-logistic-model-inference-1">Logistic Model Inference</a></li>
+<li><a href="#/logistic-model-inference-2" id="/toc-logistic-model-inference-2">Logistic Model Inference</a></li>
+<li><a href="#/likelihood-ratio-test-logistic" id="/toc-likelihood-ratio-test-logistic">Likelihood Ratio Test (Logistic)</a></li>
+<li><a href="#/conducting-an-lrt-in-r" id="/toc-conducting-an-lrt-in-r">Conducting an LRT in R</a></li>
+<li><a href="#/chest-pain-and-heart-disease-1" id="/toc-chest-pain-and-heart-disease-1">Chest Pain and Heart Disease</a></li>
+<li><a href="#/example-hypothesis-1" id="/toc-example-hypothesis-1">Example: Hypothesis</a></li>
+<li><a href="#/example-lrt" id="/toc-example-lrt">Example: LRT</a></li>
+</ul></li>
+<li><a href="#/post-hoc-analysis" id="/toc-post-hoc-analysis">Post-Hoc Analysis</a>
+<ul>
+<li><a href="#/post-hoc-analysis-1" id="/toc-post-hoc-analysis-1">Post-Hoc Analysis</a></li>
+<li><a href="#/group-proportions-or-means" id="/toc-group-proportions-or-means">Group Proportions Or Means</a></li>
+<li><a href="#/group-means" id="/toc-group-means">Group Means</a></li>
+<li><a href="#/group-proportions" id="/toc-group-proportions">Group Proportions</a></li>
+<li><a href="#/body-mass-by-species" id="/toc-body-mass-by-species">Body Mass by Species</a></li>
+<li><a href="#/heart-disease-by-chest-pain" id="/toc-heart-disease-by-chest-pain">Heart Disease by Chest Pain</a></li>
+<li><a href="#/multiple-comparisons-test" id="/toc-multiple-comparisons-test">Multiple Comparisons Test</a></li>
+<li><a href="#/multi-comparison-test-means" id="/toc-multi-comparison-test-means">Multi-Comparison Test: Means</a></li>
+<li><a href="#/multi-comparison-test-proportions" id="/toc-multi-comparison-test-proportions">Multi-Comparison Test: Proportions</a></li>
+<li><a href="#/body-mass-by-species-1" id="/toc-body-mass-by-species-1">Body Mass by Species</a></li>
+<li><a href="#/heart-disease-by-chest-pain-1" id="/toc-heart-disease-by-chest-pain-1">Heart Disease by Chest Pain</a></li>
+</ul></li>
+</ul>
+</nav>
 </section>
 <section>
 <section id="motivating-example" class="title-slide slide level1 agenda-slide center">
@@ -882,8 +945,8 @@ g(\hat Y) = \bar y
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt;  contrast           estimate   SE  df t.ratio p.value
 #&gt;  Adelie - Chinstrap    -26.9 67.7 330  -0.398  0.9164
-#&gt;  Adelie - Gentoo     -1386.3 56.9 330 -24.359  &lt;.0001
-#&gt;  Chinstrap - Gentoo  -1359.3 70.0 330 -19.406  &lt;.0001
+#&gt;  Adelie - Gentoo     -1386.3 56.9 330 -24.359 &lt;0.0001
+#&gt;  Chinstrap - Gentoo  -1359.3 70.0 330 -19.406 &lt;0.0001
 #&gt; 
 #&gt; P value adjustment: tukey method for comparing a family of 3 estimates</code></pre>
 </div>
@@ -900,8 +963,8 @@ g(\hat Y) = \bar y
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt;  contrast                             odds.ratio    SE  df null z.ratio p.value
-#&gt;  Asymptomatic / Atypical Angina           11.738 4.860 Inf    1   5.948  &lt;.0001
-#&gt;  Asymptomatic / (Non-anginal Pain)         9.537 3.110 Inf    1   6.917  &lt;.0001
+#&gt;  Asymptomatic / Atypical Angina           11.738 4.860 Inf    1   5.948 &lt;0.0001
+#&gt;  Asymptomatic / (Non-anginal Pain)         9.537 3.110 Inf    1   6.917 &lt;0.0001
 #&gt;  Asymptomatic / Typical Angina             6.037 2.960 Inf    1   3.664  0.0014
 #&gt;  Atypical Angina / (Non-anginal Pain)      0.812 0.370 Inf    1  -0.456  0.9684
 #&gt;  Atypical Angina / Typical Angina          0.514 0.301 Inf    1  -1.138  0.6660

@@ -6,7 +6,6 @@ format:
   revealjs:
     width: 1200
     scrollable: false
-    sc-sb-title: true
     footer: m201.inqs.info/lectures/1
     theme: [default, styles.scss]
     navigation-mode: vertical
@@ -33,7 +32,6 @@ revealjs-plugins:
   - verticator
   
 filters: 
-  - reveal-header
   - code-fullscreen
   - reveal-auto-agenda
 
@@ -41,11 +39,13 @@ editor: source
 ---
 
 ```{r}
-#|include: false
+#| include: false
 
 library(tidyverse)
-library(csucistats)
+library(rcistats)
 library(broom)
+library(patchwork)
+
 theme_set(theme_bw() + 
             theme(
               axis.text.x = element_text(size = 24),
@@ -83,7 +83,7 @@ The structure of the data can be represented in various forms:
 ```{r}
 #| echo: false
 #| message: false
-palmerpenguins::penguins |> 
+penguins |> 
   DT::datatable(options = list(dom = "t",
                 pageLength = 4))
 
@@ -116,32 +116,17 @@ A variable is the descriptive attribute that we want to obtain from an experimen
 
 ## Research Question
 
-A research question is designed to create new knowledge of certain phenomenons observed in the world.
-
-::: fragment
-This is designed by conducting a research projects that systematically answers the question.
-:::
-
-::: fragment
-The study design is the procedure in which data is collected to answer the question, while reducing any potential bias while conducting the study.
-:::
+- A research question is designed to create new knowledge of certain phenomenons observed in the world.
+- This is designed by conducting a research projects that systematically answers the question.
+- The study design is the procedure in which data is collected to answer the question, while reducing any potential bias while conducting the study.
 
 ## Study Design
 
-This is the procedure designed to answer a research question.
+- This is the procedure designed to answer a research question.
 
-::: fragment
-Entails procedures to collect data that answers a research question.
-:::
-
-::: fragment
-Dictates how the data will be analyzed.
-:::
-
-::: fragment
-Determines how the data is quanitified and what is the experimental unit.
-:::
-
+- Entails procedures to collect data that answers a research question.
+- Dictates how the data will be analyzed.
+- Determines how the data is quantified and what is the experimental unit.
 
 # Sampling
 
@@ -149,7 +134,7 @@ Determines how the data is quanitified and what is the experimental unit.
 
 The process of a selecting a small subset from a large population.
 
-![Image Provided by Simply Psychology.](https://www.simplypsychology.org/wp-content/uploads/Sample-Target-Population-1024x546.jpeg){.lightbox fig-align="center" height="375"}
+![Image Provided by Simply Psychology.](https://www.simplypsychology.org/wp-content/uploads/Sample-Target-Population-1024x546.jpeg){.lightbox fig-align="center" height="375" fig-alt="An image of a target population being sampled to create a subset."}
 
 ## Sampling
 
@@ -238,17 +223,17 @@ A populations DGP can be defined with the following characteristics:
 
 ## Flipping a Coin
 
-Flipping a coin results in either heads or tail. The probability for heads is 50%
+- Flipping a coin results in either heads or tail. 
 
-::: fragment
-The DGP of flipping a coin is the process of selecting an outcome, given the probability of both options are 50%.
-:::
+- The probability for heads is 50%
+
+- The DGP of flipping a coin is the process of selecting an outcome, given the probability of both options are 50%.
 
 ## Rolling a die
 
 ::: columns
 ::: {.column width="50%"}
-![Image Provided by [Pexels](https://www.pexels.com/)](img/dice.jpg){fig-align="center"}
+![Image Provided by [Pexels](https://www.pexels.com/)](img/dice.jpg){fig-align="center" fig-alt="An image of two dice."}
 :::
 
 ::: {.column width="50%"}
@@ -259,7 +244,7 @@ The DGP of flipping a coin is the process of selecting an outcome, given the pro
 
 ::: columns
 ::: {.column width="50%"}
-![Image Provided by [Pexels](https://www.pexels.com/)](img/thermometer.jpg){fig-align="center"}
+![Image Provided by [Pexels](https://www.pexels.com/)](img/thermometer.jpg){fig-align="center" fig-alt="An image of a thermometer."}
 :::
 
 ::: {.column width="50%"}
@@ -268,21 +253,16 @@ The DGP of flipping a coin is the process of selecting an outcome, given the pro
 
 ## Inference
 
-How do we use DGP and sampling to understand the world?
+- How do we use DGP and sampling to understand the world?
 
-::: fragment
-We can use a sample to understand the DGP.
-:::
-
-::: fragment
-We can use the DGP to understand the sample.
-:::
+- We can use a sample to understand the DGP.
+- We can use the DGP to understand the sample.
 
 ## Visualizing a DGP
 
 ```{r}
 #| echo: false
-library(tidyverse)
+
 seq(0, 1, length.out = 1000) |> 
   dbeta(shape1 = 2, shape2 = 5) |> 
   tibble(x = seq(0, 1, length.out = 1000), y = _) |>
@@ -294,7 +274,6 @@ seq(0, 1, length.out = 1000) |>
 
 ```{r}
 #| echo: false
-library(tidyverse)
 rbinom(200000, size = 20, prob = 1/5) |> 
   tibble(y = _) |>
   ggplot(aes(y)) + geom_bar() + 
@@ -306,8 +285,6 @@ rbinom(200000, size = 20, prob = 1/5) |>
 ```{r}
 #| echo: false
 
-library(ThemePark)
-library(patchwork)
 g1 <- seq(0, 1, length.out = 1000) |> 
   dbeta(shape1 = 2, shape2 = 5) |> 
   tibble(x = seq(0, 1, length.out = 1000), y = _) |>

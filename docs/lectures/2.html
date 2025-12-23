@@ -6,7 +6,7 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
@@ -15,7 +15,7 @@
 <script src="../site_libs/quarto-contrib/sc-sb-title-1.0.0/sc_sb_title.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/grid-no-htext-1.0.0/grid_no_htext.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.31">
+  <meta name="generator" content="quarto-1.7.32">
 
   <title>MATH 201 – Categorical Data</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -102,7 +102,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-18a2653b721b6eb23654738472aec010.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-3250d136a9637f5f47522e41b35ed4ce.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -199,16 +199,16 @@
       margin-right: 0; 
     }
   </style>
-  <link href="../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+  <link href="../site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
   <script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
   <link href="../site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
-  <script src="../site_libs/datatables-binding-0.33/datatables.js"></script>
+  <script src="../site_libs/datatables-binding-0.34.0/datatables.js"></script>
   <script src="../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="../site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
   <link href="../site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
   <script src="../site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
-  <link href="../site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
-  <script src="../site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+  <link href="../site_libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
+  <script src="../site_libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -220,6 +220,72 @@
 <div class="quarto-title-authors">
 </div>
 
+</section><section id="TOC">
+<nav role="doc-toc"> 
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a href="#/r-packages" id="/toc-r-packages">R Packages</a></li>
+<li><a href="#/the-great-american-coffee-taste-test" id="/toc-the-great-american-coffee-taste-test">The Great American Coffee Taste Test</a>
+<ul>
+<li><a href="#/background" id="/toc-background">Background</a></li>
+<li><a href="#/data" id="/toc-data">Data</a></li>
+<li><a href="#/data-1" id="/toc-data-1">Data</a></li>
+</ul></li>
+<li><a href="#/categorical-data" id="/toc-categorical-data">Categorical Data</a>
+<ul>
+<li><a href="#/categorical-data-1" id="/toc-categorical-data-1">Categorical Data</a></li>
+<li><a href="#/examples-of-categorical-data" id="/toc-examples-of-categorical-data">Examples of Categorical Data</a></li>
+<li><a href="#/likert-scale" id="/toc-likert-scale">Likert Scale</a></li>
+<li><a href="#/likert-scales" id="/toc-likert-scales">Likert Scales</a></li>
+<li><a href="#/summarizing-categorical-data" id="/toc-summarizing-categorical-data">Summarizing Categorical Data</a></li>
+</ul></li>
+<li><a href="#/continguency-tables" id="/toc-continguency-tables">Continguency Tables</a>
+<ul>
+<li><a href="#/continguency-tables-1" id="/toc-continguency-tables-1">Continguency Tables</a></li>
+<li><a href="#/frequencey" id="/toc-frequencey">Frequencey</a></li>
+<li><a href="#/proportions-relative-frequencey" id="/toc-proportions-relative-frequencey">Proportions (relative frequencey)</a></li>
+<li><a href="#/continguency-tables-in-r" id="/toc-continguency-tables-in-r">Continguency Tables in R</a></li>
+</ul></li>
+<li><a href="#/bar-plots" id="/toc-bar-plots">Bar Plots</a>
+<ul>
+<li><a href="#/plotting-in-r" id="/toc-plotting-in-r">Plotting in R</a></li>
+<li><a href="#/plotting-in-r-1" id="/toc-plotting-in-r-1">Plotting in R</a></li>
+<li><a href="#/bar-plots-1" id="/toc-bar-plots-1">Bar Plots</a></li>
+<li><a href="#/frequency-bar-plots-in-r" id="/toc-frequency-bar-plots-in-r">Frequency Bar Plots in R</a></li>
+<li><a href="#/frequency-bar-plots-in-r-1" id="/toc-frequency-bar-plots-in-r-1">Frequency Bar Plots in R</a></li>
+<li><a href="#/relative-frequency-bar-plots-in-r" id="/toc-relative-frequency-bar-plots-in-r">Relative Frequency Bar Plots in R</a></li>
+<li><a href="#/relative-frequency-bar-plots-in-r-1" id="/toc-relative-frequency-bar-plots-in-r-1">Relative Frequency Bar Plots in R</a></li>
+</ul></li>
+<li><a href="#/cross-tabulation" id="/toc-cross-tabulation">Cross-Tabulation</a>
+<ul>
+<li><a href="#/data-2" id="/toc-data-2">Data</a></li>
+<li><a href="#/cross-tabulation-1" id="/toc-cross-tabulation-1">Cross-Tabulation</a></li>
+<li><a href="#/key-features-of-cross-tabulations" id="/toc-key-features-of-cross-tabulations">Key Features of Cross-Tabulations</a></li>
+<li><a href="#/types-of-proportions-in-cross-tabulations" id="/toc-types-of-proportions-in-cross-tabulations">Types of Proportions in Cross-Tabulations</a></li>
+<li><a href="#/table-proportions" id="/toc-table-proportions">Table Proportions</a></li>
+<li><a href="#/table-proportions-1" id="/toc-table-proportions-1">Table Proportions</a></li>
+<li><a href="#/row-proportions" id="/toc-row-proportions">Row Proportions</a></li>
+<li><a href="#/row-proportions-1" id="/toc-row-proportions-1">Row Proportions</a></li>
+<li><a href="#/column-proportions" id="/toc-column-proportions">Column Proportions</a></li>
+<li><a href="#/column-proportions-1" id="/toc-column-proportions-1">Column Proportions</a></li>
+<li><a href="#/stacked-bar-plot-in-r" id="/toc-stacked-bar-plot-in-r">Stacked Bar Plot in R</a></li>
+<li><a href="#/stacked-bar-plot-in-r-1" id="/toc-stacked-bar-plot-in-r-1">Stacked Bar Plot in R</a></li>
+<li><a href="#/stacked-bar-plot-in-r-2" id="/toc-stacked-bar-plot-in-r-2">Stacked Bar Plot in R</a></li>
+</ul></li>
+<li><a href="#/pie-charts" id="/toc-pie-charts">Pie Charts</a>
+<ul>
+<li><a href="#/pie-charts-1" id="/toc-pie-charts-1">Pie Charts</a></li>
+<li><a href="#/pie-charts-2" id="/toc-pie-charts-2">Pie Charts</a></li>
+<li><a href="#/key-features-of-pie-charts" id="/toc-key-features-of-pie-charts">Key Features of Pie Charts</a></li>
+<li><a href="#/pie-chart-in-r" id="/toc-pie-chart-in-r">Pie Chart in R</a></li>
+<li><a href="#/pie-chart-in-r-1" id="/toc-pie-chart-in-r-1">Pie Chart in R</a></li>
+</ul></li>
+<li><a href="#/theming" id="/toc-theming">Theming</a>
+<ul>
+<li><a href="#/themes" id="/toc-themes">Themes</a></li>
+</ul></li>
+</ul>
+</nav>
 </section>
 <section id="r-packages" class="slide level2">
 <h2>R Packages</h2>
@@ -249,7 +315,7 @@
 <p>Cross-Tabulation</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Other Plots</p>
+<p>Pie Charts</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Theming</p>
@@ -271,17 +337,17 @@
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(csucistats)</span>
-<span id="cb1-2"><a></a><span class="fu">library</span>(ggtricks)</span>
-<span id="cb1-3"><a></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-4"><a></a><span class="fu">library</span>(ThemePark)</span>
-<span id="cb1-5"><a></a><span class="fu">library</span>(DT)</span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(rcistats)</span>
+<span id="cb1-2"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a></a><span class="fu">library</span>(ThemePark)</span>
+<span id="cb1-4"><a></a><span class="fu">library</span>(DT)</span>
+<span id="cb1-5"><a></a></span>
 <span id="cb1-6"><a></a>coffee <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-05-14/coffee_survey.csv"</span>)</span>
 <span id="cb1-7"><a></a><span class="fu">datatable</span>(<span class="fu">slice_sample</span>(coffee, <span class="at">n =</span> <span class="dv">10</span>), <span class="at">options =</span> <span class="fu">list</span>(<span class="at">dom =</span> <span class="st">"p"</span>, <span class="at">pageLength =</span> <span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-51ad9438b2591d0fe860" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-51ad9438b2591d0fe860">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10"],["PABJ55","AlboEW","qbYDVO","kY0LAr","DVvl6p","jB0Kq9","g5N6rD","42N0Kd","YZVR8v","7d97ER"],["25-34 years old","25-34 years old","25-34 years old","25-34 years old","25-34 years old","55-64 years old","25-34 years old","18-24 years old","55-64 years old","25-34 years old"],["3","2","3","2","2","1","1","2",null,"1"],["At home","At home, At the office","At home","At home","At home","At home","At home","At home, At the office, At a cafe","At home","At home"],["Pour over","Pour over, Espresso, Instant coffee, Bean-to-cup machine","Pour over, French press","Pour over, Espresso","Pod/capsule machine (e.g. Keurig/Nespresso)","Coffee extract (e.g. Cometeer), Instant coffee","Pour over, Cold brew","French press, Pod/capsule machine (e.g. Keurig/Nespresso)","Pod/capsule machine (e.g. Keurig/Nespresso)","Other"],[null,null,null,null,null,null,null,null,null,"moka pot"],[null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null],["Cortado","Pourover","Espresso","Cortado","Cortado","Cappuccino","Cappuccino","Latte","Cappuccino","Other"],[null,null,null,null,null,null,null,null,null,"flat white"],["No - just black","Milk, dairy alternative, or coffee creamer, Sugar or sweetener","No - just black","Milk, dairy alternative, or coffee creamer, No - just black","Milk, dairy alternative, or coffee creamer","Milk, dairy alternative, or coffee creamer","Milk, dairy alternative, or coffee creamer","Milk, dairy alternative, or coffee creamer, Flavor syrup","Milk, dairy alternative, or coffee creamer","No - just black"],[null,null,null,null,null,null,null,null,null,null],[null,"Whole milk",null,"Skim milk, Whole milk, Oat milk","Flavored coffee creamer","Whole milk","Almond milk, Whole milk, Half and half","Whole milk","Whole milk, Oat milk",null],[null,"Raw Sugar (Turbinado)",null,null,null,null,null,null,null,null],["Fruity","Bright","Fruity","Chocolatey","Sweet","Full Bodied","Caramalized","Full Bodied","Chocolatey","Nutty"],["Somewhat strong","Somewhat strong","Medium","Somewhat strong","Somewhat strong","Medium","Medium","Somewhat strong","Somewhat strong","Somewhat strong"],["Light","Light","Light","Medium","Medium","Medium","Blonde","Medium","Dark","Light"],["Full caffeine","Full caffeine","Full caffeine","Full caffeine","Full caffeine","Full caffeine","Full caffeine","Full caffeine","Full caffeine","Full caffeine"],[5,7,8,7,3,4,6,7,7,7],[2,2,1,2,1,3,1,2,null,2],[4,5,5,4,2,1,3,4,null,2],[5,5,4,5,4,1,4,3,null,5],["Fruit, citrus","Super acidic, kinda fruity, little floral","brown sugar, vaguely fruity but not any fruit in particular\nas it cools it tastes like gourds","Blackberry,sweet,jam",null,"Burnt brownies, unpleasant aroma","Savory, light caramel with a bright acidity. With almond milk, preference changes to a 5.","A is a too acidic for me, good mouth feel and not very bitter.",null,"Nutty"],[4,4,4,3,3,3,2,3,null,3],[2,2,1,3,4,2,3,1,null,3],[3,3,2,2,2,1,4,5,null,3],["Chocolate","BItter, okay.","roasty? burnt in a not unpleasant way\ntastes like cheap coffee the more it cools","Gas station,spices",null,"Fruity faint aroma, some acid","More body than coffee A, chocolatey. Becomes more chocolatey with almond milk.","Very well rounded, full tasting. Has a good texture with nothing being too overwhelming",null,null],[4,3,4,4,4,1,3,3,null,4],[3,3,2,2,3,2,1,2,null,3],[3,2,3,3,2,4,3,4,null,2],[null,"N/A","it tastes like it came from a plant- not grassy or woody, just plant \nit tastes like it wants to be a milk drink (specifically latte vibes), but if it had milk it would be too milky","Stone fruit,plum",null,"Smoky (nice bonfire) aroma and flavor, citrus, smores","More body than coffee B, mellow/smooth, what I think of an archetypal cup of coffee is. Becomes more bitter with almond milk and I like it less than when black.","Another well rounded one, less full than b feels a bit lighter in the mouth. Still a very good one",null,null],[3,2,1,1,2,1,2,3,null,4],[5,4,4,5,5,1,4,4,null,1],[4,4,5,4,3,4,2,1,null,1],["Fruit, berry","Fruity, acidic","very sweet and fruity- similar to a rooibos tea\nwiney\nnutty as it cools","Pear,lemon,tea",null,"Black currant, wine flavor","Fruity (blackberry), fermented, natural process, pungent.","Something strange, super fruity/berry notes. Too acidic and fruity for me.",null,null],["Coffee A","Coffee A","Coffee A","Coffee A","Coffee C","Coffee C","Coffee B","Coffee B","Coffee B","Coffee A"],["Coffee A","Coffee A","Coffee D","Coffee A","Coffee A","Coffee D","Coffee A","Coffee A","Coffee A","Coffee A"],["Coffee A","Coffee A","Coffee D","Coffee A","Coffee A","Coffee C","Coffee B","Coffee B","Coffee B","Coffee A"],["I primarily work from home","I do a mix of both","I do a mix of both","I primarily work from home","I primarily work from home","I primarily work from home","I do a mix of both","I do a mix of both",null,"I primarily work in person"],["$20-$40","$20-$40","$60-$80","$40-$60","$20-$40","&lt;$20","$40-$60","$60-$80",null,"$20-$40"],["It tastes good","I need the caffeine, It tastes good, It makes me go to the bathroom, Other","It tastes good","It tastes good, I need the caffeine, I need the ritual","It tastes good","I need the caffeine, I need the ritual","It tastes good, I need the ritual, Other","It tastes good, I need the caffeine, I need the ritual",null,"It tastes good, I need the ritual"],[null,"It makes me feel good",null,null,null,null,"Comforting",null,null,null],["Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes",null,"Yes"],["Yes","Yes","Yes","Yes","Yes","No","No","Yes",null,"Yes"],["$6-$8","$8-$10","$10-$15","$8-$10","$6-$8",null,"$6-$8","$10-$15",null,"$6-$8"],["$6-$8","$10-$15","$15-$20","$10-$15","$8-$10",null,"$6-$8","$10-$15",null,"$8-$10"],["Yes","Yes","Yes","Yes","Yes","Yes","No","No",null,"Yes"],["$300-$500","$500-$1000","$300-$500","More than $1,000","$100-$300","Less than $20","$100-$300","$300-$500",null,"$100-$300"],["Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes",null,"Yes"],["Male","Male","Male","Male","Male","Female","Female","Male",null,"Male"],[null,null,null,null,null,null,null,null,null,null],["Bachelor's degree","Bachelor's degree","Bachelor's degree","Bachelor's degree","Some college or associate's degree","Bachelor's degree","Master's degree","Some college or associate's degree",null,null],["White/Caucasian","White/Caucasian","White/Caucasian","White/Caucasian","White/Caucasian","White/Caucasian","White/Caucasian","White/Caucasian",null,null],[null,null,null,null,null,null,null,null,null,null],["Employed full-time","Employed full-time","Employed full-time","Employed full-time","Unemployed","Homemaker","Employed full-time","Employed full-time",null,null],["None","1","None","None","None","2","None","None",null,null],["No affiliation","Republican","Democrat","Democrat","No affiliation",null,"Democrat","Independent",null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>submission_id<\/th>\n      <th>age<\/th>\n      <th>cups<\/th>\n      <th>where_drink<\/th>\n      <th>brew<\/th>\n      <th>brew_other<\/th>\n      <th>purchase<\/th>\n      <th>purchase_other<\/th>\n      <th>favorite<\/th>\n      <th>favorite_specify<\/th>\n      <th>additions<\/th>\n      <th>additions_other<\/th>\n      <th>dairy<\/th>\n      <th>sweetener<\/th>\n      <th>style<\/th>\n      <th>strength<\/th>\n      <th>roast_level<\/th>\n      <th>caffeine<\/th>\n      <th>expertise<\/th>\n      <th>coffee_a_bitterness<\/th>\n      <th>coffee_a_acidity<\/th>\n      <th>coffee_a_personal_preference<\/th>\n      <th>coffee_a_notes<\/th>\n      <th>coffee_b_bitterness<\/th>\n      <th>coffee_b_acidity<\/th>\n      <th>coffee_b_personal_preference<\/th>\n      <th>coffee_b_notes<\/th>\n      <th>coffee_c_bitterness<\/th>\n      <th>coffee_c_acidity<\/th>\n      <th>coffee_c_personal_preference<\/th>\n      <th>coffee_c_notes<\/th>\n      <th>coffee_d_bitterness<\/th>\n      <th>coffee_d_acidity<\/th>\n      <th>coffee_d_personal_preference<\/th>\n      <th>coffee_d_notes<\/th>\n      <th>prefer_abc<\/th>\n      <th>prefer_ad<\/th>\n      <th>prefer_overall<\/th>\n      <th>wfh<\/th>\n      <th>total_spend<\/th>\n      <th>why_drink<\/th>\n      <th>why_drink_other<\/th>\n      <th>taste<\/th>\n      <th>know_source<\/th>\n      <th>most_paid<\/th>\n      <th>most_willing<\/th>\n      <th>value_cafe<\/th>\n      <th>spent_equipment<\/th>\n      <th>value_equipment<\/th>\n      <th>gender<\/th>\n      <th>gender_specify<\/th>\n      <th>education_level<\/th>\n      <th>ethnicity_race<\/th>\n      <th>ethnicity_race_specify<\/th>\n      <th>employment_status<\/th>\n      <th>number_children<\/th>\n      <th>political_affiliation<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"p","pageLength":5,"columnDefs":[{"className":"dt-right","targets":[19,20,21,22,24,25,26,28,29,30,32,33,34]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"submission_id","targets":1},{"name":"age","targets":2},{"name":"cups","targets":3},{"name":"where_drink","targets":4},{"name":"brew","targets":5},{"name":"brew_other","targets":6},{"name":"purchase","targets":7},{"name":"purchase_other","targets":8},{"name":"favorite","targets":9},{"name":"favorite_specify","targets":10},{"name":"additions","targets":11},{"name":"additions_other","targets":12},{"name":"dairy","targets":13},{"name":"sweetener","targets":14},{"name":"style","targets":15},{"name":"strength","targets":16},{"name":"roast_level","targets":17},{"name":"caffeine","targets":18},{"name":"expertise","targets":19},{"name":"coffee_a_bitterness","targets":20},{"name":"coffee_a_acidity","targets":21},{"name":"coffee_a_personal_preference","targets":22},{"name":"coffee_a_notes","targets":23},{"name":"coffee_b_bitterness","targets":24},{"name":"coffee_b_acidity","targets":25},{"name":"coffee_b_personal_preference","targets":26},{"name":"coffee_b_notes","targets":27},{"name":"coffee_c_bitterness","targets":28},{"name":"coffee_c_acidity","targets":29},{"name":"coffee_c_personal_preference","targets":30},{"name":"coffee_c_notes","targets":31},{"name":"coffee_d_bitterness","targets":32},{"name":"coffee_d_acidity","targets":33},{"name":"coffee_d_personal_preference","targets":34},{"name":"coffee_d_notes","targets":35},{"name":"prefer_abc","targets":36},{"name":"prefer_ad","targets":37},{"name":"prefer_overall","targets":38},{"name":"wfh","targets":39},{"name":"total_spend","targets":40},{"name":"why_drink","targets":41},{"name":"why_drink_other","targets":42},{"name":"taste","targets":43},{"name":"know_source","targets":44},{"name":"most_paid","targets":45},{"name":"most_willing","targets":46},{"name":"value_cafe","targets":47},{"name":"spent_equipment","targets":48},{"name":"value_equipment","targets":49},{"name":"gender","targets":50},{"name":"gender_specify","targets":51},{"name":"education_level","targets":52},{"name":"ethnicity_race","targets":53},{"name":"ethnicity_race_specify","targets":54},{"name":"employment_status","targets":55},{"name":"number_children","targets":56},{"name":"political_affiliation","targets":57}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-067386a9116ce0ad1fc9" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-067386a9116ce0ad1fc9">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10"],["7d97ER","QABlV8","VZoEby","NA4Zep","7d9rp2","zK07oa","OABMjA","6dQgAY","NAB2Ol","6dQ0eO"],["25-34 years old","35-44 years old","25-34 years old","45-54 years old","35-44 years old","35-44 years old","25-34 years old","25-34 years old","25-34 years old","25-34 years old"],["1","1","3","3","2","2","2","4","1","Less than 1"],["At home","At home","At home, On the go, At a cafe, At the office","At home","At the office","At home","On the go, At the office, At home","At home, On the go","At home, On the go, At the office","At the office, At home"],["Other","Pour over","Pour over, Bean-to-cup machine","Pour over, Espresso, Coffee brewing machine (e.g. Mr. Coffee)",null,"Pour over","Pour over, Espresso, French press, Cold brew","Pour over","Coffee brewing machine (e.g. Mr. Coffee)","Espresso, Cold brew"],["moka pot",null,null,null,null,null,null,null,null,null],[null,null,"Specialty coffee shop, Drive-thru, Local cafe",null,null,null,"Specialty coffee shop","Specialty coffee shop","Specialty coffee shop",null],[null,null,null,null,null,null,null,null,null,null],["Other","Pourover","Pourover","Cortado","Latte","Pourover","Latte","Espresso","Latte","Cold brew"],["flat white",null,null,null,null,null,null,null,null,null],["No - just black","No - just black","No - just black","No - just black","No - just black","No - just black","No - just black","No - just black","Milk, dairy alternative, or coffee creamer, Flavor syrup, Other","Milk, dairy alternative, or coffee creamer, Sugar or sweetener"],[null,null,null,null,null,null,null,null,"Salt",null],[null,null,null,null,null,null,null,null,"Half and half","Whole milk, Half and half"],[null,null,null,null,null,null,null,null,null,"Granulated Sugar, Raw Sugar (Turbinado)"],["Nutty","Fruity","Juicy","Sweet","Chocolatey","Juicy","Nutty","Juicy","Caramalized","Sweet"],["Somewhat strong","Medium","Somewhat strong","Medium","Medium","Medium","Somewhat strong","Medium","Medium","Somewhat strong"],["Light","Light","Light","Medium","Medium","Light","Medium","Light","Light","Medium"],["Full caffeine","Full caffeine","Full caffeine","Full caffeine","Full caffeine","Full caffeine","Half caff","Full caffeine","Full caffeine","Full caffeine"],[7,2,6,7,3,7,8,8,2,3],[2,2,2,1,2,null,1,2,1,1],[2,4,4,4,4,null,1,1,3,4],[5,3,4,3,3,null,4,5,5,3],["Nutty","Light body, miso soup, vinegar","Balanced , sweetness, light, cereal, apple, crisp","Pear",null,null,"Smooth, all day kinda sipping, comfortable, tea like, creaminess",null,null,"A bit fruity."],[3,4,4,2,3,null,1,3,4,3],[3,2,2,2,1,null,2,2,1,2],[3,2,2,4,4,null,4,4,1,4],[null,"Lingering bitter finish, dark milk chocolate, smooth dark roast, would go good with milk, full body","Bitter, brown, inoffensive","caramel, sweet",null,null,"French press like body",null,"Didn't like the dark roast","Tastes more like what I think of as coffee. No particular fruity or earthy flavors."],[4,1,3,3,2,null,2,4,3,2],[3,3,3,1,3,null,3,1,2,2],[2,1,2,3,3,null,3,4,3,3],[null,"Light body, I keep losing this one in context of the others, low character","Heavy, lingering, full","Tobacco",null,null,"Creamy body, bitter punch, some fruit notes",null,null,"A little earthy."],[4,2,1,1,2,null,3,2,1,1],[1,3,5,3,4,null,4,4,4,4],[1,1,5,3,4,null,3,1,4,1],[null,"Funky, savory, medium body, Worcestershire sauce, beef bouillon","Stewed fruit, berry pie filling, high clarity, fermented","Stone fruit, blueberries",null,null,"Divisive, got better as it cooled",null,null,"Very strong fermented fruit kind of flavor."],["Coffee A","Coffee A","Coffee A","Coffee B","Coffee B",null,"Coffee A","Coffee A","Coffee A","Coffee B"],["Coffee A","Coffee A","Coffee D","Coffee A","Coffee D",null,"Coffee A","Coffee A","Coffee A","Coffee A"],["Coffee A","Coffee A","Coffee D","Coffee C","Coffee B",null,"Coffee A","Coffee A","Coffee A","Coffee B"],["I primarily work in person","I primarily work from home","I do a mix of both",null,"I primarily work in person",null,"I primarily work in person","I primarily work in person","I do a mix of both","I primarily work in person"],["$20-$40","&lt;$20","$60-$80",null,"$20-$40",null,"$40-$60","$80-$100","$60-$80","&lt;$20"],["It tastes good, I need the ritual","It tastes good, I need the ritual, I need the caffeine, It makes me go to the bathroom","It tastes good, I need the caffeine, I need the ritual",null,"It tastes good, I need the caffeine",null,"I need the ritual, I need the caffeine, It tastes good","It tastes good, I need the ritual","I need the caffeine, It tastes good","It tastes good"],[null,null,null,null,null,null,null,null,null,null],["Yes","Yes","Yes",null,"Yes",null,"Yes","Yes","Yes","Yes"],["Yes","Yes","Yes",null,"No",null,"Yes","Yes","No","No"],["$6-$8","$6-$8","$15-$20",null,"$6-$8",null,"$8-$10","$8-$10","$8-$10","$10-$15"],["$8-$10","$8-$10","$15-$20",null,"$6-$8",null,"More than $20","$10-$15","$10-$15","$10-$15"],["Yes","No","Yes",null,"No",null,"No","Yes","No",null],["$100-$300","$100-$300","$300-$500",null,"$50-$100",null,"More than $1,000","$500-$1000","$100-$300","More than $1,000"],["Yes","Yes","Yes",null,"Yes",null,"Yes","Yes","Yes","Yes"],["Male","Non-binary","Male",null,"Female",null,"Male","Male","Female","Male"],[null,null,null,null,null,null,null,null,null,null],[null,"Master's degree","Master's degree",null,"Master's degree",null,"Bachelor's degree","Some college or associate's degree","Bachelor's degree","Bachelor's degree"],[null,"Other (please specify)","White/Caucasian",null,"White/Caucasian",null,"White/Caucasian","White/Caucasian","White/Caucasian","White/Caucasian"],[null,"Asian/white biracial",null,null,null,null,null,null,null,null],[null,"Employed full-time","Employed full-time",null,"Employed full-time",null,"Employed part-time","Unemployed","Employed full-time","Employed full-time"],[null,"None","None",null,"None",null,"2","None","None","None"],[null,"No affiliation","Democrat",null,"Democrat",null,"Independent","Independent","Democrat","Democrat"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>submission_id<\/th>\n      <th>age<\/th>\n      <th>cups<\/th>\n      <th>where_drink<\/th>\n      <th>brew<\/th>\n      <th>brew_other<\/th>\n      <th>purchase<\/th>\n      <th>purchase_other<\/th>\n      <th>favorite<\/th>\n      <th>favorite_specify<\/th>\n      <th>additions<\/th>\n      <th>additions_other<\/th>\n      <th>dairy<\/th>\n      <th>sweetener<\/th>\n      <th>style<\/th>\n      <th>strength<\/th>\n      <th>roast_level<\/th>\n      <th>caffeine<\/th>\n      <th>expertise<\/th>\n      <th>coffee_a_bitterness<\/th>\n      <th>coffee_a_acidity<\/th>\n      <th>coffee_a_personal_preference<\/th>\n      <th>coffee_a_notes<\/th>\n      <th>coffee_b_bitterness<\/th>\n      <th>coffee_b_acidity<\/th>\n      <th>coffee_b_personal_preference<\/th>\n      <th>coffee_b_notes<\/th>\n      <th>coffee_c_bitterness<\/th>\n      <th>coffee_c_acidity<\/th>\n      <th>coffee_c_personal_preference<\/th>\n      <th>coffee_c_notes<\/th>\n      <th>coffee_d_bitterness<\/th>\n      <th>coffee_d_acidity<\/th>\n      <th>coffee_d_personal_preference<\/th>\n      <th>coffee_d_notes<\/th>\n      <th>prefer_abc<\/th>\n      <th>prefer_ad<\/th>\n      <th>prefer_overall<\/th>\n      <th>wfh<\/th>\n      <th>total_spend<\/th>\n      <th>why_drink<\/th>\n      <th>why_drink_other<\/th>\n      <th>taste<\/th>\n      <th>know_source<\/th>\n      <th>most_paid<\/th>\n      <th>most_willing<\/th>\n      <th>value_cafe<\/th>\n      <th>spent_equipment<\/th>\n      <th>value_equipment<\/th>\n      <th>gender<\/th>\n      <th>gender_specify<\/th>\n      <th>education_level<\/th>\n      <th>ethnicity_race<\/th>\n      <th>ethnicity_race_specify<\/th>\n      <th>employment_status<\/th>\n      <th>number_children<\/th>\n      <th>political_affiliation<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"p","pageLength":5,"columnDefs":[{"className":"dt-right","targets":[19,20,21,22,24,25,26,28,29,30,32,33,34]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"submission_id","targets":1},{"name":"age","targets":2},{"name":"cups","targets":3},{"name":"where_drink","targets":4},{"name":"brew","targets":5},{"name":"brew_other","targets":6},{"name":"purchase","targets":7},{"name":"purchase_other","targets":8},{"name":"favorite","targets":9},{"name":"favorite_specify","targets":10},{"name":"additions","targets":11},{"name":"additions_other","targets":12},{"name":"dairy","targets":13},{"name":"sweetener","targets":14},{"name":"style","targets":15},{"name":"strength","targets":16},{"name":"roast_level","targets":17},{"name":"caffeine","targets":18},{"name":"expertise","targets":19},{"name":"coffee_a_bitterness","targets":20},{"name":"coffee_a_acidity","targets":21},{"name":"coffee_a_personal_preference","targets":22},{"name":"coffee_a_notes","targets":23},{"name":"coffee_b_bitterness","targets":24},{"name":"coffee_b_acidity","targets":25},{"name":"coffee_b_personal_preference","targets":26},{"name":"coffee_b_notes","targets":27},{"name":"coffee_c_bitterness","targets":28},{"name":"coffee_c_acidity","targets":29},{"name":"coffee_c_personal_preference","targets":30},{"name":"coffee_c_notes","targets":31},{"name":"coffee_d_bitterness","targets":32},{"name":"coffee_d_acidity","targets":33},{"name":"coffee_d_personal_preference","targets":34},{"name":"coffee_d_notes","targets":35},{"name":"prefer_abc","targets":36},{"name":"prefer_ad","targets":37},{"name":"prefer_overall","targets":38},{"name":"wfh","targets":39},{"name":"total_spend","targets":40},{"name":"why_drink","targets":41},{"name":"why_drink_other","targets":42},{"name":"taste","targets":43},{"name":"know_source","targets":44},{"name":"most_paid","targets":45},{"name":"most_willing","targets":46},{"name":"value_cafe","targets":47},{"name":"spent_equipment","targets":48},{"name":"value_equipment","targets":49},{"name":"gender","targets":50},{"name":"gender_specify","targets":51},{"name":"education_level","targets":52},{"name":"ethnicity_race","targets":53},{"name":"ethnicity_race_specify","targets":54},{"name":"employment_status","targets":55},{"name":"number_children","targets":56},{"name":"political_affiliation","targets":57}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section></section>
@@ -306,7 +372,7 @@
 <p>Cross-Tabulation</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Other Plots</p>
+<p>Pie Charts</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Theming</p>
@@ -374,7 +440,7 @@
 <p>Cross-Tabulation</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Other Plots</p>
+<p>Pie Charts</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Theming</p>
@@ -394,7 +460,7 @@
 <p>Frequency represents the count of observing a specific category in your sample.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>#&gt;  [1] NA  "1" "3" "1" "3" "1" "1" "1" "2" "2"</code></pre>
+<pre><code>#&gt;  [1] NA  "2" "3" "2" "1" "3" "2" "2" "4" "2"</code></pre>
 </div>
 </div>
 </section>
@@ -436,7 +502,7 @@
 <p>Cross-Tabulation</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Other Plots</p>
+<p>Pie Charts</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Theming</p>
@@ -528,7 +594,7 @@
 <p>Cross-Tabulation</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Other Plots</p>
+<p>Pie Charts</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Theming</p>
@@ -649,8 +715,8 @@
 </div>
 <img data-src="2_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"></section></section>
 <section>
-<section id="other-plots" class="title-slide slide level1 agenda-slide center">
-<h1>Other Plots</h1>
+<section id="pie-charts" class="title-slide slide level1 agenda-slide center">
+<h1>Pie Charts</h1>
 <div class="agenda">
 <ul>
 <li><div class="agenda-inactive agenda-pre-active">
@@ -669,7 +735,7 @@
 <p>Cross-Tabulation</p>
 </div></li>
 <li><div class="agenda-active">
-<p>Other Plots</p>
+<p>Pie Charts</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Theming</p>
@@ -677,11 +743,11 @@
 </ul>
 </div>
 </section>
-<section id="pie-charts" class="slide level2">
+<section id="pie-charts-1" class="slide level2">
 <h2>Pie Charts</h2>
 <p>A <strong>pie chart</strong> is a circular statistical graphic divided into slices, where each slice represents a proportion or percentage of the whole. The size of each slice is proportional to the relative frequency or magnitude of the category it represents.</p>
 </section>
-<section id="pie-charts-1" class="slide level2">
+<section id="pie-charts-2" class="slide level2">
 <h2>Pie Charts</h2>
 
 <img data-src="2_files/figure-revealjs/unnamed-chunk-16-1.png" width="960" class="r-stretch"></section>
@@ -723,31 +789,6 @@
 <span id="cb16-3"><a></a>  <span class="fu">geom_pie</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section>
-<section id="mosaic-plots" class="slide level2">
-<h2>Mosaic Plots</h2>
-<p>A <strong>mosaic plot</strong> is a graphical representation of two categorical variables. It uses rectangles to visualize the proportions of data categories while simultaneously showing the relationships between multiple variables. The size of each rectangle corresponds to the relative frequency or proportion of the data in a particular category combination.</p>
-</section>
-<section id="key-features-of-mosaic-plots" class="slide level2 scrollable">
-<h2>Key Features of Mosaic Plots</h2>
-<ol type="1">
-<li><strong>Rectangular Tiles</strong>:
-<ul>
-<li>The plot is divided into rectangles, with each tile representing a unique combination of categories.</li>
-</ul></li>
-<li><strong>Proportional Areas</strong>:
-<ul>
-<li>The area of each rectangle is proportional to the frequency or proportion of the data it represents.</li>
-</ul></li>
-<li><strong>Hierarchical Arrangement</strong>:
-<ul>
-<li>Variables are arranged hierarchically along the axes, with the tiles subdivided to represent relationships between variables.</li>
-</ul></li>
-<li><strong>Color Coding (Optional)</strong>:
-<ul>
-<li>Different colors can be used to highlight specific patterns, emphasize groups, or indicate significance.</li>
-</ul></li>
-</ol>
 </section></section>
 <section>
 <section id="theming" class="title-slide slide level1 agenda-slide center">
@@ -770,7 +811,7 @@
 <p>Cross-Tabulation</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Other Plots</p>
+<p>Pie Charts</p>
 </div></li>
 <li><div class="agenda-active">
 <p>Theming</p>
@@ -804,7 +845,7 @@
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p>m201.inqs.info/lectures/12</p>
+<p>m201.inqs.info/lectures/2</p>
 </div>
 </div></div>
 

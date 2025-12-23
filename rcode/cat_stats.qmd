@@ -1,0 +1,391 @@
+---
+title: "Categorical Data"
+description: "Descriptive summaries & visualizations (freq, proportion, crosstabs, bar/pie/mosaic/waffle)"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    code-fold: false
+    smooth-scroll: true
+editor: source
+image: img/cat.png
+knitr:
+  opts_chunk: 
+    echo: true
+    eval: true
+    message: true
+    error: true
+    warnings: false
+    comment: "#>" 
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+
+library(tidyverse)
+library(ThemePark)
+library(rcistats)
+
+```
+
+# Introduction
+
+- Recognize and work with **categorical variables** in R.
+- Summarize categories using **frequencies** and **proportions** (a.k.a. relative frequency).
+- Create standard plots for categorical data: **bar**, **stacked bar**, **pie**, **mosaic**, and **waffle**.K
+- Read and interpret **cross‑tabulations** (two‑way tables) with row/column/table proportions.
+
+::: callout-tip
+Use the **Copy** button on each code chunk. Many chunks include a **template** version followed by a **worked example**.
+:::
+
+
+# Google Colab Setup
+
+
+Copy the following code and put it in a code cell in Google Colab. Only do this if you are using a completely new notebook.
+
+
+```{r}
+#| eval: false
+# This code will load the R packages we will use
+install.packages(c("rcistats"),
+                 repos = c("https://inqs909.r-universe.dev", "https://cloud.r-project.org"))
+library(rcistats)
+library(tidyverse)
+
+
+# Uncomment and run for themes
+# rcistats::install_themes()
+# library(ThemePark)
+# library(ggthemes)
+
+
+```
+
+
+## Data for this handout
+
+We will use the **Great American Coffee Taste Test** survey data from TidyTuesday. Below is a subset of the data.
+
+```{r}
+#| label: load-data
+#| code-fold: true
+#| message: false
+coffee <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-05-14/coffee_survey.csv")
+```
+
+```{r}
+#| label: print-date
+#| echo: false
+
+DT::datatable(dplyr::slice_sample(coffee, n = 10), options = list(dom = "p", pageLength = 5))
+
+```
+
+## Using the templates: what to change
+
+Use this legend whenever you see a **Template** code block.
+
+- **`DATA`** → replace with your data frame/tibble name (e.g., `coffee`).
+- **`VAR`** → replace with the **single categorical variable** you want (e.g., `caffeine`).
+  - In `ggplot(DATA, aes(x = VAR))`, write `ggplot(coffee, aes(x = caffeine))`.
+  - In functions that take a vector (e.g., `cat_stats(DATA$VAR)`), write `cat_stats(coffee$caffeine)`.
+- **`VAR1`** and **`VAR2`** → replace with the **first** and **second** categorical variables for two‑way tables/stacked bars (e.g., `caffeine`, `taste`).
+- **`DF` / `wdf` / `df_pie` / `waffle_df`** → these are **intermediate objects** created in the chunk. You can keep the same names or rename them; if you rename, update the subsequent line that uses them.
+- **`group = 1`** → keep this as‑is for one‑variable proportion bar charts; it ensures correct normalization.
+
+### Quick replace checklist
+1. Swap **`DATA`** for your data frame (usually `coffee`).
+2. Swap **`VAR`** for your categorical column (e.g., `caffeine`).
+3. For two‑variable templates, set **`VAR1`** and **`VAR2`** (e.g., `caffeine` and `taste`).
+4. If you change any intermediate object name (like `df_pie`), update it on the next line as well.
+
+### Tiny example
+
+**Template**
+```r
+# Frequency bar (template)
+ ggplot(DATA, aes(x = VAR)) +
+   geom_bar()
+```
+
+**Filled‑in**
+```r
+# Frequency bar (coffee example)
+ ggplot(coffee, aes(x = caffeine)) +
+   geom_bar()
+```
+
+**Template**
+```r
+# Crosstab row proportions (template)
+ cat_stats(VAR1, VAR2, prop = "row")
+```
+
+**Filled‑in**
+```r
+# Crosstab row proportions (coffee example)
+ cat_stats(coffee$caffeine, coffee$taste, prop = "row")
+```
+
+
+# Categorical Data
+
+**Categorical data** record membership in a set of categories (levels), e.g., "Yes/No", "Major", or "City".
+
+- Stored as text (character/factor) **or** as codes like `1, 2, 3` with a **codebook** describing the labels.
+
+
+# One‑variable summaries
+
+## Frequency (counts)
+
+**Definition:** number of observations in each category.
+
+**Template:**
+```r
+# Replace DATA$VAR with your variable
+# freq table (counts)
+cat_stats(DATA$VAR)
+```
+
+**Example:** caffeine preference (`coffee$caffeine`)
+```{r}
+#| eval: true
+cat_stats(coffee$caffeine)
+```
+
+## Proportion (relative frequency)
+
+**Definition:** share of the sample in each category; comparable across sample sizes.
+
+**Template:**
+```r
+# proportions only
+cat_stats(DATA$VAR)
+```
+
+**Example:**
+```{r}
+cat_stats(coffee$caffeine)
+```
+
+# Two‑variable summaries (cross‑tabulation)
+
+
+## Cross‑tabulation (two‑way table)
+
+- **Rows**: categories of one variable
+- **Columns**: categories of the second variable
+- Report **counts** or **proportions** by **table**, **row**, or **column**
+
+**ALL**:
+```{r}
+cat_stats(coffee$caffeine, coffee$taste)
+```
+
+
+**Table proportions** (each cell ÷ grand total):
+```{r}
+cat_stats(coffee$caffeine, coffee$taste, prop = "table")
+```
+
+**Row proportions** (each cell ÷ its row total):
+```{r}
+cat_stats(coffee$caffeine, coffee$taste, prop = "row")
+```
+
+**Column proportions** (each cell ÷ its column total):
+```{r}
+cat_stats(coffee$caffeine, coffee$taste, prop = "col")
+```
+
+# Visualizing Categorical Data
+
+## Bar plots
+
+### Frequency bar plot
+
+**Template (frequency):**
+```r
+# ggplot() + geom_bar() counts rows per category by default
+ggplot(DATA, aes(x = VAR)) +
+  geom_bar()
+```
+
+**Example:**
+```{r}
+ggplot(coffee, aes(x = caffeine)) +
+  geom_bar()
+```
+
+### Relative frequency bar plot
+
+**Template (proportion):**
+```r
+# after_stat(prop) computes proportions within the layer
+ggplot(DATA, aes(x = VAR, y = after_stat(prop), group = 1)) +
+  geom_bar()
+```
+
+**Example:**
+```{r}
+ggplot(coffee, aes(x = caffeine, y = after_stat(prop), group = 1)) +
+  geom_bar()
+```
+
+::: callout-note
+**Tip:** Add labels/theme as needed: `labs(x = "", y = "Proportion") + theme_minimal()`
+:::
+
+
+## Stacked bar plots
+
+**Template:**
+```r
+ggplot(DATA, aes(x = VAR1, fill = VAR2)) +
+  geom_bar()
+```
+
+**Example (stacked counts):**
+```{r}
+#| fig-alt: A bar plot showing the caffeine levels by different tastes.
+ggplot(coffee, aes(x = caffeine, fill = taste)) +
+  geom_bar()
+```
+
+**Example (horizontal):**
+```{r}
+ggplot(coffee, aes(y = caffeine, fill = taste)) +
+  geom_bar()
+```
+
+**Template (stacked proportions):**
+```r
+ggplot(DATA, aes(x = VAR1, fill = VAR2)) +
+  geom_bar(position = "fill") +
+  labs(y = "Proportion")
+```
+
+## Pie charts (use sparingly)
+
+**Note:** Pie charts can be harder to compare precisely than bars. If you use them, label clearly.
+
+**Template:**
+```r
+df_pie <- cat_stats(DATA$VAR, tbl_df = TRUE)$table
+ggplot(df_pie, aes(cat = Category, val = n, fill = Category)) +
+  geom_pie()
+```
+
+**Example:**
+```{r}
+coffee_pie <- cat_stats(coffee$caffeine, tbl_df = TRUE)$table
+ggplot(coffee_pie, aes(cat = Category, val = n, fill = Category)) +
+  geom_pie()
+```
+
+
+# Appendix: minimal templates (copy‑paste)
+
+Each template below has **placeholders** in ALL CAPS (e.g., `DATA`, `VAR`, `VAR1`, `VAR2`). Replace them with your own dataset name and variable names.
+
+
+## Frequency table
+
+```r
+cat_stats(DATA$VAR)   
+```
+
+- `DATA` → the name of your dataset (e.g., `coffee`).
+- `VAR` → a single categorical variable (e.g., `caffeine`).
+
+## Proportions only
+
+```r
+cat_stats(DATA$VAR, prop_only = TRUE)
+```
+
+- `DATA` → the name of your dataset (e.g., `coffee`).
+- `VAR` → a single categorical variable (e.g., `caffeine`).
+
+
+## Bar Plot: Frequency
+
+```r
+ggplot(DATA, aes(x = VAR)) + 
+    geom_bar()
+```
+- `DATA` → the name of your dataset (e.g., `coffee`).
+- `VAR` → a single categorical variable (e.g., `caffeine`).
+
+
+## Bar Plot: Proportion
+
+```r
+ggplot(DATA, aes(x = VAR, y = after_stat(prop), group = 1)) + 
+    geom_bar()
+```
+
+- `DATA` → the name of your dataset (e.g., `coffee`).
+- `VAR` → a single categorical variable (e.g., `caffeine`).
+
+
+## Cross-tabulations (all)
+
+```r
+cat_stats(DATA$VAR1, DATA$VAR2)
+```
+
+- `DATA` → the name of your dataset (e.g., `coffee`).
+- `VAR1` → a single categorical variable (e.g., `caffeine`).
+- `VAR2` → a single categorical variable (e.g., `taste`).
+
+## Cross-tabulations (proportions)
+
+```r
+cat_stats(DATA$VAR1, DATA$VAR2, prop = "table")
+cat_stats(DATA$VAR1, DATA$VAR2, prop = "row")
+cat_stats(DATA$VAR1, DATA$VAR2, prop = "col")
+```
+
+- `DATA` → the name of your dataset (e.g., `coffee`).
+- `VAR1` → a single categorical variable (e.g., `caffeine`).
+- `VAR2` → a single categorical variable (e.g., `taste`).
+
+## Stacked bar (counts)
+
+```r
+ggplot(DATA, aes(x = VAR1, fill = VAR2)) + geom_bar()
+```
+
+- `DATA` → the name of your dataset (e.g., `coffee`).
+- `VAR1` → a single categorical variable (e.g., `caffeine`).
+- `VAR2` → a single categorical variable (e.g., `taste`).
+
+## Stacked bar (proportions)
+
+```r
+ggplot(DATA, aes(x = VAR1, fill = VAR2)) +
+  geom_bar(position = "fill") + labs(y = "Proportion")
+```
+
+- `DATA` → the name of your dataset (e.g., `coffee`).
+- `VAR1` → a single categorical variable (e.g., `caffeine`).
+- `VAR2` → a single categorical variable (e.g., `taste`).
+
+## Pie Chart
+
+```r
+df_pie <- cat_stats(DATA$VAR, tbl_df = TRUE)$table
+ggplot(df_pie, aes(cat = Category, val = n, fill = Category)) + 
+    geom_pie()
+```
+
+- `DATA` → the name of your dataset (e.g., `coffee`).
+- `VAR` → a single categorical variable (e.g., `caffeine`).
+

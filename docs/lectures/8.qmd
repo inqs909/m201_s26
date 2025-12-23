@@ -1,8 +1,7 @@
 ---
 title: "Multivariable Regression"
 description: |
-  Continues the discussion with multi linear regression.
-
+  Continues the discussion with linear and logistic regression.
 format:
   revealjs:
     scrollable: true
@@ -40,7 +39,7 @@ editor: source
 #| include: false
 
 library(tidyverse)
-library(csucistats)
+library(rcistats)
 library(ThemePark)
 library(taylor)
 

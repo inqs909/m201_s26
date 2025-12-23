@@ -6,7 +6,7 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
@@ -15,7 +15,7 @@
 <script src="../site_libs/quarto-contrib/sc-sb-title-1.0.0/sc_sb_title.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/grid-no-htext-1.0.0/grid_no_htext.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.31">
+  <meta name="generator" content="quarto-1.7.32">
 
   <title>MATH 201 – Numerical Data</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -102,7 +102,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-18a2653b721b6eb23654738472aec010.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-3250d136a9637f5f47522e41b35ed4ce.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -210,6 +210,83 @@
 <div class="quarto-title-authors">
 </div>
 
+</section><section id="TOC">
+<nav role="doc-toc"> 
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a href="#/r-packages" id="/toc-r-packages">R Packages</a></li>
+<li><a href="#/motivating-example" id="/toc-motivating-example">Motivating Example</a></li>
+<li><a href="#/central-tendency" id="/toc-central-tendency">Central Tendency</a>
+<ul>
+<li><a href="#/central-tendency-1" id="/toc-central-tendency-1">Central Tendency</a></li>
+</ul></li>
+<li><a href="#/variation" id="/toc-variation">Variation</a>
+<ul>
+<li><a href="#/variation-1" id="/toc-variation-1">Variation</a></li>
+</ul></li>
+<li><a href="#/summary-statistics" id="/toc-summary-statistics">Summary Statistics</a>
+<ul>
+<li><a href="#/what-is-numerical-data" id="/toc-what-is-numerical-data">What is numerical data?</a></li>
+<li><a href="#/summary-statistics-1" id="/toc-summary-statistics-1">Summary Statistics</a></li>
+<li><a href="#/central-tendency-2" id="/toc-central-tendency-2">Central Tendency</a></li>
+<li><a href="#/variation-2" id="/toc-variation-2">Variation</a></li>
+<li><a href="#/minimum" id="/toc-minimum">Minimum</a></li>
+<li><a href="#/maximum" id="/toc-maximum">Maximum</a></li>
+<li><a href="#/quartiles" id="/toc-quartiles">Quartiles</a></li>
+<li><a href="#/q1" id="/toc-q1">Q1</a></li>
+<li><a href="#/q2---median" id="/toc-q2---median">Q2 - Median</a></li>
+<li><a href="#/q3" id="/toc-q3">Q3</a></li>
+<li><a href="#/interquartile-range" id="/toc-interquartile-range">Interquartile Range</a></li>
+<li><a href="#/range" id="/toc-range">Range</a></li>
+<li><a href="#/how-to-identify-the-quartiles" id="/toc-how-to-identify-the-quartiles">How to identify the quartiles?</a></li>
+<li><a href="#/mean" id="/toc-mean">Mean</a></li>
+<li><a href="#/mean-1" id="/toc-mean-1">Mean</a></li>
+<li><a href="#/variance" id="/toc-variance">Variance</a></li>
+<li><a href="#/standard-deviation" id="/toc-standard-deviation">Standard Deviation</a></li>
+<li><a href="#/outliers" id="/toc-outliers">Outliers</a></li>
+</ul></li>
+<li><a href="#/numerical-statistics-in-r" id="/toc-numerical-statistics-in-r">Numerical Statistics in R</a>
+<ul>
+<li><a href="#/numerical-statistics-in-r-1" id="/toc-numerical-statistics-in-r-1">Numerical Statistics in R</a></li>
+<li><a href="#/mean-2" id="/toc-mean-2">Mean</a></li>
+<li><a href="#/median" id="/toc-median">Median</a></li>
+<li><a href="#/standard-deviation-1" id="/toc-standard-deviation-1">Standard Deviation</a></li>
+<li><a href="#/variance-1" id="/toc-variance-1">Variance</a></li>
+<li><a href="#/quartiles-1" id="/toc-quartiles-1">Quartiles</a></li>
+<li><a href="#/max-and-min" id="/toc-max-and-min">Max and Min</a></li>
+<li><a href="#/summary-statistics-2" id="/toc-summary-statistics-2">Summary Statistics</a></li>
+<li><a href="#/mr.-trash-wheel" id="/toc-mr.-trash-wheel">Mr.&nbsp;Trash Wheel</a></li>
+</ul></li>
+<li><a href="#/data-visualization" id="/toc-data-visualization">Data Visualization</a>
+<ul>
+<li><a href="#/histogram" id="/toc-histogram">Histogram</a></li>
+<li><a href="#/histogram-r-code" id="/toc-histogram-r-code">Histogram R Code</a></li>
+<li><a href="#/histogram-1" id="/toc-histogram-1">Histogram</a></li>
+<li><a href="#/histogram-2" id="/toc-histogram-2">Histogram</a></li>
+<li><a href="#/histograms" id="/toc-histograms">Histograms</a></li>
+<li><a href="#/histograms-1" id="/toc-histograms-1">Histograms</a></li>
+<li><a href="#/mr.-trash-wheel-1" id="/toc-mr.-trash-wheel-1">Mr.&nbsp;Trash Wheel</a></li>
+<li><a href="#/box-plot" id="/toc-box-plot">Box Plot</a></li>
+<li><a href="#/box-plot-1" id="/toc-box-plot-1">Box Plot</a></li>
+<li><a href="#/box-plot-r-code" id="/toc-box-plot-r-code">Box Plot R Code</a></li>
+<li><a href="#/box-plot-2" id="/toc-box-plot-2">Box Plot</a></li>
+<li><a href="#/box-plot-3" id="/toc-box-plot-3">Box Plot</a></li>
+<li><a href="#/dot-plots" id="/toc-dot-plots">Dot Plots</a></li>
+<li><a href="#/dot-plots-in-r" id="/toc-dot-plots-in-r">Dot Plots in R</a></li>
+<li><a href="#/dot-plots-1" id="/toc-dot-plots-1">Dot Plots</a></li>
+</ul></li>
+<li><a href="#/scatter-plots" id="/toc-scatter-plots">Scatter Plots</a>
+<ul>
+<li><a href="#/scatter-plots-1" id="/toc-scatter-plots-1">Scatter Plots</a></li>
+<li><a href="#/positive-relationship" id="/toc-positive-relationship">Positive Relationship</a></li>
+<li><a href="#/negative-relationship" id="/toc-negative-relationship">Negative Relationship</a></li>
+<li><a href="#/no-relationship" id="/toc-no-relationship">No Relationship</a></li>
+<li><a href="#/weak-positive-or-negative-relationship" id="/toc-weak-positive-or-negative-relationship">Weak Positive or Negative Relationship</a></li>
+<li><a href="#/scatter-plots-in-r" id="/toc-scatter-plots-in-r">Scatter Plots in R</a></li>
+<li><a href="#/mr.-trash-wheel-2" id="/toc-mr.-trash-wheel-2">Mr.&nbsp;Trash Wheel</a></li>
+</ul></li>
+</ul>
+</nav>
 </section>
 <section id="r-packages" class="slide level2">
 <h2>R Packages</h2>
@@ -467,7 +544,7 @@ R = \mathrm{max} - \mathrm{min}
 <p>Describe how you will find the mean of these numbers:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>#&gt; [1] 14 13 19 12 19</code></pre>
+<pre><code>#&gt; [1] 23 13 18 14 10</code></pre>
 </div>
 </div>
 </section>

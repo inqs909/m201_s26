@@ -21,6 +21,7 @@ website:
     right:
       - syllabus.qmd
       - lectures.qmd
+      - rcode.qmd
       - ec.qmd
 
 format:

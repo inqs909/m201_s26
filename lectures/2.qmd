@@ -62,11 +62,11 @@ Information on the data sets variables (columns) can be found [here](https://git
 
 ```{r}
 #| code-fold: true
-library(csucistats)
-library(ggtricks)
+library(rcistats)
 library(tidyverse)
 library(ThemePark)
 library(DT)
+
 coffee <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-05-14/coffee_survey.csv")
 datatable(slice_sample(coffee, n = 10), options = list(dom = "p", pageLength = 5))
 

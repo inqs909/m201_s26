@@ -46,7 +46,7 @@ editor: source
 #| echo: false
 #| eval: true
 
-library(csucistats)
+library(rcistats)
 library(tidyverse)
 trashwheel <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-03-05/trashwheel.csv')
 

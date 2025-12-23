@@ -1,5 +1,7 @@
 ---
 title: "Simple Logistic Regression"
+description: |
+  Begins the discussion for logistic regression.
 format:
   revealjs:
     width: 1200
@@ -36,7 +38,7 @@ editor: source
 #| include: false
 
 library(tidyverse)
-library(csucistats)
+library(rcistats)
 library(MASS)
 Melanoma$dead <- ifelse(Melanoma$status == 1, 1, 0)
 
