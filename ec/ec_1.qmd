@@ -1,0 +1,30 @@
+---
+title: "Extra Credit 1"
+description: Instructions for extra credit one.
+navbar: false
+date: 01-02-2026
+editor: source
+format:
+  html: 
+    code-fold: true
+    html-math-method: katex
+---
+
+
+**Due 2/13/2025**
+
+**Worth 1 final grade percentage points.**
+
+### Write a Wellness Plan
+
+Write a welness plan to ensure you will maintain your overall well being.
+
+Report guidelines
+
+-   2-3 Pages
+
+-   Double Spaced
+
+-   12 point font
+
+

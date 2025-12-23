@@ -27,5 +27,13 @@
       "/lectures/12.html",
       "/lectures/1a.html"
     ]
+  },
+  {
+    "listing": "/ec.html",
+    "items": [
+      "/ec/ec_1.html",
+      "/ec/ec_2.html",
+      "/ec/ec_3.html"
+    ]
   }
 ]
