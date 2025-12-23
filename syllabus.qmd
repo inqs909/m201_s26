@@ -52,9 +52,9 @@ Critical reasoning using a quantitative and statistical, problem-solving approac
 
 | Category             | Percentage |
 |:---------------------|:-----------|
-| Classwork            | 10%        |
+| Discussion Posts     | 10%        |
+| Classwork            | 15%        |
 | Video Assignments    | 15%        | 
-| Discussion Posts     | 15%        |
 | Notebook Assignments | 15%        |
 | Exam 1               | 15%        |
 | Exam 2               | 15%        |
@@ -76,6 +76,10 @@ Students are expected to attend in-person to class to learn the material.
 
 Students are expected to check the course Canvas page 3-4 times a week to view assignments, announcements, and other course-related materials.
 
+#### Discussion Posts
+
+Discussion posts are designed to continue the conversation based on the video assignments. Absolutely no late posts will be accepted. Discussion posts will be due every Sunday at 11:59 PM.
+
 #### Classwork Assignments
 
 Classwork assignmets are designed to give you an opportunity to practice conceptual topics from the  video assignments. The assignments will require you to program in R. The 3 lowest classwork assignments will be dropped. Classwork assignments will be due every Friday at 11:59 PM.
@@ -85,9 +89,6 @@ Classwork assignmets are designed to give you an opportunity to practice concept
 
 Videos are used to teach statistical concepts related to the course. Students are expected to watch at least one video a week. The videos are implemented using VoiceThreads. The 3 lowest video assignments will be dropped. Video assignments will be due every Sunday at 11:59 PM.
 
-#### Discussion Posts
-
-Discussion posts are designed to continue the conversation based on the video assignments. Absolutely no late posts will be accepted. Discussion posts will be due every Sunday at 11:59 PM.
 
 #### Notebook Assignments
 

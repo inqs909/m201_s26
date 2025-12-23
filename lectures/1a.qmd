@@ -1,7 +1,6 @@
 ---
 title: "Statistics"
 subtitle: "A Math? A Science? An Art? Or Something Else?"
-author: "Isaac Quintanilla Salinas"
 editor: source
 format: 
   revealjs:
