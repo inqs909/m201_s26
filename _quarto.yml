@@ -28,8 +28,8 @@ website:
 
 format:
   html:
-    theme: flatly
-    css: styles.css
+    theme: 
+      light: theme.scss
     toc: true
 
 
