@@ -2,7 +2,7 @@
 title: "Extra Credit 2"
 description: Instructions for extra credit two.
 navbar: false
-date: 01-02-2026
+date: 01-03-2026
 editor: source
 format:
   html: 

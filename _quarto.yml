@@ -17,7 +17,9 @@ website:
   repo-url: https://github.com/inqs909/m201_s26
   title: "MATH 201"
   site-url: www.inqs.info/m201_s26
+  favicon: "img/favicon/favicon.svg"
   navbar:
+    logo: "img/favicon/favicon.svg" 
     right:
       - syllabus.qmd
       - lectures.qmd
