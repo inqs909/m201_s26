@@ -13,11 +13,12 @@
 <script src="../site_libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
 <script src="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/sc-sb-title-1.0.0/sc_sb_title.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/grid-no-htext-1.0.0/grid_no_htext.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.32">
 
-  <title>MATH 201 – Simple Linear Regression</title>
+  <title>MATH 201 – Simple   Linear Regression</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -205,80 +206,67 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Simple Linear Regression</h1>
+  <h1 class="title"><p>Simple <br> Linear Regression</p></h1>
 
 <div class="quarto-title-authors">
 </div>
 
-</section><section id="TOC">
-<nav role="doc-toc"> 
-<h2 id="toc-title">Table of contents</h2>
-<ul>
-<li><a href="#/modeling-relationships" id="/toc-modeling-relationships">Modeling Relationships</a>
-<ul>
-<li><a href="#/explaining-variation" id="/toc-explaining-variation">Explaining Variation</a></li>
-<li><a href="#/explaining-variation-1" id="/toc-explaining-variation-1">Explaining Variation</a></li>
-<li><a href="#/variation-with-one-variable" id="/toc-variation-with-one-variable">Variation with One Variable</a></li>
-</ul></li>
-<li><a href="#/a-simple-model" id="/toc-a-simple-model">A Simple Model</a>
-<ul>
-<li><a href="#/generated-model" id="/toc-generated-model">Generated Model</a></li>
-<li><a href="#/a-simple-model-1" id="/toc-a-simple-model-1">A Simple Model</a></li>
-<li><a href="#/a-simple-model-2" id="/toc-a-simple-model-2">A Simple Model</a></li>
-<li><a href="#/notation" id="/toc-notation">Notation</a></li>
-<li><a href="#/the-simple-generated-model" id="/toc-the-simple-generated-model">The Simple Generated Model</a></li>
-<li><a href="#/observing-data" id="/toc-observing-data">Observing Data</a></li>
-<li><a href="#/estimated-line" id="/toc-estimated-line">Estimated Line</a></li>
-<li><a href="#/notation-1" id="/toc-notation-1">Notation</a></li>
-</ul></li>
-<li><a href="#/modelling-data" id="/toc-modelling-data">Modelling Data</a>
-<ul>
-<li><a href="#/indexing-data" id="/toc-indexing-data">Indexing Data</a></li>
-<li><a href="#/indexing-data-1" id="/toc-indexing-data-1">Indexing Data</a></li>
-<li><a href="#/data" id="/toc-data">Data</a></li>
-<li><a href="#/estimated-value" id="/toc-estimated-value">Estimated Value</a></li>
-<li><a href="#/estimation" id="/toc-estimation">Estimation</a></li>
-<li><a href="#/residuals" id="/toc-residuals">Residuals</a></li>
-<li><a href="#/estimation-in-r" id="/toc-estimation-in-r">Estimation in R</a></li>
-<li><a href="#/modeling-body-mass-in-penguins" id="/toc-modeling-body-mass-in-penguins">Modeling Body Mass in Penguins</a></li>
-<li><a href="#/visualize" id="/toc-visualize">Visualize</a></li>
-</ul></li>
-<li><a href="#/linear-model" id="/toc-linear-model">Linear Model</a>
-<ul>
-<li><a href="#/linear-model-1" id="/toc-linear-model-1">Linear Model</a></li>
-<li><a href="#/visualization" id="/toc-visualization">Visualization</a></li>
-<li><a href="#/linear-model-2" id="/toc-linear-model-2">Linear Model</a></li>
-<li><a href="#/scatter-plot" id="/toc-scatter-plot">Scatter Plot</a></li>
-<li><a href="#/imposing-a-line" id="/toc-imposing-a-line">Imposing a Line</a></li>
-<li><a href="#/modelling-the-data" id="/toc-modelling-the-data">Modelling the Data</a></li>
-<li><a href="#/linear-model-3" id="/toc-linear-model-3">Linear Model</a></li>
-<li><a href="#/sse" id="/toc-sse">SSE</a></li>
-<li><a href="#/fitting-a-model-in-r" id="/toc-fitting-a-model-in-r">Fitting a Model in R</a></li>
-<li><a href="#/example" id="/toc-example">Example</a></li>
-<li><a href="#/interpretation-of-hatbeta_0" id="/toc-interpretation-of-hatbeta_0">Interpretation of <span class="math inline">\(\hat\beta_0\)</span></a></li>
-<li><a href="#/interpreting-example" id="/toc-interpreting-example">Interpreting Example</a></li>
-<li><a href="#/interpretation-of-hat-beta_1" id="/toc-interpretation-of-hat-beta_1">Interpretation of <span class="math inline">\(\hat \beta_1\)</span></a></li>
-<li><a href="#/interpreting-example-1" id="/toc-interpreting-example-1">Interpreting Example</a></li>
-</ul></li>
-<li><a href="#/prediction" id="/toc-prediction">Prediction</a>
-<ul>
-<li><a href="#/statistical-model" id="/toc-statistical-model">Statistical Model</a></li>
-<li><a href="#/prediction-1" id="/toc-prediction-1">Prediction</a></li>
-<li><a href="#/prediction-in-r" id="/toc-prediction-in-r">Prediction in R</a></li>
-<li><a href="#/example-1" id="/toc-example-1">Example 1</a></li>
-<li><a href="#/example-2-1" id="/toc-example-2-1">Example 2</a></li>
-<li><a href="#/interpolation" id="/toc-interpolation">Interpolation</a></li>
-<li><a href="#/extrapolation" id="/toc-extrapolation">Extrapolation</a></li>
-<li><a href="#/extrapolation-1" id="/toc-extrapolation-1">Extrapolation</a></li>
-</ul></li>
-</ul>
-</nav>
 </section>
+<section>
+<section id="palmer-penguins" class="title-slide slide level1 agenda-slide center">
+<h1>Palmer Penguins</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-active">
+<p>Palmer Penguins</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Modeling Relationships</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>A Simple Model</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Modelling Data</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Linear Model</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Prediction</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="palmer-penguins-1" class="slide level2">
+<h2>Palmer Penguins</h2>
+<div class="columns">
+<div class="column">
+<p>The <code>penguins</code> data set was contains information on penguins from the <a href="https://lternet.edu/site/palmer-antarctica-lter/">Palmer Station</a> located in . You can learn more about the data set <a href="https://allisonhorst.github.io/palmerpenguins/articles/intro.html">here</a>.</p>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/penguins.png" alt="An image of several penguins in Antartica."></p>
+<figcaption>Artwork by <span class="citation" data-cites="allison_horst">@allison_horst</span></figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="variables-of-interest" class="slide level2">
+<h2>Variables of Interest</h2>
+<ul>
+<li><code>flipper_len</code>: Flipper Length in <a href="https://en.wikipedia.org/wiki/Millimetre">millimeters</a></li>
+<li><code>body_mass</code>: Body mass in <a href="https://en.wikipedia.org/wiki/Gram">grams</a></li>
+</ul>
+</section></section>
 <section>
 <section id="modeling-relationships" class="title-slide slide level1 agenda-slide center">
 <h1>Modeling Relationships</h1>
 <div class="agenda">
 <ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Palmer Penguins</p>
+</div></li>
 <li><div class="agenda-active">
 <p>Modeling Relationships</p>
 </div></li>
@@ -306,8 +294,8 @@
 <p>Can be thought of as getting it less wrong when taking an educated guess.</p>
 </div>
 </section>
-<section id="explaining-variation-1" class="slide level2">
-<h2>Explaining Variation</h2>
+<section id="modeling-variation" class="slide level2">
+<h2>Modeling Variation</h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -317,22 +305,55 @@
 
 </div>
 <img data-src="5_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
-<section id="variation-with-one-variable" class="slide level2">
-<h2>Variation with One Variable</h2>
+<section id="modeling-variation-with-bar-x" class="slide level2">
+<h2>Modeling Variation with <span class="math inline">\(\bar X\)</span></h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(body_mass, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
-<span id="cb2-2"><a></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> .<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(body_mass)) <span class="sc">+</span></span>
+<span id="cb2-2"><a></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb2-3"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(penguins<span class="sc">$</span>body_mass))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
-<img data-src="5_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section></section>
+<img data-src="5_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
+<section id="modeling-with-a-numerical-variable" class="slide level2">
+<h2>Modeling with a Numerical Variable</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> flipper_len, <span class="at">y =</span> body_mass)) <span class="sc">+</span></span>
+<span id="cb3-2"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb3-3"><a></a>  <span class="fu">stat_density_2d</span>(<span class="fu">aes</span>(<span class="at">fill =</span> <span class="fu">after_stat</span>(level))) <span class="sc">+</span></span>
+<span id="cb3-4"><a></a>  <span class="fu">xlim</span>(<span class="fu">c</span>(<span class="dv">170</span>, <span class="dv">236</span>)) <span class="sc">+</span></span>
+<span id="cb3-5"><a></a>  <span class="fu">ylim</span>(<span class="fu">c</span>(<span class="dv">2500</span>, <span class="dv">6250</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="5_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
+<section id="modeling-with-a-numerical-variable-1" class="slide level2">
+<h2>Modeling with a Numerical Variable</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> flipper_len, <span class="at">y =</span> body_mass)) <span class="sc">+</span></span>
+<span id="cb4-2"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb4-3"><a></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> F, <span class="at">col =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb4-4"><a></a>  <span class="fu">stat_density_2d</span>(<span class="fu">aes</span>(<span class="at">fill =</span> <span class="fu">after_stat</span>(level))) <span class="sc">+</span></span>
+<span id="cb4-5"><a></a>  <span class="fu">xlim</span>(<span class="fu">c</span>(<span class="dv">170</span>, <span class="dv">236</span>)) <span class="sc">+</span></span>
+<span id="cb4-6"><a></a>  <span class="fu">ylim</span>(<span class="fu">c</span>(<span class="dv">2500</span>, <span class="dv">6250</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="5_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section></section>
 <section>
 <section id="a-simple-model" class="title-slide slide level1 agenda-slide center">
 <h1>A Simple Model</h1>
 <div class="agenda">
 <ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Palmer Penguins</p>
+</div></li>
 <li><div class="agenda-inactive agenda-pre-active">
 <p>Modeling Relationships</p>
 </div></li>
@@ -362,12 +383,12 @@ Y \sim DGP_1
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(body_mass)) <span class="sc">+</span></span>
-<span id="cb3-2"><a></a>  <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(body_mass)) <span class="sc">+</span></span>
+<span id="cb5-2"><a></a>  <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
-<img data-src="5_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
+<img data-src="5_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
 <section id="a-simple-model-2" class="slide level2">
 <h2>A Simple Model</h2>
 <p><span class="math display">\[
@@ -425,6 +446,9 @@ Y = \beta_0 + \varepsilon
 <div class="agenda">
 <ul>
 <li><div class="agenda-inactive agenda-pre-active">
+<p>Palmer Penguins</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
 <p>Modeling Relationships</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
@@ -446,14 +470,17 @@ Y = \beta_0 + \varepsilon
 <h2>Indexing Data</h2>
 <p>The data in a data set can be indexed by a number.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>penguins[<span class="dv">1</span>,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>penguins[<span class="dv">1</span>,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt;   bill_len bill_dep flipper_len body_mass  sex year
 #&gt; 1     39.1     18.7         181      3750 male 2007</code></pre>
 </div>
 </div>
 <div class="fragment">
-<p>Making the variable “body_mass_g” be represented by <span class="math inline">\(Y\)</span> and “flipper_length_mm” as <span class="math inline">\(X\)</span>:</p>
+<p>Making the variable <code>body_mass</code> be represented by <span class="math inline">\(Y\)</span> and <code>flipper_len</code> as <span class="math inline">\(X\)</span>:</p>
 <p><span class="math display">\[
 Y_1 = 3750 \ \ X_1=181
 \]</span></p>
@@ -501,7 +528,10 @@ r_i = Y_i - \hat Y_i
 <section id="estimation-in-r" class="slide level2">
 <h2>Estimation in R</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">lm</span>(Y <span class="sc">~</span> <span class="dv">1</span>, <span class="at">data =</span> DATA)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">lm</span>(Y <span class="sc">~</span> <span class="dv">1</span>, <span class="at">data =</span> DATA)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <ul>
 <li><code>Y</code>: Name Outcome Variable of Interest in data frame <code>DATA</code></li>
@@ -511,7 +541,11 @@ r_i = Y_i - \hat Y_i
 <section id="modeling-body-mass-in-penguins" class="slide level2">
 <h2>Modeling Body Mass in Penguins</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">lm</span>(body_mass <span class="sc">~</span> <span class="dv">1</span>, <span class="at">data =</span> penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>xlm <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass <span class="sc">~</span> <span class="dv">1</span>, <span class="at">data =</span> penguins)</span>
+<span id="cb9-2"><a></a>xlm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; 
 #&gt; Call:
@@ -533,18 +567,21 @@ r_i = Y_i - \hat Y_i
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(body_mass)) <span class="sc">+</span></span>
-<span id="cb9-2"><a></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
-<span id="cb9-3"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">4207</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(body_mass)) <span class="sc">+</span></span>
+<span id="cb11-2"><a></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb11-3"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">4207</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
-<img data-src="5_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section></section>
+<img data-src="5_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section></section>
 <section>
 <section id="linear-model" class="title-slide slide level1 agenda-slide center">
 <h1>Linear Model</h1>
 <div class="agenda">
 <ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Palmer Penguins</p>
+</div></li>
 <li><div class="agenda-inactive agenda-pre-active">
 <p>Modeling Relationships</p>
 </div></li>
@@ -585,13 +622,13 @@ r_i = Y_i - \hat Y_i
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(body_mass)) <span class="sc">+</span></span>
-<span id="cb10-2"><a></a>  <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(body_mass)) <span class="sc">+</span></span>
+<span id="cb12-2"><a></a>  <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="5_files/figure-revealjs/unnamed-chunk-9-1.png" width="960"></p>
+<p><img data-src="5_files/figure-revealjs/unnamed-chunk-11-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -601,13 +638,16 @@ r_i = Y_i - \hat Y_i
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> flipper_len, <span class="at">y =</span> body_mass, <span class="at">fill =</span> <span class="fu">after_stat</span>(level))) <span class="sc">+</span></span>
-<span id="cb11-2"><a></a>  <span class="fu">stat_density_2d</span>(<span class="at">geom =</span> <span class="st">"polygon"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> flipper_len, <span class="at">y =</span> body_mass)) <span class="sc">+</span></span>
+<span id="cb13-2"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb13-3"><a></a>  <span class="fu">stat_density_2d</span>(<span class="fu">aes</span>(<span class="at">fill =</span> <span class="fu">after_stat</span>(level))) <span class="sc">+</span></span>
+<span id="cb13-4"><a></a>  <span class="fu">xlim</span>(<span class="fu">c</span>(<span class="dv">170</span>, <span class="dv">236</span>)) <span class="sc">+</span></span>
+<span id="cb13-5"><a></a>  <span class="fu">ylim</span>(<span class="fu">c</span>(<span class="dv">2500</span>, <span class="dv">6250</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="5_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
+<p><img data-src="5_files/figure-revealjs/unnamed-chunk-12-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -630,24 +670,24 @@ Y = \beta_0 + \beta_1 X + \varepsilon
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(flipper_len, body_mass)) <span class="sc">+</span> </span>
-<span id="cb12-2"><a></a>  <span class="fu">geom_point</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(flipper_len, body_mass)) <span class="sc">+</span> </span>
+<span id="cb14-2"><a></a>  <span class="fu">geom_point</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
-<img data-src="5_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
+<img data-src="5_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch"></section>
 <section id="imposing-a-line" class="slide level2">
 <h2>Imposing a Line</h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(flipper_len, body_mass)) <span class="sc">+</span> </span>
-<span id="cb13-2"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb13-3"><a></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> F) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(flipper_len, body_mass)) <span class="sc">+</span> </span>
+<span id="cb15-2"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb15-3"><a></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> F) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
-<img data-src="5_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section>
+<img data-src="5_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch"></section>
 <section id="modelling-the-data" class="slide level2">
 <h2>Modelling the Data</h2>
 <p><span class="math display">\[
@@ -675,7 +715,11 @@ Y_i = \beta_0 + \beta_1 X_i + \varepsilon_i
 <section id="fitting-a-model-in-r" class="slide level2">
 <h2>Fitting a Model in R</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">lm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> DATA)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>xlm <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> DATA)</span>
+<span id="cb16-2"><a></a>xlm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <ul>
 <li><code>X</code>: Name Predictor Variable of Interest in data frame <code>DATA</code></li>
@@ -685,9 +729,13 @@ Y_i = \beta_0 + \beta_1 X_i + \varepsilon_i
 </section>
 <section id="example" class="slide level2">
 <h2>Example</h2>
-<p>Y: “body_mass_g”; X: “flipper_length_mm”</p>
+<p>Y: <code>body_mass</code>; X: <code>flipper_len</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">lm</span>(body_mass <span class="sc">~</span> flipper_len, <span class="at">data =</span> penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>xlm <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass <span class="sc">~</span> flipper_len, <span class="at">data =</span> penguins)</span>
+<span id="cb17-2"><a></a>xlm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; 
 #&gt; Call:
@@ -739,6 +787,9 @@ Y_i = \beta_0 + \beta_1 X_i + \varepsilon_i
 <div class="agenda">
 <ul>
 <li><div class="agenda-inactive agenda-pre-active">
+<p>Palmer Penguins</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
 <p>Modeling Relationships</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
@@ -773,13 +824,16 @@ Y_i = \beta_0 + \beta_1 X_i + \varepsilon_i
 <section id="prediction-in-r" class="slide level2">
 <h2>Prediction in R</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>xlm <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> X,</span>
-<span id="cb17-2"><a></a>            <span class="at">data =</span> DATA)</span>
-<span id="cb17-3"><a></a></span>
-<span id="cb17-4"><a></a>predict_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">X =</span> VAL)</span>
-<span id="cb17-5"><a></a></span>
-<span id="cb17-6"><a></a><span class="fu">predict</span>(xlm,</span>
-<span id="cb17-7"><a></a>        predict_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>xlm <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> X,</span>
+<span id="cb19-2"><a></a>            <span class="at">data =</span> DATA)</span>
+<span id="cb19-3"><a></a></span>
+<span id="cb19-4"><a></a>predict_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">X =</span> VAL)</span>
+<span id="cb19-5"><a></a></span>
+<span id="cb19-6"><a></a><span class="fu">predict</span>(xlm,</span>
+<span id="cb19-7"><a></a>        predict_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <ul>
 <li><code>X</code>: Name Predictor Variable of Interest in data frame <code>DATA</code></li>
@@ -794,30 +848,36 @@ Y_i = \beta_0 + \beta_1 X_i + \varepsilon_i
 <ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Example</a></li><li><a href="#tabset-2-2">Code</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1">
-<p>Predict the body mass for a gentoo penguin.</p>
+<p>Predict the body mass for a penguin with a flipper length of 185.</p>
 </div>
 <div id="tabset-2-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>xlm <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass <span class="sc">~</span> species,</span>
-<span id="cb18-2"><a></a>            <span class="at">data =</span> penguins)</span>
-<span id="cb18-3"><a></a></span>
-<span id="cb18-4"><a></a>xlm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>xlm <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass <span class="sc">~</span> flipper_len,</span>
+<span id="cb20-2"><a></a>            <span class="at">data =</span> penguins)</span>
+<span id="cb20-3"><a></a></span>
+<span id="cb20-4"><a></a>xlm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; 
 #&gt; Call:
-#&gt; lm(formula = body_mass ~ species, data = penguins)
+#&gt; lm(formula = body_mass ~ flipper_len, data = penguins)
 #&gt; 
 #&gt; Coefficients:
-#&gt;      (Intercept)  speciesChinstrap     speciesGentoo  
-#&gt;          3706.16             26.92           1386.27</code></pre>
+#&gt; (Intercept)  flipper_len  
+#&gt;    -5872.09        50.15</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>predict_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">species =</span> <span class="st">"Gentoo"</span>)</span>
-<span id="cb20-2"><a></a></span>
-<span id="cb20-3"><a></a><span class="fu">predict</span>(xlm,</span>
-<span id="cb20-4"><a></a>        predict_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>predict_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">flipper_len =</span> <span class="dv">185</span>)</span>
+<span id="cb22-2"><a></a></span>
+<span id="cb22-3"><a></a><span class="fu">predict</span>(xlm,</span>
+<span id="cb22-4"><a></a>        predict_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt;        1 
-#&gt; 5092.437</code></pre>
+#&gt; 3406.262</code></pre>
 </div>
 </div>
 </div>
@@ -830,15 +890,18 @@ Y_i = \beta_0 + \beta_1 X_i + \varepsilon_i
 <ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Example</a></li><li><a href="#tabset-3-2">Code</a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1">
-<p>Predict the body mass for a penguin with a flipper length of 190.</p>
+<p>Predict the body mass for a penguin with a flipper length of 205.</p>
 </div>
 <div id="tabset-3-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>xlm <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass <span class="sc">~</span> flipper_len,</span>
-<span id="cb22-2"><a></a>            <span class="at">data =</span> penguins)</span>
-<span id="cb22-3"><a></a></span>
-<span id="cb22-4"><a></a></span>
-<span id="cb22-5"><a></a>xlm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>xlm <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass <span class="sc">~</span> flipper_len,</span>
+<span id="cb24-2"><a></a>            <span class="at">data =</span> penguins)</span>
+<span id="cb24-3"><a></a></span>
+<span id="cb24-4"><a></a></span>
+<span id="cb24-5"><a></a>xlm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; 
 #&gt; Call:
@@ -848,10 +911,13 @@ Y_i = \beta_0 + \beta_1 X_i + \varepsilon_i
 #&gt; (Intercept)  flipper_len  
 #&gt;    -5872.09        50.15</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>predict_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">flipper_len =</span> <span class="dv">190</span>)</span>
-<span id="cb24-2"><a></a></span>
-<span id="cb24-3"><a></a><span class="fu">predict</span>(xlm,</span>
-<span id="cb24-4"><a></a>        predict_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a>predict_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">flipper_len =</span> <span class="dv">190</span>)</span>
+<span id="cb26-2"><a></a></span>
+<span id="cb26-3"><a></a><span class="fu">predict</span>(xlm,</span>
+<span id="cb26-4"><a></a>        predict_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt;        1 
 #&gt; 3657.028</code></pre>
@@ -874,16 +940,16 @@ Y_i = \beta_0 + \beta_1 X_i + \varepsilon_i
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(flipper_len, body_mass)) <span class="sc">+</span> </span>
-<span id="cb26-2"><a></a>  <span class="fu">xlim</span>(<span class="dv">160</span>, <span class="dv">250</span>) <span class="sc">+</span></span>
-<span id="cb26-3"><a></a>  <span class="fu">ylim</span>(<span class="dv">2600</span>, <span class="dv">7000</span>) <span class="sc">+</span></span>
-<span id="cb26-4"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb26-5"><a></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> F) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(flipper_len, body_mass)) <span class="sc">+</span> </span>
+<span id="cb28-2"><a></a>  <span class="fu">xlim</span>(<span class="dv">160</span>, <span class="dv">250</span>) <span class="sc">+</span></span>
+<span id="cb28-3"><a></a>  <span class="fu">ylim</span>(<span class="dv">2600</span>, <span class="dv">7000</span>) <span class="sc">+</span></span>
+<span id="cb28-4"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb28-5"><a></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> F) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="5_files/figure-revealjs/unnamed-chunk-18-1.png" width="960"></p>
+<p><img data-src="5_files/figure-revealjs/unnamed-chunk-20-1.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -908,7 +974,7 @@ Y_i = \beta_0 + \beta_1 X_i + \varepsilon_i
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-
+<p>m201.inqs.info/lectures/5</p>
 </div>
 </div></div>
 
@@ -945,7 +1011,7 @@ Y_i = \beta_0 + \beta_1 X_i + \varepsilon_i
 'jumpToSlide': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true,"theme":"whiteboard","chalkWidth":4},
-'pointer': {"key":"q","color":"red","pointerSize":16,"alwaysVisible":false},
+'pointer': {"key":"q","color":"red","pointerSize":32,"alwaysVisible":false},
 'verticator': {"themetag":"h1","color":"","inversecolor":"","skipuncounted":false,"clickable":true,"position":"auto","offset":"3vmin","autogenerate":true,"tooltip":false,"scale":1,"debug":true},
 'smaller': false,
  
@@ -957,7 +1023,7 @@ Y_i = \beta_0 + \beta_1 X_i + \varepsilon_i
         controlsTutorial: true,
 
         // Determines where controls appear, "edges" or "bottom-right"
-        controlsLayout: 'bottom-right',
+        controlsLayout: 'edges',
 
         // Visibility rule for backwards navigation arrows; "faded", "hidden"
         // or "visible"
@@ -967,7 +1033,7 @@ Y_i = \beta_0 + \beta_1 X_i + \varepsilon_i
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'h.v',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -1092,7 +1158,7 @@ Y_i = \beta_0 + \beta_1 X_i + \varepsilon_i
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1050,
+        width: 1200,
 
         height: 700,
 

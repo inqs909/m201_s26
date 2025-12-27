@@ -1,15 +1,23 @@
 ---
-title: "Simple Linear Regression"
+title: |
+  Simple <br>
+  Linear Regression
 description: |
   Begins the discussion for linear regression.
 
 format:
   revealjs:
+    width: 1200
     scrollable: true
+    sc-sb-title: true
+    footer: m201.inqs.info/lectures/5
     theme: [default, styles.scss]
     navigation-mode: vertical
-    controls-layout: bottom-right
+    controls-layout: edges
     controls-tutorial: true
+    slide-number: true
+    pointer:
+      pointerSize: 32
     incremental: false 
     chalkboard:
       theme: whiteboard
@@ -19,6 +27,7 @@ knitr:
     echo: true
     eval: true
     message: false
+    code-fold: true
     warnings: false
     comment: "#>" 
     
@@ -30,6 +39,7 @@ filters:
   - reveal-header
   - code-fullscreen
   - reveal-auto-agenda
+
 editor: source
 ---
 
@@ -49,6 +59,29 @@ theme_set(theme_bw() +
 ```
 
 
+# Palmer Penguins
+
+## Palmer Penguins
+
+
+::: {.columns}
+::: {.column}
+
+The `penguins` data set was contains information on penguins from the [Palmer Station](https://lternet.edu/site/palmer-antarctica-lter/) located in . You can learn more about the data set [here](https://allisonhorst.github.io/palmerpenguins/articles/intro.html).
+
+:::
+::: {.column}
+![Artwork by @allison_horst](img/penguins.png){fig-alt="An image of several penguins in Antartica."}
+
+:::
+::: 
+
+## Variables of Interest
+
+- `flipper_len`: Flipper Length in [millimeters](https://en.wikipedia.org/wiki/Millimetre)
+- `body_mass`: Body mass in [grams](https://en.wikipedia.org/wiki/Gram)
+
+
 # Modeling Relationships
 
 ## Explaining Variation
@@ -61,7 +94,7 @@ This is the process where we try to reduce the variation with the use of other v
 Can be thought of as getting it less wrong when taking an educated guess.
 :::
 
-## Explaining Variation
+## Modeling Variation
 
 ```{r}
 #| code-fold: true
@@ -70,13 +103,41 @@ ggplot(penguins, aes(body_mass)) +
 
 ```
 
-## Variation with One Variable
+
+## Modeling Variation with $\bar X$
 
 ```{r}
 #| code-fold: true
-ggplot(penguins, aes(body_mass, fill = species)) +
-  geom_density(alpha = .5)
+ggplot(penguins, aes(body_mass)) +
+  geom_density() +
+  geom_vline(xintercept = mean(penguins$body_mass))
+
 ```
+
+
+## Modeling with a Numerical Variable
+
+```{r}
+#| code-fold: true
+ggplot(penguins, aes(x = flipper_len, y = body_mass)) +
+  geom_point() +
+  stat_density_2d(aes(fill = after_stat(level))) +
+  xlim(c(170, 236)) +
+  ylim(c(2500, 6250))
+```
+
+## Modeling with a Numerical Variable
+
+```{r}
+#| code-fold: true
+ggplot(penguins, aes(x = flipper_len, y = body_mass)) +
+  geom_point() +
+  stat_smooth(method = "lm", se = F, col = "red") +
+  stat_density_2d(aes(fill = after_stat(level))) +
+  xlim(c(170, 236)) +
+  ylim(c(2500, 6250))
+```
+
 
 
 # A Simple Model
@@ -164,7 +225,7 @@ penguins[1,-c(1:2)]
 ```
 
 ::: fragment
-Making the variable "body_mass_g" be represented by $Y$ and "flipper_length_mm" as $X$:
+Making the variable `body_mass` be represented by $Y$ and `flipper_len` as $X$:
 
 $$
 Y_1 = 3750 \ \ X_1=181
@@ -234,7 +295,8 @@ lm(Y ~ 1, data = DATA)
 ## Modeling Body Mass in Penguins
 
 ```{r}
-lm(body_mass ~ 1, data = penguins)
+xlm <- lm(body_mass ~ 1, data = penguins)
+xlm
 ```
 
 ::: fragment
@@ -290,8 +352,11 @@ ggplot(penguins, aes(body_mass)) +
 
 ```{r}
 #| code-fold: true
-ggplot(penguins, aes(x = flipper_len, y = body_mass, fill = after_stat(level))) +
-  stat_density_2d(geom = "polygon")
+ggplot(penguins, aes(x = flipper_len, y = body_mass)) +
+  geom_point() +
+  stat_density_2d(aes(fill = after_stat(level))) +
+  xlim(c(170, 236)) +
+  ylim(c(2500, 6250))
 ```
 
 :::
@@ -360,7 +425,8 @@ $$
 #| echo: true
 #| eval: false
 
-lm(Y ~ X, data = DATA)
+xlm <- lm(Y ~ X, data = DATA)
+xlm
 ```
 
 - `X`: Name Predictor Variable of Interest in data frame `DATA`
@@ -370,10 +436,11 @@ lm(Y ~ X, data = DATA)
 ## Example
 
 
-Y: "body_mass_g"; X: "flipper_length_mm"
+Y: `body_mass`; X: `flipper_len`
 
 ```{r}
-lm(body_mass ~ flipper_len, data = penguins)
+xlm <- lm(body_mass ~ flipper_len, data = penguins)
+xlm
 ```
 
 
@@ -461,17 +528,17 @@ predict(xlm,
 
 ### Example
 
-Predict the body mass for a gentoo penguin.
+Predict the body mass for a penguin with a flipper length of 185.
 
 ### Code
 
 ```{r}
-xlm <- lm(body_mass ~ species,
+xlm <- lm(body_mass ~ flipper_len,
             data = penguins)
 
 xlm
 
-predict_df <- data.frame(species = "Gentoo")
+predict_df <- data.frame(flipper_len = 185)
 
 predict(xlm,
         predict_df)
@@ -486,7 +553,7 @@ predict(xlm,
 
 ### Example
 
-Predict the body mass for a penguin with a flipper length of 190.
+Predict the body mass for a penguin with a flipper length of 205.
 
 ### Code
 

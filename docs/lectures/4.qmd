@@ -7,7 +7,7 @@ format:
     width: 1200
     scrollable: true
     sc-sb-title: true
-    footer: m201.inqs.info/lectures/3
+    footer: m201.inqs.info/lectures/4
     theme: [default, styles.scss]
     navigation-mode: vertical
     controls-layout: edges
@@ -24,6 +24,7 @@ knitr:
     echo: true
     eval: true
     message: false
+    fig-align: center
     code-fold: true
     warnings: false
     comment: "#>" 
@@ -49,9 +50,9 @@ library(rcistats)
 
 theme_set(theme_bw() + 
             theme(
-              axis.text.x = element_text(size = 24),
-              axis.title = element_text(size = 30),
-              plot.title = element_text(size = 48),
+              axis.text.x = element_text(size = 20),
+              axis.title = element_text(size = 24),
+              plot.title = element_text(size = 30),
               strip.text = element_text(size = 20),
               legend.title = element_blank(),
               legend.text = element_text(size = 24)))
@@ -162,14 +163,14 @@ $$
 If you draw a card from a standard deck of 52 cards, what is the probability of drawing:
 
 1. A heart?  
-  $$
-   P(\text{heart}) = \frac{13}{52} = 0.25
-  $$
+$$
+ P(\text{heart}) = \frac{13}{52} = 0.25
+$$
 
 2. A red card (heart or diamond)?  
-  $$
-   P(\text{red card}) = \frac{26}{52} = 0.5
-  $$
+$$
+ P(\text{red card}) = \frac{26}{52} = 0.5
+$$
 
 ### Tossing a Coin Twice
 What is the probability of getting:
@@ -177,15 +178,15 @@ What is the probability of getting:
 1. Exactly one head?  
    Sample space: $S = \{\text{HH, HT, TH, TT}\}$.  
    Event: $A = \{\text{HT, TH}\}$.  
-   $$
-   P(A) = \frac{2}{4} = 0.5
-   $$
+$$
+P(A) = \frac{2}{4} = 0.5
+$$
 
 2. At least one head?  
    Event: $B = \{\text{HH, HT, TH}\}$.  
-   $$
-   P(B) = \frac{3}{4} = 0.75
-   $$
+$$
+P(B) = \frac{3}{4} = 0.75
+$$
 
 ### Traffic Lights
 A commuter encounters three traffic lights, each with a 70% chance of being green. Assuming independence, what is the probability that all three lights are green?
@@ -362,6 +363,7 @@ A **distribution function** describes the probabilities of a random variable acr
 ## Cumulative Distribution Function
 
 The **Cumulative Distribution Function (CDF)** describes the probability that a random variable $X$ is less than or equal to a certain value $x$:
+
 $$
 F_X(x) = P(X \leq x)
 $$
@@ -369,11 +371,13 @@ $$
 ## Properties of the CDF
 
 1. **Range**: The CDF is always between 0 and 1:
-   $$
-   0 \leq F_X(x) \leq 1
-   $$
+$$
+0 \leq F_X(x) \leq 1
+$$
+
 2. **Non-Decreasing**: The CDF never decreases as $x$ increases.
-3. **Limits**:
+
+3. **Asymptotic Limits**:
    - $\lim_{x \to -\infty} F_X(x) = 0$
    - $\lim_{x \to \infty} F_X(x) = 1$
 
@@ -406,20 +410,7 @@ $$
 :::
 :::
 
-
-## Properties of the PDF:
-
-1. **Non-Negative**:
-   $$
-   f_X(x) \geq 0 \quad \forall x
-   $$
-
-2. **Total Area Under Curve**:
-   $$
-   \int_{-\infty}^\infty f_X(x) \, dx = 1
-   $$
-
-## PDF Examples
+## Normal PDF
 
 The PDF of the normal distribution is:
 $$
@@ -455,6 +446,7 @@ $$
 p_X(x) = \frac{1}{6}, \quad x \in \{1, 2, 3, 4, 5, 6\}
 $$
 
+
 ## Percentiles
 
 A **percentile** is a measure indicating the value below which a given percentage of observations in a group of observations falls. It is used in statistics to provide information about the relative standing of a particular value within a dataset.
@@ -463,7 +455,7 @@ A **percentile** is a measure indicating the value below which a given percentag
 
 Suppose we have a random variable X representing the height of adults in a population. If the 90th percentile of X is 180 cm, it means that the probability of a randomly selected adult being 180 cm or shorter is 90%.
 
-## Precentile
+## Percentile
 
 ```{r}
 data <- rnorm(500000, mean = 100, sd = 15) |> data.frame(x = _)  # Example: normally distributed data
@@ -472,10 +464,9 @@ data <- rnorm(500000, mean = 100, sd = 15) |> data.frame(x = _)  # Example: norm
 percentile_75 <- qnorm(0.75, 100, 15)
 
 ggplot(data = data, aes(x = x)) +
-  geom_density(fill = "skyblue", alpha = 0.5) +  # Density curve
+  geom_density(fill = "plum", alpha = 0.5) +  # Density curve
   geom_vline(xintercept = percentile_75, color = "red", linetype = "dashed", size = 1) +
-  labs(title = "Density Plot with 75th Percentile Highlighted", x = "Data Value", y = "Density") +
-  theme_bw()
+  labs(title = "Density Plot with 75th Percentile", x = "Data Value", y = "Density")
 
 ```
 
@@ -571,10 +562,9 @@ y <- dnorm(x, mean = mean, sd = sd)  # Calculate the density at each x value
 
 # Create the plot
 ggplot(data = data.frame(x, y), aes(x = x, y = y)) +
-  geom_line(color = "blue", size = 1) +  # Line for the distribution curve
+  geom_line(color = "sienna", size = 1) +  # Line for the distribution curve
   labs(x = "X",
        y = "Probability Density") +
-  theme_bw() + # A clean theme
   scale_x_continuous(breaks = seq(mean - 3*sd, mean + 3*sd, by = sd)) # Ticks at standard deviations
 
 ```
@@ -592,11 +582,10 @@ y <- dbinom(x, size = n, prob = p)  # Calculate the probabilities
 
 # Create the plot using geom_col (for discrete data)
 ggplot(data = data.frame(x, y), aes(x = factor(x), y = y)) +  # x as factor for discrete bars
-  geom_col(fill = "skyblue", color = "black") +
+  geom_col(fill = "bisque4", color = "black", alpha =  0.75) +
   labs(title = paste("Binomial Distribution (n =", n, ", p =", p, ")"),
        x = "Number of Successes (x)",
-       y = "Probability P(X = x)") +
-  theme_bw()
+       y = "Probability P(X = x)") 
 
 ```
 
@@ -657,11 +646,57 @@ $$
 :::
 
 
-## The Standard Normal Distribution
+## Normal PDF
 
-The **Standard Normal Distribution** is a special type of normal distribution with a mean of 0 and a standard deviation of 1. It's often used as a reference to convert any normal distribution to a standard form.
+```{r}
+#| code-fold: false
+#| echo: false
+
+
+# Parameters
+mu <- 2
+sigma <- 1
+
+# Grid of x values
+x <- seq(-2, 6, length.out = 200)
+
+# Density values
+df <- data.frame(x = x, 
+                 density = dnorm(x, mu, sigma))
+
+# Plot
+ggplot(df, aes(x, density)) +
+  geom_line(color = "steelblue", size = 1)
+```
+
+
+
+## Standard Normal Distribution
+
+The **Standard Normal Distribution** is a special type of normal distribution with a **mean of 0** and a **standard deviation of 1**. It's often used as a reference to convert any normal distribution to a standard form.
+
+
+## Standard Normal Distribution
+
+```{r}
+mean <- 0  # Mean of the distribution
+sd <- 1   # Standard deviation of the distribution
+
+# Generate data points for the curve (more points = smoother curve)
+x <- seq(mean - 3*sd, mean + 3*sd, length.out = 100)  # Range covering most of the distribution
+y <- dnorm(x, mean = mean, sd = sd)  # Calculate the density at each x value
+
+# Create the plot
+ggplot(data = data.frame(x, y), aes(x = x, y = y)) +
+  geom_line(color = "palegreen4", size = 1) +  # Line for the distribution curve
+  labs(x = "X",
+       y = "Probability Density") +
+  scale_x_continuous(breaks = seq(mean - 3*sd, mean + 3*sd, by = sd)) # Ticks at standard deviations
+```
+
 
 ## Z-Scores
+
 A **Z-score** (or standard score) tells us how many standard deviations an individual data point is from the mean. It’s calculated as:
 
 $$
@@ -842,6 +877,27 @@ Where:
 - $\binom{n}{k} = \frac{n!}{k!(n-k)!}$: Represents the number of ways to choose $k$ successes from $n$ trials
 
 
+## Binomial Distribution
+
+```{r}
+#| code-fold: false
+#| echo: false
+n <- 10   # Number of trials
+p <- 0.3  # Probability of success on each trial
+
+# Generate the data for the plot
+x <- 0:n  # Possible values for the random variable (number of successes)
+y <- dbinom(x, size = n, prob = p)  # Calculate the probabilities
+
+# Create the plot using geom_col (for discrete data)
+ggplot(data = data.frame(x, y), aes(x = factor(x), y = y)) +  # x as factor for discrete bars
+  geom_col(fill = "#D02090", color = "black") +
+  labs(title = paste("Binomial Distribution (n =", n, ", p =", p, ")"),
+       x = "Number of Successes (x)",
+       y = "Probability P(X = x)") 
+```
+
+
 
 ## Example Calculation
 Suppose you flip a fair coin 5 times ($n = 5, p = 0.5$) and want to know the probability of getting exactly 3 heads ($k = 3$).
@@ -906,7 +962,6 @@ In a clinical trial, a new drug has a 70% success rate. If 15 patients are treat
 
 # Poisson Distribution
 
-
 ## Poisson Distribution
 
 The **Poisson Distribution** is a discrete probability distribution that models the number of events occurring within a fixed interval. These events must happen independently and at a constant average rate. 
@@ -953,6 +1008,27 @@ Where:
 - $\lambda$: Average number of events in the interval.
 - $e \approx 2.718$
 - $k!$: Factorial of $k$, calculated as $k \times (k-1) \times \dots \times 1$.
+
+## Poisson Distribution
+
+```{r}
+#| code-fold: false
+#| echo: false
+n <- 15   # Number of trials
+p <- 4.3  # Probability of success on each trial
+
+# Generate the data for the plot
+x <- 0:n  # Possible values for the random variable (number of successes)
+y <- dpois(x, lambda = p)  # Calculate the probabilities
+
+# Create the plot using geom_col (for discrete data)
+ggplot(data = data.frame(x, y), aes(x = factor(x), y = y)) +  # x as factor for discrete bars
+  geom_col(fill = "dodgerblue4", color = "black") +
+  labs(title = paste("Poisson Distribution ( λ =", p, ")"),
+       x = "Number of Successes (x)",
+       y = "Probability P(X = x)") 
+```
+
 
 ## Example Calculation
 

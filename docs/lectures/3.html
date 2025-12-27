@@ -13,7 +13,6 @@
 <script src="../site_libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
 <script src="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet">
-<script src="../site_libs/quarto-contrib/sc-sb-title-1.0.0/sc_sb_title.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/grid-no-htext-1.0.0/grid_no_htext.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.32">
@@ -211,83 +210,6 @@
 <div class="quarto-title-authors">
 </div>
 
-</section><section id="TOC">
-<nav role="doc-toc"> 
-<h2 id="toc-title">Table of contents</h2>
-<ul>
-<li><a href="#/r-packages" id="/toc-r-packages">R Packages</a></li>
-<li><a href="#/motivating-example" id="/toc-motivating-example">Motivating Example</a></li>
-<li><a href="#/central-tendency" id="/toc-central-tendency">Central Tendency</a>
-<ul>
-<li><a href="#/central-tendency-1" id="/toc-central-tendency-1">Central Tendency</a></li>
-</ul></li>
-<li><a href="#/variation" id="/toc-variation">Variation</a>
-<ul>
-<li><a href="#/variation-1" id="/toc-variation-1">Variation</a></li>
-</ul></li>
-<li><a href="#/summary-statistics" id="/toc-summary-statistics">Summary Statistics</a>
-<ul>
-<li><a href="#/what-is-numerical-data" id="/toc-what-is-numerical-data">What is numerical data?</a></li>
-<li><a href="#/summary-statistics-1" id="/toc-summary-statistics-1">Summary Statistics</a></li>
-<li><a href="#/central-tendency-2" id="/toc-central-tendency-2">Central Tendency</a></li>
-<li><a href="#/variation-2" id="/toc-variation-2">Variation</a></li>
-<li><a href="#/minimum" id="/toc-minimum">Minimum</a></li>
-<li><a href="#/maximum" id="/toc-maximum">Maximum</a></li>
-<li><a href="#/quartiles" id="/toc-quartiles">Quartiles</a></li>
-<li><a href="#/q1" id="/toc-q1">Q1</a></li>
-<li><a href="#/q2---median" id="/toc-q2---median">Q2 - Median</a></li>
-<li><a href="#/q3" id="/toc-q3">Q3</a></li>
-<li><a href="#/interquartile-range" id="/toc-interquartile-range">Interquartile Range</a></li>
-<li><a href="#/range" id="/toc-range">Range</a></li>
-<li><a href="#/how-to-identify-the-quartiles" id="/toc-how-to-identify-the-quartiles">How to identify the quartiles?</a></li>
-<li><a href="#/mean" id="/toc-mean">Mean</a></li>
-<li><a href="#/mean-1" id="/toc-mean-1">Mean</a></li>
-<li><a href="#/variance" id="/toc-variance">Variance</a></li>
-<li><a href="#/standard-deviation" id="/toc-standard-deviation">Standard Deviation</a></li>
-<li><a href="#/outliers" id="/toc-outliers">Outliers</a></li>
-</ul></li>
-<li><a href="#/numerical-statistics-in-r" id="/toc-numerical-statistics-in-r">Numerical Statistics in R</a>
-<ul>
-<li><a href="#/numerical-statistics-in-r-1" id="/toc-numerical-statistics-in-r-1">Numerical Statistics in R</a></li>
-<li><a href="#/mean-2" id="/toc-mean-2">Mean</a></li>
-<li><a href="#/median" id="/toc-median">Median</a></li>
-<li><a href="#/standard-deviation-1" id="/toc-standard-deviation-1">Standard Deviation</a></li>
-<li><a href="#/variance-1" id="/toc-variance-1">Variance</a></li>
-<li><a href="#/quartiles-1" id="/toc-quartiles-1">Quartiles</a></li>
-<li><a href="#/max-and-min" id="/toc-max-and-min">Max and Min</a></li>
-<li><a href="#/summary-statistics-2" id="/toc-summary-statistics-2">Summary Statistics</a></li>
-<li><a href="#/mr.-trash-wheel" id="/toc-mr.-trash-wheel">Mr.&nbsp;Trash Wheel</a></li>
-</ul></li>
-<li><a href="#/data-visualization" id="/toc-data-visualization">Data Visualization</a>
-<ul>
-<li><a href="#/histogram" id="/toc-histogram">Histogram</a></li>
-<li><a href="#/histogram-r-code" id="/toc-histogram-r-code">Histogram R Code</a></li>
-<li><a href="#/histogram-1" id="/toc-histogram-1">Histogram</a></li>
-<li><a href="#/histogram-2" id="/toc-histogram-2">Histogram</a></li>
-<li><a href="#/histograms" id="/toc-histograms">Histograms</a></li>
-<li><a href="#/histograms-1" id="/toc-histograms-1">Histograms</a></li>
-<li><a href="#/mr.-trash-wheel-1" id="/toc-mr.-trash-wheel-1">Mr.&nbsp;Trash Wheel</a></li>
-<li><a href="#/box-plot" id="/toc-box-plot">Box Plot</a></li>
-<li><a href="#/box-plot-1" id="/toc-box-plot-1">Box Plot</a></li>
-<li><a href="#/box-plot-r-code" id="/toc-box-plot-r-code">Box Plot R Code</a></li>
-<li><a href="#/box-plot-2" id="/toc-box-plot-2">Box Plot</a></li>
-<li><a href="#/box-plot-3" id="/toc-box-plot-3">Box Plot</a></li>
-<li><a href="#/dot-plots" id="/toc-dot-plots">Dot Plots</a></li>
-<li><a href="#/dot-plots-in-r" id="/toc-dot-plots-in-r">Dot Plots in R</a></li>
-<li><a href="#/dot-plots-1" id="/toc-dot-plots-1">Dot Plots</a></li>
-</ul></li>
-<li><a href="#/scatter-plots" id="/toc-scatter-plots">Scatter Plots</a>
-<ul>
-<li><a href="#/scatter-plots-1" id="/toc-scatter-plots-1">Scatter Plots</a></li>
-<li><a href="#/positive-relationship" id="/toc-positive-relationship">Positive Relationship</a></li>
-<li><a href="#/negative-relationship" id="/toc-negative-relationship">Negative Relationship</a></li>
-<li><a href="#/no-relationship" id="/toc-no-relationship">No Relationship</a></li>
-<li><a href="#/weak-positive-or-negative-relationship" id="/toc-weak-positive-or-negative-relationship">Weak Positive or Negative Relationship</a></li>
-<li><a href="#/scatter-plots-in-r" id="/toc-scatter-plots-in-r">Scatter Plots in R</a></li>
-<li><a href="#/mr.-trash-wheel-2" id="/toc-mr.-trash-wheel-2">Mr.&nbsp;Trash Wheel</a></li>
-</ul></li>
-</ul>
-</nav>
 </section>
 <section id="r-packages" class="slide level2">
 <h2>R Packages</h2>
@@ -296,20 +218,16 @@
 <li>tidyverse</li>
 </ul>
 </section>
-<section id="motivating-example" class="slide level2">
-<h2>Motivating Example</h2>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Zzjw-Pw5jwQ?si=WUBQTifP1TNSxDoJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
-</section>
 <section>
-<section id="central-tendency" class="title-slide slide level1 agenda-slide center">
-<h1>Central Tendency</h1>
+<section id="palmer-penguins" class="title-slide slide level1 agenda-slide center">
+<h1>Palmer Penguins</h1>
 <div class="agenda">
 <ul>
 <li><div class="agenda-active">
-<p>Central Tendency</p>
+<p>Palmer Penguins</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Variation</p>
+<p>Describing numerical data</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Summary Statistics</p>
@@ -319,6 +237,9 @@
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Data Visualization</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Skeweness</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Scatter Plots</p>
@@ -326,50 +247,39 @@
 </ul>
 </div>
 </section>
-<section id="central-tendency-1" class="slide level2">
-<h2>Central Tendency</h2>
-</section></section>
-<section>
-<section id="variation" class="title-slide slide level1 agenda-slide center">
-<h1>Variation</h1>
-<div class="agenda">
-<ul>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Central Tendency</p>
-</div></li>
-<li><div class="agenda-active">
-<p>Variation</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Summary Statistics</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Numerical Statistics in R</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Data Visualization</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Scatter Plots</p>
-</div></li>
-</ul>
+<section id="palmer-penguins-1" class="slide level2">
+<h2>Palmer Penguins</h2>
+<div class="columns">
+<div class="column">
+<p>The <code>penguins</code> data set was contains information on penguins from the <a href="https://lternet.edu/site/palmer-antarctica-lter/">Palmer Station</a> located in . You can learn more about the data set <a href="https://allisonhorst.github.io/palmerpenguins/articles/intro.html">here</a>.</p>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/penguins.png" alt="An image of several penguins in Antartica."></p>
+<figcaption>Artwork by <span class="citation" data-cites="allison_horst">@allison_horst</span></figcaption>
+</figure>
 </div>
+</div></div>
 </section>
-<section id="variation-1" class="slide level2">
-<h2>Variation</h2>
+<section id="variables-of-interest" class="slide level2">
+<h2>Variables of Interest</h2>
+<ul>
+<li><code>flipper_len</code>: Flipper Length in <a href="https://en.wikipedia.org/wiki/Millimetre">millimeters</a></li>
+<li><code>body_mass</code>: Body mass in <a href="https://en.wikipedia.org/wiki/Gram">grams</a></li>
+</ul>
 </section></section>
 <section>
-<section id="summary-statistics" class="title-slide slide level1 agenda-slide center">
-<h1>Summary Statistics</h1>
+<section id="describing-numerical-data" class="title-slide slide level1 agenda-slide center">
+<h1>Describing numerical data</h1>
 <div class="agenda">
 <ul>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Central Tendency</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Variation</p>
+<p>Palmer Penguins</p>
 </div></li>
 <li><div class="agenda-active">
+<p>Describing numerical data</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
 <p>Summary Statistics</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
@@ -377,6 +287,9 @@
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Data Visualization</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Skeweness</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Scatter Plots</p>
@@ -386,91 +299,84 @@
 </section>
 <section id="what-is-numerical-data" class="slide level2">
 <h2>What is numerical data?</h2>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>trashwheel<span class="sc">$</span>PlasticBottles</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb1-2"><a></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb1-3"><a></a>  <span class="fu">pull</span>(flipper_len)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>#&gt;   [1] 1450 1120 2450 2380  980 1430  910 3580 2400 1340  740  950  530  840 1130
-#&gt;  [16] 1640 1350 1640 1730 5960 2170 1930 3200 2500 2140 1630 3640 1430  570 4800
-#&gt;  [31]  550 2240 4220 1400 2820 1900 3650  760 1250  880 1800 1370  550  640 1160
-#&gt;  [46] 1570 1340 1740 2870 3120 2780 2240 2550 1470 1240 1150 2850  960  870 1340
-#&gt;  [61] 2630 1850 2830 1740 2780 1260 2340 3240  940  830  960  870  920 1130 1060
-#&gt;  [76]  740  950 2340 2660 2430 2690 1540 1240 2870 2450 1830 2360 2640 2840 2640
-#&gt;  [91] 3070 2820 2640  870 3220 1980  410  640 2730 1360  760 1240  800 2540 2130
-#&gt; [106] 2670 1940 2140 1960 1640 1850 2370 2530 2720 2250 3240 3530 2340 2460 1340
-#&gt; [121]  950 2240 3050 1630 1120 3340 3560 2460 3860 3230 3760 3640 4230 3590 3740
-#&gt; [136] 4200 3840 4350 3960 4150 4450 3460 2850 3560 4130 4350 4420 2130 2450 2300
-#&gt; [151] 2850 2640 3250 2530 2780 2740 2530 1876 2340 2244 2980 3460 1840 1360 1880
-#&gt; [166] 2460 2260 2890 2140 2570 2030 1940 1870 1920 1920 2230  980  650  430  390
-#&gt; [181]  490  210  560  470  390  460  530  460  340  360 2540 2870 2230 2340 2560
-#&gt; [196] 2340 2480 2540 2980 3250 3340 2850 3220 2110 3670 2890 1460 3240 3530 2760
-#&gt; [211] 2980 2430 1500 1270 1340 2780 2910 2760 2950 2550 2720 2540 2370 2250 1260
-#&gt; [226]  950 1020 2250 1130 1240 1950 1460 2210 2470 2150  970  840  790  750  810
-#&gt; [241]  790  670  710  730  820  760  670  730  750  820 1580 2130 2350 2460 1220
-#&gt; [256]  950  400 1050 1480 1300 1650 2130 2340 1890 1420 1280 1140  870  940  620
-#&gt; [271] 1560 1720 1890 1760  890  710  620  780  540  670  820  540  730  910  710
-#&gt; [286] 1750 1320 2740 1120 2100 3110 1200 1390  940 1220 1960 2150 2380 1440 1080
-#&gt; [301] 1840 2100 1500  660  590 1200 2610 1820 1080  790 1240  780  480  300  990
-#&gt; [316] 1110  580 2200 1900 2800  840  680  300  240 1015 2150  580 1400  800 1110
-#&gt; [331] 1980 1040  940  600  460  980 1880  900 1740 1140 2040 2800 1800 3300 1880
-#&gt; [346] 2000 2680  950 3700 1900 3600 2400 4400  980 1980 3600 2200 2800 4200  800
-#&gt; [361] 1400 1800 2210  980 2800 1900 2780 2440 3400  920 1260 1980 1000  960  640
-#&gt; [376]  860  590 1800 3600 2300 3900 2900 1850 3400  980  750  500 3200 3800 1850
-#&gt; [391] 2800  980 3200 2800 2640 1200  510  660  480 2900 2300 1980 1040  900 3400
-#&gt; [406] 1800 3000 2800  950 3800  800  760  540  340  600  480 2100 1840 1100 2650
-#&gt; [421] 1900  900 1880 1240 3000 2300 1400 2050 3250 2100 2450 4050 3800 3000 2200
-#&gt; [436] 3500 1800 1250 2200 1640 1080 1790 2080 1600 2200 2000 1200  980  800 1200
-#&gt; [451] 1800 1440 1600 2400 1900 2100 1200  720  800 2200 1600 1000 3000 2700 2300
-#&gt; [466] 1900 5800 1800 2200 3400 4400 3400 2500 1600 1200 1040 4400 4800 1800 3600
-#&gt; [481] 3000 4200 1400 2800 1800 3400 2600 3300 4100 1800 3500 2900  850  680 3100
-#&gt; [496] 1750  980 2800 1200  840 1040  500  800  640  900  660  750 3800 2900 1800
-#&gt; [511] 2700 4200 3000 1200  600 4400 3100 2800 1100 3400 2800  800 1800  540 3300
-#&gt; [526] 2800  900 2100 3200 1440  800  540 2900 2000  960 3200 1250 2900 2100 3600
-#&gt; [541] 1400 3900 3000 1800 2700 2400 2900 1400 3900 4200 2800 1900  960  640  750
-#&gt; [556]  500 3500 2900 2100 3200 1800 1500 2100 1000 2900 1600 2100 1700 2400 3600
-#&gt; [571] 2700 2900 1800 2200 3000 2100 1000 2700 2200 3100 3400 4000 2100 1900 2300
-#&gt; [586] 3200 1200 3400 2100  980  540 1100  750 1800 2300 3400 2700 3000 3800 4200
-#&gt; [601] 1800 2000 3300 4200 1200 2200  850  980  300  450   80 1800 2200 3400 3100
-#&gt; [616] 2600 1800 1200 2200 1400 2100 1600 2000 3200 2100 1400  880 2000 1200 1950
-#&gt; [631] 9540 8350 8590 7830 8210 9830 9240 9540 8230 7540 8490 9610 7960 8870 7420
-#&gt; [646] 8250 8472 7530 2340 2210 2670  657 2290 2110 7340 9230 1020  900 1140 1350
-#&gt; [661] 1200 1090  920 3150 6970 9100 8400 6500 4400 3600 4000 3700 4057 8800 6800
-#&gt; [676] 5900 7500 8000 4400 6600 3800 4800 4400 5200 6400 5900 4800 5600 7200 4400
-#&gt; [691] 5400 4800 6700 6000 6800 5950 7200 6400 5300 4900 4400 5000 4900 4800 5800
-#&gt; [706] 3600 4200 5000 5400 6400 4000 4300 5100 3900 2700 3000 4100 3900 4400 4900
-#&gt; [721] 3600 4500 5000 5400 3400 4800 3800 2900 3200 4200 2900   NA 3400 4100 3900
-#&gt; [736] 4900 3400 5100 4200 2900 3800 3200 4000 1150 2320 3450 1490  920 1010  680
-#&gt; [751] 1800 2700  950  103 1850 1200 1050 1860 1180 1050 1420 1800 1500 1200  860
-#&gt; [766]  640 1400  980 2100 1100 2400 1500 2200 1200 2000 1800 1000 2100 2400 2700
-#&gt; [781] 3000  980  240  840 1800 1000  500   12 2400 1000 1800  300 2100 2400 1200
-#&gt; [796] 1800 2100  280  480  150 1400  980   40  640  800 1000  810  500 1800  840
-#&gt; [811]  500 1500  480 1000 1200  450  280  150    0    0 2100 1800 1400  980 3000
-#&gt; [826] 2400 1100  340 1200  600 2300 1200 3000 4200 1800  980 2100 3200 1050 2700
-#&gt; [841]  980 1400  800  640  240 2100 2800 1600 1200 2200  980  540  320  270 1200
-#&gt; [856]  360  120  480    0 2400 3200 2500 1800  250  240  640  180  540    0    0
-#&gt; [871] 2800 1600  980  480  720    0  360 2100 2900 2100 1800 2900 3200 1800 1600
-#&gt; [886] 2800 1200 2100 2500 1800 1600 2100 1200  980 2500 1900 2100 1200  900  800
-#&gt; [901]  480  720 1600 2400  800  500  640  900 1400 2100 1900  960 2400 1800 2700
-#&gt; [916] 1500  930 2100 3000 1600 1200 4100 5400 4400 5000 3400 4900 2500 2700 1300
-#&gt; [931]  800  440 2100 3200 1100  800  540 4100 3300 1500  850  440 2800 1200 1400
-#&gt; [946]  880  750 1800  400   10 1400  600 2500 1100 2300 1000 1300  500  700   20
-#&gt; [961]    0 1800  680 2800 3300 2900 1800 2800 1000 2500  950  360    0 3400 2700
-#&gt; [976] 3200 2800 1600 2900 2000 2500 1400  800 1500 2100 1400  980 1800  500 1200
-#&gt; [991]  180    0    0</code></pre>
+<pre><code>#&gt; [1] 181 186 195 193 190 181 195</code></pre>
 </div>
+</div>
+</section>
+<section id="central-tendency" class="slide level2">
+<h2>Central Tendency</h2>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb3-2"><a></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb3-3"><a></a>  <span class="fu">pull</span>(flipper_len)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; [1] 181 186 195 193 190 181 195</code></pre>
+</div>
+</div>
+</section>
+<section id="variation" class="slide level2">
+<h2>Variation</h2>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb5-2"><a></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb5-3"><a></a>  <span class="fu">pull</span>(flipper_len)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; [1] 181 186 195 193 190 181 195</code></pre>
+</div>
+</div>
+</section></section>
+<section>
+<section id="summary-statistics" class="title-slide slide level1 agenda-slide center">
+<h1>Summary Statistics</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Palmer Penguins</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Describing numerical data</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Summary Statistics</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Numerical Statistics in R</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Data Visualization</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Skeweness</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Scatter Plots</p>
+</div></li>
+</ul>
 </div>
 </section>
 <section id="summary-statistics-1" class="slide level2">
 <h2>Summary Statistics</h2>
 <p>Summary statistics are used to describe the distribution of data.</p>
 </section>
-<section id="central-tendency-2" class="slide level2">
+<section id="central-tendency-1" class="slide level2">
 <h2>Central Tendency</h2>
 <p>Central tendency is a statistical concept that refers to the central or typical value around which a set of data points tends to cluster. It is used to summarize and describe a data set by identifying a single representative value that provides insights into the data’s overall characteristics.</p>
 </section>
-<section id="variation-2" class="slide level2">
+<section id="variation-1" class="slide level2">
 <h2>Variation</h2>
 <p>Variation in statistics refers to the extent to which data points in a dataset deviate or differ from a central tendency measure. Understanding variation is crucial for making informed decisions, drawing meaningful conclusions, and assessing the reliability of statistical analyses.</p>
 </section>
@@ -495,27 +401,29 @@
 </section>
 <section id="q1" class="slide level2">
 <h2>Q1</h2>
-<p>Q1 is the value signifying that a quarter of the data is lower than it.</p>
-</section>
-<section id="q2---median" class="slide level2">
-<h2>Q2 - Median</h2>
-<p>Q2 is the value signifying that half of the data is below it.</p>
+<p>Q1 is the value signifying that a quarter of the data (25%) is lower than it.</p>
+
+<img data-src="3_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" alt="A density plot of flipper length for each penguin. The lower 25% of the of the density plot is shaded. This shading represents the location to the 25th percentile." width="960"></section>
+<section id="q2---median-tildex" class="slide level2">
+<h2>Q2 - Median (<span class="math inline">\(\tilde{x}\)</span>)</h2>
+<p>Q2 is the value signifying that half of the data (50%) is below it.</p>
 <div class="fragment">
 <p>The median also represents the central tendency of the data.</p>
 </div>
-</section>
+
+<img data-src="3_files/figure-revealjs/unnamed-chunk-6-1.png" class="quarto-figure quarto-figure-center r-stretch" alt="A density plot of flipper length for each penguin. The lower 50% of the of the density plot is shaded. This shading represents the location to the 50th percentile." width="960"></section>
 <section id="q3" class="slide level2">
 <h2>Q3</h2>
-<p>Q3 is the value signifying that 3 quarters of the data is below it.</p>
-</section>
+<p>Q3 is the value signifying that 3 quarters (75%) of the data is below it.</p>
+
+<img data-src="3_files/figure-revealjs/unnamed-chunk-7-1.png" class="quarto-figure quarto-figure-center r-stretch" alt="A density plot of flipper length for each penguin. The lower 75% of the of the density plot is shaded. This shading represents the location to the 75th percentile." width="960"></section>
 <section id="interquartile-range" class="slide level2">
 <h2>Interquartile Range</h2>
-<div class="fragment">
 <p><span class="math display">\[
 IQR = Q_3 - Q_1
 \]</span></p>
-</div>
-</section>
+
+<img data-src="3_files/figure-revealjs/unnamed-chunk-8-1.png" class="quarto-figure quarto-figure-center r-stretch" alt="A density plot of flipper length for each penguin. The middle 50% of the data is shaded. This shading represents interquartile range." width="960"></section>
 <section id="range" class="slide level2">
 <h2>Range</h2>
 <div class="fragment">
@@ -540,17 +448,17 @@ R = \mathrm{max} - \mathrm{min}
 </ol></li>
 </ol>
 </section>
-<section id="mean" class="slide level2">
-<h2>Mean</h2>
+<section id="mean-barx" class="slide level2">
+<h2>Mean (<span class="math inline">\(\bar{x}\)</span>)</h2>
 <p>Describe how you will find the mean of these numbers:</p>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="cell-output cell-output-stdout">
-<pre><code>#&gt; [1] 23 13 18 14 10</code></pre>
+<pre><code>#&gt; [1] 18 18 12 18 13</code></pre>
 </div>
 </div>
 </section>
-<section id="mean-1" class="slide level2">
-<h2>Mean</h2>
+<section id="mean-barx-1" class="slide level2">
+<h2>Mean (<span class="math inline">\(\bar{x}\)</span>)</h2>
 <p>The mean is another measurement for central tendency.</p>
 <p><span class="math display">\[
 \bar X = \frac{1}{n}\sum^n_{i=1}X_i
@@ -576,11 +484,35 @@ s^2 = \frac{1}{n-1}\sum^n_{i=1}(X_i-\bar X)^2
 s=\sqrt{s^2}
 \]</span></p>
 </section>
+<section id="mean-vs-median" class="slide level2">
+<h2>Mean vs Median</h2>
+<div class="columns">
+<div class="column">
+<h3 id="mean">Mean</h3>
+<p><span class="math display">\[
+\bar X = \frac{1}{n}\sum^n_{i=1}x_i
+\]</span></p>
+</div><div class="column">
+<h3 id="median">Median</h3>
+<p><span class="math display">\[
+P(X \leq \tilde{X}) = 0.5
+\]</span></p>
+</div></div>
+</section>
+<section id="mean-vs-median-1" class="slide level2">
+<h2>Mean vs Median</h2>
+<p>Mean (blue line) vs Median (red line)</p>
+
+<img data-src="3_files/figure-revealjs/unnamed-chunk-10-1.png" class="quarto-figure quarto-figure-center r-stretch" alt="A density plot of flipper length for each penguin. The mean and median are repsesented as vertical lines. The mean is located at approximately 201. The median is located at approximately 197." width="960"></section>
 <section id="outliers" class="slide level2">
 <h2>Outliers</h2>
 <p>These are data points that seem to be highly distant from all other variables.</p>
 <div class="fragment">
-<p><img data-src="https://miro.medium.com/v2/resize:fit:697/0*_k9tUMfs2P4CGUA3.png"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://miro.medium.com/v2/resize:fit:697/0*_k9tUMfs2P4CGUA3.png" class="quarto-figure quarto-figure-center" alt="An image of a scatter plot with the points following an exponential curve. One point is far from the curve."></p>
+</figure>
+</div>
 </div>
 </section></section>
 <section>
@@ -589,10 +521,10 @@ s=\sqrt{s^2}
 <div class="agenda">
 <ul>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Central Tendency</p>
+<p>Palmer Penguins</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Variation</p>
+<p>Describing numerical data</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
 <p>Summary Statistics</p>
@@ -602,6 +534,9 @@ s=\sqrt{s^2}
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Data Visualization</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Skeweness</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Scatter Plots</p>
@@ -611,81 +546,75 @@ s=\sqrt{s^2}
 </section>
 <section id="numerical-statistics-in-r-1" class="slide level2">
 <h2>Numerical Statistics in R</h2>
+<p>R has several built in functions to compute statistics.</p>
 </section>
-<section id="mean-2" class="slide level2">
+<section id="mean-1" class="slide level2">
 <h2>Mean</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">mean</span>(DATA<span class="sc">$</span>VAR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">mean</span>(DATA<span class="sc">$</span>VAR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>DATA</code>: Name of the data frame (eg: <code>penguins</code>)</li>
+<li><code>VAR</code>: Name of the variable to create a plot (eg: <code>flipper_len</code>)</li>
+</ul>
 </section>
-<section id="median" class="slide level2">
+<section id="median-1" class="slide level2">
 <h2>Median</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">median</span>(DATA<span class="sc">$</span>VAR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">median</span>(DATA<span class="sc">$</span>VAR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>DATA</code>: Name of the data frame (eg: <code>penguins</code>)</li>
+<li><code>VAR</code>: Name of the variable to create a plot (eg: <code>flipper_len</code>)</li>
+</ul>
 </section>
 <section id="standard-deviation-1" class="slide level2">
 <h2>Standard Deviation</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">sd</span>(DATA<span class="sc">$</span>VAR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">sd</span>(DATA<span class="sc">$</span>VAR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>DATA</code>: Name of the data frame (eg: <code>penguins</code>)</li>
+<li><code>VAR</code>: Name of the variable to create a plot (eg: <code>flipper_len</code>)</li>
+</ul>
 </section>
 <section id="variance-1" class="slide level2">
 <h2>Variance</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">var</span>(DATA<span class="sc">$</span>VAR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">var</span>(DATA<span class="sc">$</span>VAR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>DATA</code>: Name of the data frame (eg: <code>penguins</code>)</li>
+<li><code>VAR</code>: Name of the variable to create a plot (eg: <code>flipper_len</code>)</li>
+</ul>
 </section>
 <section id="quartiles-1" class="slide level2">
 <h2>Quartiles</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">quantile</span>(DATA<span class="sc">$</span>VAR, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">quantile</span>(DATA<span class="sc">$</span>VAR, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>DATA</code>: Name of the data frame (eg: <code>penguins</code>)</li>
+<li><code>VAR</code>: Name of the variable to create a plot (eg: <code>flipper_len</code>)</li>
+</ul>
 </section>
 <section id="max-and-min" class="slide level2">
 <h2>Max and Min</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">max</span>(DATA<span class="sc">$</span>VAR)</span>
-<span id="cb9-2"><a></a><span class="fu">min</span>(DATA<span class="sc">$</span>VAR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">max</span>(DATA<span class="sc">$</span>VAR)</span>
+<span id="cb13-2"><a></a><span class="fu">min</span>(DATA<span class="sc">$</span>VAR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>DATA</code>: Name of the data frame (eg: <code>penguins</code>)</li>
+<li><code>VAR</code>: Name of the variable to create a plot (eg: <code>flipper_len</code>)</li>
+</ul>
 </section>
 <section id="summary-statistics-2" class="slide level2">
 <h2>Summary Statistics</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">num_stats</span>(DATA<span class="sc">$</span>VAR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">rnum_stats</span>(DATA<span class="sc">$</span>VAR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>DATA</code>: Name of the data frame (eg: <code>penguins</code>)</li>
+<li><code>VAR</code>: Name of the variable to create a plot (eg: <code>flipper_len</code>)</li>
+</ul>
 </section>
-<section id="mr.-trash-wheel" class="slide level2">
-<h2>Mr.&nbsp;Trash Wheel</h2>
-<div class="cell">
-<details class="code-fold">
+<section id="penguins" class="slide level2">
+<h2>Penguins</h2>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">num_stats</span>(trashwheel<span class="sc">$</span>PlasticBottles)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">num_stats</span>(penguins<span class="sc">$</span>flipper_len)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>#&gt;   min   q25     mean median  q75  max       sd     var    iqr missing
-#&gt; 1   0 987.5 2219.331   1900 2900 9830 1650.449 2723984 1912.5       1</code></pre>
+<pre><code>#&gt;   min q25    mean median q75 max     sd     var iqr missing
+#&gt; 1 172 190 200.967    197 213 231 14.016 196.442  23       0</code></pre>
 </div>
 </div>
 </section></section>
@@ -695,10 +624,10 @@ s=\sqrt{s^2}
 <div class="agenda">
 <ul>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Central Tendency</p>
+<p>Palmer Penguins</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Variation</p>
+<p>Describing numerical data</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
 <p>Summary Statistics</p>
@@ -708,6 +637,9 @@ s=\sqrt{s^2}
 </div></li>
 <li><div class="agenda-active">
 <p>Data Visualization</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Skeweness</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Scatter Plots</p>
@@ -721,74 +653,74 @@ s=\sqrt{s^2}
 </section>
 <section id="histogram-r-code" class="slide level2">
 <h2>Histogram R Code</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(VARIABLE)) <span class="sc">+</span></span>
-<span id="cb13-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(VAR)) <span class="sc">+</span></span>
+<span id="cb17-2"><a></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To change bins:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(VAR)) <span class="sc">+</span></span>
+<span id="cb18-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> VAL)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>DATA</code>: Name of the data frame (eg: <code>penguins</code>)</li>
+<li><code>VAR</code>: Name of the variable to create a plot (eg: <code>flipper_len</code>)</li>
+<li><code>VAL</code>: Numerical value to change the bin width.</li>
+</ul>
 </section>
 <section id="histogram-1" class="slide level2">
 <h2>Histogram</h2>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>)</span>
-<span id="cb14-2"><a></a><span class="fu">ggplot</span>(<span class="fu">tibble</span>(y), <span class="fu">aes</span>(y)) <span class="sc">+</span></span>
-<span id="cb14-3"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>)</span>
+<span id="cb19-2"><a></a><span class="fu">ggplot</span>(<span class="fu">tibble</span>(y), <span class="fu">aes</span>(y)) <span class="sc">+</span></span>
+<span id="cb19-3"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
-<img data-src="3_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch"></section>
+<img data-src="3_files/figure-revealjs/unnamed-chunk-12-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="histogram-2" class="slide level2">
 <h2>Histogram</h2>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>y <span class="ot">&lt;-</span> <span class="fu">rgamma</span>(<span class="dv">1000</span>, <span class="dv">2</span>)</span>
-<span id="cb15-2"><a></a><span class="fu">ggplot</span>(<span class="fu">tibble</span>(y), <span class="fu">aes</span>(y)) <span class="sc">+</span></span>
-<span id="cb15-3"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>y <span class="ot">&lt;-</span> <span class="fu">rgamma</span>(<span class="dv">1000</span>, <span class="dv">2</span>)</span>
+<span id="cb20-2"><a></a><span class="fu">ggplot</span>(<span class="fu">tibble</span>(y), <span class="fu">aes</span>(y)) <span class="sc">+</span></span>
+<span id="cb20-3"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
-<img data-src="3_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch"></section>
+<img data-src="3_files/figure-revealjs/unnamed-chunk-13-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="histograms" class="slide level2">
 <h2>Histograms</h2>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>y <span class="ot">&lt;-</span> <span class="fu">rbeta</span>(<span class="dv">1000</span>, <span class="dv">5</span>, <span class="dv">1</span>)</span>
-<span id="cb16-2"><a></a><span class="fu">ggplot</span>(<span class="fu">tibble</span>(y), <span class="fu">aes</span>(y)) <span class="sc">+</span></span>
-<span id="cb16-3"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>y <span class="ot">&lt;-</span> <span class="fu">rbeta</span>(<span class="dv">1000</span>, <span class="dv">5</span>, <span class="dv">1</span>)</span>
+<span id="cb21-2"><a></a><span class="fu">ggplot</span>(<span class="fu">tibble</span>(y), <span class="fu">aes</span>(y)) <span class="sc">+</span></span>
+<span id="cb21-3"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
-<img data-src="3_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"></section>
+<img data-src="3_files/figure-revealjs/unnamed-chunk-14-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="histograms-1" class="slide level2">
 <h2>Histograms</h2>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>y <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1000</span>, <span class="dv">1</span>, <span class="fl">0.4</span>)</span>
-<span id="cb17-2"><a></a>z <span class="ot">&lt;-</span> (y <span class="sc">==</span> <span class="dv">0</span>) <span class="sc">*</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="dv">23</span>) <span class="sc">+</span> (y <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">*</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="dv">27</span>)</span>
-<span id="cb17-3"><a></a><span class="fu">ggplot</span>(<span class="fu">tibble</span>(z), <span class="fu">aes</span>(z)) <span class="sc">+</span></span>
-<span id="cb17-4"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>y <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1000</span>, <span class="dv">1</span>, <span class="fl">0.4</span>)</span>
+<span id="cb22-2"><a></a>z <span class="ot">&lt;-</span> (y <span class="sc">==</span> <span class="dv">0</span>) <span class="sc">*</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="dv">23</span>) <span class="sc">+</span> (y <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">*</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="dv">27</span>)</span>
+<span id="cb22-3"><a></a><span class="fu">ggplot</span>(<span class="fu">tibble</span>(z), <span class="fu">aes</span>(z)) <span class="sc">+</span></span>
+<span id="cb22-4"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
-<img data-src="3_files/figure-revealjs/unnamed-chunk-16-1.png" width="960" class="r-stretch"></section>
-<section id="mr.-trash-wheel-1" class="slide level2">
-<h2>Mr.&nbsp;Trash Wheel</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">ggplot</span>(trashwheel, <span class="fu">aes</span>(PlasticBottles)) <span class="sc">+</span></span>
-<span id="cb18-2"><a></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<img data-src="3_files/figure-revealjs/unnamed-chunk-15-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="penguins-1" class="slide level2">
+<h2>Penguins</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(flipper_len)) <span class="sc">+</span></span>
+<span id="cb23-2"><a></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="3_files/figure-revealjs/unnamed-chunk-17-1.png" width="960" class="r-stretch"></section>
+<img data-src="3_files/figure-revealjs/unnamed-chunk-16-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="box-plot" class="slide level2">
 <h2>Box Plot</h2>
 <p>A box plot, also known as a box-and-whisker plot, is a graphical representation of the distribution and key statistical characteristics of a dataset. It provides a visual summary of the data’s central tendency, spread, and potential outliers.</p>
@@ -799,71 +731,130 @@ s=\sqrt{s^2}
 <img data-src="https://miro.medium.com/max/9000/1*2c21SkzJMf3frPXPAR_gZA.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="box-plot-r-code" class="slide level2">
 <h2>Box Plot R Code</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(VARIABLE)) <span class="sc">+</span></span>
-<span id="cb19-2"><a></a>  <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(VAR)) <span class="sc">+</span></span>
+<span id="cb24-2"><a></a>  <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>DATA</code>: Name of the data frame (eg: <code>penguins</code>)</li>
+<li><code>VAR</code>: Name of the variable to create a plot (eg: <code>flipper_len</code>)</li>
+</ul>
 </section>
 <section id="box-plot-2" class="slide level2">
 <h2>Box Plot</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">ggplot</span>(trashwheel, <span class="fu">aes</span>(PlasticBottles)) <span class="sc">+</span></span>
-<span id="cb20-2"><a></a>  <span class="fu">geom_boxplot</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(flipper_len)) <span class="sc">+</span></span>
+<span id="cb25-2"><a></a>  <span class="fu">geom_boxplot</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="3_files/figure-revealjs/unnamed-chunk-19-1.png" width="960" class="r-stretch"></section>
+<img data-src="3_files/figure-revealjs/unnamed-chunk-17-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="box-plot-3" class="slide level2">
 <h2>Box Plot</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">ggplot</span>(trashwheel, <span class="fu">aes</span>(<span class="at">y =</span> PlasticBottles)) <span class="sc">+</span></span>
-<span id="cb21-2"><a></a>  <span class="fu">geom_boxplot</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">y =</span> flipper_len)) <span class="sc">+</span></span>
+<span id="cb26-2"><a></a>  <span class="fu">geom_boxplot</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="3_files/figure-revealjs/unnamed-chunk-20-1.png" width="960" class="r-stretch"></section>
+<img data-src="3_files/figure-revealjs/unnamed-chunk-18-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="dot-plots" class="slide level2">
 <h2>Dot Plots</h2>
 <p>Dot Plots are similar to histograms, but they incorporate dots to count how many data points fall within bins.</p>
 </section>
 <section id="dot-plots-in-r" class="slide level2">
 <h2>Dot Plots in R</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(VARIABLE)) <span class="sc">+</span></span>
-<span id="cb22-2"><a></a>  <span class="fu">geom_dotplot</span>(<span class="at">binwidth =</span> X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(VAR)) <span class="sc">+</span></span>
+<span id="cb27-2"><a></a>  <span class="fu">geom_dotplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To change binwidth</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(VAR)) <span class="sc">+</span></span>
+<span id="cb28-2"><a></a>  <span class="fu">geom_dotplot</span>(<span class="at">binwidth =</span> VAL)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>DATA</code>: Name of the data frame (eg: <code>penguins</code>)</li>
+<li><code>VAR</code>: Name of the variable to create a plot (eg: <code>flipper_len</code>)</li>
+<li><code>VAL</code>: Numerical value to change the bin width.</li>
+</ul>
 </section>
 <section id="dot-plots-1" class="slide level2">
 <h2>Dot Plots</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">ggplot</span>(trashwheel, <span class="fu">aes</span>(PlasticBottles)) <span class="sc">+</span></span>
-<span id="cb23-2"><a></a>  <span class="fu">geom_dotplot</span>(<span class="at">binwidth =</span> <span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(flipper_len)) <span class="sc">+</span></span>
+<span id="cb29-2"><a></a>  <span class="fu">geom_dotplot</span>(<span class="at">binwidth =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="3_files/figure-revealjs/unnamed-chunk-22-1.png" width="960" class="r-stretch"></section></section>
+<img data-src="3_files/figure-revealjs/unnamed-chunk-19-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="density-plot" class="slide level2">
+<h2>Density Plot</h2>
+</section>
+<section id="density-plot-1" class="slide level2">
+<h2>Density Plot</h2>
+<p>A density plot is a way to visualize the distribution of a continuous variable — it shows where data values are concentrated (dense) and where they are sparse via the height of the graph.</p>
+</section>
+<section id="density-plot-in-r" class="slide level2">
+<h2>Density Plot in R</h2>
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(VAR)) <span class="sc">+</span></span>
+<span id="cb30-2"><a></a>  <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>DATA</code>: Name of the data frame (eg: <code>penguins</code>)</li>
+<li><code>VAR</code>: Name of the variable to create a plot (eg: <code>flipper_len</code>)</li>
+</ul>
+</section>
+<section id="density-plot-2" class="slide level2">
+<h2>Density Plot</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(flipper_len)) <span class="sc">+</span></span>
+<span id="cb31-2"><a></a>  <span class="fu">geom_density</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="3_files/figure-revealjs/unnamed-chunk-20-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="adding-vertical-lines" class="slide level2">
+<h2>Adding Vertical Lines</h2>
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(VAR)) <span class="sc">+</span></span>
+<span id="cb32-2"><a></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb32-3"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> XVAL)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>DATA</code>: Name of the data frame (eg: <code>penguins</code>)</li>
+<li><code>VAR</code>: Name of the variable to create a plot (eg: <code>flipper_len</code>)</li>
+<li><code>XVAL</code>: Number to place the vertical line (eg: <code>5</code>)</li>
+</ul>
+</section>
+<section id="vertical-lines" class="slide level2">
+<h2>Vertical Lines</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(flipper_len)) <span class="sc">+</span></span>
+<span id="cb33-2"><a></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb33-3"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(penguins<span class="sc">$</span>flipper_len), <span class="at">col  =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb33-4"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">median</span>(penguins<span class="sc">$</span>flipper_len), <span class="at">col =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="3_files/figure-revealjs/unnamed-chunk-21-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="adding-horizontal-lines" class="slide level2">
+<h2>Adding Horizontal Lines</h2>
+<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(VAR)) <span class="sc">+</span></span>
+<span id="cb34-2"><a></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb34-3"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> YVAL)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>DATA</code>: Name of the data frame (eg: <code>penguins</code>)</li>
+<li><code>VAR</code>: Name of the variable to create a plot (eg: <code>flipper_len</code>)</li>
+<li><code>YVAL</code>: Number to place the horizontal line (eg: <code>2</code>)</li>
+</ul>
+</section>
+<section id="horizontal-lines" class="slide level2">
+<h2>Horizontal Lines</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(flipper_len)) <span class="sc">+</span></span>
+<span id="cb35-2"><a></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb35-3"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">0.01</span>, <span class="at">col  =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb35-4"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">0.02</span>, <span class="at">col =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="3_files/figure-revealjs/unnamed-chunk-22-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section></section>
 <section>
-<section id="scatter-plots" class="title-slide slide level1 agenda-slide center">
-<h1>Scatter Plots</h1>
+<section id="skeweness" class="title-slide slide level1 agenda-slide center">
+<h1>Skeweness</h1>
 <div class="agenda">
 <ul>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Central Tendency</p>
+<p>Palmer Penguins</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Variation</p>
+<p>Describing numerical data</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
 <p>Summary Statistics</p>
@@ -873,6 +864,87 @@ s=\sqrt{s^2}
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
 <p>Data Visualization</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Skeweness</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Scatter Plots</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="skeweness-1" class="slide level2">
+<h2>Skeweness</h2>
+<p>Skewness is a statistical measure to determine if unimodal data follows a symmetric distribution, skewed to the left, or skewed to the right.</p>
+</section>
+<section id="symmetric-distribution" class="slide level2">
+<h2>Symmetric Distribution</h2>
+<p>A symmetric distribution will look bell shaped and the mean (red line) and median (dashed blue line) will overlap each other.</p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100000</span>)</span>
+<span id="cb36-2"><a></a><span class="fu">ggplot</span>(<span class="fu">tibble</span>(y), <span class="fu">aes</span>(y)) <span class="sc">+</span></span>
+<span id="cb36-3"><a></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb36-4"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(y), <span class="at">col =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb36-5"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">median</span>(y), <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="3_files/figure-revealjs/unnamed-chunk-23-1.png" class="quarto-figure quarto-figure-center r-stretch" alt="A bell shaped curve where the mean and the median are represented as lines and overlap each other." width="960"></section>
+<section id="right-skewed-distribution" class="slide level2">
+<h2>Right Skewed Distribution</h2>
+<p>A right skewed distribution looks asymetric and the mean (red line) is to the right of the median (dashed blue line).</p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a>y <span class="ot">&lt;-</span> <span class="fu">rgamma</span>(<span class="dv">100000</span>, <span class="at">shape =</span> <span class="dv">4</span>)</span>
+<span id="cb37-2"><a></a><span class="fu">ggplot</span>(<span class="fu">tibble</span>(y), <span class="fu">aes</span>(y)) <span class="sc">+</span></span>
+<span id="cb37-3"><a></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb37-4"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(y), <span class="at">col =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb37-5"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">median</span>(y), <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="3_files/figure-revealjs/unnamed-chunk-24-1.png" class="quarto-figure quarto-figure-center r-stretch" alt="A bell shaped curve where the mean and the median are represented as lines and overlap each other." width="960"></section>
+<section id="left-skewed-distribution" class="slide level2">
+<h2>left Skewed Distribution</h2>
+<p>A left skewed distribution looks asymetric and the mean (red line) is to the left of the median (dashed blue line).</p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a>y <span class="ot">&lt;-</span> <span class="fu">rbeta</span>(<span class="dv">100000</span>, <span class="at">shape1 =</span> <span class="dv">5</span>, <span class="at">shape2 =</span> <span class="fl">1.25</span>)</span>
+<span id="cb38-2"><a></a><span class="fu">ggplot</span>(<span class="fu">tibble</span>(y), <span class="fu">aes</span>(y)) <span class="sc">+</span></span>
+<span id="cb38-3"><a></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb38-4"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(y), <span class="at">col =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb38-5"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">median</span>(y), <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="3_files/figure-revealjs/unnamed-chunk-25-1.png" class="quarto-figure quarto-figure-center r-stretch" alt="A bell shaped curve where the mean and the median are represented as lines and overlap each other." width="960"></section></section>
+<section>
+<section id="scatter-plots" class="title-slide slide level1 agenda-slide center">
+<h1>Scatter Plots</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Palmer Penguins</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Describing numerical data</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Summary Statistics</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Numerical Statistics in R</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Data Visualization</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Skeweness</p>
 </div></li>
 <li><div class="agenda-active">
 <p>Scatter Plots</p>
@@ -887,41 +959,41 @@ s=\sqrt{s^2}
 <section id="positive-relationship" class="slide level2">
 <h2>Positive Relationship</h2>
 
-<img data-src="3_files/figure-revealjs/unnamed-chunk-23-1.png" width="960" class="r-stretch"></section>
+<img data-src="3_files/figure-revealjs/unnamed-chunk-26-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="negative-relationship" class="slide level2">
 <h2>Negative Relationship</h2>
 
-<img data-src="3_files/figure-revealjs/unnamed-chunk-24-1.png" width="960" class="r-stretch"></section>
+<img data-src="3_files/figure-revealjs/unnamed-chunk-27-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="no-relationship" class="slide level2">
 <h2>No Relationship</h2>
 
-<img data-src="3_files/figure-revealjs/unnamed-chunk-25-1.png" width="960" class="r-stretch"></section>
-<section id="weak-positive-or-negative-relationship" class="slide level2">
-<h2>Weak Positive or Negative Relationship</h2>
+<img data-src="3_files/figure-revealjs/unnamed-chunk-28-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="weak-relationship" class="slide level2">
+<h2>Weak Relationship</h2>
 
-<img data-src="3_files/figure-revealjs/unnamed-chunk-26-1.png" width="960" class="r-stretch"></section>
+<img data-src="3_files/figure-revealjs/unnamed-chunk-29-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="scatter-plots-in-r" class="slide level2">
 <h2>Scatter Plots in R</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(<span class="at">x =</span> VAR1, <span class="at">y =</span> VAR2)) <span class="sc">+</span></span>
-<span id="cb24-2"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(<span class="at">x =</span> VAR1, <span class="at">y =</span> VAR2)) <span class="sc">+</span></span>
+<span id="cb39-2"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>DATA</code>: Name of the data frame (eg: <code>penguins</code>)</li>
+<li><code>VAR1</code>: Name of the X variable to create a plot (eg: <code>flipper_len</code>)</li>
+<li><code>VAR2</code>: Name of the Y variable to create a plot (eg: <code>body_mass</code>)</li>
+</ul>
 </section>
-<section id="mr.-trash-wheel-2" class="slide level2">
-<h2>Mr.&nbsp;Trash Wheel</h2>
-<div class="cell">
-<details class="code-fold">
+<section id="penguins-2" class="slide level2">
+<h2>Penguins</h2>
+<div class="cell" data-layout-align="center">
+<details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">ggplot</span>(trashwheel, <span class="fu">aes</span>(PlasticBottles, PlasticBags)) <span class="sc">+</span></span>
-<span id="cb25-2"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(flipper_len, body_mass)) <span class="sc">+</span></span>
+<span id="cb40-2"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div>
+<div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="3_files/figure-revealjs/unnamed-chunk-28-1.png" width="960"></p>
+<p><img data-src="3_files/figure-revealjs/unnamed-chunk-30-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>

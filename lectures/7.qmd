@@ -5,11 +5,17 @@ description: |
 
 format:
   revealjs:
+    width: 1200
     scrollable: true
+    sc-sb-title: true
+    footer: m201.inqs.info/lectures/7
     theme: [default, styles.scss]
     navigation-mode: vertical
-    controls-layout: bottom-right
+    controls-layout: edges
     controls-tutorial: true
+    slide-number: true
+    pointer:
+      pointerSize: 32
     incremental: false 
     chalkboard:
       theme: whiteboard
@@ -19,6 +25,7 @@ knitr:
     echo: true
     eval: true
     message: false
+    code-fold: true
     warnings: false
     comment: "#>" 
     
@@ -30,6 +37,7 @@ filters:
   - reveal-header
   - code-fullscreen
   - reveal-auto-agenda
+
 editor: source
 ---
 

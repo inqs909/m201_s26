@@ -13,11 +13,12 @@
 <script src="../site_libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
 <script src="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/sc-sb-title-1.0.0/sc_sb_title.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/grid-no-htext-1.0.0/grid_no_htext.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.32">
 
-  <title>MATH 201 – Simple Logistic Regression</title>
+  <title>MATH 201 – Simple   Logistic Regression</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -199,71 +200,35 @@
       margin-right: 0; 
     }
   </style>
+  <link href="../site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+  <script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+  <link href="../site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+  <script src="../site_libs/datatables-binding-0.34.0/datatables.js"></script>
+  <script src="../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <link href="../site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+  <link href="../site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+  <script src="../site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+  <link href="../site_libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
+  <script src="../site_libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Simple Logistic Regression</h1>
+  <h1 class="title"><p>Simple <br> Logistic Regression</p></h1>
 
 <div class="quarto-title-authors">
 </div>
 
-</section><section id="TOC">
-<nav role="doc-toc"> 
-<h2 id="toc-title">Table of contents</h2>
-<ul>
-<li><a href="#/motivation" id="/toc-motivation">Motivation</a>
-<ul>
-<li><a href="#/melanoma" id="/toc-melanoma">Melanoma</a></li>
-<li><a href="#/outcome-of-interest" id="/toc-outcome-of-interest">Outcome of Interest</a></li>
-<li><a href="#/data" id="/toc-data">Data</a></li>
-<li><a href="#/plot" id="/toc-plot">Plot</a></li>
-<li><a href="#/plot-1" id="/toc-plot-1">Plot</a></li>
-</ul></li>
-<li><a href="#/modeling-binary-outcomes" id="/toc-modeling-binary-outcomes">Modeling Binary Outcomes</a>
-<ul>
-<li><a href="#/construct-model" id="/toc-construct-model">Construct Model</a></li>
-<li><a href="#/let" id="/toc-let">Let …</a></li>
-<li><a href="#/construct-a-model" id="/toc-construct-a-model">Construct a Model</a></li>
-<li><a href="#/construct-a-model-1" id="/toc-construct-a-model-1">Construct a Model</a></li>
-<li><a href="#/construct-a-model-2" id="/toc-construct-a-model-2">Construct a Model</a></li>
-<li><a href="#/the-logistic-model" id="/toc-the-logistic-model">The Logistic Model</a></li>
-</ul></li>
-<li><a href="#/logistic-regression" id="/toc-logistic-regression">Logistic Regression</a>
-<ul>
-<li><a href="#/logistic-regression-1" id="/toc-logistic-regression-1">Logistic Regression</a></li>
-<li><a href="#/logistic-regression-2" id="/toc-logistic-regression-2">Logistic Regression</a></li>
-<li><a href="#/logistic-model" id="/toc-logistic-model">Logistic Model</a></li>
-<li><a href="#/regression-coefficients-beta" id="/toc-regression-coefficients-beta">Regression Coefficients <span class="math inline">\(\beta\)</span></a></li>
-<li><a href="#/estimating-beta" id="/toc-estimating-beta">Estimating <span class="math inline">\(\beta\)</span></a></li>
-<li><a href="#/estimated-parameters" id="/toc-estimated-parameters">Estimated Parameters</a></li>
-<li><a href="#/interpreting-hat-beta" id="/toc-interpreting-hat-beta">Interpreting <span class="math inline">\(\hat \beta\)</span></a></li>
-<li><a href="#/logistic-regression-in-r" id="/toc-logistic-regression-in-r">Logistic Regression in R</a></li>
-<li><a href="#/example" id="/toc-example">Example</a></li>
-<li><a href="#/interpretation" id="/toc-interpretation">Interpretation</a></li>
-</ul></li>
-<li><a href="#/prediction-with-models" id="/toc-prediction-with-models">Prediction with Models</a>
-<ul>
-<li><a href="#/working-with-probabilities" id="/toc-working-with-probabilities">Working with probabilities</a></li>
-<li><a href="#/predicting-probability" id="/toc-predicting-probability">Predicting Probability</a></li>
-<li><a href="#/prediction-in-r" id="/toc-prediction-in-r">Prediction in R</a></li>
-<li><a href="#/example-1" id="/toc-example-1">Example 1</a></li>
-<li><a href="#/example-2" id="/toc-example-2">Example 2</a></li>
-<li><a href="#/example-3" id="/toc-example-3">Example 3</a></li>
-<li><a href="#/example-4" id="/toc-example-4">Example</a></li>
-</ul></li>
-</ul>
-</nav>
 </section>
 <section>
-<section id="motivation" class="title-slide slide level1 agenda-slide center">
-<h1>Motivation</h1>
+<section id="heart-disease" class="title-slide slide level1 agenda-slide center">
+<h1>Heart Disease</h1>
 <div class="agenda">
 <ul>
 <li><div class="agenda-active">
-<p>Motivation</p>
+<p>Heart Disease</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Modeling Binary Outcomes</p>
@@ -277,51 +242,39 @@
 </ul>
 </div>
 </section>
-<section id="melanoma" class="slide level2">
-<h2>Melanoma</h2>
-<p>Melanoma is a type of skin cancer that causes the cells that produce melanin to grow out of control. What makes Melanoma so dangerous is that it can metastasize to other parts of the body.</p>
-</section>
-<section id="outcome-of-interest" class="slide level2">
-<h2>Outcome of Interest</h2>
-<p>We are interested in learning how do different factors affect and individual’s chances of survival. Therefore, we are measuring patients and if they lived or died during a study period.</p>
+<section id="heart-disease-data" class="slide level2">
+<h2>Heart Disease Data</h2>
+<p>The <a href="https://archive.ics.uci.edu/dataset/45/heart+disease"><code>heart_disease</code></a> data set provides heart disease information on patients from Cleveland, Ohio. The data was originally published in the <a href="https://pubmed.ncbi.nlm.nih.gov/2756873/">American Journal or Cardiology</a>.</p>
 </section>
 <section id="data" class="slide level2">
 <h2>Data</h2>
-<p>We will be using the <code>Melanoma</code> data set with the following variables: <code>dead</code> (died by Melanoma, 1=yes, 0= no) and <code>thickness</code> (tumour thickness in mm).</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>heart_disease <span class="sc">|&gt;</span> </span>
+<span id="cb1-2"><a></a>  DT<span class="sc">::</span><span class="fu">datatable</span>(<span class="at">options =</span> <span class="fu">list</span>(<span class="at">dom =</span> <span class="st">"t"</span>,</span>
+<span id="cb1-3"><a></a>                <span class="at">pageLength =</span> <span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-87673ccc64831bbd7b1f" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-87673ccc64831bbd7b1f">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128","129","130","131","132","133","134","135","136","137","138","139","140","141","142","143","144","145","146","147","148","149","150","151","152","153","154","155","156","157","158","159","160","161","162","163","164","165","166","168","169","170","171","172","173","174","175","176","177","178","179","180","181","182","183","184","185","186","187","188","189","190","191","192","194","195","196","197","198","199","200","201","202","203","204","205","206","207","208","209","210","211","212","213","214","215","216","217","218","219","220","221","222","223","224","225","226","227","228","229","230","231","232","233","234","235","236","237","238","239","240","241","242","243","244","245","246","247","248","249","250","251","252","253","254","255","256","257","258","259","260","261","262","263","264","265","266","268","269","270","271","272","273","274","275","276","277","278","279","280","281","282","283","284","285","286","287","289","290","291","292","293","294","295","296","297","298","299","300","301","302"],[63,67,67,37,41,56,62,57,63,53,57,56,56,44,52,57,48,54,48,49,64,58,58,58,60,50,58,66,43,40,69,60,64,59,44,42,43,57,55,61,65,40,71,59,61,58,51,50,65,53,41,65,44,44,60,54,50,41,54,51,51,46,58,54,54,60,60,54,59,46,65,67,62,65,44,65,60,51,48,58,45,53,39,68,52,44,47,53,51,66,62,62,44,63,52,59,60,52,48,45,34,57,71,49,54,59,57,61,39,61,56,52,43,62,41,58,35,63,65,48,63,51,55,65,45,56,54,44,62,54,51,29,51,43,55,70,62,35,51,59,59,52,64,58,47,57,41,45,60,52,42,67,55,64,70,51,58,60,68,46,77,54,58,48,57,54,35,45,70,53,59,62,64,57,52,56,43,53,48,56,42,59,60,63,42,66,54,69,50,51,62,68,67,69,45,50,59,50,64,57,64,43,45,58,50,55,62,37,38,41,66,52,56,46,46,64,59,41,54,39,53,63,34,47,67,54,66,52,55,49,74,54,54,56,46,49,42,41,41,49,61,60,67,58,47,52,62,57,58,64,51,43,42,67,76,70,57,44,58,60,44,61,42,59,40,42,61,66,46,71,59,64,66,39,57,58,57,47,55,35,61,58,58,56,56,67,55,44,63,63,41,59,57,45,68,57,57],["Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female","Female"],["Typical Angina","Asymptomatic","Asymptomatic","Non-anginal Pain","Atypical Angina","Atypical Angina","Asymptomatic","Asymptomatic","Asymptomatic","Asymptomatic","Asymptomatic","Atypical Angina","Non-anginal Pain","Atypical Angina","Non-anginal Pain","Non-anginal Pain","Atypical Angina","Asymptomatic","Non-anginal Pain","Atypical Angina","Typical Angina","Typical Angina","Atypical Angina","Non-anginal Pain","Asymptomatic","Non-anginal Pain","Non-anginal Pain","Typical Angina","Asymptomatic","Asymptomatic","Typical Angina","Asymptomatic","Non-anginal Pain","Asymptomatic","Non-anginal Pain","Asymptomatic","Asymptomatic","Asymptomatic","Asymptomatic","Non-anginal Pain","Asymptomatic","Typical Angina","Atypical Angina","Non-anginal Pain","Asymptomatic","Non-anginal Pain","Non-anginal Pain","Asymptomatic","Non-anginal Pain","Non-anginal Pain","Atypical Angina","Asymptomatic","Asymptomatic","Atypical Angina","Asymptomatic","Asymptomatic","Non-anginal Pain","Asymptomatic","Non-anginal Pain","Typical Angina","Asymptomatic","Non-anginal Pain","Asymptomatic","Non-anginal Pain","Asymptomatic","Asymptomatic","Non-anginal Pain","Non-anginal Pain","Asymptomatic","Non-anginal Pain","Non-anginal Pain","Asymptomatic","Asymptomatic","Asymptomatic","Asymptomatic","Non-anginal Pain","Asymptomatic","Non-anginal Pain","Atypical Angina","Asymptomatic","Asymptomatic","Asymptomatic","Non-anginal Pain","Non-anginal Pain","Atypical Angina","Non-anginal Pain","Non-anginal Pain","Asymptomatic","Non-anginal Pain","Asymptomatic","Asymptomatic","Non-anginal Pain","Non-anginal Pain","Non-anginal Pain","Asymptomatic","Asymptomatic","Asymptomatic","Atypical Angina","Asymptomatic","Asymptomatic","Typical Angina","Asymptomatic","Non-anginal Pain","Non-anginal Pain","Atypical Angina","Asymptomatic","Non-anginal Pain","Asymptomatic","Asymptomatic","Asymptomatic","Asymptomatic","Typical Angina","Asymptomatic","Non-anginal Pain","Atypical Angina","Non-anginal Pain","Asymptomatic","Asymptomatic","Asymptomatic","Asymptomatic","Asymptomatic","Non-anginal Pain","Asymptomatic","Typical Angina","Atypical Angina","Asymptomatic","Asymptomatic","Atypical Angina","Asymptomatic","Non-anginal Pain","Non-anginal Pain","Atypical Angina","Asymptomatic","Non-anginal Pain","Atypical Angina","Asymptomatic","Atypical Angina","Asymptomatic","Non-anginal Pain","Atypical Angina","Typical Angina","Atypical Angina","Non-anginal Pain","Non-anginal Pain","Non-anginal Pain","Asymptomatic","Non-anginal Pain","Atypical Angina","Non-anginal Pain","Typical Angina","Asymptomatic","Non-anginal Pain","Asymptomatic","Asymptomatic","Asymptomatic","Asymptomatic","Asymptomatic","Asymptomatic","Non-anginal Pain","Atypical Angina","Asymptomatic","Non-anginal Pain","Asymptomatic","Non-anginal Pain","Asymptomatic","Atypical Angina","Asymptomatic","Atypical Angina","Non-anginal Pain","Asymptomatic","Asymptomatic","Asymptomatic","Asymptomatic","Asymptomatic","Asymptomatic","Asymptomatic","Non-anginal Pain","Non-anginal Pain","Asymptomatic","Asymptomatic","Typical Angina","Typical Angina","Asymptomatic","Atypical Angina","Non-anginal Pain","Atypical Angina","Atypical Angina","Non-anginal Pain","Non-anginal Pain","Asymptomatic","Asymptomatic","Non-anginal Pain","Asymptomatic","Typical Angina","Asymptomatic","Atypical Angina","Typical Angina","Asymptomatic","Asymptomatic","Non-anginal Pain","Non-anginal Pain","Asymptomatic","Asymptomatic","Asymptomatic","Asymptomatic","Atypical Angina","Asymptomatic","Non-anginal Pain","Typical Angina","Non-anginal Pain","Asymptomatic","Asymptomatic","Typical Angina","Atypical Angina","Asymptomatic","Asymptomatic","Asymptomatic","Non-anginal Pain","Non-anginal Pain","Non-anginal Pain","Asymptomatic","Asymptomatic","Atypical Angina","Asymptomatic","Non-anginal Pain","Asymptomatic","Asymptomatic","Non-anginal Pain","Asymptomatic","Non-anginal Pain","Atypical Angina","Non-anginal Pain","Asymptomatic","Asymptomatic","Asymptomatic","Atypical Angina","Atypical Angina","Atypical Angina","Atypical Angina","Asymptomatic","Typical Angina","Non-anginal Pain","Asymptomatic","Asymptomatic","Asymptomatic","Asymptomatic","Atypical Angina","Asymptomatic","Asymptomatic","Asymptomatic","Non-anginal Pain","Asymptomatic","Non-anginal Pain","Asymptomatic","Non-anginal Pain","Atypical Angina","Atypical Angina","Non-anginal Pain","Atypical Angina","Typical Angina","Non-anginal Pain","Asymptomatic","Asymptomatic","Non-anginal Pain","Asymptomatic","Non-anginal Pain","Asymptomatic","Asymptomatic","Asymptomatic","Asymptomatic","Typical Angina","Typical Angina","Non-anginal Pain","Non-anginal Pain","Atypical Angina","Asymptomatic","Asymptomatic","Non-anginal Pain","Asymptomatic","Atypical Angina","Asymptomatic","Asymptomatic","Asymptomatic","Atypical Angina","Atypical Angina","Non-anginal Pain","Atypical Angina","Asymptomatic","Asymptomatic","Asymptomatic","Atypical Angina","Asymptomatic","Asymptomatic","Typical Angina","Asymptomatic","Asymptomatic","Atypical Angina"],[145,160,120,130,130,120,140,120,130,140,140,140,130,120,172,150,110,140,130,130,110,150,120,132,130,120,120,150,150,110,140,117,140,135,130,140,120,150,132,150,150,140,160,150,130,112,110,150,140,130,105,120,112,130,130,124,140,110,125,125,130,142,128,135,120,145,140,150,170,150,155,125,120,110,110,160,125,140,130,150,104,130,140,180,120,140,138,138,130,120,160,130,108,135,128,110,150,134,122,115,118,128,110,120,108,140,128,120,118,145,125,118,132,130,135,140,138,130,135,130,150,100,140,138,130,200,110,120,124,120,94,130,140,122,135,145,120,120,125,140,170,128,125,105,108,165,112,128,102,152,102,115,160,120,130,140,125,140,118,101,125,110,100,124,132,132,126,112,160,142,174,140,145,152,108,132,130,130,124,134,148,178,158,140,120,160,192,140,129,140,138,120,100,160,138,120,160,110,180,150,140,110,142,128,144,130,150,120,120,130,178,112,120,105,138,130,138,112,108,94,123,108,118,112,152,110,112,136,180,118,120,160,122,130,120,134,120,110,126,130,134,120,120,100,110,125,128,110,146,128,120,115,120,106,140,156,124,118,136,150,120,138,136,126,152,130,140,160,140,112,134,170,146,138,154,130,110,130,128,122,148,114,170,130,120,152,132,120,140,124,120,164,140,110,144,130,130],[233,286,229,250,204,236,268,354,254,203,192,294,256,263,199,168,229,239,275,266,211,283,284,224,206,219,340,226,247,167,239,230,335,234,233,226,177,276,353,243,225,199,302,212,330,230,175,243,417,197,198,177,290,219,253,266,233,172,273,213,305,177,216,304,188,282,185,232,326,231,269,254,267,248,197,360,258,308,245,270,208,264,321,274,325,235,257,234,256,302,164,231,141,252,255,239,258,201,222,260,182,303,265,188,309,177,229,260,219,307,249,186,341,263,203,211,183,330,254,256,407,222,217,282,234,288,239,220,209,258,227,204,261,213,250,174,281,198,245,221,288,205,309,240,243,289,250,308,318,298,265,564,289,246,322,299,300,293,277,197,304,214,248,255,207,288,282,160,269,226,249,394,212,274,233,184,315,246,274,409,244,270,305,195,240,246,283,254,196,298,294,211,299,234,236,244,273,254,325,126,313,211,309,259,200,262,244,215,231,214,228,230,193,204,243,303,271,268,267,199,282,269,210,204,277,206,212,196,327,149,269,201,286,283,249,271,295,235,306,269,234,178,237,234,275,212,208,201,218,263,295,303,209,223,197,245,261,242,319,240,226,166,315,218,223,180,207,228,311,149,204,227,278,220,232,197,335,253,205,192,203,318,225,221,240,212,342,169,187,197,157,176,241,264,193,131,236],["Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120","Fasting Blood Sugar &lt;= 120"],["Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Normal","Left Ventricular Hypertrophy","Normal","Left Ventricular Hypertrophy","Normal","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Normal","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Normal","Normal","Normal","Normal","Normal","Normal","Normal","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Normal","Normal","Normal","Normal","Left Ventricular Hypertrophy","Normal","Normal","Normal","Normal","Normal","Normal","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Normal","Normal","Left Ventricular Hypertrophy","Normal","Normal","Normal","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Normal","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Normal","Normal","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Normal","Left Ventricular Hypertrophy","Normal","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Normal","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Normal","Normal","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Normal","Normal","Normal","Normal","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Normal","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Normal","Normal","Left Ventricular Hypertrophy","Normal","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Normal","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Normal","Normal","Normal","Left Ventricular Hypertrophy","Normal","Normal","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Normal","Normal","Left Ventricular Hypertrophy","Normal","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Normal","Normal","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Normal","Normal","Normal","Left Ventricular Hypertrophy","Normal","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Normal","Left Ventricular Hypertrophy","Normal","Left Ventricular Hypertrophy","Normal","Left Ventricular Hypertrophy","Normal","Left Ventricular Hypertrophy","Normal","Normal","Left Ventricular Hypertrophy","Normal","Left Ventricular Hypertrophy","Normal","Left Ventricular Hypertrophy","Normal","Normal","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Normal","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Normal","Normal","Left Ventricular Hypertrophy","Normal","Left Ventricular Hypertrophy","Normal","Normal","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Normal","Normal","Left Ventricular Hypertrophy","Normal","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Normal","Normal","Left Ventricular Hypertrophy","Normal","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Normal","Normal","Normal","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Normal","Normal","Normal","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Normal","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Normal","Normal","Normal","Normal","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Normal","Normal","Normal","Normal","Left Ventricular Hypertrophy","Normal","Normal","Left Ventricular Hypertrophy","Normal","Left Ventricular Hypertrophy","Normal","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Normal","Normal","Normal","Normal","Normal","Normal","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","ST-T wave Abnormality","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Normal","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Normal","Normal","Normal","Normal","Normal","Normal","Normal","Normal","Normal","Left Ventricular Hypertrophy","Normal","Left Ventricular Hypertrophy","Normal","Normal","Normal","Left Ventricular Hypertrophy","Normal","Normal","Normal","ST-T wave Abnormality","Left Ventricular Hypertrophy","Normal","Normal","Left Ventricular Hypertrophy","Normal","Normal","Left Ventricular Hypertrophy","Normal","Normal","Normal","Normal","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Normal","Normal","Normal","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Normal","Left Ventricular Hypertrophy","Normal","Normal","Normal","ST-T wave Abnormality","Normal","Normal","ST-T wave Abnormality","Left Ventricular Hypertrophy","Left Ventricular Hypertrophy","Normal","Left Ventricular Hypertrophy","Normal","Normal","Left Ventricular Hypertrophy","Normal","Normal","Left Ventricular Hypertrophy","Normal","Normal","Normal","Normal","Left Ventricular Hypertrophy"],[150,108,129,187,172,178,160,163,147,155,148,153,142,173,162,174,168,160,139,171,144,162,160,173,132,158,172,114,171,114,151,160,158,161,179,178,120,112,132,137,114,178,162,157,169,165,123,128,157,152,168,140,153,188,144,109,163,158,152,125,142,160,131,170,113,142,155,165,140,147,148,163,99,158,177,151,141,142,180,111,148,143,182,150,172,180,156,160,149,151,145,146,175,172,161,142,157,158,186,185,174,159,130,139,156,162,150,140,140,146,144,190,136,97,132,165,182,132,127,150,154,143,111,174,175,133,126,170,163,147,154,202,186,165,161,125,103,130,166,164,159,184,131,154,152,124,179,170,160,178,122,160,145,96,109,173,171,170,151,156,162,158,122,175,168,159,156,138,112,111,143,157,132,88,147,105,162,173,166,150,178,145,161,179,194,120,195,146,163,122,106,115,125,131,152,162,125,159,154,173,133,161,147,130,126,155,154,170,182,168,165,160,162,172,152,122,182,172,167,179,95,169,192,143,172,108,132,169,117,126,121,163,116,103,144,162,162,153,163,163,145,96,71,156,118,168,140,126,105,105,157,181,173,142,116,143,141,149,152,171,169,125,125,134,181,150,138,138,120,125,162,155,152,152,164,131,143,179,130,174,161,140,146,163,169,150,166,144,144,136,182,90,123,132,141,115,174],[false,true,true,false,false,false,false,true,false,true,false,false,true,false,false,false,false,false,false,false,true,false,false,false,true,false,false,false,false,true,false,true,false,false,true,false,true,true,true,true,false,true,false,false,false,false,false,false,false,false,false,false,false,false,true,true,false,false,false,true,true,true,true,false,false,true,false,false,true,false,false,false,true,false,false,false,true,false,false,true,true,false,false,true,false,false,false,false,false,false,false,false,false,false,true,true,false,false,false,false,false,false,false,false,false,true,false,true,false,true,true,false,true,false,false,false,false,true,false,true,false,true,true,false,false,true,true,false,false,false,true,false,true,false,false,true,false,true,false,true,false,false,true,true,false,false,false,false,false,false,false,false,true,true,false,true,false,false,false,false,true,false,false,false,true,true,true,false,true,true,true,false,false,true,false,true,false,false,false,true,false,false,false,false,false,true,false,false,false,true,false,false,true,false,true,false,false,false,true,false,false,false,true,true,true,false,true,false,true,false,true,false,false,false,true,false,false,true,false,false,true,true,false,false,false,true,true,false,true,false,true,false,true,true,false,false,false,false,false,false,false,false,false,false,true,false,false,true,false,true,false,false,false,false,false,false,false,false,false,false,false,true,true,false,false,false,true,false,true,false,false,false,false,false,false,false,true,false,true,false,false,false,true,false,false,false,false,true,true,true,false,false,true,false,false,true,false],[2.3,1.5,2.6,3.5,1.4,0.8,3.6,0.6,1.4,3.1,0.4,1.3,0.6,0,0.5,1.6,1,1.2,0.2,0.6,1.8,1,1.8,3.2,2.4,1.6,0,2.6,1.5,2,1.8,1.4,0,0.5,0.4,0,2.5,0.6,1.2,1,1,1.4,0.4,1.6,0,2.5,0.6,2.6,0.8,1.2,0,0.4,0,0,1.4,2.2,0.6,0,0.5,1.4,1.2,1.4,2.2,0,1.4,2.8,3,1.6,3.4,3.6,0.8,0.2,1.8,0.6,0,0.8,2.8,1.5,0.2,0.8,3,0.4,0,1.6,0.2,0,0,0,0.5,0.4,6.2,1.8,0.6,0,0,1.2,2.6,0.8,0,0,0,0,0,2,0,0,0.4,3.6,1.2,1,1.2,0,3,1.2,0,0,1.4,1.8,2.8,0,4,1.2,5.6,1.4,0.6,4,2.8,0,0,0.4,0,0,0,0.2,1.4,2.6,1.4,1.6,2.4,0,0.2,0,1.8,0.6,0,1,0,0,0,1.2,0.6,1.6,0.8,2.2,2.4,1.6,0,1.2,1,0,0,1.6,1,0,0,0,0,0,2.9,0,0,1.2,2,1.2,0.1,2.1,1.9,0,0.5,1.9,0.8,4.2,0,0,0.8,0,0,2,0,4.2,1.9,1.5,0.9,0.1,0.2,1.1,0,0,0,0.2,0.2,0,0,3,0.9,0,1.4,0,3.8,2,1,0,1.9,0,0,2,0,0,0,0,2,1.8,0.7,0.1,0,0,0.1,0.1,3.4,0.8,0.2,0,3.2,1.6,0.8,0,0,0,0,0,2.6,0,1,0.1,1,1,0,1.5,2,0.2,0.6,1.2,0,0.3,1.1,0,0.3,0.3,0,0.9,0,3.6,1.8,2.2,0,0,1.9,2.3,1.8,1.6,0.8,0.6,0,0,0,0.6,3,0,2,0,0,4.4,2.8,0,0,0.8,1.2,2.8,4,0,0,1,0.2,1.2,3.4,1.2,0],["Negative Slope","Zero Slope","Zero Slope","Negative Slope","Positive Slope","Positive Slope","Negative Slope","Positive Slope","Zero Slope","Negative Slope","Zero Slope","Zero Slope","Zero Slope","Positive Slope","Positive Slope","Positive Slope","Negative Slope","Positive Slope","Positive Slope","Positive Slope","Zero Slope","Positive Slope","Zero Slope","Positive Slope","Zero Slope","Zero Slope","Positive Slope","Negative Slope","Positive Slope","Zero Slope","Positive Slope","Positive Slope","Positive Slope","Zero Slope","Positive Slope","Positive Slope","Zero Slope","Zero Slope","Zero Slope","Zero Slope","Zero Slope","Positive Slope","Positive Slope","Positive Slope","Positive Slope","Zero Slope","Positive Slope","Zero Slope","Positive Slope","Negative Slope","Positive Slope","Positive Slope","Positive Slope","Positive Slope","Positive Slope","Zero Slope","Zero Slope","Positive Slope","Negative Slope","Positive Slope","Zero Slope","Negative Slope","Zero Slope","Positive Slope","Zero Slope","Zero Slope","Zero Slope","Positive Slope","Negative Slope","Zero Slope","Positive Slope","Zero Slope","Zero Slope","Positive Slope","Positive Slope","Positive Slope","Zero Slope","Positive Slope","Zero Slope","Positive Slope","Zero Slope","Zero Slope","Positive Slope","Zero Slope","Positive Slope","Positive Slope","Positive Slope","Positive Slope","Positive Slope","Zero Slope","Negative Slope","Zero Slope","Zero Slope","Positive Slope","Positive Slope","Zero Slope","Zero Slope","Positive Slope","Positive Slope","Positive Slope","Positive Slope","Positive Slope","Positive Slope","Zero Slope","Positive Slope","Positive Slope","Zero Slope","Zero Slope","Zero Slope","Zero Slope","Zero Slope","Zero Slope","Zero Slope","Zero Slope","Zero Slope","Positive Slope","Positive Slope","Positive Slope","Zero Slope","Positive Slope","Zero Slope","Zero Slope","Negative Slope","Zero Slope","Zero Slope","Negative Slope","Zero Slope","Positive Slope","Positive Slope","Zero Slope","Positive Slope","Positive Slope","Positive Slope","Zero Slope","Zero Slope","Negative Slope","Zero Slope","Zero Slope","Zero Slope","Positive Slope","Zero Slope","Positive Slope","Zero Slope","Zero Slope","Positive Slope","Zero Slope","Positive Slope","Positive Slope","Positive Slope","Zero Slope","Zero Slope","Zero Slope","Zero Slope","Negative Slope","Zero Slope","Positive Slope","Positive Slope","Zero Slope","Positive Slope","Positive Slope","Positive Slope","Zero Slope","Zero Slope","Positive Slope","Positive Slope","Positive Slope","Positive Slope","Zero Slope","Zero Slope","Positive Slope","Zero Slope","Zero Slope","Zero Slope","Zero Slope","Positive Slope","Zero Slope","Positive Slope","Positive Slope","Zero Slope","Zero Slope","Positive Slope","Negative Slope","Positive Slope","Positive Slope","Negative Slope","Zero Slope","Positive Slope","Zero Slope","Positive Slope","Zero Slope","Zero Slope","Zero Slope","Zero Slope","Zero Slope","Zero Slope","Positive Slope","Positive Slope","Positive Slope","Positive Slope","Positive Slope","Positive Slope","Positive Slope","Zero Slope","Zero Slope","Zero Slope","Positive Slope","Zero Slope","Positive Slope","Zero Slope","Zero Slope","Zero Slope","Positive Slope","Zero Slope","Positive Slope","Zero Slope","Zero Slope","Positive Slope","Positive Slope","Positive Slope","Positive Slope","Zero Slope","Zero Slope","Positive Slope","Positive Slope","Positive Slope","Zero Slope","Positive Slope","Zero Slope","Zero Slope","Positive Slope","Positive Slope","Positive Slope","Zero Slope","Negative Slope","Positive Slope","Zero Slope","Positive Slope","Positive Slope","Positive Slope","Positive Slope","Zero Slope","Positive Slope","Zero Slope","Positive Slope","Zero Slope","Positive Slope","Positive Slope","Zero Slope","Zero Slope","Zero Slope","Positive Slope","Zero Slope","Zero Slope","Positive Slope","Zero Slope","Positive Slope","Positive Slope","Zero Slope","Positive Slope","Positive Slope","Positive Slope","Zero Slope","Zero Slope","Zero Slope","Positive Slope","Positive Slope","Positive Slope","Positive Slope","Zero Slope","Zero Slope","Positive Slope","Zero Slope","Zero Slope","Zero Slope","Positive Slope","Zero Slope","Zero Slope","Positive Slope","Zero Slope","Positive Slope","Positive Slope","Negative Slope","Zero Slope","Positive Slope","Negative Slope","Zero Slope","Positive Slope","Negative Slope","Positive Slope","Zero Slope","Positive Slope","Zero Slope","Zero Slope","Zero Slope","Zero Slope","Zero Slope","Zero Slope"],[0,3,2,0,0,0,2,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,0,2,2,0,0,0,0,0,1,1,0,3,0,2,0,0,1,0,0,1,0,1,0,1,0,1,1,1,0,1,1,0,0,3,0,1,2,0,0,0,0,0,2,2,2,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,3,3,0,0,1,1,2,1,0,0,0,1,1,3,0,1,1,1,0,0,1,0,0,1,0,0,0,3,1,2,3,0,0,1,0,2,1,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,3,0,0,1,0,0,0,1,1,3,0,2,2,1,0,3,0,0,2,0,1,0,0,1,0,0,0,2,1,3,1,1,3,0,2,2,0,0,2,0,3,1,3,0,3,3,0,2,1,0,0,0,0,0,1,0,0,3,2,0,0,0,0,0,0,2,1,0,0,0,2,0,0,0,0,2,2,0,0,1,1,1,0,0,3,1,1,2,0,0,0,0,0,0,0,2,0,0,1,1,2,0,0,1,1,0,0,0,2,0,0,0,1,2,0,0,1,0,1,0,0,1,0,2,0,2,0,1,0,1,0,1,0,1,0,1,3,2,0,0,0,0,0,2,0,0,2,0,0,2,1,1],["Fixed Defect","Normal","Reversible Defect","Normal","Normal","Normal","Normal","Normal","Reversible Defect","Reversible Defect","Fixed Defect","Normal","Fixed Defect","Reversible Defect","Reversible Defect","Normal","Reversible Defect","Normal","Normal","Normal","Normal","Normal","Normal","Reversible Defect","Reversible Defect","Normal","Normal","Normal","Normal","Reversible Defect","Normal","Reversible Defect","Normal","Reversible Defect","Normal","Normal","Reversible Defect","Fixed Defect","Reversible Defect","Normal","Reversible Defect","Reversible Defect","Normal","Normal","Normal","Reversible Defect","Normal","Reversible Defect","Normal","Normal","Normal","Reversible Defect","Normal","Normal","Reversible Defect","Reversible Defect","Reversible Defect","Reversible Defect","Normal","Normal","Reversible Defect","Normal","Reversible Defect","Normal","Reversible Defect","Reversible Defect","Normal","Reversible Defect","Reversible Defect","Normal","Normal","Reversible Defect","Reversible Defect","Fixed Defect","Normal","Normal","Reversible Defect","Normal","Normal","Reversible Defect","Normal","Normal","Normal","Reversible Defect","Normal","Normal","Normal","Normal","Normal","Normal","Reversible Defect","Reversible Defect","Normal","Normal","Reversible Defect","Reversible Defect","Reversible Defect","Normal","Normal","Normal","Normal","Normal","Normal","Reversible Defect","Reversible Defect","Reversible Defect","Reversible Defect","Reversible Defect","Reversible Defect","Reversible Defect","Normal","Fixed Defect","Reversible Defect","Reversible Defect","Fixed Defect","Normal","Normal","Reversible Defect","Reversible Defect","Reversible Defect","Reversible Defect","Normal","Reversible Defect","Normal","Normal","Reversible Defect","Reversible Defect","Normal","Normal","Reversible Defect","Reversible Defect","Normal","Normal","Normal","Normal","Reversible Defect","Reversible Defect","Reversible Defect","Normal","Normal","Reversible Defect","Normal","Reversible Defect","Reversible Defect","Normal","Reversible Defect","Normal","Normal","Normal","Reversible Defect","Normal","Reversible Defect","Reversible Defect","Normal","Normal","Reversible Defect","Reversible Defect","Reversible Defect","Reversible Defect","Reversible Defect","Normal","Normal","Normal","Normal","Reversible Defect","Normal","Reversible Defect","Normal","Reversible Defect","Reversible Defect","Normal","Normal","Fixed Defect","Reversible Defect","Reversible Defect","Fixed Defect","Normal","Normal","Reversible Defect","Reversible Defect","Normal","Reversible Defect","Normal","Normal","Reversible Defect","Fixed Defect","Reversible Defect","Reversible Defect","Normal","Reversible Defect","Normal","Normal","Normal","Normal","Normal","Normal","Normal","Normal","Normal","Reversible Defect","Reversible Defect","Reversible Defect","Reversible Defect","Reversible Defect","Reversible Defect","Normal","Normal","Normal","Reversible Defect","Normal","Reversible Defect","Normal","Reversible Defect","Normal","Normal","Normal","Normal","Normal","Normal","Normal","Reversible Defect","Normal","Normal","Normal","Normal","Normal","Normal","Normal","Normal","Normal","Normal","Normal","Normal","Reversible Defect","Reversible Defect","Normal","Normal","Normal","Normal","Normal","Normal","Normal","Normal","Reversible Defect","Normal","Reversible Defect","Normal","Fixed Defect","Reversible Defect","Reversible Defect","Normal","Normal","Normal","Normal","Normal","Normal","Reversible Defect","Normal","Normal","Normal","Normal","Normal","Fixed Defect","Fixed Defect","Reversible Defect","Normal","Reversible Defect","Fixed Defect","Reversible Defect","Normal","Normal","Reversible Defect","Normal","Normal","Normal","Normal","Reversible Defect","Normal","Reversible Defect","Normal","Reversible Defect","Fixed Defect","Fixed Defect","Reversible Defect","Normal","Reversible Defect","Normal","Fixed Defect","Reversible Defect","Normal","Normal","Fixed Defect","Reversible Defect","Reversible Defect","Reversible Defect","Reversible Defect","Normal"],[0,2,1,0,0,0,3,0,2,1,0,0,2,0,0,0,1,0,0,0,0,0,1,3,4,0,0,0,0,3,0,2,1,0,0,0,3,1,3,0,4,0,0,0,1,4,0,4,0,0,0,0,2,0,1,1,1,1,0,0,2,0,1,0,2,2,1,0,2,1,0,3,1,1,1,0,1,0,0,3,0,0,0,3,0,0,0,0,0,0,3,0,0,0,1,2,3,0,0,0,0,0,0,3,0,2,1,2,3,1,1,0,2,2,0,0,0,3,2,3,4,0,3,1,0,3,3,0,0,0,0,0,0,0,0,4,3,1,0,0,1,0,1,0,1,4,0,0,0,0,0,0,4,3,1,1,1,2,0,0,4,0,0,0,0,0,1,0,3,0,1,0,4,1,0,1,0,0,3,2,0,0,1,0,0,2,1,2,0,3,2,0,3,0,0,0,1,0,0,0,0,0,3,3,3,0,1,0,4,0,3,1,0,0,0,0,0,0,0,0,3,1,0,0,0,3,2,0,2,1,0,0,3,2,1,0,0,0,0,0,2,0,2,2,1,3,0,0,1,0,0,0,0,0,0,0,1,0,3,0,0,4,2,2,1,0,1,0,2,0,1,0,0,0,1,0,2,0,3,0,2,4,2,0,0,1,0,2,2,1,0,3,1,1,2,3,1],["no","yes","yes","no","no","no","yes","no","yes","yes","no","no","yes","no","no","no","yes","no","no","no","no","no","yes","yes","yes","no","no","no","no","yes","no","yes","yes","no","no","no","yes","yes","yes","no","yes","no","no","no","yes","yes","no","yes","no","no","no","no","yes","no","yes","yes","yes","yes","no","no","yes","no","yes","no","yes","yes","yes","no","yes","yes","no","yes","yes","yes","yes","no","yes","no","no","yes","no","no","no","yes","no","no","no","no","no","no","yes","no","no","no","yes","yes","yes","no","no","no","no","no","no","yes","no","yes","yes","yes","yes","yes","yes","no","yes","yes","no","no","no","yes","yes","yes","yes","no","yes","yes","no","yes","yes","no","no","no","no","no","no","no","no","yes","yes","yes","no","no","yes","no","yes","no","yes","yes","no","no","no","no","no","no","yes","yes","yes","yes","yes","yes","no","no","yes","no","no","no","no","no","yes","no","yes","no","yes","no","yes","yes","no","yes","no","no","yes","yes","no","no","yes","no","no","yes","yes","yes","no","yes","yes","no","yes","no","no","no","yes","no","no","no","no","no","yes","yes","yes","no","yes","no","yes","no","yes","yes","no","no","no","no","no","no","no","no","yes","yes","no","no","no","yes","yes","no","yes","yes","no","no","yes","yes","yes","no","no","no","no","no","yes","no","yes","yes","yes","yes","no","no","yes","no","no","no","no","no","no","no","yes","no","yes","no","no","yes","yes","yes","yes","no","yes","no","yes","no","yes","no","no","no","yes","no","yes","no","yes","no","yes","yes","yes","no","no","yes","no","yes","yes","yes","no","yes","yes","yes","yes","yes","yes"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>age<\/th>\n      <th>sex<\/th>\n      <th>cp<\/th>\n      <th>trestbps<\/th>\n      <th>chol<\/th>\n      <th>fbs<\/th>\n      <th>restecg<\/th>\n      <th>thalach<\/th>\n      <th>exang<\/th>\n      <th>oldpeak<\/th>\n      <th>slope<\/th>\n      <th>ca<\/th>\n      <th>thal<\/th>\n      <th>class<\/th>\n      <th>disease<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","pageLength":4,"columnDefs":[{"className":"dt-right","targets":[1,4,5,8,10,12,14]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"age","targets":1},{"name":"sex","targets":2},{"name":"cp","targets":3},{"name":"trestbps","targets":4},{"name":"chol","targets":5},{"name":"fbs","targets":6},{"name":"restecg","targets":7},{"name":"thalach","targets":8},{"name":"exang","targets":9},{"name":"oldpeak","targets":10},{"name":"slope","targets":11},{"name":"ca","targets":12},{"name":"thal","targets":13},{"name":"class","targets":14},{"name":"disease","targets":15}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[4,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
 </section>
-<section id="plot" class="slide level2">
-<h2>Plot</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>Melanoma <span class="sc">|&gt;</span> </span>
-<span id="cb1-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(thickness, dead)) <span class="sc">+</span></span>
-<span id="cb1-3"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-
-</div>
-<img data-src="6_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
-<section id="plot-1" class="slide level2">
-<h2>Plot</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>Melanoma <span class="sc">|&gt;</span> </span>
-<span id="cb2-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(thickness, dead)) <span class="sc">+</span></span>
-<span id="cb2-3"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb2-4"><a></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">"glm"</span>, <span class="at">se =</span> F,  </span>
-<span id="cb2-5"><a></a>              <span class="at">method.args =</span> <span class="fu">list</span>(<span class="at">family =</span> <span class="st">"binomial"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-
-</div>
-<img data-src="6_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section></section>
+<section id="variables-of-interest" class="slide level2">
+<h2>Variables of Interest</h2>
+<ul>
+<li><code>cp</code>: Type of Chest Pain</li>
+<li><code>disease</code>: Indicating if they have heart disease</li>
+</ul>
+</section></section>
 <section>
 <section id="modeling-binary-outcomes" class="title-slide slide level1 agenda-slide center">
 <h1>Modeling Binary Outcomes</h1>
 <div class="agenda">
 <ul>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Motivation</p>
+<p>Heart Disease</p>
 </div></li>
 <li><div class="agenda-active">
 <p>Modeling Binary Outcomes</p>
@@ -339,8 +292,8 @@
 <h2>Construct Model</h2>
 <p><span class="math display">\[
 \left(\begin{array}{c}
-Dead \\
-Alive
+Yes \\
+No
 \end{array}\right) = \beta_0 + \beta_1X
 \]</span></p>
 </section>
@@ -348,8 +301,8 @@ Alive
 <h2>Let …</h2>
 <p><span class="math display">\[
 Y = \left\{\begin{array}{cc}
-1 &amp; Dead \\
-0 &amp; Alive
+1 &amp; Yes \\
+0 &amp; No
 \end{array}\right.
 \]</span></p>
 </section>
@@ -377,6 +330,14 @@ P\left(Y = 1\right) = \frac{e^{\beta_0 + \beta_1X}}{1 + e^{\beta_0 + \beta_1X}}
 <p><span class="math display">\[
 \log\left\{\frac{P(Y = 1)}{P(Y = 0)}\right\} = \beta_0 + \beta_1X
 \]</span></p>
+</section>
+<section id="notation" class="slide level2">
+<h2>Notation</h2>
+<p><span class="math display">\[
+\log\left\{\frac{P(Y = 1)}{P(Y = 0)}\right\} =
+\log\left\{odds\ of \ 1\right\} =
+lo(1)
+\]</span></p>
 </section></section>
 <section>
 <section id="logistic-regression" class="title-slide slide level1 agenda-slide center">
@@ -384,7 +345,7 @@ P\left(Y = 1\right) = \frac{e^{\beta_0 + \beta_1X}}{1 + e^{\beta_0 + \beta_1X}}
 <div class="agenda">
 <ul>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Motivation</p>
+<p>Heart Disease</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
 <p>Modeling Binary Outcomes</p>
@@ -451,58 +412,64 @@ L(\boldsymbol \beta) = \prod_{i=1}^n \left(\frac{e^{\beta_0 + \beta_1X}}{1 + e^{
 </section>
 <section id="logistic-regression-in-r" class="slide level2">
 <h2>Logistic Regression in R</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">glm</span>(Y <span class="sc">~</span> X,</span>
-<span id="cb3-2"><a></a>    <span class="at">data =</span> DATA,</span>
-<span id="cb3-3"><a></a>    <span class="at">family =</span> <span class="fu">binomial</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a></span>
+<span id="cb2-2"><a></a>xglm <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X,</span>
+<span id="cb2-3"><a></a>            <span class="at">data =</span> DATA,</span>
+<span id="cb2-4"><a></a>            <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb2-5"><a></a>xglm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>DATA</code>: Name of the data frame</li>
+<li><code>Y</code>: Outcome Variable of Interest in the data frame <code>DATA</code></li>
+<li><code>X</code>: Predictor Variable in the data frame <code>DATA</code></li>
+</ul>
+</section>
+<section id="model-information" class="slide level2">
+<h2>Model Information</h2>
 </section>
 <section id="example" class="slide level2">
 <h2>Example</h2>
-<p>Modelling <code>dead</code> by <code>thickness</code>:</p>
+<p>Modelling <code>disease</code> by <code>age</code>:</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">glm</span>(dead <span class="sc">~</span> thickness,</span>
-<span id="cb4-2"><a></a>    <span class="at">data =</span> Melanoma,</span>
-<span id="cb4-3"><a></a>    <span class="at">family =</span> <span class="fu">binomial</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>xglm <span class="ot">&lt;-</span> <span class="fu">glm</span>(disease <span class="sc">~</span> age,</span>
+<span id="cb3-2"><a></a>            <span class="at">data =</span> heart_disease,</span>
+<span id="cb3-3"><a></a>            <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb3-4"><a></a>xglm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; 
-#&gt; Call:  glm(formula = dead ~ thickness, family = binomial(), data = Melanoma)
+#&gt; Call:  glm(formula = disease ~ age, family = binomial(), data = heart_disease)
 #&gt; 
 #&gt; Coefficients:
-#&gt; (Intercept)    thickness  
-#&gt;     -1.6140       0.2088  
+#&gt; (Intercept)          age  
+#&gt;    -3.05122      0.05291  
 #&gt; 
-#&gt; Degrees of Freedom: 204 Total (i.e. Null);  203 Residual
-#&gt; Null Deviance:       242.4 
-#&gt; Residual Deviance: 226.1     AIC: 230.1</code></pre>
+#&gt; Degrees of Freedom: 296 Total (i.e. Null);  295 Residual
+#&gt; Null Deviance:       409.9 
+#&gt; Residual Deviance: 394.3     AIC: 398.3</code></pre>
 </div>
 </div>
 <p><span class="math display">\[
-\log(odds\ of\ dying ) = -1.614 + 0.21 (thickness)
+lo(disease) = -3.0512 + 0.0529 (age)
 \]</span></p>
 </section>
 <section id="interpretation" class="slide level2">
 <h2>Interpretation</h2>
 <p><span class="math display">\[
-\log(odds\ of\ dying ) = -1.614 + 0.21 (thickness)
+lo(disease) = -3.0512 + 0.0529 (age)
 \]</span></p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">exp</span>(<span class="fl">0.21</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">exp</span>(<span class="fl">0.05291</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>#&gt; [1] 1.233678</code></pre>
+<pre><code>#&gt; [1] 1.054335</code></pre>
 </div>
 </div>
 <div class="fragment">
-<p>As age increases by 1 year, the odds of experiencing death increases by a factor of 1.232.</p>
+<p>As age increases by 1 year, the odds of experiencing death increases by a factor of 1.054.</p>
 </div>
 </section></section>
 <section>
@@ -511,7 +478,7 @@ L(\boldsymbol \beta) = \prod_{i=1}^n \left(\frac{e^{\beta_0 + \beta_1X}}{1 + e^{
 <div class="agenda">
 <ul>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Motivation</p>
+<p>Heart Disease</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
 <p>Modeling Binary Outcomes</p>
@@ -540,67 +507,67 @@ L(\boldsymbol \beta) = \prod_{i=1}^n \left(\frac{e^{\beta_0 + \beta_1X}}{1 + e^{
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>xglm <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X,</span>
-<span id="cb8-2"><a></a>            <span class="at">data =</span> DATA,</span>
-<span id="cb8-3"><a></a>            <span class="at">family =</span> <span class="fu">binomial</span>())</span>
-<span id="cb8-4"><a></a>ndf <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">X =</span> VAL)</span>
-<span id="cb8-5"><a></a><span class="fu">predict</span>(xglm,</span>
-<span id="cb8-6"><a></a>        ndf,</span>
-<span id="cb8-7"><a></a>        <span class="at">type =</span> <span class="st">"response"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>xglm <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X,</span>
+<span id="cb7-2"><a></a>            <span class="at">data =</span> DATA,</span>
+<span id="cb7-3"><a></a>            <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb7-4"><a></a>ndf <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">X =</span> VAL)</span>
+<span id="cb7-5"><a></a><span class="fu">predict</span>(xglm,</span>
+<span id="cb7-6"><a></a>        ndf,</span>
+<span id="cb7-7"><a></a>        <span class="at">type =</span> <span class="st">"response"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
 <section id="example-1" class="slide level2">
 <h2>Example 1</h2>
-<p>Predict the probability of observing death for a patient with a tumor thickness of 2.9.</p>
+<p>Predict the probability of having heart disease for a patient who is 40 years old.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>xglm <span class="ot">&lt;-</span> <span class="fu">glm</span>(dead <span class="sc">~</span> thickness,</span>
-<span id="cb9-2"><a></a>    <span class="at">data =</span> Melanoma,</span>
-<span id="cb9-3"><a></a>    <span class="at">family =</span> <span class="fu">binomial</span>())</span>
-<span id="cb9-4"><a></a>ndf <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">thickness =</span> <span class="fl">2.9</span>)</span>
-<span id="cb9-5"><a></a><span class="fu">predict</span>(xglm, ndf, <span class="at">type =</span> <span class="st">"response"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>xglm <span class="ot">&lt;-</span> <span class="fu">glm</span>(disease <span class="sc">~</span> age,</span>
+<span id="cb8-2"><a></a>            <span class="at">data =</span> heart_disease,</span>
+<span id="cb8-3"><a></a>            <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb8-4"><a></a>ndf <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">age =</span> <span class="dv">40</span>)</span>
+<span id="cb8-5"><a></a><span class="fu">predict</span>(xglm, ndf, <span class="at">type =</span> <span class="st">"response"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>#&gt;        1 
-#&gt; 0.267291</code></pre>
+<pre><code>#&gt;         1 
+#&gt; 0.2819196</code></pre>
 </div>
 </div>
 </section>
 <section id="example-2" class="slide level2">
 <h2>Example 2</h2>
-<p>Predict the probability of observing death for a patient who a tumor thickness of 1.9.</p>
+<p>Predict the probability of having heart disease for a patient who is 55 years old.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>xglm <span class="ot">&lt;-</span> <span class="fu">glm</span>(dead <span class="sc">~</span> thickness,</span>
-<span id="cb11-2"><a></a>    <span class="at">data =</span> Melanoma,</span>
-<span id="cb11-3"><a></a>    <span class="at">family =</span> <span class="fu">binomial</span>())</span>
-<span id="cb11-4"><a></a>ndf <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">thickness =</span> <span class="fl">1.9</span>)</span>
-<span id="cb11-5"><a></a><span class="fu">predict</span>(xglm, ndf, <span class="at">type =</span> <span class="st">"response"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>xglm <span class="ot">&lt;-</span> <span class="fu">glm</span>(disease <span class="sc">~</span> age,</span>
+<span id="cb10-2"><a></a>            <span class="at">data =</span> heart_disease,</span>
+<span id="cb10-3"><a></a>            <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb10-4"><a></a>ndf <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">age =</span> <span class="dv">55</span>)</span>
+<span id="cb10-5"><a></a><span class="fu">predict</span>(xglm, ndf, <span class="at">type =</span> <span class="st">"response"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt;         1 
-#&gt; 0.2284212</code></pre>
+#&gt; 0.4647183</code></pre>
 </div>
 </div>
 </section>
 <section id="example-3" class="slide level2">
 <h2>Example 3</h2>
-<p>Predict the probability of observing death for a patient who a tumor thickness of 3.9.</p>
+<p>Predict the probability of having heart disease for a patient who is 70 years old.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>xglm <span class="ot">&lt;-</span> <span class="fu">glm</span>(dead <span class="sc">~</span> thickness,</span>
-<span id="cb13-2"><a></a>    <span class="at">data =</span> Melanoma,</span>
-<span id="cb13-3"><a></a>    <span class="at">family =</span> <span class="fu">binomial</span>())</span>
-<span id="cb13-4"><a></a>ndf <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">thickness =</span> <span class="fl">3.9</span>)</span>
-<span id="cb13-5"><a></a><span class="fu">predict</span>(xglm, ndf, <span class="at">type =</span> <span class="st">"response"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>xglm <span class="ot">&lt;-</span> <span class="fu">glm</span>(disease <span class="sc">~</span> age,</span>
+<span id="cb12-2"><a></a>            <span class="at">data =</span> heart_disease,</span>
+<span id="cb12-3"><a></a>            <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb12-4"><a></a>ndf <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">age =</span> <span class="dv">70</span>)</span>
+<span id="cb12-5"><a></a><span class="fu">predict</span>(xglm, ndf, <span class="at">type =</span> <span class="st">"response"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt;         1 
-#&gt; 0.3101168</code></pre>
+#&gt; 0.6575143</code></pre>
 </div>
 </div>
 </section>
@@ -609,18 +576,18 @@ L(\boldsymbol \beta) = \prod_{i=1}^n \left(\frac{e^{\beta_0 + \beta_1X}}{1 + e^{
 <table class="caption-top">
 <thead>
 <tr class="header">
-<th style="text-align: left;">Tumor Thickness</th>
-<th style="text-align: left;">1.9</th>
-<th style="text-align: left;">2.9</th>
-<th style="text-align: left;">3.9</th>
+<th style="text-align: left;">Age</th>
+<th style="text-align: left;">40</th>
+<th style="text-align: left;">55</th>
+<th style="text-align: left;">70</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Probabiltiy</td>
-<td style="text-align: left;">22.8%</td>
-<td style="text-align: left;">26.7%</td>
-<td style="text-align: left;">31.0%</td>
+<td style="text-align: left;">28.2%</td>
+<td style="text-align: left;">46.5%</td>
+<td style="text-align: left;">65.8%</td>
 </tr>
 </tbody>
 </table>
@@ -644,7 +611,7 @@ L(\boldsymbol \beta) = \prod_{i=1}^n \left(\frac{e^{\beta_0 + \beta_1X}}{1 + e^{
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-
+<p>m201.inqs.info/lectures/6</p>
 </div>
 </div></div>
 
@@ -681,7 +648,7 @@ L(\boldsymbol \beta) = \prod_{i=1}^n \left(\frac{e^{\beta_0 + \beta_1X}}{1 + e^{
 'jumpToSlide': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true,"theme":"whiteboard","chalkWidth":4},
-'pointer': {"key":"q","color":"red","pointerSize":16,"alwaysVisible":false},
+'pointer': {"key":"q","color":"red","pointerSize":32,"alwaysVisible":false},
 'verticator': {"themetag":"h1","color":"","inversecolor":"","skipuncounted":false,"clickable":true,"position":"auto","offset":"3vmin","autogenerate":true,"tooltip":false,"scale":1,"debug":true},
 'smaller': false,
  
@@ -693,7 +660,7 @@ L(\boldsymbol \beta) = \prod_{i=1}^n \left(\frac{e^{\beta_0 + \beta_1X}}{1 + e^{
         controlsTutorial: true,
 
         // Determines where controls appear, "edges" or "bottom-right"
-        controlsLayout: 'bottom-right',
+        controlsLayout: 'edges',
 
         // Visibility rule for backwards navigation arrows; "faded", "hidden"
         // or "visible"
@@ -703,7 +670,7 @@ L(\boldsymbol \beta) = \prod_{i=1}^n \left(\frac{e^{\beta_0 + \beta_1X}}{1 + e^{
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'h.v',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',

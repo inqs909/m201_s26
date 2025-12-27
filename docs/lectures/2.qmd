@@ -22,8 +22,9 @@ format:
 knitr:
   opts_chunk: 
     echo: true
+    fig-align: center
     eval: true
-    message: false
+    message: true
     code-fold: true
     warnings: false
     comment: "#>" 
@@ -42,35 +43,66 @@ editor: source
 
 ## R Packages
 
--   csucistats
+```{r}
+#| echo: false
+#| eval: true
+#| message: false
+
+library(rcistats)
+library(tidyverse)
+library(ggthemes)
+library(ThemePark)
+
+theme_set(theme_bw() + 
+            theme(
+              axis.text.x = element_text(size = 36),
+              axis.title = element_text(size = 30),
+              plot.title = element_text(size = 48),
+              strip.text = element_text(size = 20),
+              legend.title = element_blank(),
+              legend.text = element_text(size = 24)))
+
+heart_disease <- kmed::heart
+heart_disease$disease <- factor(ifelse(heart_disease$class == 0, "no", "yes")) 
+heart_disease$sex <- ifelse(isTRUE(heart_disease$sex), "Male", "Female") |> factor()
+heart_disease$cp <- ifelse(heart_disease$cp == 1, "Typical Angina",
+                           ifelse(heart_disease$cp == 2, "Atypical Angina", 
+                                  ifelse(heart_disease$cp == 3, "Non-anginal Pain", "Asymptomatic"))) |> factor()
+heart_disease$fbs <- ifelse(isTRUE(heart_disease$fbs), "Fasting Blood Sugar >120" , "Fasting Blood Sugar <= 120") |> factor()
+heart_disease$restecg <- ifelse(heart_disease$restecg == 0, "Normal",
+                                ifelse(heart_disease$restecg == 1, "ST-T wave Abnormality", "Left Ventricular Hypertrophy")) |> 
+                          factor()
+heart_disease$slope <- ifelse(heart_disease$slope == 1, "Positive Slope",
+                              ifelse(heart_disease$slope == 2, "Zero Slope", "Negative Slope")) |> 
+                              factor()
+heart_disease$thal <- ifelse(heart_disease$thal==3, "Normal",
+                             ifelse(heart_disease$thal == 6, "Fixed Defect", "Reversible Defect")) |> factor()
+
+```
+
+
+-   rcistats
 -   tidyverse
 
 
-# The Great American Coffee Taste Test
+# Heart Disease
 
-## Background
+## Heart Disease Data
 
-In October 2023, [James Hoffman](https://www.youtube.com/watch?v=bMOOQfeloH0) and [Cometeer](https://cometeer.com/pages/the-great-american-coffee-taste-test) held the "Great American Coffee Taste Test" on YouTube, asking viewers to fill out a survey and coffee ordered from Cometeer.
-
-## Data
-
-The data is part of [DSLC](https://dslc.io/) [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday) program where data sets are provided to help data science learners how to create graphics.
-
-Information on the data sets variables (columns) can be found [here](https://github.com/rfordatascience/tidytuesday/blob/master/data/2024/2024-05-14/readme.md).
+The [`heart_disease`](https://archive.ics.uci.edu/dataset/45/heart+disease) data set provides heart disease information on patients from Cleveland, Ohio. The data was originally published in the [American Journal or Cardiology](https://pubmed.ncbi.nlm.nih.gov/2756873/).
 
 ## Data
 
 ```{r}
-#| code-fold: true
-library(rcistats)
-library(tidyverse)
-library(ThemePark)
-library(DT)
-
-coffee <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-05-14/coffee_survey.csv")
-datatable(slice_sample(coffee, n = 10), options = list(dom = "p", pageLength = 5))
-
+heart_disease |> 
+  DT::datatable(options = list(dom = "t",
+                pageLength = 4))
 ```
+
+## Variables of Interest
+
+- `cp`: Type of Chest Pain
+- `disease`: Indicating if they have heart disease
 
 # Categorical Data
 
@@ -135,7 +167,7 @@ Frequency represents the count of observing a specific category in your sample.
 
 ```{r}
 #| echo: false
-sample(coffee$cups, 10)
+sample(heart_disease$cp, 8)
 ```
 
 ## Proportions (relative frequencey)
@@ -148,12 +180,21 @@ This allows you to generalize your sample to the population, regardless of sampl
 
 ## Continguency Tables in R
 
-The variable `caffeine` indicates how much caffeine a participant prefers.
+```r
+cat_stats(DATA$VAR)
+```
+
+- `DATA`: Name of the data frame (eg: `heart_disease`)
+- `VAR`: Name of the variable to create a plot (eg: `cp`)
+
+## Example
+
+The variable `cp` indicates the type of chest pain.
 
 ```{r}
-#| echo: true
+#| code-fold: false
 
-cat_stats(coffee$caffeine)
+cat_stats(heart_disease$cp)
 ```
 
 
@@ -180,19 +221,21 @@ Bar Plots can be used to display the frequency or proportions on the data.
 ```{r}
 #| echo: false
 
-ggplot(coffee) +
-  geom_bar(aes(caffeine))
+ggplot(heart_disease) +
+  geom_bar(aes(cp)) +
+  theme(axis.text.x = element_text(angle=-20,hjust=0)) # Used to angle x-axis
 ```
 
 ## Frequency Bar Plots in R
 
-```{r}
-#| echo: true
-#| eval: false
-
-ggplot(data = DATA, aes(x = VARIABLE)) +
+```r
+ggplot(data = DATA, aes(x = VAR)) +
   geom_bar()
 ```
+
+- `DATA`: Name of the data frame (eg: `heart_disease`)
+- `VAR`: Name of the variable to create a plot (eg: `cp`)
+
 
 ## Frequency Bar Plots in R
 
@@ -201,20 +244,23 @@ ggplot(data = DATA, aes(x = VARIABLE)) +
 #| code-fold: true
 #| eval: true
 
-ggplot(coffee, aes(caffeine)) +
-  geom_bar()
+ggplot(heart_disease, aes(cp)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle=-20,hjust=0)) # Used to angle x-axis
 ```
 
 
 ## Relative Frequency Bar Plots in R
 
-```{r}
-#| echo: true
-#| eval: false
-
-ggplot(data = DATA, aes(x = VARIABLE, y = after_stat(prop), group = 1)) +
+```r
+ggplot(data = DATA, aes(x = VAR, y = after_stat(prop), group = 1)) +
   geom_bar()
 ```
+
+- `DATA`: Name of the data frame (eg: `heart_disease`)
+- `VAR`: Name of the variable to create a plot (eg: `cp`)
+
+
 
 ## Relative Frequency Bar Plots in R
 
@@ -222,18 +268,20 @@ ggplot(data = DATA, aes(x = VARIABLE, y = after_stat(prop), group = 1)) +
 #| code-fold: true
 #| eval: true
 
-ggplot(coffee, aes(caffeine, after_stat(prop), group = 1)) +
-  geom_bar()
+ggplot(heart_disease, aes(cp, after_stat(prop), group = 1)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle=-20,hjust=0)) # Used to angle x-axis
 ```
 
 # Cross-Tabulation
 
 ## Data
 
-The variable `taste` indicates if the participants like the taste of coffee.
+The variable `disease` indicates if a patient has heart disease.
 
 ```{r}
-cat_stats(coffee$taste)
+#| code-fold: false
+cat_stats(heart_disease$disease)
 ```
 
 ## Cross-Tabulation
@@ -247,12 +295,28 @@ cat_stats(coffee$taste)
    - Columns represent the categories of another variable.
 2. **Cells**:
    - Each cell displays the frequency or count of data points that belong to the intersection of a row and column category.
-3. **Margins**:
-   - Row and column totals provide summaries for each variable.
-   - The grand total shows the overall sample size.
 
 
-## Types of Proportions in Cross-Tabulations
+## Cross-Tabulations in R
+
+```r
+cat_stats(DATA$VAR1, DATA$VAR2)
+```
+- `DATA`: Name of the data frame (eg: `heart_disease`)
+- `VAR1`: Name of the first variable to create the cross-tab (eg: `cp`)
+- `VAR2`: Name of the second variable to create the cross-tab (eg: `disease`)
+
+
+## Cross-Tabs Example
+
+```{r}
+#| code-fold: false
+#| eval: true
+cat_stats(heart_disease$cp, heart_disease$disease)
+```
+
+
+## Types of Props in Cross-Tabs
 
 1. **Row Proportions**: Show the percentage of each row total represented by a cell.
 2. **Column Proportions**: Show the percentage of each column total represented by a cell.
@@ -266,7 +330,8 @@ Table proportions in cross-tabulations refer to the relative frequency or percen
 ## Table Proportions
 
 ```{r}
-cat_stats(coffee$caffeine, coffee$taste, prop = "table")
+#| code-fold: false
+cat_stats(heart_disease$cp, heart_disease$disease, prop = "table")
 ```
 
 ## Row Proportions
@@ -276,7 +341,8 @@ Row proportions refer to the relative frequency or percentage of counts within e
 ## Row Proportions
 
 ```{r}
-cat_stats(coffee$caffeine, coffee$taste, prop = "row")
+#| code-fold: false
+cat_stats(heart_disease$cp, heart_disease$disease, prop = "row")
 ```
 
 ## Column Proportions
@@ -286,36 +352,46 @@ Column proportions refer to the relative frequency or percentage of counts withi
 ## Column Proportions
 
 ```{r}
-cat_stats(coffee$caffeine, coffee$taste, prop = "col")
+#| code-fold: false
+cat_stats(heart_disease$cp, heart_disease$disease, prop = "col")
 ```
 
 ## Stacked Bar Plot in R
 
-```{r}
-#| echo: true
-#| eval: false
-
+```r
 ggplot(DATA, aes(x = VAR1, y = after_stat(count), fill = VAR2)) +
   geom_bar()
+```
 
+OR
+
+```r
+ggplot(DATA, aes(y = VAR1, x = after_stat(count), fill = VAR2)) +
+  geom_bar()
+```
+
+
+- `DATA`: Name of the data frame (eg: `heart_disease`)
+- `VAR1`: Name of the first variable to create the cross-tab (eg: `cp`)
+- `VAR2`: Name of the second variable to create the cross-tab (eg: `disease`)
+
+
+## Stacked Bar Plot in R
+
+```{r}
+#| code-fold: false
+ggplot(heart_disease, aes(x = cp, y = after_stat(count), fill = disease)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle=-20,hjust=0)) # Used to angle x-axis
 ```
 
 ## Stacked Bar Plot in R
 
 ```{r}
-#| echo: true
-#| eval: true
-ggplot(coffee, aes(x = caffeine, y = after_stat(count), fill = taste)) +
-  geom_bar()
-```
-
-## Stacked Bar Plot in R
-
-```{r}
-#| echo: true
-#| eval: true
-ggplot(coffee, aes(y = caffeine, x = after_stat(count), fill = taste)) +
-  geom_bar()
+#| code-fold: false
+ggplot(heart_disease, aes(y = cp, x = after_stat(count), fill = disease)) +
+  geom_bar() +
+  theme(axis.text.y = element_text(size = 20)) # Used to increase y-axis font
 
 ```
 
@@ -331,9 +407,12 @@ A **pie chart** is a circular statistical graphic divided into slices, where eac
 ```{r}
 #| echo: false
 #| eval: true
-coffee_pie <- cat_stats(coffee$caffeine, tbl_df = TRUE)$table
-ggplot(coffee_pie, aes(cat = Category, val = n, fill = Category)) +
-  geom_pie()
+ggplot(heart_disease, aes(fill = cp)) +
+  geom_pie() +
+  theme( # Used to change legend
+    legend.title = element_text(size = 36), # Increse title font
+    legend.text = element_text(size = 30) # Increase text font
+  )
 ```
 
 
@@ -348,22 +427,26 @@ ggplot(coffee_pie, aes(cat = Category, val = n, fill = Category)) +
 
 ## Pie Chart in R
 
-```{r}
-#| echo: true
-#| eval: false
-df_pie <- cat_stats(coffee$caffeine, tbl_df = TRUE)$table
-ggplot(df_pie, aes(cat = Category, val = n, fill = Category)) +
+```r
+ggplot(DATA, aes(fill = VAR)) +
   geom_pie()
 ```
+
+- `DATA`: Name of the data frame (eg: `heart_disease`)
+- `VAR`: Name of the variable to create a plot (eg: `cp`)
+
 
 ## Pie Chart in R
 
 ```{r}
-#| echo: true
-#| eval: false
-coffee_pie <- cat_stats(coffee$caffeine, tbl_df = TRUE)$table
-ggplot(coffee_pie, aes(cat = Category, val = n, fill = Category)) +
-  geom_pie()
+#| code-fold: false
+#| eval: true
+ggplot(heart_disease, aes(fill = slope)) +
+  geom_pie() +
+  theme( # Used to change legend
+    legend.title = element_text(size = 36), # Increse title font
+    legend.text = element_text(size = 30) # Increase text font
+  )
 ```
 
 
@@ -377,3 +460,88 @@ The R packages `ThemePark` and `ggthemes` allows you to change the overall look 
 ::: fragment
 All you need to do is add the theme to the plot.
 :::
+
+## Installing Themes in R
+
+
+Install once on your computer or new session in google colab:
+
+```r
+rcistats::install_themes()
+```
+
+Then, load libraries:
+
+
+```r
+library(ggthemes)
+library(ThemePark)
+```
+
+## Black and White Theme
+
+```{r}
+#| code-fold: false
+#| fig-alt: A bar chart with a black and white theme.
+ggplot(heart_disease, aes(y = cp, x = after_stat(count), fill = disease)) +
+  geom_bar() +
+  theme_bw()
+```
+
+
+## Excel Theme
+
+```{r}
+#| code-fold: false
+#| fig-alt: A bar chart with an excel theme.
+ggplot(heart_disease, aes(y = cp, x = after_stat(count), fill = disease)) +
+  geom_bar() +
+  theme_excel()
+```
+
+
+## WSJ Theme
+
+```{r}
+#| code-fold: false
+#| fig-alt: A bar chart with a Wall Street Journal theme.
+
+ggplot(heart_disease, aes(y = cp, x = after_stat(count), fill = disease)) +
+  geom_bar() +
+  theme_wsj()
+```
+
+## Stata Theme
+
+```{r}
+#| code-fold: false
+#| fig-alt: A bar chart with a Stata theme.
+
+ggplot(heart_disease, aes(y = cp, x = after_stat(count), fill = disease)) +
+  geom_bar() +
+  theme_stata()
+```
+
+## Barbie Theme
+
+```{r}
+#| code-fold: false
+#| fig-alt: A bar chart with a Barbie theme.
+
+ggplot(heart_disease, aes(y = cp, x = after_stat(count), fill = disease)) +
+  geom_bar() +
+  theme_barbie()
+```
+
+
+## Oppenheimer Theme
+
+
+```{r}
+#| code-fold: false
+#| fig-alt: A bar chart with an Oppenheimer theme.
+
+ggplot(heart_disease, aes(y = cp, x = after_stat(count), fill = disease)) +
+  geom_bar() +
+  theme_oppenheimer()
+```

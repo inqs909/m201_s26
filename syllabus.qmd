@@ -44,7 +44,7 @@ Critical reasoning using a quantitative and statistical, problem-solving approac
 
 ### Textbook
 
-[Introduction to Modern Statistics](https://openintro-ims.netlify.app/) (IMS)
+[Introduction to Modern Statistics](https://openintrostat.github.io/ims/) (IMS)
 
 [Statistical Modeling](https://statistical-modeling.netlify.app/) (SM)
 

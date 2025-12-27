@@ -13,6 +13,7 @@
 <script src="../site_libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
 <script src="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/sc-sb-title-1.0.0/sc_sb_title.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/grid-no-htext-1.0.0/grid_no_htext.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.32">
@@ -210,100 +211,6 @@
 <div class="quarto-title-authors">
 </div>
 
-</section><section id="TOC">
-<nav role="doc-toc"> 
-<h2 id="toc-title">Table of contents</h2>
-<ul>
-<li><a href="#/modeling-relationships" id="/toc-modeling-relationships">Modeling Relationships</a>
-<ul>
-<li><a href="#/explaining-variation" id="/toc-explaining-variation">Explaining Variation</a></li>
-<li><a href="#/explaining-variation-1" id="/toc-explaining-variation-1">Explaining Variation</a></li>
-<li><a href="#/variation-with-one-variable" id="/toc-variation-with-one-variable">Variation with One Variable</a></li>
-</ul></li>
-<li><a href="#/a-simple-model" id="/toc-a-simple-model">A Simple Model</a>
-<ul>
-<li><a href="#/generated-model" id="/toc-generated-model">Generated Model</a></li>
-<li><a href="#/a-simple-model-1" id="/toc-a-simple-model-1">A Simple Model</a></li>
-<li><a href="#/a-simple-model-2" id="/toc-a-simple-model-2">A Simple Model</a></li>
-<li><a href="#/notation" id="/toc-notation">Notation</a></li>
-<li><a href="#/the-simple-generated-model" id="/toc-the-simple-generated-model">The Simple Generated Model</a></li>
-<li><a href="#/observing-data" id="/toc-observing-data">Observing Data</a></li>
-<li><a href="#/estimated-line" id="/toc-estimated-line">Estimated Line</a></li>
-<li><a href="#/notation-1" id="/toc-notation-1">Notation</a></li>
-</ul></li>
-<li><a href="#/modelling-data" id="/toc-modelling-data">Modelling Data</a>
-<ul>
-<li><a href="#/indexing-data" id="/toc-indexing-data">Indexing Data</a></li>
-<li><a href="#/indexing-data-1" id="/toc-indexing-data-1">Indexing Data</a></li>
-<li><a href="#/data" id="/toc-data">Data</a></li>
-<li><a href="#/estimated-value" id="/toc-estimated-value">Estimated Value</a></li>
-<li><a href="#/estimation" id="/toc-estimation">Estimation</a></li>
-<li><a href="#/residuals" id="/toc-residuals">Residuals</a></li>
-<li><a href="#/estimation-in-r" id="/toc-estimation-in-r">Estimation in R</a></li>
-<li><a href="#/modeling-body-mass-in-penguins" id="/toc-modeling-body-mass-in-penguins">Modeling Body Mass in Penguins</a></li>
-<li><a href="#/visualize" id="/toc-visualize">Visualize</a></li>
-</ul></li>
-<li><a href="#/linear-model" id="/toc-linear-model">Linear Model</a>
-<ul>
-<li><a href="#/linear-model-1" id="/toc-linear-model-1">Linear Model</a></li>
-<li><a href="#/visualization" id="/toc-visualization">Visualization</a></li>
-<li><a href="#/linear-model-2" id="/toc-linear-model-2">Linear Model</a></li>
-<li><a href="#/scatter-plot" id="/toc-scatter-plot">Scatter Plot</a></li>
-<li><a href="#/imposing-a-line" id="/toc-imposing-a-line">Imposing a Line</a></li>
-<li><a href="#/modelling-the-data" id="/toc-modelling-the-data">Modelling the Data</a></li>
-<li><a href="#/linear-model-3" id="/toc-linear-model-3">Linear Model</a></li>
-<li><a href="#/sse" id="/toc-sse">SSE</a></li>
-<li><a href="#/fitting-a-model-in-r" id="/toc-fitting-a-model-in-r">Fitting a Model in R</a></li>
-<li><a href="#/example" id="/toc-example">Example</a></li>
-<li><a href="#/interpretation-of-hatbeta_0" id="/toc-interpretation-of-hatbeta_0">Interpretation of <span class="math inline">\(\hat\beta_0\)</span></a></li>
-<li><a href="#/interpreting-example" id="/toc-interpreting-example">Interpreting Example</a></li>
-<li><a href="#/interpretation-of-hat-beta_1" id="/toc-interpretation-of-hat-beta_1">Interpretation of <span class="math inline">\(\hat \beta_1\)</span></a></li>
-<li><a href="#/interpreting-example-1" id="/toc-interpreting-example-1">Interpreting Example</a></li>
-</ul></li>
-<li><a href="#/categorical-variables" id="/toc-categorical-variables">Categorical Variables</a>
-<ul>
-<li><a href="#/body-mass-with-species" id="/toc-body-mass-with-species">Body Mass with Species</a></li>
-<li><a href="#/body-mass-with-species-1" id="/toc-body-mass-with-species-1">Body Mass with Species</a></li>
-<li><a href="#/group-statistics" id="/toc-group-statistics">Group Statistics</a></li>
-<li><a href="#/compute-group-statistics" id="/toc-compute-group-statistics">Compute Group Statistics</a></li>
-<li><a href="#/lm-with-categorical-variables" id="/toc-lm-with-categorical-variables">LM with Categorical Variables</a></li>
-<li><a href="#/binary-dummy-variables" id="/toc-binary-dummy-variables">Binary (Dummy) Variables</a></li>
-<li><a href="#/binary-dummy-variables-1" id="/toc-binary-dummy-variables-1">Binary (Dummy) Variables</a></li>
-<li><a href="#/example-1" id="/toc-example-1">Example</a></li>
-<li><a href="#/species-dummy-variables" id="/toc-species-dummy-variables">Species Dummy Variables</a></li>
-<li><a href="#/linear-model-4" id="/toc-linear-model-4">Linear Model</a></li>
-<li><a href="#/fitting-a-model-in-r-1" id="/toc-fitting-a-model-in-r-1">Fitting a Model in R</a></li>
-<li><a href="#/x-not-a-factor" id="/toc-x-not-a-factor">X not a Factor</a></li>
-<li><a href="#/example-2" id="/toc-example-2">Example</a></li>
-<li><a href="#/finding-the-adelie-mass" id="/toc-finding-the-adelie-mass">Finding the Adelie MASS</a></li>
-<li><a href="#/finding-the-chinstrap-mass" id="/toc-finding-the-chinstrap-mass">Finding the Chinstrap MASS</a></li>
-<li><a href="#/finding-the-gentoo-mass" id="/toc-finding-the-gentoo-mass">Finding the Gentoo MASS</a></li>
-<li><a href="#/intepreting-hat-beta_1" id="/toc-intepreting-hat-beta_1">Intepreting <span class="math inline">\(\hat \beta_1\)</span></a></li>
-<li><a href="#/intepreting-hat-beta_2" id="/toc-intepreting-hat-beta_2">Intepreting <span class="math inline">\(\hat \beta_2\)</span></a></li>
-</ul></li>
-<li><a href="#/strength-and-correlation" id="/toc-strength-and-correlation">Strength and Correlation</a>
-<ul>
-<li><a href="#/correlation" id="/toc-correlation">Correlation</a></li>
-<li><a href="#/correlations" id="/toc-correlations">Correlations</a></li>
-<li><a href="#/coefficient-of-determination" id="/toc-coefficient-of-determination">Coefficient of Determination</a></li>
-<li><a href="#/correlation-in-r" id="/toc-correlation-in-r">Correlation in R</a></li>
-<li><a href="#/example-3" id="/toc-example-3">Example</a></li>
-<li><a href="#/coefficient-of-determination-in-r" id="/toc-coefficient-of-determination-in-r">Coefficient of Determination in R</a></li>
-<li><a href="#/example-4" id="/toc-example-4">Example</a></li>
-</ul></li>
-<li><a href="#/prediction" id="/toc-prediction">Prediction</a>
-<ul>
-<li><a href="#/statistical-model" id="/toc-statistical-model">Statistical Model</a></li>
-<li><a href="#/prediction-1" id="/toc-prediction-1">Prediction</a></li>
-<li><a href="#/prediction-in-r" id="/toc-prediction-in-r">Prediction in R</a></li>
-<li><a href="#/example-1-1" id="/toc-example-1-1">Example 1</a></li>
-<li><a href="#/example-2-1" id="/toc-example-2-1">Example 2</a></li>
-<li><a href="#/interpolation" id="/toc-interpolation">Interpolation</a></li>
-<li><a href="#/extrapolation" id="/toc-extrapolation">Extrapolation</a></li>
-<li><a href="#/extrapolation-1" id="/toc-extrapolation-1">Extrapolation</a></li>
-</ul></li>
-</ul>
-</nav>
 </section>
 <section>
 <section id="modeling-relationships" class="title-slide slide level1 agenda-slide center">
@@ -495,7 +402,10 @@ Y = \beta_0 + \varepsilon
 <h2>Indexing Data</h2>
 <p>The data in a data set can be indexed by a number.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>penguins[<span class="dv">1</span>,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt;   bill_len bill_dep flipper_len body_mass  sex year
 #&gt; 1     39.1     18.7         181      3750 male 2007</code></pre>
@@ -550,7 +460,10 @@ r_i = Y_i - \hat Y_i
 <section id="estimation-in-r" class="slide level2">
 <h2>Estimation in R</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">lm</span>(Y <span class="sc">~</span> <span class="dv">1</span>, <span class="at">data =</span> DATA)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <ul>
 <li><code>Y</code>: Name Outcome Variable of Interest in data frame <code>DATA</code></li>
@@ -560,7 +473,10 @@ r_i = Y_i - \hat Y_i
 <section id="modeling-body-mass-in-penguins" class="slide level2">
 <h2>Modeling Body Mass in Penguins</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">lm</span>(body_mass <span class="sc">~</span> <span class="dv">1</span>, <span class="at">data =</span> penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; 
 #&gt; Call:
@@ -730,7 +646,10 @@ Y_i = \beta_0 + \beta_1 X_i + \varepsilon_i
 <section id="fitting-a-model-in-r" class="slide level2">
 <h2>Fitting a Model in R</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">lm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> DATA)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <ul>
 <li><code>X</code>: Name Predictor Variable of Interest in data frame <code>DATA</code></li>
@@ -742,7 +661,10 @@ Y_i = \beta_0 + \beta_1 X_i + \varepsilon_i
 <h2>Example</h2>
 <p>Y: “body_mass”; X: “flipper_len”</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">lm</span>(body_mass <span class="sc">~</span> flipper_len, <span class="at">data =</span> penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; 
 #&gt; Call:
@@ -847,7 +769,10 @@ Y_i = \beta_0 + \beta_1 X_i + \varepsilon_i
 </div>
 <div class="fragment">
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">num_by_cat_stats</span>(DATA, NUM, CAT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <ul>
 <li><code>NUM</code>: Name of the numerical variable</li>
@@ -859,7 +784,10 @@ Y_i = \beta_0 + \beta_1 X_i + \varepsilon_i
 <section id="compute-group-statistics" class="slide level2">
 <h2>Compute Group Statistics</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">num_by_cat_stats</span>(penguins, body_mass, species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt;   Categories  min    q25     mean median  q75  max      sd      var   iqr
 #&gt; 1     Adelie 2850 3362.5 3706.164   3700 4000 4775 458.620 210332.4 637.5
@@ -981,7 +909,10 @@ D_i = \left\{
 <section id="fitting-a-model-in-r-1" class="slide level2">
 <h2>Fitting a Model in R</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">lm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> DATA)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <ul>
 <li><code>X</code>: Name Predictor Variable of Interest in data frame <code>DATA</code>, must be a factor variable</li>
@@ -992,7 +923,10 @@ D_i = \left\{
 <section id="x-not-a-factor" class="slide level2">
 <h2>X not a Factor</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">lm</span>(Y <span class="sc">~</span> <span class="fu">factor</span>(X), <span class="at">data =</span> DATA)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <ul>
 <li><code>X</code>: Name Predictor Variable of Interest in data frame <code>DATA</code>, not a factor variable</li>
@@ -1003,7 +937,10 @@ D_i = \left\{
 <section id="example-2" class="slide level2">
 <h2>Example</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="fu">lm</span>(body_mass <span class="sc">~</span> species, penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; 
 #&gt; Call:
@@ -1115,7 +1052,10 @@ R^2 = r^2
 <section id="correlation-in-r" class="slide level2">
 <h2>Correlation in R</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="fu">cor</span>(DATA<span class="sc">$</span>Y, DATA<span class="sc">$</span>X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <ul>
 <li><code>X</code>: Name Predictor Variable of Interest in data frame <code>DATA</code></li>
@@ -1126,7 +1066,10 @@ R^2 = r^2
 <section id="example-3" class="slide level2">
 <h2>Example</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="fu">cor</span>(penguins<span class="sc">$</span>body_mass, penguins<span class="sc">$</span>flipper_len)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; [1] 0.8729789</code></pre>
 </div>
@@ -1135,8 +1078,11 @@ R^2 = r^2
 <section id="coefficient-of-determination-in-r" class="slide level2">
 <h2>Coefficient of Determination in R</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>xlm <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> DATA)</span>
 <span id="cb29-2"><a></a><span class="fu">r2</span>(xlm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <ul>
 <li><code>X</code>: Name Predictor Variable of Interest in data frame <code>DATA</code></li>
@@ -1147,8 +1093,11 @@ R^2 = r^2
 <section id="example-4" class="slide level2">
 <h2>Example</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>xlm <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass <span class="sc">~</span> species, penguins)</span>
 <span id="cb30-2"><a></a><span class="fu">r2</span>(xlm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; [1] 0.6744887</code></pre>
 </div>
@@ -1200,6 +1149,8 @@ R^2 = r^2
 <section id="prediction-in-r" class="slide level2">
 <h2>Prediction in R</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a>xlm <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> X,</span>
 <span id="cb32-2"><a></a>            <span class="at">data =</span> DATA)</span>
 <span id="cb32-3"><a></a></span>
@@ -1207,6 +1158,7 @@ R^2 = r^2
 <span id="cb32-5"><a></a></span>
 <span id="cb32-6"><a></a><span class="fu">predict</span>(xlm,</span>
 <span id="cb32-7"><a></a>        predict_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <ul>
 <li><code>X</code>: Name Predictor Variable of Interest in data frame <code>DATA</code></li>
@@ -1225,10 +1177,13 @@ R^2 = r^2
 </div>
 <div id="tabset-2-2">
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a>xlm <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass <span class="sc">~</span> species,</span>
 <span id="cb33-2"><a></a>            <span class="at">data =</span> penguins)</span>
 <span id="cb33-3"><a></a></span>
 <span id="cb33-4"><a></a>xlm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; 
 #&gt; Call:
@@ -1238,10 +1193,13 @@ R^2 = r^2
 #&gt;      (Intercept)  speciesChinstrap     speciesGentoo  
 #&gt;          3706.16             26.92           1386.27</code></pre>
 </div>
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a>predict_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">species =</span> <span class="st">"Gentoo"</span>)</span>
 <span id="cb35-2"><a></a></span>
 <span id="cb35-3"><a></a><span class="fu">predict</span>(xlm,</span>
 <span id="cb35-4"><a></a>        predict_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt;        1 
 #&gt; 5092.437</code></pre>
@@ -1261,11 +1219,14 @@ R^2 = r^2
 </div>
 <div id="tabset-3-2">
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a>xlm <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass <span class="sc">~</span> flipper_len,</span>
 <span id="cb37-2"><a></a>            <span class="at">data =</span> penguins)</span>
 <span id="cb37-3"><a></a></span>
 <span id="cb37-4"><a></a></span>
 <span id="cb37-5"><a></a>xlm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; 
 #&gt; Call:
@@ -1275,10 +1236,13 @@ R^2 = r^2
 #&gt; (Intercept)  flipper_len  
 #&gt;    -5872.09        50.15</code></pre>
 </div>
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a>predict_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">flipper_len =</span> <span class="dv">190</span>)</span>
 <span id="cb39-2"><a></a></span>
 <span id="cb39-3"><a></a><span class="fu">predict</span>(xlm,</span>
 <span id="cb39-4"><a></a>        predict_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt;        1 
 #&gt; 3657.028</code></pre>
@@ -1335,7 +1299,7 @@ R^2 = r^2
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-
+<p>m201.inqs.info/lectures/7</p>
 </div>
 </div></div>
 
@@ -1372,7 +1336,7 @@ R^2 = r^2
 'jumpToSlide': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true,"theme":"whiteboard","chalkWidth":4},
-'pointer': {"key":"q","color":"red","pointerSize":16,"alwaysVisible":false},
+'pointer': {"key":"q","color":"red","pointerSize":32,"alwaysVisible":false},
 'verticator': {"themetag":"h1","color":"","inversecolor":"","skipuncounted":false,"clickable":true,"position":"auto","offset":"3vmin","autogenerate":true,"tooltip":false,"scale":1,"debug":true},
 'smaller': false,
  
@@ -1384,7 +1348,7 @@ R^2 = r^2
         controlsTutorial: true,
 
         // Determines where controls appear, "edges" or "bottom-right"
-        controlsLayout: 'bottom-right',
+        controlsLayout: 'edges',
 
         // Visibility rule for backwards navigation arrows; "faded", "hidden"
         // or "visible"
@@ -1394,7 +1358,7 @@ R^2 = r^2
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'h.v',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -1519,7 +1483,7 @@ R^2 = r^2
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1050,
+        width: 1200,
 
         height: 700,
 

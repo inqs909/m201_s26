@@ -4,15 +4,19 @@ description: |
   Continues the discussion with linear and logistic regression.
 format:
   revealjs:
+    width: 1200
     scrollable: true
+    sc-sb-title: true
+    footer: m201.inqs.info/lectures/8
     theme: [default, styles.scss]
     navigation-mode: vertical
-    controls-layout: bottom-right
+    controls-layout: edges
     controls-tutorial: true
+    slide-number: true
+    pointer:
+      pointerSize: 32
     incremental: false 
     chalkboard:
-      src: notes/chalkboard_1a.json
-      storage: chalkboard_pres
       theme: whiteboard
       chalk-width: 4
 knitr:
@@ -32,6 +36,7 @@ filters:
   - reveal-header
   - code-fullscreen
   - reveal-auto-agenda
+
 editor: source
 ---
 

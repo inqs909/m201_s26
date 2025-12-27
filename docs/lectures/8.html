@@ -13,6 +13,7 @@
 <script src="../site_libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
 <script src="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/sc-sb-title-1.0.0/sc_sb_title.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/grid-no-htext-1.0.0/grid_no_htext.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.32">
@@ -210,54 +211,6 @@
 <div class="quarto-title-authors">
 </div>
 
-</section><section id="TOC">
-<nav role="doc-toc"> 
-<h2 id="toc-title">Table of contents</h2>
-<ul>
-<li><a href="#/modeling-outcomes" id="/toc-modeling-outcomes">Modeling Outcomes</a>
-<ul>
-<li><a href="#/explaining-variation" id="/toc-explaining-variation">Explaining Variation</a></li>
-<li><a href="#/taylor-swifts-songs-danceability" id="/toc-taylor-swifts-songs-danceability">Taylor Swift’s Songs Danceability</a></li>
-<li><a href="#/danceability-by-mode_name" id="/toc-danceability-by-mode_name">Danceability by <code>mode_name</code></a></li>
-<li><a href="#/danceability-by-valence" id="/toc-danceability-by-valence">Danceability by Valence</a></li>
-<li><a href="#/danceability-by-energy" id="/toc-danceability-by-energy">Danceability by Energy</a></li>
-<li><a href="#/modelling-danceability" id="/toc-modelling-danceability">Modelling Danceability</a></li>
-</ul></li>
-<li><a href="#/multivariable-linear-regression" id="/toc-multivariable-linear-regression">Multivariable Linear Regression</a>
-<ul>
-<li><a href="#/mlr" id="/toc-mlr">MLR</a></li>
-<li><a href="#/model-data" id="/toc-model-data">Model Data</a></li>
-<li><a href="#/unknown-parameters" id="/toc-unknown-parameters">Unknown Parameters</a></li>
-<li><a href="#/estimated-model" id="/toc-estimated-model">Estimated Model</a></li>
-<li><a href="#/estimating-prameters" id="/toc-estimating-prameters">Estimating Prameters</a></li>
-<li><a href="#/fitting-a-model-in-r" id="/toc-fitting-a-model-in-r">Fitting a Model in R</a></li>
-<li><a href="#/modelling-danceability-1" id="/toc-modelling-danceability-1">Modelling Danceability</a></li>
-<li><a href="#/estimated-model-1" id="/toc-estimated-model-1">Estimated Model</a></li>
-<li><a href="#/hat-beta_i-representation" id="/toc-hat-beta_i-representation"><span class="math inline">\(\hat \beta_i\)</span> Representation</a></li>
-<li><a href="#/hat-beta_i-interpretation" id="/toc-hat-beta_i-interpretation"><span class="math inline">\(\hat \beta_i\)</span> Interpretation</a></li>
-<li><a href="#/intepreting-minor-coefficient" id="/toc-intepreting-minor-coefficient">Intepreting Minor coefficient</a></li>
-<li><a href="#/intepreting-valence-coefficient" id="/toc-intepreting-valence-coefficient">Intepreting valence coefficient</a></li>
-<li><a href="#/intepreting-energy-coefficient" id="/toc-intepreting-energy-coefficient">Intepreting energy coefficient</a></li>
-</ul></li>
-<li><a href="#/adjusted-r2" id="/toc-adjusted-r2">Adjusted <span class="math inline">\(R^2\)</span></a>
-<ul>
-<li><a href="#/r2" id="/toc-r2"><span class="math inline">\(R^2\)</span></a></li>
-<li><a href="#/r2-1" id="/toc-r2-1"><span class="math inline">\(R^2\)</span></a></li>
-<li><a href="#/problems-with-r2-in-mlr" id="/toc-problems-with-r2-in-mlr">Problems with <span class="math inline">\(R^2\)</span> in MLR</a></li>
-<li><a href="#/adjusted-r2-1" id="/toc-adjusted-r2-1">Adjusted <span class="math inline">\(R^2\)</span></a></li>
-<li><a href="#/adjusted-r2-in-r" id="/toc-adjusted-r2-in-r">Adjusted <span class="math inline">\(R^2\)</span> in R</a></li>
-<li><a href="#/example" id="/toc-example">Example</a></li>
-</ul></li>
-<li><a href="#/model-selection" id="/toc-model-selection">Model Selection</a>
-<ul>
-<li><a href="#/model-selection-1" id="/toc-model-selection-1">Model Selection</a></li>
-<li><a href="#/forward-selection" id="/toc-forward-selection">Forward Selection</a></li>
-<li><a href="#/backward-selection" id="/toc-backward-selection">Backward Selection</a></li>
-<li><a href="#/hybrid-selection" id="/toc-hybrid-selection">Hybrid Selection</a></li>
-<li><a href="#/about-model-selection" id="/toc-about-model-selection">About Model Selection</a></li>
-</ul></li>
-</ul>
-</nav>
 </section>
 <section>
 <section id="modeling-outcomes" class="title-slide slide level1 agenda-slide center">
@@ -623,7 +576,7 @@ R_a^2 = 1-\frac{\text{variation of residuals}}{\text{variation from outcome}}\ti
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-
+<p>m201.inqs.info/lectures/8</p>
 </div>
 </div></div>
 
@@ -659,8 +612,8 @@ R_a^2 = 1-\frac{\text{variation of residuals}}{\text{variation from outcome}}\ti
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'chalkboard': {"buttons":true,"src":"notes/chalkboard_1a.json","storage":"chalkboard_pres","theme":"whiteboard","chalkWidth":4},
-'pointer': {"key":"q","color":"red","pointerSize":16,"alwaysVisible":false},
+'chalkboard': {"buttons":true,"theme":"whiteboard","chalkWidth":4},
+'pointer': {"key":"q","color":"red","pointerSize":32,"alwaysVisible":false},
 'verticator': {"themetag":"h1","color":"","inversecolor":"","skipuncounted":false,"clickable":true,"position":"auto","offset":"3vmin","autogenerate":true,"tooltip":false,"scale":1,"debug":true},
 'smaller': false,
  
@@ -672,7 +625,7 @@ R_a^2 = 1-\frac{\text{variation of residuals}}{\text{variation from outcome}}\ti
         controlsTutorial: true,
 
         // Determines where controls appear, "edges" or "bottom-right"
-        controlsLayout: 'bottom-right',
+        controlsLayout: 'edges',
 
         // Visibility rule for backwards navigation arrows; "faded", "hidden"
         // or "visible"
@@ -682,7 +635,7 @@ R_a^2 = 1-\frac{\text{variation of residuals}}{\text{variation from outcome}}\ti
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'h.v',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -807,7 +760,7 @@ R_a^2 = 1-\frac{\text{variation of residuals}}{\text{variation from outcome}}\ti
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1050,
+        width: 1200,
 
         height: 700,
 

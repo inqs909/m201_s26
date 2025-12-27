@@ -221,7 +221,7 @@
     "href": "lectures/9.html#simulating-unicorn-data",
     "title": "Sampling Distribution",
     "section": "Simulating Unicorn Data",
-    "text": "Simulating Unicorn Data\n\n\nCode\nunicorns(10)"
+    "text": "Simulating Unicorn Data\n\n\nCode\nunicorns(10)\n\n\n#&gt;    Unicorn_ID Age      Gender  Color Type_of_Unicorn Type_of_Horn Horn_Length\n#&gt; 1           1  18  Non-binary Silver         Rainbow   Aquamarine    4.988714\n#&gt; 2           2  16        Male   Gold           Ember         Opal    5.072202\n#&gt; 3           3   4 Genderfluid Silver           Ember         Opal    5.011309\n#&gt; 4           4   3 Genderfluid  Black         Rainbow         Opal    5.208816\n#&gt; 5           5  11        Male   Pink         Rainbow   Aquamarine    5.155314\n#&gt; 6           6  12      Female   Gray           Jewel         Opal    5.452588\n#&gt; 7           7  15     Agender  White         Rainbow   Aquamarine    4.840136\n#&gt; 8           8  11        Male  Black           Ember   Aquamarine    4.603378\n#&gt; 9           9   7 Genderfluid  Brown         Rainbow         Opal    4.862706\n#&gt; 10         10  14      Female  White           Jewel   Aquamarine    5.165843\n#&gt;    Horn_Strength    Weight Health_Score Personality_Score Magical_Score\n#&gt; 1       29.08917 158.24746            9        1.24258693      11178.12\n#&gt; 2       28.79146  98.13809            5        1.21624385      11174.57\n#&gt; 3       24.38329 118.56501            7        0.41849898      10855.76\n#&gt; 4       30.60107 102.44132            1        0.05771830      10774.50\n#&gt; 5       30.74040  97.73896            5        0.16768542      10977.25\n#&gt; 6       26.79192 162.32819            6        0.02227278      11087.51\n#&gt; 7       32.36461 130.40431           10        2.00743797      11102.24\n#&gt; 8       29.55155 153.61094            3        2.17824506      10986.32\n#&gt; 9       27.69844 129.47895            7        0.71708960      10892.58\n#&gt; 10      30.19733  67.38834            1        0.53934383      11116.27\n#&gt;    Elusiveness_Score Gentleness_Score Nature_Score\n#&gt; 1           36.01488         7.821928     969.6667\n#&gt; 2           36.69148        15.658062     968.9276\n#&gt; 3           39.46995         5.539503     929.3217\n#&gt; 4           36.08758        13.870742     918.8624\n#&gt; 5           35.82860        55.510164     944.4110\n#&gt; 6           30.99412        72.735760     957.9081\n#&gt; 7           38.22692         7.780179     959.7173\n#&gt; 8           39.41312        -1.743923     945.2409\n#&gt; 9           29.93956        15.172132     933.7903\n#&gt; 10          32.67157        50.991588     961.5624"
   },
   {
     "objectID": "lectures/9.html#unicorn-data-variables",
@@ -242,14 +242,14 @@
     "href": "lectures/9.html#simulating-n0-3.24",
     "title": "Sampling Distribution",
     "section": "Simulating \\(N(0, 3.24)\\)",
-    "text": "Simulating \\(N(0, 3.24)\\)\n\n\nCode\nrnorm(1, 0, sqrt(3.24))\n\n\n#&gt; [1] -2.666643"
+    "text": "Simulating \\(N(0, 3.24)\\)\n\n\nCode\nrnorm(1, 0, sqrt(3.24))\n\n\n#&gt; [1] -4.456811"
   },
   {
     "objectID": "lectures/9.html#collecting",
     "href": "lectures/9.html#collecting",
     "title": "Sampling Distribution",
     "section": "Collecting",
-    "text": "Collecting\n\n\nCode\nunicorns(10) |&gt; select(Nature_Score, Magical_Score)"
+    "text": "Collecting\n\n\nCode\nunicorns(10) |&gt; select(Nature_Score, Magical_Score)\n\n\n#&gt;    Nature_Score Magical_Score\n#&gt; 1      915.4536      10751.59\n#&gt; 2      977.5376      11242.84\n#&gt; 3      959.3878      11096.57\n#&gt; 4      966.8805      11157.59\n#&gt; 5      915.4945      10747.38\n#&gt; 6      971.3866      11194.83\n#&gt; 7      950.1761      11023.78\n#&gt; 8      959.9471      11102.46\n#&gt; 9      923.4441      10808.77\n#&gt; 10     929.2300      10856.48"
   },
   {
     "objectID": "lectures/9.html#dgp-of-magical-score-1",
@@ -270,28 +270,28 @@
     "href": "lectures/9.html#estimating-beta_1-via-lm",
     "title": "Sampling Distribution",
     "section": "Estimating \\(\\beta_1\\) via lm",
-    "text": "Estimating \\(\\beta_1\\) via lm\n\n\nCode\nu1 &lt;- unicorns(500)\nlm(Magical_Score ~ Nature_Score, u1)\n\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = Magical_Score ~ Nature_Score, data = u1)\n#&gt; \n#&gt; Coefficients:\n#&gt;  (Intercept)  Nature_Score  \n#&gt;     3429.205         7.994"
+    "text": "Estimating \\(\\beta_1\\) via lm\n\n\nCode\nu1 &lt;- unicorns(500)\nlm(Magical_Score ~ Nature_Score, u1)\n\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = Magical_Score ~ Nature_Score, data = u1)\n#&gt; \n#&gt; Coefficients:\n#&gt;  (Intercept)  Nature_Score  \n#&gt;         3423             8"
   },
   {
     "objectID": "lectures/9.html#collecting-a-new-sample",
     "href": "lectures/9.html#collecting-a-new-sample",
     "title": "Sampling Distribution",
     "section": "Collecting a new sample",
-    "text": "Collecting a new sample\n\n\nCode\nu2 &lt;- unicorns(500)\nlm(Magical_Score ~ Nature_Score, u2)\n\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = Magical_Score ~ Nature_Score, data = u2)\n#&gt; \n#&gt; Coefficients:\n#&gt;  (Intercept)  Nature_Score  \n#&gt;     3422.023         8.001"
+    "text": "Collecting a new sample\n\n\nCode\nu2 &lt;- unicorns(500)\nlm(Magical_Score ~ Nature_Score, u2)\n\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = Magical_Score ~ Nature_Score, data = u2)\n#&gt; \n#&gt; Coefficients:\n#&gt;  (Intercept)  Nature_Score  \n#&gt;     3416.602         8.007"
   },
   {
     "objectID": "lectures/9.html#collecting-a-new-sample-1",
     "href": "lectures/9.html#collecting-a-new-sample-1",
     "title": "Sampling Distribution",
     "section": "Collecting a new sample",
-    "text": "Collecting a new sample\n\n\nCode\nu3 &lt;- unicorns(500)\nlm(Magical_Score ~ Nature_Score, u3)\n\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = Magical_Score ~ Nature_Score, data = u3)\n#&gt; \n#&gt; Coefficients:\n#&gt;  (Intercept)  Nature_Score  \n#&gt;     3420.179         8.003"
+    "text": "Collecting a new sample\n\n\nCode\nu3 &lt;- unicorns(500)\nlm(Magical_Score ~ Nature_Score, u3)\n\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = Magical_Score ~ Nature_Score, data = u3)\n#&gt; \n#&gt; Coefficients:\n#&gt;  (Intercept)  Nature_Score  \n#&gt;         3423             8"
   },
   {
     "objectID": "lectures/9.html#collecting-a-new-sample-2",
     "href": "lectures/9.html#collecting-a-new-sample-2",
     "title": "Sampling Distribution",
     "section": "Collecting a new sample",
-    "text": "Collecting a new sample\n\n\nCode\nu4 &lt;- unicorns(500)\nlm(Magical_Score ~ Nature_Score, u4)\n\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = Magical_Score ~ Nature_Score, data = u4)\n#&gt; \n#&gt; Coefficients:\n#&gt;  (Intercept)  Nature_Score  \n#&gt;     3425.639         7.997"
+    "text": "Collecting a new sample\n\n\nCode\nu4 &lt;- unicorns(500)\nlm(Magical_Score ~ Nature_Score, u4)\n\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = Magical_Score ~ Nature_Score, data = u4)\n#&gt; \n#&gt; Coefficients:\n#&gt;  (Intercept)  Nature_Score  \n#&gt;      3413.31          8.01"
   },
   {
     "objectID": "lectures/9.html#replicating-processes",
@@ -312,7 +312,7 @@
     "href": "lectures/9.html#collecting-1000-samples",
     "title": "Sampling Distribution",
     "section": "Collecting 1000 Samples",
-    "text": "Collecting 1000 Samples\n\n\nCode\nbetas &lt;- replicate(1000,\n                   b(lm(Magical_Score ~ Nature_Score, unicorns(500)), 1))\n\nbetas\n\n\n#&gt;    [1] 7.995401 8.000379 7.999026 8.002782 8.009664 8.004508 7.996377 8.001447\n#&gt;    [9] 8.005341 7.999855 7.995476 8.001574 8.001597 8.003891 7.997285 7.996069\n#&gt;   [17] 8.001143 7.993736 7.997946 7.997564 7.999916 7.999951 8.005277 8.000562\n#&gt;   [25] 8.009920 8.000845 8.001219 7.997251 7.998206 8.005651 8.001208 7.997612\n#&gt;   [33] 7.999832 7.996371 7.996949 7.999797 7.994398 8.004018 7.995781 7.998995\n#&gt;   [41] 8.004815 8.004749 7.996250 7.996673 8.004673 8.001797 8.003314 7.994292\n#&gt;   [49] 8.000115 7.993764 8.004423 7.998193 8.000345 8.006397 7.998729 7.993890\n#&gt;   [57] 7.999171 8.003368 8.001148 8.007575 8.005143 8.002423 8.000578 7.994546\n#&gt;   [65] 8.005270 8.001318 8.002141 8.003750 7.996121 7.996747 8.002026 7.990507\n#&gt;   [73] 8.007568 7.999723 8.003724 8.007242 7.998133 7.996021 7.995059 8.000752\n#&gt;   [81] 7.999952 8.005674 8.003677 8.000148 7.995153 7.998229 8.001044 7.999281\n#&gt;   [89] 8.001934 8.004573 8.001036 7.997534 7.989233 7.996564 7.997974 8.002364\n#&gt;   [97] 7.999501 7.992130 8.003453 7.994703 8.002136 8.001559 8.003612 7.998989\n#&gt;  [105] 7.991651 7.995702 8.002159 7.992896 7.990722 8.000679 7.999279 7.999350\n#&gt;  [113] 7.998136 8.004502 7.999607 7.989824 8.003328 8.000197 7.999156 8.002414\n#&gt;  [121] 7.999995 8.004932 8.007059 7.998388 8.005258 7.996917 7.997307 8.010089\n#&gt;  [129] 7.997779 7.998874 7.990734 7.997150 7.997959 8.000545 7.996690 8.005613\n#&gt;  [137] 8.001007 7.995189 7.995387 7.997088 7.992944 7.999892 8.004670 7.993893\n#&gt;  [145] 8.004517 8.005115 8.001178 8.000357 7.991416 8.003204 7.994457 7.998756\n#&gt;  [153] 7.995321 7.993380 7.995298 8.001431 7.999163 7.996391 8.004397 8.002728\n#&gt;  [161] 8.002120 7.995378 7.999342 8.004794 8.004153 8.002923 8.000986 8.001215\n#&gt;  [169] 7.999859 8.001305 7.995039 7.996072 7.993810 8.000034 7.996359 7.995796\n#&gt;  [177] 7.998144 7.999901 7.996686 8.002117 8.003216 8.002614 7.998294 8.002624\n#&gt;  [185] 8.002608 8.006292 7.999836 8.002967 8.005967 8.002090 7.999247 7.998229\n#&gt;  [193] 8.006306 8.004744 7.996592 8.010440 7.998910 7.999371 7.996013 8.003740\n#&gt;  [201] 8.000193 7.996874 8.001807 8.001973 7.998273 8.005286 7.995391 8.006176\n#&gt;  [209] 8.005629 8.005211 8.004056 7.995602 8.006564 8.000363 7.998633 8.002260\n#&gt;  [217] 7.993023 7.999482 7.998968 8.005571 8.003877 8.004294 8.000882 8.004468\n#&gt;  [225] 8.003878 8.002698 8.001251 8.003936 8.001620 7.998322 8.005436 8.002249\n#&gt;  [233] 8.005015 7.999508 8.003659 7.993718 8.004666 8.001029 7.997772 8.000226\n#&gt;  [241] 8.000933 8.008968 8.005102 7.994156 8.000678 8.000901 7.998174 8.001912\n#&gt;  [249] 7.994326 7.998075 7.998871 7.999810 7.995436 8.004608 8.013730 7.994397\n#&gt;  [257] 8.000151 8.001973 8.002798 7.999096 7.998635 8.004606 7.996929 7.994958\n#&gt;  [265] 7.997219 7.998293 8.009426 8.005498 8.004188 8.000976 8.005791 7.997741\n#&gt;  [273] 8.005129 8.003838 8.003336 7.998668 8.001071 8.005885 8.003616 7.997449\n#&gt;  [281] 8.003098 7.995327 8.001956 7.995517 8.003539 8.002631 7.993630 7.992998\n#&gt;  [289] 8.000257 7.996857 7.996324 8.001216 8.003262 8.002836 8.002431 8.007911\n#&gt;  [297] 7.998810 7.998524 7.991663 7.994919 8.001713 8.002928 7.994041 8.003548\n#&gt;  [305] 7.998687 8.002232 8.003743 8.003978 8.000892 7.997646 8.000686 7.999979\n#&gt;  [313] 7.999856 8.003170 8.000540 8.002205 7.999264 8.003822 8.001475 7.999039\n#&gt;  [321] 7.999610 8.010500 7.998567 8.008925 8.006451 7.995093 7.998512 7.989026\n#&gt;  [329] 7.991880 7.999674 7.994553 7.996810 8.002308 7.998943 8.006636 8.003692\n#&gt;  [337] 7.999088 8.000223 8.001068 8.001779 8.002833 8.003294 7.993612 8.003558\n#&gt;  [345] 7.993846 8.000987 7.990338 8.002246 8.003183 8.010445 7.997300 8.007496\n#&gt;  [353] 8.002929 8.002366 7.995830 8.007393 8.004359 8.002074 7.993590 8.007041\n#&gt;  [361] 7.994287 8.001858 8.002134 8.003396 7.998372 8.007171 7.999761 7.999432\n#&gt;  [369] 7.995115 8.002010 7.996526 8.002478 7.995588 8.001786 8.004986 7.994909\n#&gt;  [377] 8.008391 7.999084 8.002979 7.998775 8.003536 8.002864 8.002078 7.996552\n#&gt;  [385] 7.999229 8.003379 8.002599 7.998223 7.991252 8.009113 8.007079 8.004444\n#&gt;  [393] 7.996650 8.004777 7.990449 7.993735 7.997639 7.995802 8.003953 8.002769\n#&gt;  [401] 8.012137 8.003461 8.001273 7.997518 8.006006 8.000312 8.005869 7.994438\n#&gt;  [409] 7.999369 7.992068 7.992412 7.990875 8.000441 8.000534 8.008384 8.002300\n#&gt;  [417] 7.998344 7.997362 7.999249 8.000357 8.006230 8.005508 8.002233 8.004381\n#&gt;  [425] 8.002057 7.992905 8.002067 7.993327 7.993914 7.999317 7.994662 8.006325\n#&gt;  [433] 7.999745 8.004379 7.995745 7.998817 7.999074 8.002360 8.001049 7.996040\n#&gt;  [441] 8.006571 8.000008 8.004512 7.989435 7.998570 8.000035 8.003878 7.997890\n#&gt;  [449] 7.994909 8.006473 8.004694 8.000624 8.003033 8.000123 8.000733 8.005565\n#&gt;  [457] 8.009091 7.999170 7.999776 8.002368 8.004988 7.995178 7.997697 7.998467\n#&gt;  [465] 7.996829 8.000200 8.000676 7.990747 7.997605 7.997684 8.002319 8.002353\n#&gt;  [473] 7.995423 8.001303 7.997771 7.997807 8.002112 8.002306 8.000917 7.996829\n#&gt;  [481] 8.005217 7.996782 8.000312 8.002524 7.998377 8.006530 7.998351 8.000816\n#&gt;  [489] 7.997904 7.998512 8.005896 8.012728 8.003641 7.999478 8.000184 7.999215\n#&gt;  [497] 7.996422 8.001699 8.004386 7.993462 8.001520 8.007335 8.000919 7.998972\n#&gt;  [505] 8.003630 7.998019 7.995180 8.001700 8.001579 8.000587 7.998390 8.001751\n#&gt;  [513] 8.006372 8.000965 7.993316 8.003724 7.995360 7.991289 8.001853 8.000084\n#&gt;  [521] 8.003778 7.995938 7.999036 8.000792 7.995931 7.998637 8.000017 7.995487\n#&gt;  [529] 7.996673 8.011812 8.014785 8.004654 7.998677 7.997300 8.001739 8.000527\n#&gt;  [537] 7.999442 7.999723 8.007761 8.002026 8.000861 8.000726 8.004509 7.991860\n#&gt;  [545] 8.000741 7.996103 7.997088 8.008110 8.001984 7.993071 7.997228 8.005862\n#&gt;  [553] 8.005954 7.997868 7.995686 7.999715 8.001373 8.007778 7.999578 8.001774\n#&gt;  [561] 8.008341 8.001568 7.999994 7.997726 8.002345 7.999841 8.008173 7.998568\n#&gt;  [569] 7.996335 8.000116 8.000287 7.994870 8.005802 8.005082 8.004025 8.007026\n#&gt;  [577] 8.002931 8.007094 7.998982 7.996476 8.006876 8.005044 7.996325 7.992615\n#&gt;  [585] 7.998281 8.002312 7.996882 7.995363 8.001687 8.002232 8.004369 8.007254\n#&gt;  [593] 8.001299 7.994078 7.995319 7.996545 8.003876 8.004974 7.994839 8.003308\n#&gt;  [601] 7.999352 7.998568 8.005934 7.998971 7.996765 7.997843 8.000515 7.996043\n#&gt;  [609] 7.994976 7.994427 8.006622 7.998998 7.998069 8.000599 8.004053 7.996711\n#&gt;  [617] 8.000815 8.002418 7.996887 8.000621 8.004268 8.000782 8.001017 7.997458\n#&gt;  [625] 8.005529 7.992062 8.002061 8.002955 7.998533 8.006608 7.997954 7.999033\n#&gt;  [633] 7.997642 7.998931 7.989464 7.999028 7.998548 8.004548 8.000509 7.996759\n#&gt;  [641] 8.001509 7.998682 7.997703 8.004072 8.003571 7.997308 8.000670 8.003908\n#&gt;  [649] 8.001514 8.009088 7.996804 8.005446 8.004095 7.996997 7.997916 7.995624\n#&gt;  [657] 7.995139 7.998910 7.998785 8.003918 8.002429 8.005834 8.002885 8.003561\n#&gt;  [665] 7.996522 7.999135 8.002214 8.002172 8.004725 7.998255 7.996935 8.002452\n#&gt;  [673] 7.993119 7.997388 8.010483 8.003699 8.003887 8.001321 8.000316 7.999097\n#&gt;  [681] 7.999617 8.008360 8.003960 8.003338 8.002143 8.001805 7.997956 7.997691\n#&gt;  [689] 7.999475 8.005602 8.004463 8.000480 8.005086 7.999125 7.993909 8.000472\n#&gt;  [697] 7.995989 8.000899 7.997787 7.997324 7.994432 7.997368 8.003180 7.995852\n#&gt;  [705] 8.003277 7.999988 8.000543 7.998259 8.000096 7.999450 7.995070 7.993737\n#&gt;  [713] 8.000482 8.003169 8.000130 7.999369 8.005346 8.001606 7.999414 7.997217\n#&gt;  [721] 8.001016 7.999046 7.997598 7.995125 8.003657 8.001055 7.990424 8.001234\n#&gt;  [729] 8.005796 8.001802 8.000343 7.998493 7.997282 8.008480 7.999588 8.000183\n#&gt;  [737] 7.998868 7.994974 8.009135 8.005904 7.991337 8.000077 7.998146 7.997324\n#&gt;  [745] 7.992076 8.001406 8.006078 8.001422 8.009641 8.003790 7.996780 7.995140\n#&gt;  [753] 8.000398 7.997848 8.008933 8.001361 8.001056 7.989700 7.997952 8.005706\n#&gt;  [761] 7.994181 7.991783 8.000780 7.994479 8.001321 7.998127 7.998855 8.002966\n#&gt;  [769] 7.999543 8.008899 8.003633 7.995238 7.997530 7.999151 8.006469 7.994078\n#&gt;  [777] 7.996389 8.000056 8.006522 8.002842 7.998601 8.002165 7.999621 8.003471\n#&gt;  [785] 7.999212 8.002653 7.993744 8.002213 7.994076 7.990251 8.002806 7.999733\n#&gt;  [793] 8.002441 8.004607 7.998675 8.003389 7.998461 7.996059 8.003445 8.001722\n#&gt;  [801] 7.993106 8.004803 8.003898 7.997042 8.000490 7.999583 8.001268 7.996958\n#&gt;  [809] 8.000155 8.003727 7.998787 8.000961 8.001584 7.998471 8.002574 8.001245\n#&gt;  [817] 8.005842 8.001818 8.008812 7.997134 7.990850 7.997344 7.999400 7.999285\n#&gt;  [825] 8.000844 8.002443 8.001254 7.999933 8.003640 7.998769 7.995147 7.993547\n#&gt;  [833] 7.996268 8.001391 8.000839 7.999986 7.998275 8.004901 7.992902 8.002098\n#&gt;  [841] 8.000964 8.001001 7.998124 7.997869 8.002602 7.999827 8.001352 7.999514\n#&gt;  [849] 8.005040 7.996379 7.999133 7.991348 7.998327 8.000608 8.001685 7.996874\n#&gt;  [857] 7.997481 8.002214 8.003085 7.999213 8.002479 7.995639 8.002524 8.002184\n#&gt;  [865] 8.001353 7.997986 7.996711 7.996305 8.003978 8.003761 8.000753 8.000131\n#&gt;  [873] 8.002089 7.992016 8.001987 7.995003 8.001076 8.002639 7.998356 8.003579\n#&gt;  [881] 7.991004 7.999459 8.003347 8.004962 8.001357 7.996999 8.011094 7.999629\n#&gt;  [889] 8.000344 8.000333 8.008740 8.004192 8.004761 8.003446 7.998405 7.999954\n#&gt;  [897] 7.999544 7.993415 8.002287 7.997341 8.002253 7.998815 8.002251 8.000808\n#&gt;  [905] 7.999264 7.997947 8.003106 7.998110 7.998174 7.995678 7.990306 8.006041\n#&gt;  [913] 7.996610 7.996657 7.998605 8.000038 8.001630 7.996648 8.001042 8.000962\n#&gt;  [921] 7.994555 8.003238 8.000324 7.997991 8.001199 8.004057 8.003380 7.990643\n#&gt;  [929] 8.002041 7.997104 8.002550 8.001818 7.997572 8.006414 7.998679 8.007743\n#&gt;  [937] 8.000139 7.999615 7.999332 8.003472 8.003525 8.005804 7.997141 7.997272\n#&gt;  [945] 8.003712 7.997326 8.002524 8.000116 7.998604 8.000970 7.998508 8.000324\n#&gt;  [953] 7.995080 8.004991 7.999729 8.003632 8.004009 8.005757 8.001664 8.000133\n#&gt;  [961] 7.999655 8.005023 8.001716 8.001333 8.003476 8.004933 8.006706 7.994669\n#&gt;  [969] 8.000241 8.001096 7.995588 7.999332 8.003714 8.001857 8.002527 8.000872\n#&gt;  [977] 7.997947 8.002034 8.000751 8.003531 8.001184 7.996552 8.002279 7.999771\n#&gt;  [985] 8.003018 8.000250 7.994815 7.998922 7.999586 7.998510 8.000374 7.997598\n#&gt;  [993] 8.000017 7.997672 7.997657 8.001238 8.000821 8.000309 8.001007 7.998283"
+    "text": "Collecting 1000 Samples\n\n\nCode\nbetas &lt;- replicate(1000,\n                   b(lm(Magical_Score ~ Nature_Score, unicorns(500)), 1))\n\nbetas\n\n\n#&gt;    [1] 8.006005 8.000749 8.000242 8.000970 7.999794 8.004019 7.995709 8.004831\n#&gt;    [9] 8.007596 7.999619 7.997973 7.997775 7.997454 7.998365 7.998978 7.996386\n#&gt;   [17] 8.001305 8.004366 8.000576 7.994035 7.996230 7.996973 7.997003 8.006913\n#&gt;   [25] 8.003995 8.000555 7.991549 7.998029 8.007378 7.997363 7.993366 8.004517\n#&gt;   [33] 8.006399 8.007510 8.006994 8.000419 8.004252 7.986660 8.005040 8.001847\n#&gt;   [41] 8.000644 8.001306 7.994865 8.000104 7.994877 7.996606 8.000823 8.002073\n#&gt;   [49] 7.999559 7.995925 7.999690 7.999020 8.009687 7.999169 7.996707 7.994817\n#&gt;   [57] 7.997977 7.993292 7.994568 8.003915 8.001575 7.996282 8.000760 7.998352\n#&gt;   [65] 7.999548 7.998483 7.996060 8.001019 8.005415 7.999924 7.994840 7.996303\n#&gt;   [73] 8.002643 7.995999 7.995157 8.004132 7.997768 8.000082 8.001275 7.993533\n#&gt;   [81] 8.006586 8.007608 7.997862 7.997768 7.994237 8.000904 7.998071 7.991187\n#&gt;   [89] 7.992225 8.002259 7.996533 8.001052 7.996837 8.004348 7.998156 7.995158\n#&gt;   [97] 8.000112 8.000963 8.003050 7.991453 8.004259 7.989114 7.997063 7.995339\n#&gt;  [105] 7.997602 7.994243 7.998824 7.998586 7.996620 8.003392 8.000615 8.001509\n#&gt;  [113] 7.996245 7.997885 8.000442 7.993744 8.001818 8.002449 7.998761 8.005148\n#&gt;  [121] 8.000152 7.997489 8.006753 8.002872 8.003703 7.997286 7.994461 7.996828\n#&gt;  [129] 8.002158 8.000710 7.999843 7.997874 8.000839 8.001316 7.994218 7.999182\n#&gt;  [137] 8.001597 8.001391 7.999268 8.005483 8.001285 7.995361 8.001581 8.006647\n#&gt;  [145] 7.999567 7.999511 8.000324 8.003506 8.000902 8.000685 8.004237 8.002677\n#&gt;  [153] 7.999206 8.004737 7.994880 7.999574 8.006911 7.995514 7.999009 8.003851\n#&gt;  [161] 8.002484 8.004293 8.001428 8.000410 7.999496 8.003297 8.000536 8.002892\n#&gt;  [169] 7.999473 7.994189 7.997220 7.999287 7.997034 8.002018 7.998543 8.002261\n#&gt;  [177] 7.995196 7.998689 8.001253 7.995664 7.998828 8.002591 8.004963 8.003620\n#&gt;  [185] 8.004057 7.998868 7.996352 7.998437 7.996710 8.004129 8.002998 8.005867\n#&gt;  [193] 7.991396 8.007123 7.997639 8.002234 7.998377 7.998766 8.002824 8.003768\n#&gt;  [201] 7.995479 8.006218 7.998912 7.994977 7.998956 8.003910 8.001464 8.002885\n#&gt;  [209] 7.999469 8.005164 8.003965 8.001886 8.000391 7.999974 7.995777 8.001860\n#&gt;  [217] 7.998013 7.999373 8.008529 8.002646 7.996948 8.010393 8.002950 8.002737\n#&gt;  [225] 8.004115 8.003315 8.003611 8.001848 8.002638 8.003148 8.003750 7.997785\n#&gt;  [233] 8.010139 7.996002 7.997798 8.001096 8.007033 7.995334 7.996814 7.995428\n#&gt;  [241] 8.001995 7.993982 8.006621 7.993753 7.999565 8.004752 8.004959 8.000594\n#&gt;  [249] 7.991523 7.998524 7.996239 7.999738 7.996767 7.998253 8.002541 7.991995\n#&gt;  [257] 7.993276 7.997417 8.006750 8.005255 7.997924 7.997751 7.997938 7.999794\n#&gt;  [265] 7.995946 8.000156 8.003493 7.998647 8.002542 7.993344 7.999939 7.993507\n#&gt;  [273] 7.998779 8.002759 7.997687 8.002172 8.004199 8.001715 8.001212 8.005758\n#&gt;  [281] 7.993880 8.004775 7.998163 8.007551 8.001031 7.998477 7.996789 7.998817\n#&gt;  [289] 7.995704 7.999332 7.999271 8.001597 8.001965 7.995646 8.006281 8.007053\n#&gt;  [297] 7.994469 7.998912 8.001451 7.993374 7.996599 8.003826 7.991420 7.999191\n#&gt;  [305] 8.002195 8.000359 7.997842 8.007016 8.004230 7.999342 8.000073 7.999261\n#&gt;  [313] 8.003717 7.999851 7.998204 7.998501 7.999636 8.005209 8.002458 7.999753\n#&gt;  [321] 7.998577 7.995993 7.998715 8.000532 8.005190 8.003919 8.000339 8.004897\n#&gt;  [329] 8.001475 8.006686 8.003568 7.998474 8.010947 8.009024 8.002097 8.001776\n#&gt;  [337] 7.998887 8.002130 7.995754 7.991093 8.002153 8.002419 8.002633 8.000632\n#&gt;  [345] 8.001994 7.997948 8.002352 8.000983 7.997894 8.002909 8.000952 7.995252\n#&gt;  [353] 7.998691 8.003381 7.996509 7.998064 8.005946 8.000778 7.998161 7.997987\n#&gt;  [361] 8.004676 7.992660 8.002370 7.996660 7.997940 8.000988 8.004288 8.001952\n#&gt;  [369] 7.999146 7.999341 8.003840 8.000806 8.002022 8.005483 8.003165 8.000701\n#&gt;  [377] 8.006683 8.009538 8.004917 8.003710 8.000014 7.995408 8.002574 8.000452\n#&gt;  [385] 7.997078 8.003276 8.005062 7.996275 8.000037 8.010198 8.002064 8.008357\n#&gt;  [393] 7.997277 8.008149 8.004711 7.996503 7.994436 7.993485 7.999311 8.009997\n#&gt;  [401] 8.004745 7.987293 8.001589 8.002879 7.995938 8.006645 7.992860 7.995130\n#&gt;  [409] 8.001504 7.992851 8.004797 8.005040 8.007440 7.997578 7.987032 8.003157\n#&gt;  [417] 8.004510 8.000624 7.998198 8.005845 7.999626 7.998326 7.997761 7.997089\n#&gt;  [425] 8.001810 7.997948 8.004894 7.992254 8.002345 7.997851 8.004147 7.994927\n#&gt;  [433] 7.998588 7.994647 7.993691 8.003844 7.997349 8.011645 8.006924 7.994578\n#&gt;  [441] 7.995582 7.998880 7.999336 7.992738 7.993633 8.002799 8.001707 7.992957\n#&gt;  [449] 8.000315 8.003799 8.000724 7.996752 8.000551 7.991191 7.998707 8.002051\n#&gt;  [457] 8.003549 7.997704 7.999792 7.999042 8.000836 8.004398 7.999083 7.998689\n#&gt;  [465] 8.004498 7.996733 8.001847 7.998845 8.010162 8.002379 7.997016 7.996539\n#&gt;  [473] 7.999495 7.996435 7.994657 8.011524 7.999356 8.006519 7.988773 8.000225\n#&gt;  [481] 8.002975 7.998449 8.003293 8.001882 8.001251 8.001482 7.999436 8.000665\n#&gt;  [489] 8.004600 8.004074 7.998633 8.001669 7.998561 7.998467 7.998123 7.998541\n#&gt;  [497] 8.001742 7.998274 7.996458 7.998605 7.998043 7.999703 8.010412 7.998309\n#&gt;  [505] 8.002328 7.994785 7.994667 7.996487 8.000806 7.997448 7.999411 8.003865\n#&gt;  [513] 8.000105 7.999801 7.999720 7.999751 7.999840 8.004566 8.003932 7.999072\n#&gt;  [521] 8.006003 7.996394 7.999593 7.998265 8.000048 8.000101 7.991196 7.997728\n#&gt;  [529] 7.997101 7.998847 7.992676 8.000998 7.998463 8.002438 8.004156 8.000932\n#&gt;  [537] 8.003173 7.998595 8.002036 8.002978 7.999782 7.996014 7.996475 8.004365\n#&gt;  [545] 7.997711 8.003079 8.002907 7.999365 7.993490 7.992843 8.001101 7.996941\n#&gt;  [553] 8.003964 8.005878 8.005543 7.993178 8.003159 7.995026 7.996859 8.002714\n#&gt;  [561] 8.002406 8.006406 7.995205 7.988903 7.994209 8.004422 8.002465 7.999083\n#&gt;  [569] 8.001943 8.006390 7.995300 8.000965 8.002986 8.003540 7.998119 8.002417\n#&gt;  [577] 8.000901 8.000121 8.001069 8.009597 8.001675 8.001479 7.993162 8.009085\n#&gt;  [585] 8.003806 8.002336 8.004740 7.997728 8.000490 8.003730 7.996883 8.003166\n#&gt;  [593] 7.992441 8.003567 7.993107 7.997414 7.996661 7.997489 7.996555 8.000574\n#&gt;  [601] 7.998582 8.004767 8.003132 7.997465 8.002089 7.999709 7.999259 7.995737\n#&gt;  [609] 7.997047 8.000338 8.006531 8.006078 8.003725 7.997750 8.003000 8.000018\n#&gt;  [617] 8.005052 7.997268 8.001639 7.990979 8.001252 7.998654 7.995711 8.002732\n#&gt;  [625] 7.996906 7.999097 7.999740 7.998948 7.995581 8.000313 8.006183 7.999571\n#&gt;  [633] 8.005510 8.003471 8.006436 8.005281 8.003222 8.001325 7.990984 7.998500\n#&gt;  [641] 8.002261 8.001133 7.992839 8.003087 7.994868 7.996228 8.001203 7.998164\n#&gt;  [649] 8.002304 8.004581 8.005261 7.996005 7.999089 7.995226 7.997893 7.996988\n#&gt;  [657] 8.004387 7.992728 8.004273 7.991483 8.007438 8.003723 7.996726 7.998202\n#&gt;  [665] 7.995578 7.999798 7.998169 7.999947 7.999002 8.001032 8.000137 8.000689\n#&gt;  [673] 8.001463 7.990861 7.996499 8.000715 7.994415 8.004065 8.000141 8.001473\n#&gt;  [681] 8.003729 8.005708 7.996172 7.995647 8.007183 7.996375 7.995762 7.996956\n#&gt;  [689] 8.005013 8.001118 7.997133 8.002603 7.995251 8.000704 8.004775 7.992064\n#&gt;  [697] 7.999326 8.001423 8.001110 8.010605 8.005676 7.998125 8.005279 7.997307\n#&gt;  [705] 7.999588 7.996618 7.993493 7.999982 8.007297 7.998640 8.002334 8.006300\n#&gt;  [713] 7.999717 7.995867 7.999067 7.993488 7.998045 7.999077 8.004019 7.992221\n#&gt;  [721] 8.000816 7.997677 8.007396 8.001282 7.996884 7.992911 7.996625 7.995049\n#&gt;  [729] 8.005926 8.000446 8.004369 8.002994 7.992723 7.998204 7.991110 7.998333\n#&gt;  [737] 7.992127 8.001307 8.003563 7.996561 7.997971 7.991682 8.013060 8.000834\n#&gt;  [745] 7.997423 7.992637 7.996278 8.006671 7.997989 7.997439 7.993536 8.000334\n#&gt;  [753] 7.997850 8.004511 8.001089 8.000544 7.995928 7.999231 8.000098 8.006629\n#&gt;  [761] 8.002121 8.007308 8.005817 8.001170 7.994373 8.000899 8.003127 8.004416\n#&gt;  [769] 7.994818 8.006052 8.001788 8.002023 8.000535 7.999967 7.993877 7.999782\n#&gt;  [777] 8.000256 8.001998 8.004530 7.999223 7.992855 8.001456 8.002113 8.001354\n#&gt;  [785] 7.999032 8.003057 7.996276 8.004822 7.998606 8.001770 7.998497 7.998044\n#&gt;  [793] 7.999154 7.997282 7.999231 8.008736 7.999926 7.998852 7.997421 8.004628\n#&gt;  [801] 7.999885 7.998100 7.999401 8.000069 8.004708 8.005711 7.997410 8.003802\n#&gt;  [809] 7.997304 8.002205 7.987116 8.010234 8.001602 8.003602 7.995958 8.005756\n#&gt;  [817] 7.991758 7.996843 8.003196 8.003607 7.998393 8.004438 8.002108 8.000802\n#&gt;  [825] 7.995868 8.002883 8.001276 7.998054 8.000580 7.999039 8.001628 8.001807\n#&gt;  [833] 7.995678 8.003286 8.008315 8.003468 7.989349 7.999718 7.996887 7.998978\n#&gt;  [841] 8.002041 7.984988 7.994769 8.011143 7.993913 7.998172 8.002448 8.004698\n#&gt;  [849] 8.000538 8.003942 7.990700 8.000784 7.998765 8.002061 8.002792 7.997581\n#&gt;  [857] 8.007502 8.006741 7.991396 7.996231 8.004555 8.010579 7.998787 7.994651\n#&gt;  [865] 7.999804 8.000790 8.000797 7.999258 8.006050 8.001132 7.999770 8.003834\n#&gt;  [873] 8.000026 8.006769 7.997277 7.999573 7.998330 7.993863 7.996323 7.995160\n#&gt;  [881] 8.004870 7.995001 8.005242 8.000583 8.002539 7.999040 8.002472 8.004648\n#&gt;  [889] 8.003831 7.996224 8.002614 7.997678 8.001527 8.008071 8.003216 7.998664\n#&gt;  [897] 7.998510 7.997161 7.992343 7.997547 8.000843 7.999923 7.998131 8.000496\n#&gt;  [905] 7.999225 8.006539 7.998148 7.994758 8.005142 8.000250 8.000364 7.995563\n#&gt;  [913] 8.005904 8.001970 8.004786 7.999882 8.004474 7.992855 7.995388 8.002836\n#&gt;  [921] 7.995282 7.996902 7.999073 7.999165 7.996337 7.995192 7.993515 7.998223\n#&gt;  [929] 8.006490 8.002603 7.995310 8.004004 8.001495 8.001074 7.994019 8.001612\n#&gt;  [937] 7.997956 8.003876 7.993290 8.001043 7.999398 7.997879 8.006828 8.001572\n#&gt;  [945] 8.006243 8.000783 8.001805 7.992247 7.996892 7.998589 8.003084 8.001178\n#&gt;  [953] 8.005162 7.997835 8.003680 8.004798 8.000865 8.000598 7.998172 8.008019\n#&gt;  [961] 8.002210 7.992428 7.993999 8.001785 7.998352 8.004404 8.001358 8.000511\n#&gt;  [969] 8.001908 8.002787 8.001974 8.001293 8.000670 7.997405 8.002455 8.005334\n#&gt;  [977] 7.998905 8.004823 8.009505 7.999660 7.998636 8.002939 8.002640 8.001892\n#&gt;  [985] 8.006981 7.995572 7.999681 8.005191 7.998535 7.997529 7.997061 7.999304\n#&gt;  [993] 8.005253 7.998253 7.996060 7.997975 8.001365 7.999579 7.993138 7.996120"
   },
   {
     "objectID": "lectures/9.html#distributions-of-hat-beta_1",
@@ -550,7 +550,7 @@
     "href": "lectures/7.html#indexing-data",
     "title": "Group Regression Models",
     "section": "Indexing Data",
-    "text": "Indexing Data\nThe data in a data set can be indexed by a number.\n\npenguins[1,-c(1:2)]\n\n#&gt;   bill_len bill_dep flipper_len body_mass  sex year\n#&gt; 1     39.1     18.7         181      3750 male 2007\n\n\n\nMaking the variable “body_mass_g” be represented by \\(Y\\) and “flipper_length_mm” as \\(X\\):\n\\[\nY_1 = 3750 \\ \\ X_1=181\n\\]"
+    "text": "Indexing Data\nThe data in a data set can be indexed by a number.\n\n\nCode\npenguins[1,-c(1:2)]\n\n\n#&gt;   bill_len bill_dep flipper_len body_mass  sex year\n#&gt; 1     39.1     18.7         181      3750 male 2007\n\n\n\nMaking the variable “body_mass_g” be represented by \\(Y\\) and “flipper_length_mm” as \\(X\\):\n\\[\nY_1 = 3750 \\ \\ X_1=181\n\\]"
   },
   {
     "objectID": "lectures/7.html#indexing-data-1",
@@ -592,14 +592,14 @@
     "href": "lectures/7.html#estimation-in-r",
     "title": "Group Regression Models",
     "section": "Estimation in R",
-    "text": "Estimation in R\n\nlm(Y ~ 1, data = DATA)\n\n\nY: Name Outcome Variable of Interest in data frame DATA\nDATA: Name of the data frame"
+    "text": "Estimation in R\n\n\nCode\nlm(Y ~ 1, data = DATA)\n\n\n\nY: Name Outcome Variable of Interest in data frame DATA\nDATA: Name of the data frame"
   },
   {
     "objectID": "lectures/7.html#modeling-body-mass-in-penguins",
     "href": "lectures/7.html#modeling-body-mass-in-penguins",
     "title": "Group Regression Models",
     "section": "Modeling Body Mass in Penguins",
-    "text": "Modeling Body Mass in Penguins\n\nlm(body_mass ~ 1, data = penguins)\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = body_mass ~ 1, data = penguins)\n#&gt; \n#&gt; Coefficients:\n#&gt; (Intercept)  \n#&gt;        4207\n\n\n\n\\[\n\\hat Y = 4207\n\\]"
+    "text": "Modeling Body Mass in Penguins\n\n\nCode\nlm(body_mass ~ 1, data = penguins)\n\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = body_mass ~ 1, data = penguins)\n#&gt; \n#&gt; Coefficients:\n#&gt; (Intercept)  \n#&gt;        4207\n\n\n\n\\[\n\\hat Y = 4207\n\\]"
   },
   {
     "objectID": "lectures/7.html#visualize",
@@ -669,14 +669,14 @@
     "href": "lectures/7.html#fitting-a-model-in-r",
     "title": "Group Regression Models",
     "section": "Fitting a Model in R",
-    "text": "Fitting a Model in R\n\nlm(Y ~ X, data = DATA)\n\n\nX: Name Predictor Variable of Interest in data frame DATA\nY: Name Outcome Variable of Interest in data frame DATA\nDATA: Name of the data frame"
+    "text": "Fitting a Model in R\n\n\nCode\nlm(Y ~ X, data = DATA)\n\n\n\nX: Name Predictor Variable of Interest in data frame DATA\nY: Name Outcome Variable of Interest in data frame DATA\nDATA: Name of the data frame"
   },
   {
     "objectID": "lectures/7.html#example",
     "href": "lectures/7.html#example",
     "title": "Group Regression Models",
     "section": "Example",
-    "text": "Example\nY: “body_mass”; X: “flipper_len”\n\nlm(body_mass ~ flipper_len, data = penguins)\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = body_mass ~ flipper_len, data = penguins)\n#&gt; \n#&gt; Coefficients:\n#&gt; (Intercept)  flipper_len  \n#&gt;    -5872.09        50.15\n\n\n\\[\n\\hat Y_i = -5872.09 + 50.15 X_i\n\\]"
+    "text": "Example\nY: “body_mass”; X: “flipper_len”\n\n\nCode\nlm(body_mass ~ flipper_len, data = penguins)\n\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = body_mass ~ flipper_len, data = penguins)\n#&gt; \n#&gt; Coefficients:\n#&gt; (Intercept)  flipper_len  \n#&gt;    -5872.09        50.15\n\n\n\\[\n\\hat Y_i = -5872.09 + 50.15 X_i\n\\]"
   },
   {
     "objectID": "lectures/7.html#interpretation-of-hatbeta_0",
@@ -725,14 +725,14 @@
     "href": "lectures/7.html#group-statistics",
     "title": "Group Regression Models",
     "section": "Group Statistics",
-    "text": "Group Statistics\nWe can use statistics to explain a continuous variable by the categories.\n\nCompute statistics for each group.\n\n\n\nnum_by_cat_stats(DATA, NUM, CAT)\n\n\nNUM: Name of the numerical variable\nCAT: Name of the categorical variable\nDATA: Name of the data frame"
+    "text": "Group Statistics\nWe can use statistics to explain a continuous variable by the categories.\n\nCompute statistics for each group.\n\n\n\n\nCode\nnum_by_cat_stats(DATA, NUM, CAT)\n\n\n\nNUM: Name of the numerical variable\nCAT: Name of the categorical variable\nDATA: Name of the data frame"
   },
   {
     "objectID": "lectures/7.html#compute-group-statistics",
     "href": "lectures/7.html#compute-group-statistics",
     "title": "Group Regression Models",
     "section": "Compute Group Statistics",
-    "text": "Compute Group Statistics\n\nnum_by_cat_stats(penguins, body_mass, species)\n\n#&gt;   Categories  min    q25     mean median  q75  max      sd      var   iqr\n#&gt; 1     Adelie 2850 3362.5 3706.164   3700 4000 4775 458.620 210332.4 637.5\n#&gt; 2  Chinstrap 2700 3487.5 3733.088   3700 3950 4800 384.335 147713.5 462.5\n#&gt; 3     Gentoo 3950 4700.0 5092.437   5050 5500 6300 501.476 251478.3 800.0\n#&gt;   missing\n#&gt; 1       0\n#&gt; 2       0\n#&gt; 3       0"
+    "text": "Compute Group Statistics\n\n\nCode\nnum_by_cat_stats(penguins, body_mass, species)\n\n\n#&gt;   Categories  min    q25     mean median  q75  max      sd      var   iqr\n#&gt; 1     Adelie 2850 3362.5 3706.164   3700 4000 4775 458.620 210332.4 637.5\n#&gt; 2  Chinstrap 2700 3487.5 3733.088   3700 3950 4800 384.335 147713.5 462.5\n#&gt; 3     Gentoo 3950 4700.0 5092.437   5050 5500 6300 501.476 251478.3 800.0\n#&gt;   missing\n#&gt; 1       0\n#&gt; 2       0\n#&gt; 3       0"
   },
   {
     "objectID": "lectures/7.html#lm-with-categorical-variables",
@@ -781,21 +781,21 @@
     "href": "lectures/7.html#fitting-a-model-in-r-1",
     "title": "Group Regression Models",
     "section": "Fitting a Model in R",
-    "text": "Fitting a Model in R\n\nlm(Y ~ X, data = DATA)\n\n\nX: Name Predictor Variable of Interest in data frame DATA, must be a factor variable\nY: Name Outcome Variable of Interest in data frame DATA\nDATA: Name of the data frame"
+    "text": "Fitting a Model in R\n\n\nCode\nlm(Y ~ X, data = DATA)\n\n\n\nX: Name Predictor Variable of Interest in data frame DATA, must be a factor variable\nY: Name Outcome Variable of Interest in data frame DATA\nDATA: Name of the data frame"
   },
   {
     "objectID": "lectures/7.html#x-not-a-factor",
     "href": "lectures/7.html#x-not-a-factor",
     "title": "Group Regression Models",
     "section": "X not a Factor",
-    "text": "X not a Factor\n\nlm(Y ~ factor(X), data = DATA)\n\n\nX: Name Predictor Variable of Interest in data frame DATA, not a factor variable\nY: Name Outcome Variable of Interest in data frame DATA\nDATA: Name of the data frame"
+    "text": "X not a Factor\n\n\nCode\nlm(Y ~ factor(X), data = DATA)\n\n\n\nX: Name Predictor Variable of Interest in data frame DATA, not a factor variable\nY: Name Outcome Variable of Interest in data frame DATA\nDATA: Name of the data frame"
   },
   {
     "objectID": "lectures/7.html#example-2",
     "href": "lectures/7.html#example-2",
     "title": "Group Regression Models",
     "section": "Example",
-    "text": "Example\n\nlm(body_mass ~ species, penguins)\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = body_mass ~ species, data = penguins)\n#&gt; \n#&gt; Coefficients:\n#&gt;      (Intercept)  speciesChinstrap     speciesGentoo  \n#&gt;          3706.16             26.92           1386.27\n\n\n\\[\n\\hat Y_i = 3706 + 26.92 D_{1i} + 1386.27 D_{2i}\n\\]"
+    "text": "Example\n\n\nCode\nlm(body_mass ~ species, penguins)\n\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = body_mass ~ species, data = penguins)\n#&gt; \n#&gt; Coefficients:\n#&gt;      (Intercept)  speciesChinstrap     speciesGentoo  \n#&gt;          3706.16             26.92           1386.27\n\n\n\\[\n\\hat Y_i = 3706 + 26.92 D_{1i} + 1386.27 D_{2i}\n\\]"
   },
   {
     "objectID": "lectures/7.html#finding-the-adelie-mass",
@@ -858,28 +858,28 @@
     "href": "lectures/7.html#correlation-in-r",
     "title": "Group Regression Models",
     "section": "Correlation in R",
-    "text": "Correlation in R\n\ncor(DATA$Y, DATA$X)\n\n\nX: Name Predictor Variable of Interest in data frame DATA\nY: Name Outcome Variable of Interest in data frame DATA\nDATA: Name of the data frame"
+    "text": "Correlation in R\n\n\nCode\ncor(DATA$Y, DATA$X)\n\n\n\nX: Name Predictor Variable of Interest in data frame DATA\nY: Name Outcome Variable of Interest in data frame DATA\nDATA: Name of the data frame"
   },
   {
     "objectID": "lectures/7.html#example-3",
     "href": "lectures/7.html#example-3",
     "title": "Group Regression Models",
     "section": "Example",
-    "text": "Example\n\ncor(penguins$body_mass, penguins$flipper_len)\n\n#&gt; [1] 0.8729789"
+    "text": "Example\n\n\nCode\ncor(penguins$body_mass, penguins$flipper_len)\n\n\n#&gt; [1] 0.8729789"
   },
   {
     "objectID": "lectures/7.html#coefficient-of-determination-in-r",
     "href": "lectures/7.html#coefficient-of-determination-in-r",
     "title": "Group Regression Models",
     "section": "Coefficient of Determination in R",
-    "text": "Coefficient of Determination in R\n\nxlm &lt;- lm(Y ~ X, data = DATA)\nr2(xlm)\n\n\nX: Name Predictor Variable of Interest in data frame DATA\nY: Name Outcome Variable of Interest in data frame DATA\nDATA: Name of the data frame"
+    "text": "Coefficient of Determination in R\n\n\nCode\nxlm &lt;- lm(Y ~ X, data = DATA)\nr2(xlm)\n\n\n\nX: Name Predictor Variable of Interest in data frame DATA\nY: Name Outcome Variable of Interest in data frame DATA\nDATA: Name of the data frame"
   },
   {
     "objectID": "lectures/7.html#example-4",
     "href": "lectures/7.html#example-4",
     "title": "Group Regression Models",
     "section": "Example",
-    "text": "Example\n\nxlm &lt;- lm(body_mass ~ species, penguins)\nr2(xlm)\n\n#&gt; [1] 0.6744887"
+    "text": "Example\n\n\nCode\nxlm &lt;- lm(body_mass ~ species, penguins)\nr2(xlm)\n\n\n#&gt; [1] 0.6744887"
   },
   {
     "objectID": "lectures/7.html#statistical-model",
@@ -900,21 +900,21 @@
     "href": "lectures/7.html#prediction-in-r",
     "title": "Group Regression Models",
     "section": "Prediction in R",
-    "text": "Prediction in R\n\nxlm &lt;- lm(Y ~ X,\n            data = DATA)\n\npredict_df &lt;- data.frame(X = VAL)\n\npredict(xlm,\n        predict_df)\n\n\nX: Name Predictor Variable of Interest in data frame DATA\nY: Name Outcome Variable of Interest in data frame DATA\nDATA: Name of the data frame\nVAL: Value for the Predictor Variable"
+    "text": "Prediction in R\n\n\nCode\nxlm &lt;- lm(Y ~ X,\n            data = DATA)\n\npredict_df &lt;- data.frame(X = VAL)\n\npredict(xlm,\n        predict_df)\n\n\n\nX: Name Predictor Variable of Interest in data frame DATA\nY: Name Outcome Variable of Interest in data frame DATA\nDATA: Name of the data frame\nVAL: Value for the Predictor Variable"
   },
   {
     "objectID": "lectures/7.html#example-1-1",
     "href": "lectures/7.html#example-1-1",
     "title": "Group Regression Models",
     "section": "Example 1",
-    "text": "Example 1\n\nExampleCode\n\n\nPredict the body mass for a gentoo penguin.\n\n\n\nxlm &lt;- lm(body_mass ~ species,\n            data = penguins)\n\nxlm\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = body_mass ~ species, data = penguins)\n#&gt; \n#&gt; Coefficients:\n#&gt;      (Intercept)  speciesChinstrap     speciesGentoo  \n#&gt;          3706.16             26.92           1386.27\n\npredict_df &lt;- data.frame(species = \"Gentoo\")\n\npredict(xlm,\n        predict_df)\n\n#&gt;        1 \n#&gt; 5092.437"
+    "text": "Example 1\n\nExampleCode\n\n\nPredict the body mass for a gentoo penguin.\n\n\n\n\nCode\nxlm &lt;- lm(body_mass ~ species,\n            data = penguins)\n\nxlm\n\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = body_mass ~ species, data = penguins)\n#&gt; \n#&gt; Coefficients:\n#&gt;      (Intercept)  speciesChinstrap     speciesGentoo  \n#&gt;          3706.16             26.92           1386.27\n\n\nCode\npredict_df &lt;- data.frame(species = \"Gentoo\")\n\npredict(xlm,\n        predict_df)\n\n\n#&gt;        1 \n#&gt; 5092.437"
   },
   {
     "objectID": "lectures/7.html#example-2-1",
     "href": "lectures/7.html#example-2-1",
     "title": "Group Regression Models",
     "section": "Example 2",
-    "text": "Example 2\n\nExampleCode\n\n\nPredict the body mass for a penguin with a flipper length of 190.\n\n\n\nxlm &lt;- lm(body_mass ~ flipper_len,\n            data = penguins)\n\n\nxlm\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = body_mass ~ flipper_len, data = penguins)\n#&gt; \n#&gt; Coefficients:\n#&gt; (Intercept)  flipper_len  \n#&gt;    -5872.09        50.15\n\npredict_df &lt;- data.frame(flipper_len = 190)\n\npredict(xlm,\n        predict_df)\n\n#&gt;        1 \n#&gt; 3657.028"
+    "text": "Example 2\n\nExampleCode\n\n\nPredict the body mass for a penguin with a flipper length of 190.\n\n\n\n\nCode\nxlm &lt;- lm(body_mass ~ flipper_len,\n            data = penguins)\n\n\nxlm\n\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = body_mass ~ flipper_len, data = penguins)\n#&gt; \n#&gt; Coefficients:\n#&gt; (Intercept)  flipper_len  \n#&gt;    -5872.09        50.15\n\n\nCode\npredict_df &lt;- data.frame(flipper_len = 190)\n\npredict(xlm,\n        predict_df)\n\n\n#&gt;        1 \n#&gt; 3657.028"
   },
   {
     "objectID": "lectures/7.html#interpolation",
@@ -938,296 +938,324 @@
     "text": "Extrapolation\n\n\nCode\nggplot(penguins, aes(flipper_len, body_mass)) + \n  xlim(160, 250) +\n  ylim(2600, 7000) +\n  geom_point() +\n  stat_smooth(method = \"lm\", se = F)"
   },
   {
+    "objectID": "lectures/5.html#palmer-penguins-1",
+    "href": "lectures/5.html#palmer-penguins-1",
+    "title": "Simple  Linear Regression",
+    "section": "Palmer Penguins",
+    "text": "Palmer Penguins\n\n\nThe penguins data set was contains information on penguins from the Palmer Station located in . You can learn more about the data set here.\n\n\n\n\nArtwork by @allison_horst"
+  },
+  {
+    "objectID": "lectures/5.html#variables-of-interest",
+    "href": "lectures/5.html#variables-of-interest",
+    "title": "Simple  Linear Regression",
+    "section": "Variables of Interest",
+    "text": "Variables of Interest\n\nflipper_len: Flipper Length in millimeters\nbody_mass: Body mass in grams"
+  },
+  {
     "objectID": "lectures/5.html#explaining-variation",
     "href": "lectures/5.html#explaining-variation",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Explaining Variation",
     "text": "Explaining Variation\n\nThis is the process where we try to reduce the variation with the use of other variables.\n\n\nCan be thought of as getting it less wrong when taking an educated guess."
   },
   {
-    "objectID": "lectures/5.html#explaining-variation-1",
-    "href": "lectures/5.html#explaining-variation-1",
-    "title": "Simple Linear Regression",
-    "section": "Explaining Variation",
-    "text": "Explaining Variation\n\n\nCode\nggplot(penguins, aes(body_mass)) +\n  geom_density()"
+    "objectID": "lectures/5.html#modeling-variation",
+    "href": "lectures/5.html#modeling-variation",
+    "title": "Simple  Linear Regression",
+    "section": "Modeling Variation",
+    "text": "Modeling Variation\n\n\nCode\nggplot(penguins, aes(body_mass)) +\n  geom_density()"
   },
   {
-    "objectID": "lectures/5.html#variation-with-one-variable",
-    "href": "lectures/5.html#variation-with-one-variable",
-    "title": "Simple Linear Regression",
-    "section": "Variation with One Variable",
-    "text": "Variation with One Variable\n\n\nCode\nggplot(penguins, aes(body_mass, fill = species)) +\n  geom_density(alpha = .5)"
+    "objectID": "lectures/5.html#modeling-variation-with-bar-x",
+    "href": "lectures/5.html#modeling-variation-with-bar-x",
+    "title": "Simple  Linear Regression",
+    "section": "Modeling Variation with \\(\\bar X\\)",
+    "text": "Modeling Variation with \\(\\bar X\\)\n\n\nCode\nggplot(penguins, aes(body_mass)) +\n  geom_density() +\n  geom_vline(xintercept = mean(penguins$body_mass))"
+  },
+  {
+    "objectID": "lectures/5.html#modeling-with-a-numerical-variable",
+    "href": "lectures/5.html#modeling-with-a-numerical-variable",
+    "title": "Simple  Linear Regression",
+    "section": "Modeling with a Numerical Variable",
+    "text": "Modeling with a Numerical Variable\n\n\nCode\nggplot(penguins, aes(x = flipper_len, y = body_mass)) +\n  geom_point() +\n  stat_density_2d(aes(fill = after_stat(level))) +\n  xlim(c(170, 236)) +\n  ylim(c(2500, 6250))"
+  },
+  {
+    "objectID": "lectures/5.html#modeling-with-a-numerical-variable-1",
+    "href": "lectures/5.html#modeling-with-a-numerical-variable-1",
+    "title": "Simple  Linear Regression",
+    "section": "Modeling with a Numerical Variable",
+    "text": "Modeling with a Numerical Variable\n\n\nCode\nggplot(penguins, aes(x = flipper_len, y = body_mass)) +\n  geom_point() +\n  stat_smooth(method = \"lm\", se = F, col = \"red\") +\n  stat_density_2d(aes(fill = after_stat(level))) +\n  xlim(c(170, 236)) +\n  ylim(c(2500, 6250))"
   },
   {
     "objectID": "lectures/5.html#generated-model",
     "href": "lectures/5.html#generated-model",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Generated Model",
     "text": "Generated Model\n\\[\nY \\sim DGP_1\n\\]"
   },
   {
     "objectID": "lectures/5.html#a-simple-model-1",
     "href": "lectures/5.html#a-simple-model-1",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "A Simple Model",
     "text": "A Simple Model\n\n\nCode\nggplot(penguins, aes(body_mass)) +\n  geom_density()"
   },
   {
     "objectID": "lectures/5.html#a-simple-model-2",
     "href": "lectures/5.html#a-simple-model-2",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "A Simple Model",
     "text": "A Simple Model\n\\[\nY = \\_\\_\\_ + error\n\\]"
   },
   {
     "objectID": "lectures/5.html#notation",
     "href": "lectures/5.html#notation",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Notation",
     "text": "Notation\n\\[\nY = \\ \\ \\ \\ \\ \\ \\ \\ \\ + \\varepsilon\n\\]"
   },
   {
     "objectID": "lectures/5.html#the-simple-generated-model",
     "href": "lectures/5.html#the-simple-generated-model",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "The Simple Generated Model",
     "text": "The Simple Generated Model\n\\[\nY \\sim \\beta_0 + \\varepsilon\n\\]\n\\[\n\\varepsilon \\sim DGP_2\n\\]\n\n\\(DGP_2\\) is not the same as the \\(DGP_1\\), it is transformed due \\(\\beta_0\\). Consider this the NULL \\(DGP\\)."
   },
   {
     "objectID": "lectures/5.html#observing-data",
     "href": "lectures/5.html#observing-data",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Observing Data",
     "text": "Observing Data\n\\[\nY = \\beta_0 + \\varepsilon\n\\]"
   },
   {
     "objectID": "lectures/5.html#estimated-line",
     "href": "lectures/5.html#estimated-line",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Estimated Line",
     "text": "Estimated Line\n\\[\n\\hat Y=\\hat\\beta_0\n\\]"
   },
   {
     "objectID": "lectures/5.html#notation-1",
     "href": "lectures/5.html#notation-1",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Notation",
     "text": "Notation\n\n\nObserved\n\\[\nY = \\beta_0 + \\varepsilon\n\\]\n\nEstimated\n\\[\n\\hat Y = \\hat \\beta_0\n\\]"
   },
   {
     "objectID": "lectures/5.html#indexing-data",
     "href": "lectures/5.html#indexing-data",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Indexing Data",
-    "text": "Indexing Data\nThe data in a data set can be indexed by a number.\n\npenguins[1,-c(1:2)]\n\n#&gt;   bill_len bill_dep flipper_len body_mass  sex year\n#&gt; 1     39.1     18.7         181      3750 male 2007\n\n\n\nMaking the variable “body_mass_g” be represented by \\(Y\\) and “flipper_length_mm” as \\(X\\):\n\\[\nY_1 = 3750 \\ \\ X_1=181\n\\]"
+    "text": "Indexing Data\nThe data in a data set can be indexed by a number.\n\n\nCode\npenguins[1,-c(1:2)]\n\n\n#&gt;   bill_len bill_dep flipper_len body_mass  sex year\n#&gt; 1     39.1     18.7         181      3750 male 2007\n\n\n\nMaking the variable body_mass be represented by \\(Y\\) and flipper_len as \\(X\\):\n\\[\nY_1 = 3750 \\ \\ X_1=181\n\\]"
   },
   {
     "objectID": "lectures/5.html#indexing-data-1",
     "href": "lectures/5.html#indexing-data-1",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Indexing Data",
     "text": "Indexing Data\n\\[\nY_i, X_i\n\\]"
   },
   {
     "objectID": "lectures/5.html#data",
     "href": "lectures/5.html#data",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Data",
     "text": "Data\nWith the data that we collect from a sample, we hypothesize how the data was generated.\n\nUsing a simple model:\n\\[\nY_i = \\beta_0 + \\varepsilon_i\n\\]"
   },
   {
     "objectID": "lectures/5.html#estimated-value",
     "href": "lectures/5.html#estimated-value",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Estimated Value",
     "text": "Estimated Value\n\\[\n\\hat Y_i = \\hat \\beta_0\n\\]"
   },
   {
     "objectID": "lectures/5.html#estimation",
     "href": "lectures/5.html#estimation",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Estimation",
     "text": "Estimation\nTo estimate \\(\\hat \\beta_0\\), we minimize the follow function:\n\\[\n\\sum^n_{i=1} (Y_i-\\hat Y_i)^2\n\\]\n\nThis is known as the sum squared errors, SSE"
   },
   {
     "objectID": "lectures/5.html#residuals",
     "href": "lectures/5.html#residuals",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Residuals",
     "text": "Residuals\nThe residuals are known as the observed errors from the data in the model:\n\\[\nr_i = Y_i - \\hat Y_i\n\\]"
   },
   {
     "objectID": "lectures/5.html#estimation-in-r",
     "href": "lectures/5.html#estimation-in-r",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Estimation in R",
-    "text": "Estimation in R\n\nlm(Y ~ 1, data = DATA)\n\n\nY: Name Outcome Variable of Interest in data frame DATA\nDATA: Name of the data frame"
+    "text": "Estimation in R\n\n\nCode\nlm(Y ~ 1, data = DATA)\n\n\n\nY: Name Outcome Variable of Interest in data frame DATA\nDATA: Name of the data frame"
   },
   {
     "objectID": "lectures/5.html#modeling-body-mass-in-penguins",
     "href": "lectures/5.html#modeling-body-mass-in-penguins",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Modeling Body Mass in Penguins",
-    "text": "Modeling Body Mass in Penguins\n\nlm(body_mass ~ 1, data = penguins)\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = body_mass ~ 1, data = penguins)\n#&gt; \n#&gt; Coefficients:\n#&gt; (Intercept)  \n#&gt;        4207\n\n\n\n\\[\n\\hat Y = 4207\n\\]"
+    "text": "Modeling Body Mass in Penguins\n\n\nCode\nxlm &lt;- lm(body_mass ~ 1, data = penguins)\nxlm\n\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = body_mass ~ 1, data = penguins)\n#&gt; \n#&gt; Coefficients:\n#&gt; (Intercept)  \n#&gt;        4207\n\n\n\n\\[\n\\hat Y = 4207\n\\]"
   },
   {
     "objectID": "lectures/5.html#visualize",
     "href": "lectures/5.html#visualize",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Visualize",
     "text": "Visualize\n\n\nCode\nggplot(penguins, aes(body_mass)) +\n  geom_density() +\n  geom_vline(xintercept = 4207)"
   },
   {
     "objectID": "lectures/5.html#linear-model-1",
     "href": "lectures/5.html#linear-model-1",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Linear Model",
     "text": "Linear Model\nThe goal of Statistics is to develop models the have a better explanation of the outcome \\(Y\\).\n\nIn particularly, reduce the sum of squared errors.\n\n\nBy utilizing a bit more of information, \\(X\\), we can increase the predicting capabilities of the model.\n\n\nThus, the linear model is born."
   },
   {
     "objectID": "lectures/5.html#visualization",
     "href": "lectures/5.html#visualization",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Visualization",
-    "text": "Visualization\n\n1-Dimensional2-Dimensional\n\n\n\n\nCode\nggplot(penguins, aes(body_mass)) +\n  geom_density()\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nggplot(penguins, aes(x = flipper_len, y = body_mass, fill = after_stat(level))) +\n  stat_density_2d(geom = \"polygon\")"
+    "text": "Visualization\n\n1-Dimensional2-Dimensional\n\n\n\n\nCode\nggplot(penguins, aes(body_mass)) +\n  geom_density()\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nggplot(penguins, aes(x = flipper_len, y = body_mass)) +\n  geom_point() +\n  stat_density_2d(aes(fill = after_stat(level))) +\n  xlim(c(170, 236)) +\n  ylim(c(2500, 6250))"
   },
   {
     "objectID": "lectures/5.html#linear-model-2",
     "href": "lectures/5.html#linear-model-2",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Linear Model",
     "text": "Linear Model\n\\[\nY = \\beta_0 + \\beta_1 X + \\varepsilon\n\\]\n\\[\n\\varepsilon \\sim DGP_3\n\\]"
   },
   {
     "objectID": "lectures/5.html#scatter-plot",
     "href": "lectures/5.html#scatter-plot",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Scatter Plot",
     "text": "Scatter Plot\n\n\nCode\nggplot(penguins, aes(flipper_len, body_mass)) + \n  geom_point()"
   },
   {
     "objectID": "lectures/5.html#imposing-a-line",
     "href": "lectures/5.html#imposing-a-line",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Imposing a Line",
     "text": "Imposing a Line\n\n\nCode\nggplot(penguins, aes(flipper_len, body_mass)) + \n  geom_point() +\n  stat_smooth(method = \"lm\", se = F)"
   },
   {
     "objectID": "lectures/5.html#modelling-the-data",
     "href": "lectures/5.html#modelling-the-data",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Modelling the Data",
     "text": "Modelling the Data\n\\[\nY_i = \\beta_0 + \\beta_1 X_i + \\varepsilon_i\n\\]"
   },
   {
     "objectID": "lectures/5.html#linear-model-3",
     "href": "lectures/5.html#linear-model-3",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Linear Model",
     "text": "Linear Model\n\\[\n\\hat Y_i = \\hat \\beta_0 + \\hat \\beta_1 X_i\n\\]\n\nGoal is to obtain numerical values for \\(\\hat \\beta_0\\) and \\(\\hat \\beta_1\\) that will minimize the SSE."
   },
   {
     "objectID": "lectures/5.html#sse",
     "href": "lectures/5.html#sse",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "SSE",
     "text": "SSE\n\\[\n\\sum^n_{i=1} (Y_i-\\hat Y_i)^2\n\\]\n\\[\n\\hat Y_i = \\hat \\beta_0 + \\hat \\beta_1 X_i\n\\]"
   },
   {
     "objectID": "lectures/5.html#fitting-a-model-in-r",
     "href": "lectures/5.html#fitting-a-model-in-r",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Fitting a Model in R",
-    "text": "Fitting a Model in R\n\nlm(Y ~ X, data = DATA)\n\n\nX: Name Predictor Variable of Interest in data frame DATA\nY: Name Outcome Variable of Interest in data frame DATA\nDATA: Name of the data frame"
+    "text": "Fitting a Model in R\n\n\nCode\nxlm &lt;- lm(Y ~ X, data = DATA)\nxlm\n\n\n\nX: Name Predictor Variable of Interest in data frame DATA\nY: Name Outcome Variable of Interest in data frame DATA\nDATA: Name of the data frame"
   },
   {
     "objectID": "lectures/5.html#example",
     "href": "lectures/5.html#example",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Example",
-    "text": "Example\nY: “body_mass_g”; X: “flipper_length_mm”\n\nlm(body_mass ~ flipper_len, data = penguins)\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = body_mass ~ flipper_len, data = penguins)\n#&gt; \n#&gt; Coefficients:\n#&gt; (Intercept)  flipper_len  \n#&gt;    -5872.09        50.15\n\n\n\\[\n\\hat Y_i = -5872.09 + 50.15 X_i\n\\]"
+    "text": "Example\nY: body_mass; X: flipper_len\n\n\nCode\nxlm &lt;- lm(body_mass ~ flipper_len, data = penguins)\nxlm\n\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = body_mass ~ flipper_len, data = penguins)\n#&gt; \n#&gt; Coefficients:\n#&gt; (Intercept)  flipper_len  \n#&gt;    -5872.09        50.15\n\n\n\\[\n\\hat Y_i = -5872.09 + 50.15 X_i\n\\]"
   },
   {
     "objectID": "lectures/5.html#interpretation-of-hatbeta_0",
     "href": "lectures/5.html#interpretation-of-hatbeta_0",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Interpretation of \\(\\hat\\beta_0\\)",
     "text": "Interpretation of \\(\\hat\\beta_0\\)\nThe intercept \\(\\hat \\beta_0\\) can be interpreted as the base value when \\(X\\) is set to 0.\n\nSome times the intercept can be interpretable to real world scenarios.\n\n\nOther times it cannot."
   },
   {
     "objectID": "lectures/5.html#interpreting-example",
     "href": "lectures/5.html#interpreting-example",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Interpreting Example",
     "text": "Interpreting Example\n\\[\n\\hat Y_i = -5872.09 + 50.15 X_i\n\\]\nWhen flipper length is 0 mm, the body mass is -5872 grams."
   },
   {
     "objectID": "lectures/5.html#interpretation-of-hat-beta_1",
     "href": "lectures/5.html#interpretation-of-hat-beta_1",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Interpretation of \\(\\hat \\beta_1\\)",
     "text": "Interpretation of \\(\\hat \\beta_1\\)\nThe slope \\(\\hat \\beta_1\\) indicates how will y change when x increases by 1 unit.\n\nIt will demonstrate if there is, on average, a positive or negative relationship based on the sign provided."
   },
   {
     "objectID": "lectures/5.html#interpreting-example-1",
     "href": "lectures/5.html#interpreting-example-1",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Interpreting Example",
     "text": "Interpreting Example\n\\[\n\\hat Y_i = -5872.09 + 50.15 X_i\n\\]\nWhen flipper length increases by 1 mm, the body mass will increase by 50.15 grams."
   },
   {
     "objectID": "lectures/5.html#statistical-model",
     "href": "lectures/5.html#statistical-model",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Statistical Model",
     "text": "Statistical Model\n\\[\n\\hat Y = \\hat \\beta_0 + \\hat \\beta_1 X\n\\]\n\n\\(X\\): Input\n\\(\\hat Y\\): Output"
   },
   {
     "objectID": "lectures/5.html#prediction-1",
     "href": "lectures/5.html#prediction-1",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Prediction",
     "text": "Prediction\nUsing the equation \\(\\hat Y\\), we can give it a value of \\(X\\) and then, in return, a value of \\(\\hat Y\\) that predicts the true value \\(Y\\)."
   },
   {
     "objectID": "lectures/5.html#prediction-in-r",
     "href": "lectures/5.html#prediction-in-r",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Prediction in R",
-    "text": "Prediction in R\n\nxlm &lt;- lm(Y ~ X,\n            data = DATA)\n\npredict_df &lt;- data.frame(X = VAL)\n\npredict(xlm,\n        predict_df)\n\n\nX: Name Predictor Variable of Interest in data frame DATA\nY: Name Outcome Variable of Interest in data frame DATA\nDATA: Name of the data frame\nVAL: Value for the Predictor Variable"
+    "text": "Prediction in R\n\n\nCode\nxlm &lt;- lm(Y ~ X,\n            data = DATA)\n\npredict_df &lt;- data.frame(X = VAL)\n\npredict(xlm,\n        predict_df)\n\n\n\nX: Name Predictor Variable of Interest in data frame DATA\nY: Name Outcome Variable of Interest in data frame DATA\nDATA: Name of the data frame\nVAL: Value for the Predictor Variable"
   },
   {
     "objectID": "lectures/5.html#example-1",
     "href": "lectures/5.html#example-1",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Example 1",
-    "text": "Example 1\n\nExampleCode\n\n\nPredict the body mass for a gentoo penguin.\n\n\n\nxlm &lt;- lm(body_mass ~ species,\n            data = penguins)\n\nxlm\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = body_mass ~ species, data = penguins)\n#&gt; \n#&gt; Coefficients:\n#&gt;      (Intercept)  speciesChinstrap     speciesGentoo  \n#&gt;          3706.16             26.92           1386.27\n\npredict_df &lt;- data.frame(species = \"Gentoo\")\n\npredict(xlm,\n        predict_df)\n\n#&gt;        1 \n#&gt; 5092.437"
+    "text": "Example 1\n\nExampleCode\n\n\nPredict the body mass for a penguin with a flipper length of 185.\n\n\n\n\nCode\nxlm &lt;- lm(body_mass ~ flipper_len,\n            data = penguins)\n\nxlm\n\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = body_mass ~ flipper_len, data = penguins)\n#&gt; \n#&gt; Coefficients:\n#&gt; (Intercept)  flipper_len  \n#&gt;    -5872.09        50.15\n\n\nCode\npredict_df &lt;- data.frame(flipper_len = 185)\n\npredict(xlm,\n        predict_df)\n\n\n#&gt;        1 \n#&gt; 3406.262"
   },
   {
     "objectID": "lectures/5.html#example-2-1",
     "href": "lectures/5.html#example-2-1",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Example 2",
-    "text": "Example 2\n\nExampleCode\n\n\nPredict the body mass for a penguin with a flipper length of 190.\n\n\n\nxlm &lt;- lm(body_mass ~ flipper_len,\n            data = penguins)\n\n\nxlm\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = body_mass ~ flipper_len, data = penguins)\n#&gt; \n#&gt; Coefficients:\n#&gt; (Intercept)  flipper_len  \n#&gt;    -5872.09        50.15\n\npredict_df &lt;- data.frame(flipper_len = 190)\n\npredict(xlm,\n        predict_df)\n\n#&gt;        1 \n#&gt; 3657.028"
+    "text": "Example 2\n\nExampleCode\n\n\nPredict the body mass for a penguin with a flipper length of 205.\n\n\n\n\nCode\nxlm &lt;- lm(body_mass ~ flipper_len,\n            data = penguins)\n\n\nxlm\n\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = body_mass ~ flipper_len, data = penguins)\n#&gt; \n#&gt; Coefficients:\n#&gt; (Intercept)  flipper_len  \n#&gt;    -5872.09        50.15\n\n\nCode\npredict_df &lt;- data.frame(flipper_len = 190)\n\npredict(xlm,\n        predict_df)\n\n\n#&gt;        1 \n#&gt; 3657.028"
   },
   {
     "objectID": "lectures/5.html#interpolation",
     "href": "lectures/5.html#interpolation",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Interpolation",
     "text": "Interpolation\nInterpolation is the process of estimating a value within the range of the observed input data \\(X\\)."
   },
   {
     "objectID": "lectures/5.html#extrapolation",
     "href": "lectures/5.html#extrapolation",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Extrapolation",
     "text": "Extrapolation\nExtrapolation is the process of estimating a value beyond the range of observed input data \\(X\\). It’s about venturing into the unknown, using what we know as a guide."
   },
   {
     "objectID": "lectures/5.html#extrapolation-1",
     "href": "lectures/5.html#extrapolation-1",
-    "title": "Simple Linear Regression",
+    "title": "Simple  Linear Regression",
     "section": "Extrapolation",
     "text": "Extrapolation\n\n\nCode\nggplot(penguins, aes(flipper_len, body_mass)) + \n  xlim(160, 250) +\n  ylim(2600, 7000) +\n  geom_point() +\n  stat_smooth(method = \"lm\", se = F)"
   },
@@ -1239,32 +1267,39 @@
     "text": "R Packages\n\nrcistats\ntidyverse"
   },
   {
-    "objectID": "lectures/3.html#motivating-example",
-    "href": "lectures/3.html#motivating-example",
+    "objectID": "lectures/3.html#palmer-penguins-1",
+    "href": "lectures/3.html#palmer-penguins-1",
     "title": "Numerical Data",
-    "section": "Motivating Example",
-    "text": "Motivating Example"
+    "section": "Palmer Penguins",
+    "text": "Palmer Penguins\n\n\nThe penguins data set was contains information on penguins from the Palmer Station located in . You can learn more about the data set here.\n\n\n\n\nArtwork by @allison_horst"
   },
   {
-    "objectID": "lectures/3.html#central-tendency-1",
-    "href": "lectures/3.html#central-tendency-1",
+    "objectID": "lectures/3.html#variables-of-interest",
+    "href": "lectures/3.html#variables-of-interest",
     "title": "Numerical Data",
-    "section": "Central Tendency",
-    "text": "Central Tendency"
-  },
-  {
-    "objectID": "lectures/3.html#variation-1",
-    "href": "lectures/3.html#variation-1",
-    "title": "Numerical Data",
-    "section": "Variation",
-    "text": "Variation"
+    "section": "Variables of Interest",
+    "text": "Variables of Interest\n\nflipper_len: Flipper Length in millimeters\nbody_mass: Body mass in grams"
   },
   {
     "objectID": "lectures/3.html#what-is-numerical-data",
     "href": "lectures/3.html#what-is-numerical-data",
     "title": "Numerical Data",
     "section": "What is numerical data?",
-    "text": "What is numerical data?\n\n\nCode\ntrashwheel$PlasticBottles\n\n\n#&gt;   [1] 1450 1120 2450 2380  980 1430  910 3580 2400 1340  740  950  530  840 1130\n#&gt;  [16] 1640 1350 1640 1730 5960 2170 1930 3200 2500 2140 1630 3640 1430  570 4800\n#&gt;  [31]  550 2240 4220 1400 2820 1900 3650  760 1250  880 1800 1370  550  640 1160\n#&gt;  [46] 1570 1340 1740 2870 3120 2780 2240 2550 1470 1240 1150 2850  960  870 1340\n#&gt;  [61] 2630 1850 2830 1740 2780 1260 2340 3240  940  830  960  870  920 1130 1060\n#&gt;  [76]  740  950 2340 2660 2430 2690 1540 1240 2870 2450 1830 2360 2640 2840 2640\n#&gt;  [91] 3070 2820 2640  870 3220 1980  410  640 2730 1360  760 1240  800 2540 2130\n#&gt; [106] 2670 1940 2140 1960 1640 1850 2370 2530 2720 2250 3240 3530 2340 2460 1340\n#&gt; [121]  950 2240 3050 1630 1120 3340 3560 2460 3860 3230 3760 3640 4230 3590 3740\n#&gt; [136] 4200 3840 4350 3960 4150 4450 3460 2850 3560 4130 4350 4420 2130 2450 2300\n#&gt; [151] 2850 2640 3250 2530 2780 2740 2530 1876 2340 2244 2980 3460 1840 1360 1880\n#&gt; [166] 2460 2260 2890 2140 2570 2030 1940 1870 1920 1920 2230  980  650  430  390\n#&gt; [181]  490  210  560  470  390  460  530  460  340  360 2540 2870 2230 2340 2560\n#&gt; [196] 2340 2480 2540 2980 3250 3340 2850 3220 2110 3670 2890 1460 3240 3530 2760\n#&gt; [211] 2980 2430 1500 1270 1340 2780 2910 2760 2950 2550 2720 2540 2370 2250 1260\n#&gt; [226]  950 1020 2250 1130 1240 1950 1460 2210 2470 2150  970  840  790  750  810\n#&gt; [241]  790  670  710  730  820  760  670  730  750  820 1580 2130 2350 2460 1220\n#&gt; [256]  950  400 1050 1480 1300 1650 2130 2340 1890 1420 1280 1140  870  940  620\n#&gt; [271] 1560 1720 1890 1760  890  710  620  780  540  670  820  540  730  910  710\n#&gt; [286] 1750 1320 2740 1120 2100 3110 1200 1390  940 1220 1960 2150 2380 1440 1080\n#&gt; [301] 1840 2100 1500  660  590 1200 2610 1820 1080  790 1240  780  480  300  990\n#&gt; [316] 1110  580 2200 1900 2800  840  680  300  240 1015 2150  580 1400  800 1110\n#&gt; [331] 1980 1040  940  600  460  980 1880  900 1740 1140 2040 2800 1800 3300 1880\n#&gt; [346] 2000 2680  950 3700 1900 3600 2400 4400  980 1980 3600 2200 2800 4200  800\n#&gt; [361] 1400 1800 2210  980 2800 1900 2780 2440 3400  920 1260 1980 1000  960  640\n#&gt; [376]  860  590 1800 3600 2300 3900 2900 1850 3400  980  750  500 3200 3800 1850\n#&gt; [391] 2800  980 3200 2800 2640 1200  510  660  480 2900 2300 1980 1040  900 3400\n#&gt; [406] 1800 3000 2800  950 3800  800  760  540  340  600  480 2100 1840 1100 2650\n#&gt; [421] 1900  900 1880 1240 3000 2300 1400 2050 3250 2100 2450 4050 3800 3000 2200\n#&gt; [436] 3500 1800 1250 2200 1640 1080 1790 2080 1600 2200 2000 1200  980  800 1200\n#&gt; [451] 1800 1440 1600 2400 1900 2100 1200  720  800 2200 1600 1000 3000 2700 2300\n#&gt; [466] 1900 5800 1800 2200 3400 4400 3400 2500 1600 1200 1040 4400 4800 1800 3600\n#&gt; [481] 3000 4200 1400 2800 1800 3400 2600 3300 4100 1800 3500 2900  850  680 3100\n#&gt; [496] 1750  980 2800 1200  840 1040  500  800  640  900  660  750 3800 2900 1800\n#&gt; [511] 2700 4200 3000 1200  600 4400 3100 2800 1100 3400 2800  800 1800  540 3300\n#&gt; [526] 2800  900 2100 3200 1440  800  540 2900 2000  960 3200 1250 2900 2100 3600\n#&gt; [541] 1400 3900 3000 1800 2700 2400 2900 1400 3900 4200 2800 1900  960  640  750\n#&gt; [556]  500 3500 2900 2100 3200 1800 1500 2100 1000 2900 1600 2100 1700 2400 3600\n#&gt; [571] 2700 2900 1800 2200 3000 2100 1000 2700 2200 3100 3400 4000 2100 1900 2300\n#&gt; [586] 3200 1200 3400 2100  980  540 1100  750 1800 2300 3400 2700 3000 3800 4200\n#&gt; [601] 1800 2000 3300 4200 1200 2200  850  980  300  450   80 1800 2200 3400 3100\n#&gt; [616] 2600 1800 1200 2200 1400 2100 1600 2000 3200 2100 1400  880 2000 1200 1950\n#&gt; [631] 9540 8350 8590 7830 8210 9830 9240 9540 8230 7540 8490 9610 7960 8870 7420\n#&gt; [646] 8250 8472 7530 2340 2210 2670  657 2290 2110 7340 9230 1020  900 1140 1350\n#&gt; [661] 1200 1090  920 3150 6970 9100 8400 6500 4400 3600 4000 3700 4057 8800 6800\n#&gt; [676] 5900 7500 8000 4400 6600 3800 4800 4400 5200 6400 5900 4800 5600 7200 4400\n#&gt; [691] 5400 4800 6700 6000 6800 5950 7200 6400 5300 4900 4400 5000 4900 4800 5800\n#&gt; [706] 3600 4200 5000 5400 6400 4000 4300 5100 3900 2700 3000 4100 3900 4400 4900\n#&gt; [721] 3600 4500 5000 5400 3400 4800 3800 2900 3200 4200 2900   NA 3400 4100 3900\n#&gt; [736] 4900 3400 5100 4200 2900 3800 3200 4000 1150 2320 3450 1490  920 1010  680\n#&gt; [751] 1800 2700  950  103 1850 1200 1050 1860 1180 1050 1420 1800 1500 1200  860\n#&gt; [766]  640 1400  980 2100 1100 2400 1500 2200 1200 2000 1800 1000 2100 2400 2700\n#&gt; [781] 3000  980  240  840 1800 1000  500   12 2400 1000 1800  300 2100 2400 1200\n#&gt; [796] 1800 2100  280  480  150 1400  980   40  640  800 1000  810  500 1800  840\n#&gt; [811]  500 1500  480 1000 1200  450  280  150    0    0 2100 1800 1400  980 3000\n#&gt; [826] 2400 1100  340 1200  600 2300 1200 3000 4200 1800  980 2100 3200 1050 2700\n#&gt; [841]  980 1400  800  640  240 2100 2800 1600 1200 2200  980  540  320  270 1200\n#&gt; [856]  360  120  480    0 2400 3200 2500 1800  250  240  640  180  540    0    0\n#&gt; [871] 2800 1600  980  480  720    0  360 2100 2900 2100 1800 2900 3200 1800 1600\n#&gt; [886] 2800 1200 2100 2500 1800 1600 2100 1200  980 2500 1900 2100 1200  900  800\n#&gt; [901]  480  720 1600 2400  800  500  640  900 1400 2100 1900  960 2400 1800 2700\n#&gt; [916] 1500  930 2100 3000 1600 1200 4100 5400 4400 5000 3400 4900 2500 2700 1300\n#&gt; [931]  800  440 2100 3200 1100  800  540 4100 3300 1500  850  440 2800 1200 1400\n#&gt; [946]  880  750 1800  400   10 1400  600 2500 1100 2300 1000 1300  500  700   20\n#&gt; [961]    0 1800  680 2800 3300 2900 1800 2800 1000 2500  950  360    0 3400 2700\n#&gt; [976] 3200 2800 1600 2900 2000 2500 1400  800 1500 2100 1400  980 1800  500 1200\n#&gt; [991]  180    0    0"
+    "text": "What is numerical data?\n\n\nCode\npenguins |&gt; \n  slice(1:7) |&gt; \n  pull(flipper_len)\n\n\n#&gt; [1] 181 186 195 193 190 181 195"
+  },
+  {
+    "objectID": "lectures/3.html#central-tendency",
+    "href": "lectures/3.html#central-tendency",
+    "title": "Numerical Data",
+    "section": "Central Tendency",
+    "text": "Central Tendency\n\n\nCode\npenguins |&gt; \n  slice(1:7) |&gt; \n  pull(flipper_len)\n\n\n#&gt; [1] 181 186 195 193 190 181 195"
+  },
+  {
+    "objectID": "lectures/3.html#variation",
+    "href": "lectures/3.html#variation",
+    "title": "Numerical Data",
+    "section": "Variation",
+    "text": "Variation\n\n\nCode\npenguins |&gt; \n  slice(1:7) |&gt; \n  pull(flipper_len)\n\n\n#&gt; [1] 181 186 195 193 190 181 195"
   },
   {
     "objectID": "lectures/3.html#summary-statistics-1",
@@ -1274,15 +1309,15 @@
     "text": "Summary Statistics\nSummary statistics are used to describe the distribution of data."
   },
   {
-    "objectID": "lectures/3.html#central-tendency-2",
-    "href": "lectures/3.html#central-tendency-2",
+    "objectID": "lectures/3.html#central-tendency-1",
+    "href": "lectures/3.html#central-tendency-1",
     "title": "Numerical Data",
     "section": "Central Tendency",
     "text": "Central Tendency\nCentral tendency is a statistical concept that refers to the central or typical value around which a set of data points tends to cluster. It is used to summarize and describe a data set by identifying a single representative value that provides insights into the data’s overall characteristics."
   },
   {
-    "objectID": "lectures/3.html#variation-2",
-    "href": "lectures/3.html#variation-2",
+    "objectID": "lectures/3.html#variation-1",
+    "href": "lectures/3.html#variation-1",
     "title": "Numerical Data",
     "section": "Variation",
     "text": "Variation\nVariation in statistics refers to the extent to which data points in a dataset deviate or differ from a central tendency measure. Understanding variation is crucial for making informed decisions, drawing meaningful conclusions, and assessing the reliability of statistical analyses."
@@ -1313,28 +1348,28 @@
     "href": "lectures/3.html#q1",
     "title": "Numerical Data",
     "section": "Q1",
-    "text": "Q1\nQ1 is the value signifying that a quarter of the data is lower than it."
+    "text": "Q1\nQ1 is the value signifying that a quarter of the data (25%) is lower than it."
   },
   {
-    "objectID": "lectures/3.html#q2---median",
-    "href": "lectures/3.html#q2---median",
+    "objectID": "lectures/3.html#q2---median-tildex",
+    "href": "lectures/3.html#q2---median-tildex",
     "title": "Numerical Data",
-    "section": "Q2 - Median",
-    "text": "Q2 - Median\nQ2 is the value signifying that half of the data is below it.\n\nThe median also represents the central tendency of the data."
+    "section": "Q2 - Median (\\(\\tilde{x}\\))",
+    "text": "Q2 - Median (\\(\\tilde{x}\\))\nQ2 is the value signifying that half of the data (50%) is below it.\n\nThe median also represents the central tendency of the data."
   },
   {
     "objectID": "lectures/3.html#q3",
     "href": "lectures/3.html#q3",
     "title": "Numerical Data",
     "section": "Q3",
-    "text": "Q3\nQ3 is the value signifying that 3 quarters of the data is below it."
+    "text": "Q3\nQ3 is the value signifying that 3 quarters (75%) of the data is below it."
   },
   {
     "objectID": "lectures/3.html#interquartile-range",
     "href": "lectures/3.html#interquartile-range",
     "title": "Numerical Data",
     "section": "Interquartile Range",
-    "text": "Interquartile Range\n\n\\[\nIQR = Q_3 - Q_1\n\\]"
+    "text": "Interquartile Range\n\\[\nIQR = Q_3 - Q_1\n\\]"
   },
   {
     "objectID": "lectures/3.html#range",
@@ -1351,18 +1386,18 @@
     "text": "How to identify the quartiles?\n\nSort the data\nID Max and Min\nFind the amount of data the makes a quarter:\n\n\\(K=N/4\\)\n\nCreate 4 groups using the sorted data\n\ngroup by data size\nIf \\(K\\) has a decimal, the \\(Kth\\) value is quartile of each group."
   },
   {
-    "objectID": "lectures/3.html#mean",
-    "href": "lectures/3.html#mean",
+    "objectID": "lectures/3.html#mean-barx",
+    "href": "lectures/3.html#mean-barx",
     "title": "Numerical Data",
-    "section": "Mean",
-    "text": "Mean\nDescribe how you will find the mean of these numbers:\n\n\n#&gt; [1] 23 13 18 14 10"
+    "section": "Mean (\\(\\bar{x}\\))",
+    "text": "Mean (\\(\\bar{x}\\))\nDescribe how you will find the mean of these numbers:\n\n\n#&gt; [1] 18 18 12 18 13"
   },
   {
-    "objectID": "lectures/3.html#mean-1",
-    "href": "lectures/3.html#mean-1",
+    "objectID": "lectures/3.html#mean-barx-1",
+    "href": "lectures/3.html#mean-barx-1",
     "title": "Numerical Data",
-    "section": "Mean",
-    "text": "Mean\nThe mean is another measurement for central tendency.\n\\[\n\\bar X = \\frac{1}{n}\\sum^n_{i=1}X_i\n\\]\n\n\\(n\\): total data points\n\\(X_i\\): data points\n\\(i\\): indexing data\n\\(\\sum\\): add all from first (bottom) to last (up)"
+    "section": "Mean (\\(\\bar{x}\\))",
+    "text": "Mean (\\(\\bar{x}\\))\nThe mean is another measurement for central tendency.\n\\[\n\\bar X = \\frac{1}{n}\\sum^n_{i=1}X_i\n\\]\n\n\\(n\\): total data points\n\\(X_i\\): data points\n\\(i\\): indexing data\n\\(\\sum\\): add all from first (bottom) to last (up)"
   },
   {
     "objectID": "lectures/3.html#variance",
@@ -1379,6 +1414,20 @@
     "text": "Standard Deviation\nThe standard deviation is a measurement on the average distance the data points are from the central tendency.\n\\[\ns=\\sqrt{s^2}\n\\]"
   },
   {
+    "objectID": "lectures/3.html#mean-vs-median",
+    "href": "lectures/3.html#mean-vs-median",
+    "title": "Numerical Data",
+    "section": "Mean vs Median",
+    "text": "Mean vs Median\n\n\nMean\n\\[\n\\bar X = \\frac{1}{n}\\sum^n_{i=1}x_i\n\\]\n\nMedian\n\\[\nP(X \\leq \\tilde{X}) = 0.5\n\\]"
+  },
+  {
+    "objectID": "lectures/3.html#mean-vs-median-1",
+    "href": "lectures/3.html#mean-vs-median-1",
+    "title": "Numerical Data",
+    "section": "Mean vs Median",
+    "text": "Mean vs Median\nMean (blue line) vs Median (red line)"
+  },
+  {
     "objectID": "lectures/3.html#outliers",
     "href": "lectures/3.html#outliers",
     "title": "Numerical Data",
@@ -1390,63 +1439,63 @@
     "href": "lectures/3.html#numerical-statistics-in-r-1",
     "title": "Numerical Data",
     "section": "Numerical Statistics in R",
-    "text": "Numerical Statistics in R"
+    "text": "Numerical Statistics in R\nR has several built in functions to compute statistics."
   },
   {
-    "objectID": "lectures/3.html#mean-2",
-    "href": "lectures/3.html#mean-2",
+    "objectID": "lectures/3.html#mean-1",
+    "href": "lectures/3.html#mean-1",
     "title": "Numerical Data",
     "section": "Mean",
-    "text": "Mean\n\n\nCode\nmean(DATA$VAR)"
+    "text": "Mean\nmean(DATA$VAR)\n\nDATA: Name of the data frame (eg: penguins)\nVAR: Name of the variable to create a plot (eg: flipper_len)"
   },
   {
-    "objectID": "lectures/3.html#median",
-    "href": "lectures/3.html#median",
+    "objectID": "lectures/3.html#median-1",
+    "href": "lectures/3.html#median-1",
     "title": "Numerical Data",
     "section": "Median",
-    "text": "Median\n\n\nCode\nmedian(DATA$VAR)"
+    "text": "Median\nmedian(DATA$VAR)\n\nDATA: Name of the data frame (eg: penguins)\nVAR: Name of the variable to create a plot (eg: flipper_len)"
   },
   {
     "objectID": "lectures/3.html#standard-deviation-1",
     "href": "lectures/3.html#standard-deviation-1",
     "title": "Numerical Data",
     "section": "Standard Deviation",
-    "text": "Standard Deviation\n\n\nCode\nsd(DATA$VAR)"
+    "text": "Standard Deviation\nsd(DATA$VAR)\n\nDATA: Name of the data frame (eg: penguins)\nVAR: Name of the variable to create a plot (eg: flipper_len)"
   },
   {
     "objectID": "lectures/3.html#variance-1",
     "href": "lectures/3.html#variance-1",
     "title": "Numerical Data",
     "section": "Variance",
-    "text": "Variance\n\n\nCode\nvar(DATA$VAR)"
+    "text": "Variance\nvar(DATA$VAR)\n\nDATA: Name of the data frame (eg: penguins)\nVAR: Name of the variable to create a plot (eg: flipper_len)"
   },
   {
     "objectID": "lectures/3.html#quartiles-1",
     "href": "lectures/3.html#quartiles-1",
     "title": "Numerical Data",
     "section": "Quartiles",
-    "text": "Quartiles\n\n\nCode\nquantile(DATA$VAR, probs = c(0.25, 0.5, 0.75))"
+    "text": "Quartiles\nquantile(DATA$VAR, probs = c(0.25, 0.5, 0.75))\n\nDATA: Name of the data frame (eg: penguins)\nVAR: Name of the variable to create a plot (eg: flipper_len)"
   },
   {
     "objectID": "lectures/3.html#max-and-min",
     "href": "lectures/3.html#max-and-min",
     "title": "Numerical Data",
     "section": "Max and Min",
-    "text": "Max and Min\n\n\nCode\nmax(DATA$VAR)\nmin(DATA$VAR)"
+    "text": "Max and Min\nmax(DATA$VAR)\nmin(DATA$VAR)\n\nDATA: Name of the data frame (eg: penguins)\nVAR: Name of the variable to create a plot (eg: flipper_len)"
   },
   {
     "objectID": "lectures/3.html#summary-statistics-2",
     "href": "lectures/3.html#summary-statistics-2",
     "title": "Numerical Data",
     "section": "Summary Statistics",
-    "text": "Summary Statistics\n\n\nCode\nnum_stats(DATA$VAR)"
+    "text": "Summary Statistics\nrnum_stats(DATA$VAR)\n\nDATA: Name of the data frame (eg: penguins)\nVAR: Name of the variable to create a plot (eg: flipper_len)"
   },
   {
-    "objectID": "lectures/3.html#mr.-trash-wheel",
-    "href": "lectures/3.html#mr.-trash-wheel",
+    "objectID": "lectures/3.html#penguins",
+    "href": "lectures/3.html#penguins",
     "title": "Numerical Data",
-    "section": "Mr. Trash Wheel",
-    "text": "Mr. Trash Wheel\n\n\nCode\nnum_stats(trashwheel$PlasticBottles)\n\n\n#&gt;   min   q25     mean median  q75  max       sd     var    iqr missing\n#&gt; 1   0 987.5 2219.331   1900 2900 9830 1650.449 2723984 1912.5       1"
+    "section": "Penguins",
+    "text": "Penguins\n\n\nCode\nnum_stats(penguins$flipper_len)\n\n\n#&gt;   min q25    mean median q75 max     sd     var iqr missing\n#&gt; 1 172 190 200.967    197 213 231 14.016 196.442  23       0"
   },
   {
     "objectID": "lectures/3.html#histogram",
@@ -1460,7 +1509,7 @@
     "href": "lectures/3.html#histogram-r-code",
     "title": "Numerical Data",
     "section": "Histogram R Code",
-    "text": "Histogram R Code\n\n\nCode\nggplot(DATA, aes(VARIABLE)) +\n  geom_histogram(bins = X)"
+    "text": "Histogram R Code\nggplot(DATA, aes(VAR)) +\n  geom_histogram()\nTo change bins:\nggplot(DATA, aes(VAR)) +\n  geom_histogram(bins = VAL)\n\nDATA: Name of the data frame (eg: penguins)\nVAR: Name of the variable to create a plot (eg: flipper_len)\nVAL: Numerical value to change the bin width."
   },
   {
     "objectID": "lectures/3.html#histogram-1",
@@ -1491,11 +1540,11 @@
     "text": "Histograms\n\n\nCode\ny &lt;- rbinom(1000, 1, 0.4)\nz &lt;- (y == 0) * rnorm(1000, 23) + (y == 1) * rnorm(1000, 27)\nggplot(tibble(z), aes(z)) +\n  geom_histogram(bins = 15)"
   },
   {
-    "objectID": "lectures/3.html#mr.-trash-wheel-1",
-    "href": "lectures/3.html#mr.-trash-wheel-1",
+    "objectID": "lectures/3.html#penguins-1",
+    "href": "lectures/3.html#penguins-1",
     "title": "Numerical Data",
-    "section": "Mr. Trash Wheel",
-    "text": "Mr. Trash Wheel\n\n\nCode\nggplot(trashwheel, aes(PlasticBottles)) +\n  geom_histogram()"
+    "section": "Penguins",
+    "text": "Penguins\n\nggplot(penguins, aes(flipper_len)) +\n  geom_histogram()"
   },
   {
     "objectID": "lectures/3.html#box-plot",
@@ -1516,21 +1565,21 @@
     "href": "lectures/3.html#box-plot-r-code",
     "title": "Numerical Data",
     "section": "Box Plot R Code",
-    "text": "Box Plot R Code\n\n\nCode\nggplot(DATA, aes(VARIABLE)) +\n  geom_boxplot()"
+    "text": "Box Plot R Code\nggplot(DATA, aes(VAR)) +\n  geom_boxplot()\n\nDATA: Name of the data frame (eg: penguins)\nVAR: Name of the variable to create a plot (eg: flipper_len)"
   },
   {
     "objectID": "lectures/3.html#box-plot-2",
     "href": "lectures/3.html#box-plot-2",
     "title": "Numerical Data",
     "section": "Box Plot",
-    "text": "Box Plot\n\n\nCode\nggplot(trashwheel, aes(PlasticBottles)) +\n  geom_boxplot()"
+    "text": "Box Plot\n\nggplot(penguins, aes(flipper_len)) +\n  geom_boxplot()"
   },
   {
     "objectID": "lectures/3.html#box-plot-3",
     "href": "lectures/3.html#box-plot-3",
     "title": "Numerical Data",
     "section": "Box Plot",
-    "text": "Box Plot\n\n\nCode\nggplot(trashwheel, aes(y = PlasticBottles)) +\n  geom_boxplot()"
+    "text": "Box Plot\n\nggplot(penguins, aes(y = flipper_len)) +\n  geom_boxplot()"
   },
   {
     "objectID": "lectures/3.html#dot-plots",
@@ -1544,14 +1593,98 @@
     "href": "lectures/3.html#dot-plots-in-r",
     "title": "Numerical Data",
     "section": "Dot Plots in R",
-    "text": "Dot Plots in R\n\n\nCode\nggplot(DATA, aes(VARIABLE)) +\n  geom_dotplot(binwidth = X)"
+    "text": "Dot Plots in R\nggplot(DATA, aes(VAR)) +\n  geom_dotplot()\nTo change binwidth\nggplot(DATA, aes(VAR)) +\n  geom_dotplot(binwidth = VAL)\n\nDATA: Name of the data frame (eg: penguins)\nVAR: Name of the variable to create a plot (eg: flipper_len)\nVAL: Numerical value to change the bin width."
   },
   {
     "objectID": "lectures/3.html#dot-plots-1",
     "href": "lectures/3.html#dot-plots-1",
     "title": "Numerical Data",
     "section": "Dot Plots",
-    "text": "Dot Plots\n\n\nCode\nggplot(trashwheel, aes(PlasticBottles)) +\n  geom_dotplot(binwidth = 100)"
+    "text": "Dot Plots\n\nggplot(penguins, aes(flipper_len)) +\n  geom_dotplot(binwidth = 1)"
+  },
+  {
+    "objectID": "lectures/3.html#density-plot",
+    "href": "lectures/3.html#density-plot",
+    "title": "Numerical Data",
+    "section": "Density Plot",
+    "text": "Density Plot"
+  },
+  {
+    "objectID": "lectures/3.html#density-plot-1",
+    "href": "lectures/3.html#density-plot-1",
+    "title": "Numerical Data",
+    "section": "Density Plot",
+    "text": "Density Plot\nA density plot is a way to visualize the distribution of a continuous variable — it shows where data values are concentrated (dense) and where they are sparse via the height of the graph."
+  },
+  {
+    "objectID": "lectures/3.html#density-plot-in-r",
+    "href": "lectures/3.html#density-plot-in-r",
+    "title": "Numerical Data",
+    "section": "Density Plot in R",
+    "text": "Density Plot in R\nggplot(DATA, aes(VAR)) +\n  geom_density()\n\nDATA: Name of the data frame (eg: penguins)\nVAR: Name of the variable to create a plot (eg: flipper_len)"
+  },
+  {
+    "objectID": "lectures/3.html#density-plot-2",
+    "href": "lectures/3.html#density-plot-2",
+    "title": "Numerical Data",
+    "section": "Density Plot",
+    "text": "Density Plot\n\nggplot(penguins, aes(flipper_len)) +\n  geom_density()"
+  },
+  {
+    "objectID": "lectures/3.html#adding-vertical-lines",
+    "href": "lectures/3.html#adding-vertical-lines",
+    "title": "Numerical Data",
+    "section": "Adding Vertical Lines",
+    "text": "Adding Vertical Lines\nggplot(DATA, aes(VAR)) +\n  geom_density() +\n  geom_vline(xintercept = XVAL)\n\nDATA: Name of the data frame (eg: penguins)\nVAR: Name of the variable to create a plot (eg: flipper_len)\nXVAL: Number to place the vertical line (eg: 5)"
+  },
+  {
+    "objectID": "lectures/3.html#vertical-lines",
+    "href": "lectures/3.html#vertical-lines",
+    "title": "Numerical Data",
+    "section": "Vertical Lines",
+    "text": "Vertical Lines\n\nggplot(penguins, aes(flipper_len)) +\n  geom_density() +\n  geom_vline(xintercept = mean(penguins$flipper_len), col  = \"blue\") +\n  geom_vline(xintercept = median(penguins$flipper_len), col = \"red\")"
+  },
+  {
+    "objectID": "lectures/3.html#adding-horizontal-lines",
+    "href": "lectures/3.html#adding-horizontal-lines",
+    "title": "Numerical Data",
+    "section": "Adding Horizontal Lines",
+    "text": "Adding Horizontal Lines\nggplot(DATA, aes(VAR)) +\n  geom_density() +\n  geom_hline(yintercept = YVAL)\n\nDATA: Name of the data frame (eg: penguins)\nVAR: Name of the variable to create a plot (eg: flipper_len)\nYVAL: Number to place the horizontal line (eg: 2)"
+  },
+  {
+    "objectID": "lectures/3.html#horizontal-lines",
+    "href": "lectures/3.html#horizontal-lines",
+    "title": "Numerical Data",
+    "section": "Horizontal Lines",
+    "text": "Horizontal Lines\n\nggplot(penguins, aes(flipper_len)) +\n  geom_density() +\n  geom_hline(yintercept = 0.01, col  = \"blue\") +\n  geom_hline(yintercept = 0.02, col = \"red\")"
+  },
+  {
+    "objectID": "lectures/3.html#skeweness-1",
+    "href": "lectures/3.html#skeweness-1",
+    "title": "Numerical Data",
+    "section": "Skeweness",
+    "text": "Skeweness\nSkewness is a statistical measure to determine if unimodal data follows a symmetric distribution, skewed to the left, or skewed to the right."
+  },
+  {
+    "objectID": "lectures/3.html#symmetric-distribution",
+    "href": "lectures/3.html#symmetric-distribution",
+    "title": "Numerical Data",
+    "section": "Symmetric Distribution",
+    "text": "Symmetric Distribution\nA symmetric distribution will look bell shaped and the mean (red line) and median (dashed blue line) will overlap each other.\n\n\nCode\ny &lt;- rnorm(100000)\nggplot(tibble(y), aes(y)) +\n  geom_density() +\n  geom_vline(xintercept = mean(y), col = \"red\") +\n  geom_vline(xintercept = median(y), col = \"blue\", lty = 2)"
+  },
+  {
+    "objectID": "lectures/3.html#right-skewed-distribution",
+    "href": "lectures/3.html#right-skewed-distribution",
+    "title": "Numerical Data",
+    "section": "Right Skewed Distribution",
+    "text": "Right Skewed Distribution\nA right skewed distribution looks asymetric and the mean (red line) is to the right of the median (dashed blue line).\n\n\nCode\ny &lt;- rgamma(100000, shape = 4)\nggplot(tibble(y), aes(y)) +\n  geom_density() +\n  geom_vline(xintercept = mean(y), col = \"red\") +\n  geom_vline(xintercept = median(y), col = \"blue\", lty = 2)"
+  },
+  {
+    "objectID": "lectures/3.html#left-skewed-distribution",
+    "href": "lectures/3.html#left-skewed-distribution",
+    "title": "Numerical Data",
+    "section": "left Skewed Distribution",
+    "text": "left Skewed Distribution\nA left skewed distribution looks asymetric and the mean (red line) is to the left of the median (dashed blue line).\n\n\nCode\ny &lt;- rbeta(100000, shape1 = 5, shape2 = 1.25)\nggplot(tibble(y), aes(y)) +\n  geom_density() +\n  geom_vline(xintercept = mean(y), col = \"red\") +\n  geom_vline(xintercept = median(y), col = \"blue\", lty = 2)"
   },
   {
     "objectID": "lectures/3.html#scatter-plots-1",
@@ -1582,25 +1715,25 @@
     "text": "No Relationship"
   },
   {
-    "objectID": "lectures/3.html#weak-positive-or-negative-relationship",
-    "href": "lectures/3.html#weak-positive-or-negative-relationship",
+    "objectID": "lectures/3.html#weak-relationship",
+    "href": "lectures/3.html#weak-relationship",
     "title": "Numerical Data",
-    "section": "Weak Positive or Negative Relationship",
-    "text": "Weak Positive or Negative Relationship"
+    "section": "Weak Relationship",
+    "text": "Weak Relationship"
   },
   {
     "objectID": "lectures/3.html#scatter-plots-in-r",
     "href": "lectures/3.html#scatter-plots-in-r",
     "title": "Numerical Data",
     "section": "Scatter Plots in R",
-    "text": "Scatter Plots in R\n\n\nCode\nggplot(DATA, aes(x = VAR1, y = VAR2)) +\n  geom_point()"
+    "text": "Scatter Plots in R\nggplot(DATA, aes(x = VAR1, y = VAR2)) +\n  geom_point()\n\nDATA: Name of the data frame (eg: penguins)\nVAR1: Name of the X variable to create a plot (eg: flipper_len)\nVAR2: Name of the Y variable to create a plot (eg: body_mass)"
   },
   {
-    "objectID": "lectures/3.html#mr.-trash-wheel-2",
-    "href": "lectures/3.html#mr.-trash-wheel-2",
+    "objectID": "lectures/3.html#penguins-2",
+    "href": "lectures/3.html#penguins-2",
     "title": "Numerical Data",
-    "section": "Mr. Trash Wheel",
-    "text": "Mr. Trash Wheel\n\n\nCode\nggplot(trashwheel, aes(PlasticBottles, PlasticBags)) +\n  geom_point()"
+    "section": "Penguins",
+    "text": "Penguins\n\n\nCode\nggplot(penguins, aes(flipper_len, body_mass)) +\n  geom_point()"
   },
   {
     "objectID": "lectures/1a.html#statistical-warning",
@@ -2384,7 +2517,7 @@
     "href": "lectures.html",
     "title": "Lectures",
     "section": "",
-    "text": "Categorical Data\n\n\n\n\n\nProvides an overview descriptive statistics and data visualization techniques for categorical data.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Generating Process\n\n\n\n\n\nProvides a brief introduction of data, study design, and the data generating process.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDistribution Functions\n\n\n\n\n\nProvides an overview distribution function (mathematical models).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGroup Regression Models\n\n\n\n\n\nDiscuss using categorical predictor variables.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstalling R and Positron\n\n\nClass Lecture\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMultivariable Regression\n\n\n\n\n\nContinues the discussion with linear and logistic regression.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNumerical Data\n\n\n\n\n\nProvides an overview descriptive statistics and data visualization techniques for numerical data.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSampling Distribution\n\n\n\n\n\nDiscuss for sampling distributions.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSimple Linear Regression\n\n\n\n\n\nBegins the discussion for linear regression.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSimple Logistic Regression\n\n\n\n\n\nBegins the discussion for logistic regression.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Inference\n\n\n\n\n\nBegin the discussion of statistical inference.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Inference\n\n\nGroup Model Inference\n\n\nTesting the difference in groups.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Inference\n\n\nModel Inference\n\n\nFinish the discussion on model inference.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics\n\n\nA Math? A Science? An Art? Or Something Else?\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Categorical Data\n\n\n\n\n\nProvides an overview descriptive statistics and data visualization techniques for categorical data.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Generating Process\n\n\n\n\n\nProvides a brief introduction of data, study design, and the data generating process.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDistribution Functions\n\n\n\n\n\nProvides an overview distribution function (mathematical models).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGroup Regression Models\n\n\n\n\n\nDiscuss using categorical predictor variables.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstalling R and Positron\n\n\nClass Lecture\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMultivariable Regression\n\n\n\n\n\nContinues the discussion with linear and logistic regression.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNumerical Data\n\n\n\n\n\nProvides an overview descriptive statistics and data visualization techniques for numerical data.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSampling Distribution\n\n\n\n\n\nDiscuss for sampling distributions.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSimple  Linear Regression\n\n\n\n\n\nBegins the discussion for linear regression.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSimple  Logistic Regression\n\n\n\n\n\nBegins the discussion for logistic regression.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Inference\n\n\n\n\n\nBegin the discussion of statistical inference.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Inference\n\n\nGroup Model Inference\n\n\nTesting the difference in groups.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Inference\n\n\nModel Inference\n\n\nFinish the discussion on model inference.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics\n\n\nA Math? A Science? An Art? Or Something Else?\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "ec/ec_3.html",
@@ -3070,28 +3203,28 @@
     "href": "lectures/2.html#r-packages",
     "title": "Categorical Data",
     "section": "R Packages",
-    "text": "R Packages\n\ncsucistats\ntidyverse"
+    "text": "R Packages\n\nrcistats\ntidyverse"
   },
   {
-    "objectID": "lectures/2.html#background",
-    "href": "lectures/2.html#background",
+    "objectID": "lectures/2.html#heart-disease-data",
+    "href": "lectures/2.html#heart-disease-data",
     "title": "Categorical Data",
-    "section": "Background",
-    "text": "Background\nIn October 2023, James Hoffman and Cometeer held the “Great American Coffee Taste Test” on YouTube, asking viewers to fill out a survey and coffee ordered from Cometeer."
+    "section": "Heart Disease Data",
+    "text": "Heart Disease Data\nThe heart_disease data set provides heart disease information on patients from Cleveland, Ohio. The data was originally published in the American Journal or Cardiology."
   },
   {
     "objectID": "lectures/2.html#data",
     "href": "lectures/2.html#data",
     "title": "Categorical Data",
     "section": "Data",
-    "text": "Data\nThe data is part of DSLC Tidy Tuesday program where data sets are provided to help data science learners how to create graphics.\nInformation on the data sets variables (columns) can be found here."
+    "text": "Data\n\n\nCode\nheart_disease |&gt; \n  DT::datatable(options = list(dom = \"t\",\n                pageLength = 4))"
   },
   {
-    "objectID": "lectures/2.html#data-1",
-    "href": "lectures/2.html#data-1",
+    "objectID": "lectures/2.html#variables-of-interest",
+    "href": "lectures/2.html#variables-of-interest",
     "title": "Categorical Data",
-    "section": "Data",
-    "text": "Data\n\n\nCode\nlibrary(rcistats)\nlibrary(tidyverse)\nlibrary(ThemePark)\nlibrary(DT)\n\ncoffee &lt;- read_csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-05-14/coffee_survey.csv\")\ndatatable(slice_sample(coffee, n = 10), options = list(dom = \"p\", pageLength = 5))"
+    "section": "Variables of Interest",
+    "text": "Variables of Interest\n\ncp: Type of Chest Pain\ndisease: Indicating if they have heart disease"
   },
   {
     "objectID": "lectures/2.html#categorical-data-1",
@@ -3140,7 +3273,7 @@
     "href": "lectures/2.html#frequencey",
     "title": "Categorical Data",
     "section": "Frequencey",
-    "text": "Frequencey\nFrequency represents the count of observing a specific category in your sample.\n\n\n#&gt;  [1] NA  \"2\" \"3\" \"2\" \"1\" \"3\" \"2\" \"2\" \"4\" \"2\""
+    "text": "Frequencey\nFrequency represents the count of observing a specific category in your sample.\n\n\n#&gt; [1] Non-anginal Pain Asymptomatic     Asymptomatic     Asymptomatic    \n#&gt; [5] Atypical Angina  Asymptomatic     Asymptomatic     Non-anginal Pain\n#&gt; Levels: Asymptomatic Atypical Angina Non-anginal Pain Typical Angina"
   },
   {
     "objectID": "lectures/2.html#proportions-relative-frequencey",
@@ -3154,7 +3287,14 @@
     "href": "lectures/2.html#continguency-tables-in-r",
     "title": "Categorical Data",
     "section": "Continguency Tables in R",
-    "text": "Continguency Tables in R\nThe variable caffeine indicates how much caffeine a participant prefers.\n\n\nCode\ncat_stats(coffee$caffeine)"
+    "text": "Continguency Tables in R\ncat_stats(DATA$VAR)\n\nDATA: Name of the data frame (eg: heart_disease)\nVAR: Name of the variable to create a plot (eg: cp)"
+  },
+  {
+    "objectID": "lectures/2.html#example",
+    "href": "lectures/2.html#example",
+    "title": "Categorical Data",
+    "section": "Example",
+    "text": "Example\nThe variable cp indicates the type of chest pain.\n\ncat_stats(heart_disease$cp)\n\n#&gt; Continguency Table \n#&gt;  \n#&gt;                    n   prop\n#&gt; Asymptomatic     142 0.4781\n#&gt; Atypical Angina   49 0.1650\n#&gt; Non-anginal Pain  83 0.2795\n#&gt; Typical Angina    23 0.0774\n#&gt; \n#&gt; Number of Missing: 0\n#&gt; Proportion of Missing: 0\n#&gt; Row Variable: heart_disease$cp"
   },
   {
     "objectID": "lectures/2.html#plotting-in-r",
@@ -3182,35 +3322,35 @@
     "href": "lectures/2.html#frequency-bar-plots-in-r",
     "title": "Categorical Data",
     "section": "Frequency Bar Plots in R",
-    "text": "Frequency Bar Plots in R\n\n\nCode\nggplot(data = DATA, aes(x = VARIABLE)) +\n  geom_bar()"
+    "text": "Frequency Bar Plots in R\nggplot(data = DATA, aes(x = VAR)) +\n  geom_bar()\n\nDATA: Name of the data frame (eg: heart_disease)\nVAR: Name of the variable to create a plot (eg: cp)"
   },
   {
     "objectID": "lectures/2.html#frequency-bar-plots-in-r-1",
     "href": "lectures/2.html#frequency-bar-plots-in-r-1",
     "title": "Categorical Data",
     "section": "Frequency Bar Plots in R",
-    "text": "Frequency Bar Plots in R\n\n\nCode\nggplot(coffee, aes(caffeine)) +\n  geom_bar()"
+    "text": "Frequency Bar Plots in R\n\n\nCode\nggplot(heart_disease, aes(cp)) +\n  geom_bar() +\n  theme(axis.text.x = element_text(angle=-20,hjust=0)) # Used to angle x-axis"
   },
   {
     "objectID": "lectures/2.html#relative-frequency-bar-plots-in-r",
     "href": "lectures/2.html#relative-frequency-bar-plots-in-r",
     "title": "Categorical Data",
     "section": "Relative Frequency Bar Plots in R",
-    "text": "Relative Frequency Bar Plots in R\n\n\nCode\nggplot(data = DATA, aes(x = VARIABLE, y = after_stat(prop), group = 1)) +\n  geom_bar()"
+    "text": "Relative Frequency Bar Plots in R\nggplot(data = DATA, aes(x = VAR, y = after_stat(prop), group = 1)) +\n  geom_bar()\n\nDATA: Name of the data frame (eg: heart_disease)\nVAR: Name of the variable to create a plot (eg: cp)"
   },
   {
     "objectID": "lectures/2.html#relative-frequency-bar-plots-in-r-1",
     "href": "lectures/2.html#relative-frequency-bar-plots-in-r-1",
     "title": "Categorical Data",
     "section": "Relative Frequency Bar Plots in R",
-    "text": "Relative Frequency Bar Plots in R\n\n\nCode\nggplot(coffee, aes(caffeine, after_stat(prop), group = 1)) +\n  geom_bar()"
+    "text": "Relative Frequency Bar Plots in R\n\n\nCode\nggplot(heart_disease, aes(cp, after_stat(prop), group = 1)) +\n  geom_bar() +\n  theme(axis.text.x = element_text(angle=-20,hjust=0)) # Used to angle x-axis"
   },
   {
-    "objectID": "lectures/2.html#data-2",
-    "href": "lectures/2.html#data-2",
+    "objectID": "lectures/2.html#data-1",
+    "href": "lectures/2.html#data-1",
     "title": "Categorical Data",
     "section": "Data",
-    "text": "Data\nThe variable taste indicates if the participants like the taste of coffee.\n\n\nCode\ncat_stats(coffee$taste)"
+    "text": "Data\nThe variable disease indicates if a patient has heart disease.\n\ncat_stats(heart_disease$disease)\n\n#&gt; Continguency Table \n#&gt;  \n#&gt;       n   prop\n#&gt; no  160 0.5387\n#&gt; yes 137 0.4613\n#&gt; \n#&gt; Number of Missing: 0\n#&gt; Proportion of Missing: 0\n#&gt; Row Variable: heart_disease$disease"
   },
   {
     "objectID": "lectures/2.html#cross-tabulation-1",
@@ -3224,14 +3364,28 @@
     "href": "lectures/2.html#key-features-of-cross-tabulations",
     "title": "Categorical Data",
     "section": "Key Features of Cross-Tabulations",
-    "text": "Key Features of Cross-Tabulations\n\nRows and Columns:\n\nRows represent the categories of one variable.\nColumns represent the categories of another variable.\n\nCells:\n\nEach cell displays the frequency or count of data points that belong to the intersection of a row and column category.\n\nMargins:\n\nRow and column totals provide summaries for each variable.\nThe grand total shows the overall sample size."
+    "text": "Key Features of Cross-Tabulations\n\nRows and Columns:\n\nRows represent the categories of one variable.\nColumns represent the categories of another variable.\n\nCells:\n\nEach cell displays the frequency or count of data points that belong to the intersection of a row and column category."
   },
   {
-    "objectID": "lectures/2.html#types-of-proportions-in-cross-tabulations",
-    "href": "lectures/2.html#types-of-proportions-in-cross-tabulations",
+    "objectID": "lectures/2.html#cross-tabulations-in-r",
+    "href": "lectures/2.html#cross-tabulations-in-r",
     "title": "Categorical Data",
-    "section": "Types of Proportions in Cross-Tabulations",
-    "text": "Types of Proportions in Cross-Tabulations\n\nRow Proportions: Show the percentage of each row total represented by a cell.\nColumn Proportions: Show the percentage of each column total represented by a cell.\nTable Proportions: Show the percentage of the overall total represented by a cell."
+    "section": "Cross-Tabulations in R",
+    "text": "Cross-Tabulations in R\ncat_stats(DATA$VAR1, DATA$VAR2)\n\nDATA: Name of the data frame (eg: heart_disease)\nVAR1: Name of the first variable to create the cross-tab (eg: cp)\nVAR2: Name of the second variable to create the cross-tab (eg: disease)"
+  },
+  {
+    "objectID": "lectures/2.html#cross-tabs-example",
+    "href": "lectures/2.html#cross-tabs-example",
+    "title": "Categorical Data",
+    "section": "Cross-Tabs Example",
+    "text": "Cross-Tabs Example\n\ncat_stats(heart_disease$cp, heart_disease$disease)\n\n#&gt; Continguency Table \n#&gt;  \n#&gt; Column Variable: heart_disease$disease\n#&gt; Row Variable: heart_disease$cp\n\n\n#&gt; $frequency\n#&gt;                   \n#&gt;                     no yes\n#&gt;   Asymptomatic      39 103\n#&gt;   Atypical Angina   40   9\n#&gt;   Non-anginal Pain  65  18\n#&gt;   Typical Angina    16   7\n#&gt; \n#&gt; $table_prop\n#&gt;                   \n#&gt;                        no    yes\n#&gt;   Asymptomatic     0.1313 0.3468\n#&gt;   Atypical Angina  0.1347 0.0303\n#&gt;   Non-anginal Pain 0.2189 0.0606\n#&gt;   Typical Angina   0.0539 0.0236\n#&gt; \n#&gt; $row_prop\n#&gt;                   \n#&gt;                        no    yes\n#&gt;   Asymptomatic     0.2746 0.7254\n#&gt;   Atypical Angina  0.8163 0.1837\n#&gt;   Non-anginal Pain 0.7831 0.2169\n#&gt;   Typical Angina   0.6957 0.3043\n#&gt; \n#&gt; $col_prop\n#&gt;                   \n#&gt;                        no    yes\n#&gt;   Asymptomatic     0.2438 0.7518\n#&gt;   Atypical Angina  0.2500 0.0657\n#&gt;   Non-anginal Pain 0.4062 0.1314\n#&gt;   Typical Angina   0.1000 0.0511"
+  },
+  {
+    "objectID": "lectures/2.html#types-of-props-in-cross-tabs",
+    "href": "lectures/2.html#types-of-props-in-cross-tabs",
+    "title": "Categorical Data",
+    "section": "Types of Props in Cross-Tabs",
+    "text": "Types of Props in Cross-Tabs\n\nRow Proportions: Show the percentage of each row total represented by a cell.\nColumn Proportions: Show the percentage of each column total represented by a cell.\nTable Proportions: Show the percentage of the overall total represented by a cell."
   },
   {
     "objectID": "lectures/2.html#table-proportions",
@@ -3245,7 +3399,7 @@
     "href": "lectures/2.html#table-proportions-1",
     "title": "Categorical Data",
     "section": "Table Proportions",
-    "text": "Table Proportions\n\n\nCode\ncat_stats(coffee$caffeine, coffee$taste, prop = \"table\")"
+    "text": "Table Proportions\n\ncat_stats(heart_disease$cp, heart_disease$disease, prop = \"table\")\n\n#&gt; Continguency Table \n#&gt;  \n#&gt; Column Variable: heart_disease$disease\n#&gt; Row Variable: heart_disease$cp\n\n\n#&gt; $frequency\n#&gt;                   \n#&gt;                     no yes\n#&gt;   Asymptomatic      39 103\n#&gt;   Atypical Angina   40   9\n#&gt;   Non-anginal Pain  65  18\n#&gt;   Typical Angina    16   7\n#&gt; \n#&gt; $table_prop\n#&gt;                   \n#&gt;                        no    yes\n#&gt;   Asymptomatic     0.1313 0.3468\n#&gt;   Atypical Angina  0.1347 0.0303\n#&gt;   Non-anginal Pain 0.2189 0.0606\n#&gt;   Typical Angina   0.0539 0.0236"
   },
   {
     "objectID": "lectures/2.html#row-proportions",
@@ -3259,7 +3413,7 @@
     "href": "lectures/2.html#row-proportions-1",
     "title": "Categorical Data",
     "section": "Row Proportions",
-    "text": "Row Proportions\n\n\nCode\ncat_stats(coffee$caffeine, coffee$taste, prop = \"row\")"
+    "text": "Row Proportions\n\ncat_stats(heart_disease$cp, heart_disease$disease, prop = \"row\")\n\n#&gt; Continguency Table \n#&gt;  \n#&gt; Column Variable: heart_disease$disease\n#&gt; Row Variable: heart_disease$cp\n\n\n#&gt; $frequency\n#&gt;                   \n#&gt;                     no yes\n#&gt;   Asymptomatic      39 103\n#&gt;   Atypical Angina   40   9\n#&gt;   Non-anginal Pain  65  18\n#&gt;   Typical Angina    16   7\n#&gt; \n#&gt; $row_prop\n#&gt;                   \n#&gt;                        no    yes\n#&gt;   Asymptomatic     0.2746 0.7254\n#&gt;   Atypical Angina  0.8163 0.1837\n#&gt;   Non-anginal Pain 0.7831 0.2169\n#&gt;   Typical Angina   0.6957 0.3043"
   },
   {
     "objectID": "lectures/2.html#column-proportions",
@@ -3273,28 +3427,28 @@
     "href": "lectures/2.html#column-proportions-1",
     "title": "Categorical Data",
     "section": "Column Proportions",
-    "text": "Column Proportions\n\n\nCode\ncat_stats(coffee$caffeine, coffee$taste, prop = \"col\")"
+    "text": "Column Proportions\n\ncat_stats(heart_disease$cp, heart_disease$disease, prop = \"col\")\n\n#&gt; Continguency Table \n#&gt;  \n#&gt; Column Variable: heart_disease$disease\n#&gt; Row Variable: heart_disease$cp\n\n\n#&gt; $frequency\n#&gt;                   \n#&gt;                     no yes\n#&gt;   Asymptomatic      39 103\n#&gt;   Atypical Angina   40   9\n#&gt;   Non-anginal Pain  65  18\n#&gt;   Typical Angina    16   7\n#&gt; \n#&gt; $col_prop\n#&gt;                   \n#&gt;                        no    yes\n#&gt;   Asymptomatic     0.2438 0.7518\n#&gt;   Atypical Angina  0.2500 0.0657\n#&gt;   Non-anginal Pain 0.4062 0.1314\n#&gt;   Typical Angina   0.1000 0.0511"
   },
   {
     "objectID": "lectures/2.html#stacked-bar-plot-in-r",
     "href": "lectures/2.html#stacked-bar-plot-in-r",
     "title": "Categorical Data",
     "section": "Stacked Bar Plot in R",
-    "text": "Stacked Bar Plot in R\n\n\nCode\nggplot(DATA, aes(x = VAR1, y = after_stat(count), fill = VAR2)) +\n  geom_bar()"
+    "text": "Stacked Bar Plot in R\nggplot(DATA, aes(x = VAR1, y = after_stat(count), fill = VAR2)) +\n  geom_bar()\nOR\nggplot(DATA, aes(y = VAR1, x = after_stat(count), fill = VAR2)) +\n  geom_bar()\n\nDATA: Name of the data frame (eg: heart_disease)\nVAR1: Name of the first variable to create the cross-tab (eg: cp)\nVAR2: Name of the second variable to create the cross-tab (eg: disease)"
   },
   {
     "objectID": "lectures/2.html#stacked-bar-plot-in-r-1",
     "href": "lectures/2.html#stacked-bar-plot-in-r-1",
     "title": "Categorical Data",
     "section": "Stacked Bar Plot in R",
-    "text": "Stacked Bar Plot in R\n\n\nCode\nggplot(coffee, aes(x = caffeine, y = after_stat(count), fill = taste)) +\n  geom_bar()"
+    "text": "Stacked Bar Plot in R\n\nggplot(heart_disease, aes(x = cp, y = after_stat(count), fill = disease)) +\n  geom_bar() +\n  theme(axis.text.x = element_text(angle=-20,hjust=0)) # Used to angle x-axis"
   },
   {
     "objectID": "lectures/2.html#stacked-bar-plot-in-r-2",
     "href": "lectures/2.html#stacked-bar-plot-in-r-2",
     "title": "Categorical Data",
     "section": "Stacked Bar Plot in R",
-    "text": "Stacked Bar Plot in R\n\n\nCode\nggplot(coffee, aes(y = caffeine, x = after_stat(count), fill = taste)) +\n  geom_bar()"
+    "text": "Stacked Bar Plot in R\n\nggplot(heart_disease, aes(y = cp, x = after_stat(count), fill = disease)) +\n  geom_bar() +\n  theme(axis.text.y = element_text(size = 20)) # Used to increase y-axis font"
   },
   {
     "objectID": "lectures/2.html#pie-charts-1",
@@ -3322,14 +3476,14 @@
     "href": "lectures/2.html#pie-chart-in-r",
     "title": "Categorical Data",
     "section": "Pie Chart in R",
-    "text": "Pie Chart in R\n\n\nCode\ndf_pie &lt;- cat_stats(coffee$caffeine, tbl_df = TRUE)$table\nggplot(df_pie, aes(cat = Category, val = n, fill = Category)) +\n  geom_pie()"
+    "text": "Pie Chart in R\nggplot(DATA, aes(fill = VAR)) +\n  geom_pie()\n\nDATA: Name of the data frame (eg: heart_disease)\nVAR: Name of the variable to create a plot (eg: cp)"
   },
   {
     "objectID": "lectures/2.html#pie-chart-in-r-1",
     "href": "lectures/2.html#pie-chart-in-r-1",
     "title": "Categorical Data",
     "section": "Pie Chart in R",
-    "text": "Pie Chart in R\n\n\nCode\ncoffee_pie &lt;- cat_stats(coffee$caffeine, tbl_df = TRUE)$table\nggplot(coffee_pie, aes(cat = Category, val = n, fill = Category)) +\n  geom_pie()"
+    "text": "Pie Chart in R\n\nggplot(heart_disease, aes(fill = slope)) +\n  geom_pie() +\n  theme( # Used to change legend\n    legend.title = element_text(size = 36), # Increse title font\n    legend.text = element_text(size = 30) # Increase text font\n  )"
   },
   {
     "objectID": "lectures/2.html#themes",
@@ -3337,6 +3491,55 @@
     "title": "Categorical Data",
     "section": "Themes",
     "text": "Themes\nThe R packages ThemePark and ggthemes allows you to change the overall look of a plot.\n\nAll you need to do is add the theme to the plot."
+  },
+  {
+    "objectID": "lectures/2.html#installing-themes-in-r",
+    "href": "lectures/2.html#installing-themes-in-r",
+    "title": "Categorical Data",
+    "section": "Installing Themes in R",
+    "text": "Installing Themes in R\nInstall once on your computer or new session in google colab:\nrcistats::install_themes()\nThen, load libraries:\nlibrary(ggthemes)\nlibrary(ThemePark)"
+  },
+  {
+    "objectID": "lectures/2.html#black-and-white-theme",
+    "href": "lectures/2.html#black-and-white-theme",
+    "title": "Categorical Data",
+    "section": "Black and White Theme",
+    "text": "Black and White Theme\n\nggplot(heart_disease, aes(y = cp, x = after_stat(count), fill = disease)) +\n  geom_bar() +\n  theme_bw()"
+  },
+  {
+    "objectID": "lectures/2.html#excel-theme",
+    "href": "lectures/2.html#excel-theme",
+    "title": "Categorical Data",
+    "section": "Excel Theme",
+    "text": "Excel Theme\n\nggplot(heart_disease, aes(y = cp, x = after_stat(count), fill = disease)) +\n  geom_bar() +\n  theme_excel()"
+  },
+  {
+    "objectID": "lectures/2.html#wsj-theme",
+    "href": "lectures/2.html#wsj-theme",
+    "title": "Categorical Data",
+    "section": "WSJ Theme",
+    "text": "WSJ Theme\n\nggplot(heart_disease, aes(y = cp, x = after_stat(count), fill = disease)) +\n  geom_bar() +\n  theme_wsj()"
+  },
+  {
+    "objectID": "lectures/2.html#stata-theme",
+    "href": "lectures/2.html#stata-theme",
+    "title": "Categorical Data",
+    "section": "Stata Theme",
+    "text": "Stata Theme\n\nggplot(heart_disease, aes(y = cp, x = after_stat(count), fill = disease)) +\n  geom_bar() +\n  theme_stata()"
+  },
+  {
+    "objectID": "lectures/2.html#barbie-theme",
+    "href": "lectures/2.html#barbie-theme",
+    "title": "Categorical Data",
+    "section": "Barbie Theme",
+    "text": "Barbie Theme\n\nggplot(heart_disease, aes(y = cp, x = after_stat(count), fill = disease)) +\n  geom_bar() +\n  theme_barbie()"
+  },
+  {
+    "objectID": "lectures/2.html#oppenheimer-theme",
+    "href": "lectures/2.html#oppenheimer-theme",
+    "title": "Categorical Data",
+    "section": "Oppenheimer Theme",
+    "text": "Oppenheimer Theme\n\nggplot(heart_disease, aes(y = cp, x = after_stat(count), fill = disease)) +\n  geom_bar() +\n  theme_oppenheimer()"
   },
   {
     "objectID": "lectures/4.html#what-is-probability",
@@ -3385,7 +3588,7 @@
     "href": "lectures/4.html#applications",
     "title": "Distribution Functions",
     "section": "Applications",
-    "text": "Applications\n\nDrawing a CardTossing a Coin TwiceTraffic Lights\n\n\nIf you draw a card from a standard deck of 52 cards, what is the probability of drawing:\n\nA heart?\n\\[\nP(\\text{heart}) = \\frac{13}{52} = 0.25\n  \\]\nA red card (heart or diamond)?\n\\[\nP(\\text{red card}) = \\frac{26}{52} = 0.5\n  \\]\n\n\n\nWhat is the probability of getting:\n\nExactly one head?\nSample space: \\(S = \\{\\text{HH, HT, TH, TT}\\}\\).\nEvent: \\(A = \\{\\text{HT, TH}\\}\\).\n\\[\nP(A) = \\frac{2}{4} = 0.5\n\\]\nAt least one head?\nEvent: \\(B = \\{\\text{HH, HT, TH}\\}\\).\n\\[\nP(B) = \\frac{3}{4} = 0.75\n\\]\n\n\n\nA commuter encounters three traffic lights, each with a 70% chance of being green. Assuming independence, what is the probability that all three lights are green?\n\\[\nP(\\text{all green}) = 0.7 \\cdot 0.7 \\cdot 0.7 = 0.343\n\\]"
+    "text": "Applications\n\nDrawing a CardTossing a Coin TwiceTraffic Lights\n\n\nIf you draw a card from a standard deck of 52 cards, what is the probability of drawing:\n\nA heart?\n\\[\nP(\\text{heart}) = \\frac{13}{52} = 0.25\n\\]\nA red card (heart or diamond)?\n\\[\nP(\\text{red card}) = \\frac{26}{52} = 0.5\n\\]\n\n\n\nWhat is the probability of getting:\n\nExactly one head?\nSample space: \\(S = \\{\\text{HH, HT, TH, TT}\\}\\).\nEvent: \\(A = \\{\\text{HT, TH}\\}\\).\n\\[\nP(A) = \\frac{2}{4} = 0.5\n\\]\nAt least one head?\nEvent: \\(B = \\{\\text{HH, HT, TH}\\}\\).\n\\[\nP(B) = \\frac{3}{4} = 0.75\n\\]\n\n\n\nA commuter encounters three traffic lights, each with a 70% chance of being green. Assuming independence, what is the probability that all three lights are green?\n\\[\nP(\\text{all green}) = 0.7 \\cdot 0.7 \\cdot 0.7 = 0.343\n\\]"
   },
   {
     "objectID": "lectures/4.html#more-problems",
@@ -3483,14 +3686,14 @@
     "href": "lectures/4.html#cumulative-distribution-function",
     "title": "Distribution Functions",
     "section": "Cumulative Distribution Function",
-    "text": "Cumulative Distribution Function\nThe Cumulative Distribution Function (CDF) describes the probability that a random variable \\(X\\) is less than or equal to a certain value \\(x\\): \\[\nF_X(x) = P(X \\leq x)\n\\]"
+    "text": "Cumulative Distribution Function\nThe Cumulative Distribution Function (CDF) describes the probability that a random variable \\(X\\) is less than or equal to a certain value \\(x\\):\n\\[\nF_X(x) = P(X \\leq x)\n\\]"
   },
   {
     "objectID": "lectures/4.html#properties-of-the-cdf",
     "href": "lectures/4.html#properties-of-the-cdf",
     "title": "Distribution Functions",
     "section": "Properties of the CDF",
-    "text": "Properties of the CDF\n\nRange: The CDF is always between 0 and 1: \\[\n0 \\leq F_X(x) \\leq 1\n\\]\nNon-Decreasing: The CDF never decreases as \\(x\\) increases.\nLimits:\n\n\\(\\lim_{x \\to -\\infty} F_X(x) = 0\\)\n\\(\\lim_{x \\to \\infty} F_X(x) = 1\\)"
+    "text": "Properties of the CDF\n\nRange: The CDF is always between 0 and 1: \\[\n0 \\leq F_X(x) \\leq 1\n\\]\nNon-Decreasing: The CDF never decreases as \\(x\\) increases.\nAsymptotic Limits:\n\n\\(\\lim_{x \\to -\\infty} F_X(x) = 0\\)\n\\(\\lim_{x \\to \\infty} F_X(x) = 1\\)"
   },
   {
     "objectID": "lectures/4.html#cdf-example",
@@ -3507,18 +3710,11 @@
     "text": "Probability Density Function (PDF)\nThe Probability Density Function (PDF) is used for continuous random variables and describes the likelihood of the variable falling within a small interval.\n\\[\nP(a \\leq X \\leq b) = \\int_a^b f_X(x) \\, dx\n\\]\n\n\n\n\n\n\n\nImportant\n\n\n\\[\nP(X = a) = P(a \\leq X \\leq a) = \\int_a^a f_X(x) \\, dx = 0\n\\]"
   },
   {
-    "objectID": "lectures/4.html#properties-of-the-pdf",
-    "href": "lectures/4.html#properties-of-the-pdf",
+    "objectID": "lectures/4.html#normal-pdf",
+    "href": "lectures/4.html#normal-pdf",
     "title": "Distribution Functions",
-    "section": "Properties of the PDF:",
-    "text": "Properties of the PDF:\n\nNon-Negative: \\[\nf_X(x) \\geq 0 \\quad \\forall x\n\\]\nTotal Area Under Curve: \\[\n\\int_{-\\infty}^\\infty f_X(x) \\, dx = 1\n\\]"
-  },
-  {
-    "objectID": "lectures/4.html#pdf-examples",
-    "href": "lectures/4.html#pdf-examples",
-    "title": "Distribution Functions",
-    "section": "PDF Examples",
-    "text": "PDF Examples\nThe PDF of the normal distribution is: \\[\nf_X(x) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}} e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}\n\\]\nHere, \\(\\mu\\) is the mean and \\(\\sigma\\) is the standard deviation."
+    "section": "Normal PDF",
+    "text": "Normal PDF\nThe PDF of the normal distribution is: \\[\nf_X(x) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}} e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}\n\\]\nHere, \\(\\mu\\) is the mean and \\(\\sigma\\) is the standard deviation."
   },
   {
     "objectID": "lectures/4.html#probability-mass-function-pmf",
@@ -3556,11 +3752,11 @@
     "text": "Percentile Example\nSuppose we have a random variable X representing the height of adults in a population. If the 90th percentile of X is 180 cm, it means that the probability of a randomly selected adult being 180 cm or shorter is 90%."
   },
   {
-    "objectID": "lectures/4.html#precentile",
-    "href": "lectures/4.html#precentile",
+    "objectID": "lectures/4.html#percentile",
+    "href": "lectures/4.html#percentile",
     "title": "Distribution Functions",
-    "section": "Precentile",
-    "text": "Precentile\n\n\nCode\ndata &lt;- rnorm(500000, mean = 100, sd = 15) |&gt; data.frame(x = _)  # Example: normally distributed data\n\n# Calculate the 75th percentile\npercentile_75 &lt;- qnorm(0.75, 100, 15)\n\nggplot(data = data, aes(x = x)) +\n  geom_density(fill = \"skyblue\", alpha = 0.5) +  # Density curve\n  geom_vline(xintercept = percentile_75, color = \"red\", linetype = \"dashed\", size = 1) +\n  labs(title = \"Density Plot with 75th Percentile Highlighted\", x = \"Data Value\", y = \"Density\") +\n  theme_bw()"
+    "section": "Percentile",
+    "text": "Percentile\n\n\nCode\ndata &lt;- rnorm(500000, mean = 100, sd = 15) |&gt; data.frame(x = _)  # Example: normally distributed data\n\n# Calculate the 75th percentile\npercentile_75 &lt;- qnorm(0.75, 100, 15)\n\nggplot(data = data, aes(x = x)) +\n  geom_density(fill = \"plum\", alpha = 0.5) +  # Density curve\n  geom_vline(xintercept = percentile_75, color = \"red\", linetype = \"dashed\", size = 1) +\n  labs(title = \"Density Plot with 75th Percentile\", x = \"Data Value\", y = \"Density\")"
   },
   {
     "objectID": "lectures/4.html#applications-1",
@@ -3588,7 +3784,7 @@
     "href": "lectures/4.html#probability-and-pdmf",
     "title": "Distribution Functions",
     "section": "Probability and PD/MF",
-    "text": "Probability and PD/MF\n\nContinuousDiscrete\n\n\n\n\nCode\nmean &lt;- 0  # Mean of the distribution\nsd &lt;- 1   # Standard deviation of the distribution\n\n# Generate data points for the curve (more points = smoother curve)\nx &lt;- seq(mean - 3*sd, mean + 3*sd, length.out = 100)  # Range covering most of the distribution\ny &lt;- dnorm(x, mean = mean, sd = sd)  # Calculate the density at each x value\n\n# Create the plot\nggplot(data = data.frame(x, y), aes(x = x, y = y)) +\n  geom_line(color = \"blue\", size = 1) +  # Line for the distribution curve\n  labs(x = \"X\",\n       y = \"Probability Density\") +\n  theme_bw() + # A clean theme\n  scale_x_continuous(breaks = seq(mean - 3*sd, mean + 3*sd, by = sd)) # Ticks at standard deviations\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nn &lt;- 10   # Number of trials\np &lt;- 0.3  # Probability of success on each trial\n\n# Generate the data for the plot\nx &lt;- 0:n  # Possible values for the random variable (number of successes)\ny &lt;- dbinom(x, size = n, prob = p)  # Calculate the probabilities\n\n# Create the plot using geom_col (for discrete data)\nggplot(data = data.frame(x, y), aes(x = factor(x), y = y)) +  # x as factor for discrete bars\n  geom_col(fill = \"skyblue\", color = \"black\") +\n  labs(title = paste(\"Binomial Distribution (n =\", n, \", p =\", p, \")\"),\n       x = \"Number of Successes (x)\",\n       y = \"Probability P(X = x)\") +\n  theme_bw()"
+    "text": "Probability and PD/MF\n\nContinuousDiscrete\n\n\n\n\nCode\nmean &lt;- 0  # Mean of the distribution\nsd &lt;- 1   # Standard deviation of the distribution\n\n# Generate data points for the curve (more points = smoother curve)\nx &lt;- seq(mean - 3*sd, mean + 3*sd, length.out = 100)  # Range covering most of the distribution\ny &lt;- dnorm(x, mean = mean, sd = sd)  # Calculate the density at each x value\n\n# Create the plot\nggplot(data = data.frame(x, y), aes(x = x, y = y)) +\n  geom_line(color = \"sienna\", size = 1) +  # Line for the distribution curve\n  labs(x = \"X\",\n       y = \"Probability Density\") +\n  scale_x_continuous(breaks = seq(mean - 3*sd, mean + 3*sd, by = sd)) # Ticks at standard deviations\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nn &lt;- 10   # Number of trials\np &lt;- 0.3  # Probability of success on each trial\n\n# Generate the data for the plot\nx &lt;- 0:n  # Possible values for the random variable (number of successes)\ny &lt;- dbinom(x, size = n, prob = p)  # Calculate the probabilities\n\n# Create the plot using geom_col (for discrete data)\nggplot(data = data.frame(x, y), aes(x = factor(x), y = y)) +  # x as factor for discrete bars\n  geom_col(fill = \"bisque4\", color = \"black\", alpha =  0.75) +\n  labs(title = paste(\"Binomial Distribution (n =\", n, \", p =\", p, \")\"),\n       x = \"Number of Successes (x)\",\n       y = \"Probability P(X = x)\")"
   },
   {
     "objectID": "lectures/4.html#normal-distribution-1",
@@ -3612,11 +3808,25 @@
     "text": "Normal Distribution\n\n\\[\nX\\sim N(\\mu, \\sigma)\n\\]\n\\[\n-\\infty &lt; X &lt; \\infty\n\\]\n\n\\[\nf_X(x) = \\frac{1}{\\sqrt{2\\pi \\sigma}} e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}\n\\]"
   },
   {
-    "objectID": "lectures/4.html#the-standard-normal-distribution",
-    "href": "lectures/4.html#the-standard-normal-distribution",
+    "objectID": "lectures/4.html#normal-pdf-1",
+    "href": "lectures/4.html#normal-pdf-1",
     "title": "Distribution Functions",
-    "section": "The Standard Normal Distribution",
-    "text": "The Standard Normal Distribution\nThe Standard Normal Distribution is a special type of normal distribution with a mean of 0 and a standard deviation of 1. It’s often used as a reference to convert any normal distribution to a standard form."
+    "section": "Normal PDF",
+    "text": "Normal PDF"
+  },
+  {
+    "objectID": "lectures/4.html#standard-normal-distribution",
+    "href": "lectures/4.html#standard-normal-distribution",
+    "title": "Distribution Functions",
+    "section": "Standard Normal Distribution",
+    "text": "Standard Normal Distribution\nThe Standard Normal Distribution is a special type of normal distribution with a mean of 0 and a standard deviation of 1. It’s often used as a reference to convert any normal distribution to a standard form."
+  },
+  {
+    "objectID": "lectures/4.html#standard-normal-distribution-1",
+    "href": "lectures/4.html#standard-normal-distribution-1",
+    "title": "Distribution Functions",
+    "section": "Standard Normal Distribution",
+    "text": "Standard Normal Distribution\n\n\nCode\nmean &lt;- 0  # Mean of the distribution\nsd &lt;- 1   # Standard deviation of the distribution\n\n# Generate data points for the curve (more points = smoother curve)\nx &lt;- seq(mean - 3*sd, mean + 3*sd, length.out = 100)  # Range covering most of the distribution\ny &lt;- dnorm(x, mean = mean, sd = sd)  # Calculate the density at each x value\n\n# Create the plot\nggplot(data = data.frame(x, y), aes(x = x, y = y)) +\n  geom_line(color = \"palegreen4\", size = 1) +  # Line for the distribution curve\n  labs(x = \"X\",\n       y = \"Probability Density\") +\n  scale_x_continuous(breaks = seq(mean - 3*sd, mean + 3*sd, by = sd)) # Ticks at standard deviations"
   },
   {
     "objectID": "lectures/4.html#z-scores",
@@ -3724,6 +3934,13 @@
     "text": "The Binomial Probability Formula\n\\[\nP(X = k) = \\binom{n}{k} p^k (1-p)^{n-k}\n\\]\nWhere:\n\n\\(P(X = k)\\): Probability of exactly \\(k\\) successes.\n\\(n\\): Number of trials.\n\\(k\\): Number of successes.\n\\(p\\): Probability of success on a single trial.\n\\(1-p\\): Probability of failure.\n\\(\\binom{n}{k} = \\frac{n!}{k!(n-k)!}\\): Represents the number of ways to choose \\(k\\) successes from \\(n\\) trials"
   },
   {
+    "objectID": "lectures/4.html#binomial-distribution-2",
+    "href": "lectures/4.html#binomial-distribution-2",
+    "title": "Distribution Functions",
+    "section": "Binomial Distribution",
+    "text": "Binomial Distribution"
+  },
+  {
     "objectID": "lectures/4.html#example-calculation",
     "href": "lectures/4.html#example-calculation",
     "title": "Distribution Functions",
@@ -3771,6 +3988,13 @@
     "title": "Distribution Functions",
     "section": "The Poisson Probability Formula",
     "text": "The Poisson Probability Formula\n\\[\nP(X = k) = \\frac{\\lambda^k e^{-\\lambda}}{k!}\n\\]\nWhere:\n\n\\(P(X = k)\\): Probability of \\(k\\) events occurring.\n\\(\\lambda\\): Average number of events in the interval.\n\\(e \\approx 2.718\\)\n\\(k!\\): Factorial of \\(k\\), calculated as \\(k \\times (k-1) \\times \\dots \\times 1\\)."
+  },
+  {
+    "objectID": "lectures/4.html#poisson-distribution-2",
+    "href": "lectures/4.html#poisson-distribution-2",
+    "title": "Distribution Functions",
+    "section": "Poisson Distribution",
+    "text": "Poisson Distribution"
   },
   {
     "objectID": "lectures/4.html#example-calculation-1",
@@ -3857,200 +4081,200 @@
     "text": "Examples\n\n1234\n\n\nLet’s first generate the random sample of fifty from \\(X \\sim N(8,3)\\).\n\n\nCode\nrnorm(50, 8, sqrt(3))\n\n\n\n\nGenerate a random sample of 100 form an \\(X \\sim Gamma (2,3)\\).\n\n\nCode\nrgamma(100, 2,3)\n\n\n\n\nGenerate a random sample of 100 form an \\(X \\sim Binom (25,.23)\\).\n\n\nCode\nrbinom(n = 100, size  = 25, prob = 0.23)\n\n\n\n\nGenerate a random sample of 100 form an \\(X \\sim Pois (34.4)\\).\n\n\nCode\nrpois(n = 100, lambda = 34.4)"
   },
   {
-    "objectID": "lectures/6.html#melanoma",
-    "href": "lectures/6.html#melanoma",
-    "title": "Simple Logistic Regression",
-    "section": "Melanoma",
-    "text": "Melanoma\nMelanoma is a type of skin cancer that causes the cells that produce melanin to grow out of control. What makes Melanoma so dangerous is that it can metastasize to other parts of the body."
-  },
-  {
-    "objectID": "lectures/6.html#outcome-of-interest",
-    "href": "lectures/6.html#outcome-of-interest",
-    "title": "Simple Logistic Regression",
-    "section": "Outcome of Interest",
-    "text": "Outcome of Interest\nWe are interested in learning how do different factors affect and individual’s chances of survival. Therefore, we are measuring patients and if they lived or died during a study period."
+    "objectID": "lectures/6.html#heart-disease-data",
+    "href": "lectures/6.html#heart-disease-data",
+    "title": "Simple  Logistic Regression",
+    "section": "Heart Disease Data",
+    "text": "Heart Disease Data\nThe heart_disease data set provides heart disease information on patients from Cleveland, Ohio. The data was originally published in the American Journal or Cardiology."
   },
   {
     "objectID": "lectures/6.html#data",
     "href": "lectures/6.html#data",
-    "title": "Simple Logistic Regression",
+    "title": "Simple  Logistic Regression",
     "section": "Data",
-    "text": "Data\nWe will be using the Melanoma data set with the following variables: dead (died by Melanoma, 1=yes, 0= no) and thickness (tumour thickness in mm)."
+    "text": "Data\n\n\nCode\nheart_disease |&gt; \n  DT::datatable(options = list(dom = \"t\",\n                pageLength = 4))"
   },
   {
-    "objectID": "lectures/6.html#plot",
-    "href": "lectures/6.html#plot",
-    "title": "Simple Logistic Regression",
-    "section": "Plot",
-    "text": "Plot\n\n\nCode\nMelanoma |&gt; \n  ggplot(aes(thickness, dead)) +\n  geom_point()"
-  },
-  {
-    "objectID": "lectures/6.html#plot-1",
-    "href": "lectures/6.html#plot-1",
-    "title": "Simple Logistic Regression",
-    "section": "Plot",
-    "text": "Plot\n\n\nCode\nMelanoma |&gt; \n  ggplot(aes(thickness, dead)) +\n  geom_point() +\n  stat_smooth(method = \"glm\", se = F,  \n              method.args = list(family = \"binomial\"))"
+    "objectID": "lectures/6.html#variables-of-interest",
+    "href": "lectures/6.html#variables-of-interest",
+    "title": "Simple  Logistic Regression",
+    "section": "Variables of Interest",
+    "text": "Variables of Interest\n\ncp: Type of Chest Pain\ndisease: Indicating if they have heart disease"
   },
   {
     "objectID": "lectures/6.html#construct-model",
     "href": "lectures/6.html#construct-model",
-    "title": "Simple Logistic Regression",
+    "title": "Simple  Logistic Regression",
     "section": "Construct Model",
-    "text": "Construct Model\n\\[\n\\left(\\begin{array}{c}\nDead \\\\\nAlive\n\\end{array}\\right) = \\beta_0 + \\beta_1X\n\\]"
+    "text": "Construct Model\n\\[\n\\left(\\begin{array}{c}\nYes \\\\\nNo\n\\end{array}\\right) = \\beta_0 + \\beta_1X\n\\]"
   },
   {
     "objectID": "lectures/6.html#let",
     "href": "lectures/6.html#let",
-    "title": "Simple Logistic Regression",
+    "title": "Simple  Logistic Regression",
     "section": "Let …",
-    "text": "Let …\n\\[\nY = \\left\\{\\begin{array}{cc}\n1 & Dead \\\\\n0 & Alive\n\\end{array}\\right.\n\\]"
+    "text": "Let …\n\\[\nY = \\left\\{\\begin{array}{cc}\n1 & Yes \\\\\n0 & No\n\\end{array}\\right.\n\\]"
   },
   {
     "objectID": "lectures/6.html#construct-a-model",
     "href": "lectures/6.html#construct-a-model",
-    "title": "Simple Logistic Regression",
+    "title": "Simple  Logistic Regression",
     "section": "Construct a Model",
     "text": "Construct a Model\n\\[\nP\\left(Y = 1\\right) = \\beta_0 + \\beta_1X\n\\]"
   },
   {
     "objectID": "lectures/6.html#construct-a-model-1",
     "href": "lectures/6.html#construct-a-model-1",
-    "title": "Simple Logistic Regression",
+    "title": "Simple  Logistic Regression",
     "section": "Construct a Model",
     "text": "Construct a Model\n\\[\nP\\left(Y = 1\\right) = \\frac{e^{\\beta_0 + \\beta_1X}}{1 + e^{\\beta_0 + \\beta_1X}}\n\\]"
   },
   {
     "objectID": "lectures/6.html#construct-a-model-2",
     "href": "lectures/6.html#construct-a-model-2",
-    "title": "Simple Logistic Regression",
+    "title": "Simple  Logistic Regression",
     "section": "Construct a Model",
     "text": "Construct a Model\n\\[\n\\frac{P(Y = 1)}{P(Y = 0)} = e^{\\beta_0 + \\beta_1X}\n\\]\nwhere \\(\\frac{P(Y = 1)}{P(Y = 0)}\\) are considered the odds of observing \\(Y = 1\\)."
   },
   {
     "objectID": "lectures/6.html#the-logistic-model",
     "href": "lectures/6.html#the-logistic-model",
-    "title": "Simple Logistic Regression",
+    "title": "Simple  Logistic Regression",
     "section": "The Logistic Model",
     "text": "The Logistic Model\n\\[\n\\log\\left\\{\\frac{P(Y = 1)}{P(Y = 0)}\\right\\} = \\beta_0 + \\beta_1X\n\\]"
   },
   {
+    "objectID": "lectures/6.html#notation",
+    "href": "lectures/6.html#notation",
+    "title": "Simple  Logistic Regression",
+    "section": "Notation",
+    "text": "Notation\n\\[\n\\log\\left\\{\\frac{P(Y = 1)}{P(Y = 0)}\\right\\} =\n\\log\\left\\{odds\\ of \\ 1\\right\\} =\nlo(1)\n\\]"
+  },
+  {
     "objectID": "lectures/6.html#logistic-regression-1",
     "href": "lectures/6.html#logistic-regression-1",
-    "title": "Simple Logistic Regression",
+    "title": "Simple  Logistic Regression",
     "section": "Logistic Regression",
     "text": "Logistic Regression\nLogistic Regression is used to model the association between a set of predictors and a binary outcome variable.\n\nThis is similar Linear Regression which models the association between a set of predictors and a numerical outcome variable."
   },
   {
     "objectID": "lectures/6.html#logistic-regression-2",
     "href": "lectures/6.html#logistic-regression-2",
-    "title": "Simple Logistic Regression",
+    "title": "Simple  Logistic Regression",
     "section": "Logistic Regression",
     "text": "Logistic Regression\nLogistic Regression uses the logistic model to formulate the relationship between the predictors and the outcome.\n\nMore specifically, for an outcome of Y:\n\\[\nY = \\left\\{\\begin{array}{cc}\n1 & \\text{Category 1} \\\\\n0 & \\text{Category 2}\n\\end{array}\\right.\n\\]\nThe Predictors variable will model the probability of observing category 1 (\\(P(Y=1)\\))"
   },
   {
     "objectID": "lectures/6.html#logistic-model",
     "href": "lectures/6.html#logistic-model",
-    "title": "Simple Logistic Regression",
+    "title": "Simple  Logistic Regression",
     "section": "Logistic Model",
     "text": "Logistic Model\n\\[\n\\log\\left\\{\\frac{P(Y = 1)}{P(Y = 0)}\\right\\} = \\beta_0 + \\beta_1X\n\\]"
   },
   {
     "objectID": "lectures/6.html#regression-coefficients-beta",
     "href": "lectures/6.html#regression-coefficients-beta",
-    "title": "Simple Logistic Regression",
+    "title": "Simple  Logistic Regression",
     "section": "Regression Coefficients \\(\\beta\\)",
     "text": "Regression Coefficients \\(\\beta\\)\nThe regression coefficients quantify how a specific predictor changes the odds of observing the first category of the outcome (\\(Y = 1\\))"
   },
   {
     "objectID": "lectures/6.html#estimating-beta",
     "href": "lectures/6.html#estimating-beta",
-    "title": "Simple Logistic Regression",
+    "title": "Simple  Logistic Regression",
     "section": "Estimating \\(\\beta\\)",
     "text": "Estimating \\(\\beta\\)\nTo obtain the numerical value for \\(\\beta\\), denoted as \\(\\hat \\beta\\), we will be finding the values of \\(\\hat \\beta\\) that maximizes the likelihood function:\n\\[\nL(\\boldsymbol \\beta) = \\prod_{i=1}^n \\left(\\frac{e^{\\beta_0 + \\beta_1X}}{1 + e^{\\beta_0 + \\beta_1X}}\\right)^{Y_i}\\left(\\frac{1}{1 + e^{\\beta_0 + \\beta_1X}}\\right)^{1-Y_i}\n\\]\nThe likelihood function can be thought as the probability of observing the entire data set. Therefore, we want to choose the values the \\(\\beta_0\\) and \\(\\beta_1\\) that will result in the highest probability of observing the data."
   },
   {
     "objectID": "lectures/6.html#estimated-parameters",
     "href": "lectures/6.html#estimated-parameters",
-    "title": "Simple Logistic Regression",
+    "title": "Simple  Logistic Regression",
     "section": "Estimated Parameters",
     "text": "Estimated Parameters\nThe values you obtain (\\(\\hat \\beta\\)) tell you the relationship between the a predictor variable and the log odds of observing the first category of the outcome \\(Y=1\\).\n\nExponentiating the estimate (\\(e^{\\hat \\beta}\\)) will give you the relationship between a predictor variable and the odds of observing the first category of the outcome \\(Y=1\\)."
   },
   {
     "objectID": "lectures/6.html#interpreting-hat-beta",
     "href": "lectures/6.html#interpreting-hat-beta",
-    "title": "Simple Logistic Regression",
+    "title": "Simple  Logistic Regression",
     "section": "Interpreting \\(\\hat \\beta\\)",
     "text": "Interpreting \\(\\hat \\beta\\)\nFor a continuous predictor variable:\nAs X increases by 1 unit, the odds of observing the first category (\\(Y = 1\\)) increases by a factor of \\(e^{\\hat\\beta}\\)."
   },
   {
     "objectID": "lectures/6.html#logistic-regression-in-r",
     "href": "lectures/6.html#logistic-regression-in-r",
-    "title": "Simple Logistic Regression",
+    "title": "Simple  Logistic Regression",
     "section": "Logistic Regression in R",
-    "text": "Logistic Regression in R\n\n\nCode\nglm(Y ~ X,\n    data = DATA,\n    family = binomial())"
+    "text": "Logistic Regression in R\n\nxglm &lt;- glm(Y ~ X,\n            data = DATA,\n            family = binomial())\nxglm\n\nDATA: Name of the data frame\nY: Outcome Variable of Interest in the data frame DATA\nX: Predictor Variable in the data frame DATA"
+  },
+  {
+    "objectID": "lectures/6.html#model-information",
+    "href": "lectures/6.html#model-information",
+    "title": "Simple  Logistic Regression",
+    "section": "Model Information",
+    "text": "Model Information"
   },
   {
     "objectID": "lectures/6.html#example",
     "href": "lectures/6.html#example",
-    "title": "Simple Logistic Regression",
+    "title": "Simple  Logistic Regression",
     "section": "Example",
-    "text": "Example\nModelling dead by thickness:\n\n\nCode\nglm(dead ~ thickness,\n    data = Melanoma,\n    family = binomial())\n\n\n#&gt; \n#&gt; Call:  glm(formula = dead ~ thickness, family = binomial(), data = Melanoma)\n#&gt; \n#&gt; Coefficients:\n#&gt; (Intercept)    thickness  \n#&gt;     -1.6140       0.2088  \n#&gt; \n#&gt; Degrees of Freedom: 204 Total (i.e. Null);  203 Residual\n#&gt; Null Deviance:       242.4 \n#&gt; Residual Deviance: 226.1     AIC: 230.1\n\n\n\\[\n\\log(odds\\ of\\ dying ) = -1.614 + 0.21 (thickness)\n\\]"
+    "text": "Example\nModelling disease by age:\n\n\nCode\nxglm &lt;- glm(disease ~ age,\n            data = heart_disease,\n            family = binomial())\nxglm\n\n\n#&gt; \n#&gt; Call:  glm(formula = disease ~ age, family = binomial(), data = heart_disease)\n#&gt; \n#&gt; Coefficients:\n#&gt; (Intercept)          age  \n#&gt;    -3.05122      0.05291  \n#&gt; \n#&gt; Degrees of Freedom: 296 Total (i.e. Null);  295 Residual\n#&gt; Null Deviance:       409.9 \n#&gt; Residual Deviance: 394.3     AIC: 398.3\n\n\n\\[\nlo(disease) = -3.0512 + 0.0529 (age)\n\\]"
   },
   {
     "objectID": "lectures/6.html#interpretation",
     "href": "lectures/6.html#interpretation",
-    "title": "Simple Logistic Regression",
+    "title": "Simple  Logistic Regression",
     "section": "Interpretation",
-    "text": "Interpretation\n\\[\n\\log(odds\\ of\\ dying ) = -1.614 + 0.21 (thickness)\n\\]\n\n\nCode\nexp(0.21)\n\n\n#&gt; [1] 1.233678\n\n\n\nAs age increases by 1 year, the odds of experiencing death increases by a factor of 1.232."
+    "text": "Interpretation\n\\[\nlo(disease) = -3.0512 + 0.0529 (age)\n\\]\n\n\nCode\nexp(0.05291)\n\n\n#&gt; [1] 1.054335\n\n\n\nAs age increases by 1 year, the odds of experiencing death increases by a factor of 1.054."
   },
   {
     "objectID": "lectures/6.html#working-with-probabilities",
     "href": "lectures/6.html#working-with-probabilities",
-    "title": "Simple Logistic Regression",
+    "title": "Simple  Logistic Regression",
     "section": "Working with probabilities",
     "text": "Working with probabilities\nAs you can see, working with odds may be unintuitive for the average person. It will be better to predict the probability and display those results to individuals."
   },
   {
     "objectID": "lectures/6.html#predicting-probability",
     "href": "lectures/6.html#predicting-probability",
-    "title": "Simple Logistic Regression",
+    "title": "Simple  Logistic Regression",
     "section": "Predicting Probability",
     "text": "Predicting Probability\n\\[\n\\hat P\\left(Y = 1\\right) = \\frac{e^{\\hat\\beta_0 + \\hat\\beta_1X}}{1 + e^{\\hat\\beta_0 + \\hat\\beta_1X}}\n\\]"
   },
   {
     "objectID": "lectures/6.html#prediction-in-r",
     "href": "lectures/6.html#prediction-in-r",
-    "title": "Simple Logistic Regression",
+    "title": "Simple  Logistic Regression",
     "section": "Prediction in R",
     "text": "Prediction in R\n\n\nCode\nxglm &lt;- glm(Y ~ X,\n            data = DATA,\n            family = binomial())\nndf &lt;- data.frame(X = VAL)\npredict(xglm,\n        ndf,\n        type = \"response\")"
   },
   {
     "objectID": "lectures/6.html#example-1",
     "href": "lectures/6.html#example-1",
-    "title": "Simple Logistic Regression",
+    "title": "Simple  Logistic Regression",
     "section": "Example 1",
-    "text": "Example 1\nPredict the probability of observing death for a patient with a tumor thickness of 2.9.\n\n\nCode\nxglm &lt;- glm(dead ~ thickness,\n    data = Melanoma,\n    family = binomial())\nndf &lt;- data.frame(thickness = 2.9)\npredict(xglm, ndf, type = \"response\")\n\n\n#&gt;        1 \n#&gt; 0.267291"
+    "text": "Example 1\nPredict the probability of having heart disease for a patient who is 40 years old.\n\n\nCode\nxglm &lt;- glm(disease ~ age,\n            data = heart_disease,\n            family = binomial())\nndf &lt;- data.frame(age = 40)\npredict(xglm, ndf, type = \"response\")\n\n\n#&gt;         1 \n#&gt; 0.2819196"
   },
   {
     "objectID": "lectures/6.html#example-2",
     "href": "lectures/6.html#example-2",
-    "title": "Simple Logistic Regression",
+    "title": "Simple  Logistic Regression",
     "section": "Example 2",
-    "text": "Example 2\nPredict the probability of observing death for a patient who a tumor thickness of 1.9.\n\n\nCode\nxglm &lt;- glm(dead ~ thickness,\n    data = Melanoma,\n    family = binomial())\nndf &lt;- data.frame(thickness = 1.9)\npredict(xglm, ndf, type = \"response\")\n\n\n#&gt;         1 \n#&gt; 0.2284212"
+    "text": "Example 2\nPredict the probability of having heart disease for a patient who is 55 years old.\n\n\nCode\nxglm &lt;- glm(disease ~ age,\n            data = heart_disease,\n            family = binomial())\nndf &lt;- data.frame(age = 55)\npredict(xglm, ndf, type = \"response\")\n\n\n#&gt;         1 \n#&gt; 0.4647183"
   },
   {
     "objectID": "lectures/6.html#example-3",
     "href": "lectures/6.html#example-3",
-    "title": "Simple Logistic Regression",
+    "title": "Simple  Logistic Regression",
     "section": "Example 3",
-    "text": "Example 3\nPredict the probability of observing death for a patient who a tumor thickness of 3.9.\n\n\nCode\nxglm &lt;- glm(dead ~ thickness,\n    data = Melanoma,\n    family = binomial())\nndf &lt;- data.frame(thickness = 3.9)\npredict(xglm, ndf, type = \"response\")\n\n\n#&gt;         1 \n#&gt; 0.3101168"
+    "text": "Example 3\nPredict the probability of having heart disease for a patient who is 70 years old.\n\n\nCode\nxglm &lt;- glm(disease ~ age,\n            data = heart_disease,\n            family = binomial())\nndf &lt;- data.frame(age = 70)\npredict(xglm, ndf, type = \"response\")\n\n\n#&gt;         1 \n#&gt; 0.6575143"
   },
   {
     "objectID": "lectures/6.html#example-4",
     "href": "lectures/6.html#example-4",
-    "title": "Simple Logistic Regression",
+    "title": "Simple  Logistic Regression",
     "section": "Example",
-    "text": "Example\n\n\n\nTumor Thickness\n1.9\n2.9\n3.9\n\n\n\n\nProbabiltiy\n22.8%\n26.7%\n31.0%"
+    "text": "Example\n\n\n\nAge\n40\n55\n70\n\n\n\n\nProbabiltiy\n28.2%\n46.5%\n65.8%"
   },
   {
     "objectID": "lectures/8.html#explaining-variation",
