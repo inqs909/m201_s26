@@ -64,20 +64,21 @@ theme_set(theme_bw() +
 
 heart_disease <- kmed::heart
 heart_disease$disease <- factor(ifelse(heart_disease$class == 0, "no", "yes")) 
-heart_disease$sex <- ifelse(isTRUE(heart_disease$sex), "Male", "Female") |> factor()
+heart_disease$sex <- ifelse(heart_disease$sex == T, "Male", "Female") |> factor()
 heart_disease$cp <- ifelse(heart_disease$cp == 1, "Typical Angina",
                            ifelse(heart_disease$cp == 2, "Atypical Angina", 
-                                  ifelse(heart_disease$cp == 3, "Non-anginal Pain", "Asymptomatic"))) |> factor()
-heart_disease$fbs <- ifelse(isTRUE(heart_disease$fbs), "Fasting Blood Sugar >120" , "Fasting Blood Sugar <= 120") |> factor()
+                                  ifelse(heart_disease$cp == 3, "Non-anginal Pain", "Asymptomatic"))) |> 
+                    factor(levels = c("Asymptomatic", "Non-anginal Pain", "Atypical Angina", "Typical Angina"))
+heart_disease$fbs <- ifelse(heart_disease$fbs == T, "Fasting Blood Sugar >120" , "Fasting Blood Sugar <= 120") |> factor()
 heart_disease$restecg <- ifelse(heart_disease$restecg == 0, "Normal",
                                 ifelse(heart_disease$restecg == 1, "ST-T wave Abnormality", "Left Ventricular Hypertrophy")) |> 
-                          factor()
+                          factor(levels = c("Normal", "ST-T wave Abnormality", "Left Ventricular Hypertrophy"))
 heart_disease$slope <- ifelse(heart_disease$slope == 1, "Positive Slope",
                               ifelse(heart_disease$slope == 2, "Zero Slope", "Negative Slope")) |> 
-                              factor()
+                              factor(levels = c("Zero Slope", "Positive Slope", "Negative Slope"))
 heart_disease$thal <- ifelse(heart_disease$thal==3, "Normal",
-                             ifelse(heart_disease$thal == 6, "Fixed Defect", "Reversible Defect")) |> factor()
-
+                             ifelse(heart_disease$thal == 6, "Fixed Defect", "Reversible Defect")) |> 
+                              factor(levels = c("Normal", "Fixed Defect", "Reversible Defect"))
 ```
 
 
@@ -89,7 +90,16 @@ heart_disease$thal <- ifelse(heart_disease$thal==3, "Normal",
 
 ## Heart Disease Data
 
+::: {.columns}
+::: {.column}
 The [`heart_disease`](https://archive.ics.uci.edu/dataset/45/heart+disease) data set provides heart disease information on patients from Cleveland, Ohio. The data was originally published in the [American Journal or Cardiology](https://pubmed.ncbi.nlm.nih.gov/2756873/).
+
+:::
+::: {.column}
+![](img/heart_df.png){fig-alt="An image of a graph and a heart."}
+
+:::
+:::
 
 ## Data
 

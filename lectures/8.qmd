@@ -1,7 +1,7 @@
 ---
-title: "Multivariable Regression"
+title: "Multivariable <br> Regression"
 description: |
-  Continues the discussion with linear and logistic regression.
+  Discuss how to model multivariable predictors to a single outcome.
 format:
   revealjs:
     width: 1200
@@ -23,7 +23,6 @@ knitr:
   opts_chunk: 
     echo: true
     eval: true
-    message: false
     code-fold: true
     warnings: false
     comment: "#>" 
@@ -39,79 +38,174 @@ filters:
 
 editor: source
 ---
+## R Packages
 
 ```{r}
 #| include: false
-
+#| message: false
 library(tidyverse)
 library(rcistats)
-library(ThemePark)
-library(taylor)
 
+penguins <- penguins |> drop_na()
+heart_disease <- kmed::heart
+heart_disease$disease <- factor(ifelse(heart_disease$class == 0, "no", "yes")) 
+heart_disease$sex <- ifelse(heart_disease$sex == T, "Male", "Female") |> factor()
+heart_disease$cp <- ifelse(heart_disease$cp == 1, "Typical Angina",
+                           ifelse(heart_disease$cp == 2, "Atypical Angina", 
+                                  ifelse(heart_disease$cp == 3, "Non-anginal Pain", "Asymptomatic"))) |> 
+                    factor(levels = c("Asymptomatic", "Non-anginal Pain", "Atypical Angina", "Typical Angina"))
+heart_disease$fbs <- ifelse(heart_disease$fbs == T, "Fasting Blood Sugar >120" , "Fasting Blood Sugar <= 120") |> factor()
+heart_disease$restecg <- ifelse(heart_disease$restecg == 0, "Normal",
+                                ifelse(heart_disease$restecg == 1, "ST-T wave Abnormality", "Left Ventricular Hypertrophy")) |> 
+                          factor(levels = c("Normal", "ST-T wave Abnormality", "Left Ventricular Hypertrophy"))
+heart_disease$slope <- ifelse(heart_disease$slope == 1, "Positive Slope",
+                              ifelse(heart_disease$slope == 2, "Zero Slope", "Negative Slope")) |> 
+                              factor(levels = c("Zero Slope", "Positive Slope", "Negative Slope"))
+heart_disease$thal <- ifelse(heart_disease$thal==3, "Normal",
+                             ifelse(heart_disease$thal == 6, "Fixed Defect", "Reversible Defect")) |> 
+                              factor(levels = c("Normal", "Fixed Defect", "Reversible Defect"))
 theme_set(theme_bw() + 
-            theme(
-              axis.text.x = element_text(size = 24),
-              axis.title = element_text(size = 30),
-              plot.title = element_text(size = 48),
-              strip.text = element_text(size = 20),
-              legend.title = element_blank(),
-              legend.text = element_text(size = 24)))
-
+          theme(axis.text = element_text(size = 24),
+                axis.title = element_text(size = 30),
+                plot.title = element_text(size = 48),
+                strip.text = element_text(size = 20),
+                legend.title = element_blank(),
+                legend.text = element_text(size = 24)))
 ```
 
+-   rcistats
+-   tidyverse
 
-# Modeling Outcomes
+## Palmer Penguins Data
 
-## Explaining Variation
+::: {.columns}
+::: {.column}
 
-::: fragment
-This is the process where we try to reduce the variation with the use of other variables.
+### Variables of Interest
+
+- `species`: Penguin species
+- `flipper_len`: Flipper Length in [millimeters](https://en.wikipedia.org/wiki/Millimetre)
+- `body_mass`: Body mass in [grams](https://en.wikipedia.org/wiki/Gram)
+
+:::
+::: {.column}
+![Artwork by @allison_horst](img/penguins.png){fig-alt="An image of several penguins in Antartica."}
+
+:::
+::: 
+
+## Heart Disease Data
+
+::: {.columns}
+::: {.column}
+
+### Variables of Interest
+
+- `thal`: Thallium stress test result
+- `thalach`: Maximum heart rate achieved
+- `disease`: Indicating if they have heart disease
+
+:::
+::: {.column}
+![](img/heart_df.png){fig-alt="An image of a graph and a heart."}
+:::
 :::
 
-::: fragment
-Can be thought of as getting it less wrong when taking an educated guess.
-:::
+# Visualizations
 
-## Taylor Swift's Songs Danceability
+## Penguins: Body Mass
+
+::: panel-tabset
+
+### Body Mass
 
 ```{r}
-ggplot(taylor_album_songs, aes(danceability)) +
+ggplot(penguins, aes(body_mass)) +
   geom_density()
 ```
 
-## Danceability by `mode_name`
+### Flipper Length
 
 ```{r}
-taylor_album_songs |> 
-  drop_na(mode_name) |> 
-  ggplot(aes(danceability)) +
-  geom_density() +
-  facet_wrap(~ mode_name)
+ggplot(penguins, aes(x = flipper_len, y = body_mass)) +
+  geom_point()
 ```
 
-## Danceability by Valence
+### Species
 
 ```{r}
-ggplot(taylor_album_songs, aes(valence, danceability)) +
+ggplot(penguins, aes(x = flipper_len, y = body_mass, color = species)) +
   geom_point() +
-  geom_smooth(method = "lm")
+  stat_density_2d(aes(fill = after_stat(level))) +
+  xlim(c(170, 236)) +
+  ylim(c(2500, 6250))
 ```
 
-## Danceability by Energy
+### Lines
 
 ```{r}
-ggplot(taylor_album_songs, aes(energy, danceability)) +
+ggplot(penguins, aes(x = flipper_len, y = body_mass, color = species)) +
   geom_point() +
-  geom_smooth(method = "lm")
+  stat_smooth(method = "lm")
 ```
 
-## Modelling Danceability
+:::
 
-How do we use all the variables to explain danceability?
+
+## Heart Disease
+
+::: panel-tabset
+
+### Disease
+```{r}
+#| code-fold: true
+# Fit logistic model
+
+ggplot(heart_disease, aes(disease)) +
+  geom_bar() +
+  labs(x = NULL, y = NULL)
+
+```
+
+
+### thalach
+
+```{r}
+#| code-fold: true
+# Fit logistic model
+
+hdf <- heart_disease
+hdf$plot <- ifelse(hdf$disease=="yes", 1, 0)
+ggplot(hdf, aes(thalach, plot)) +
+  geom_point(alpha = 0.3) +
+  stat_smooth(method = "glm",
+              method.args = list(family = "binomial"),
+              se = FALSE) +
+  labs(x = NULL, y = NULL)
+
+```
+
+### thal
+
+```{r}
+#| code-fold: true
+# Fit logistic model
+
+ggplot(hdf, aes(thalach, plot, col = thal)) +
+  geom_point(alpha = 0.3) +
+  stat_smooth(method = "glm",
+              method.args = list(family = "binomial"),
+              se = FALSE) +
+  labs(x = NULL, y = NULL)
+
+```
+
+:::
+
 
 # Multivariable Linear Regression
 
-## MLR
+## Multivariable Linear Regression
 
 Multivariable Linear Regression (MLR) is used to model an outcome variable ($Y$) by multiple predictor variables ($X_1, X_2, \ldots, X_p$).
 
@@ -185,144 +279,235 @@ $$
 $$
 
 
-## Fitting a Model in R
+## Fitting a LM in R
 
-```{r}
-#| echo: true
-#| eval: false
-
-lm(Y ~ X1 + X2 + ... + Xp, data = DATA)
+```r
+xlm <- lm(Y ~ X1 + X2 + ... + Xp, data = DATA)
+xlm
 ```
 
+- `DATA`: Name of the data frame
+- `Y`: Outcome Variable of Interest in the data frame `DATA`
+- `X1`, `X2`, ... , `X_p` : Predictor variables in the data frame `DATA`
 
-## Modelling Danceability
+
+
+# Multivariable Logistic Regression
+
+## Multivariable Logistic Regression
+
+Multivariable Logistic Regression is used to model a binary outcome variable ($Y$) with multiple predictor variables ($X_1, X_2, \ldots, X_p$).
+
+
+::: fragment
+Using Multivariable Logistic Regression, you propose that the ouctome variable was constructed from a set of predictors, with their corresponding regression coefficients ($\beta_j$), and generated from a Bernoulli model.
+:::
+
+## Logistic Model
+
+$$
+lo(Y=1) = \beta_0 + \beta_1X_1 + \cdots + \beta_p X_p
+$$
+
+## Regression Coefficients $\beta$
+
+The regression coefficients quantify how a specific predictor changes the odds of observing the first category of the outcome ($Y = 1$)
+
+## Estimating $\beta$
+
+To obtain the numerical value for $\beta_j$, denoted as $\hat \beta_j$, we will be finding the values of $\hat \beta_j$ that maximizes the likelihood function:
+
+$$
+L(\boldsymbol \beta) = \prod_{i=1}^n \left(\frac{e^{\beta_0 + \beta_1X_1 + \cdots + \beta_p X_p}}{1 + e^{\beta_0 + \beta_1X_1 + \cdots + \beta_p X_p}}\right)^{Y_i}\left(\frac{1}{1 + e^{\beta_0 + \beta_1X_1 + \cdots + \beta_p X_p}}\right)^{1-Y_i}
+$$
+
+The likelihood function can be thought as the probability of observing the entire data set. Therefore, we want to choose the values the $\beta_0$ and $\beta_1$ that will result in the highest probability of observing the data.
+
+
+## Estimated Parameters
+
+The values you obtain ($\hat \beta$) tell you the relationship between the a predictor variable and the log odds of observing the first category of the outcome $Y=1$, adjusting for all the other covariates.
+
+::: fragment
+Exponentiating the estimate ($e^{\hat \beta}$) will give you the relationship between a predictor variable and the odds of observing the first category of the outcome $Y=1$, adjusting for all the other covariates.
+:::
+
+## Interpreting $\hat \beta_j$
+
+For a continuous predictor variable:
+
+As X increases by 1 unit, the odds of observing the first category ($Y = 1$) increases by a factor of $e^{\hat\beta_j}$, adjusting for alll the other predictor variables.
+
+For a categorical predictor variable (first dummy variable):
+
+The odds of observing the first category ($Y = 1$) in the indicated category ($D=1$) is $e^{\hat\beta_j}$ times higher/lower compared to the reference category ($D=0$), adjusting for alll the other predictor variables.
+
+## Fitting a GLM in R
+
+```r
+xglm <- glm(Y ~ X1 + X2 + ... + Xp, 
+           data = DATA,
+           family = binomial)
+xglm
+```
+
+- `DATA`: Name of the data frame
+- `Y`: Outcome Variable of Interest in the data frame `DATA`
+- `X1`, `X2`, ... , `X_p` : Predictor variables in the data frame `DATA`
+
+
+
+# Modelling Body Mass
+
+## Modelling Body Mass
+
+$$
+body\_mass = \beta_0 + \boldsymbol \beta_1 (species) + \beta_2 (flipper\_len)
+$$
+
+
+## Fitting Model
 
 ```{r}
-#| code-fold: show
-lm(danceability ~ mode_name + valence + energy, 
-   data = taylor_album_songs)
+#| code-fold: false
+#| message: true
+xlm <- lm(body_mass ~ species + flipper_len, 
+          data = penguins)
+model_info(xlm)
+```
+
+```{r}
+#| code-fold: false
+xlm
 ```
 
 ## Estimated Model
 
 $$
-dance = 0.54 + 0.07\times Minor + 0.18 \times valence - 0.06 \times energy 
+body\_mass = -4013.18 -205.38 (Chinstrap)\\ + 284.52 (Gentoo) + 40.61 (flipper\_len)
 $$
 
-## $\hat \beta_i$ Representation
 
-Each regression coefficient $\beta_i$ represents how the predictor variable changes the outcome, as it increase by 1 unit.
 
-::: fragment
-For categorical dummy variables, the $\beta_i$ represents how the outcome will change when the data point belongs to that value.
+
+## Intepreting $flipper\_len$ coefficient
+
+$$
+body\_mass = -4013.18 -205.38 (Chinstrap)\\ + 284.52 (Gentoo) + 40.61 (flipper\_len)
+$$
+
+As flipper length increased by 1 unit, body mass increases by an **average** of 40.61, adjusting for penguin species.
+
+
+
+## Intepreting $species$ coefficient
+
+$$
+body\_mass = -4013.18 -205.38 (Chinstrap)\\ + 284.52 (Gentoo) + 40.61 (flipper\_len)
+$$
+
+
+::: panel-tabset
+
+### Chinstrap
+
+On average, the body mass of a Chinstrap species is 205.6 grams lower than an Adelie species, adjusting for flipper length.
+
+### Gentoo
+
+On average, the body mass of a Gentoo species is 205.6 grams higher than an Adelie species, adjusting for flipper length.
+
 :::
 
 
-## $\hat \beta_i$ Interpretation
+# Modeling Heart Disease
 
-For $hat \beta_i$, which is the regression coefficient (slope) of $X_i$:
-
-As $X_i$ increases by 1 unit, the outcome ($Y$) will increase/decrease by $\hat \beta_i$ units, adjusting for all other predictor variables.
-
-::: fragment
-For categorical dummy variables $X_i$:
-
-The outcome $Y_i$ increases/decreases by $\beta_i$ units for category $X_i$ compared to the reference category, adjusting for all other predictor variables.
-
-:::
-
-
-## Intepreting Minor coefficient
+## Modelling Heart Disease
 
 $$
-dance = 0.54 + 0.07 Minor + 0.18 valence - 0.06 energy 
-$$
-Minor song's average danceability score is 0.07 units higher compared to Major song's, adjusting for valence and energy.
-
-## Intepreting valence coefficient
-
-$$
-dance = 0.54 + 0.07Minor + 0.18  valence - 0.06 energy 
+lo(disease) = \beta_0 + \boldsymbol \beta_1 (thal)\\ + \beta_2 (thalach)
 $$
 
-As valence increases by 1 unit, danceability increases by an average of 0.18 units, adjusting for energy and type of song.
 
-
-## Intepreting energy coefficient
-
-$$
-dance = 0.54 + 0.07 Minor + 0.18 valence - 0.06 energy 
-$$
-
-As energy increases by 1 unit, danceability decreases by an average of 0.06 units, adjusting for valence and type of song.
-
-
-# Adjusted $R^2$
-
-## $R^2$
-
-Computing $R^2$ is done by determining how much the variation in the outcome is explained by model and divided by the variation of the outcome.
-
-$$
-R^2 = \frac{\text{variation explained by model}}{\text{variation from outcome}} \\
-= 1-\frac{\text{variation of residuals}}{\text{variation from outcome}}
-$$
-
-## $R^2$
-
-Problems arise when multiple predictors are added to the model. As a new predictor is added to the model, new information is added to the model which will always reduce the variation in the residuals. Therefore, the $R^2$ will always increase.
-
-## Problems with $R^2$ in MLR
-
-When the number of variables increase, the regular $R²$ will be biased in its prediction capability when new data is obtained.
-
-::: fragment
-Therefore, statisticians uses the adjusted $R^2$, that penalizes the model when more variables are added. This ensures that a variable added will have a significant effect in predicting outcomes.
-:::
-
-## Adjusted $R^2$
-
-$$
-R_a^2 = 1-\frac{\text{variation of residuals}}{\text{variation from outcome}}\times \frac{n-1}{n-k-1}
-$$
-
-- $n$: Number of data points
-- $k$: Number of predictor variables in the model
-
-## Adjusted $R^2$ in R
+## Fitting Model
 
 ```{r}
-#| eval: false
-#| echo: true
-
-xlm <- lm(Y ~ X1 + X2 + ... + Xp, data = DATA)
-ar2(xlm)
+#| code-fold: false
+#| message: true
+xglm <- lm(disease ~ thal + thalach, 
+           data = heart_disease,
+           family = binomial)
+model_info(xglm)
 ```
-
-
-## Example
 
 ```{r}
-xlm <- lm(danceability ~ mode_name + valence + energy, 
-   data = taylor_album_songs)
-ar2(xlm)
+#| code-fold: false
+xglm
 ```
 
-8.1% of the variation in danceability is explained by the model.
+## Estimated Model
 
-# Model Selection
+$$
+lo(disease) = 2.255 + 0.305 (Fixed) + 0.46 (Reversible)\\ - 0.006 (thalach)
+$$
 
-## Model Selection
 
-Model Selection is the process of obtaining a "final" model containing all the necessary predictors, and eliminating any that are not necessary.
+
+## Intepreting $thalach$ coefficient
+
+$$
+lo(disease) = 2.255 + 0.305 (Fixed) + 0.46 (Reversible)\\ - 0.006 (thalach)
+$$
+
+
+```{r}
+#| code-fold: false
+exp(-0.006)
+```
+
+As maximum heart rate achieved increases by 1 unit, the odds of having heart disease decresease by a factor of 0.994, adjusting for thallium stress test results.
+
+## Intepreting $thal$ coefficient
+
+$$
+lo(disease) = 2.255 + 0.305 (Fixed) + 0.46 (Reversible)\\ - 0.006 (thalach)
+$$
+
+::: panel-tabset
+
+### Fixed Defect
+
+```{r}
+#| code-fold: false
+exp(0.305)
+```
+
+The odds of having heart disease is 1.356 times higher in patients with fixed defects thallium stress results than patients with normal thallium stress results, adjusting for maximum heart rate achieved. 
+
+### Reversible Defect
+
+```{r}
+#| code-fold: false
+exp(0.46)
+```
+
+The odds of having heart disease is 1.584 times higher in patients with reversible defects thallium stress results than patients with normal thallium stress results, adjusting for maximum heart rate achieved. 
+
+:::
+
+# Model Building
+
+## Model Building
+
+Model Building is the process of obtaining a "final" model containing all the necessary predictors, and eliminating any that are not necessary.
 
 ## Forward Selection
 
-Begin with the null model ($Y\sim 1$) and add variables until a final model is chosen.
+Begin with the null model ($Y\sim 1$) and add predictor variables until a final model is chosen.
 
 ## Backward Selection
 
-Begin with the full model, and remove variable until the final model is chosen.
+Begin with the full model, and remove predictor variable until the final model is chosen.
 
 ## Hybrid Selection
 
@@ -330,4 +515,6 @@ A hybrid approach between the forward and backward building approach.
 
 ## About Model Selection
 
-Generally, it is not a good idea to conduct model selection. The predictor variables in your model should be guided by a literature review that illustrates important predictor variables in a model.
+Generally, it is not a good idea to conduct model selection. The predictor variables in your model should be guided by a literature review that illustrates important predictor variables in a model. Add predictor variables based on consultation with experts and a literature review.
+
+

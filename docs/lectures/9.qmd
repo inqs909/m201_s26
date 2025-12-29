@@ -560,3 +560,164 @@ $$
 $$
 \frac{\hat\beta_j}{\mathrm{se}(\hat\beta_j)} \sim N(0,1)
 $$
+
+# Scientific Notation
+
+## Scientific Notation
+
+We often work with **very large** or **very small** numbers.
+
+- Earth → Sun distance: 150,000,000 km  
+- Diameter of a hydrogen atom: 0.0000000001 m
+
+Problems with standard form:
+
+- Hard to **read**
+- Easy to **copy wrong**
+- Difficult to **compare**
+
+**Scientific notation** makes numbers compact and standardized.
+
+
+## The Scientific Notation Form
+
+A number is in scientific notation if:
+
+$$
+a \times 10^n
+$$
+
+where:
+
+- $a$ is **at least 1 and less than 10**
+- $n$ is an integer (positive, negative, or zero)
+- $10^n$ is a **power of ten**
+
+
+## Example: Large Number
+
+Write 45,000 in scientific notation.
+
+Move decimal:
+
+$$
+45000 \rightarrow 4.5
+$$
+
+Moved **4 places left**:
+
+$$
+4.5 \times 10^4
+$$
+
+## Example: Small Number
+
+Write 0.00072 in scientific notation.
+
+Move decimal:
+
+$$
+0.00072 \rightarrow 7.2
+$$
+
+Moved **4 places right**:
+
+$$
+7.2 \times 10^{-4}
+$$
+
+
+## Understanding Positive Exponent
+
+Positive exponents → big numbers
+
+- $10^3 = 1{,}000$
+- $10^6 = 1{,}000{,}000$
+
+Example:
+
+$$
+2.1 \times 10^6 = 2{,}100{,}000
+$$
+
+
+## Understanding Negative Exponent
+
+Negative exponents → small numbers
+
+- $10^{-2} = 0.01$
+- $10^{-5} = 0.00001$
+
+Example:
+
+$$
+4.3 \times 10^{-3} = 0.0043
+$$
+
+
+## Converting Back to Standard Form
+
+Rule:
+
+- $10^{+n}$: move decimal **right** $n$ places
+- $10^{-n}$: move decimal **left** $n$ places
+
+
+## Convert Example (Positive Exponent)
+
+$$
+6.2 \times 10^5
+$$
+
+Move decimal 5 places right:
+
+$$
+620{,}000
+$$
+
+---
+
+## Convert Example (Negative Exponent)
+
+$$
+9.1 \times 10^{-4}
+$$
+
+Move decimal 4 places left:
+
+$$
+0.00091
+$$
+
+
+## Comparing Numbers in Scientific Notation
+
+Step 1: Compare exponents
+
+- Bigger exponent → bigger number
+
+Step 2: If exponents match, compare coefficients $a$
+
+Example:
+
+- $3.2 \times 10^5$
+- $7.1 \times 10^4$
+
+Since $10^5 > 10^4$, the first number is larger.
+
+
+
+## Scientific Notation in R
+
+R often displays very large/small numbers using **`e` notation**.
+
+$$
+a \times 10^n \quad \text{is shown as} \quad a\text{e}n
+$$
+
+Examples:
+
+- `3e+06` means $3 \times 10^6$
+- `4.5e-04` means $4.5 \times 10^{-4}$
+
+

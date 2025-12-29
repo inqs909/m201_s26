@@ -26,7 +26,6 @@ knitr:
   opts_chunk: 
     echo: true
     eval: true
-    message: false
     code-fold: true
     warnings: false
     comment: "#>" 
@@ -43,11 +42,13 @@ filters:
 editor: source
 ---
 
+## R Packages
+
 ```{r}
 #| include: false
+#| message: false
 library(tidyverse)
 library(rcistats)
-library(ThemePark)
 penguins <- penguins |> drop_na()
 theme_set(theme_bw() + 
           theme(axis.text = element_text(size = 24),
@@ -59,15 +60,19 @@ theme_set(theme_bw() +
 ```
 
 
-# Palmer Penguins
+-   rcistats
+-   tidyverse
 
-## Palmer Penguins
 
+## Palmer Penguins Data
 
 ::: {.columns}
 ::: {.column}
 
-The `penguins` data set was contains information on penguins from the [Palmer Station](https://lternet.edu/site/palmer-antarctica-lter/) located in . You can learn more about the data set [here](https://allisonhorst.github.io/palmerpenguins/articles/intro.html).
+### Variables of Interest
+
+- `flipper_len`: Flipper Length in [millimeters](https://en.wikipedia.org/wiki/Millimetre)
+- `body_mass`: Body mass in [grams](https://en.wikipedia.org/wiki/Gram)
 
 :::
 ::: {.column}
@@ -78,8 +83,7 @@ The `penguins` data set was contains information on penguins from the [Palmer St
 
 ## Variables of Interest
 
-- `flipper_len`: Flipper Length in [millimeters](https://en.wikipedia.org/wiki/Millimetre)
-- `body_mass`: Body mass in [grams](https://en.wikipedia.org/wiki/Gram)
+
 
 
 # Modeling Relationships

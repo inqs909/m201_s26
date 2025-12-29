@@ -1,6 +1,5 @@
 ---
-title: "Statistical Inference"
-subtitle: "Model Inference"
+title: "Statistical <br> Modeling"
 description: |
   Finish the discussion on model inference.
 format:
@@ -131,7 +130,6 @@ tidy(XLM)
 -   `DATA`: Name of the data set
 
 
-# Examples
 
 ## Penguins Example
 
@@ -211,6 +209,10 @@ $$
 ## Heart: Interpretation
 
 There is a significant association between heart disease and resting blood pressure, after adjusting for chest pain (p < 0.00967; $\beta = 0.0209$). As resting blood pressure increases by 1 unit, the odds of having heart disease increases by a factor of 1.02, adjusting for chest pain.
+
+# Model Inference
+
+## Model Inference
 
 
 # Power Analysis
@@ -292,6 +294,10 @@ There's a trade-off between these errors. We can't eliminate both, but we can **
   - $\alpha$
   - Variability
 - Aim for **80% or higher**
+
+# Simpson's Paradox
+
+## Simpson's Paradox
 
 # Model Conditions
 

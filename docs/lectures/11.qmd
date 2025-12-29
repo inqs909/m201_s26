@@ -25,7 +25,6 @@ knitr:
   opts_chunk: 
     echo: true
     eval: true
-    message: false
     code-fold: true
     warnings: false
     comment: "#>" 
@@ -46,34 +45,33 @@ editor: source
 #| include: false
 library(tidyverse)
 library(rcistats)
-library(patchwork)
 library(emmeans)
-theme_set(theme_bw() + 
-            theme(
-              axis.text.x = element_text(size = 24),
-              axis.title = element_text(size = 30),
-              plot.title = element_text(size = 48),
-              strip.text = element_text(size = 20),
-              legend.title = element_blank(),
-              legend.text = element_text(size = 24)))
-
+library(patchwork)
 penguins <- penguins |> drop_na()
 heart_disease <- kmed::heart
 heart_disease$disease <- factor(ifelse(heart_disease$class == 0, "no", "yes")) 
-heart_disease <- heart_disease |> 
-  mutate(cp = factor(case_when(cp == 1 ~ "Typical Angina",
-                               cp == 2 ~ "Atypical Angina",
-                               cp == 3 ~ "Non-anginal Pain",
-                               cp == 4 ~ "Asymptomatic")))
-
-
-m1 <- lm(body_mass ~ species, data = penguins)
-
-m2 <- glm(disease ~ cp, data = heart_disease, family = binomial)
-em1 <- emmeans(m1, ~species)
-em2 <- emmeans(m2, ~cp, type = "response")
-pairs(em1)
-pairs(em2)
+heart_disease$sex <- ifelse(heart_disease$sex == T, "Male", "Female") |> factor()
+heart_disease$cp <- ifelse(heart_disease$cp == 1, "Typical Angina",
+                           ifelse(heart_disease$cp == 2, "Atypical Angina", 
+                                  ifelse(heart_disease$cp == 3, "Non-anginal Pain", "Asymptomatic"))) |> 
+                    factor(levels = c("Asymptomatic", "Non-anginal Pain", "Atypical Angina", "Typical Angina"))
+heart_disease$fbs <- ifelse(heart_disease$fbs == T, "Fasting Blood Sugar >120" , "Fasting Blood Sugar <= 120") |> factor()
+heart_disease$restecg <- ifelse(heart_disease$restecg == 0, "Normal",
+                                ifelse(heart_disease$restecg == 1, "ST-T wave Abnormality", "Left Ventricular Hypertrophy")) |> 
+                          factor(levels = c("Normal", "ST-T wave Abnormality", "Left Ventricular Hypertrophy"))
+heart_disease$slope <- ifelse(heart_disease$slope == 1, "Positive Slope",
+                              ifelse(heart_disease$slope == 2, "Zero Slope", "Negative Slope")) |> 
+                              factor(levels = c("Zero Slope", "Positive Slope", "Negative Slope"))
+heart_disease$thal <- ifelse(heart_disease$thal==3, "Normal",
+                             ifelse(heart_disease$thal == 6, "Fixed Defect", "Reversible Defect")) |> 
+                              factor(levels = c("Normal", "Fixed Defect", "Reversible Defect"))
+theme_set(theme_bw() + 
+          theme(axis.text = element_text(size = 24),
+                axis.title = element_text(size = 30),
+                plot.title = element_text(size = 48),
+                strip.text = element_text(size = 20),
+                legend.title = element_blank(),
+                legend.text = element_text(size = 24)))
 ```
 
 # Motivating Example
@@ -124,19 +122,23 @@ heart_disease |> ggplot(aes(x=cp, fill = disease)) +
 :::
 ::::
 
-# Model Inference
+# Group Model Inference
 
-## Model Inference
+## Group Model Inference
 
-**Model Inference** is the act of conducting a hypothesis test on the entire model (line). We do this to determine if the fully explained model is **significantly** different from the smaller models or average.
+
+
+## Group Model Inference
+
+**Group Model Inference** is the act of conducting a hypothesis test on the entire group model. We do this to determine if the group model is **significantly** different from just using the sample mean or proportion.
 
 ::: fragment
-Model inference determines if more variation is explained by including more predictors.
+Group model inference determines if more variation is explained by including categorical variables.
 :::
 
-## Model inference
+## Group Model Inference
 
-- We will conduct model inference to determine if different models are better at explaining variation. Both Linear and Logistic Regression have techniques to test different models. 
+- We will conduct group model inference to determine if a group model explains more variation . Both Linear and Logistic Regression have techniques to test different models. 
 
 - For Linear Regression, we determine the significance of the variation explained using an Analysis of Variance (ANOVA) table and F test.
 
@@ -144,7 +146,13 @@ Model inference determines if more variation is explained by including more pred
 
 - Conducting Model Inference first ensures that the **Family-wise Error Rate** is controlled.
 
-## Full and Reduced Model
+## Group Model Inference
+
+- Group model inference compares a **Full** and **Reduced** model to determine if they are different.
+- **Full**: The group model containing the categorical variable.
+- **Reduced**: Either the sample mean or proportion.
+
+## Linear Models
 
 ::: {.columns}
 ::: {.column}
@@ -152,8 +160,11 @@ Model inference determines if more variation is explained by including more pred
 #### Full Model
 
 $$
-Y =  \beta_0 + \beta_1 X_1 + \cdots + \beta_p X_p
+Y =  \beta_0 + \beta_1 D_1 + \cdots + \beta_p D_p
 $$
+
+- $D_1, \cdots, D_p$: Dummy variables for categorical variables
+- $\beta_0, \beta_1, \cdots, \beta_p$: Regression coefficients
 
 :::
 ::: {.column}
@@ -161,49 +172,43 @@ $$
 #### Reduced Model
 
 $$
-Y =  \beta_0 + \beta_1 X_1
+Y =  \bar y
 $$
+
+- $\bar y$: Average of the outcome
+
+:::
+:::
+
+## Generalized Linear Models
+
+::: {.columns}
+::: {.column}
+
+#### Full Model
+
+$$
+Y =  \beta_0 + \beta_1 D_1 + \cdots + \beta_p D_p
+$$
+
+- $D_1, \cdots, D_p$: Dummy variables for categorical variables
+- $\beta_0, \beta_1, \cdots, \beta_p$: Regression coefficients
+
+:::
+::: {.column}
+
+#### Reduced Model
+
+$$
+lo(Y) =  \hat p
+$$
+
+- $\hat p$: Sample proportion of the outcome
 
 :::
 :::
 
 ## Null and Alt Hypothesis
-
-$H_0$: The fully-parameterized model does not explain more variation than the reduced model.
-
-$H_a$: The fully-parameterized model does explain more variation than the reduced model.
-
-
-## Group Model Inference
-
-- **Group Model Inference** tests whether a **categorical** variable significantly reduces the variation of the outcome of interest.
-
-- This tells us if the group means are different from each other.
-
-## Group Full and Reduced Model
-
-::: {.columns}
-::: {.column}
-
-#### Full Model
-
-$$
-Y =  \beta_0 + \beta_1 C_1 + \cdots + \beta_p C_p
-$$
-
-:::
-::: {.column}
-
-#### Reduced Model
-
-$$
-Y =  \bar Y
-$$
-
-:::
-:::
-
-## Group Null and Alt Hypothesis
 
 $H_0$: The different categories do not have significantly different means/proportions from each other.
 

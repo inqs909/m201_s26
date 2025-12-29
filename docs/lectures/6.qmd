@@ -25,7 +25,6 @@ knitr:
   opts_chunk: 
     echo: true
     eval: true
-    message: false
     code-fold: true
     warnings: false
     comment: "#>" 
@@ -42,8 +41,10 @@ filters:
 editor: source
 ---
 
+## R Packages
 ```{r}
 #| include: false
+#| message: false
 
 library(tidyverse)
 library(rcistats)
@@ -60,48 +61,82 @@ theme_set(theme_bw() +
 
 heart_disease <- kmed::heart
 heart_disease$disease <- factor(ifelse(heart_disease$class == 0, "no", "yes")) 
-heart_disease$sex <- ifelse(isTRUE(heart_disease$sex), "Male", "Female") |> factor()
+heart_disease$sex <- ifelse(heart_disease$sex == T, "Male", "Female") |> factor()
 heart_disease$cp <- ifelse(heart_disease$cp == 1, "Typical Angina",
                            ifelse(heart_disease$cp == 2, "Atypical Angina", 
-                                  ifelse(heart_disease$cp == 3, "Non-anginal Pain", "Asymptomatic"))) |> factor()
-heart_disease$fbs <- ifelse(isTRUE(heart_disease$fbs), "Fasting Blood Sugar >120" , "Fasting Blood Sugar <= 120") |> factor()
+                                  ifelse(heart_disease$cp == 3, "Non-anginal Pain", "Asymptomatic"))) |> 
+                    factor(levels = c("Asymptomatic", "Non-anginal Pain", "Atypical Angina", "Typical Angina"))
+heart_disease$fbs <- ifelse(heart_disease$fbs == T, "Fasting Blood Sugar >120" , "Fasting Blood Sugar <= 120") |> factor()
 heart_disease$restecg <- ifelse(heart_disease$restecg == 0, "Normal",
                                 ifelse(heart_disease$restecg == 1, "ST-T wave Abnormality", "Left Ventricular Hypertrophy")) |> 
-                          factor()
+                          factor(levels = c("Normal", "ST-T wave Abnormality", "Left Ventricular Hypertrophy"))
 heart_disease$slope <- ifelse(heart_disease$slope == 1, "Positive Slope",
                               ifelse(heart_disease$slope == 2, "Zero Slope", "Negative Slope")) |> 
-                              factor()
+                              factor(levels = c("Zero Slope", "Positive Slope", "Negative Slope"))
 heart_disease$thal <- ifelse(heart_disease$thal==3, "Normal",
-                             ifelse(heart_disease$thal == 6, "Fixed Defect", "Reversible Defect")) |> factor()
-
-
+                             ifelse(heart_disease$thal == 6, "Fixed Defect", "Reversible Defect")) |> 
+                              factor(levels = c("Normal", "Fixed Defect", "Reversible Defect"))
 
 ```
 
+-   rcistats
+-   tidyverse
 
-# Heart Disease
 
 ## Heart Disease Data
 
-The [`heart_disease`](https://archive.ics.uci.edu/dataset/45/heart+disease) data set provides heart disease information on patients from Cleveland, Ohio. The data was originally published in the [American Journal or Cardiology](https://pubmed.ncbi.nlm.nih.gov/2756873/).
+::: {.columns}
+::: {.column}
 
-## Data
+### Variables of Interest
 
-```{r}
-heart_disease |> 
-  DT::datatable(options = list(dom = "t",
-                pageLength = 4))
-```
-
-## Variables of Interest
-
-- `cp`: Type of Chest Pain
+- `age`: Age of patient
 - `disease`: Indicating if they have heart disease
+
+:::
+::: {.column}
+![](img/heart_df.png){fig-alt="An image of a graph and a heart."}
+:::
+:::
+
 
 
 # Modeling Binary Outcomes
 
-## Construct Model
+## Modeling Binary Outcomes
+
+```{r}
+#| code-fold: false 
+#| echo: false
+# Fit logistic model
+hdf <- heart_disease
+hdf$plot <- ifelse(hdf$disease=="yes", 1, 0)
+ggplot(hdf, aes(trestbps, plot)) +
+  geom_point(alpha = 0.3) +
+  stat_smooth(method = "glm",
+              method.args = list(family = "binomial"),
+              se = FALSE) +
+  labs(x = NULL, y = NULL)
+```
+
+
+
+## Modeling Binary Outcomes
+
+```{r}
+#| code-fold: false
+#| echo: false
+# Fit logistic model
+ggplot(hdf, aes(thalach, plot)) +
+  geom_point(alpha = 0.3) +
+  stat_smooth(method = "glm",
+              method.args = list(family = "binomial"),
+              se = FALSE) +
+  labs(x = NULL, y = NULL)
+
+```
+
+## Mathematical Model
 
 $$
 \left(\begin{array}{c}
@@ -157,15 +192,15 @@ $$
 
 ## Logistic Regression
 
-Logistic Regression is used to model the association between a set of predictors and a **binary** outcome variable.
+Logistic Regression is used to model the association between a predictor and a **binary** outcome variable.
 
 ::: fragment
-This is similar Linear Regression which models the association between a set of predictors and a **numerical** outcome variable.
+This is similar Linear Regression which models the association between a predictor and a **numerical** outcome variable.
 :::
 
 ## Logistic Regression
 
-Logistic Regression uses the logistic model to formulate the relationship between the predictors and the outcome.
+Logistic Regression uses the logistic model to formulate the relationship between a predictor and the outcome.
 
 ::: fragment
 
@@ -178,7 +213,7 @@ Y = \left\{\begin{array}{cc}
 \end{array}\right.
 $$
 
-The Predictors variable will model the probability of observing category 1 ($P(Y=1)$)
+The predictor variable will model the probability of observing category 1 ($P(Y=1)$)
 
 :::
 
@@ -218,12 +253,11 @@ For a continuous predictor variable:
 
 As X increases by 1 unit, the odds of observing the first category ($Y = 1$) increases by a factor of $e^{\hat\beta}$.
 
-
+# Logistic Regression in R
 
 ## Logistic Regression in R
 
 ```r
-
 xglm <- glm(Y ~ X,
             data = DATA,
             family = binomial())
@@ -237,16 +271,41 @@ xglm
 
 ## Model Information
 
+The `model_info` function can provide basic information about a linear or logistic regression model. 
+
+
+::: fragment
+It can provide what is being modeled (yes, 1) in logistic regression.
+:::
+
+
+::: fragment
+It can provide basic info of the predictor variables.
+:::
+
+## Model Information in R
+
+```r
+model_info(MODEL)
+```
+
+- `MODEL`: fitted model from `lm()` or `glm`
+
+
 ## Example
 
 Modelling `disease` by `age`: 
 
 ```{r}
-xglm <- glm(disease ~ age,
+xglm <- glm(disease ~ cp + age + sex + restecg + fbs,
             data = heart_disease,
             family = binomial())
+model_info(xglm)
 xglm
 ```
+
+##
+
 
 $$
 lo(disease) = -3.0512 + 0.0529 (age)
@@ -266,7 +325,7 @@ exp(0.05291)
 ```
 
 ::: fragment
-As age increases by 1 year, the odds of experiencing death increases by a factor of 1.054.
+As age increases by 1 year, the odds of having heart disease increases by a factor of 1.054.
 :::
 
 # Prediction with Models
@@ -284,9 +343,7 @@ $$
 
 ## Prediction in R
 
-```{r}
-#| echo: true
-#| eval: false
+```r
 xglm <- glm(Y ~ X,
             data = DATA,
             family = binomial())

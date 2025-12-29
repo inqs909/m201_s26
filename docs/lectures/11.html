@@ -222,7 +222,7 @@
 <p>Motivating Example</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Model Inference</p>
+<p>Group Model Inference</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Family-wise Error Rate</p>
@@ -294,15 +294,15 @@
 </div></div>
 </section></section>
 <section>
-<section id="model-inference" class="title-slide slide level1 agenda-slide center">
-<h1>Model Inference</h1>
+<section id="group-model-inference" class="title-slide slide level1 agenda-slide center">
+<h1>Group Model Inference</h1>
 <div class="agenda">
 <ul>
 <li><div class="agenda-inactive agenda-pre-active">
 <p>Motivating Example</p>
 </div></li>
 <li><div class="agenda-active">
-<p>Model Inference</p>
+<p>Group Model Inference</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Family-wise Error Rate</p>
@@ -319,66 +319,79 @@
 </ul>
 </div>
 </section>
-<section id="model-inference-1" class="slide level2">
-<h2>Model Inference</h2>
-<p><strong>Model Inference</strong> is the act of conducting a hypothesis test on the entire model (line). We do this to determine if the fully explained model is <strong>significantly</strong> different from the smaller models or average.</p>
+<section id="group-model-inference-1" class="slide level2">
+<h2>Group Model Inference</h2>
+</section>
+<section id="group-model-inference-2" class="slide level2">
+<h2>Group Model Inference</h2>
+<p><strong>Group Model Inference</strong> is the act of conducting a hypothesis test on the entire group model. We do this to determine if the group model is <strong>significantly</strong> different from just using the sample mean or proportion.</p>
 <div class="fragment">
-<p>Model inference determines if more variation is explained by including more predictors.</p>
+<p>Group model inference determines if more variation is explained by including categorical variables.</p>
 </div>
 </section>
-<section id="model-inference-2" class="slide level2">
-<h2>Model inference</h2>
+<section id="group-model-inference-3" class="slide level2">
+<h2>Group Model Inference</h2>
 <ul>
-<li><p>We will conduct model inference to determine if different models are better at explaining variation. Both Linear and Logistic Regression have techniques to test different models.</p></li>
+<li><p>We will conduct group model inference to determine if a group model explains more variation . Both Linear and Logistic Regression have techniques to test different models.</p></li>
 <li><p>For Linear Regression, we determine the significance of the variation explained using an Analysis of Variance (ANOVA) table and F test.</p></li>
 <li><p>For Logistic Regression, we determine the significance of the variation explained using a Likelihood Ratio test.</p></li>
 <li><p>Conducting Model Inference first ensures that the <strong>Family-wise Error Rate</strong> is controlled.</p></li>
 </ul>
 </section>
-<section id="full-and-reduced-model" class="slide level2">
-<h2>Full and Reduced Model</h2>
+<section id="group-model-inference-4" class="slide level2">
+<h2>Group Model Inference</h2>
+<ul>
+<li>Group model inference compares a <strong>Full</strong> and <strong>Reduced</strong> model to determine if they are different.</li>
+<li><strong>Full</strong>: The group model containing the categorical variable.</li>
+<li><strong>Reduced</strong>: Either the sample mean or proportion.</li>
+</ul>
+</section>
+<section id="linear-models" class="slide level2">
+<h2>Linear Models</h2>
 <div class="columns">
 <div class="column">
 <h4 id="full-model">Full Model</h4>
 <p><span class="math display">\[
-Y =  \beta_0 + \beta_1 X_1 + \cdots + \beta_p X_p
+Y =  \beta_0 + \beta_1 D_1 + \cdots + \beta_p D_p
 \]</span></p>
+<ul>
+<li><span class="math inline">\(D_1, \cdots, D_p\)</span>: Dummy variables for categorical variables</li>
+<li><span class="math inline">\(\beta_0, \beta_1, \cdots, \beta_p\)</span>: Regression coefficients</li>
+</ul>
 </div><div class="column">
 <h4 id="reduced-model">Reduced Model</h4>
 <p><span class="math display">\[
-Y =  \beta_0 + \beta_1 X_1
+Y =  \bar y
 \]</span></p>
+<ul>
+<li><span class="math inline">\(\bar y\)</span>: Average of the outcome</li>
+</ul>
 </div></div>
 </section>
-<section id="null-and-alt-hypothesis" class="slide level2">
-<h2>Null and Alt Hypothesis</h2>
-<p><span class="math inline">\(H_0\)</span>: The fully-parameterized model does not explain more variation than the reduced model.</p>
-<p><span class="math inline">\(H_a\)</span>: The fully-parameterized model does explain more variation than the reduced model.</p>
-</section>
-<section id="group-model-inference" class="slide level2">
-<h2>Group Model Inference</h2>
-<ul>
-<li><p><strong>Group Model Inference</strong> tests whether a <strong>categorical</strong> variable significantly reduces the variation of the outcome of interest.</p></li>
-<li><p>This tells us if the group means are different from each other.</p></li>
-</ul>
-</section>
-<section id="group-full-and-reduced-model" class="slide level2">
-<h2>Group Full and Reduced Model</h2>
+<section id="generalized-linear-models" class="slide level2">
+<h2>Generalized Linear Models</h2>
 <div class="columns">
 <div class="column">
 <h4 id="full-model-1">Full Model</h4>
 <p><span class="math display">\[
-Y =  \beta_0 + \beta_1 C_1 + \cdots + \beta_p C_p
+Y =  \beta_0 + \beta_1 D_1 + \cdots + \beta_p D_p
 \]</span></p>
+<ul>
+<li><span class="math inline">\(D_1, \cdots, D_p\)</span>: Dummy variables for categorical variables</li>
+<li><span class="math inline">\(\beta_0, \beta_1, \cdots, \beta_p\)</span>: Regression coefficients</li>
+</ul>
 </div><div class="column">
 <h4 id="reduced-model-1">Reduced Model</h4>
 <p><span class="math display">\[
-Y =  \bar Y
+lo(Y) =  \hat p
 \]</span></p>
+<ul>
+<li><span class="math inline">\(\hat p\)</span>: Sample proportion of the outcome</li>
+</ul>
 </div></div>
 </section>
-<section id="group-null-and-alt-hypothesis" class="slide level2">
-<h2>Group Null and Alt Hypothesis</h2>
+<section id="null-and-alt-hypothesis" class="slide level2">
+<h2>Null and Alt Hypothesis</h2>
 <p><span class="math inline">\(H_0\)</span>: The different categories do not have significantly different means/proportions from each other.</p>
 <p><span class="math inline">\(H_a\)</span>: At least two categories have significantly different means/proportions from each other.</p>
 </section></section>
@@ -391,7 +404,7 @@ Y =  \bar Y
 <p>Motivating Example</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Model Inference</p>
+<p>Group Model Inference</p>
 </div></li>
 <li><div class="agenda-active">
 <p>Family-wise Error Rate</p>
@@ -461,7 +474,7 @@ Y =  \bar Y
 <p>Motivating Example</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Model Inference</p>
+<p>Group Model Inference</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
 <p>Family-wise Error Rate</p>
@@ -626,7 +639,7 @@ Y =  \bar Y
 <p>Motivating Example</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Model Inference</p>
+<p>Group Model Inference</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
 <p>Family-wise Error Rate</p>
@@ -756,7 +769,7 @@ g(\hat Y) = \bar y
 <p>Motivating Example</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Model Inference</p>
+<p>Group Model Inference</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
 <p>Family-wise Error Rate</p>
@@ -833,8 +846,8 @@ g(\hat Y) = \bar y
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt;  cp                prob     SE  df asymp.LCL asymp.UCL
 #&gt;  Asymptomatic     0.725 0.0375 Inf    0.6463     0.792
-#&gt;  Atypical Angina  0.184 0.0553 Inf    0.0984     0.317
 #&gt;  Non-anginal Pain 0.217 0.0452 Inf    0.1411     0.318
+#&gt;  Atypical Angina  0.184 0.0553 Inf    0.0984     0.317
 #&gt;  Typical Angina   0.304 0.0959 Inf    0.1525     0.515
 #&gt; 
 #&gt; Confidence level used: 0.95 
@@ -901,12 +914,12 @@ g(\hat Y) = \bar y
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt;  contrast                             odds.ratio    SE  df null z.ratio p.value
-#&gt;  Asymptomatic / Atypical Angina           11.738 4.860 Inf    1   5.948 &lt;0.0001
 #&gt;  Asymptomatic / (Non-anginal Pain)         9.537 3.110 Inf    1   6.917 &lt;0.0001
+#&gt;  Asymptomatic / Atypical Angina           11.738 4.860 Inf    1   5.948 &lt;0.0001
 #&gt;  Asymptomatic / Typical Angina             6.037 2.960 Inf    1   3.664  0.0014
-#&gt;  Atypical Angina / (Non-anginal Pain)      0.812 0.370 Inf    1  -0.456  0.9684
-#&gt;  Atypical Angina / Typical Angina          0.514 0.301 Inf    1  -1.138  0.6660
+#&gt;  (Non-anginal Pain) / Atypical Angina      1.231 0.560 Inf    1   0.456  0.9684
 #&gt;  (Non-anginal Pain) / Typical Angina       0.633 0.333 Inf    1  -0.870  0.8204
+#&gt;  Atypical Angina / Typical Angina          0.514 0.301 Inf    1  -1.138  0.6660
 #&gt; 
 #&gt; P value adjustment: tukey method for comparing a family of 4 estimates 
 #&gt; Tests are performed on the log odds ratio scale</code></pre>

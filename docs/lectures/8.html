@@ -18,7 +18,7 @@
 <link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.32">
 
-  <title>MATH 201 – Multivariable Regression</title>
+  <title>MATH 201 – Multivariable   Regression</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -206,93 +206,226 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Multivariable Regression</h1>
+  <h1 class="title">Multivariable <br> Regression</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
+<section id="r-packages" class="slide level2">
+<h2>R Packages</h2>
+<ul>
+<li>rcistats</li>
+<li>tidyverse</li>
+</ul>
+</section>
+<section id="palmer-penguins-data" class="slide level2">
+<h2>Palmer Penguins Data</h2>
+<div class="columns">
+<div class="column">
+<h3 id="variables-of-interest">Variables of Interest</h3>
+<ul>
+<li><code>species</code>: Penguin species</li>
+<li><code>flipper_len</code>: Flipper Length in <a href="https://en.wikipedia.org/wiki/Millimetre">millimeters</a></li>
+<li><code>body_mass</code>: Body mass in <a href="https://en.wikipedia.org/wiki/Gram">grams</a></li>
+</ul>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/penguins.png" alt="An image of several penguins in Antartica."></p>
+<figcaption>Artwork by <span class="citation" data-cites="allison_horst">@allison_horst</span></figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="heart-disease-data" class="slide level2">
+<h2>Heart Disease Data</h2>
+<div class="columns">
+<div class="column">
+<h3 id="variables-of-interest-1">Variables of Interest</h3>
+<ul>
+<li><code>thal</code>: Thallium stress test result</li>
+<li><code>thalach</code>: Maximum heart rate achieved</li>
+<li><code>disease</code>: Indicating if they have heart disease</li>
+</ul>
+</div><div class="column">
+<p><img data-src="img/heart_df.png" alt="An image of a graph and a heart."></p>
+</div></div>
+</section>
 <section>
-<section id="modeling-outcomes" class="title-slide slide level1 agenda-slide center">
-<h1>Modeling Outcomes</h1>
+<section id="visualizations" class="title-slide slide level1 agenda-slide center">
+<h1>Visualizations</h1>
 <div class="agenda">
 <ul>
 <li><div class="agenda-active">
-<p>Modeling Outcomes</p>
+<p>Visualizations</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Multivariable Linear Regression</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Adjusted <span class="math inline">\(R^2\)</span></p>
+<p>Multivariable Logistic Regression</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Model Selection</p>
+<p>Modelling Body Mass</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Modeling Heart Disease</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Model Building</p>
 </div></li>
 </ul>
 </div>
 </section>
-<section id="explaining-variation" class="slide level2">
-<h2>Explaining Variation</h2>
-<div class="fragment">
-<p>This is the process where we try to reduce the variation with the use of other variables.</p>
-</div>
-<div class="fragment">
-<p>Can be thought of as getting it less wrong when taking an educated guess.</p>
-</div>
-</section>
-<section id="taylor-swifts-songs-danceability" class="slide level2">
-<h2>Taylor Swift’s Songs Danceability</h2>
+<section id="penguins-body-mass" class="slide level2">
+<h2>Penguins: Body Mass</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Body Mass</a></li><li><a href="#tabset-1-2">Flipper Length</a></li><li><a href="#tabset-1-3">Species</a></li><li><a href="#tabset-1-4">Lines</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">ggplot</span>(taylor_album_songs, <span class="fu">aes</span>(danceability)) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(body_mass)) <span class="sc">+</span></span>
 <span id="cb1-2"><a></a>  <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="8_files/figure-revealjs/unnamed-chunk-2-1.png" width="960"></p>
+</figure>
 </div>
-<img data-src="8_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
-<section id="danceability-by-mode_name" class="slide level2">
-<h2>Danceability by <code>mode_name</code></h2>
+</div>
+</div>
+</div>
+<div id="tabset-1-2">
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>taylor_album_songs <span class="sc">|&gt;</span> </span>
-<span id="cb2-2"><a></a>  <span class="fu">drop_na</span>(mode_name) <span class="sc">|&gt;</span> </span>
-<span id="cb2-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(danceability)) <span class="sc">+</span></span>
-<span id="cb2-4"><a></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
-<span id="cb2-5"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> mode_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> flipper_len, <span class="at">y =</span> body_mass)) <span class="sc">+</span></span>
+<span id="cb2-2"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="8_files/figure-revealjs/unnamed-chunk-3-1.png" width="960"></p>
+</figure>
 </div>
-<img data-src="8_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
-<section id="danceability-by-valence" class="slide level2">
-<h2>Danceability by Valence</h2>
+</div>
+</div>
+</div>
+<div id="tabset-1-3">
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">ggplot</span>(taylor_album_songs, <span class="fu">aes</span>(valence, danceability)) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> flipper_len, <span class="at">y =</span> body_mass, <span class="at">color =</span> species)) <span class="sc">+</span></span>
 <span id="cb3-2"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb3-3"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a></a>  <span class="fu">stat_density_2d</span>(<span class="fu">aes</span>(<span class="at">fill =</span> <span class="fu">after_stat</span>(level))) <span class="sc">+</span></span>
+<span id="cb3-4"><a></a>  <span class="fu">xlim</span>(<span class="fu">c</span>(<span class="dv">170</span>, <span class="dv">236</span>)) <span class="sc">+</span></span>
+<span id="cb3-5"><a></a>  <span class="fu">ylim</span>(<span class="fu">c</span>(<span class="dv">2500</span>, <span class="dv">6250</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="8_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
+</figure>
 </div>
-<img data-src="8_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
-<section id="danceability-by-energy" class="slide level2">
-<h2>Danceability by Energy</h2>
+</div>
+</div>
+</div>
+<div id="tabset-1-4">
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">ggplot</span>(taylor_album_songs, <span class="fu">aes</span>(energy, danceability)) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> flipper_len, <span class="at">y =</span> body_mass, <span class="at">color =</span> species)) <span class="sc">+</span></span>
 <span id="cb4-2"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb4-3"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-3"><a></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="8_files/figure-revealjs/unnamed-chunk-5-1.png" width="960"></p>
+</figure>
 </div>
-<img data-src="8_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
-<section id="modelling-danceability" class="slide level2">
-<h2>Modelling Danceability</h2>
-<p>How do we use all the variables to explain danceability?</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="heart-disease" class="slide level2">
+<h2>Heart Disease</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Disease</a></li><li><a href="#tabset-2-2">thalach</a></li><li><a href="#tabset-2-3">thal</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="co"># Fit logistic model</span></span>
+<span id="cb5-2"><a></a></span>
+<span id="cb5-3"><a></a><span class="fu">ggplot</span>(heart_disease, <span class="fu">aes</span>(disease)) <span class="sc">+</span></span>
+<span id="cb5-4"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb5-5"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="8_files/figure-revealjs/unnamed-chunk-6-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-2">
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="co"># Fit logistic model</span></span>
+<span id="cb6-2"><a></a></span>
+<span id="cb6-3"><a></a>hdf <span class="ot">&lt;-</span> heart_disease</span>
+<span id="cb6-4"><a></a>hdf<span class="sc">$</span>plot <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(hdf<span class="sc">$</span>disease<span class="sc">==</span><span class="st">"yes"</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb6-5"><a></a><span class="fu">ggplot</span>(hdf, <span class="fu">aes</span>(thalach, plot)) <span class="sc">+</span></span>
+<span id="cb6-6"><a></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb6-7"><a></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">"glm"</span>,</span>
+<span id="cb6-8"><a></a>              <span class="at">method.args =</span> <span class="fu">list</span>(<span class="at">family =</span> <span class="st">"binomial"</span>),</span>
+<span id="cb6-9"><a></a>              <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb6-10"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="8_files/figure-revealjs/unnamed-chunk-7-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-3">
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="co"># Fit logistic model</span></span>
+<span id="cb7-2"><a></a></span>
+<span id="cb7-3"><a></a><span class="fu">ggplot</span>(hdf, <span class="fu">aes</span>(thalach, plot, <span class="at">col =</span> thal)) <span class="sc">+</span></span>
+<span id="cb7-4"><a></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb7-5"><a></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">"glm"</span>,</span>
+<span id="cb7-6"><a></a>              <span class="at">method.args =</span> <span class="fu">list</span>(<span class="at">family =</span> <span class="st">"binomial"</span>),</span>
+<span id="cb7-7"><a></a>              <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb7-8"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="8_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section></section>
 <section>
 <section id="multivariable-linear-regression" class="title-slide slide level1 agenda-slide center">
@@ -300,22 +433,28 @@
 <div class="agenda">
 <ul>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Modeling Outcomes</p>
+<p>Visualizations</p>
 </div></li>
 <li><div class="agenda-active">
 <p>Multivariable Linear Regression</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Adjusted <span class="math inline">\(R^2\)</span></p>
+<p>Multivariable Logistic Regression</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Model Selection</p>
+<p>Modelling Body Mass</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Modeling Heart Disease</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Model Building</p>
 </div></li>
 </ul>
 </div>
 </section>
-<section id="mlr" class="slide level2">
-<h2>MLR</h2>
+<section id="multivariable-linear-regression-1" class="slide level2">
+<h2>Multivariable Linear Regression</h2>
 <p>Multivariable Linear Regression (MLR) is used to model an outcome variable (<span class="math inline">\(Y\)</span>) by multiple predictor variables (<span class="math inline">\(X_1, X_2, \ldots, X_p\)</span>).</p>
 <div class="fragment">
 <p>Using MLR, you propose that the ouctome variable was constructed from a set of predictors, with their corresponding regression coefficients (<span class="math inline">\(\beta\)</span>), and a bit of error</p>
@@ -373,181 +512,344 @@ Y_i = \beta_0 + \beta_1 X_{i1} + \beta_2 X_{i2} + \cdots + \beta_p X_{ip} + \var
 \sum^n_{i=1} (Y_i-\hat Y_i)^2
 \]</span></p>
 </section>
-<section id="fitting-a-model-in-r" class="slide level2">
-<h2>Fitting a Model in R</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">lm</span>(Y <span class="sc">~</span> X1 <span class="sc">+</span> X2 <span class="sc">+</span> ... <span class="sc">+</span> Xp, <span class="at">data =</span> DATA)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<section id="fitting-a-lm-in-r" class="slide level2">
+<h2>Fitting a LM in R</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>xlm <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> X1 <span class="sc">+</span> X2 <span class="sc">+</span> ... <span class="sc">+</span> Xp, <span class="at">data =</span> DATA)</span>
+<span id="cb8-2"><a></a>xlm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>DATA</code>: Name of the data frame</li>
+<li><code>Y</code>: Outcome Variable of Interest in the data frame <code>DATA</code></li>
+<li><code>X1</code>, <code>X2</code>, … , <code>X_p</code> : Predictor variables in the data frame <code>DATA</code></li>
+</ul>
+</section></section>
+<section>
+<section id="multivariable-logistic-regression" class="title-slide slide level1 agenda-slide center">
+<h1>Multivariable Logistic Regression</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Visualizations</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Multivariable Linear Regression</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Multivariable Logistic Regression</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Modelling Body Mass</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Modeling Heart Disease</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Model Building</p>
+</div></li>
+</ul>
 </div>
 </section>
-<section id="modelling-danceability-1" class="slide level2">
-<h2>Modelling Danceability</h2>
+<section id="multivariable-logistic-regression-1" class="slide level2">
+<h2>Multivariable Logistic Regression</h2>
+<p>Multivariable Logistic Regression is used to model a binary outcome variable (<span class="math inline">\(Y\)</span>) with multiple predictor variables (<span class="math inline">\(X_1, X_2, \ldots, X_p\)</span>).</p>
+<div class="fragment">
+<p>Using Multivariable Logistic Regression, you propose that the ouctome variable was constructed from a set of predictors, with their corresponding regression coefficients (<span class="math inline">\(\beta_j\)</span>), and generated from a Bernoulli model.</p>
+</div>
+</section>
+<section id="logistic-model" class="slide level2">
+<h2>Logistic Model</h2>
+<p><span class="math display">\[
+lo(Y=1) = \beta_0 + \beta_1X_1 + \cdots + \beta_p X_p
+\]</span></p>
+</section>
+<section id="regression-coefficients-beta" class="slide level2">
+<h2>Regression Coefficients <span class="math inline">\(\beta\)</span></h2>
+<p>The regression coefficients quantify how a specific predictor changes the odds of observing the first category of the outcome (<span class="math inline">\(Y = 1\)</span>)</p>
+</section>
+<section id="estimating-beta" class="slide level2">
+<h2>Estimating <span class="math inline">\(\beta\)</span></h2>
+<p>To obtain the numerical value for <span class="math inline">\(\beta_j\)</span>, denoted as <span class="math inline">\(\hat \beta_j\)</span>, we will be finding the values of <span class="math inline">\(\hat \beta_j\)</span> that maximizes the likelihood function:</p>
+<p><span class="math display">\[
+L(\boldsymbol \beta) = \prod_{i=1}^n \left(\frac{e^{\beta_0 + \beta_1X_1 + \cdots + \beta_p X_p}}{1 + e^{\beta_0 + \beta_1X_1 + \cdots + \beta_p X_p}}\right)^{Y_i}\left(\frac{1}{1 + e^{\beta_0 + \beta_1X_1 + \cdots + \beta_p X_p}}\right)^{1-Y_i}
+\]</span></p>
+<p>The likelihood function can be thought as the probability of observing the entire data set. Therefore, we want to choose the values the <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> that will result in the highest probability of observing the data.</p>
+</section>
+<section id="estimated-parameters" class="slide level2">
+<h2>Estimated Parameters</h2>
+<p>The values you obtain (<span class="math inline">\(\hat \beta\)</span>) tell you the relationship between the a predictor variable and the log odds of observing the first category of the outcome <span class="math inline">\(Y=1\)</span>, adjusting for all the other covariates.</p>
+<div class="fragment">
+<p>Exponentiating the estimate (<span class="math inline">\(e^{\hat \beta}\)</span>) will give you the relationship between a predictor variable and the odds of observing the first category of the outcome <span class="math inline">\(Y=1\)</span>, adjusting for all the other covariates.</p>
+</div>
+</section>
+<section id="interpreting-hat-beta_j" class="slide level2">
+<h2>Interpreting <span class="math inline">\(\hat \beta_j\)</span></h2>
+<p>For a continuous predictor variable:</p>
+<p>As X increases by 1 unit, the odds of observing the first category (<span class="math inline">\(Y = 1\)</span>) increases by a factor of <span class="math inline">\(e^{\hat\beta_j}\)</span>, adjusting for alll the other predictor variables.</p>
+<p>For a categorical predictor variable (first dummy variable):</p>
+<p>The odds of observing the first category (<span class="math inline">\(Y = 1\)</span>) in the indicated category (<span class="math inline">\(D=1\)</span>) is <span class="math inline">\(e^{\hat\beta_j}\)</span> times higher/lower compared to the reference category (<span class="math inline">\(D=0\)</span>), adjusting for alll the other predictor variables.</p>
+</section>
+<section id="fitting-a-glm-in-r" class="slide level2">
+<h2>Fitting a GLM in R</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>xglm <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X1 <span class="sc">+</span> X2 <span class="sc">+</span> ... <span class="sc">+</span> Xp, </span>
+<span id="cb9-2"><a></a>           <span class="at">data =</span> DATA,</span>
+<span id="cb9-3"><a></a>           <span class="at">family =</span> binomial)</span>
+<span id="cb9-4"><a></a>xglm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>DATA</code>: Name of the data frame</li>
+<li><code>Y</code>: Outcome Variable of Interest in the data frame <code>DATA</code></li>
+<li><code>X1</code>, <code>X2</code>, … , <code>X_p</code> : Predictor variables in the data frame <code>DATA</code></li>
+</ul>
+</section></section>
+<section>
+<section id="modelling-body-mass" class="title-slide slide level1 agenda-slide center">
+<h1>Modelling Body Mass</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Visualizations</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Multivariable Linear Regression</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Multivariable Logistic Regression</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Modelling Body Mass</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Modeling Heart Disease</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Model Building</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="modelling-body-mass-1" class="slide level2">
+<h2>Modelling Body Mass</h2>
+<p><span class="math display">\[
+body\_mass = \beta_0 + \boldsymbol \beta_1 (species) + \beta_2 (flipper\_len)
+\]</span></p>
+</section>
+<section id="fitting-model" class="slide level2">
+<h2>Fitting Model</h2>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">lm</span>(danceability <span class="sc">~</span> mode_name <span class="sc">+</span> valence <span class="sc">+</span> energy, </span>
-<span id="cb6-2"><a></a>   <span class="at">data =</span> taylor_album_songs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>xlm <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass <span class="sc">~</span> species <span class="sc">+</span> flipper_len, </span>
+<span id="cb10-2"><a></a>          <span class="at">data =</span> penguins)</span>
+<span id="cb10-3"><a></a><span class="fu">model_info</span>(xlm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>#&gt; Outcome Variable: body_mass</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>#&gt; Numerical Predictors: 
+#&gt;    flipper_len</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>#&gt; Categorical Predictors: 
+#&gt;   species: 
+#&gt;      Adelie (Reference)  
+#&gt;      Chinstrap  
+#&gt;      Gentoo</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>xlm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; 
 #&gt; Call:
-#&gt; lm(formula = danceability ~ mode_name + valence + energy, data = taylor_album_songs)
+#&gt; lm(formula = body_mass ~ species + flipper_len, data = penguins)
 #&gt; 
 #&gt; Coefficients:
-#&gt;    (Intercept)  mode_nameminor         valence          energy  
-#&gt;        0.53816         0.08386         0.17554        -0.05944</code></pre>
+#&gt;      (Intercept)  speciesChinstrap     speciesGentoo       flipper_len  
+#&gt;         -4013.18           -205.38            284.52             40.61</code></pre>
 </div>
 </div>
 </section>
 <section id="estimated-model-1" class="slide level2">
 <h2>Estimated Model</h2>
 <p><span class="math display">\[
-dance = 0.54 + 0.07\times Minor + 0.18 \times valence - 0.06 \times energy
+body\_mass = -4013.18 -205.38 (Chinstrap)\\ + 284.52 (Gentoo) + 40.61 (flipper\_len)
 \]</span></p>
 </section>
-<section id="hat-beta_i-representation" class="slide level2">
-<h2><span class="math inline">\(\hat \beta_i\)</span> Representation</h2>
-<p>Each regression coefficient <span class="math inline">\(\beta_i\)</span> represents how the predictor variable changes the outcome, as it increase by 1 unit.</p>
-<div class="fragment">
-<p>For categorical dummy variables, the <span class="math inline">\(\beta_i\)</span> represents how the outcome will change when the data point belongs to that value.</p>
+<section id="intepreting-flipper_len-coefficient" class="slide level2">
+<h2>Intepreting <span class="math inline">\(flipper\_len\)</span> coefficient</h2>
+<p><span class="math display">\[
+body\_mass = -4013.18 -205.38 (Chinstrap)\\ + 284.52 (Gentoo) + 40.61 (flipper\_len)
+\]</span></p>
+<p>As flipper length increased by 1 unit, body mass increases by an <strong>average</strong> of 40.61, adjusting for penguin species.</p>
+</section>
+<section id="intepreting-species-coefficient" class="slide level2">
+<h2>Intepreting <span class="math inline">\(species\)</span> coefficient</h2>
+<p><span class="math display">\[
+body\_mass = -4013.18 -205.38 (Chinstrap)\\ + 284.52 (Gentoo) + 40.61 (flipper\_len)
+\]</span></p>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Chinstrap</a></li><li><a href="#tabset-3-2">Gentoo</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<p>On average, the body mass of a Chinstrap species is 205.6 grams lower than an Adelie species, adjusting for flipper length.</p>
 </div>
-</section>
-<section id="hat-beta_i-interpretation" class="slide level2">
-<h2><span class="math inline">\(\hat \beta_i\)</span> Interpretation</h2>
-<p>For <span class="math inline">\(hat \beta_i\)</span>, which is the regression coefficient (slope) of <span class="math inline">\(X_i\)</span>:</p>
-<p>As <span class="math inline">\(X_i\)</span> increases by 1 unit, the outcome (<span class="math inline">\(Y\)</span>) will increase/decrease by <span class="math inline">\(\hat \beta_i\)</span> units, adjusting for all other predictor variables.</p>
-<div class="fragment">
-<p>For categorical dummy variables <span class="math inline">\(X_i\)</span>:</p>
-<p>The outcome <span class="math inline">\(Y_i\)</span> increases/decreases by <span class="math inline">\(\beta_i\)</span> units for category <span class="math inline">\(X_i\)</span> compared to the reference category, adjusting for all other predictor variables.</p>
+<div id="tabset-3-2">
+<p>On average, the body mass of a Gentoo species is 205.6 grams higher than an Adelie species, adjusting for flipper length.</p>
 </div>
-</section>
-<section id="intepreting-minor-coefficient" class="slide level2">
-<h2>Intepreting Minor coefficient</h2>
-<p><span class="math display">\[
-dance = 0.54 + 0.07 Minor + 0.18 valence - 0.06 energy
-\]</span> Minor song’s average danceability score is 0.07 units higher compared to Major song’s, adjusting for valence and energy.</p>
-</section>
-<section id="intepreting-valence-coefficient" class="slide level2">
-<h2>Intepreting valence coefficient</h2>
-<p><span class="math display">\[
-dance = 0.54 + 0.07Minor + 0.18  valence - 0.06 energy
-\]</span></p>
-<p>As valence increases by 1 unit, danceability increases by an average of 0.18 units, adjusting for energy and type of song.</p>
-</section>
-<section id="intepreting-energy-coefficient" class="slide level2">
-<h2>Intepreting energy coefficient</h2>
-<p><span class="math display">\[
-dance = 0.54 + 0.07 Minor + 0.18 valence - 0.06 energy
-\]</span></p>
-<p>As energy increases by 1 unit, danceability decreases by an average of 0.06 units, adjusting for valence and type of song.</p>
+</div>
+</div>
 </section></section>
 <section>
-<section id="adjusted-r2" class="title-slide slide level1 agenda-slide center">
-<h1>Adjusted <span class="math inline">\(R^2\)</span></h1>
+<section id="modeling-heart-disease" class="title-slide slide level1 agenda-slide center">
+<h1>Modeling Heart Disease</h1>
 <div class="agenda">
 <ul>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Modeling Outcomes</p>
+<p>Visualizations</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
 <p>Multivariable Linear Regression</p>
 </div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Multivariable Logistic Regression</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Modelling Body Mass</p>
+</div></li>
 <li><div class="agenda-active">
-<p>Adjusted <span class="math inline">\(R^2\)</span></p>
+<p>Modeling Heart Disease</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Model Selection</p>
+<p>Model Building</p>
 </div></li>
 </ul>
 </div>
 </section>
-<section id="r2" class="slide level2">
-<h2><span class="math inline">\(R^2\)</span></h2>
-<p>Computing <span class="math inline">\(R^2\)</span> is done by determining how much the variation in the outcome is explained by model and divided by the variation of the outcome.</p>
+<section id="modelling-heart-disease" class="slide level2">
+<h2>Modelling Heart Disease</h2>
 <p><span class="math display">\[
-R^2 = \frac{\text{variation explained by model}}{\text{variation from outcome}} \\
-= 1-\frac{\text{variation of residuals}}{\text{variation from outcome}}
+lo(disease) = \beta_0 + \boldsymbol \beta_1 (thal)\\ + \beta_2 (thalach)
 \]</span></p>
 </section>
-<section id="r2-1" class="slide level2">
-<h2><span class="math inline">\(R^2\)</span></h2>
-<p>Problems arise when multiple predictors are added to the model. As a new predictor is added to the model, new information is added to the model which will always reduce the variation in the residuals. Therefore, the <span class="math inline">\(R^2\)</span> will always increase.</p>
-</section>
-<section id="problems-with-r2-in-mlr" class="slide level2">
-<h2>Problems with <span class="math inline">\(R^2\)</span> in MLR</h2>
-<p>When the number of variables increase, the regular <span class="math inline">\(R²\)</span> will be biased in its prediction capability when new data is obtained.</p>
-<div class="fragment">
-<p>Therefore, statisticians uses the adjusted <span class="math inline">\(R^2\)</span>, that penalizes the model when more variables are added. This ensures that a variable added will have a significant effect in predicting outcomes.</p>
-</div>
-</section>
-<section id="adjusted-r2-1" class="slide level2">
-<h2>Adjusted <span class="math inline">\(R^2\)</span></h2>
-<p><span class="math display">\[
-R_a^2 = 1-\frac{\text{variation of residuals}}{\text{variation from outcome}}\times \frac{n-1}{n-k-1}
-\]</span></p>
-<ul>
-<li><span class="math inline">\(n\)</span>: Number of data points</li>
-<li><span class="math inline">\(k\)</span>: Number of predictor variables in the model</li>
-</ul>
-</section>
-<section id="adjusted-r2-in-r" class="slide level2">
-<h2>Adjusted <span class="math inline">\(R^2\)</span> in R</h2>
+<section id="fitting-model-1" class="slide level2">
+<h2>Fitting Model</h2>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>xlm <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> X1 <span class="sc">+</span> X2 <span class="sc">+</span> ... <span class="sc">+</span> Xp, <span class="at">data =</span> DATA)</span>
-<span id="cb8-2"><a></a><span class="fu">ar2</span>(xlm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>xglm <span class="ot">&lt;-</span> <span class="fu">lm</span>(disease <span class="sc">~</span> thal <span class="sc">+</span> thalach, </span>
+<span id="cb16-2"><a></a>           <span class="at">data =</span> heart_disease,</span>
+<span id="cb16-3"><a></a>           <span class="at">family =</span> binomial)</span>
+<span id="cb16-4"><a></a><span class="fu">model_info</span>(xglm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>#&gt; Outcome Variable: disease</code></pre>
 </div>
-</section>
-<section id="example" class="slide level2">
-<h2>Example</h2>
+<div class="cell-output cell-output-stderr">
+<pre><code>#&gt; Numerical Predictors: 
+#&gt;    thalach</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>#&gt; Categorical Predictors: 
+#&gt;   thal: 
+#&gt;      Normal (Reference)  
+#&gt;      Fixed Defect  
+#&gt;      Reversible Defect</code></pre>
+</div>
+</div>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>xlm <span class="ot">&lt;-</span> <span class="fu">lm</span>(danceability <span class="sc">~</span> mode_name <span class="sc">+</span> valence <span class="sc">+</span> energy, </span>
-<span id="cb9-2"><a></a>   <span class="at">data =</span> taylor_album_songs)</span>
-<span id="cb9-3"><a></a><span class="fu">ar2</span>(xlm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>xglm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>#&gt; [1] 0.09148268</code></pre>
+<pre><code>#&gt; 
+#&gt; Call:
+#&gt; lm(formula = disease ~ thal + thalach, data = heart_disease, 
+#&gt;     family = binomial)
+#&gt; 
+#&gt; Coefficients:
+#&gt;           (Intercept)       thalFixed Defect  thalReversible Defect  
+#&gt;              2.255233               0.305984               0.459645  
+#&gt;               thalach  
+#&gt;             -0.006621</code></pre>
 </div>
 </div>
-<p>8.1% of the variation in danceability is explained by the model.</p>
+</section>
+<section id="estimated-model-2" class="slide level2">
+<h2>Estimated Model</h2>
+<p><span class="math display">\[
+lo(disease) = 2.255 + 0.305 (Fixed) + 0.46 (Reversible)\\ - 0.006 (thalach)
+\]</span></p>
+</section>
+<section id="intepreting-thalach-coefficient" class="slide level2">
+<h2>Intepreting <span class="math inline">\(thalach\)</span> coefficient</h2>
+<p><span class="math display">\[
+lo(disease) = 2.255 + 0.305 (Fixed) + 0.46 (Reversible)\\ - 0.006 (thalach)
+\]</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">exp</span>(<span class="sc">-</span><span class="fl">0.006</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; [1] 0.994018</code></pre>
+</div>
+</div>
+<p>As maximum heart rate achieved increases by 1 unit, the odds of having heart disease decresease by a factor of 0.994, adjusting for thallium stress test results.</p>
+</section>
+<section id="intepreting-thal-coefficient" class="slide level2">
+<h2>Intepreting <span class="math inline">\(thal\)</span> coefficient</h2>
+<p><span class="math display">\[
+lo(disease) = 2.255 + 0.305 (Fixed) + 0.46 (Reversible)\\ - 0.006 (thalach)
+\]</span></p>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Fixed Defect</a></li><li><a href="#tabset-4-2">Reversible Defect</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="fu">exp</span>(<span class="fl">0.305</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; [1] 1.356625</code></pre>
+</div>
+</div>
+<p>The odds of having heart disease is 1.356 times higher in patients with fixed defects thallium stress results than patients with normal thallium stress results, adjusting for maximum heart rate achieved.</p>
+</div>
+<div id="tabset-4-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="fu">exp</span>(<span class="fl">0.46</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; [1] 1.584074</code></pre>
+</div>
+</div>
+<p>The odds of having heart disease is 1.584 times higher in patients with reversible defects thallium stress results than patients with normal thallium stress results, adjusting for maximum heart rate achieved.</p>
+</div>
+</div>
+</div>
 </section></section>
 <section>
-<section id="model-selection" class="title-slide slide level1 agenda-slide center">
-<h1>Model Selection</h1>
+<section id="model-building" class="title-slide slide level1 agenda-slide center">
+<h1>Model Building</h1>
 <div class="agenda">
 <ul>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Modeling Outcomes</p>
+<p>Visualizations</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
 <p>Multivariable Linear Regression</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Adjusted <span class="math inline">\(R^2\)</span></p>
+<p>Multivariable Logistic Regression</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Modelling Body Mass</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Modeling Heart Disease</p>
 </div></li>
 <li><div class="agenda-active">
-<p>Model Selection</p>
+<p>Model Building</p>
 </div></li>
 </ul>
 </div>
 </section>
-<section id="model-selection-1" class="slide level2">
-<h2>Model Selection</h2>
-<p>Model Selection is the process of obtaining a “final” model containing all the necessary predictors, and eliminating any that are not necessary.</p>
+<section id="model-building-1" class="slide level2">
+<h2>Model Building</h2>
+<p>Model Building is the process of obtaining a “final” model containing all the necessary predictors, and eliminating any that are not necessary.</p>
 </section>
 <section id="forward-selection" class="slide level2">
 <h2>Forward Selection</h2>
-<p>Begin with the null model (<span class="math inline">\(Y\sim 1\)</span>) and add variables until a final model is chosen.</p>
+<p>Begin with the null model (<span class="math inline">\(Y\sim 1\)</span>) and add predictor variables until a final model is chosen.</p>
 </section>
 <section id="backward-selection" class="slide level2">
 <h2>Backward Selection</h2>
-<p>Begin with the full model, and remove variable until the final model is chosen.</p>
+<p>Begin with the full model, and remove predictor variable until the final model is chosen.</p>
 </section>
 <section id="hybrid-selection" class="slide level2">
 <h2>Hybrid Selection</h2>
@@ -555,7 +857,7 @@ R_a^2 = 1-\frac{\text{variation of residuals}}{\text{variation from outcome}}\ti
 </section>
 <section id="about-model-selection" class="slide level2">
 <h2>About Model Selection</h2>
-<p>Generally, it is not a good idea to conduct model selection. The predictor variables in your model should be guided by a literature review that illustrates important predictor variables in a model.</p>
+<p>Generally, it is not a good idea to conduct model selection. The predictor variables in your model should be guided by a literature review that illustrates important predictor variables in a model. Add predictor variables based on consultation with experts and a literature review.</p>
 
 
 <div class="reveal-header">

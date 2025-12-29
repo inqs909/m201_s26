@@ -1,5 +1,5 @@
 ---
-title: "Group Regression Models"
+title: "Group <br> Regression"
 description: |
   Discuss using categorical predictor variables.
 
@@ -41,13 +41,31 @@ filters:
 editor: source
 ---
 
+## R Packages
+
 ```{r}
 #| include: false
 library(tidyverse)
 library(rcistats)
-library(ThemePark)
+library(emmeans)
 penguins <- penguins |> drop_na()
-penguins |> names()
+heart_disease <- kmed::heart
+heart_disease$disease <- factor(ifelse(heart_disease$class == 0, "no", "yes")) 
+heart_disease$sex <- ifelse(heart_disease$sex == T, "Male", "Female") |> factor()
+heart_disease$cp <- ifelse(heart_disease$cp == 1, "Typical Angina",
+                           ifelse(heart_disease$cp == 2, "Atypical Angina", 
+                                  ifelse(heart_disease$cp == 3, "Non-anginal Pain", "Asymptomatic"))) |> 
+                    factor(levels = c("Asymptomatic", "Non-anginal Pain", "Atypical Angina", "Typical Angina"))
+heart_disease$fbs <- ifelse(heart_disease$fbs == T, "Fasting Blood Sugar >120" , "Fasting Blood Sugar <= 120") |> factor()
+heart_disease$restecg <- ifelse(heart_disease$restecg == 0, "Normal",
+                                ifelse(heart_disease$restecg == 1, "ST-T wave Abnormality", "Left Ventricular Hypertrophy")) |> 
+                          factor(levels = c("Normal", "ST-T wave Abnormality", "Left Ventricular Hypertrophy"))
+heart_disease$slope <- ifelse(heart_disease$slope == 1, "Positive Slope",
+                              ifelse(heart_disease$slope == 2, "Zero Slope", "Negative Slope")) |> 
+                              factor(levels = c("Zero Slope", "Positive Slope", "Negative Slope"))
+heart_disease$thal <- ifelse(heart_disease$thal==3, "Normal",
+                             ifelse(heart_disease$thal == 6, "Fixed Defect", "Reversible Defect")) |> 
+                              factor(levels = c("Normal", "Fixed Defect", "Reversible Defect"))
 theme_set(theme_bw() + 
           theme(axis.text = element_text(size = 24),
                 axis.title = element_text(size = 30),
@@ -57,20 +75,46 @@ theme_set(theme_bw() +
                 legend.text = element_text(size = 24)))
 ```
 
+-   rcistats
+-   tidyverse
+
+## Palmer Penguins Data
+
+::: {.columns}
+::: {.column}
+
+### Variables of Interest
+
+- `species`: Penguin species
+- `body_mass`: Body mass in [grams](https://en.wikipedia.org/wiki/Gram)
+
+:::
+::: {.column}
+![Artwork by @allison_horst](img/penguins.png){fig-alt="An image of several penguins in Antartica."}
+
+:::
+::: 
+
+## Heart Disease Data
+
+::: {.columns}
+::: {.column}
+
+### Variables of Interest
+
+- `thal`: Thallium stress test result
+- `disease`: Indicating if they have heart disease
+
+:::
+::: {.column}
+![](img/heart_df.png){fig-alt="An image of a graph and a heart."}
+:::
+:::
+
 
 # Modeling Relationships
 
-## Explaining Variation
-
-::: fragment
-This is the process where we try to reduce the variation with the use of other variables.
-:::
-
-::: fragment
-Can be thought of as getting it less wrong when taking an educated guess.
-:::
-
-## Explaining Variation
+## Explaining Continuous Variables
 
 ```{r}
 #| code-fold: true
@@ -79,7 +123,7 @@ ggplot(penguins, aes(body_mass)) +
 
 ```
 
-## Variation with One Variable
+## Linear: Categorical Variables
 
 ```{r}
 #| code-fold: true
@@ -88,376 +132,37 @@ ggplot(penguins, aes(body_mass, fill = species)) +
 ```
 
 
-# A Simple Model
-
-## Generated Model
-
-$$
-Y \sim DGP_1
-$$
-
-## A Simple Model
+## Explainging Binary Variables
 
 ```{r}
-#| code-fold: true
-ggplot(penguins, aes(body_mass)) +
-  geom_density()
-```
-
-## A Simple Model
-
-$$
-Y = \_\_\_ + error
-$$
-
-## Notation
-
-$$
-Y = \ \ \ \ \ \ \ \ \ + \varepsilon 
-$$
-
-## The Simple Generated Model
-
-$$
-Y \sim \beta_0 + \varepsilon
-$$
-
-$$
-\varepsilon \sim DGP_2
-$$
-
-::: fragment
-$DGP_2$ is not the same as the $DGP_1$, it is transformed due $\beta_0$. Consider this the NULL $DGP$.
-:::
-
-## Observing Data
-
-$$
-Y = \beta_0 + \varepsilon
-$$
-
-## Estimated Line
-
-$$
-\hat Y=\hat\beta_0
-$$
-
-## Notation
-
-::: columns
-::: {.column width="50%"}
-### Observed
-
-$$
-Y = \beta_0 + \varepsilon
-$$
-:::
-
-::: {.column width="50%"}
-### Estimated
-
-$$
-\hat Y = \hat \beta_0
-$$
-:::
-:::
-
-# Modelling Data
-
-## Indexing Data
-
-The data in a data set can be indexed by a number.
-
-```{r}
-penguins[1,-c(1:2)]
-```
-
-::: fragment
-Making the variable "body_mass_g" be represented by $Y$ and "flipper_length_mm" as $X$:
-
-$$
-Y_1 = 3750 \ \ X_1=181
-$$
-
-:::
-
-## Indexing Data
-
-$$
-Y_i, X_i
-$$
-
-## Data
-
-With the data that we collect from a sample, we hypothesize how the data was generated.
-
-::: fragment
-Using a simple model:
-
-$$
-Y_i = \beta_0 + \varepsilon_i
-$$
-
-:::
-
-## Estimated Value
-
-$$
-\hat Y_i = \hat \beta_0
-$$
-
-## Estimation 
-
-To estimate $\hat \beta_0$, we minimize the follow function:
-
-$$
-\sum^n_{i=1} (Y_i-\hat Y_i)^2
-$$
-
-::: fragment
-This is known as the sum squared errors, SSE 
-:::
-
-
-## Residuals
-
-The residuals are known as the observed errors from the data in the model:
-
-$$
-r_i = Y_i - \hat Y_i
-$$
-
-## Estimation in R
-
-```{r}
-#| echo: true
-#| eval: false
-
-lm(Y ~ 1, data = DATA)
+heart_disease |> 
+  ggplot(aes(disease)) +
+  geom_bar()
 ```
 
 
-- `Y`: Name Outcome Variable of Interest in data frame `DATA`
-- `DATA`: Name of the data frame
-
-## Modeling Body Mass in Penguins
+## Logistic: Categorical Variables
 
 ```{r}
-lm(body_mass ~ 1, data = penguins)
+heart_disease |> 
+  ggplot(aes(disease, fill = thal)) +
+  geom_bar()
 ```
 
-::: fragment
-
-$$
-\hat Y = 4207
-$$
-
-:::
-
-
-## Visualize
-
-```{r}
-#| code-fold: true
-ggplot(penguins, aes(body_mass)) +
-  geom_density() +
-  geom_vline(xintercept = 4207)
-```
-
-
-# Linear Model
-
-## Linear Model
-
-The goal of Statistics is to develop models the have a better explanation of the outcome $Y$.
-
-::: fragment
-In particularly, reduce the sum of squared errors.
-:::
-
-::: fragment
-By utilizing a bit more of information, $X$, we can increase the predicting capabilities of the model.
-:::
-
-::: fragment
-Thus, the linear model is born.
-:::
-
-## Visualization
-
-::: panel-tabset
-
-### 1-Dimensional
-
-```{r}
-#| code-fold: true
-ggplot(penguins, aes(body_mass)) +
-  geom_density()
-```
-
-### 2-Dimensional
-
-```{r}
-#| code-fold: true
-ggplot(penguins, aes(x = flipper_len, y = body_mass, fill = after_stat(level))) +
-  stat_density_2d(geom = "polygon")
-```
-
-:::
-
-## Linear Model
-
-$$
-Y = \beta_0 + \beta_1 X + \varepsilon
-$$
-
-$$
-\varepsilon \sim DGP_3
-$$
-
-## Scatter Plot
-
-```{r}
-#| code-fold: true
-#| eval: true
-
-ggplot(penguins, aes(flipper_len, body_mass)) + 
-  geom_point() 
-```
-
-## Imposing a Line
-
-```{r}
-#| code-fold: true
-#| eval: true
-
-ggplot(penguins, aes(flipper_len, body_mass)) + 
-  geom_point() +
-  stat_smooth(method = "lm", se = F) 
-```
-
-## Modelling the Data
-
-$$
-Y_i = \beta_0 + \beta_1 X_i + \varepsilon_i
-$$
-
-## Linear Model
-
-$$
-\hat Y_i = \hat \beta_0 + \hat \beta_1 X_i
-$$
-
-::: fragment
-Goal is to obtain numerical values for $\hat \beta_0$ and $\hat \beta_1$ that will minimize the SSE.
-:::
-
-## SSE
-
-$$
-\sum^n_{i=1} (Y_i-\hat Y_i)^2
-$$
-
-
-$$
-\hat Y_i = \hat \beta_0 + \hat \beta_1 X_i
-$$
-
-## Fitting a Model in R
-
-```{r}
-#| echo: true
-#| eval: false
-
-lm(Y ~ X, data = DATA)
-```
-
-- `X`: Name Predictor Variable of Interest in data frame `DATA`
-- `Y`: Name Outcome Variable of Interest in data frame `DATA`
-- `DATA`: Name of the data frame
-
-## Example
-
-
-Y: "body_mass"; X: "flipper_len"
-
-```{r}
-lm(body_mass ~ flipper_len, data = penguins)
-```
-
-
-$$
-\hat Y_i = -5872.09 + 50.15 X_i
-$$
-
-
-## Interpretation of $\hat\beta_0$
-
-The intercept $\hat \beta_0$ can be interpreted as the base value when $X$ is set to 0.
-
-::: fragment
-Some times the intercept can be interpretable to real world scenarios.
-:::
-
-::: fragment
-Other times it cannot.
-:::
-
-## Interpreting Example
-
-$$
-\hat Y_i = -5872.09 + 50.15 X_i
-$$
-
-When flipper length is 0 mm, the body mass is -5872 grams.
-
-## Interpretation of $\hat \beta_1$
-
-The slope $\hat \beta_1$ indicates how will y change when x increases by 1 unit.
-
-::: fragment
-It will demonstrate if there is, on average, a positive or negative relationship based on the sign provided.
-:::
-
-## Interpreting Example
-
-$$
-\hat Y_i = -5872.09 + 50.15 X_i
-$$
-
-When flipper length increases by 1 mm, the body mass will increase by 50.15 grams.
-
-
-# Categorical Variables
-
-## Body Mass with Species
-
-```{r}
-#| code-fold: true
-ggplot(penguins, aes(body_mass)) +
-  geom_boxplot() 
-```
-
-## Body Mass with Species
-
-```{r}
-#| code-fold: true
-ggplot(penguins, aes(body_mass, fill = species)) +
-  geom_boxplot() 
-```
+# Group Statistics
 
 ## Group Statistics
 
-We can use statistics to explain a continuous variable by the categories.
+We can use statistics to explain a variable by the categories.
 
 ::: fragment
 Compute statistics for each group.
 :::
 
-::: fragment
 
-```{r}
-#| eval: false
+## Continuous Data
+
+```r
 num_by_cat_stats(DATA, NUM, CAT)
 ```
 
@@ -466,30 +171,94 @@ num_by_cat_stats(DATA, NUM, CAT)
 - `DATA`: Name of the data frame
 
 
-:::
 
-
-## Compute Group Statistics
+## Continous Data
 
 ```{r}
+#| code-fold: false
 num_by_cat_stats(penguins, body_mass, species)
 ```
 
 
-## LM with Categorical Variables
+## Continuous Data
+
+```r
+cat_stats(DATA$Y, DATA$X, prop = "row")
+```
+
+OR
+
+```r
+cat_stats(DATA$X, DATA$Y, prop = "col")
+```
+
+
+- `Y`: Name of the outcome variable
+- `X`: Name of the categorical variable
+- `DATA`: Name of the data frame
+
+## Binary Data
+
+```{r}
+#| code-fold: false
+cat_stats(heart_disease$disease, heart_disease$thal, prop = "row")
+```
+
+
+# Group Models
+
+## G/LM with Categorical Variables
 
 A line is normally used to model 2 continuous variables.
 
 ::: fragment
-However, the predictor variable $X$ can be restricted to a set a variables that can symbolize categories.
+However, the predictor variable $X$ can be restricted to a set a **dummy** variables that can symbolize categories.
 :::
 
 ::: fragment
-A category will be used as a reference for a model.
+A category from $X$ will be used as a reference for a model.
 :::
 
+## LM Example
 
-## Binary (Dummy) Variables
+$$
+body\_mass = \beta_0 + \boldsymbol \beta (species)
+$$
+
+
+::: fragment
+$$
+body\_mass = \beta_0 + \beta_1 (Chinstrap) + \beta_2 (Gentoo)
+$$
+:::
+
+::: fragment
+$Chinstrap$ and $Gentoo$ are both dummy variables that will reference Adelie
+:::
+
+## GLM Example
+
+$$
+lo(disease) = \beta_0 + \boldsymbol \beta (thal)
+$$
+
+
+::: fragment
+$$
+lo(disease) = \beta_0 + \beta_1 (Fixed) + \beta_2 (Reversible)
+$$
+:::
+
+::: fragment
+$Fixed$ and $Reversible$ defects are both dummy variables that will reference Normal
+:::
+
+## Dummy Variables
+
+To fit a model with categorical variables, we must utilize dummy (binary) variables that indicate which category is being referenced. We use $C-1$ dummy variables where $C$ indicates the number of categories. When coded correctly, each category will be represented by a combination of dummy variables.
+
+
+## Dummy Variables
 
 Binary variables are variable that can only take on the value 0 or 1.
 
@@ -502,9 +271,6 @@ D_i = \left\{
 \right.
 $$
 
-## Binary (Dummy) Variables
-
-To fit a model with categorical variables, we must utilize dummy (binary) variables that indicate which category is being referenced. We use $C-1$ dummy variables where $C$ indicates the number of categories. When coded correctly, each category will be represented by a combination of dummy variables.
 
 ## Example
 
@@ -519,15 +285,22 @@ If we have 4 categories, we will need 3 dummy variables:
 
 ## Species Dummy Variables
 
-|         | Chinstrap | Gentoo | Adelie |
-|---------|-------|-------|-------|
-| $D_1$ | 1     | 0     | 0     |
-| $D_2$ | 0     | 1     | 0     |
+| DUMMY | Chinstrap | Gentoo | Adelie (Reference) |
+|-------|-------|-------|-------|
+| $Chinstrap$ | 1     | 0     | 0     |
+| $Gentoo$ | 0     | 1     | 0     |
 
-## Linear Model
+## Thal Dummy Variables
+
+| DUMMY  | Fixed Defect | Reversible Defect | Normal (Reference) |
+|---------|-------|-------|-------|
+| $Fixed$ | 1     | 0     | 0     |
+| $Reversible$ | 0     | 1     | 0     |
+
+## LM: Penguins
 
 $$
-\hat Y_i = \hat \beta_0 + \hat\beta_1 D_{1i} + \hat\beta_2 D_{2i}
+body\_mass = \hat \beta_0 + \hat\beta_1 (Chinstrap) + \hat\beta_2 (Gentoo)
 $$
 
 ::: fragment
@@ -542,40 +315,147 @@ $\hat \beta_2$ indicates how body mass changes from Adelie to Gentoo.
 $\hat \beta_0$ represents the baseline level, in this case the body mass of Adelie.
 :::
 
-## Fitting a Model in R
+## GLM: Penguins
 
-```{r}
-#| eval: false
+$$
+lo(disease) = \hat \beta_0 + \hat\beta_1 (Fixed) + \hat\beta_2 (Reversible)
+$$
 
-lm(Y ~ X, data = DATA)
+::: fragment
+$\hat \beta_1$ indicates how $lo(disease)$ changes from Normal to Fixed.
+:::
+
+::: fragment
+$\hat \beta_2$ indicates how $lo(disease)$ changes from Normal to Reversible.
+:::
+
+::: fragment
+$\hat \beta_0$ represents the baseline level, in this case the $lo(disease)$ of Normal.
+:::
+
+## Interepreting $\beta$
+
+Interpreting $\beta$ for categorical variables are different from continuous (numeric) variables. Interpreting $\beta$s only allow us to make comparisons between the dummy indicator category and the reference category
+
+## LM: Interpreting $\beta$
+
+::: {.columns}
+::: {.column}
+
+$$
+\hat Y = \hat \beta_0 + \hat\beta_1 D
+$$
+
+:::
+::: {.column}
+
+$$
+D = \left\{
+\begin{array}{cc}
+1 & CAT\\
+0 & REF
+\end{array}
+\right.
+$$
+
+:::
+::: 
+
+On average, CAT1 has a larger/smaller Y than REF by about $\beta_1$.
+
+## GLM: Interpreting $\beta$
+
+::: {.columns}
+::: {.column}
+
+$$
+lo(Y) = \hat \beta_0 + \hat\beta_1 D
+$$
+
+:::
+::: {.column}
+
+$$
+D = \left\{
+\begin{array}{cc}
+1 & CAT\\
+0 & REF
+\end{array}
+\right.
+$$
+
+:::
+::: 
+
+The odds of having Y is $e^{\beta_1}$ times higher/lower for CAT than Ref. 
+
+
+# Group Models in R
+
+
+## Fitting an LM in R
+
+```r
+xlm <- lm(Y ~ X, data = DATA)
+xlm
 ```
 
 - `X`: Name Predictor Variable of Interest in data frame `DATA`, must be a factor variable
 - `Y`: Name Outcome Variable of Interest in data frame `DATA`
 - `DATA`: Name of the data frame
 
+## Fitting an GLM in R
+
+```r
+xglm <- glm(Y ~ X, data = DATA, family = binomial())
+xglm
+```
+
+- `X`: Name Predictor Variable of Interest in data frame `DATA`, must be a factor variable
+- `Y`: Name Outcome Variable of Interest in data frame `DATA`
+- `DATA`: Name of the data frame
+
+
 ## X not a Factor
 
-```{r}
-#| eval: false
-
-lm(Y ~ factor(X), data = DATA)
+```r
+xlm <- lm(Y ~ factor(X), data = DATA)
 ```
+
+OR
+
+```r
+xglm <- glm(Y ~ factor(X), data = DATA, family = binomial())
+```
+
 
 - `X`: Name Predictor Variable of Interest in data frame `DATA`, not a factor variable
 - `Y`: Name Outcome Variable of Interest in data frame `DATA`
 - `DATA`: Name of the data frame
 
 
+# LM Example
+
 ## Example
 
 ```{r}
-lm(body_mass ~ species, penguins)
+#| code-fold: false
+xlm <- lm(body_mass ~ species, penguins)
+xlm
 ```
 
 $$
-\hat Y_i = 3706 + 26.92 D_{1i} + 1386.27 D_{2i}
+\hat Y_i = 3706 + 26.92 (Chinstrap) + 1386.27 (Gentoo)
 $$
+
+## Intepreting $\hat \beta_1$
+
+On average, Chinstrap has a larger mass than Adelie by about 26.92 grams.
+
+## Intepreting $\hat \beta_2$
+
+On average, Gentoo has a larger mass than Adelie by about 1386.27 grams.
+
 
 ## Finding the Adelie MASS
 
@@ -595,204 +475,112 @@ $$
 \hat Y_i = 3706 + 26.92 (0) + 1386.27 (1)
 $$
 
-## Intepreting $\hat \beta_1$
-
-On average, Chinstrap has a larger mass than Adelie by about 26.92 grams.
-
-## Intepreting $\hat \beta_2$
-
-On average, Gentoo has a larger mass than Adelie by about 1386.27 grams.
-
-# Strength and Correlation
-
-## Correlation
-
-Correlation is a statistics that can be used to describe the strength of the relationship between 2 continuous variables.
-
-::: fragment
-$$
-r = \frac{1}{n-1}\sum^n_{i=1}\frac{x_i - \bar x}{s_x}\frac{y_i - \bar y}{s_y}
-$$
-
--   $\bar x$, $\bar y$: sample means
--   $s_x$, $s_y$: sample standard deviations
-
-:::
-
-::: fragment
-$$
--1 \leq r \leq 1
-$$
-:::
-
-
-## Correlations
-
-![From IMS 2e](https://openintro-ims.netlify.app/model-slr_files/figure-html/fig-posNegCorPlots-1.png)
-
-## Coefficient of Determination
-
-The coefficient of determination evaluates the strength between an outcome $Y$ and the linear model, which includes $X$.
-
-::: fragment
-$$
-R^2 = r^2
-$$
-:::
-
-::: fragment
-$$
-0 \leq R^2 \leq 1
-$$
-:::
-
-::: fragment
-The coefficient of determination measures the total variation explained by the linear model. The closer to 1, the better the linear model.
-:::
-
-## Correlation in R
-
-```{r}
-#| eval: false
-cor(DATA$Y, DATA$X)
-```
-
-- `X`: Name Predictor Variable of Interest in data frame `DATA`
-- `Y`: Name Outcome Variable of Interest in data frame `DATA`
-- `DATA`: Name of the data frame
-
-## Example
-
-```{r}
-cor(penguins$body_mass, penguins$flipper_len)
-```
-
-## Coefficient of Determination in R
-
-```{r}
-#| eval: false
-xlm <- lm(Y ~ X, data = DATA)
-r2(xlm)
-```
-
-- `X`: Name Predictor Variable of Interest in data frame `DATA`
-- `Y`: Name Outcome Variable of Interest in data frame `DATA`
-- `DATA`: Name of the data frame
-
-
-## Example
-
-```{r}
-xlm <- lm(body_mass ~ species, penguins)
-r2(xlm)
-```
-
-# Prediction
-
-## Statistical Model
-
-$$
-\hat Y = \hat \beta_0 + \hat \beta_1 X
-$$
-
-- $X$: Input
-- $\hat Y$: Output
-
-## Prediction
-
-Using the equation $\hat Y$, we can give it a value of $X$ and then, in return, a value of $\hat Y$ that predicts the true value $Y$.
 
 ## Prediction in R
 
-```{r}
-#| echo: true
-#| eval: false
-
-xlm <- lm(Y ~ X,
-            data = DATA)
-
-predict_df <- data.frame(X = VAL)
-
-predict(xlm,
-        predict_df)
-```
-
-- `X`: Name Predictor Variable of Interest in data frame `DATA`
-- `Y`: Name Outcome Variable of Interest in data frame `DATA`
-- `DATA`: Name of the data frame
-- `VAL`: Value for the Predictor Variable
-
-
-## Example 1
-
 ::: panel-tabset
 
-### Example
-
-Predict the body mass for a gentoo penguin.
-
-### Code
+### Gentoo
 
 ```{r}
+#| code-fold: false
 xlm <- lm(body_mass ~ species,
             data = penguins)
-
-xlm
-
 predict_df <- data.frame(species = "Gentoo")
-
 predict(xlm,
         predict_df)
 ```
 
+### Chinstrap
+
+```{r}
+#| code-fold: false
+xlm <- lm(body_mass ~ species,
+            data = penguins)
+predict_df <- data.frame(species = "Chinstrap")
+predict(xlm,
+        predict_df)
+```
+
+### Adelie
+
+```{r}
+#| code-fold: false
+xlm <- lm(body_mass ~ species,
+            data = penguins)
+predict_df <- data.frame(species = "Adelie")
+predict(xlm,
+        predict_df)
+```
+
+
 :::
 
-## Example 2
 
+# GLM Example
+
+## Example
+
+```{r}
+#| code-fold: false
+xglm <- glm(disease ~ thal, 
+            data = heart_disease, 
+            family = binomial())
+xglm
+```
+
+$$
+lo(disease) = -1.233 + 1.926 (Fixed) + 2.415 (Reversible)
+$$
+
+## Intepreting $\hat \beta_1$
+
+```{r}
+exp(1.926)
+```
+
+The odds of having heart disease is 6.86 times higher for a patient who has a fixed defect than a patient who is normal.
+
+## Intepreting $\hat \beta_2$
+
+```{r}
+exp(2.415)
+```
+
+The odds of having heart disease is 11.19 times higher for a patient who has a reversible defect than a patient who is normal.
+
+## Prediction in R
 
 ::: panel-tabset
 
-### Example
-
-Predict the body mass for a penguin with a flipper length of 190.
-
-### Code
+### Fixed Defect
 
 ```{r}
-xlm <- lm(body_mass ~ flipper_len,
-            data = penguins)
+#| code-fold: false
+xglm <- glm(disease ~ thal, data = heart_disease,
+            family = binomial())
+pdf <- data.frame(thal = "Fixed Defect")
+predict(xglm, pdf, type = "response")
+```
 
+### Reversible Defect
 
-xlm
+```{r}
+#| code-fold: false
+xglm <- glm(disease ~ thal, data = heart_disease,
+            family = binomial())
+pdf <- data.frame(thal = "Reversible Defect")
+predict(xglm, pdf, type = "response")
+```
 
-predict_df <- data.frame(flipper_len = 190)
+### Normal
 
-predict(xlm,
-        predict_df)
+```{r}
+#| code-fold: false
+xglm <- glm(disease ~ thal, data = heart_disease,
+            family = binomial())
+pdf <- data.frame(thal = "Normal")
+predict(xglm, pdf, type = "response")
 ```
 
 :::
-
-## Interpolation
-
-Interpolation is the process of estimating a value within the range of the observed input data $X$. 
-
-## Extrapolation
-
-Extrapolation is the process of estimating a value beyond the range of observed input data $X$. It's about venturing into the unknown, using what we know as a guide.
-
-## Extrapolation
-
-```{r}
-#| code-fold: true
-#| eval: true
-
-ggplot(penguins, aes(flipper_len, body_mass)) + 
-  xlim(160, 250) +
-  ylim(2600, 7000) +
-  geom_point() +
-  stat_smooth(method = "lm", se = F) 
-```
-
-
-
