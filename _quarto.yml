@@ -5,9 +5,7 @@ project:
     - "*.qmd"
     - "!files/"
   resources:
-    - "*.json"
-    - "!files"
-    - "_extensions"
+    - "files"
 
 execute:
   freeze: auto
