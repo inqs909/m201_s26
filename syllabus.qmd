@@ -36,13 +36,23 @@ Critical reasoning using a quantitative and statistical, problem-solving approac
 
 ### Learning Outcomes
 
+
+- Apply quantitative problem-solving skills to various problems and issues
+- Select, apply and interpret descriptive statistics in an appropriate fashion
+- Select, apply and interpret hypothesis testing methods in an appropriate fashion
+- Reason both inductively and deductively with quantitative information and data
+use statistical software to conduct statistical analysis of real-world and simulated data
+- Organize and express ideas clearly and convincingly in oral and written form
+- (GE 2.1) Solve problems using mathematical methods
+- (GE 2.2) Use graphs, tables, etc. to represent and explain mathematical models and/or quantitative data.
+
 -   Prepare students for advanced courses in data-management and statistics
 -   Reason both inductively and deductively with quantitative information and data
 -   Use statistical software for complex statistical analysis of real-world and simulated data
 -   Empower students to apply computational and inferential thinking to address real-world problems
 -   Write the results of a statistical study and draw conclusion in reports
 
-### Textbook
+### Recommended Textbook
 
 [Introduction to Modern Statistics](https://openintrostat.github.io/ims/) (IMS)
 
@@ -107,25 +117,25 @@ There will be **3** extra credit opportunities worth a total of 5% of your overa
 
 The following outline may be subject to change. Any changes will be announced in class.
 
-| Week  | Topic                            | NB Due | Video Due |
-|:------|:---------------------------------|:-------|:----------|
-| 1/26  | Welcome/Intro to Stats and R     | 1      | 1         |
-| 2/2   | Holiday/ Data Generating Process | 2      | 2         |
-| 2/9   | Categorical Data                 | 3      | 3         |
-| 2/16  | Numerical Data                   | 4      | 4         |
-| 2/23  | Distribution Functions           | 5      |           |
-| 3/2   | **Exam 1**/ Linear Regression    |        | 5         |
-| 3/9   | Simple Linear Regression         | 6      | 6         |
-| 3/16  | Spring Break                     |        |           |
-| 3/23  | Simple Logistic Regression       | 7      | 7         |
-| 3/30  | Holiday/ Group Models            | 8      | 8         |
-| 4/6   | Multivariable Regression         | 9      |           |
-| 4/13  | Modeling Approaches/**Exam 2**   |        | 9         |
-| 4/20  | Sampling Distributions           | 10     | 10        |
-| 4/27  | Inference                        | 11     | 11        |
-| 5/4   | Inference                        | 12     | 12        |
-| 5/11  | Inference                        | 13     |           |
-| 5/18  | **Exam 3**                       |        |           |
+| Week  | Topic                            |CW Due | NB Due | Video Due |
+|:------|:---------------------------------|:------|:-------|:----------|
+| 1/26  | Welcome/Intro to Stats and R     |       | 1      | 1         |
+| 2/2   | Data Generating Process          | 1     | 2      | 2         |
+| 2/9   | Categorical Data                 | 2     | 3      | 3         |
+| 2/16  | Numerical Data                   | 3     | 4      | 4         |
+| 2/23  | Distribution Functions           | 4     | 5      |           |
+| 3/2   | **Exam 1**/ Linear Regression    |       |        | 5         |
+| 3/9   | Simple Linear Regression         | 5     | 6      | 6         |
+| 3/16  | Spring Break                     |       |        |           |
+| 3/23  | Simple Logistic Regression       | 6     | 7      | 7         |
+| 3/30  | Holiday/ Group Models            |       | 8      | 8         |
+| 4/6   | Multivariable Regression         | 7     | 9      |           |
+| 4/13  | Modeling Approaches/**Exam 2**   | 8     |        | 9         |
+| 4/20  | Sampling Distributions           | 9     | 10     | 10        |
+| 4/27  | Inference                        | 10    | 11     | 11        |
+| 5/4   | Inference                        | 11    | 12     | 12        |
+| 5/11  | Inference                        | 12    |        |           |
+| 5/18  | **Exam 3**                       |       |        |           |
 
 ### Generative Artificial Intelligence Policy
 

@@ -117,7 +117,7 @@ A variable is the descriptive attribute that we want to obtain from an experimen
 ## Research Question
 
 - A research question is designed to create new knowledge of certain phenomenons observed in the world.
-- This is designed by conducting a research projects that systematically answers the question.
+- This is designed by conducting a research project that systematically answers the question.
 - The study design is the procedure in which data is collected to answer the question, while reducing any potential bias while conducting the study.
 
 ## Study Design
@@ -167,9 +167,9 @@ In addition to random sampling, we strive to make sure each unit is independent 
 
 -   Random samples may vary from the population of interest.
 
--   Due to randomness, samples many not look the or biased.
+-   Due to randomness, samples many not look the same or biased.
 
--   However, this is to be expected as because the sample will not be biased in one way or another.
+-   However, this is to be expected as the sample will not be biased in one way or another.
 
 -   Samples are then considered unbiased as long as experimental units were collected randomly.
 
