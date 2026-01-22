@@ -46,11 +46,6 @@ use statistical software to conduct statistical analysis of real-world and simul
 - (GE 2.1) Solve problems using mathematical methods
 - (GE 2.2) Use graphs, tables, etc. to represent and explain mathematical models and/or quantitative data.
 
--   Prepare students for advanced courses in data-management and statistics
--   Reason both inductively and deductively with quantitative information and data
--   Use statistical software for complex statistical analysis of real-world and simulated data
--   Empower students to apply computational and inferential thinking to address real-world problems
--   Write the results of a statistical study and draw conclusion in reports
 
 ### Recommended Textbook
 
