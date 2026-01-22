@@ -53,6 +53,10 @@ use statistical software to conduct statistical analysis of real-world and simul
 
 [Statistical Modeling](https://statistical-modeling.netlify.app/) (SM)
 
+### Required Software
+
+Install [Google Chrome](https://www.google.com/chrome/) or any other chromium-based web browser. Used to access google assignments and VoiceThreads. 
+
 ### Course Grading
 
 | Category             | Percentage |
