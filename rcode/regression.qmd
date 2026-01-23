@@ -4,7 +4,6 @@ description: "Explaining variation, simple & multiple linear models, categorical
 format:
   html:
     toc: true
-    code-overflow: scroll
     toc-depth: 3
     number-sections: true
     code-tools: true
@@ -22,6 +21,7 @@ knitr:
   opts_chunk:
     comment: "#>"
 ---
+
 
 # Setup
 
@@ -83,6 +83,10 @@ ggplot(DATA, aes(x = VAR1, y = VAR2)) +
 **Example:**
 
 ```{r}
+#| fig-alt: |
+#|   A scatter plot that shows the relationship between flipper length
+#|   and body mass. The data points show a positive relationship, 
+#|   and possibly two groups. 
 ggplot(penguins, aes(x = flipper_len, y = body_mass)) +
   geom_point()
 ```
@@ -235,12 +239,21 @@ Y = \beta_0 + \beta_1 X + \varepsilon, \quad \hat Y = \hat\beta_0 + \hat\beta_1 
 $$
 
 ```{r}
+#| fig-alt: |
+#|   A scatter plot that shows the relationship between flipper length
+#|   and body mass. The data points show a positive relationship, 
+#|   and possibly two groups. 
 # Scatter plot
 ggplot(penguins, aes(flipper_len, body_mass)) +
   geom_point()
 ```
 
 ```{r}
+#| fig-alt: |
+#|   A scatter plot that shows the relationship between flipper length
+#|   and body mass. The data points show a positive relationship, 
+#|   and possibly two groups. There is a line going between the 
+#|   points showing a positive line.
 # Add a least-squares line
 ggplot(penguins, aes(flipper_len, body_mass)) +
   geom_point() +
