@@ -29,7 +29,6 @@ knitr:
     
 revealjs-plugins:
   - pointer
-  - verticator
   
 filters: 
   - code-fullscreen
