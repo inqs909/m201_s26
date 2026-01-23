@@ -6,6 +6,7 @@ project:
     - "!files/"
   resources:
     - "files"
+    - "assets"
 
 execute:
   freeze: auto

@@ -9,6 +9,8 @@ format:
     code-tools: true
     code-fold: false
     smooth-scroll: true
+    axe: 
+      output: document
 editor: source
 image: img/linear.png
 execute:
@@ -48,12 +50,8 @@ Copy the following code and put it in a code cell in Google Colab. Only do this 
 # This code will load the R packages we will use
 install.packages(c("rcistats", "taylor",,
                  repos = c("https://inqs909.r-universe.dev", 
-                           "https://cloud.r-project.org"))
+                           "https://cloud.r-project.org")))
 
-# Uncomment and run for themes
-# csucistats::install_themes()
-# library(ThemePark)
-# library(ggthemes)
 
 library(rcistats)
 library(tidyverse)
