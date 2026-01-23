@@ -111,6 +111,13 @@ ggplot(DATA, aes(x = NUM, color = CAT)) +
 **Example:**
 
 ```{r}
+#| fig-alt: |
+#|   Kernel density plot showing the distribution of penguin flipper lengths
+#|   by species. Adelie penguins have shorter flippers centered around 190 mm,
+#|   Chinstrap penguins are intermediate around 195 mm, and Gentoo penguins
+#|   have much longer flippers centered around 215–220 mm, 
+#|   with little overlap between Gentoo and the other species.
+
 ggplot(penguins, aes(x = flipper_len, color = species)) +
   geom_density()
 ```
@@ -127,7 +134,15 @@ ggplot(DATA, aes(x = NUM, fill = CAT)) +
 **Example:**
 
 ```{r}
-ggplot(penguins, aes(x = flipper_len, group = species)) +
+#| fig-alt: |
+#|   Filled kernel density plot showing the distribution of penguin 
+#|   flipper lengths by species. Adelie penguins have shorter flippers
+#|   centered around 190 mm, Chinstrap penguins are intermediate 
+#|   around 195 mm, and Gentoo penguins have much longer 
+#|   flippers centered around 215–220 mm, 
+#|   with little overlap between Gentoo and the other species.
+
+ggplot(penguins, aes(x = flipper_len, fill = species)) +
   geom_density()
 ```
 
@@ -143,6 +158,13 @@ ggplot(DATA, aes(x = NUM, group = CAT)) +
 **Example:**
 
 ```{r}
+#| fig-alt: |
+#|   Kernel density plot showing the distribution of penguin flipper lengths
+#|   by species. Adelie penguins have shorter flippers centered around 190 mm,
+#|   Chinstrap penguins are intermediate around 195 mm, and Gentoo penguins
+#|   have much longer flippers centered around 215–220 mm, 
+#|   with little overlap between Gentoo and the other species.
+#| 
 ggplot(penguins, aes(x = flipper_len, group = species)) +
   geom_density()
 ```
@@ -163,6 +185,13 @@ ggplot(DATA, aes(x = NUM, y = CAT)) +
 **Example:**
 
 ```{r}
+#| fig-alt: |
+#|   Horizontal boxplots of penguin flipper lengths (mm) by species.
+#|   Adelie penguins have the shortest flippers with a median around 
+#|   190 mm and a few outliers; Chinstrap penguins are intermediate with 
+#|   a median near 195 mm; and Gentoo penguins have the longest flippers 
+#|   with a median around 215–220 mm. The distributions show clear 
+#|   separation between Gentoo and the other species.
 ggplot(penguins, aes(x = flipper_len, y = species)) +
   geom_boxplot()
 ```
@@ -176,6 +205,11 @@ ggplot(penguins, aes(x = flipper_len, y = species)) +
 This is the process of trying to **reduce unexplained variation** in an outcome by using informative predictors — think *getting it less wrong* with an educated guess.
 
 ```{r}
+#| fig-alt: |
+#|   Kernel density plot of penguin body mass (grams). 
+#|   The distribution peaks around 3,600–3,800 grams and gradually 
+#|   tapers toward higher body masses, with a long right tail 
+#|   extending beyond 6,000 grams.
 #| label: fig-plot-1
 ggplot(penguins, aes(body_mass)) +
   geom_density()
@@ -184,6 +218,13 @@ ggplot(penguins, aes(body_mass)) +
 If we know some information, we can get less wrong over time.
 
 ```{r}
+#| fig-alt: |
+#|   Filled kernel density plot of penguin body mass (grams) by species. 
+#|   Adelie penguins (red) and Chinstrap penguins (green) have lower 
+#|   body masses, with overlapping distributions centered around 3,500–4,000 
+#|   grams, while Gentoo penguins (blue) are substantially heavier, 
+#|   with a distribution centered around 4,800–5,500 grams and 
+#|   little overlap with the other species.
 # Same variable, grouped by a category (species)
 ggplot(penguins, aes(body_mass, fill = species)) +
   geom_density(alpha = .5)

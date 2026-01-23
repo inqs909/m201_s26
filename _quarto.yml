@@ -17,10 +17,15 @@ website:
   site-url: www.inqs.info/m201_s26
   favicon: "img/logo.png"
   navbar:
-    logo: "img/logo.png" 
+    logo: "img/logo.png"
+    logo-alt: "Class Logo for Math 201"
     right:
-      - lectures.qmd
-      - rcode.qmd
+      - text: "Lectures"
+        href: lectures.qmd
+        aria-label: "Leads to Lecture Slides"
+      - text: "R Code Reference"
+        href: rcode.qmd
+        aria-label: "Leads to R Code Reference Pages"
 
 format:
   html:
