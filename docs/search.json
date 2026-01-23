@@ -25,7 +25,7 @@
     "href": "rcode/r_packages.html",
     "title": "R Packages",
     "section": "",
-    "text": "install.packages(\"tidyverse\")"
+    "text": "\\[\nY = \\hat \\beta_i X\n\\]"
   },
   {
     "objectID": "rcode/r_packages.html#data-packages",

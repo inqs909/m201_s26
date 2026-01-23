@@ -4,6 +4,7 @@ description: "Explaining variation, simple & multiple linear models, categorical
 format:
   html:
     toc: true
+    code-overflow: scroll
     toc-depth: 3
     number-sections: true
     code-tools: true
@@ -356,7 +357,7 @@ r2(lm(body_mass ~ flipper_leng, data = penguins))
 
 **Template:**
 
-``` r
+```r
 # Correlation
 cor(DATA$Y, DATA$X)
 
@@ -420,7 +421,7 @@ ar2(m)
 
 ## Simple Model
 
-``` r
+```r
 lm(Y ~ 1, data = DATA)
 ```
 
@@ -430,7 +431,7 @@ lm(Y ~ 1, data = DATA)
 
 ## Simple linear regression
 
-``` r
+```r
 lm(Y ~ X, data = DATA)
 ```
 
@@ -441,7 +442,7 @@ lm(Y ~ X, data = DATA)
 
 ## SLR: Categorical predictor
 
-``` r
+```r
 lm(Y ~ X, data = DATA) 
 ```
 
@@ -452,7 +453,7 @@ lm(Y ~ X, data = DATA)
 
 ## SLR: Categorical predictor (Create Factor)
 
-``` r
+```r
 lm(Y ~ factor(X), data = DATA)   # coerce X to factor
 ```
 
@@ -463,7 +464,7 @@ lm(Y ~ factor(X), data = DATA)   # coerce X to factor
 
 ## Numerical Statistics by Categories
 
-``` r
+```r
 num_by_cat_stats(DATA, NUM, CAT)
 ```
 

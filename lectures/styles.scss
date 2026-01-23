@@ -97,3 +97,19 @@ h2 {
 a {
   text-decoration: underline !important;
 }
+
+.scrollable pre,
+div.scrollable pre {
+  max-height: 320px;        /* change the height as you like */
+  overflow: auto;           /* add scrollbars when content exceeds height */
+  padding: 0.75rem;         /* optional: nicer spacing */
+  border-radius: 6px;       /* optional */
+  background: var(--quarto-code-bg, #f6f8fa); /* uses Quarto var if available */
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.03) inset;
+}
+
+/* ensure long lines don't cause horizontal overflow (or allow horiz scroll) */
+.scrollable pre {
+  white-space: pre;         /* keep original formatting; change to pre-wrap if you prefer wrapping */
+  overflow-x: auto;         /* allow horizontal scroll for very long lines */
+}

@@ -4,6 +4,11 @@ format: html
 description: "A list of R packages used to run this course."
 ---
 
+$$
+Y = \hat \beta_i X
+$$
+
+
 ### tidyverse
 
 ```r
