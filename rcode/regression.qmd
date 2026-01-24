@@ -9,6 +9,8 @@ format:
     code-tools: true
     code-fold: false
     smooth-scroll: true
+    axe: 
+      output: document
 editor: source
 image: img/linear.png
 execute:
@@ -20,6 +22,7 @@ jupyter: r
 knitr:
   opts_chunk:
     comment: "#>"
+    results: asis
 ---
 
 

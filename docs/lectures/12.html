@@ -110,7 +110,6 @@
   <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/verticator/verticator.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
@@ -809,7 +808,7 @@ p = 0.00967 &lt; 0.05 = \alpha
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="12_files/figure-revealjs/unnamed-chunk-6-1.png" width="960"></p>
+<p><img data-src="12_files/figure-html/unnamed-chunk-6-1.png" width="672"></p>
 </figure>
 </div>
 </div>
@@ -822,7 +821,7 @@ p = 0.00967 &lt; 0.05 = \alpha
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="12_files/figure-revealjs/unnamed-chunk-6-2.png" width="960"></p>
+<p><img data-src="12_files/figure-html/unnamed-chunk-6-2.png" width="672"></p>
 </figure>
 </div>
 </div>
@@ -867,12 +866,12 @@ p = 0.00967 &lt; 0.05 = \alpha
 #&gt; 5     -0.6366106     -2.717940              -1.259993        -2.476175
 #&gt; 6     -0.5787181     -2.884425              -1.426478        -2.433842
 #&gt;   std_pear_resid std_dev_resid stud_dev_resid quantile_resid   leverages
-#&gt; 1     -0.6962858    -0.8927274     -0.8846616     -0.9513868 0.045927133
-#&gt; 2      0.4562301     0.6153377      0.6134136     -0.2358693 0.013866647
-#&gt; 3      0.6910541     0.8843093      0.8827424     -0.2235802 0.009094376
-#&gt; 4     -0.5199246    -0.6922325     -0.6903935     -0.1632137 0.012173676
-#&gt; 5     -0.4789686    -0.6433536     -0.6403567     -0.1649384 0.020852010
-#&gt; 6     -0.4311339    -0.5843756     -0.5818043     -0.3419256 0.019268922
+#&gt; 1     -0.6962858    -0.8927274     -0.8846616     0.36349077 0.045927133
+#&gt; 2      0.4562301     0.6153377      0.6134136    -0.03852898 0.013866647
+#&gt; 3      0.6910541     0.8843093      0.8827424    -0.40587339 0.009094376
+#&gt; 4     -0.5199246    -0.6922325     -0.6903935    -0.58934633 0.012173676
+#&gt; 5     -0.4789686    -0.6433536     -0.6403567    -1.97130525 0.020852010
+#&gt; 6     -0.4311339    -0.5843756     -0.5818043     1.00139375 0.019268922
 #&gt;          cooks
 #&gt; 1 0.0046675922
 #&gt; 2 0.0005853744
@@ -892,7 +891,7 @@ p = 0.00967 &lt; 0.05 = \alpha
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="12_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
+<p><img data-src="12_files/figure-html/unnamed-chunk-8-1.png" width="672"></p>
 </figure>
 </div>
 </div>
@@ -905,7 +904,7 @@ p = 0.00967 &lt; 0.05 = \alpha
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="12_files/figure-revealjs/unnamed-chunk-8-2.png" width="960"></p>
+<p><img data-src="12_files/figure-html/unnamed-chunk-8-2.png" width="672"></p>
 </figure>
 </div>
 </div>
@@ -943,7 +942,6 @@ p = 0.00967 &lt; 0.05 = \alpha
   <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
-  <script src="../site_libs/revealjs/plugin/verticator/verticator.js"></script>
   <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -968,7 +966,6 @@ p = 0.00967 &lt; 0.05 = \alpha
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true,"theme":"whiteboard","chalkWidth":4},
 'pointer': {"key":"q","color":"red","pointerSize":32,"alwaysVisible":false},
-'verticator': {"themetag":"h1","color":"","inversecolor":"","skipuncounted":false,"clickable":true,"position":"auto","offset":"3vmin","autogenerate":true,"tooltip":false,"scale":1,"debug":true},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -1139,7 +1136,7 @@ p = 0.00967 &lt; 0.05 = \alpha
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealPointer, Verticator, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealPointer, QuartoSupport,
 
           RevealMath,
           RevealNotes,
@@ -1148,44 +1145,6 @@ p = 0.00967 &lt; 0.05 = \alpha
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

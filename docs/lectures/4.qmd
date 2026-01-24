@@ -32,7 +32,8 @@ knitr:
 revealjs-plugins:
   - pointer
   
-filters: 
+filters:
+  - reveal-header
   - code-fullscreen
   - reveal-auto-agenda
 

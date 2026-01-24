@@ -110,7 +110,6 @@
   <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/verticator/verticator.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
@@ -254,12 +253,22 @@
 </section>
 <section id="modeling-binary-outcomes-1" class="slide level2">
 <h2>Modeling Binary Outcomes</h2>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>#&gt; `geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
 
-<img data-src="6_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
+</div>
+<img data-src="6_files/figure-html/unnamed-chunk-2-1.png" width="672" class="r-stretch"></section>
 <section id="modeling-binary-outcomes-2" class="slide level2">
 <h2>Modeling Binary Outcomes</h2>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>#&gt; `geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
 
-<img data-src="6_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
+</div>
+<img data-src="6_files/figure-html/unnamed-chunk-3-1.png" width="672" class="r-stretch"></section>
 <section id="mathematical-model" class="slide level2">
 <h2>Mathematical Model</h2>
 <p><span class="math display">\[
@@ -404,10 +413,10 @@ L(\boldsymbol \beta) = \prod_{i=1}^n \left(\frac{e^{\beta_0 + \beta_1X}}{1 + e^{
 </section>
 <section id="logistic-regression-in-r-1" class="slide level2">
 <h2>Logistic Regression in R</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>xglm <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X,</span>
-<span id="cb1-2"><a></a>            <span class="at">data =</span> DATA,</span>
-<span id="cb1-3"><a></a>            <span class="at">family =</span> <span class="fu">binomial</span>())</span>
-<span id="cb1-4"><a></a>xglm</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>xglm <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X,</span>
+<span id="cb3-2"><a></a>            <span class="at">data =</span> DATA,</span>
+<span id="cb3-3"><a></a>            <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb3-4"><a></a>xglm</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>DATA</code>: Name of the data frame</li>
 <li><code>Y</code>: Outcome Variable of Interest in the data frame <code>DATA</code></li>
@@ -426,7 +435,7 @@ L(\boldsymbol \beta) = \prod_{i=1}^n \left(\frac{e^{\beta_0 + \beta_1X}}{1 + e^{
 </section>
 <section id="model-information-in-r" class="slide level2">
 <h2>Model Information in R</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">model_info</span>(MODEL)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">model_info</span>(MODEL)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>MODEL</code>: fitted model from <code>lm()</code> or <code>glm</code></li>
 </ul>
@@ -437,11 +446,42 @@ L(\boldsymbol \beta) = \prod_{i=1}^n \left(\frac{e^{\beta_0 + \beta_1X}}{1 + e^{
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>xglm <span class="ot">&lt;-</span> <span class="fu">glm</span>(disease <span class="sc">~</span> cp <span class="sc">+</span> age <span class="sc">+</span> sex <span class="sc">+</span> restecg <span class="sc">+</span> fbs,</span>
-<span id="cb3-2"><a></a>            <span class="at">data =</span> heart_disease,</span>
-<span id="cb3-3"><a></a>            <span class="at">family =</span> <span class="fu">binomial</span>())</span>
-<span id="cb3-4"><a></a><span class="fu">model_info</span>(xglm)</span>
-<span id="cb3-5"><a></a>xglm</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>xglm <span class="ot">&lt;-</span> <span class="fu">glm</span>(disease <span class="sc">~</span> cp <span class="sc">+</span> age <span class="sc">+</span> sex <span class="sc">+</span> restecg <span class="sc">+</span> fbs,</span>
+<span id="cb5-2"><a></a>            <span class="at">data =</span> heart_disease,</span>
+<span id="cb5-3"><a></a>            <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb5-4"><a></a><span class="fu">model_info</span>(xglm)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>#&gt; Outcome Variable: disease</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>#&gt;   Modeling Probability: yes</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>#&gt; Numerical Predictors: 
+#&gt;    age</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>#&gt; Categorical Predictors: 
+#&gt;   cp: 
+#&gt;      Asymptomatic (Reference)  
+#&gt;      Non-anginal Pain  
+#&gt;      Atypical Angina  
+#&gt;      Typical Angina  
+#&gt;   sex: 
+#&gt;      Female (Reference)  
+#&gt;      Male  
+#&gt;   restecg: 
+#&gt;      Normal (Reference)  
+#&gt;      ST-T wave Abnormality  
+#&gt;      Left Ventricular Hypertrophy  
+#&gt;   fbs: 
+#&gt;      Fasting Blood Sugar &lt;= 120 (Reference)  
+#&gt;      Fasting Blood Sugar &gt;120</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>xglm</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; 
@@ -480,7 +520,7 @@ lo(disease) = -3.0512 + 0.0529 (age)
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">exp</span>(<span class="fl">0.05291</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">exp</span>(<span class="fl">0.05291</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; [1] 1.054335</code></pre>
@@ -522,13 +562,13 @@ lo(disease) = -3.0512 + 0.0529 (age)
 </section>
 <section id="prediction-in-r" class="slide level2">
 <h2>Prediction in R</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>xglm <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X,</span>
-<span id="cb7-2"><a></a>            <span class="at">data =</span> DATA,</span>
-<span id="cb7-3"><a></a>            <span class="at">family =</span> <span class="fu">binomial</span>())</span>
-<span id="cb7-4"><a></a>ndf <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">X =</span> VAL)</span>
-<span id="cb7-5"><a></a><span class="fu">predict</span>(xglm,</span>
-<span id="cb7-6"><a></a>        ndf,</span>
-<span id="cb7-7"><a></a>        <span class="at">type =</span> <span class="st">"response"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>xglm <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X,</span>
+<span id="cb14-2"><a></a>            <span class="at">data =</span> DATA,</span>
+<span id="cb14-3"><a></a>            <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb14-4"><a></a>ndf <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">X =</span> VAL)</span>
+<span id="cb14-5"><a></a><span class="fu">predict</span>(xglm,</span>
+<span id="cb14-6"><a></a>        ndf,</span>
+<span id="cb14-7"><a></a>        <span class="at">type =</span> <span class="st">"response"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="example-1" class="slide level2">
 <h2>Example 1</h2>
@@ -536,11 +576,11 @@ lo(disease) = -3.0512 + 0.0529 (age)
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>xglm <span class="ot">&lt;-</span> <span class="fu">glm</span>(disease <span class="sc">~</span> age,</span>
-<span id="cb8-2"><a></a>            <span class="at">data =</span> heart_disease,</span>
-<span id="cb8-3"><a></a>            <span class="at">family =</span> <span class="fu">binomial</span>())</span>
-<span id="cb8-4"><a></a>ndf <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">age =</span> <span class="dv">40</span>)</span>
-<span id="cb8-5"><a></a><span class="fu">predict</span>(xglm, ndf, <span class="at">type =</span> <span class="st">"response"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>xglm <span class="ot">&lt;-</span> <span class="fu">glm</span>(disease <span class="sc">~</span> age,</span>
+<span id="cb15-2"><a></a>            <span class="at">data =</span> heart_disease,</span>
+<span id="cb15-3"><a></a>            <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb15-4"><a></a>ndf <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">age =</span> <span class="dv">40</span>)</span>
+<span id="cb15-5"><a></a><span class="fu">predict</span>(xglm, ndf, <span class="at">type =</span> <span class="st">"response"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt;         1 
@@ -554,11 +594,11 @@ lo(disease) = -3.0512 + 0.0529 (age)
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>xglm <span class="ot">&lt;-</span> <span class="fu">glm</span>(disease <span class="sc">~</span> age,</span>
-<span id="cb10-2"><a></a>            <span class="at">data =</span> heart_disease,</span>
-<span id="cb10-3"><a></a>            <span class="at">family =</span> <span class="fu">binomial</span>())</span>
-<span id="cb10-4"><a></a>ndf <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">age =</span> <span class="dv">55</span>)</span>
-<span id="cb10-5"><a></a><span class="fu">predict</span>(xglm, ndf, <span class="at">type =</span> <span class="st">"response"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>xglm <span class="ot">&lt;-</span> <span class="fu">glm</span>(disease <span class="sc">~</span> age,</span>
+<span id="cb17-2"><a></a>            <span class="at">data =</span> heart_disease,</span>
+<span id="cb17-3"><a></a>            <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb17-4"><a></a>ndf <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">age =</span> <span class="dv">55</span>)</span>
+<span id="cb17-5"><a></a><span class="fu">predict</span>(xglm, ndf, <span class="at">type =</span> <span class="st">"response"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt;         1 
@@ -572,11 +612,11 @@ lo(disease) = -3.0512 + 0.0529 (age)
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>xglm <span class="ot">&lt;-</span> <span class="fu">glm</span>(disease <span class="sc">~</span> age,</span>
-<span id="cb12-2"><a></a>            <span class="at">data =</span> heart_disease,</span>
-<span id="cb12-3"><a></a>            <span class="at">family =</span> <span class="fu">binomial</span>())</span>
-<span id="cb12-4"><a></a>ndf <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">age =</span> <span class="dv">70</span>)</span>
-<span id="cb12-5"><a></a><span class="fu">predict</span>(xglm, ndf, <span class="at">type =</span> <span class="st">"response"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>xglm <span class="ot">&lt;-</span> <span class="fu">glm</span>(disease <span class="sc">~</span> age,</span>
+<span id="cb19-2"><a></a>            <span class="at">data =</span> heart_disease,</span>
+<span id="cb19-3"><a></a>            <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb19-4"><a></a>ndf <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">age =</span> <span class="dv">70</span>)</span>
+<span id="cb19-5"><a></a><span class="fu">predict</span>(xglm, ndf, <span class="at">type =</span> <span class="st">"response"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt;         1 
@@ -637,7 +677,6 @@ lo(disease) = -3.0512 + 0.0529 (age)
   <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
-  <script src="../site_libs/revealjs/plugin/verticator/verticator.js"></script>
   <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -662,7 +701,6 @@ lo(disease) = -3.0512 + 0.0529 (age)
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true,"theme":"whiteboard","chalkWidth":4},
 'pointer': {"key":"q","color":"red","pointerSize":32,"alwaysVisible":false},
-'verticator': {"themetag":"h1","color":"","inversecolor":"","skipuncounted":false,"clickable":true,"position":"auto","offset":"3vmin","autogenerate":true,"tooltip":false,"scale":1,"debug":true},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -833,7 +871,7 @@ lo(disease) = -3.0512 + 0.0529 (age)
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealPointer, Verticator, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealPointer, QuartoSupport,
 
           RevealMath,
           RevealNotes,
@@ -842,44 +880,6 @@ lo(disease) = -3.0512 + 0.0529 (age)
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

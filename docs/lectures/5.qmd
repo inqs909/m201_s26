@@ -32,7 +32,6 @@ knitr:
     
 revealjs-plugins:
   - pointer
-  - verticator
   
 filters: 
   - reveal-header

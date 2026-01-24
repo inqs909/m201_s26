@@ -31,9 +31,9 @@ knitr:
     
 revealjs-plugins:
   - pointer
-  - verticator
+ 
   
-filters: 
+filters:
   - reveal-header
   - code-fullscreen
   - reveal-auto-agenda
