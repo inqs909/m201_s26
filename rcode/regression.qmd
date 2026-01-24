@@ -9,8 +9,6 @@ format:
     code-tools: true
     code-fold: false
     smooth-scroll: true
-    axe: 
-      output: document
 editor: source
 image: img/linear.png
 execute:
