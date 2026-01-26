@@ -20,7 +20,6 @@ jupyter: r
 knitr:
   opts_chunk:
     comment: "#>"
-    results: asis
 ---
 
 
