@@ -1624,207 +1624,179 @@
     "text": "Penguins\n\n\nCode\nggplot(penguins, aes(flipper_len, body_mass)) +\n  geom_point()"
   },
   {
-    "objectID": "lectures/1a.html#statistical-warning",
-    "href": "lectures/1a.html#statistical-warning",
-    "title": "Statistics",
-    "section": "Statistical Warning",
-    "text": "Statistical Warning"
+    "objectID": "lectures/1a.html#slides",
+    "href": "lectures/1a.html#slides",
+    "title": "Math 201",
+    "section": "Slides",
+    "text": "Slides\nwww.inqs.info/m2012_f25/c/1a"
   },
   {
-    "objectID": "lectures/1a.html#statistics-1",
-    "href": "lectures/1a.html#statistics-1",
-    "title": "Statistics",
-    "section": "Statistics",
-    "text": "Statistics\n\n\n\n\n\n\n\n\n\nWith an increasing use of data to make decisions, Statistics has been essential for processing large amounts of data to byte-size information\nStatistics is also known as\n\nData Science\nMachine Learning\nArtificial Intelligence\n\nSo for today, we’re asking: what is Statistics?"
+    "objectID": "lectures/1a.html#introductions-1",
+    "href": "lectures/1a.html#introductions-1",
+    "title": "Math 201",
+    "section": "Introductions",
+    "text": "Introductions\n\nSan Bernardino, CA\nCSU Monterey Bay\n\nBS Biology\n\nSan Diego State University\n\nMaster’s in Public Health\n\nUC Riverside\n\nPhD in Applied Statistics"
   },
   {
-    "objectID": "lectures/1a.html#what-does-google-say",
-    "href": "lectures/1a.html#what-does-google-say",
-    "title": "Statistics",
-    "section": "What does Google say?",
-    "text": "What does Google say?\n\n\nUC Irvine\nStatistics is the science concerned with developing and studying methods for collecting, analyzing, interpreting and presenting empirical data.\n\nWikipedia\nStatistics is a mathematical body of science that pertains to the collection, analysis, interpretation or explanation, and presentation of data, or as a branch of mathematics."
+    "objectID": "lectures/1a.html#introductions-2",
+    "href": "lectures/1a.html#introductions-2",
+    "title": "Math 201",
+    "section": "Introductions",
+    "text": "Introductions\n\nName\nYear\nMajor\nFun Fact\nCareer Goal"
   },
   {
-    "objectID": "lectures/1a.html#what-does-ai-say",
-    "href": "lectures/1a.html#what-does-ai-say",
-    "title": "Statistics",
-    "section": "What does AI say?",
-    "text": "What does AI say?\n\n\nChatGPT\nStatistics is a branch of mathematics and a field of study that deals with the collection, analysis, interpretation, presentation, and organization of data.\n\nGoogle Gemini\nStatistics is the science of collecting, analyzing, interpreting, and presenting data."
+    "objectID": "lectures/1a.html#epe---louis-heer",
+    "href": "lectures/1a.html#epe---louis-heer",
+    "title": "Math 201",
+    "section": "EPE - Louis Heer",
+    "text": "EPE - Louis Heer\n\n\n\n\n\n4th Year\nPolitical Science Major"
   },
   {
-    "objectID": "lectures/1a.html#what-do-researchers-say",
-    "href": "lectures/1a.html#what-do-researchers-say",
-    "title": "Statistics",
-    "section": "What do researchers say?",
-    "text": "What do researchers say?\n\nAnthropologistMicrobiologistSociologistPolitical ScientistEcologistMathematician\n\n\nObjectively interpreting data to make meaningful inferences about our predictions.\n\n\nWhatever the statistician says.\n\n\nGathering the narratives of individuals, groups, or society and telling a story about their past, present, or future. The numbers paint a picture worth many words.\n\n\nUsing numbers to try to explain behaviors and/or patterns in our world.\n\n\nStatistics is the way to make sense of the natural world by taking data we collect to identify patterns between variables, and applying statistical theory to make sure we are taking the right approach to data collection and analysis. Also, assess patterns to see if they are reproducible and provide a logical explanation that makes biological sense.\n\n\nStatistics is the study of data, patterns, and trends."
+    "objectID": "lectures/1a.html#assignments",
+    "href": "lectures/1a.html#assignments",
+    "title": "Math 201",
+    "section": "Assignments",
+    "text": "Assignments\n\n\n\nLearner Info Survey\nUsing the Study Cycle Efficiently\n\n\n\nBloom’s Taxonomy\nThe Feynman Technique"
   },
   {
-    "objectID": "lectures/1a.html#what-is-it",
-    "href": "lectures/1a.html#what-is-it",
-    "title": "Statistics",
-    "section": "What is it?",
-    "text": "What is it?\n\n\nMath\n\n\n\n\n\n\nScience"
+    "objectID": "lectures/1a.html#class-setup-1",
+    "href": "lectures/1a.html#class-setup-1",
+    "title": "Math 201",
+    "section": "Class Setup",
+    "text": "Class Setup\n\nParticipation\nNotebook Assignments\nVideo Assignments\nClasswork Assignments\nExams\nExtra Credit"
   },
   {
-    "objectID": "lectures/1a.html#what-does-a-statistician-say",
-    "href": "lectures/1a.html#what-does-a-statistician-say",
-    "title": "Statistics",
-    "section": "What does a Statistician say?",
-    "text": "What does a Statistician say?\nIt is the study of variation and randomness!\n\nUsing mathematics, we model randomness to characterizes commonality and variation!\n\n\nUsing science, we systematically refine models to better fit randomness in data!\n\n\nUsing art, when it all eventually fails!"
+    "objectID": "lectures/1a.html#study-expectations",
+    "href": "lectures/1a.html#study-expectations",
+    "title": "Math 201",
+    "section": "Study Expectations",
+    "text": "Study Expectations\nFor every 1 unit of class you take, you are expected to spend ~3 hours outside of class for the course."
   },
   {
-    "objectID": "lectures/1a.html#when-it-fails",
-    "href": "lectures/1a.html#when-it-fails",
-    "title": "Statistics",
-    "section": "When it fails?!?!",
-    "text": "When it fails?!?!"
+    "objectID": "lectures/1a.html#syllabus",
+    "href": "lectures/1a.html#syllabus",
+    "title": "Math 201",
+    "section": "Syllabus",
+    "text": "Syllabus\nwww.inqs.info/m201_s26/syllabus"
   },
   {
-    "objectID": "lectures/1a.html#statistics-mantra---george-box",
-    "href": "lectures/1a.html#statistics-mantra---george-box",
-    "title": "Statistics",
-    "section": "Statistics Mantra - George Box",
-    "text": "Statistics Mantra - George Box\n\n\n\n\n\n\n\n\nAll models are wrong,\nsome are useful!"
+    "objectID": "lectures/1a.html#r-programming",
+    "href": "lectures/1a.html#r-programming",
+    "title": "Math 201",
+    "section": "R Programming",
+    "text": "R Programming\nThis utilized the R programming to conduct data analysis.\nR is a powerful tool that allows you to program complex tasks.\nLearning R is difficult, but it is the best teacher to teach you how to overcome challenges. Don’t give up when it gets hard and seek out help when needed."
   },
   {
-    "objectID": "lectures/1a.html#what-is-the-formal-definition-of-statistics",
-    "href": "lectures/1a.html#what-is-the-formal-definition-of-statistics",
-    "title": "Statistics",
-    "section": "What is the formal definition of Statistics?",
-    "text": "What is the formal definition of Statistics?\nStatistics is both the development of mathematical models to be used in real-world data and the analysis of data using existing models."
+    "objectID": "lectures/1a.html#when-do-you-use-statistics",
+    "href": "lectures/1a.html#when-do-you-use-statistics",
+    "title": "Math 201",
+    "section": "When do you use statistics?",
+    "text": "When do you use statistics?"
   },
   {
-    "objectID": "lectures/1a.html#probability-models",
-    "href": "lectures/1a.html#probability-models",
-    "title": "Statistics",
-    "section": "Probability Models",
-    "text": "Probability Models\n\n\n\n\n\n\n\n\n\nModel observations that follow a new data generating process\nUnderstand its properties\nDevelop new probability distributions\nKnown as Probability Theory\nResearcher is a Probabilist or Mathematical Statistician"
+    "objectID": "lectures/1a.html#what-is-the-difference-between-math-and-stats",
+    "href": "lectures/1a.html#what-is-the-difference-between-math-and-stats",
+    "title": "Math 201",
+    "section": "What is the difference between math and stats?",
+    "text": "What is the difference between math and stats?"
   },
   {
-    "objectID": "lectures/1a.html#data-analysis",
-    "href": "lectures/1a.html#data-analysis",
-    "title": "Statistics",
-    "section": "Data Analysis",
-    "text": "Data Analysis\n\n\n\nModel data with a known probability model\nAccount for sources of variation and bias\nAccount for violations of independence and randomness\nKnown as Statistician or Data Scientist"
+    "objectID": "lectures/1a.html#use-of-generative-ai-1",
+    "href": "lectures/1a.html#use-of-generative-ai-1",
+    "title": "Math 201",
+    "section": "Use of Generative AI",
+    "text": "Use of Generative AI\nThe use of generative artificial intelligence (AI) to complete any part or all of an assignment/exam is strictly prohibited in this class. This includes, but not limited to, ChatGPT, Claude, Meta AI, and Google Gemini.\n\nYou may use AI to enhance you understanding of the material.\n\n\nYou may not upload any course material to any AI platforms such as ChatGPT, Claude, Meta AI, and Google Gemini. Exceptions are allowed for DASS-approved services."
   },
   {
-    "objectID": "lectures/1a.html#whats-the-goal-of-a-statistician",
-    "href": "lectures/1a.html#whats-the-goal-of-a-statistician",
-    "title": "Statistics",
-    "section": "What’s the goal of a Statistician?",
-    "text": "What’s the goal of a Statistician?\n\nINFERENCE\n\n\nUse our sample data to understand the larger population.\n\n\nThe data will tell us how the population generally behaves.\n\n\nThe data will guide us in the differences in units.\n\n\nData will tell us if there is a signal or just noise."
+    "objectID": "lectures/1a.html#use-of-ai",
+    "href": "lectures/1a.html#use-of-ai",
+    "title": "Math 201",
+    "section": "Use of AI",
+    "text": "Use of AI\nThere are consequences when you use of AI:\n\nEducational Mislearning\nTrusting AI\nStolen Work\nPrivacy Concerns\nEnvironmental Impacts\nWorking Exploitation"
   },
   {
-    "objectID": "lectures/1a.html#word-cloud",
-    "href": "lectures/1a.html#word-cloud",
-    "title": "Statistics",
-    "section": "Word Cloud",
-    "text": "Word Cloud"
+    "objectID": "lectures/1a.html#educational-mislearning",
+    "href": "lectures/1a.html#educational-mislearning",
+    "title": "Math 201",
+    "section": "Educational Mislearning",
+    "text": "Educational Mislearning\nThe purpose of this class, and college, is for you to learn about critical thinking skills and perseverance. Using AI will only teach you how to get an answer, which may or may not be correct.\n\nYou will not develop the skills needed to problem solve a challenge. Additionally, developing grit is essential to become successful in college and life. There is no easy way out and AI is an illusion to your success in life.\n\n\nTo learn something, it requires hours of work! If not years!"
   },
   {
-    "objectID": "lectures/1a.html#conducting-inference",
-    "href": "lectures/1a.html#conducting-inference",
-    "title": "Statistics",
-    "section": "Conducting Inference",
-    "text": "Conducting Inference"
+    "objectID": "lectures/1a.html#trusting-ai",
+    "href": "lectures/1a.html#trusting-ai",
+    "title": "Math 201",
+    "section": "Trusting AI",
+    "text": "Trusting AI\nWhen using AI, you must acknowledge its limitations:\n\nResponses provided may be incorrect\nResponses may not be fair\nCompanies may manipulate responses and/or terms of service for their benefit\nCompanies may not have your best interst in mind\n\n\nYou should always proceed with caution utilizing these tools!"
   },
   {
-    "objectID": "lectures/1a.html#are-we-seeing-something-or-is-it-just-noise",
-    "href": "lectures/1a.html#are-we-seeing-something-or-is-it-just-noise",
-    "title": "Statistics",
-    "section": "Are we seeing something or is it just noise???",
-    "text": "Are we seeing something or is it just noise???\nAre we seeing something different from what was expected? Or is it due to random chance?"
+    "objectID": "lectures/1a.html#stolen-work",
+    "href": "lectures/1a.html#stolen-work",
+    "title": "Math 201",
+    "section": "Stolen Work",
+    "text": "Stolen Work\n\nAdditionally, all these individuals are not receiving any royalties for the work to be used in creating generative AI models.\n\n\nInside Higher Ed and The New Yorker highlight individual’s concern of their work being used to train AI models."
   },
   {
-    "objectID": "lectures/1a.html#hypothesis-testing",
-    "href": "lectures/1a.html#hypothesis-testing",
-    "title": "Statistics",
-    "section": "Hypothesis Testing",
-    "text": "Hypothesis Testing\n\nSet up the Null and Alternative Hypothesis\nConstruct a test statistic based on the null hypothesis\nConstruct a distribution of the test statistic based on probability theory\nCompute the probability of observing the test statistic\nMake a decision based on the probability"
+    "objectID": "lectures/1a.html#privacy-concerns",
+    "href": "lectures/1a.html#privacy-concerns",
+    "title": "Math 201",
+    "section": "Privacy Concerns",
+    "text": "Privacy Concerns\nThe use of generative AI raises concerns of what data is being harvested from us, possibly without informed consent.\n\nWhen you used any large language models, you do not know what information is being harvested from you.\n\n\nDo you want to upload your thoughts and ideas to a company that can monetize, and possibly exploit.\n\n\nDoes your Professors consent with you uploading their assignments to large language models?\n\n\nStanford provided a report highlighting the risks of our personal data use in large language models."
   },
   {
-    "objectID": "lectures/1a.html#what-if-we-cannot-construct-the-distribution",
-    "href": "lectures/1a.html#what-if-we-cannot-construct-the-distribution",
-    "title": "Statistics",
-    "section": "What if we cannot construct the distribution?!?!",
-    "text": "What if we cannot construct the distribution?!?!\n\n\n\n\n\n\n\n\n\n\n\nWe bring out the Monte Carlo methods!"
+    "objectID": "lectures/1a.html#environmental-impact",
+    "href": "lectures/1a.html#environmental-impact",
+    "title": "Math 201",
+    "section": "Environmental Impact",
+    "text": "Environmental Impact\nIn order to run these large language models, companies need to use a large amounts of energy. This is because large servers are needed to both train and execute a model.\n\nThe LA Times reports the potential impact that running AI models in California.\n\n\nAdditionally, Time reports that a ChatGPT query uses ten times more energy than a Google search query, and global AI demands can consume of 1 trillion gallons of water by 2027.\n\n\nThere are also environmental justice questions about where these data centers are constructed."
   },
   {
-    "objectID": "lectures/1a.html#monte-carlo-methods",
-    "href": "lectures/1a.html#monte-carlo-methods",
-    "title": "Statistics",
-    "section": "Monte Carlo Methods",
-    "text": "Monte Carlo Methods\n\nMonte Carlo Methods are used to construct a distribution function of an obscure test statistic\nWe simulate a large number of data sets based on the null hypothesis\nWe construct a test statistic for each fake data set and the real one\nWe count how many data sets produce a test statistic that is more extreme than the real test statistic\n\\(p=\\#\\ of\\ extreme\\ data\\ sets\\ /\\ all\\ data\\ sets\\)"
+    "objectID": "lectures/1a.html#worker-exploitation",
+    "href": "lectures/1a.html#worker-exploitation",
+    "title": "Math 201",
+    "section": "Worker Exploitation",
+    "text": "Worker Exploitation\nThe Washington Post and Time (Article 1 and Article 2) reported that AI companies utilize “digital sweatshops” to classify data points for model training.\n\nThere is a human cost from the Global South, both financially and mentally, to develop the AI models for users in the United States and Europe.\n\n\nWe must be conscious consumers and demand more from these companies to provide safe working conditions and livable wages."
   },
   {
-    "objectID": "lectures/1a.html#overview-of-research",
-    "href": "lectures/1a.html#overview-of-research",
-    "title": "Statistics",
-    "section": "Overview of Research",
-    "text": "Overview of Research\n\nAsk a question about a population\nCollect data from a sample\nConstruct and test a hypothesis\nDraw conclusion about the population\nRefine your question and methodology"
+    "objectID": "lectures/1a.html#is-using-ai-bad",
+    "href": "lectures/1a.html#is-using-ai-bad",
+    "title": "Math 201",
+    "section": "Is Using AI Bad?",
+    "text": "Is Using AI Bad?\n\nYes/No/IDK\n\n\nBut, we need to acknowledge the consequences of using AI!\n\n\nAnd, we need to demand companies to create and implement AI in an ethical manner!"
   },
   {
-    "objectID": "lectures/1a.html#so-what-is-statistics",
-    "href": "lectures/1a.html#so-what-is-statistics",
-    "title": "Statistics",
-    "section": "So, what is Statistics?",
-    "text": "So, what is Statistics?\n\n\n\n\n\n\nFor you, I’ll be anything"
+    "objectID": "lectures/1a.html#intro-form",
+    "href": "lectures/1a.html#intro-form",
+    "title": "Math 201",
+    "section": "Intro Form",
+    "text": "Intro Form\nForm"
   },
   {
-    "objectID": "lectures/1a.html#whats-statistics-without-a-little",
-    "href": "lectures/1a.html#whats-statistics-without-a-little",
-    "title": "Statistics",
-    "section": "What’s Statistics without a little …",
-    "text": "What’s Statistics without a little …"
+    "objectID": "lectures/1a.html#first-survey",
+    "href": "lectures/1a.html#first-survey",
+    "title": "Math 201",
+    "section": "First Survey",
+    "text": "First Survey\nSurvey"
   },
   {
-    "objectID": "lectures/1a.html#train-of-thoughts",
-    "href": "lectures/1a.html#train-of-thoughts",
-    "title": "Statistics",
-    "section": "Train of Thoughts",
-    "text": "Train of Thoughts\n\nThere are two train of thoughts on how to interpret estimates and probability.\n\n\nOne approach is the Frequentist approach.\n\n\nThe other approach is the Bayesian approach.\n\n\nBoth sides hate each other."
+    "objectID": "lectures/1a.html#extra-credit-1",
+    "href": "lectures/1a.html#extra-credit-1",
+    "title": "Math 201",
+    "section": "Extra Credit 1",
+    "text": "Extra Credit 1"
   },
   {
-    "objectID": "lectures/1a.html#frequentists",
-    "href": "lectures/1a.html#frequentists",
-    "title": "Statistics",
-    "section": "Frequentists",
-    "text": "Frequentists"
+    "objectID": "lectures/1a.html#extra-credit-2",
+    "href": "lectures/1a.html#extra-credit-2",
+    "title": "Math 201",
+    "section": "Extra Credit 2",
+    "text": "Extra Credit 2"
   },
   {
-    "objectID": "lectures/1a.html#frequentists-1",
-    "href": "lectures/1a.html#frequentists-1",
-    "title": "Statistics",
-    "section": "Frequentists",
-    "text": "Frequentists\nA frequentist, in the context of statistics, is an individual who adheres to the frequentist interpretation of probability and statistical inference.\n\nMeaning probability is obtained by the repetition of multiple experiments."
-  },
-  {
-    "objectID": "lectures/1a.html#bayesians",
-    "href": "lectures/1a.html#bayesians",
-    "title": "Statistics",
-    "section": "Bayesians",
-    "text": "Bayesians"
-  },
-  {
-    "objectID": "lectures/1a.html#bayesians-1",
-    "href": "lectures/1a.html#bayesians-1",
-    "title": "Statistics",
-    "section": "Bayesians",
-    "text": "Bayesians\nA Bayesians, in the context of statistics, is an individual who adheres to the Bayesian interpretation of probability and statistical inference.\n\nProbability is obtained by likelihood of an event to occur, given data and prior knowledge."
-  },
-  {
-    "objectID": "lectures/1a.html#what-am-i-and-people-that-have-lives",
-    "href": "lectures/1a.html#what-am-i-and-people-that-have-lives",
-    "title": "Statistics",
-    "section": "What am I (and people that have lives)?",
-    "text": "What am I (and people that have lives)?\n\n\nWhatever gets the job done!"
-  },
-  {
-    "objectID": "lectures/1a.html#there-is-more-much-more-but-i-will-say-this-in-my-statistical-journey",
-    "href": "lectures/1a.html#there-is-more-much-more-but-i-will-say-this-in-my-statistical-journey",
-    "title": "Statistics",
-    "section": "There is more, much more, but I will say this, in my statistical journey",
-    "text": "There is more, much more, but I will say this, in my statistical journey"
+    "objectID": "lectures/1a.html#extra-credit-3",
+    "href": "lectures/1a.html#extra-credit-3",
+    "title": "Math 201",
+    "section": "Extra Credit 3",
+    "text": "Extra Credit 3"
   },
   {
     "objectID": "lectures/12.html#hypothesis-tests",
@@ -2419,7 +2391,7 @@
     "href": "lectures.html",
     "title": "Lectures",
     "section": "",
-    "text": "Categorical Data\n\n\n\n\n\nProvides an overview descriptive statistics and data visualization techniques for categorical data.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Generating Process\n\n\n\n\n\nProvides a brief introduction of data, study design, and the data generating process.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDistribution Functions\n\n\n\n\n\nProvides an overview distribution function (mathematical models).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGroup  Regression\n\n\n\n\n\nDiscuss using categorical predictor variables.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstalling R and Positron\n\n\nClass Lecture\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMultivariable  Regression\n\n\n\n\n\nDiscuss how to model multivariable predictors to a single outcome.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNumerical Data\n\n\n\n\n\nProvides an overview descriptive statistics and data visualization techniques for numerical data.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSampling Distribution\n\n\n\n\n\nDiscuss for sampling distributions.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSimple  Linear Regression\n\n\n\n\n\nBegins the discussion for linear regression.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSimple  Logistic Regression\n\n\n\n\n\nBegins the discussion for logistic regression.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical  Modeling\n\n\n\n\n\nFinish the discussion on model inference.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Inference\n\n\n\n\n\nBegin the discussion of statistical inference.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Inference\n\n\nGroup Model Inference\n\n\nTesting the difference in groups.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistics\n\n\nA Math? A Science? An Art? Or Something Else?\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Categorical Data\n\n\n\n\n\nProvides an overview descriptive statistics and data visualization techniques for categorical data.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Generating Process\n\n\n\n\n\nProvides a brief introduction of data, study design, and the data generating process.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDistribution Functions\n\n\n\n\n\nProvides an overview distribution function (mathematical models).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGroup  Regression\n\n\n\n\n\nDiscuss using categorical predictor variables.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstalling R and Positron\n\n\nClass Lecture\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMath 201\n\n\nElementary Statistics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMultivariable  Regression\n\n\n\n\n\nDiscuss how to model multivariable predictors to a single outcome.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNumerical Data\n\n\n\n\n\nProvides an overview descriptive statistics and data visualization techniques for numerical data.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSampling Distribution\n\n\n\n\n\nDiscuss for sampling distributions.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSimple  Linear Regression\n\n\n\n\n\nBegins the discussion for linear regression.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSimple  Logistic Regression\n\n\n\n\n\nBegins the discussion for logistic regression.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical  Modeling\n\n\n\n\n\nFinish the discussion on model inference.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Inference\n\n\n\n\n\nBegin the discussion of statistical inference.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Inference\n\n\nGroup Model Inference\n\n\nTesting the difference in groups.\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "ec/ec_3.html",

@@ -7,10 +7,17 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.js" defer="true"></script>
+<link href="../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
+<script src="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
+<link href="../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/grid-no-htext-1.0.0/grid_no_htext.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.26">
 
-  <title>MATH 201 – Statistics</title>
+  <title>MATH 201 – Math 201</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -29,10 +36,12 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-6f5b614b6a3118c6041d924b0a2771f9.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
@@ -128,360 +137,573 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Statistics</h1>
-  <p class="subtitle">A Math? A Science? An Art? Or Something Else?</p>
+  <h1 class="title">Math 201</h1>
+  <p class="subtitle">Elementary Statistics</p>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="statistical-warning" class="slide level2">
-<h2>Statistical Warning</h2>
-
-<img data-src="https://media.tenor.com/GexFRAjz9XcAAAAC/theres-no-guarantee-it-would-work-south-park.gif" class="quarto-figure quarto-figure-center r-stretch" alt="south park scientist in laboratory saying: There's no  guarantee it would work"></section>
-<section id="section" class="slide level2">
-<h2></h2>
-
-<img data-src="https://media.tenor.com/BCyqY6leyXcAAAAC/linkin-park-in-the-end.gif" class="quarto-figure quarto-figure-center r-stretch" alt="Chester from Linkin Park in &quot;In the End&quot; video with text saying: but in the end it doesn't even matter"></section>
-<section>
-<section id="statistics" class="title-slide slide level1 center">
-<h1>Statistics</h1>
-
+<section id="slides" class="slide level2">
+<h2>Slides</h2>
+<p><a href="https://www.inqs.info/m201_s26/lectures/1a">www.inqs.info/m2012_f25/c/1a</a></p>
 </section>
-<section id="statistics-1" class="slide level2 smaller">
-<h2>Statistics</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*VR-XNA60etBQj-r57knvKA.png" class="quarto-figure quarto-figure-center" alt="An image cloud of different statistical plots, the word statistics is in the middle with capital letters."></p>
-</figure>
+<section>
+<section id="introductions" class="title-slide slide level1 agenda-slide center">
+<h1>Introductions</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-active">
+<p>Introductions</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Embedded Peer Educator</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Early Success Module</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Class Setup</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Statistics Activity</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Use of Generative AI</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Surveys</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Extra Credits</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Field Trip</p>
+</div></li>
+</ul>
 </div>
-</div><div class="column" style="width:50%;">
+</section>
+<section id="introductions-1" class="slide level2">
+<h2>Introductions</h2>
 <ul>
-<li class="fragment"><p>With an increasing use of data to make decisions, Statistics has been essential for processing large amounts of data to byte-size information</p></li>
-<li class="fragment"><p>Statistics is also known as</p>
+<li><p>San Bernardino, CA</p></li>
+<li><p>CSU Monterey Bay</p>
 <ul>
-<li class="fragment"><p>Data Science</p></li>
-<li class="fragment"><p>Machine Learning</p></li>
-<li class="fragment"><p>Artificial Intelligence</p></li>
+<li>BS Biology</li>
 </ul></li>
-<li class="fragment"><p>So for today, we’re asking: <strong>what is Statistics?</strong></p></li>
+<li><p>San Diego State University</p>
+<ul>
+<li>Master’s in Public Health</li>
+</ul></li>
+<li><p>UC Riverside</p>
+<ul>
+<li>PhD in Applied Statistics</li>
+</ul></li>
 </ul>
-</div></div>
 </section>
-<section id="what-does-google-say" class="slide level2">
-<h2>What does Google say?</h2>
+<section id="introductions-2" class="slide level2">
+<h2>Introductions</h2>
+<ul>
+<li><p>Name</p></li>
+<li><p>Year</p></li>
+<li><p>Major</p></li>
+<li><p>Fun Fact</p></li>
+<li><p>Career Goal</p></li>
+</ul>
+</section></section>
+<section>
+<section id="embedded-peer-educator" class="title-slide slide level1 agenda-slide center">
+<h1>Embedded Peer Educator</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Introductions</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Embedded Peer Educator</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Early Success Module</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Class Setup</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Statistics Activity</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Use of Generative AI</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Surveys</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Extra Credits</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Field Trip</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="epe---louis-heer" class="slide level2">
+<h2>EPE - Louis Heer</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<h3 id="uc-irvine">UC Irvine</h3>
-<p>Statistics is the science concerned with developing and studying methods for collecting, analyzing, interpreting and presenting empirical data.</p>
-</div><div class="column" style="width:50%;">
-<h3 id="wikipedia">Wikipedia</h3>
-<p>Statistics is a mathematical body of science that pertains to the collection, analysis, interpretation or explanation, and presentation of data, or as a branch of mathematics.</p>
-</div></div>
-</section>
-<section id="what-does-ai-say" class="slide level2">
-<h2>What does AI say?</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="chatgpt">ChatGPT</h3>
-<p>Statistics is a branch of mathematics and a field of study that deals with the collection, analysis, interpretation, presentation, and organization of data.</p>
-</div><div class="column" style="width:50%;">
-<h3 id="google-gemini">Google Gemini</h3>
-<p>Statistics is the science of collecting, analyzing, interpreting, and presenting data.</p>
-</div></div>
-</section>
-<section id="what-do-researchers-say" class="slide level2">
-<h2>What do researchers say?</h2>
-<div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Anthropologist</a></li><li><a href="#tabset-1-2">Microbiologist</a></li><li><a href="#tabset-1-3">Sociologist</a></li><li><a href="#tabset-1-4">Political Scientist</a></li><li><a href="#tabset-1-5">Ecologist</a></li><li><a href="#tabset-1-6">Mathematician</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1">
-<p>Objectively interpreting data to make meaningful inferences about our predictions.</p>
-</div>
-<div id="tabset-1-2">
-<p>Whatever the statistician says.</p>
-</div>
-<div id="tabset-1-3">
-<p>Gathering the narratives of individuals, groups, or society and telling a story about their past, present, or future. The numbers paint a picture worth many words.</p>
-</div>
-<div id="tabset-1-4">
-<p>Using numbers to try to explain behaviors and/or patterns in our world.</p>
-</div>
-<div id="tabset-1-5">
-<p>Statistics is the way to make sense of the natural world by taking data we collect to identify patterns between variables, and applying statistical theory to make sure we are taking the right approach to data collection and analysis. Also, assess patterns to see if they are reproducible and provide a logical explanation that makes biological sense.</p>
-</div>
-<div id="tabset-1-6">
-<p>Statistics is the study of data, patterns, and trends.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="what-is-it" class="slide level2">
-<h2>What is it?</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="math">Math</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://media.tenor.com/5ZfhdHdoK3UAAAAC/incredibles-the.gif" class="quarto-figure quarto-figure-center" alt="Mr. Incredible yelling. Text includes: Math is Math! Math is Math!" width="498" height="380"></p>
-</figure>
-</div>
-</div><div class="column" style="width:50%;">
-<h3 id="science">Science</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://media.tenor.com/qWcKVwjtwAQAAAAC/bill-nye-mind-blown.gif" class="quarto-figure quarto-figure-center" alt="Bill Nye, waving up dramatically with words Science!!! on image." width="494" height="380"></p>
-</figure>
-</div>
-</div></div>
-</section>
-<section id="what-does-a-statistician-say" class="slide level2">
-<h2>What does a Statistician say?</h2>
-<p>It is the study of variation and randomness!</p>
-<div class="fragment">
-<p>Using mathematics, we model randomness to characterizes commonality and variation!</p>
-</div>
-<div class="fragment">
-<p>Using science, we systematically refine models to better fit randomness in data!</p>
-</div>
-<div class="fragment">
-<p>Using art, when it all eventually fails!</p>
-</div>
-</section>
-<section id="when-it-fails" class="slide level2">
-<h2>When it fails?!?!</h2>
-<div class="fragment">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://media.tenor.com/XtqAqClw6AAAAAAC/yes-yes-professor-farnsworth.gif" class="quarto-figure quarto-figure-center" alt="Professor Farmsworth from futurama doing a 'yes yes' motion with hand and looking away. Text include Yes, Yes"></p>
-</figure>
-</div>
-</div>
-</section>
-<section id="statistics-mantra---george-box" class="slide level2">
-<h2>Statistics Mantra - George Box</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/GeorgeEPBox.jpg/400px-GeorgeEPBox.jpg" class="quarto-figure quarto-figure-center" alt="An image of George Box" width="333"></p>
-</figure>
-</div>
-</div><div class="column" style="width:50%;">
-<p><strong>All models are wrong,</strong></p>
-<p><strong>some are useful!</strong></p>
-</div></div>
-</section>
-<section id="what-is-the-formal-definition-of-statistics" class="slide level2">
-<h2>What is the formal definition of Statistics?</h2>
-<p>Statistics is both the development of mathematical models to be used in real-world data and the analysis of data using existing models.</p>
-</section>
-<section id="probability-models" class="slide level2">
-<h2>Probability Models</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://media.tenor.com/h5dDA212OzMAAAAC/cat-catwalk.gif" class="quarto-figure quarto-figure-center" alt="A cat walking an wearing a tutu skirt. Cat walks like a model."></p>
-</figure>
-</div>
+<p><img data-src="img/Headshot.jpg"></p>
 </div><div class="column" style="width:50%;">
 <ul>
-<li><p>Model observations that follow a new data generating process</p></li>
-<li><p>Understand its properties</p></li>
-<li><p>Develop new probability distributions</p></li>
-<li><p>Known as Probability Theory</p></li>
-<li><p>Researcher is a Probabilist or Mathematical Statistician</p></li>
+<li><p>4th Year</p></li>
+<li><p>Political Science Major</p></li>
 </ul>
 </div></div>
+</section></section>
+<section>
+<section id="early-success-module" class="title-slide slide level1 agenda-slide center">
+<h1>Early Success Module</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Introductions</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Embedded Peer Educator</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Early Success Module</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Class Setup</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Statistics Activity</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Use of Generative AI</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Surveys</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Extra Credits</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Field Trip</p>
+</div></li>
+</ul>
+</div>
 </section>
-<section id="data-analysis" class="slide level2">
-<h2>Data Analysis</h2>
+<section id="assignments" class="slide level2">
+<h2>Assignments</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li><p>Model data with a known probability model</p></li>
-<li><p>Account for sources of variation and bias</p></li>
-<li><p>Account for violations of independence and randomness</p></li>
-<li><p>Known as Statistician or Data Scientist</p></li>
+<li>Learner Info Survey</li>
+<li>Using the Study Cycle Efficiently</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://media.tenor.com/ogsH7Ailje8AAAAd/cat-funny-cat.gif" class="quarto-figure quarto-figure-center" alt="A cat working on a laptop hissing angrily."></p>
-</figure>
-</div>
-</div></div>
-</section>
-<section id="whats-the-goal-of-a-statistician" class="slide level2">
-<h2>What’s the goal of a Statistician?</h2>
-<div class="fragment" style="font-size: 2em; color: red;">
-<p><strong>INFERENCE</strong></p>
-</div>
-<div class="fragment">
-<p>Use our sample data to understand the larger population.</p>
-</div>
-<div class="fragment">
-<p>The data will tell us how the population generally behaves.</p>
-</div>
-<div class="fragment">
-<p>The data will guide us in the differences in units.</p>
-</div>
-<div class="fragment">
-<p>Data will tell us if there is a signal or just noise.</p>
-</div>
-</section>
-<section id="word-cloud" class="slide level2">
-<h2>Word Cloud</h2>
-
-<img data-src="img/wordcloud.png" class="quarto-figure quarto-figure-center r-stretch" alt="A word cloud about statistics. main words are data, variation, probability, and difficult"></section>
-<section id="conducting-inference" class="slide level2">
-<h2>Conducting Inference</h2>
-
-<img data-src="https://statsandr.com/blog/what-is-the-difference-between-population-and-sample_files/population-sample.png" class="quarto-figure quarto-figure-center r-stretch" alt="A population of people is displayed. then pointing to a sample with individuals being sampled from population. Afterwards, there is an arrow pointing back to the population with the words inference."></section>
-<section id="are-we-seeing-something-or-is-it-just-noise" class="slide level2">
-<h2>Are we seeing something or is it just noise???</h2>
-<p>Are we seeing something different from what was expected? Or is it due to random chance?</p>
-</section>
-<section id="hypothesis-testing" class="slide level2">
-<h2>Hypothesis Testing</h2>
-<ol type="1">
-<li class="fragment">Set up the Null and Alternative Hypothesis</li>
-<li class="fragment">Construct a test statistic based on the null hypothesis</li>
-<li class="fragment">Construct a distribution of the test statistic based on probability theory</li>
-<li class="fragment">Compute the probability of observing the test statistic</li>
-<li class="fragment">Make a decision based on the probability</li>
-</ol>
-</section>
-<section id="what-if-we-cannot-construct-the-distribution" class="slide level2">
-<h2>What if we cannot construct the distribution?!?!</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="fragment">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://media.tenor.com/x5dpKrM1U6oAAAAd/vamonos-lets-go.gif" class="quarto-figure quarto-figure-center" alt="An image showing the Monte Carlo car pulling out from a garage." width="339"></p>
-</figure>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="fragment">
-<p>We bring out the <strong>Monte Carlo</strong> methods!</p>
-</div>
-</div></div>
-</section>
-<section id="monte-carlo-methods" class="slide level2">
-<h2>Monte Carlo Methods</h2>
 <ul>
-<li>Monte Carlo Methods are used to construct a distribution function of an obscure test statistic</li>
-<li>We simulate a large number of data sets based on the null hypothesis</li>
-<li>We construct a test statistic for each fake data set and the real one</li>
-<li>We count how many data sets produce a test statistic that is more extreme than the real test statistic</li>
-<li><span class="math inline">\(p=\#\ of\ extreme\ data\ sets\ /\ all\ data\ sets\)</span></li>
+<li>Bloom’s Taxonomy</li>
+<li>The Feynman Technique</li>
+</ul>
+</div></div>
+</section></section>
+<section>
+<section id="class-setup" class="title-slide slide level1 agenda-slide center">
+<h1>Class Setup</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Introductions</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Embedded Peer Educator</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Early Success Module</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Class Setup</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Statistics Activity</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Use of Generative AI</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Surveys</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Extra Credits</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Field Trip</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="class-setup-1" class="slide level2">
+<h2>Class Setup</h2>
+<ul>
+<li>Participation</li>
+<li>Notebook Assignments</li>
+<li>Video Assignments</li>
+<li>Classwork Assignments</li>
+<li>Exams</li>
+<li>Extra Credit</li>
 </ul>
 </section>
-<section id="overview-of-research" class="slide level2">
-<h2>Overview of Research</h2>
-<ol type="1">
-<li class="fragment">Ask a question about a population</li>
-<li class="fragment">Collect data from a sample</li>
-<li class="fragment">Construct and test a hypothesis</li>
-<li class="fragment">Draw conclusion about the population</li>
-<li class="fragment">Refine your question and methodology</li>
-</ol>
+<section id="study-expectations" class="slide level2">
+<h2>Study Expectations</h2>
+<p>For every 1 unit of class you take, you are expected to spend ~3 hours outside of class for the course.</p>
 </section>
-<section id="so-what-is-statistics" class="slide level2">
-<h2>So, what is Statistics?</h2>
-<div class="fragment">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://media.tenor.com/P647Itj1axcAAAAC/puss-in-boots-cat.gif" class="quarto-figure quarto-figure-center" alt="Shows Puss in Boots from Shrek turning around"></p>
-</figure>
+<section id="syllabus" class="slide level2">
+<h2>Syllabus</h2>
+<p><a href="https://www.inqs.info/m201_s26/syllabus.html">www.inqs.info/m201_s26/syllabus</a></p>
+</section>
+<section id="r-programming" class="slide level2">
+<h2>R Programming</h2>
+<p>This utilized the R programming to conduct data analysis.</p>
+<p>R is a powerful tool that allows you to program complex tasks.</p>
+<p>Learning R is difficult, but it is the best teacher to teach you how to overcome challenges. Don’t give up when it gets hard and seek out help when needed.</p>
+</section></section>
+<section>
+<section id="statistics-activity" class="title-slide slide level1 agenda-slide center">
+<h1>Statistics Activity</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Introductions</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Embedded Peer Educator</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Early Success Module</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Class Setup</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Statistics Activity</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Use of Generative AI</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Surveys</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Extra Credits</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Field Trip</p>
+</div></li>
+</ul>
 </div>
-<h3 id="for-you-ill-be-anything">For you, I’ll be anything</h3>
+</section>
+<section id="when-do-you-use-statistics" class="slide level2">
+<h2>When do you use statistics?</h2>
+</section>
+<section id="what-is-the-difference-between-math-and-stats" class="slide level2">
+<h2>What is the difference between math and stats?</h2>
+</section></section>
+<section>
+<section id="use-of-generative-ai" class="title-slide slide level1 agenda-slide center">
+<h1>Use of Generative AI</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Introductions</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Embedded Peer Educator</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Early Success Module</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Class Setup</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Statistics Activity</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Use of Generative AI</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Surveys</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Extra Credits</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Field Trip</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="use-of-generative-ai-1" class="slide level2">
+<h2>Use of Generative AI</h2>
+<p>The use of generative artificial intelligence (AI) to complete any part or all of an assignment/exam is strictly prohibited in this class. This includes, but not limited to, ChatGPT, Claude, Meta AI, and Google Gemini.</p>
+<div class="fragment">
+<p>You may use AI to enhance you understanding of the material.</p>
+</div>
+<div class="fragment">
+<p>You may not upload any course material to any AI platforms such as ChatGPT, Claude, Meta AI, and Google Gemini. Exceptions are allowed for <a href="https://www.csuci.edu/dass/">DASS</a>-approved services.</p>
+</div>
+</section>
+<section id="use-of-ai" class="slide level2">
+<h2>Use of AI</h2>
+<p>There are consequences when you use of AI:</p>
+<ul>
+<li>Educational Mislearning</li>
+<li>Trusting AI</li>
+<li>Stolen Work</li>
+<li>Privacy Concerns</li>
+<li>Environmental Impacts</li>
+<li>Working Exploitation</li>
+</ul>
+</section>
+<section id="educational-mislearning" class="slide level2">
+<h2>Educational Mislearning</h2>
+<p>The purpose of this class, and college, is for you to learn about critical thinking skills and perseverance. Using AI will only teach you how to get an answer, which may or may not be correct.</p>
+<div class="fragment">
+<p>You will not develop the skills needed to problem solve a challenge. Additionally, developing grit is essential to become successful in college and life. There is no easy way out and AI is an illusion to your success in life.</p>
+</div>
+<div class="fragment">
+<p>To learn something, it requires hours of work! If not years!</p>
+</div>
+</section>
+<section id="trusting-ai" class="slide level2">
+<h2>Trusting AI</h2>
+<p>When using AI, you must acknowledge its limitations:</p>
+<ul>
+<li class="fragment"><p>Responses provided may be incorrect</p></li>
+<li class="fragment"><p>Responses may not be fair</p></li>
+<li class="fragment"><p>Companies may manipulate responses and/or terms of service for their benefit</p></li>
+<li class="fragment"><p>Companies may not have your best interst in mind</p></li>
+</ul>
+<div class="fragment">
+<p><strong>You should always proceed with caution utilizing these tools!</strong></p>
+</div>
+</section>
+<section id="stolen-work" class="slide level2">
+<h2>Stolen Work</h2>
+<div class="fragment">
+<p>Additionally, all these individuals are not receiving any royalties for the work to be used in creating generative AI models.</p>
+</div>
+<div class="fragment">
+<p><a href="https://www.insidehighered.com/news/faculty-issues/research/2024/07/29/taylor-francis-ai-deal-sets-worrying-precedent">Inside Higher Ed</a> and <a href="https://www.newyorker.com/culture/infinite-scroll/is-ai-art-stealing-from-artists">The New Yorker</a> highlight individual’s concern of their work being used to train AI models.</p>
+</div>
+</section>
+<section id="privacy-concerns" class="slide level2">
+<h2>Privacy Concerns</h2>
+<p>The use of generative AI raises concerns of what data is being harvested from us, possibly without informed consent.</p>
+<div class="fragment">
+<p>When you used any large language models, you do not know what information is being harvested from you.</p>
+</div>
+<div class="fragment">
+<p>Do you want to upload your thoughts and ideas to a company that can monetize, and possibly exploit.</p>
+</div>
+<div class="fragment">
+<p>Does your Professors consent with you uploading their assignments to large language models?</p>
+</div>
+<div class="fragment">
+<p>Stanford provided a <a href="https://hai.stanford.edu/news/privacy-ai-era-how-do-we-protect-our-personal-information">report</a> highlighting the risks of our personal data use in large language models.</p>
+</div>
+</section>
+<section id="environmental-impact" class="slide level2">
+<h2>Environmental Impact</h2>
+<p>In order to run these large language models, companies need to use a large amounts of energy. This is because large servers are needed to both train and execute a model.</p>
+<div class="fragment">
+<p>The <a href="https://www.latimes.com/opinion/story/2024-08-15/editorial-generative-ai-is-a-leading-contributor-to-our-energy-consumption-how-will-this-impact-our-climate">LA Times</a> reports the potential impact that running AI models in California.</p>
+</div>
+<div class="fragment">
+<p>Additionally, <a href="https://time.com/6987773/ai-data-centers-energy-usage-climate-change/">Time</a> reports that a ChatGPT query uses ten times more energy than a Google search query, and global AI demands can consume of 1 trillion gallons of water by 2027.</p>
+</div>
+<div class="fragment">
+<p>There are also environmental justice questions about where these data centers are constructed.</p>
+</div>
+</section>
+<section id="worker-exploitation" class="slide level2">
+<h2>Worker Exploitation</h2>
+<p>The <a href="https://www.washingtonpost.com/world/2023/08/28/scale-ai-remotasks-philippines-artificial-intelligence/">Washington Post</a> and Time (<a href="https://time.com/6147458/facebook-africa-content-moderation-employee-treatment/">Article 1</a> and <a href="https://time.com/6247678/openai-chatgpt-kenya-workers/">Article 2</a>) reported that AI companies utilize “digital sweatshops” to classify data points for model training.</p>
+<div class="fragment">
+<p>There is a human cost from the Global South, both financially and mentally, to develop the AI models for users in the United States and Europe.</p>
+</div>
+<div class="fragment">
+<p>We must be conscious consumers and demand more from these companies to provide safe working conditions and livable wages.</p>
+</div>
+</section>
+<section id="is-using-ai-bad" class="slide level2">
+<h2>Is Using AI Bad?</h2>
+<div class="fragment">
+<p>Yes/No/IDK</p>
+</div>
+<div class="fragment">
+<p>But, we need to acknowledge the consequences of using AI!</p>
+</div>
+<div class="fragment">
+<p>And, we need to demand companies to create and implement AI in an ethical manner!</p>
 </div>
 </section></section>
 <section>
-<section id="but-wait-theres-more" class="title-slide slide level1 center">
-<h1>But Wait! There’s More!</h1>
+<section id="surveys" class="title-slide slide level1 agenda-slide center">
+<h1>Surveys</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Introductions</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Embedded Peer Educator</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Early Success Module</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Class Setup</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Statistics Activity</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Use of Generative AI</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Surveys</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Extra Credits</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Field Trip</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="intro-form" class="slide level2">
+<h2>Intro Form</h2>
+<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdCOoa1nw4mrFA9svC12LNDSh618MEijHFE8Rcop2Nb0BJgAQ/viewform?usp=publish-editor">Form</a></p>
 
-</section>
-<section id="whats-statistics-without-a-little" class="slide level2">
-<h2>What’s Statistics without a little …</h2>
-<div class="fragment">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://media.tenor.com/RhAwIEGUEd4AAAAC/drama-top.gif" class="quarto-figure quarto-figure-center" alt="Shows a man in disgust with the words: DRAMA"></p>
-</figure>
-</div>
-</div>
-</section>
-<section id="train-of-thoughts" class="slide level2">
-<h2>Train of Thoughts</h2>
-<div class="fragment">
-<p>There are two train of thoughts on how to interpret estimates and probability.</p>
-</div>
-<div class="fragment">
-<p>One approach is the Frequentist approach.</p>
-</div>
-<div class="fragment">
-<p>The other approach is the Bayesian approach.</p>
-</div>
-<div class="fragment">
-<p>Both sides hate each other.</p>
-</div>
-</section>
-<section id="frequentists" class="slide level2">
-<h2>Frequentists</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://media.tenor.com/UfP_ixn3qlwAAAAC/valor-pokemon-go.gif" class="quarto-figure quarto-figure-center" alt="Symbol from Team Valor from Pokemon appearing" width="515" height="675"></p>
-</figure>
-</div>
-</section>
-<section id="frequentists-1" class="slide level2">
-<h2>Frequentists</h2>
-<p>A frequentist, in the context of statistics, is an individual who adheres to the frequentist interpretation of probability and statistical inference.</p>
-<div class="fragment">
-<p>Meaning probability is obtained by the repetition of multiple experiments.</p>
-</div>
-</section>
-<section id="bayesians" class="slide level2">
-<h2>Bayesians</h2>
+<img data-src="img/qr-code.jpg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="first-survey" class="slide level2">
+<h2>First Survey</h2>
+<p><a href="https://docs.google.com/forms/d/e/1FAIpQLScYV9qxgaxv53MmQtxUtL26os_L7LsLaCgQKx8zyQ4vA13TaA/viewform?usp=publish-editor">Survey</a></p>
 
-<img data-src="https://media.tenor.com/ncl2k1KRsQgAAAAC/mystic-team-mystic.gif" class="quarto-figure quarto-figure-center r-stretch" alt="Symbol from Team Mystic From Pokemon appearing"></section>
-<section id="bayesians-1" class="slide level2">
-<h2>Bayesians</h2>
-<p>A Bayesians, in the context of statistics, is an individual who adheres to the Bayesian interpretation of probability and statistical inference.</p>
-<div class="fragment">
-<p>Probability is obtained by likelihood of an event to occur, given data and prior knowledge.</p>
+<img data-src="img/qr-code-1.jpg" class="quarto-figure quarto-figure-center r-stretch"></section></section>
+<section>
+<section id="extra-credits" class="title-slide slide level1 agenda-slide center">
+<h1>Extra Credits</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Introductions</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Embedded Peer Educator</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Early Success Module</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Class Setup</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Statistics Activity</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Use of Generative AI</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Surveys</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Extra Credits</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Field Trip</p>
+</div></li>
+</ul>
 </div>
 </section>
-<section id="what-am-i-and-people-that-have-lives" class="slide level2 smaller">
-<h2>What am I (and people that have lives)?</h2>
-
-<img data-src="https://media.tenor.com/O_JvW8kZEIAAAAAd/the-simpsons-playing.gif" class="quarto-figure quarto-figure-center r-stretch" alt="Bart Simpson and Nelson rolling bowling balls, then ralph places a banana. Words Appear in the following order: Go Team Mystic, Go Team Valor, then Go team Instinct."><div class="fragment">
-<h3 id="whatever-gets-the-job-done">Whatever gets the job done!</h3>
-</div>
+<section id="extra-credit-1" class="slide level2">
+<h2>Extra Credit 1</h2>
+<p>
+<iframe title="embedded content" src="https://m201.inqs.info/ec/ec_1.html" width="1100" height="700">
+</iframe>
+</p>
 </section>
-<section id="there-is-more-much-more-but-i-will-say-this-in-my-statistical-journey" class="slide level2">
-<h2>There is more, much more, but I will say this, in my statistical journey</h2>
-<div class="fragment">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://media.tenor.com/9O8vuQzirQMAAAAd/i-did-it-my-way-frank-sinatra.gif" class="quarto-figure quarto-figure-center" alt="Shows Frank Sinatra singing with the words: I did it my way"></p>
-</figure>
-</div>
-</div>
-
-
+<section id="extra-credit-2" class="slide level2">
+<h2>Extra Credit 2</h2>
+<p>
+<iframe title="embedded content" src="https://m201.inqs.info/ec/ec_2.html" width="1100" height="700">
+</iframe>
+</p>
+</section>
+<section id="extra-credit-3" class="slide level2">
+<h2>Extra Credit 3</h2>
+<p>
+<iframe title="embedded content" src="https://m201.inqs.info/ec/ec_3.html" width="1100" height="700">
+</iframe>
+</p>
 </section></section>
+<section id="field-trip" class="title-slide slide level1 agenda-slide center">
+<h1>Field Trip</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Introductions</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Embedded Peer Educator</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Early Success Module</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Class Setup</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Statistics Activity</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Use of Generative AI</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Surveys</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Extra Credits</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Field Trip</p>
+</div></li>
+</ul>
+</div>
+
+
+<div class="reveal-header">
+<div class="header-logo">
+<img data-src="">
+</div>
+<div class="sc-title">
+<p> </p>
+</div>
+<div class="header-text">
+<p> </p>
+</div>
+<div class="sb-title">
+<p> </p>
+</div>
+</div>
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-
+<p>m201.inqs.info/lectures/1a</p>
 </div>
 </div></div>
 
@@ -492,6 +714,7 @@
   <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
   <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
@@ -507,23 +730,24 @@
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
-'controlsAuto': false,
+'controlsAuto': true,
 'previewLinksAuto': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true,"theme":"whiteboard","chalkWidth":4},
 'pointer': {"key":"q","color":"red","pointerSize":32,"alwaysVisible":false},
 'smaller': false,
  
         // Display controls in the bottom right corner
-        controls: true,
+        controls: false,
 
         // Help the user learn the controls by providing hints, for example by
         // bouncing the down arrow when they first encounter a vertical slide
-        controlsTutorial: false,
+        controlsTutorial: true,
 
         // Determines where controls appear, "edges" or "bottom-right"
         controlsLayout: 'edges',
@@ -536,7 +760,7 @@
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: 'c/t',
+        slideNumber: 'h.v',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -568,7 +792,7 @@
         center: false,
 
         // Enables touch navigation on devices with touch input
-        touch: false,
+        touch: true,
 
         // Loop the presentation
         loop: false,
@@ -577,7 +801,7 @@
         rtl: false,
 
         // see https://revealjs.com/vertical-slides/#navigation-mode
-        navigationMode: 'linear',
+        navigationMode: 'default',
 
         // Randomizes the order of slides each time the presentation loads
         shuffle: false,
@@ -661,7 +885,7 @@
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1050,
+        width: 1200,
 
         height: 700,
 
@@ -686,7 +910,7 @@
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealPointer, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealPointer, QuartoSupport,
 
           RevealMath,
           RevealNotes,

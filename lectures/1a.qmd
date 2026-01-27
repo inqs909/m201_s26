@@ -1,369 +1,324 @@
 ---
-title: "Statistics"
-subtitle: "A Math? A Science? An Art? Or Something Else?"
-editor: source
-format: 
+title: "Math 201"
+subtitle: "Elementary Statistics"
+format:
   revealjs:
-    touch: false
-    controls: true
+    width: 1200
+    scrollable: false
+    footer: m201.inqs.info/lectures/1a
+    theme: [default, styles.scss]
+    navigation-mode: vertical
+    controls-layout: edges
+    controls-tutorial: true
+    slide-number: true
     pointer:
       pointerSize: 32
-    incremental: false
-    slide-number: true
+    incremental: false 
+    chalkboard:
+      theme: whiteboard
+      chalk-width: 4
 knitr:
   opts_chunk: 
     echo: true
     eval: true
     message: false
+    code-fold: true
     warnings: false
     comment: "#>" 
+    
 revealjs-plugins:
   - pointer
+  
+filters:
+  - reveal-header
+  - code-fullscreen
+  - reveal-auto-agenda
+
+editor: source
 ---
 
-```{r}
-#| include: false
-library(tidyverse)
-```
 
-## Statistical Warning
+## Slides
 
-![](https://media.tenor.com/GexFRAjz9XcAAAAC/theres-no-guarantee-it-would-work-south-park.gif){fig-alt="south park scientist in laboratory saying: There's no  guarantee it would work" fig-align="center"}
+[www.inqs.info/m2012_f25/c/1a](https://www.inqs.info/m201_s26/lectures/1a)
 
-## 
 
-![](https://media.tenor.com/BCyqY6leyXcAAAAC/linkin-park-in-the-end.gif){fig-alt="Chester from Linkin Park in \"In the End\" video with text saying: but in the end it doesn't even matter" fig-align="center"}
+# Introductions
 
-# Statistics
+## Introductions
 
-## Statistics {.smaller}
+-   San Bernardino, CA
 
-:::::: columns
-::: {.column width="50%"}
-![](https://miro.medium.com/v2/resize:fit:4800/format:webp/1*VR-XNA60etBQj-r57knvKA.png){fig-alt="An image cloud of different statistical plots, the word statistics is in the middle with capital letters." fig-align="center"}
+-   CSU Monterey Bay
+
+    -   BS Biology
+
+-   San Diego State University
+
+    -   Master's in Public Health
+
+-   UC Riverside
+
+    -   PhD in Applied Statistics
+
+## Introductions
+
+::: nonincremental
+-   Name
+
+-   Year
+
+-   Major
+
+-   Fun Fact
+
+-   Career Goal
 :::
 
-:::: {.column width="50%"}
-::: incremental
--   With an increasing use of data to make decisions, Statistics has been essential for processing large amounts of data to byte-size information
+# Embedded Peer Educator
 
--   Statistics is also known as
+## EPE - Louis Heer
 
-    -   Data Science
-
-    -   Machine Learning
-
-    -   Artificial Intelligence
-
--   So for today, we're asking: **what is Statistics?**
-:::
-::::
-::::::
-
-## What does Google say?
-
-::::: columns
-::: {.column width="50%"}
-### UC Irvine
-
-Statistics is the science concerned with developing and studying methods for collecting, analyzing, interpreting and presenting empirical data.
-:::
+:::: {.columns}
 
 ::: {.column width="50%"}
-### Wikipedia
-
-Statistics is a mathematical body of science that pertains to the collection, analysis, interpretation or explanation, and presentation of data, or as a branch of mathematics.
-:::
-:::::
-
-## What does AI say?
-
-::::: columns
-::: {.column width="50%"}
-### ChatGPT
-
-Statistics is a branch of mathematics and a field of study that deals with the collection, analysis, interpretation, presentation, and organization of data.
+![](img/Headshot.jpg)
 :::
 
 ::: {.column width="50%"}
-### Google Gemini
+-   4th Year
 
-Statistics is the science of collecting, analyzing, interpreting, and presenting data.
-:::
-:::::
+-   Political Science Major
 
-## What do researchers say?
-
-::: panel-tabset
-## Anthropologist
-
-Objectively interpreting data to make meaningful inferences about our predictions.
-
-## Microbiologist
-
-Whatever the statistician says.
-
-## Sociologist
-
-Gathering the narratives of individuals, groups, or society and telling a story about their past, present, or future. The numbers paint a picture worth many words.
-
-## Political Scientist
-
-Using numbers to try to explain behaviors and/or patterns in our world.
-
-## Ecologist
-
-Statistics is the way to make sense of the natural world by taking data we collect to identify patterns between variables, and applying statistical theory to make sure we are taking the right approach to data collection and analysis. Also, assess patterns to see if they are reproducible and provide a logical explanation that makes biological sense.
-
-## Mathematician
-
-Statistics is the study of data, patterns, and trends.
 :::
 
-## What is it?
-
-::::: columns
-::: {.column width="50%"}
-### Math
-
-![](https://media.tenor.com/5ZfhdHdoK3UAAAAC/incredibles-the.gif){fig-alt="Mr. Incredible yelling. Text includes: Math is Math! Math is Math!" fig-align="center" width="498" height="380"}
-:::
-
-::: {.column width="50%"}
-### Science
-
-![](https://media.tenor.com/qWcKVwjtwAQAAAAC/bill-nye-mind-blown.gif){fig-alt="Bill Nye, waving up dramatically with words Science!!! on image." fig-align="center" width="494" height="380"}
-:::
-:::::
-
-## What does a Statistician say?
-
-It is the study of variation and randomness!
-
-::: fragment
-Using mathematics, we model randomness to characterizes commonality and variation!
-:::
-
-::: fragment
-Using science, we systematically refine models to better fit randomness in data!
-:::
-
-::: fragment
-Using art, when it all eventually fails!
-:::
-
-## When it fails?!?!
-
-::: fragment
-![](https://media.tenor.com/XtqAqClw6AAAAAAC/yes-yes-professor-farnsworth.gif){fig-alt="Professor Farmsworth from futurama doing a 'yes yes' motion with hand and looking away. Text include Yes, Yes" fig-align="center"}
-:::
-
-## Statistics Mantra - George Box
-
-::::: columns
-::: {.column width="50%"}
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/GeorgeEPBox.jpg/400px-GeorgeEPBox.jpg){fig-alt="An image of George Box" fig-align="center" width="333"}
-:::
-
-::: {.column width="50%"}
-**All models are wrong,**
-
-**some are useful!**
-:::
-:::::
-
-## What is the formal definition of Statistics?
-
-Statistics is both the development of mathematical models to be used in real-world data and the analysis of data using existing models.
-
-## Probability Models
-
-::::: columns
-::: {.column width="50%"}
-![](https://media.tenor.com/h5dDA212OzMAAAAC/cat-catwalk.gif){fig-alt="A cat walking an wearing a tutu skirt. Cat walks like a model." fig-align="center"}
-:::
-
-::: {.column width="50%"}
--   Model observations that follow a new data generating process
-
--   Understand its properties
-
--   Develop new probability distributions
-
--   Known as Probability Theory
-
--   Researcher is a Probabilist or Mathematical Statistician
-:::
-:::::
-
-## Data Analysis
-
-::::: columns
-::: {.column width="50%"}
--   Model data with a known probability model
-
--   Account for sources of variation and bias
-
--   Account for violations of independence and randomness
-
--   Known as Statistician or Data Scientist
-:::
-
-::: {.column width="50%"}
-![](https://media.tenor.com/ogsH7Ailje8AAAAd/cat-funny-cat.gif){fig-alt="A cat working on a laptop hissing angrily." fig-align="center"}
-:::
-:::::
-
-## What's the goal of a Statistician?
-
-::: {.fragment style="font-size: 2em; color: red;"}
-**INFERENCE**
-:::
-
-::: fragment
-Use our sample data to understand the larger population.
-:::
-
-::: fragment
-The data will tell us how the population generally behaves.
-:::
-
-::: fragment
-The data will guide us in the differences in units.
-:::
-
-::: fragment
-Data will tell us if there is a signal or just noise.
-:::
-
-
-## Word Cloud
-
-![](img/wordcloud.png){fig-alt="A word cloud about statistics. main words are data, variation, probability, and difficult" fig-align="center"}
-
-## Conducting Inference
-
-![](https://statsandr.com/blog/what-is-the-difference-between-population-and-sample_files/population-sample.png){fig-alt="A population of people is displayed. then pointing to a sample with individuals being sampled from population. Afterwards, there is an arrow pointing back to the population with the words inference." fig-align="center"}
-
-## Are we seeing something or is it just noise???
-
-Are we seeing something different from what was expected? Or is it due to random chance?
-
-## Hypothesis Testing
-
-::: incremental
-1.  Set up the Null and Alternative Hypothesis
-2.  Construct a test statistic based on the null hypothesis
-3.  Construct a distribution of the test statistic based on probability theory
-4.  Compute the probability of observing the test statistic
-5.  Make a decision based on the probability
-:::
-
-## What if we cannot construct the distribution?!?!
-
-::::::: columns
-:::: {.column width="50%"}
-::: fragment
-![](https://media.tenor.com/x5dpKrM1U6oAAAAd/vamonos-lets-go.gif){fig-alt="An image showing the Monte Carlo car pulling out from a garage." fig-align="center" width="339"}
-:::
 ::::
 
-:::: {.column width="50%"}
-::: fragment
-We bring out the **Monte Carlo** methods!
+
+# Early Success Module
+
+## Assignments
+
+:::: {.columns}
+
+::: {.column width="50%"}
+-   Learner Info Survey
+-   Using the Study Cycle Efficiently
 :::
+
+::: {.column width="50%"}
+-   Bloom's Taxonomy
+-   The Feynman Technique
+:::
+
 ::::
-:::::::
 
-## Monte Carlo Methods
+# Class Setup
 
--   Monte Carlo Methods are used to construct a distribution function of an obscure test statistic
--   We simulate a large number of data sets based on the null hypothesis
--   We construct a test statistic for each fake data set and the real one
--   We count how many data sets produce a test statistic that is more extreme than the real test statistic
--   $p=\#\ of\ extreme\ data\ sets\ /\ all\ data\ sets$
+## Class Setup
 
-## Overview of Research
+-   Participation
+-   Notebook Assignments
+-   Video Assignments
+-   Classwork Assignments
+-   Exams
+-   Extra Credit
+
+## Study Expectations
+
+For every 1 unit of class you take, you are expected to spend ~3 hours outside of class for the course.
+
+## Syllabus
+
+[www.inqs.info/m201_s26/syllabus](https://www.inqs.info/m201_s26/syllabus.html)
+
+## R Programming
+
+This utilized the R programming to conduct data analysis.
+
+R is a powerful tool that allows you to program complex tasks.
+
+Learning R is difficult, but it is the best teacher to teach you how to overcome challenges. Don't give up when it gets hard and seek out help when needed.
+
+# Statistics Activity
+
+## When do you use statistics?
+
+## What is the difference between math and stats?
+
+
+# Use of Generative AI
+
+## Use of Generative AI
+
+The use of generative artificial intelligence (AI) to complete any part or all of an assignment/exam is strictly prohibited in this class. This includes, but not limited to, ChatGPT, Claude, Meta AI, and Google Gemini.
+
+::: fragment
+
+You may use AI to enhance you understanding of the material.
+
+:::
+
+::: fragment
+
+You may not upload any course material to any AI platforms such as ChatGPT, Claude, Meta AI, and Google Gemini.  Exceptions are allowed for [DASS](https://www.csuci.edu/dass/)-approved services.
+
+
+:::
+
+## Use of AI
+
+There are consequences when you use of AI:
+
+- Educational Mislearning
+- Trusting AI
+- Stolen Work
+- Privacy Concerns
+- Environmental Impacts
+- Working Exploitation
+
+
+
+## Educational Mislearning
+
+The purpose of this class, and college, is for you to learn about critical thinking skills and perseverance. Using AI will only teach you how to get an answer, which may or may not be correct. 
+
+::: fragment
+You will not develop the skills needed to problem solve a challenge. Additionally, developing grit is essential to become successful in college and life. There is no easy way out and AI is an illusion to your success in life.
+:::
+
+
+::: fragment
+To learn something, it requires hours of work! If not years!
+:::
+
+## Trusting AI
+
+When using AI, you must acknowledge its limitations:
 
 ::: incremental
-1.  Ask a question about a population
-2.  Collect data from a sample
-3.  Construct and test a hypothesis
-4.  Draw conclusion about the population
-5.  Refine your question and methodology
-:::
 
-## So, what is Statistics?
+- Responses provided may be incorrect
 
-::: fragment
-![](https://media.tenor.com/P647Itj1axcAAAAC/puss-in-boots-cat.gif){fig-alt="Shows Puss in Boots from Shrek turning around" fig-align="center"}
+- Responses may not be fair
 
-### For you, I'll be anything
-:::
+- Companies may manipulate responses and/or terms of service for their benefit
 
-
-# But Wait! There's More!
-
-## What's Statistics without a little ...
-
-::: fragment
-![](https://media.tenor.com/RhAwIEGUEd4AAAAC/drama-top.gif){fig-alt="Shows a man in disgust with the words: DRAMA" fig-align="center"}
-:::
-
-## Train of Thoughts
-
-::: fragment
-There are two train of thoughts on how to interpret estimates and probability.
+- Companies may not have your best interst in mind
 :::
 
 ::: fragment
-One approach is the Frequentist approach.
+
+**You should always proceed with caution utilizing these tools!**
+
 :::
+
+
+
+
+## Stolen Work
 
 ::: fragment
-The other approach is the Bayesian approach.
+Additionally, all these individuals are not receiving any royalties for the work to be used in creating generative AI models.
 :::
-
-::: fragment
-Both sides hate each other.
-:::
-
-## Frequentists
-
-![](https://media.tenor.com/UfP_ixn3qlwAAAAC/valor-pokemon-go.gif){fig-alt="Symbol from Team Valor from Pokemon appearing" fig-align="center" width="515" height="675"}
-
-## Frequentists
-
-A frequentist, in the context of statistics, is an individual who adheres to the frequentist interpretation of probability and statistical inference.
-
-::: fragment
-Meaning probability is obtained by the repetition of multiple experiments.
-:::
-
-## Bayesians
-
-![](https://media.tenor.com/ncl2k1KRsQgAAAAC/mystic-team-mystic.gif){fig-alt="Symbol from Team Mystic From Pokemon appearing" fig-align="center"}
-
-## Bayesians
-
-A Bayesians, in the context of statistics, is an individual who adheres to the Bayesian interpretation of probability and statistical inference.
-
-::: fragment
-Probability is obtained by likelihood of an event to occur, given data and prior knowledge.
-:::
-
-## What am I (and people that have lives)? {.smaller}
-
-![](https://media.tenor.com/O_JvW8kZEIAAAAAd/the-simpsons-playing.gif){fig-alt="Bart Simpson and Nelson rolling bowling balls, then ralph places a banana. Words Appear in the following order: Go Team Mystic, Go Team Valor, then Go team Instinct." fig-align="center"}
 
 
 ::: fragment
-### Whatever gets the job done!
+[Inside Higher Ed](https://www.insidehighered.com/news/faculty-issues/research/2024/07/29/taylor-francis-ai-deal-sets-worrying-precedent) and [The New Yorker](https://www.newyorker.com/culture/infinite-scroll/is-ai-art-stealing-from-artists) highlight individual's concern of their work being used to train AI models.
 :::
 
-## There is more, much more, but I will say this, in my statistical journey
+
+## Privacy Concerns
+
+The use of generative AI raises concerns of what data is being harvested from us, possibly without informed consent. 
 
 ::: fragment
-![](https://media.tenor.com/9O8vuQzirQMAAAAd/i-did-it-my-way-frank-sinatra.gif){fig-alt="Shows Frank Sinatra singing with the words: I did it my way" fig-align="center"}
+When you used any large language models, you do not know what information is being harvested from you.
 :::
 
+::: fragment
+Do you want to upload your thoughts and ideas to a company that can monetize, and possibly exploit.
+:::
+
+::: fragment
+Does your Professors consent with you uploading their assignments to large language models?
+:::
+
+::: fragment
+Stanford provided a [report](https://hai.stanford.edu/news/privacy-ai-era-how-do-we-protect-our-personal-information) highlighting the risks of our personal data use in large language models.
+:::
+
+## Environmental Impact
+
+In order to run these large language models, companies need to use a large amounts of energy. This is because large servers are needed to both train and execute a model. 
+
+::: fragment
+The [LA Times](https://www.latimes.com/opinion/story/2024-08-15/editorial-generative-ai-is-a-leading-contributor-to-our-energy-consumption-how-will-this-impact-our-climate) reports the potential impact that running AI models in California.
+:::
+
+::: fragment
+Additionally, [Time](https://time.com/6987773/ai-data-centers-energy-usage-climate-change/) reports that a ChatGPT query uses ten times more energy than a Google search query, and global AI demands can consume of 1 trillion gallons of water by 2027.
+:::
+
+::: fragment
+There are also environmental justice questions about where these data centers are constructed.
+:::
+
+## Worker Exploitation
+
+The [Washington Post](https://www.washingtonpost.com/world/2023/08/28/scale-ai-remotasks-philippines-artificial-intelligence/) and Time ([Article 1](https://time.com/6147458/facebook-africa-content-moderation-employee-treatment/) and [Article 2](https://time.com/6247678/openai-chatgpt-kenya-workers/)) reported that AI companies utilize "digital sweatshops" to classify data points for model training. 
+
+::: fragment
+There is a human cost from the Global South, both financially and mentally, to develop the AI models for users in the United States and Europe.
+:::
+
+::: fragment
+We must be conscious consumers and demand more from these companies to provide safe working conditions and livable wages.
+:::
+
+
+## Is Using AI Bad?
+
+::: fragment
+Yes/No/IDK
+:::
+
+::: fragment
+But, we need to acknowledge the consequences of using AI!
+:::
+
+::: fragment
+And, we need to demand companies to create and implement AI in an ethical manner!
+:::
+
+# Surveys
+
+## Intro Form
+
+[Form](https://docs.google.com/forms/d/e/1FAIpQLSdCOoa1nw4mrFA9svC12LNDSh618MEijHFE8Rcop2Nb0BJgAQ/viewform?usp=publish-editor)
+
+![](img/qr-code.jpg){fig-align="center"}
+
+## First Survey
+
+[Survey](https://docs.google.com/forms/d/e/1FAIpQLScYV9qxgaxv53MmQtxUtL26os_L7LsLaCgQKx8zyQ4vA13TaA/viewform?usp=publish-editor)
+
+![](img/qr-code-1.jpg){fig-align="center"}
+
+
+# Extra Credits
+
+
+## Extra Credit 1
+
+<p><iframe title="embedded content" src="https://m201.inqs.info/ec/ec_1.html" width="1100" height="700"></iframe></p>
+
+## Extra Credit 2
+
+<p><iframe title="embedded content" src="https://m201.inqs.info/ec/ec_2.html" width="1100" height="700"></iframe></p>
+
+## Extra Credit 3
+
+<p><iframe title="embedded content" src="https://m201.inqs.info/ec/ec_3.html" width="1100" height="700"></iframe></p>
+
+# Field Trip
