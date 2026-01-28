@@ -77,22 +77,14 @@ editor: source
 
 # Embedded Peer Educator
 
-## EPE - Louis Heer
+## EPE - Jasmine Torres
 
-:::: {.columns}
+- This is my 7th year at CSUCI
 
-::: {.column width="50%"}
-![](img/Headshot.jpg)
-:::
+- Triple major in Math (triple emphasis pure, applied, and statistics), Computer Science, and Physics. 
 
-::: {.column width="50%"}
--   4th Year
+- Minoring in philosophy and cybersecurity.  
 
--   Political Science Major
-
-:::
-
-::::
 
 
 # Early Success Module
