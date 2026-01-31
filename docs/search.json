@@ -3147,7 +3147,7 @@
     "href": "lectures/2.html#frequencey",
     "title": "Categorical Data",
     "section": "Frequencey",
-    "text": "Frequencey\nFrequency represents the count of observing a specific category in your sample.\n\n\n#&gt; [1] Atypical Angina  Asymptomatic     Atypical Angina  Non-anginal Pain\n#&gt; [5] Asymptomatic     Non-anginal Pain Asymptomatic     Typical Angina  \n#&gt; Levels: Asymptomatic Non-anginal Pain Atypical Angina Typical Angina"
+    "text": "Frequencey\nFrequency represents the count of observing a specific category in your sample.\n\n\n#&gt; [1] Typical Angina   Atypical Angina  Asymptomatic     Non-anginal Pain\n#&gt; [5] Asymptomatic     Typical Angina   Non-anginal Pain Non-anginal Pain\n#&gt; Levels: Asymptomatic Non-anginal Pain Atypical Angina Typical Angina"
   },
   {
     "objectID": "lectures/2.html#proportions-relative-frequencey",
@@ -3175,7 +3175,14 @@
     "href": "lectures/2.html#plotting-in-r",
     "title": "Categorical Data",
     "section": "Plotting in R",
-    "text": "Plotting in R\n\nstat_*\nChange the look of the plot with other functions\nUse a theme_* function to add a theme to the plot"
+    "text": "Plotting in R\nPlotting in R can be done via the ggplot2, a powerful library based on the Grammar of Graphics."
+  },
+  {
+    "objectID": "lectures/2.html#plotting-in-r-1",
+    "href": "lectures/2.html#plotting-in-r-1",
+    "title": "Categorical Data",
+    "section": "Plotting in R",
+    "text": "Plotting in R\n\nYou need to create a base plot using the ggplot()\nUse the + to change the look of the base plot\nIndicate how to transform the base plot to the desired plot\ngeom_*\nstat_*\nChange the look of the plot with other functions\nUse a theme_* function to add a theme to the plot"
   },
   {
     "objectID": "lectures/2.html#bar-plots-1",
