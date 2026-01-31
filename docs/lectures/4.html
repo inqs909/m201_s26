@@ -110,6 +110,7 @@
   <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/verticator/verticator.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
@@ -741,13 +742,9 @@ p_X(x) = \frac{1}{6}, \quad x \in \{1, 2, 3, 4, 5, 6\}
 <span id="cb1-8"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> percentile_75, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
 <span id="cb1-9"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Density Plot with 75th Percentile"</span>, <span class="at">x =</span> <span class="st">"Data Value"</span>, <span class="at">y =</span> <span class="st">"Density"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-<div class="cell-output cell-output-stderr">
-<pre><code>#&gt; Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
-#&gt; ℹ Please use `linewidth` instead.</code></pre>
-</div>
 
 </div>
-<img data-src="4_files/figure-html/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center r-stretch" width="672"></section>
+<img data-src="4_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="applications-1" class="slide level2 scrollable">
 <h2>Applications</h2>
 <div class="panel-tabset">
@@ -943,24 +940,24 @@ F_X(x) =
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>mean <span class="ot">&lt;-</span> <span class="dv">0</span>  <span class="co"># Mean of the distribution</span></span>
-<span id="cb3-2"><a></a>sd <span class="ot">&lt;-</span> <span class="dv">1</span>   <span class="co"># Standard deviation of the distribution</span></span>
-<span id="cb3-3"><a></a></span>
-<span id="cb3-4"><a></a><span class="co"># Generate data points for the curve (more points = smoother curve)</span></span>
-<span id="cb3-5"><a></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(mean <span class="sc">-</span> <span class="dv">3</span><span class="sc">*</span>sd, mean <span class="sc">+</span> <span class="dv">3</span><span class="sc">*</span>sd, <span class="at">length.out =</span> <span class="dv">100</span>)  <span class="co"># Range covering most of the distribution</span></span>
-<span id="cb3-6"><a></a>y <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x, <span class="at">mean =</span> mean, <span class="at">sd =</span> sd)  <span class="co"># Calculate the density at each x value</span></span>
-<span id="cb3-7"><a></a></span>
-<span id="cb3-8"><a></a><span class="co"># Create the plot</span></span>
-<span id="cb3-9"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(x, y), <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
-<span id="cb3-10"><a></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"sienna"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span>  <span class="co"># Line for the distribution curve</span></span>
-<span id="cb3-11"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"X"</span>,</span>
-<span id="cb3-12"><a></a>       <span class="at">y =</span> <span class="st">"Probability Density"</span>) <span class="sc">+</span></span>
-<span id="cb3-13"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(mean <span class="sc">-</span> <span class="dv">3</span><span class="sc">*</span>sd, mean <span class="sc">+</span> <span class="dv">3</span><span class="sc">*</span>sd, <span class="at">by =</span> sd)) <span class="co"># Ticks at standard deviations</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>mean <span class="ot">&lt;-</span> <span class="dv">0</span>  <span class="co"># Mean of the distribution</span></span>
+<span id="cb2-2"><a></a>sd <span class="ot">&lt;-</span> <span class="dv">1</span>   <span class="co"># Standard deviation of the distribution</span></span>
+<span id="cb2-3"><a></a></span>
+<span id="cb2-4"><a></a><span class="co"># Generate data points for the curve (more points = smoother curve)</span></span>
+<span id="cb2-5"><a></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(mean <span class="sc">-</span> <span class="dv">3</span><span class="sc">*</span>sd, mean <span class="sc">+</span> <span class="dv">3</span><span class="sc">*</span>sd, <span class="at">length.out =</span> <span class="dv">100</span>)  <span class="co"># Range covering most of the distribution</span></span>
+<span id="cb2-6"><a></a>y <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x, <span class="at">mean =</span> mean, <span class="at">sd =</span> sd)  <span class="co"># Calculate the density at each x value</span></span>
+<span id="cb2-7"><a></a></span>
+<span id="cb2-8"><a></a><span class="co"># Create the plot</span></span>
+<span id="cb2-9"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(x, y), <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb2-10"><a></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"sienna"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span>  <span class="co"># Line for the distribution curve</span></span>
+<span id="cb2-11"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"X"</span>,</span>
+<span id="cb2-12"><a></a>       <span class="at">y =</span> <span class="st">"Probability Density"</span>) <span class="sc">+</span></span>
+<span id="cb2-13"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(mean <span class="sc">-</span> <span class="dv">3</span><span class="sc">*</span>sd, mean <span class="sc">+</span> <span class="dv">3</span><span class="sc">*</span>sd, <span class="at">by =</span> sd)) <span class="co"># Ticks at standard deviations</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="4_files/figure-html/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center" width="672"></p>
+<p><img data-src="4_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
@@ -970,24 +967,24 @@ F_X(x) =
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>n <span class="ot">&lt;-</span> <span class="dv">10</span>   <span class="co"># Number of trials</span></span>
-<span id="cb4-2"><a></a>p <span class="ot">&lt;-</span> <span class="fl">0.3</span>  <span class="co"># Probability of success on each trial</span></span>
-<span id="cb4-3"><a></a></span>
-<span id="cb4-4"><a></a><span class="co"># Generate the data for the plot</span></span>
-<span id="cb4-5"><a></a>x <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span>n  <span class="co"># Possible values for the random variable (number of successes)</span></span>
-<span id="cb4-6"><a></a>y <span class="ot">&lt;-</span> <span class="fu">dbinom</span>(x, <span class="at">size =</span> n, <span class="at">prob =</span> p)  <span class="co"># Calculate the probabilities</span></span>
-<span id="cb4-7"><a></a></span>
-<span id="cb4-8"><a></a><span class="co"># Create the plot using geom_col (for discrete data)</span></span>
-<span id="cb4-9"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(x, y), <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(x), <span class="at">y =</span> y)) <span class="sc">+</span>  <span class="co"># x as factor for discrete bars</span></span>
-<span id="cb4-10"><a></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"bisque4"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">alpha =</span>  <span class="fl">0.75</span>) <span class="sc">+</span></span>
-<span id="cb4-11"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Binomial Distribution (n ="</span>, n, <span class="st">", p ="</span>, p, <span class="st">")"</span>),</span>
-<span id="cb4-12"><a></a>       <span class="at">x =</span> <span class="st">"Number of Successes (x)"</span>,</span>
-<span id="cb4-13"><a></a>       <span class="at">y =</span> <span class="st">"Probability P(X = x)"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>n <span class="ot">&lt;-</span> <span class="dv">10</span>   <span class="co"># Number of trials</span></span>
+<span id="cb3-2"><a></a>p <span class="ot">&lt;-</span> <span class="fl">0.3</span>  <span class="co"># Probability of success on each trial</span></span>
+<span id="cb3-3"><a></a></span>
+<span id="cb3-4"><a></a><span class="co"># Generate the data for the plot</span></span>
+<span id="cb3-5"><a></a>x <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span>n  <span class="co"># Possible values for the random variable (number of successes)</span></span>
+<span id="cb3-6"><a></a>y <span class="ot">&lt;-</span> <span class="fu">dbinom</span>(x, <span class="at">size =</span> n, <span class="at">prob =</span> p)  <span class="co"># Calculate the probabilities</span></span>
+<span id="cb3-7"><a></a></span>
+<span id="cb3-8"><a></a><span class="co"># Create the plot using geom_col (for discrete data)</span></span>
+<span id="cb3-9"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(x, y), <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(x), <span class="at">y =</span> y)) <span class="sc">+</span>  <span class="co"># x as factor for discrete bars</span></span>
+<span id="cb3-10"><a></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"bisque4"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">alpha =</span>  <span class="fl">0.75</span>) <span class="sc">+</span></span>
+<span id="cb3-11"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Binomial Distribution (n ="</span>, n, <span class="st">", p ="</span>, p, <span class="st">")"</span>),</span>
+<span id="cb3-12"><a></a>       <span class="at">x =</span> <span class="st">"Number of Successes (x)"</span>,</span>
+<span id="cb3-13"><a></a>       <span class="at">y =</span> <span class="st">"Probability P(X = x)"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="4_files/figure-html/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center" width="672"></p>
+<p><img data-src="4_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
 </figure>
 </div>
 </div>
@@ -1093,7 +1090,7 @@ f_X(x) = \frac{1}{\sqrt{2\pi \sigma}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <section id="normal-pdf-1" class="slide level2">
 <h2>Normal PDF</h2>
 
-<img data-src="4_files/figure-html/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" width="672"></section>
+<img data-src="4_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="standard-normal-distribution" class="slide level2">
 <h2>Standard Normal Distribution</h2>
 <p>The <strong>Standard Normal Distribution</strong> is a special type of normal distribution with a <strong>mean of 0</strong> and a <strong>standard deviation of 1</strong>. It’s often used as a reference to convert any normal distribution to a standard form.</p>
@@ -1103,23 +1100,23 @@ f_X(x) = \frac{1}{\sqrt{2\pi \sigma}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>mean <span class="ot">&lt;-</span> <span class="dv">0</span>  <span class="co"># Mean of the distribution</span></span>
-<span id="cb5-2"><a></a>sd <span class="ot">&lt;-</span> <span class="dv">1</span>   <span class="co"># Standard deviation of the distribution</span></span>
-<span id="cb5-3"><a></a></span>
-<span id="cb5-4"><a></a><span class="co"># Generate data points for the curve (more points = smoother curve)</span></span>
-<span id="cb5-5"><a></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(mean <span class="sc">-</span> <span class="dv">3</span><span class="sc">*</span>sd, mean <span class="sc">+</span> <span class="dv">3</span><span class="sc">*</span>sd, <span class="at">length.out =</span> <span class="dv">100</span>)  <span class="co"># Range covering most of the distribution</span></span>
-<span id="cb5-6"><a></a>y <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x, <span class="at">mean =</span> mean, <span class="at">sd =</span> sd)  <span class="co"># Calculate the density at each x value</span></span>
-<span id="cb5-7"><a></a></span>
-<span id="cb5-8"><a></a><span class="co"># Create the plot</span></span>
-<span id="cb5-9"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(x, y), <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
-<span id="cb5-10"><a></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"palegreen4"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span>  <span class="co"># Line for the distribution curve</span></span>
-<span id="cb5-11"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"X"</span>,</span>
-<span id="cb5-12"><a></a>       <span class="at">y =</span> <span class="st">"Probability Density"</span>) <span class="sc">+</span></span>
-<span id="cb5-13"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(mean <span class="sc">-</span> <span class="dv">3</span><span class="sc">*</span>sd, mean <span class="sc">+</span> <span class="dv">3</span><span class="sc">*</span>sd, <span class="at">by =</span> sd)) <span class="co"># Ticks at standard deviations</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>mean <span class="ot">&lt;-</span> <span class="dv">0</span>  <span class="co"># Mean of the distribution</span></span>
+<span id="cb4-2"><a></a>sd <span class="ot">&lt;-</span> <span class="dv">1</span>   <span class="co"># Standard deviation of the distribution</span></span>
+<span id="cb4-3"><a></a></span>
+<span id="cb4-4"><a></a><span class="co"># Generate data points for the curve (more points = smoother curve)</span></span>
+<span id="cb4-5"><a></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(mean <span class="sc">-</span> <span class="dv">3</span><span class="sc">*</span>sd, mean <span class="sc">+</span> <span class="dv">3</span><span class="sc">*</span>sd, <span class="at">length.out =</span> <span class="dv">100</span>)  <span class="co"># Range covering most of the distribution</span></span>
+<span id="cb4-6"><a></a>y <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x, <span class="at">mean =</span> mean, <span class="at">sd =</span> sd)  <span class="co"># Calculate the density at each x value</span></span>
+<span id="cb4-7"><a></a></span>
+<span id="cb4-8"><a></a><span class="co"># Create the plot</span></span>
+<span id="cb4-9"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(x, y), <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb4-10"><a></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"palegreen4"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span>  <span class="co"># Line for the distribution curve</span></span>
+<span id="cb4-11"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"X"</span>,</span>
+<span id="cb4-12"><a></a>       <span class="at">y =</span> <span class="st">"Probability Density"</span>) <span class="sc">+</span></span>
+<span id="cb4-13"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(mean <span class="sc">-</span> <span class="dv">3</span><span class="sc">*</span>sd, mean <span class="sc">+</span> <span class="dv">3</span><span class="sc">*</span>sd, <span class="at">by =</span> sd)) <span class="co"># Ticks at standard deviations</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 
 </div>
-<img data-src="4_files/figure-html/unnamed-chunk-6-1.png" class="quarto-figure quarto-figure-center r-stretch" width="672"></section>
+<img data-src="4_files/figure-revealjs/unnamed-chunk-6-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="z-scores" class="slide level2">
 <h2>Z-Scores</h2>
 <p>A <strong>Z-score</strong> (or standard score) tells us how many standard deviations an individual data point is from the mean. It’s calculated as:</p>
@@ -1369,7 +1366,7 @@ P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}
 <section id="binomial-distribution-2" class="slide level2">
 <h2>Binomial Distribution</h2>
 
-<img data-src="4_files/figure-html/unnamed-chunk-7-1.png" class="quarto-figure quarto-figure-center r-stretch" width="672"></section>
+<img data-src="4_files/figure-revealjs/unnamed-chunk-7-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="example-calculation" class="slide level2">
 <h2>Example Calculation</h2>
 <p>Suppose you flip a fair coin 5 times (<span class="math inline">\(n = 5, p = 0.5\)</span>) and want to know the probability of getting exactly 3 heads (<span class="math inline">\(k = 3\)</span>).</p>
@@ -1518,7 +1515,7 @@ P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}
 <section id="poisson-distribution-2" class="slide level2">
 <h2>Poisson Distribution</h2>
 
-<img data-src="4_files/figure-html/unnamed-chunk-8-1.png" class="quarto-figure quarto-figure-center r-stretch" width="672"></section>
+<img data-src="4_files/figure-revealjs/unnamed-chunk-8-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="example-calculation-1" class="slide level2">
 <h2>Example Calculation</h2>
 <p>Suppose a call center receives an average of 10 calls per hour (<span class="math inline">\(\lambda = 10\)</span>). What is the probability of receiving exactly 7 calls in the next hour ($ k = 7 $)?</p>
@@ -1589,7 +1586,7 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
 <section id="distributions-in-r" class="slide level2">
 <h2>Distributions in R</h2>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>?Distributions</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>?Distributions</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="function-structure" class="slide level2">
@@ -1642,7 +1639,7 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">pnorm</span>(<span class="dv">5</span>, <span class="at">mean =</span> <span class="dv">6</span>, <span class="at">sd =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">pnorm</span>(<span class="dv">5</span>, <span class="at">mean =</span> <span class="dv">6</span>, <span class="at">sd =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </div>
@@ -1651,7 +1648,7 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">7</span>, <span class="at">mean =</span> <span class="dv">6</span>, <span class="at">sd =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">7</span>, <span class="at">mean =</span> <span class="dv">6</span>, <span class="at">sd =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </div>
@@ -1660,7 +1657,7 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">dbinom</span>(<span class="dv">20</span>, <span class="at">size =</span> <span class="dv">30</span>, <span class="at">prob =</span> <span class="fl">0.8</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">dbinom</span>(<span class="dv">20</span>, <span class="at">size =</span> <span class="dv">30</span>, <span class="at">prob =</span> <span class="fl">0.8</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </div>
@@ -1677,7 +1674,7 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">pnorm</span>(<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">2</span>) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">2</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">pnorm</span>(<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">2</span>) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">2</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </div>
@@ -1686,11 +1683,11 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">ppois</span>(<span class="dv">19</span>, <span class="at">lambda =</span> <span class="dv">16</span>) <span class="sc">-</span> <span class="fu">ppois</span>(<span class="dv">14</span>, <span class="at">lambda =</span> <span class="dv">16</span>)</span>
-<span id="cb11-2"><a></a></span>
-<span id="cb11-3"><a></a><span class="do">## OR</span></span>
-<span id="cb11-4"><a></a></span>
-<span id="cb11-5"><a></a><span class="fu">dpois</span>(<span class="dv">15</span>, <span class="dv">16</span>) <span class="sc">+</span> <span class="fu">dpois</span>(<span class="dv">16</span>, <span class="dv">16</span>) <span class="sc">+</span> <span class="fu">dpois</span>(<span class="dv">17</span>, <span class="dv">16</span>) <span class="sc">+</span> <span class="fu">dpois</span>(<span class="dv">18</span>, <span class="dv">16</span>) <span class="sc">+</span> <span class="fu">dpois</span>(<span class="dv">19</span>, <span class="dv">16</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">ppois</span>(<span class="dv">19</span>, <span class="at">lambda =</span> <span class="dv">16</span>) <span class="sc">-</span> <span class="fu">ppois</span>(<span class="dv">14</span>, <span class="at">lambda =</span> <span class="dv">16</span>)</span>
+<span id="cb10-2"><a></a></span>
+<span id="cb10-3"><a></a><span class="do">## OR</span></span>
+<span id="cb10-4"><a></a></span>
+<span id="cb10-5"><a></a><span class="fu">dpois</span>(<span class="dv">15</span>, <span class="dv">16</span>) <span class="sc">+</span> <span class="fu">dpois</span>(<span class="dv">16</span>, <span class="dv">16</span>) <span class="sc">+</span> <span class="fu">dpois</span>(<span class="dv">17</span>, <span class="dv">16</span>) <span class="sc">+</span> <span class="fu">dpois</span>(<span class="dv">18</span>, <span class="dv">16</span>) <span class="sc">+</span> <span class="fu">dpois</span>(<span class="dv">19</span>, <span class="dv">16</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </div>
@@ -1699,7 +1696,7 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">ppois</span>(<span class="dv">23</span>, <span class="dv">12</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">ppois</span>(<span class="dv">23</span>, <span class="dv">12</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </div>
@@ -1720,7 +1717,7 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">qnorm</span>(.<span class="dv">95</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">qnorm</span>(.<span class="dv">95</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </div>
@@ -1729,7 +1726,7 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">qpois</span>(.<span class="dv">95</span>, <span class="fl">9.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">qpois</span>(.<span class="dv">95</span>, <span class="fl">9.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </div>
@@ -1738,7 +1735,7 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">qbinom</span>(.<span class="dv">75</span>, <span class="dv">45</span>, .<span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">qbinom</span>(.<span class="dv">75</span>, <span class="dv">45</span>, .<span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </div>
@@ -1759,7 +1756,7 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="dv">8</span>, <span class="fu">sqrt</span>(<span class="dv">3</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="dv">8</span>, <span class="fu">sqrt</span>(<span class="dv">3</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </div>
@@ -1768,7 +1765,7 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">rgamma</span>(<span class="dv">100</span>, <span class="dv">2</span>,<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">rgamma</span>(<span class="dv">100</span>, <span class="dv">2</span>,<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </div>
@@ -1777,7 +1774,7 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">rbinom</span>(<span class="at">n =</span> <span class="dv">100</span>, <span class="at">size  =</span> <span class="dv">25</span>, <span class="at">prob =</span> <span class="fl">0.23</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">rbinom</span>(<span class="at">n =</span> <span class="dv">100</span>, <span class="at">size  =</span> <span class="dv">25</span>, <span class="at">prob =</span> <span class="fl">0.23</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </div>
@@ -1786,7 +1783,7 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">rpois</span>(<span class="at">n =</span> <span class="dv">100</span>, <span class="at">lambda =</span> <span class="fl">34.4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">rpois</span>(<span class="at">n =</span> <span class="dv">100</span>, <span class="at">lambda =</span> <span class="fl">34.4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </div>
@@ -1825,6 +1822,7 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
   <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
+  <script src="../site_libs/revealjs/plugin/verticator/verticator.js"></script>
   <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -1849,6 +1847,7 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true,"theme":"whiteboard","chalkWidth":4},
 'pointer': {"key":"q","color":"red","pointerSize":32,"alwaysVisible":false},
+'verticator': {"themetag":"h1","color":"","inversecolor":"","skipuncounted":false,"clickable":true,"position":"auto","offset":"3vmin","autogenerate":true,"tooltip":false,"scale":1,"debug":true},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -2019,7 +2018,7 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealPointer, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealPointer, Verticator, QuartoSupport,
 
           RevealMath,
           RevealNotes,
@@ -2028,6 +2027,44 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

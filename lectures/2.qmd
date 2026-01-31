@@ -31,7 +31,7 @@ knitr:
     
 revealjs-plugins:
   - pointer
-
+  - verticator
   
 filters: 
   - reveal-header
@@ -390,7 +390,7 @@ ggplot(DATA, aes(y = VAR1, x = after_stat(count), fill = VAR2)) +
 ## Stacked Bar Plot in R
 
 ```{r}
-#| code-fold: false
+#| code-fold: true
 ggplot(heart_disease, aes(x = cp, y = after_stat(count), fill = disease)) +
   geom_bar() +
   theme(axis.text.x = element_text(angle=-20,hjust=0)) # Used to angle x-axis
@@ -399,7 +399,7 @@ ggplot(heart_disease, aes(x = cp, y = after_stat(count), fill = disease)) +
 ## Stacked Bar Plot in R
 
 ```{r}
-#| code-fold: false
+#| code-fold: true
 ggplot(heart_disease, aes(y = cp, x = after_stat(count), fill = disease)) +
   geom_bar() +
   theme(axis.text.y = element_text(size = 20)) # Used to increase y-axis font
