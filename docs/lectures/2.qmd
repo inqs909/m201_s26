@@ -464,7 +464,7 @@ ggplot(heart_disease, aes(fill = slope)) +
 
 ## Themes
 
-The R packages `ThemePark` and `ggthemes` allows you to change the overall look of a plot.
+The R package `ggthemes` allows you to change the overall look of a plot.
 
 ::: fragment
 All you need to do is add the theme to the plot.

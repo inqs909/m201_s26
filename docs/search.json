@@ -3147,7 +3147,7 @@
     "href": "lectures/2.html#frequencey",
     "title": "Categorical Data",
     "section": "Frequencey",
-    "text": "Frequencey\nFrequency represents the count of observing a specific category in your sample.\n\n\n#&gt; [1] Asymptomatic     Non-anginal Pain Atypical Angina  Asymptomatic    \n#&gt; [5] Asymptomatic     Asymptomatic     Non-anginal Pain Atypical Angina \n#&gt; Levels: Asymptomatic Non-anginal Pain Atypical Angina Typical Angina"
+    "text": "Frequencey\nFrequency represents the count of observing a specific category in your sample.\n\n\n#&gt; [1] Asymptomatic     Atypical Angina  Asymptomatic     Asymptomatic    \n#&gt; [5] Non-anginal Pain Non-anginal Pain Asymptomatic     Asymptomatic    \n#&gt; Levels: Asymptomatic Non-anginal Pain Atypical Angina Typical Angina"
   },
   {
     "objectID": "lectures/2.html#proportions-relative-frequencey",
@@ -3364,7 +3364,7 @@
     "href": "lectures/2.html#themes",
     "title": "Categorical Data",
     "section": "Themes",
-    "text": "Themes\nThe R packages ThemePark and ggthemes allows you to change the overall look of a plot.\n\nAll you need to do is add the theme to the plot."
+    "text": "Themes\nThe R package ggthemes allows you to change the overall look of a plot.\n\nAll you need to do is add the theme to the plot."
   },
   {
     "objectID": "lectures/2.html#installing-themes-in-r",
