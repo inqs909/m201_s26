@@ -218,8 +218,8 @@ Plotting in R can be done via the [ggplot2](https://ggplot2.tidyverse.org/), a p
 1.    You need to create a base plot using the `ggplot()`
 2.    Use the `+` to change the look of the base plot 
 3.    Indicate how to transform the base plot to the desired plot
-    1. `geom_*`
-    2. `stat_*`
+      1. `geom_*`
+      2. `stat_*`
 4.    Change the look of the plot with other functions
 5.    Use a `theme_*` function to add a theme to the plot
 
