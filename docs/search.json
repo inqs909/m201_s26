@@ -3147,7 +3147,7 @@
     "href": "lectures/2.html#frequencey",
     "title": "Categorical Data",
     "section": "Frequencey",
-    "text": "Frequencey\nFrequency represents the count of observing a specific category in your sample.\n\n\n#&gt; [1] Asymptomatic     Asymptomatic     Asymptomatic     Typical Angina  \n#&gt; [5] Asymptomatic     Non-anginal Pain Asymptomatic     Typical Angina  \n#&gt; Levels: Asymptomatic Non-anginal Pain Atypical Angina Typical Angina"
+    "text": "Frequencey\nFrequency represents the count of observing a specific category in your sample.\n\n\n#&gt; [1] Asymptomatic     Non-anginal Pain Atypical Angina  Asymptomatic    \n#&gt; [5] Asymptomatic     Asymptomatic     Non-anginal Pain Atypical Angina \n#&gt; Levels: Asymptomatic Non-anginal Pain Atypical Angina Typical Angina"
   },
   {
     "objectID": "lectures/2.html#proportions-relative-frequencey",
@@ -3371,7 +3371,7 @@
     "href": "lectures/2.html#installing-themes-in-r",
     "title": "Categorical Data",
     "section": "Installing Themes in R",
-    "text": "Installing Themes in R\nInstall once on your computer or new session in google colab:\nrcistats::install_themes()\nThen, load libraries:\nlibrary(ggthemes)\nlibrary(ThemePark)"
+    "text": "Installing Themes in R\nInstall once on your computer or new session in google colab:\nrcistats::install_themes()\nThen, load libraries:\nlibrary(ggthemes)"
   },
   {
     "objectID": "lectures/2.html#black-and-white-theme",
@@ -3400,20 +3400,6 @@
     "title": "Categorical Data",
     "section": "Stata Theme",
     "text": "Stata Theme\n\nggplot(heart_disease, aes(y = cp, x = after_stat(count), fill = disease)) +\n  geom_bar() +\n  theme_stata()"
-  },
-  {
-    "objectID": "lectures/2.html#barbie-theme",
-    "href": "lectures/2.html#barbie-theme",
-    "title": "Categorical Data",
-    "section": "Barbie Theme",
-    "text": "Barbie Theme\n\nggplot(heart_disease, aes(y = cp, x = after_stat(count), fill = disease)) +\n  geom_bar() +\n  theme_barbie()"
-  },
-  {
-    "objectID": "lectures/2.html#oppenheimer-theme",
-    "href": "lectures/2.html#oppenheimer-theme",
-    "title": "Categorical Data",
-    "section": "Oppenheimer Theme",
-    "text": "Oppenheimer Theme\n\nggplot(heart_disease, aes(y = cp, x = after_stat(count), fill = disease)) +\n  geom_bar() +\n  theme_oppenheimer()"
   },
   {
     "objectID": "lectures/4.html#what-is-probability",

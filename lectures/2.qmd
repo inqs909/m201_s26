@@ -51,7 +51,6 @@ editor: source
 library(rcistats)
 library(tidyverse)
 library(ggthemes)
-library(ThemePark)
 
 theme_set(theme_bw() + 
             theme(
@@ -485,7 +484,6 @@ Then, load libraries:
 
 ```r
 library(ggthemes)
-library(ThemePark)
 ```
 
 ## Black and White Theme
@@ -532,26 +530,3 @@ ggplot(heart_disease, aes(y = cp, x = after_stat(count), fill = disease)) +
   theme_stata()
 ```
 
-## Barbie Theme
-
-```{r}
-#| code-fold: false
-#| fig-alt: A bar chart with a Barbie theme.
-
-ggplot(heart_disease, aes(y = cp, x = after_stat(count), fill = disease)) +
-  geom_bar() +
-  theme_barbie()
-```
-
-
-## Oppenheimer Theme
-
-
-```{r}
-#| code-fold: false
-#| fig-alt: A bar chart with an Oppenheimer theme.
-
-ggplot(heart_disease, aes(y = cp, x = after_stat(count), fill = disease)) +
-  geom_bar() +
-  theme_oppenheimer()
-```
