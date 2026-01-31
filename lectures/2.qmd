@@ -231,7 +231,7 @@ Bar Plots can be used to display the frequency or proportions on the data.
 
 ```{r}
 #| echo: false
-
+#| fig-width: 15
 ggplot(heart_disease) +
   geom_bar(aes(cp)) +
   theme(axis.text.x = element_text(angle=-20,hjust=0)) # Used to angle x-axis
@@ -254,7 +254,7 @@ ggplot(data = DATA, aes(x = VAR)) +
 ```{r}
 #| code-fold: true
 #| eval: true
-
+#| fig-width: 15
 ggplot(heart_disease, aes(cp)) +
   geom_bar() +
   theme(axis.text.x = element_text(angle=-20,hjust=0)) # Used to angle x-axis
@@ -278,6 +278,7 @@ ggplot(data = DATA, aes(x = VAR, y = after_stat(prop), group = 1)) +
 ```{r}
 #| code-fold: true
 #| eval: true
+#| fig-width: 15
 
 ggplot(heart_disease, aes(cp, after_stat(prop), group = 1)) +
   geom_bar() +
@@ -391,6 +392,7 @@ ggplot(DATA, aes(y = VAR1, x = after_stat(count), fill = VAR2)) +
 
 ```{r}
 #| code-fold: true
+#| fig-width: 15
 ggplot(heart_disease, aes(x = cp, y = after_stat(count), fill = disease)) +
   geom_bar() +
   theme(axis.text.x = element_text(angle=-20,hjust=0)) # Used to angle x-axis
@@ -400,6 +402,7 @@ ggplot(heart_disease, aes(x = cp, y = after_stat(count), fill = disease)) +
 
 ```{r}
 #| code-fold: true
+#| fig-width: 15
 ggplot(heart_disease, aes(y = cp, x = after_stat(count), fill = disease)) +
   geom_bar() +
   theme(axis.text.y = element_text(size = 20)) # Used to increase y-axis font
