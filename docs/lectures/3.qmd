@@ -57,7 +57,8 @@ penguins <- penguins |> drop_na()
 
 theme_set(theme_bw() + 
             theme(
-              axis.text.x = element_text(size = 24),
+              axis.text.x = element_text(size = 28),
+              axis.text.y = element_text(size = 22),
               axis.title = element_text(size = 30),
               plot.title = element_text(size = 48),
               strip.text = element_text(size = 20),
