@@ -3147,7 +3147,7 @@
     "href": "lectures/2.html#frequencey",
     "title": "Categorical Data",
     "section": "Frequencey",
-    "text": "Frequencey\nFrequency represents the count of observing a specific category in your sample.\n\n\n#&gt; [1] Atypical Angina  Asymptomatic     Asymptomatic     Non-anginal Pain\n#&gt; [5] Asymptomatic     Atypical Angina  Asymptomatic     Asymptomatic    \n#&gt; Levels: Asymptomatic Non-anginal Pain Atypical Angina Typical Angina"
+    "text": "Frequencey\nFrequency represents the count of observing a specific category in your sample.\n\n\n#&gt; [1] Asymptomatic     Non-anginal Pain Typical Angina   Asymptomatic    \n#&gt; [5] Typical Angina   Asymptomatic     Asymptomatic     Asymptomatic    \n#&gt; Levels: Asymptomatic Non-anginal Pain Atypical Angina Typical Angina"
   },
   {
     "objectID": "lectures/2.html#proportions-relative-frequencey",
@@ -3203,7 +3203,7 @@
     "href": "lectures/2.html#frequency-bar-plots-in-r-1",
     "title": "Categorical Data",
     "section": "Frequency Bar Plots in R",
-    "text": "Frequency Bar Plots in R\n\n\nCode\nggplot(heart_disease, aes(cp)) +\n  geom_bar() +\n  theme(axis.text.x = element_text(angle=-20,hjust=0)) # Used to angle x-axis"
+    "text": "Frequency Bar Plots in R\n\n\nCode\nggplot(heart_disease, aes(cp)) +\n  geom_bar() +\n  theme(axis.text.x = element_text(size = 16, angle=-20,hjust=0)) # Used to angle x-axis"
   },
   {
     "objectID": "lectures/2.html#relative-frequency-bar-plots-in-r",
@@ -3217,7 +3217,7 @@
     "href": "lectures/2.html#relative-frequency-bar-plots-in-r-1",
     "title": "Categorical Data",
     "section": "Relative Frequency Bar Plots in R",
-    "text": "Relative Frequency Bar Plots in R\n\n\nCode\nggplot(heart_disease, aes(cp, after_stat(prop), group = 1)) +\n  geom_bar() +\n  theme(axis.text.x = element_text(angle=-20,hjust=0)) # Used to angle x-axis"
+    "text": "Relative Frequency Bar Plots in R\n\n\nCode\nggplot(heart_disease, aes(cp, after_stat(prop), group = 1)) +\n  geom_bar() +\n  theme(axis.text.x = element_text(size = 16, angle=-20,hjust=0)) # Used to angle x-axis"
   },
   {
     "objectID": "lectures/2.html#data-1",
@@ -3315,7 +3315,7 @@
     "href": "lectures/2.html#stacked-bar-plot-in-r-1",
     "title": "Categorical Data",
     "section": "Stacked Bar Plot in R",
-    "text": "Stacked Bar Plot in R\n\n\nCode\nggplot(heart_disease, aes(x = cp, y = after_stat(count), fill = disease)) +\n  geom_bar() +\n  theme(axis.text.x = element_text(angle=-20,hjust=0)) # Used to angle x-axis"
+    "text": "Stacked Bar Plot in R\n\n\nCode\nggplot(heart_disease, aes(x = cp, y = after_stat(count), fill = disease)) +\n  geom_bar() +\n  theme(axis.text.x = element_text(size = 16, angle=-20,hjust=0)) # Used to angle x-axis"
   },
   {
     "objectID": "lectures/2.html#stacked-bar-plot-in-r-2",

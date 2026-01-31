@@ -257,7 +257,7 @@ ggplot(data = DATA, aes(x = VAR)) +
 #| fig-width: 15
 ggplot(heart_disease, aes(cp)) +
   geom_bar() +
-  theme(axis.text.x = element_text(angle=-20,hjust=0)) # Used to angle x-axis
+  theme(axis.text.x = element_text(size = 16, angle=-20,hjust=0)) # Used to angle x-axis
 ```
 
 
@@ -282,7 +282,7 @@ ggplot(data = DATA, aes(x = VAR, y = after_stat(prop), group = 1)) +
 
 ggplot(heart_disease, aes(cp, after_stat(prop), group = 1)) +
   geom_bar() +
-  theme(axis.text.x = element_text(angle=-20,hjust=0)) # Used to angle x-axis
+  theme(axis.text.x = element_text(size = 16, angle=-20,hjust=0)) # Used to angle x-axis
 ```
 
 # Cross-Tabulation
@@ -392,10 +392,10 @@ ggplot(DATA, aes(y = VAR1, x = after_stat(count), fill = VAR2)) +
 
 ```{r}
 #| code-fold: true
-#| fig-width: 15
+#| fig-width: 18
 ggplot(heart_disease, aes(x = cp, y = after_stat(count), fill = disease)) +
   geom_bar() +
-  theme(axis.text.x = element_text(angle=-20,hjust=0)) # Used to angle x-axis
+  theme(axis.text.x = element_text(size = 16, angle=-20,hjust=0)) # Used to angle x-axis
 ```
 
 ## Stacked Bar Plot in R
