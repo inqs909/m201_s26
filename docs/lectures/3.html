@@ -251,7 +251,7 @@
 <h2>Palmer Penguins</h2>
 <div class="columns">
 <div class="column">
-<p>The <code>penguins</code> data set was contains information on penguins from the <a href="https://lternet.edu/site/palmer-antarctica-lter/">Palmer Station</a> located in . You can learn more about the data set <a href="https://allisonhorst.github.io/palmerpenguins/articles/intro.html">here</a>.</p>
+<p>The <code>penguins</code> data set was contains information on penguins from the <a href="https://lternet.edu/site/palmer-antarctica-lter/">Palmer Station</a> located in Antartica. You can learn more about the data set <a href="https://allisonhorst.github.io/palmerpenguins/articles/intro.html">here</a>.</p>
 </div><div class="column">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -453,7 +453,7 @@ R = \mathrm{max} - \mathrm{min}
 <p>Describe how you will find the mean of these numbers:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output cell-output-stdout">
-<pre><code>#&gt; [1] 12 19 15 12  7</code></pre>
+<pre><code>#&gt; [1] 17 14 15 15 14</code></pre>
 </div>
 </div>
 </section>
@@ -547,10 +547,16 @@ P(X \leq \tilde{X}) = 0.5
 <section id="numerical-statistics-in-r-1" class="slide level2">
 <h2>Numerical Statistics in R</h2>
 <p>R has several built in functions to compute statistics.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">FUNCTION</span>(DATA<span class="sc">$</span>VAR)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li><code>FUNCTION</code>: Name of function for a statistic you are interested in computing (eg: <code>mean</code>)</li>
+<li><code>DATA</code>: Name of the data frame (eg: <code>penguins</code>)</li>
+<li><code>VAR</code>: Name of the variable to create a plot (eg: <code>flipper_len</code>)</li>
+</ul>
 </section>
 <section id="mean-1" class="slide level2">
 <h2>Mean</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">mean</span>(DATA<span class="sc">$</span>VAR)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">mean</span>(DATA<span class="sc">$</span>VAR)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>DATA</code>: Name of the data frame (eg: <code>penguins</code>)</li>
 <li><code>VAR</code>: Name of the variable to create a plot (eg: <code>flipper_len</code>)</li>
@@ -558,7 +564,7 @@ P(X \leq \tilde{X}) = 0.5
 </section>
 <section id="median-1" class="slide level2">
 <h2>Median</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">median</span>(DATA<span class="sc">$</span>VAR)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">median</span>(DATA<span class="sc">$</span>VAR)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>DATA</code>: Name of the data frame (eg: <code>penguins</code>)</li>
 <li><code>VAR</code>: Name of the variable to create a plot (eg: <code>flipper_len</code>)</li>
@@ -566,7 +572,7 @@ P(X \leq \tilde{X}) = 0.5
 </section>
 <section id="standard-deviation-1" class="slide level2">
 <h2>Standard Deviation</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">sd</span>(DATA<span class="sc">$</span>VAR)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">sd</span>(DATA<span class="sc">$</span>VAR)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>DATA</code>: Name of the data frame (eg: <code>penguins</code>)</li>
 <li><code>VAR</code>: Name of the variable to create a plot (eg: <code>flipper_len</code>)</li>
@@ -574,7 +580,7 @@ P(X \leq \tilde{X}) = 0.5
 </section>
 <section id="variance-1" class="slide level2">
 <h2>Variance</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">var</span>(DATA<span class="sc">$</span>VAR)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">var</span>(DATA<span class="sc">$</span>VAR)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>DATA</code>: Name of the data frame (eg: <code>penguins</code>)</li>
 <li><code>VAR</code>: Name of the variable to create a plot (eg: <code>flipper_len</code>)</li>
@@ -582,7 +588,7 @@ P(X \leq \tilde{X}) = 0.5
 </section>
 <section id="quartiles-1" class="slide level2">
 <h2>Quartiles</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">quantile</span>(DATA<span class="sc">$</span>VAR, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">quantile</span>(DATA<span class="sc">$</span>VAR, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>DATA</code>: Name of the data frame (eg: <code>penguins</code>)</li>
 <li><code>VAR</code>: Name of the variable to create a plot (eg: <code>flipper_len</code>)</li>
@@ -590,8 +596,8 @@ P(X \leq \tilde{X}) = 0.5
 </section>
 <section id="max-and-min" class="slide level2">
 <h2>Max and Min</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">max</span>(DATA<span class="sc">$</span>VAR)</span>
-<span id="cb13-2"><a></a><span class="fu">min</span>(DATA<span class="sc">$</span>VAR)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">max</span>(DATA<span class="sc">$</span>VAR)</span>
+<span id="cb14-2"><a></a><span class="fu">min</span>(DATA<span class="sc">$</span>VAR)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>DATA</code>: Name of the data frame (eg: <code>penguins</code>)</li>
 <li><code>VAR</code>: Name of the variable to create a plot (eg: <code>flipper_len</code>)</li>
@@ -599,7 +605,7 @@ P(X \leq \tilde{X}) = 0.5
 </section>
 <section id="summary-statistics-2" class="slide level2">
 <h2>Summary Statistics</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">rnum_stats</span>(DATA<span class="sc">$</span>VAR)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">num_stats</span>(DATA<span class="sc">$</span>VAR)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>DATA</code>: Name of the data frame (eg: <code>penguins</code>)</li>
 <li><code>VAR</code>: Name of the variable to create a plot (eg: <code>flipper_len</code>)</li>
@@ -610,7 +616,7 @@ P(X \leq \tilde{X}) = 0.5
 <div class="cell" data-layout-align="center">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">num_stats</span>(penguins<span class="sc">$</span>flipper_len)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">num_stats</span>(penguins<span class="sc">$</span>flipper_len)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt;   min q25    mean median q75 max     sd     var iqr missing
@@ -653,11 +659,11 @@ P(X \leq \tilde{X}) = 0.5
 </section>
 <section id="histogram-r-code" class="slide level2">
 <h2>Histogram R Code</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(VAR)) <span class="sc">+</span></span>
-<span id="cb17-2"><a></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>To change bins:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(VAR)) <span class="sc">+</span></span>
-<span id="cb18-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> VAL)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb18-2"><a></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>To change bins:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(VAR)) <span class="sc">+</span></span>
+<span id="cb19-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> VAL)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>DATA</code>: Name of the data frame (eg: <code>penguins</code>)</li>
 <li><code>VAR</code>: Name of the variable to create a plot (eg: <code>flipper_len</code>)</li>
@@ -669,9 +675,9 @@ P(X \leq \tilde{X}) = 0.5
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>)</span>
-<span id="cb19-2"><a></a><span class="fu">ggplot</span>(<span class="fu">tibble</span>(y), <span class="fu">aes</span>(y)) <span class="sc">+</span></span>
-<span id="cb19-3"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">15</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>)</span>
+<span id="cb20-2"><a></a><span class="fu">ggplot</span>(<span class="fu">tibble</span>(y), <span class="fu">aes</span>(y)) <span class="sc">+</span></span>
+<span id="cb20-3"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">15</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 
 </div>
@@ -681,9 +687,9 @@ P(X \leq \tilde{X}) = 0.5
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>y <span class="ot">&lt;-</span> <span class="fu">rgamma</span>(<span class="dv">1000</span>, <span class="dv">2</span>)</span>
-<span id="cb20-2"><a></a><span class="fu">ggplot</span>(<span class="fu">tibble</span>(y), <span class="fu">aes</span>(y)) <span class="sc">+</span></span>
-<span id="cb20-3"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">15</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>y <span class="ot">&lt;-</span> <span class="fu">rgamma</span>(<span class="dv">1000</span>, <span class="dv">2</span>)</span>
+<span id="cb21-2"><a></a><span class="fu">ggplot</span>(<span class="fu">tibble</span>(y), <span class="fu">aes</span>(y)) <span class="sc">+</span></span>
+<span id="cb21-3"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">15</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 
 </div>
@@ -693,9 +699,9 @@ P(X \leq \tilde{X}) = 0.5
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>y <span class="ot">&lt;-</span> <span class="fu">rbeta</span>(<span class="dv">1000</span>, <span class="dv">5</span>, <span class="dv">1</span>)</span>
-<span id="cb21-2"><a></a><span class="fu">ggplot</span>(<span class="fu">tibble</span>(y), <span class="fu">aes</span>(y)) <span class="sc">+</span></span>
-<span id="cb21-3"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">15</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>y <span class="ot">&lt;-</span> <span class="fu">rbeta</span>(<span class="dv">1000</span>, <span class="dv">5</span>, <span class="dv">1</span>)</span>
+<span id="cb22-2"><a></a><span class="fu">ggplot</span>(<span class="fu">tibble</span>(y), <span class="fu">aes</span>(y)) <span class="sc">+</span></span>
+<span id="cb22-3"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">15</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 
 </div>
@@ -705,10 +711,10 @@ P(X \leq \tilde{X}) = 0.5
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>y <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1000</span>, <span class="dv">1</span>, <span class="fl">0.4</span>)</span>
-<span id="cb22-2"><a></a>z <span class="ot">&lt;-</span> (y <span class="sc">==</span> <span class="dv">0</span>) <span class="sc">*</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="dv">23</span>) <span class="sc">+</span> (y <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">*</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="dv">27</span>)</span>
-<span id="cb22-3"><a></a><span class="fu">ggplot</span>(<span class="fu">tibble</span>(z), <span class="fu">aes</span>(z)) <span class="sc">+</span></span>
-<span id="cb22-4"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">15</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>y <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1000</span>, <span class="dv">1</span>, <span class="fl">0.4</span>)</span>
+<span id="cb23-2"><a></a>z <span class="ot">&lt;-</span> (y <span class="sc">==</span> <span class="dv">0</span>) <span class="sc">*</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="dv">23</span>) <span class="sc">+</span> (y <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">*</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="dv">27</span>)</span>
+<span id="cb23-3"><a></a><span class="fu">ggplot</span>(<span class="fu">tibble</span>(z), <span class="fu">aes</span>(z)) <span class="sc">+</span></span>
+<span id="cb23-4"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">15</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 
 </div>
@@ -716,8 +722,8 @@ P(X \leq \tilde{X}) = 0.5
 <section id="penguins-1" class="slide level2">
 <h2>Penguins</h2>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(flipper_len)) <span class="sc">+</span></span>
-<span id="cb23-2"><a></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(flipper_len)) <span class="sc">+</span></span>
+<span id="cb24-2"><a></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="3_files/figure-revealjs/unnamed-chunk-16-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
@@ -731,8 +737,8 @@ P(X \leq \tilde{X}) = 0.5
 <img data-src="https://miro.medium.com/max/9000/1*2c21SkzJMf3frPXPAR_gZA.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="box-plot-r-code" class="slide level2">
 <h2>Box Plot R Code</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(VAR)) <span class="sc">+</span></span>
-<span id="cb24-2"><a></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(VAR)) <span class="sc">+</span></span>
+<span id="cb25-2"><a></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>DATA</code>: Name of the data frame (eg: <code>penguins</code>)</li>
 <li><code>VAR</code>: Name of the variable to create a plot (eg: <code>flipper_len</code>)</li>
@@ -741,16 +747,16 @@ P(X \leq \tilde{X}) = 0.5
 <section id="box-plot-2" class="slide level2">
 <h2>Box Plot</h2>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(flipper_len)) <span class="sc">+</span></span>
-<span id="cb25-2"><a></a>  <span class="fu">geom_boxplot</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(flipper_len)) <span class="sc">+</span></span>
+<span id="cb26-2"><a></a>  <span class="fu">geom_boxplot</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="3_files/figure-revealjs/unnamed-chunk-17-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="box-plot-3" class="slide level2">
 <h2>Box Plot</h2>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">y =</span> flipper_len)) <span class="sc">+</span></span>
-<span id="cb26-2"><a></a>  <span class="fu">geom_boxplot</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">y =</span> flipper_len)) <span class="sc">+</span></span>
+<span id="cb27-2"><a></a>  <span class="fu">geom_boxplot</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="3_files/figure-revealjs/unnamed-chunk-18-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
@@ -760,11 +766,11 @@ P(X \leq \tilde{X}) = 0.5
 </section>
 <section id="dot-plots-in-r" class="slide level2">
 <h2>Dot Plots in R</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(VAR)) <span class="sc">+</span></span>
-<span id="cb27-2"><a></a>  <span class="fu">geom_dotplot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>To change binwidth</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(VAR)) <span class="sc">+</span></span>
-<span id="cb28-2"><a></a>  <span class="fu">geom_dotplot</span>(<span class="at">binwidth =</span> VAL)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb28-2"><a></a>  <span class="fu">geom_dotplot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>To change binwidth</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(VAR)) <span class="sc">+</span></span>
+<span id="cb29-2"><a></a>  <span class="fu">geom_dotplot</span>(<span class="at">binwidth =</span> VAL)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>DATA</code>: Name of the data frame (eg: <code>penguins</code>)</li>
 <li><code>VAR</code>: Name of the variable to create a plot (eg: <code>flipper_len</code>)</li>
@@ -774,8 +780,8 @@ P(X \leq \tilde{X}) = 0.5
 <section id="dot-plots-1" class="slide level2">
 <h2>Dot Plots</h2>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(flipper_len)) <span class="sc">+</span></span>
-<span id="cb29-2"><a></a>  <span class="fu">geom_dotplot</span>(<span class="at">binwidth =</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(flipper_len)) <span class="sc">+</span></span>
+<span id="cb30-2"><a></a>  <span class="fu">geom_dotplot</span>(<span class="at">binwidth =</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="3_files/figure-revealjs/unnamed-chunk-19-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
@@ -788,8 +794,8 @@ P(X \leq \tilde{X}) = 0.5
 </section>
 <section id="density-plot-in-r" class="slide level2">
 <h2>Density Plot in R</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(VAR)) <span class="sc">+</span></span>
-<span id="cb30-2"><a></a>  <span class="fu">geom_density</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(VAR)) <span class="sc">+</span></span>
+<span id="cb31-2"><a></a>  <span class="fu">geom_density</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>DATA</code>: Name of the data frame (eg: <code>penguins</code>)</li>
 <li><code>VAR</code>: Name of the variable to create a plot (eg: <code>flipper_len</code>)</li>
@@ -798,16 +804,16 @@ P(X \leq \tilde{X}) = 0.5
 <section id="density-plot-2" class="slide level2">
 <h2>Density Plot</h2>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(flipper_len)) <span class="sc">+</span></span>
-<span id="cb31-2"><a></a>  <span class="fu">geom_density</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(flipper_len)) <span class="sc">+</span></span>
+<span id="cb32-2"><a></a>  <span class="fu">geom_density</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="3_files/figure-revealjs/unnamed-chunk-20-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="adding-vertical-lines" class="slide level2">
 <h2>Adding Vertical Lines</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(VAR)) <span class="sc">+</span></span>
-<span id="cb32-2"><a></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
-<span id="cb32-3"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> XVAL)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(VAR)) <span class="sc">+</span></span>
+<span id="cb33-2"><a></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb33-3"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> XVAL)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>DATA</code>: Name of the data frame (eg: <code>penguins</code>)</li>
 <li><code>VAR</code>: Name of the variable to create a plot (eg: <code>flipper_len</code>)</li>
@@ -817,18 +823,18 @@ P(X \leq \tilde{X}) = 0.5
 <section id="vertical-lines" class="slide level2">
 <h2>Vertical Lines</h2>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(flipper_len)) <span class="sc">+</span></span>
-<span id="cb33-2"><a></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
-<span id="cb33-3"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(penguins<span class="sc">$</span>flipper_len), <span class="at">col  =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb33-4"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">median</span>(penguins<span class="sc">$</span>flipper_len), <span class="at">col =</span> <span class="st">"red"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(flipper_len)) <span class="sc">+</span></span>
+<span id="cb34-2"><a></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb34-3"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(penguins<span class="sc">$</span>flipper_len), <span class="at">col  =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb34-4"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">median</span>(penguins<span class="sc">$</span>flipper_len), <span class="at">col =</span> <span class="st">"red"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="3_files/figure-revealjs/unnamed-chunk-21-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="adding-horizontal-lines" class="slide level2">
 <h2>Adding Horizontal Lines</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(VAR)) <span class="sc">+</span></span>
-<span id="cb34-2"><a></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
-<span id="cb34-3"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> YVAL)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(VAR)) <span class="sc">+</span></span>
+<span id="cb35-2"><a></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb35-3"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> YVAL)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>DATA</code>: Name of the data frame (eg: <code>penguins</code>)</li>
 <li><code>VAR</code>: Name of the variable to create a plot (eg: <code>flipper_len</code>)</li>
@@ -838,10 +844,10 @@ P(X \leq \tilde{X}) = 0.5
 <section id="horizontal-lines" class="slide level2">
 <h2>Horizontal Lines</h2>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(flipper_len)) <span class="sc">+</span></span>
-<span id="cb35-2"><a></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
-<span id="cb35-3"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">0.01</span>, <span class="at">col  =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb35-4"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">0.02</span>, <span class="at">col =</span> <span class="st">"red"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(flipper_len)) <span class="sc">+</span></span>
+<span id="cb36-2"><a></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb36-3"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">0.01</span>, <span class="at">col  =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb36-4"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">0.02</span>, <span class="at">col =</span> <span class="st">"red"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </div>
 <img data-src="3_files/figure-revealjs/unnamed-chunk-22-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section></section>
@@ -884,11 +890,11 @@ P(X \leq \tilde{X}) = 0.5
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100000</span>)</span>
-<span id="cb36-2"><a></a><span class="fu">ggplot</span>(<span class="fu">tibble</span>(y), <span class="fu">aes</span>(y)) <span class="sc">+</span></span>
-<span id="cb36-3"><a></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
-<span id="cb36-4"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(y), <span class="at">col =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb36-5"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">median</span>(y), <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a>y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100000</span>)</span>
+<span id="cb37-2"><a></a><span class="fu">ggplot</span>(<span class="fu">tibble</span>(y), <span class="fu">aes</span>(y)) <span class="sc">+</span></span>
+<span id="cb37-3"><a></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb37-4"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(y), <span class="at">col =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb37-5"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">median</span>(y), <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 
 </div>
@@ -899,11 +905,11 @@ P(X \leq \tilde{X}) = 0.5
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a>y <span class="ot">&lt;-</span> <span class="fu">rgamma</span>(<span class="dv">100000</span>, <span class="at">shape =</span> <span class="dv">4</span>)</span>
-<span id="cb37-2"><a></a><span class="fu">ggplot</span>(<span class="fu">tibble</span>(y), <span class="fu">aes</span>(y)) <span class="sc">+</span></span>
-<span id="cb37-3"><a></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
-<span id="cb37-4"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(y), <span class="at">col =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb37-5"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">median</span>(y), <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a>y <span class="ot">&lt;-</span> <span class="fu">rgamma</span>(<span class="dv">100000</span>, <span class="at">shape =</span> <span class="dv">4</span>)</span>
+<span id="cb38-2"><a></a><span class="fu">ggplot</span>(<span class="fu">tibble</span>(y), <span class="fu">aes</span>(y)) <span class="sc">+</span></span>
+<span id="cb38-3"><a></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb38-4"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(y), <span class="at">col =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb38-5"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">median</span>(y), <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 
 </div>
@@ -914,11 +920,11 @@ P(X \leq \tilde{X}) = 0.5
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a>y <span class="ot">&lt;-</span> <span class="fu">rbeta</span>(<span class="dv">100000</span>, <span class="at">shape1 =</span> <span class="dv">5</span>, <span class="at">shape2 =</span> <span class="fl">1.25</span>)</span>
-<span id="cb38-2"><a></a><span class="fu">ggplot</span>(<span class="fu">tibble</span>(y), <span class="fu">aes</span>(y)) <span class="sc">+</span></span>
-<span id="cb38-3"><a></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
-<span id="cb38-4"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(y), <span class="at">col =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb38-5"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">median</span>(y), <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a>y <span class="ot">&lt;-</span> <span class="fu">rbeta</span>(<span class="dv">100000</span>, <span class="at">shape1 =</span> <span class="dv">5</span>, <span class="at">shape2 =</span> <span class="fl">1.25</span>)</span>
+<span id="cb39-2"><a></a><span class="fu">ggplot</span>(<span class="fu">tibble</span>(y), <span class="fu">aes</span>(y)) <span class="sc">+</span></span>
+<span id="cb39-3"><a></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb39-4"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(y), <span class="at">col =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb39-5"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">median</span>(y), <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 
 </div>
@@ -974,8 +980,8 @@ P(X \leq \tilde{X}) = 0.5
 <img data-src="3_files/figure-revealjs/unnamed-chunk-29-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="scatter-plots-in-r" class="slide level2">
 <h2>Scatter Plots in R</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(<span class="at">x =</span> VAR1, <span class="at">y =</span> VAR2)) <span class="sc">+</span></span>
-<span id="cb39-2"><a></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(<span class="at">x =</span> VAR1, <span class="at">y =</span> VAR2)) <span class="sc">+</span></span>
+<span id="cb40-2"><a></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>DATA</code>: Name of the data frame (eg: <code>penguins</code>)</li>
 <li><code>VAR1</code>: Name of the X variable to create a plot (eg: <code>flipper_len</code>)</li>
@@ -987,8 +993,8 @@ P(X \leq \tilde{X}) = 0.5
 <div class="cell" data-layout-align="center">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(flipper_len, body_mass)) <span class="sc">+</span></span>
-<span id="cb40-2"><a></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(flipper_len, body_mass)) <span class="sc">+</span></span>
+<span id="cb41-2"><a></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">

@@ -1,0 +1,165 @@
+---
+title: "Research Questions"
+description: |
+    Learn how to create research questions.
+format:
+  revealjs:
+    width: 1200
+    scrollable: true
+    sc-sb-title: true
+    footer: m201.inqs.info/lectures/2a
+    theme: [default, styles.scss]
+    navigation-mode: vertical
+    controls-layout: edges
+    controls-tutorial: true
+    slide-number: true
+    pointer:
+      pointerSize: 32
+    incremental: false 
+    chalkboard:
+      theme: whiteboard
+      chalk-width: 4
+knitr:
+  opts_chunk: 
+    echo: true
+    fig-align: center
+    eval: true
+    message: true
+    code-fold: true
+    warnings: false
+    comment: "#>" 
+    
+revealjs-plugins:
+  - pointer
+  - verticator
+  
+filters: 
+  - reveal-header
+  - code-fullscreen
+  - reveal-auto-agenda
+
+editor: source
+---
+
+# Research Questions
+
+## When are Research Questions Used?
+
+
+## Why Research Questions Matter
+
+
+- Research questions guide **what data you collect**
+- They determine **which statistical methods** you can use
+- Good questions lead to **clear, interpretable results**
+- Weak questions lead to confusion, bias, or unusable data
+
+
+## What Is a Research Question?
+
+A research question is a **clear, focused, and answerable question** about a population or process that can be addressed using data.
+
+::: fragment
+
+In statistics, research questions usually involve:
+
+- Variables
+- Populations or samples
+- Comparisons, relationships, or patterns
+
+:::
+
+
+## Research Questions vs. Topics
+
+
+**Topic:**
+
+- Social media use
+
+
+**Research Question:**
+
+- Is there a relationship between daily social media use (hours) and GPA among college students?
+
+
+
+## Key Components
+
+
+A strong research question clearly specifies:
+
+
+1. **Population** (Who or what?)
+2. **Variables** (What is measured?)
+3. **Type of relationship** (Comparison, association, trend)
+4. **Context** (Where, when, under what conditions?)
+
+## Identifying the Population
+
+
+Ask:
+
+- Who am I studying?
+- Is this a group I can realistically collect data from?
+
+
+
+::: fragment
+Examples:
+
+- College students at a university
+- Registered voters in a county
+- Products manufactured on a given day
+:::
+
+## Identifying Variables
+
+
+Variables must be:
+
+- **Observable**
+- **Measurable**
+
+
+Common types:
+
+- Quantitative (height, income, test scores)
+- Categorical (gender, major, treatment group)
+
+::: fragment
+Example:
+
+- Sleep duration (hours)
+- Exam score (percentage)
+:::
+
+
+## Statistical Research Questions
+
+
+Most intro statistics questions fall into one of these categories:
+
+
+- Descriptive
+- Comparative
+- Relational (associational)
+
+# Building Research Questions
+
+## Identify Topics
+
+First identify topics you are interested in learning more about.
+
+## Construct Research Questions
+
+Based on your topic, construct 2-3 research questions related to your topic.
+
+## Key Components
+
+Does your research question meet these components:
+
+1. **Population** (Who or what?)
+2. **Variables** (What is measured?)
+3. **Type of relationship** (Comparison, association, trend)
+4. **Context** (Where, when, under what conditions?)

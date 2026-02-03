@@ -10,30 +10,31 @@
     ]
   },
   {
-    "listing": "/lectures.html",
-    "items": [
-      "/lectures/2.html",
-      "/lectures/1.html",
-      "/lectures/4.html",
-      "/lectures/7.html",
-      "/lectures/15b.html",
-      "/lectures/1a.html",
-      "/lectures/8.html",
-      "/lectures/3.html",
-      "/lectures/9.html",
-      "/lectures/5.html",
-      "/lectures/6.html",
-      "/lectures/12.html",
-      "/lectures/10.html",
-      "/lectures/11.html"
-    ]
-  },
-  {
     "listing": "/ec.html",
     "items": [
       "/ec/ec_1.html",
       "/ec/ec_2.html",
       "/ec/ec_3.html"
+    ]
+  },
+  {
+    "listing": "/lectures.html",
+    "items": [
+      "/lectures/1.html",
+      "/lectures/10.html",
+      "/lectures/11.html",
+      "/lectures/12.html",
+      "/lectures/15b.html",
+      "/lectures/1a.html",
+      "/lectures/2.html",
+      "/lectures/2a.html",
+      "/lectures/3.html",
+      "/lectures/4.html",
+      "/lectures/5.html",
+      "/lectures/6.html",
+      "/lectures/7.html",
+      "/lectures/8.html",
+      "/lectures/9.html"
     ]
   }
 ]
