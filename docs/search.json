@@ -1278,7 +1278,7 @@
     "href": "lectures/3.html#mean-barx",
     "title": "Numerical Data",
     "section": "Mean (\\(\\bar{x}\\))",
-    "text": "Mean (\\(\\bar{x}\\))\nDescribe how you will find the mean of these numbers:\n\n\n#&gt; [1] 17 14 15 15 14"
+    "text": "Mean (\\(\\bar{x}\\))\nDescribe how you will find the mean of these numbers:\n\n\n#&gt; [1] 13  7 16  9 23"
   },
   {
     "objectID": "lectures/3.html#mean-barx-1",
