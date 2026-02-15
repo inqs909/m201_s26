@@ -3504,7 +3504,7 @@
     "href": "lectures/4.html#key-terms-and-definitions",
     "title": "Distribution Functions",
     "section": "Key Terms and Definitions",
-    "text": "Key Terms and Definitions\n\nExperimentSample SpaceEventProb. of an Event\n\n\nAn action or process that generates outcomes.\n- Example: Rolling a die.\n\n\nThe set of all possible outcomes of an experiment.\n- Example: For rolling a die, \\(S = \\{1, 2, 3, 4, 5, 6\\}\\).\n\n\nA subset of the sample space, representing outcomes of interest.\n\nExample: Rolling an even number (\\(A = \\{2, 4, 6\\}\\)).\n\n\n\nThe proportion of times an event is expected to occur if the experiment is repeated many times."
+    "text": "Key Terms and Definitions\n\nExperimentSample SpaceEventProb. of an Event\n\n\nAn action or process that generates outcomes.\n\nExample: Rolling a die.\n\n\n\nThe set of all possible outcomes of an experiment.\n\nExample: For rolling a die, \\(S = \\{1, 2, 3, 4, 5, 6\\}\\).\n\n\n\nA subset of the sample space, representing outcomes of interest.\n\nExample: Rolling an even number (\\(A = \\{2, 4, 6\\}\\)).\n\n\n\nThe proportion of times an event is expected to occur if the experiment is repeated many times."
   },
   {
     "objectID": "lectures/4.html#the-probability-formula",
@@ -3546,21 +3546,21 @@
     "href": "lectures/4.html#joint-probability-1",
     "title": "Distribution Functions",
     "section": "Joint Probability",
-    "text": "Joint Probability\n\nOften, we’re interested in the probabilities of multiple events occurring.\nThis presentation focuses on calculating probabilities involving two events.\nWe’ll explore key concepts like:\n\nJoint Probability\nUnion of Events\nConditional Probability\nIndependence"
+    "text": "Joint Probability\n\nOften, we’re interested in the probabilities of multiple events occurring.\nThis understanding how the probability of seperate events, such as A and B, is computed."
   },
   {
-    "objectID": "lectures/4.html#joint-probability-2",
-    "href": "lectures/4.html#joint-probability-2",
+    "objectID": "lectures/4.html#intersection-of-events",
+    "href": "lectures/4.html#intersection-of-events",
     "title": "Distribution Functions",
-    "section": "Joint Probability",
-    "text": "Joint Probability\n\nThe probability of both events A and B occurring.\nDenoted as \\(P(A\\ \\mathrm{and}\\ B)\\) or \\(P(A \\cap B)\\).\nExamples:\n\nDrawing a King and a Heart from a deck of cards.\nFlipping two coins and getting heads on both."
+    "section": "Intersection of Events",
+    "text": "Intersection of Events\n\nThe probability of both events A and B occurring.\nDenoted as \\(P(A\\ \\mathrm{and}\\ B)\\) or \\(P(A \\cap B)\\).\n\n\n\nExamples:\n\nDrawing a King and a Heart from a deck of cards.\nFlipping two coins and getting heads on both."
   },
   {
     "objectID": "lectures/4.html#union-of-events",
     "href": "lectures/4.html#union-of-events",
     "title": "Distribution Functions",
     "section": "Union of Events",
-    "text": "Union of Events\n\nThe probability of either event A or event B (or both) occurring.\nDenoted as \\(P(A\\ \\mathrm{or}\\ B)\\) or \\(P(A \\cup B)\\).\nExamples:\n\nRolling a 3 or a 5 on a die.\nDrawing a red card or a face card."
+    "text": "Union of Events\n\nThe probability of either event A or event B (or both) occurring.\nDenoted as \\(P(A\\ \\mathrm{or}\\ B)\\) or \\(P(A \\cup B)\\).\n\n\n\nExamples:\n\nRolling a 3 or a 5 on a die.\nDrawing a red card or a face card."
   },
   {
     "objectID": "lectures/4.html#calculating-union-probability",

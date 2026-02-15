@@ -82,10 +82,12 @@ theme_set(theme_bw() +
 
 ### **Experiment**
 An action or process that generates outcomes.  
+
 - Example: Rolling a die.
 
 ### **Sample Space**
 The set of all possible outcomes of an experiment.  
+
 - Example: For rolling a die, $S = \{1, 2, 3, 4, 5, 6\}$.
 
 ### **Event**
@@ -243,30 +245,31 @@ $$
 
 ## Joint Probability
 
-*   Often, we're interested in the probabilities of multiple events occurring.
-*   This presentation focuses on calculating probabilities involving two events.
-*   We'll explore key concepts like:
-    *   Joint Probability
-    *   Union of Events
-    *   Conditional Probability
-    *   Independence
+*  Often, we're interested in the probabilities of multiple events occurring.
+*  This understanding how the probability of seperate events, such as A and B, is computed.
 
 
-## Joint Probability
+## Intersection of Events
 
 *   The probability of *both* events A and B occurring.
 *   Denoted as $P(A\ \mathrm{and}\ B)$ or $P(A \cap B)$.
+
+::: {.fragment}
 *   Examples:
     *   Drawing a King *and* a Heart from a deck of cards.
     *   Flipping two coins and getting heads on both.
+:::
 
 ## Union of Events
 
 *   The probability of *either* event A *or* event B (or both) occurring.
 *   Denoted as $P(A\ \mathrm{or}\ B)$ or $P(A \cup B)$.
+
+::: {.fragment}
 *   Examples:
     *   Rolling a 3 or a 5 on a die.
     *   Drawing a red card or a face card.
+:::
 
 
 ## Calculating Union Probability
