@@ -4505,7 +4505,7 @@
     "href": "rcode/cat_stats.html#crosstabulation-twoway-table",
     "title": "Categorical Data",
     "section": "5.1 Cross‑tabulation (two‑way table)",
-    "text": "5.1 Cross‑tabulation (two‑way table)\n\nRows: categories of one variable\nColumns: categories of the second variable\nReport counts or proportions by table, row, or column\n\nALL:\n\ncat_stats(coffee$caffeine, coffee$taste)\n\n#&gt; Continguency Table \n#&gt;  \n#&gt;               No                              Yes                              \n#&gt; Decaf         \"26 / 0.0073 / 0.208 / 0.2653\"  \"99 / 0.0279 / 0.792 / 0.0287\"   \n#&gt; Full caffeine \"66 / 0.0186 / 0.0203 / 0.6735\" \"3178 / 0.8957 / 0.9797 / 0.9212\"\n#&gt; Half caff     \"6 / 0.0017 / 0.0335 / 0.0612\"  \"173 / 0.0488 / 0.9665 / 0.0501\" \n#&gt; Col Totals    \"98 / 0.0276\"                   \"3450 / 0.9724\"                  \n#&gt;               Row Totals     \n#&gt; Decaf         \"125 / 0.0352\" \n#&gt; Full caffeine \"3244 / 0.9143\"\n#&gt; Half caff     \"179 / 0.0505\" \n#&gt; Col Totals    \"Total: 3548\"  \n#&gt; \n#&gt; Cell Contents: n / tbl % / row % / col % \n#&gt; Col Totals Contents: n / row % \n#&gt; Row Totals Contents: n / col % \n#&gt; Column Variable: coffee$taste\n#&gt; Row Variable: coffee$caffeine\n\n\nTable proportions (each cell ÷ grand total):\n\ncat_stats(coffee$caffeine, coffee$taste, prop = \"table\")\n\n#&gt; Continguency Table \n#&gt;  \n#&gt;               No            Yes             Row Totals     \n#&gt; Decaf         \"26 / 0.0073\" \"99 / 0.0279\"   \"125 / 0.0352\" \n#&gt; Full caffeine \"66 / 0.0186\" \"3178 / 0.8957\" \"3244 / 0.9143\"\n#&gt; Half caff     \"6 / 0.0017\"  \"173 / 0.0488\"  \"179 / 0.0505\" \n#&gt; Col Totals    \"98 / 0.0276\" \"3450 / 0.9724\" \"Total: 3548\"  \n#&gt; \n#&gt; Cell Contents: n / tbl % \n#&gt; Col Totals Contents: n / row % \n#&gt; Row Totals Contents: n / col % \n#&gt; Column Variable: coffee$taste\n#&gt; Row Variable: coffee$caffeine\n\n\nRow proportions (each cell ÷ its row total):\n\ncat_stats(coffee$caffeine, coffee$taste, prop = \"row\")\n\n#&gt; Continguency Table \n#&gt;  \n#&gt;               No            Yes             Row Totals     \n#&gt; Decaf         \"26 / 0.208\"  \"99 / 0.792\"    \"125 / 0.0352\" \n#&gt; Full caffeine \"66 / 0.0203\" \"3178 / 0.9797\" \"3244 / 0.9143\"\n#&gt; Half caff     \"6 / 0.0335\"  \"173 / 0.9665\"  \"179 / 0.0505\" \n#&gt; Col Totals    \"98 / 0.0276\" \"3450 / 0.9724\" \"Total: 3548\"  \n#&gt; \n#&gt; Cell Contents: n / row % \n#&gt; Col Totals Contents: n / row % \n#&gt; Row Totals Contents: n / col % \n#&gt; Column Variable: coffee$taste\n#&gt; Row Variable: coffee$caffeine\n\n\nColumn proportions (each cell ÷ its column total):\n\ncat_stats(coffee$caffeine, coffee$taste, prop = \"col\")\n\n#&gt; Continguency Table \n#&gt;  \n#&gt;               No            Yes             Row Totals     \n#&gt; Decaf         \"26 / 0.2653\" \"99 / 0.0287\"   \"125 / 0.0352\" \n#&gt; Full caffeine \"66 / 0.6735\" \"3178 / 0.9212\" \"3244 / 0.9143\"\n#&gt; Half caff     \"6 / 0.0612\"  \"173 / 0.0501\"  \"179 / 0.0505\" \n#&gt; Col Totals    \"98 / 0.0276\" \"3450 / 0.9724\" \"Total: 3548\"  \n#&gt; \n#&gt; Cell Contents: n / col % \n#&gt; Col Totals Contents: n / row % \n#&gt; Row Totals Contents: n / col % \n#&gt; Column Variable: coffee$taste\n#&gt; Row Variable: coffee$caffeine"
+    "text": "5.1 Cross‑tabulation (two‑way table)\n\nRows: categories of one variable\nColumns: categories of the second variable\nReport counts or proportions by table, row, or column\n\nALL:\n\ncat_stats(coffee$caffeine, coffee$taste)\n\n#&gt; Continguency Table \n#&gt;  \n#&gt; Column Variable: coffee$taste\n#&gt; Row Variable: coffee$caffeine\n\n\n#&gt; $frequency\n#&gt;                \n#&gt;                   No  Yes\n#&gt;   Decaf           26   99\n#&gt;   Full caffeine   66 3178\n#&gt;   Half caff        6  173\n#&gt; \n#&gt; $table_prop\n#&gt;                \n#&gt;                     No    Yes\n#&gt;   Decaf         0.0073 0.0279\n#&gt;   Full caffeine 0.0186 0.8957\n#&gt;   Half caff     0.0017 0.0488\n#&gt; \n#&gt; $row_prop\n#&gt;                \n#&gt;                     No    Yes\n#&gt;   Decaf         0.2080 0.7920\n#&gt;   Full caffeine 0.0203 0.9797\n#&gt;   Half caff     0.0335 0.9665\n#&gt; \n#&gt; $col_prop\n#&gt;                \n#&gt;                     No    Yes\n#&gt;   Decaf         0.2653 0.0287\n#&gt;   Full caffeine 0.6735 0.9212\n#&gt;   Half caff     0.0612 0.0501\n\n\nTable proportions (each cell ÷ grand total):\n\ncat_stats(coffee$caffeine, coffee$taste, prop = \"table\")\n\n#&gt; Continguency Table \n#&gt;  \n#&gt; Column Variable: coffee$taste\n#&gt; Row Variable: coffee$caffeine\n\n\n#&gt; $frequency\n#&gt;                \n#&gt;                   No  Yes\n#&gt;   Decaf           26   99\n#&gt;   Full caffeine   66 3178\n#&gt;   Half caff        6  173\n#&gt; \n#&gt; $table_prop\n#&gt;                \n#&gt;                     No    Yes\n#&gt;   Decaf         0.0073 0.0279\n#&gt;   Full caffeine 0.0186 0.8957\n#&gt;   Half caff     0.0017 0.0488\n\n\nRow proportions (each cell ÷ its row total):\n\ncat_stats(coffee$caffeine, coffee$taste, prop = \"row\")\n\n#&gt; Continguency Table \n#&gt;  \n#&gt; Column Variable: coffee$taste\n#&gt; Row Variable: coffee$caffeine\n\n\n#&gt; $frequency\n#&gt;                \n#&gt;                   No  Yes\n#&gt;   Decaf           26   99\n#&gt;   Full caffeine   66 3178\n#&gt;   Half caff        6  173\n#&gt; \n#&gt; $row_prop\n#&gt;                \n#&gt;                     No    Yes\n#&gt;   Decaf         0.2080 0.7920\n#&gt;   Full caffeine 0.0203 0.9797\n#&gt;   Half caff     0.0335 0.9665\n\n\nColumn proportions (each cell ÷ its column total):\n\ncat_stats(coffee$caffeine, coffee$taste, prop = \"col\")\n\n#&gt; Continguency Table \n#&gt;  \n#&gt; Column Variable: coffee$taste\n#&gt; Row Variable: coffee$caffeine\n\n\n#&gt; $frequency\n#&gt;                \n#&gt;                   No  Yes\n#&gt;   Decaf           26   99\n#&gt;   Full caffeine   66 3178\n#&gt;   Half caff        6  173\n#&gt; \n#&gt; $col_prop\n#&gt;                \n#&gt;                     No    Yes\n#&gt;   Decaf         0.2653 0.0287\n#&gt;   Full caffeine 0.6735 0.9212\n#&gt;   Half caff     0.0612 0.0501"
   },
   {
     "objectID": "rcode/cat_stats.html#bar-plots",
@@ -4522,11 +4522,18 @@
     "text": "6.2 Stacked bar plots\nTemplate:\nggplot(DATA, aes(x = VAR1, fill = VAR2)) +\n  geom_bar()\nExample (stacked counts):\n\nggplot(coffee, aes(x = caffeine, fill = taste)) +\n  geom_bar()\n\n\n\n\n\n\n\n\nExample (horizontal):\n\nggplot(coffee, aes(y = caffeine, fill = taste)) +\n  geom_bar()\n\n\n\n\n\n\n\n\nTemplate (stacked proportions):\nggplot(DATA, aes(x = VAR1, fill = VAR2)) +\n  geom_bar(position = \"fill\") +\n  labs(y = \"Proportion\")"
   },
   {
+    "objectID": "rcode/cat_stats.html#dodged-bar-plot",
+    "href": "rcode/cat_stats.html#dodged-bar-plot",
+    "title": "Categorical Data",
+    "section": "6.3 Dodged Bar Plot",
+    "text": "6.3 Dodged Bar Plot\nTemplate:\nggplot(DATA, aes(x = VAR1, fill = VAR2)) +\n  geom_bar(position=position_dodge())\nExample (dodged counts):\n\nggplot(coffee, aes(x = caffeine, fill = taste)) +\ngeom_bar(position = position_dodge())\n\n\n\n\n\n\n\n\nExample (horizontal):\n\nggplot(coffee, aes(y = caffeine, fill = taste)) +\ngeom_bar(position = position_dodge())"
+  },
+  {
     "objectID": "rcode/cat_stats.html#pie-charts-use-sparingly",
     "href": "rcode/cat_stats.html#pie-charts-use-sparingly",
     "title": "Categorical Data",
-    "section": "6.3 Pie charts (use sparingly)",
-    "text": "6.3 Pie charts (use sparingly)\nNote: Pie charts can be harder to compare precisely than bars. If you use them, label clearly.\nTemplate:\ndf_pie &lt;- cat_stats(DATA$VAR, tbl_df = TRUE)$table\nggplot(df_pie, aes(cat = Category, val = n, fill = Category)) +\n  geom_pie()\nExample:\n\ncoffee_pie &lt;- cat_stats(coffee$caffeine, tbl_df = TRUE)$table\nggplot(coffee_pie, aes(cat = Category, val = n, fill = Category)) +\n  geom_pie()"
+    "section": "6.4 Pie charts (use sparingly)",
+    "text": "6.4 Pie charts (use sparingly)\nNote: Pie charts can be harder to compare precisely than bars. If you use them, label clearly.\nTemplate:\nggplot(DATA, aes(fill = VAR)) +\n  geom_pie()\nExample:\n\nggplot(coffee, aes(fill = caffeine)) +\n  geom_pie()"
   },
   {
     "objectID": "rcode/cat_stats.html#frequency-table",
@@ -4574,22 +4581,29 @@
     "objectID": "rcode/cat_stats.html#stacked-bar-counts",
     "href": "rcode/cat_stats.html#stacked-bar-counts",
     "title": "Categorical Data",
-    "section": "7.7 Stacked bar (counts)",
-    "text": "7.7 Stacked bar (counts)\nggplot(DATA, aes(x = VAR1, fill = VAR2)) + geom_bar()\n\nDATA → the name of your dataset (e.g., coffee).\nVAR1 → a single categorical variable (e.g., caffeine).\nVAR2 → a single categorical variable (e.g., taste)."
+    "section": "7.7 Stacked Bar (counts)",
+    "text": "7.7 Stacked Bar (counts)\nggplot(DATA, aes(x = VAR1, fill = VAR2)) + geom_bar()\n\nDATA → the name of your dataset (e.g., coffee).\nVAR1 → a single categorical variable (e.g., caffeine).\nVAR2 → a single categorical variable (e.g., taste)."
   },
   {
     "objectID": "rcode/cat_stats.html#stacked-bar-proportions",
     "href": "rcode/cat_stats.html#stacked-bar-proportions",
     "title": "Categorical Data",
-    "section": "7.8 Stacked bar (proportions)",
-    "text": "7.8 Stacked bar (proportions)\nggplot(DATA, aes(x = VAR1, fill = VAR2)) +\n  geom_bar(position = \"fill\") + labs(y = \"Proportion\")\n\nDATA → the name of your dataset (e.g., coffee).\nVAR1 → a single categorical variable (e.g., caffeine).\nVAR2 → a single categorical variable (e.g., taste)."
+    "section": "7.8 Stacked Bar (proportions)",
+    "text": "7.8 Stacked Bar (proportions)\nggplot(DATA, aes(x = VAR1, fill = VAR2)) +\n  geom_bar(position = \"fill\") + labs(y = \"Proportion\")\n\nDATA → the name of your dataset (e.g., coffee).\nVAR1 → a single categorical variable (e.g., caffeine).\nVAR2 → a single categorical variable (e.g., taste)."
+  },
+  {
+    "objectID": "rcode/cat_stats.html#dodeged-bar-plot",
+    "href": "rcode/cat_stats.html#dodeged-bar-plot",
+    "title": "Categorical Data",
+    "section": "7.9 Dodeged Bar Plot",
+    "text": "7.9 Dodeged Bar Plot\nggplot(DATA, aes(x = VAR1, fill = VAR2)) +\n  geom_bar(position=position_dodge())\n\nDATA → the name of your dataset (e.g., coffee).\nVAR1 → a single categorical variable (e.g., caffeine).\nVAR2 → a single categorical variable (e.g., taste)."
   },
   {
     "objectID": "rcode/cat_stats.html#pie-chart",
     "href": "rcode/cat_stats.html#pie-chart",
     "title": "Categorical Data",
-    "section": "7.9 Pie Chart",
-    "text": "7.9 Pie Chart\ndf_pie &lt;- cat_stats(DATA$VAR, tbl_df = TRUE)$table\nggplot(df_pie, aes(cat = Category, val = n, fill = Category)) + \n    geom_pie()\n\nDATA → the name of your dataset (e.g., coffee).\nVAR → a single categorical variable (e.g., caffeine)."
+    "section": "7.10 Pie Chart",
+    "text": "7.10 Pie Chart\nggplot(DATA, aes(fill = VAR)) +\n  geom_pie()\n\nDATA → the name of your dataset (e.g., coffee).\nVAR → a single categorical variable (e.g., caffeine)."
   },
   {
     "objectID": "rcode/num_stats.html",
@@ -4765,6 +4779,20 @@
     "title": "Numerical Data",
     "section": "6.11 Scatter Plot + trend line",
     "text": "6.11 Scatter Plot + trend line\nggplot(DATA, aes(x = VAR1, y = VAR2)) + \n    geom_point() + \n    geom_smooth(method = \"lm\", se = TRUE)\n\nDATA → the name of your dataset (e.g., trashwheel).\nVAR1 → a single categorical variable (e.g., PlasticBottles).\nVAR2 → a single categorical variable (e.g., PlasticBags)."
+  },
+  {
+    "objectID": "rcode/num_stats.html#vertical-lines",
+    "href": "rcode/num_stats.html#vertical-lines",
+    "title": "Numerical Data",
+    "section": "6.12 Vertical Lines",
+    "text": "6.12 Vertical Lines\n\nggplot(DATA, aes(VAR)) +\n  geom_density() +\n  geom_vline(xintercept = XVAL)\n\n#&gt; Error:\n#&gt; ! object 'DATA' not found\n\n\n\nDATA → Name of your dataset (e.g., trashwheel).\nVAR → Name of the variable to create the plot (e.g., PlasticBottles).\nXVAL → Number to place the vertical line (e.g., 1525)."
+  },
+  {
+    "objectID": "rcode/num_stats.html#horizontal-lines",
+    "href": "rcode/num_stats.html#horizontal-lines",
+    "title": "Numerical Data",
+    "section": "6.13 Horizontal Lines",
+    "text": "6.13 Horizontal Lines\n\nggplot(DATA, aes(VAR)) +\n  geom_density() +\n  geom_hline(yintercept = YVAL)\n\n#&gt; Error:\n#&gt; ! object 'DATA' not found\n\n\n\nDATA → Name of your dataset (e.g., trashwheel).\nVAR → Name of the variable to create the plot (e.g., PlasticBottles).\nYVAL → Number to place the vertical line (e.g., 0.3)."
   },
   {
     "objectID": "rcode/regression.html",

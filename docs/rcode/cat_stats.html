@@ -193,7 +193,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#relative-frequency-bar-plot" id="toc-relative-frequency-bar-plot" class="nav-link" data-scroll-target="#relative-frequency-bar-plot"><span class="header-section-number">6.1.2</span> Relative frequency bar plot</a></li>
   </ul></li>
   <li><a href="#stacked-bar-plots" id="toc-stacked-bar-plots" class="nav-link" data-scroll-target="#stacked-bar-plots"><span class="header-section-number">6.2</span> Stacked bar plots</a></li>
-  <li><a href="#pie-charts-use-sparingly" id="toc-pie-charts-use-sparingly" class="nav-link" data-scroll-target="#pie-charts-use-sparingly"><span class="header-section-number">6.3</span> Pie charts (use sparingly)</a></li>
+  <li><a href="#dodged-bar-plot" id="toc-dodged-bar-plot" class="nav-link" data-scroll-target="#dodged-bar-plot"><span class="header-section-number">6.3</span> Dodged Bar Plot</a></li>
+  <li><a href="#pie-charts-use-sparingly" id="toc-pie-charts-use-sparingly" class="nav-link" data-scroll-target="#pie-charts-use-sparingly"><span class="header-section-number">6.4</span> Pie charts (use sparingly)</a></li>
   </ul></li>
   <li><a href="#appendix-minimal-templates-copypaste" id="toc-appendix-minimal-templates-copypaste" class="nav-link" data-scroll-target="#appendix-minimal-templates-copypaste"><span class="header-section-number">7</span> Appendix: minimal templates (copy‑paste)</a>
   <ul class="collapse">
@@ -203,9 +204,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#bar-plot-proportion" id="toc-bar-plot-proportion" class="nav-link" data-scroll-target="#bar-plot-proportion"><span class="header-section-number">7.4</span> Bar Plot: Proportion</a></li>
   <li><a href="#cross-tabulations-all" id="toc-cross-tabulations-all" class="nav-link" data-scroll-target="#cross-tabulations-all"><span class="header-section-number">7.5</span> Cross-tabulations (all)</a></li>
   <li><a href="#cross-tabulations-proportions" id="toc-cross-tabulations-proportions" class="nav-link" data-scroll-target="#cross-tabulations-proportions"><span class="header-section-number">7.6</span> Cross-tabulations (proportions)</a></li>
-  <li><a href="#stacked-bar-counts" id="toc-stacked-bar-counts" class="nav-link" data-scroll-target="#stacked-bar-counts"><span class="header-section-number">7.7</span> Stacked bar (counts)</a></li>
-  <li><a href="#stacked-bar-proportions" id="toc-stacked-bar-proportions" class="nav-link" data-scroll-target="#stacked-bar-proportions"><span class="header-section-number">7.8</span> Stacked bar (proportions)</a></li>
-  <li><a href="#pie-chart" id="toc-pie-chart" class="nav-link" data-scroll-target="#pie-chart"><span class="header-section-number">7.9</span> Pie Chart</a></li>
+  <li><a href="#stacked-bar-counts" id="toc-stacked-bar-counts" class="nav-link" data-scroll-target="#stacked-bar-counts"><span class="header-section-number">7.7</span> Stacked Bar (counts)</a></li>
+  <li><a href="#stacked-bar-proportions" id="toc-stacked-bar-proportions" class="nav-link" data-scroll-target="#stacked-bar-proportions"><span class="header-section-number">7.8</span> Stacked Bar (proportions)</a></li>
+  <li><a href="#dodeged-bar-plot" id="toc-dodeged-bar-plot" class="nav-link" data-scroll-target="#dodeged-bar-plot"><span class="header-section-number">7.9</span> Dodeged Bar Plot</a></li>
+  <li><a href="#pie-chart" id="toc-pie-chart" class="nav-link" data-scroll-target="#pie-chart"><span class="header-section-number">7.10</span> Pie Chart</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -286,8 +288,8 @@ Tip
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-f1b14c442c536464cd36" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-f1b14c442c536464cd36">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10"],["pLRj4B","lNlkMX","xdNOWd","xdN8z5","NAB1WB","YZVORq","Al4vRB","42N6r5","zKQ92a","AlbgaB"],["55-64 years old","35-44 years old","25-34 years old","25-34 years old","25-34 years old","35-44 years old","45-54 years old","25-34 years old","&gt;65 years old","25-34 years old"],["3","2","1","2","2","4","3","1","2","2"],["At the office, At home, At a cafe","At home","At home, On the go, At the office, At a cafe","At home, At a cafe, At the office","At home, At the office, At a cafe","At home, At a cafe","At the office, On the go, At a cafe","At home","At home","At the office, On the go, At home"],["Other","Espresso","Pour over, Espresso","Pour over","Pour over","Espresso, Bean-to-cup machine, Cold brew, Pour over",null,"Espresso, Pour over, Coffee extract (e.g. Cometeer)","Pour over, French press, Espresso, Pod/capsule machine (e.g. Keurig/Nespresso)","Pour over, Espresso, French press, Coffee brewing machine (e.g. Mr. Coffee)"],["Aeropress",null,null,null,null,null,null,null,null,null],[null,null,"Specialty coffee shop, National chain (e.g. Starbucks, Dunkin)",null,null,null,"Specialty coffee shop, National chain (e.g. Starbucks, Dunkin), Local cafe",null,null,"Specialty coffee shop, Other, Local cafe"],[null,null,null,null,null,null,null,null,null,"Online through roasters"],["Pourover","Cappuccino","Espresso","Pourover","Pourover","Espresso","Americano","Latte","Espresso","Pourover"],[null,null,null,null,null,null,null,null,null,null],["No - just black","Milk, dairy alternative, or coffee creamer","No - just black, Milk, dairy alternative, or coffee creamer","No - just black","No - just black","No - just black","No - just black, Milk, dairy alternative, or coffee creamer","No - just black","No - just black, Milk, dairy alternative, or coffee creamer","No - just black"],[null,null,null,null,null,null,null,null,null,null],[null,"Whole milk","Whole milk",null,null,null,"Almond milk, Half and half",null,"Half and half, Whole milk",null],[null,null,null,null,null,null,null,null,null,null],["Chocolatey","Chocolatey","Fruity","Fruity","Fruity","Fruity","Full Bodied","Caramalized","Full Bodied","Fruity"],["Somewhat strong","Medium","Medium","Somewhat strong","Medium","Somewhat strong","Somewhat strong","Very strong","Somewhat strong","Somewhat strong"],["Blonde","Medium","Light","Medium","Light","Light","Italian","Medium","Medium","Light"],["Full caffeine","Full caffeine","Full caffeine","Full caffeine","Full caffeine","Full caffeine","Full caffeine","Full caffeine","Full caffeine","Full caffeine"],[7,8,8,9,7,9,6,6,7,7],[3,2,2,1,1,2,4,2,2,2],[2,2,4,4,4,4,3,1,3,5],[4,4,4,3,4,5,3,3,5,4],["Rich bold","warm tea","Mellow, bright but not sour, juicy","light body, generally balances, mildly vegetal, peach, earthy- it's pretty good but not my favorite","Chocolate Orange","By far my favorite. I would serve this to company. This is coffee that I would love to drink while I'm having a conversation, and I could definitely have more than one cup of it.",null,"Subtle","Sweet, honey, berry","Nice sharp acidity. Definitely going to order from this roaster soon."],[3,3,2,4,3,4,3,2,2,2],[1,2,3,1,3,1,2,2,2,2],[5,2,3,1,2,1,4,2,3,2],["Smooth","astringent, darker, little nutty","Balanced, straightforward, not complex, good aftertaste","Smoky, very bitter, slight chocolate and caramel sugars, flat, lacking sweetness, tastes of stale coffee- I typically swoon over George Howell (there was a particular Kenyan SL-28 from them that won my heart) but I did not like this one bit. Very K-cuppy","Woody","This tasted like coffee I would get at a nice hotel. Just fine, but nothing to rave about.",null,null,"Chocolate, nutty, spicey, herbal","Tea-like body and taste. Not a lot going for it."],[4,3,2,4,4,3,3,3,3,3],[3,1,2,2,2,3,3,3,3,1],[2,3,2,2,3,2,3,3,4,3],["Sour","astringent tannins, minor-ly tea like","Very plain, tastes like COFFEE, doesn't linger after swallowing","Bit roasty, deep caramels, slight astringency, more balanced and sweet on cooling- this one was fine and is definitely a crowd-pleaser but reminded me of drip from Caribou/Pike Place from Starbucks. Not my fav.","dark chocolate","If I was serve this in a diner, I would think that it was really good diner coffee. That was a sense that we had when we were doing the tasting. If I got it in a third wave shop, I'd be disappointed, but in a diner it would be a pleasant surprise.",null,"darker","Floral, jasmin, earthy, full body","A bit more tasty than others. Nutty and classic in taste."],[3,1,2,1,1,3,5,2,2,1],[3,2,2,3,4,4,4,3,null,5],[2,5,3,5,5,5,1,4,4,5],["Empty","smooth, blueberries, lovely","Very light body, no staying power, weirdly both bitter and acidic, I have actually no idea what this tastes like","Sweet, juicy, some cherry, deep berry, round, delicious fruit punch bomb explosion of happiness. Please sir, may I have some more?","Fruit, Strawberry","This was a chameleon of a coffee. It seemed to be really dependent on which coffee we had beforehand. If I drink this after the George Howell, it tasted funky. Almost cheesy. After equator, it was very fruity. After Klatch, more of the roasting notes came out. This is a coffee that I would want to drink by myself so that I could really ponder it while I drink it. I also probably couldn't have more than one cup of it at a time.",null,"favorite, complex","Unique, floral, hibiscus, fruity, for spécial days but not everyday consumptions.","This was our favorite. Reminds us of blackberries."],["Coffee B","Coffee A","Coffee A","Coffee A","Coffee A","Coffee A","Coffee B","Coffee B","Coffee A","Coffee A"],["Coffee A","Coffee D","Coffee A","Coffee D","Coffee D","Coffee D","Coffee A","Coffee D","Coffee A","Coffee D"],["Coffee B","Coffee D","Coffee A","Coffee D","Coffee D","Coffee A","Coffee B","Coffee D","Coffee A","Coffee D"],["I primarily work in person","I primarily work from home","I do a mix of both","I primarily work in person","I primarily work in person","I primarily work from home","I do a mix of both","I primarily work from home",null,"I primarily work in person"],["$20-$40","$40-$60","$40-$60","$20-$40","$40-$60","$40-$60","$80-$100","$20-$40",null,"$40-$60"],["It tastes good, I need the caffeine","It tastes good","It tastes good","It tastes good, Other","It tastes good, I need the caffeine, I need the ritual","It tastes good, I need the caffeine, I need the ritual","It tastes good, I need the caffeine, I need the ritual","It tastes good",null,"It tastes good, I need the ritual"],[null,null,null,"My wife and I are both coffee professionals",null,null,null,null,null,null],["Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes",null,"Yes"],["Yes","Yes","Yes","Yes","Yes","Yes","No","Yes",null,"Yes"],["$6-$8","$10-$15","$8-$10","$15-$20","$6-$8","$10-$15","$8-$10","$6-$8",null,"$6-$8"],["$2-$4","$15-$20","$15-$20","$15-$20","$6-$8","More than $20","$6-$8","$6-$8",null,"$8-$10"],["No","Yes","Yes","Yes","Yes","Yes","Yes","No",null,"No"],["$100-$300","More than $1,000","More than $1,000","More than $1,000","$300-$500","More than $1,000","More than $1,000","$100-$300",null,null],["Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes",null,null],["Male","Female","Male","Male","Male","Male","Male","Male",null,"Male"],[null,null,null,null,null,null,null,null,null,null],["Doctorate or professional degree","Some college or associate's degree","Master's degree","Bachelor's degree","Bachelor's degree","Bachelor's degree","Master's degree","Some college or associate's degree",null,"Some college or associate's degree"],["White/Caucasian","White/Caucasian","White/Caucasian","White/Caucasian","White/Caucasian","White/Caucasian","White/Caucasian","White/Caucasian",null,"White/Caucasian"],[null,null,null,null,null,null,null,null,null,null],["Employed full-time","Employed full-time","Student","Employed full-time","Employed full-time","Employed full-time","Employed full-time","Student",null,"Employed full-time"],["3","None","None","1","None","None","2","None",null,"None"],["Republican","Independent","Democrat","No affiliation","Democrat","Democrat","Independent","Democrat",null,"Democrat"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>submission_id<\/th>\n      <th>age<\/th>\n      <th>cups<\/th>\n      <th>where_drink<\/th>\n      <th>brew<\/th>\n      <th>brew_other<\/th>\n      <th>purchase<\/th>\n      <th>purchase_other<\/th>\n      <th>favorite<\/th>\n      <th>favorite_specify<\/th>\n      <th>additions<\/th>\n      <th>additions_other<\/th>\n      <th>dairy<\/th>\n      <th>sweetener<\/th>\n      <th>style<\/th>\n      <th>strength<\/th>\n      <th>roast_level<\/th>\n      <th>caffeine<\/th>\n      <th>expertise<\/th>\n      <th>coffee_a_bitterness<\/th>\n      <th>coffee_a_acidity<\/th>\n      <th>coffee_a_personal_preference<\/th>\n      <th>coffee_a_notes<\/th>\n      <th>coffee_b_bitterness<\/th>\n      <th>coffee_b_acidity<\/th>\n      <th>coffee_b_personal_preference<\/th>\n      <th>coffee_b_notes<\/th>\n      <th>coffee_c_bitterness<\/th>\n      <th>coffee_c_acidity<\/th>\n      <th>coffee_c_personal_preference<\/th>\n      <th>coffee_c_notes<\/th>\n      <th>coffee_d_bitterness<\/th>\n      <th>coffee_d_acidity<\/th>\n      <th>coffee_d_personal_preference<\/th>\n      <th>coffee_d_notes<\/th>\n      <th>prefer_abc<\/th>\n      <th>prefer_ad<\/th>\n      <th>prefer_overall<\/th>\n      <th>wfh<\/th>\n      <th>total_spend<\/th>\n      <th>why_drink<\/th>\n      <th>why_drink_other<\/th>\n      <th>taste<\/th>\n      <th>know_source<\/th>\n      <th>most_paid<\/th>\n      <th>most_willing<\/th>\n      <th>value_cafe<\/th>\n      <th>spent_equipment<\/th>\n      <th>value_equipment<\/th>\n      <th>gender<\/th>\n      <th>gender_specify<\/th>\n      <th>education_level<\/th>\n      <th>ethnicity_race<\/th>\n      <th>ethnicity_race_specify<\/th>\n      <th>employment_status<\/th>\n      <th>number_children<\/th>\n      <th>political_affiliation<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"p","pageLength":5,"columnDefs":[{"className":"dt-right","targets":[19,20,21,22,24,25,26,28,29,30,32,33,34]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"submission_id","targets":1},{"name":"age","targets":2},{"name":"cups","targets":3},{"name":"where_drink","targets":4},{"name":"brew","targets":5},{"name":"brew_other","targets":6},{"name":"purchase","targets":7},{"name":"purchase_other","targets":8},{"name":"favorite","targets":9},{"name":"favorite_specify","targets":10},{"name":"additions","targets":11},{"name":"additions_other","targets":12},{"name":"dairy","targets":13},{"name":"sweetener","targets":14},{"name":"style","targets":15},{"name":"strength","targets":16},{"name":"roast_level","targets":17},{"name":"caffeine","targets":18},{"name":"expertise","targets":19},{"name":"coffee_a_bitterness","targets":20},{"name":"coffee_a_acidity","targets":21},{"name":"coffee_a_personal_preference","targets":22},{"name":"coffee_a_notes","targets":23},{"name":"coffee_b_bitterness","targets":24},{"name":"coffee_b_acidity","targets":25},{"name":"coffee_b_personal_preference","targets":26},{"name":"coffee_b_notes","targets":27},{"name":"coffee_c_bitterness","targets":28},{"name":"coffee_c_acidity","targets":29},{"name":"coffee_c_personal_preference","targets":30},{"name":"coffee_c_notes","targets":31},{"name":"coffee_d_bitterness","targets":32},{"name":"coffee_d_acidity","targets":33},{"name":"coffee_d_personal_preference","targets":34},{"name":"coffee_d_notes","targets":35},{"name":"prefer_abc","targets":36},{"name":"prefer_ad","targets":37},{"name":"prefer_overall","targets":38},{"name":"wfh","targets":39},{"name":"total_spend","targets":40},{"name":"why_drink","targets":41},{"name":"why_drink_other","targets":42},{"name":"taste","targets":43},{"name":"know_source","targets":44},{"name":"most_paid","targets":45},{"name":"most_willing","targets":46},{"name":"value_cafe","targets":47},{"name":"spent_equipment","targets":48},{"name":"value_equipment","targets":49},{"name":"gender","targets":50},{"name":"gender_specify","targets":51},{"name":"education_level","targets":52},{"name":"ethnicity_race","targets":53},{"name":"ethnicity_race_specify","targets":54},{"name":"employment_status","targets":55},{"name":"number_children","targets":56},{"name":"political_affiliation","targets":57}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-ee0e461c0b729eb7a550" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-ee0e461c0b729eb7a550">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10"],["bl4QV6","7d9kWR","AlbXOy","24xGdL","zKQ5y0","XeBplg","NAB2dj","zK0PpE","pLP261","EPb9ll"],["25-34 years old","35-44 years old","35-44 years old","35-44 years old","35-44 years old","25-34 years old","25-34 years old","35-44 years old","25-34 years old","18-24 years old"],["1","4","Less than 1","1","3","1","2",null,"3","1"],["At the office","At home","At home","At home, At the office","At the office, At home, At a cafe","At home","At the office, At home","At home, At the office","At home, At the office","At home"],[null,"Pour over, Espresso","Other","Pour over, Espresso, Coffee extract (e.g. Cometeer)","Pour over, Espresso, Bean-to-cup machine","Pour over, Espresso, Other","Pour over, French press, Espresso","French press, Espresso","Pour over","French press, Pod/capsule machine (e.g. Keurig/Nespresso)"],[null,null,"Aeropress",null,null,"AeroPress",null,"Aeropress",null,null],[null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null],["Mocha","Espresso","Latte","Pourover","Espresso","Pourover","Pourover","Americano","Pourover","Regular drip coffee"],[null,null,null,null,null,null,null,null,null,null],["Milk, dairy alternative, or coffee creamer","No - just black","No - just black","No - just black","Milk, dairy alternative, or coffee creamer, No - just black","No - just black, Milk, dairy alternative, or coffee creamer","No - just black",null,"No - just black","No - just black"],[null,null,null,null,null,null,null,null,null,null],["Almond milk",null,null,null,"Skim milk","Whole milk, Flavored coffee creamer",null,null,null,null],[null,null,null,null,null,null,null,null,null,null],["Bright","Sweet","Fruity","Bright","Full Bodied","Caramalized","Chocolatey",null,"Juicy","Full Bodied"],["Medium","Medium","Very strong","Medium","Somewhat strong","Somewhat strong","Medium","Somewhat strong","Somewhat light","Somewhat strong"],["Medium","Light","Light","Light","Dark","Medium","Medium","Medium","Nordic","Medium"],["Full caffeine","Full caffeine","Half caff","Full caffeine","Full caffeine","Full caffeine","Full caffeine","Full caffeine","Full caffeine","Full caffeine"],[1,10,3,7,7,7,6,7,6,4],[1,1,3,3,2,2,2,null,1,3],[4,3,4,5,5,4,3,null,5,4],[4,4,4,2,5,5,3,null,5,3],[null,"Cherry\n","stone fruit","Astringent and a bit sweet","Bright, citrusy. Acid-forward. Enjoyable but not first thing in the morning.","Fruity, juicy, apple-like.","Clean\nFruity\nCrisp",null,"Fruity",null],[3,3,3,4,1,3,4,null,1,3],[2,2,3,2,1,2,2,null,3,3],[5,3,2,4,3,3,2,null,3,4],[null,"Vanilla, tea, dark chocolate","chocolate","Darker, has less “coffee” taste","Smooth. Little body, a bit empty but good. Easy.","Kindof smokey, slight chocolate.","Chocolate\nMud",null,"Flat",null],[3,4,4,3,3,4,3,null,3,2],[3,1,4,3,3,1,4,null,3,1],[3,2,2,5,5,4,4,null,2,5],[null,"Kiwi fruit, milk chocolate, stale, berries",null,"Clean, sweet, a bit fruity","Balanced. Medium body. Easy but substantial. Good for every time of the day.","Some sort of stonefruit?","Increasing bitterness as cooled",null,"Nutty",null],[3,2,2,3,4,1,3,null,2,3],[5,4,5,5,4,5,4,null,4,5],[1,4,5,3,1,5,4,null,4,1],[null,"Fermented fruit, cherries, sour","fruity, tea (rooibos w/o the tobacco-y flavor), raspberry leaf","Astringent","Citrus forward with earthy aftertaste. Initially a bit fruity and sour then moves into earthy. A bit dirty in aftertaste.","Very fruity, very juicy, bright, tea-like.","Fermented fruit\nComplex",null,"Fermented",null],["Coffee B","Coffee A","Coffee A","Coffee C","Coffee C","Coffee A","Coffee C",null,"Coffee A","Coffee C"],["Coffee A","Coffee A","Coffee D","Coffee A","Coffee A","Coffee A","Coffee D",null,"Coffee A","Coffee A"],["Coffee A","Coffee A","Coffee C","Coffee C","Coffee C","Coffee A","Coffee D",null,"Coffee A","Coffee C"],["I primarily work in person","I primarily work in person","I primarily work from home","I primarily work from home","I primarily work from home","I primarily work from home","I do a mix of both",null,"I do a mix of both","I do a mix of both"],["&lt;$20","$80-$100","&lt;$20","$40-$60","$40-$60","$20-$40","$20-$40",null,"$40-$60","&lt;$20"],["I need the caffeine","I need the ritual, I need the caffeine, It tastes good","I need the caffeine, It tastes good","It tastes good, I need the ritual","It tastes good","It tastes good, I need the caffeine","It tastes good",null,"It tastes good, I need the caffeine, I need the ritual","It tastes good, I need the caffeine"],[null,null,null,null,null,null,null,null,null,null],["Yes","Yes","No","Yes","Yes","Yes","Yes",null,"Yes","Yes"],["No","Yes","Yes","No","Yes","Yes","No",null,"Yes","No"],["$8-$10","$6-$8","$4-$6","$6-$8","$8-$10","$4-$6","$10-$15",null,"$10-$15","$4-$6"],["$8-$10","$15-$20","$4-$6","More than $20","$10-$15","$6-$8","$10-$15",null,"$10-$15","$6-$8"],["Yes","No","No","No","Yes","Yes","Yes",null,"No","No"],["$50-$100","More than $1,000","Less than $20","More than $1,000","$500-$1000","$500-$1000","$500-$1000",null,"More than $1,000","$20-$50"],["Yes","Yes","Yes","Yes","Yes","Yes","Yes",null,"Yes","Yes"],["Female","Male","Female","Male","Male","Female","Male",null,"Male","Female"],[null,null,null,null,null,null,null,null,null,null],["Some college or associate's degree","Bachelor's degree","Master's degree","Some college or associate's degree","Doctorate or professional degree","Master's degree","Doctorate or professional degree",null,"Doctorate or professional degree","Bachelor's degree"],["White/Caucasian","White/Caucasian","White/Caucasian","White/Caucasian","White/Caucasian","White/Caucasian","White/Caucasian",null,"White/Caucasian","White/Caucasian"],[null,null,null,null,null,null,null,null,null,null],["Employed full-time","Employed part-time","Homemaker","Employed full-time","Employed full-time","Homemaker","Employed full-time",null,"Employed full-time","Employed part-time"],["None","None","2","None","None","None","None",null,"None","None"],["No affiliation","Democrat","No affiliation","Democrat","No affiliation",null,"Independent",null,"No affiliation","Democrat"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>submission_id<\/th>\n      <th>age<\/th>\n      <th>cups<\/th>\n      <th>where_drink<\/th>\n      <th>brew<\/th>\n      <th>brew_other<\/th>\n      <th>purchase<\/th>\n      <th>purchase_other<\/th>\n      <th>favorite<\/th>\n      <th>favorite_specify<\/th>\n      <th>additions<\/th>\n      <th>additions_other<\/th>\n      <th>dairy<\/th>\n      <th>sweetener<\/th>\n      <th>style<\/th>\n      <th>strength<\/th>\n      <th>roast_level<\/th>\n      <th>caffeine<\/th>\n      <th>expertise<\/th>\n      <th>coffee_a_bitterness<\/th>\n      <th>coffee_a_acidity<\/th>\n      <th>coffee_a_personal_preference<\/th>\n      <th>coffee_a_notes<\/th>\n      <th>coffee_b_bitterness<\/th>\n      <th>coffee_b_acidity<\/th>\n      <th>coffee_b_personal_preference<\/th>\n      <th>coffee_b_notes<\/th>\n      <th>coffee_c_bitterness<\/th>\n      <th>coffee_c_acidity<\/th>\n      <th>coffee_c_personal_preference<\/th>\n      <th>coffee_c_notes<\/th>\n      <th>coffee_d_bitterness<\/th>\n      <th>coffee_d_acidity<\/th>\n      <th>coffee_d_personal_preference<\/th>\n      <th>coffee_d_notes<\/th>\n      <th>prefer_abc<\/th>\n      <th>prefer_ad<\/th>\n      <th>prefer_overall<\/th>\n      <th>wfh<\/th>\n      <th>total_spend<\/th>\n      <th>why_drink<\/th>\n      <th>why_drink_other<\/th>\n      <th>taste<\/th>\n      <th>know_source<\/th>\n      <th>most_paid<\/th>\n      <th>most_willing<\/th>\n      <th>value_cafe<\/th>\n      <th>spent_equipment<\/th>\n      <th>value_equipment<\/th>\n      <th>gender<\/th>\n      <th>gender_specify<\/th>\n      <th>education_level<\/th>\n      <th>ethnicity_race<\/th>\n      <th>ethnicity_race_specify<\/th>\n      <th>employment_status<\/th>\n      <th>number_children<\/th>\n      <th>political_affiliation<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"p","pageLength":5,"columnDefs":[{"className":"dt-right","targets":[19,20,21,22,24,25,26,28,29,30,32,33,34]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"submission_id","targets":1},{"name":"age","targets":2},{"name":"cups","targets":3},{"name":"where_drink","targets":4},{"name":"brew","targets":5},{"name":"brew_other","targets":6},{"name":"purchase","targets":7},{"name":"purchase_other","targets":8},{"name":"favorite","targets":9},{"name":"favorite_specify","targets":10},{"name":"additions","targets":11},{"name":"additions_other","targets":12},{"name":"dairy","targets":13},{"name":"sweetener","targets":14},{"name":"style","targets":15},{"name":"strength","targets":16},{"name":"roast_level","targets":17},{"name":"caffeine","targets":18},{"name":"expertise","targets":19},{"name":"coffee_a_bitterness","targets":20},{"name":"coffee_a_acidity","targets":21},{"name":"coffee_a_personal_preference","targets":22},{"name":"coffee_a_notes","targets":23},{"name":"coffee_b_bitterness","targets":24},{"name":"coffee_b_acidity","targets":25},{"name":"coffee_b_personal_preference","targets":26},{"name":"coffee_b_notes","targets":27},{"name":"coffee_c_bitterness","targets":28},{"name":"coffee_c_acidity","targets":29},{"name":"coffee_c_personal_preference","targets":30},{"name":"coffee_c_notes","targets":31},{"name":"coffee_d_bitterness","targets":32},{"name":"coffee_d_acidity","targets":33},{"name":"coffee_d_personal_preference","targets":34},{"name":"coffee_d_notes","targets":35},{"name":"prefer_abc","targets":36},{"name":"prefer_ad","targets":37},{"name":"prefer_overall","targets":38},{"name":"wfh","targets":39},{"name":"total_spend","targets":40},{"name":"why_drink","targets":41},{"name":"why_drink_other","targets":42},{"name":"taste","targets":43},{"name":"know_source","targets":44},{"name":"most_paid","targets":45},{"name":"most_willing","targets":46},{"name":"value_cafe","targets":47},{"name":"spent_equipment","targets":48},{"name":"value_equipment","targets":49},{"name":"gender","targets":50},{"name":"gender_specify","targets":51},{"name":"education_level","targets":52},{"name":"ethnicity_race","targets":53},{"name":"ethnicity_race_specify","targets":54},{"name":"employment_status","targets":55},{"name":"number_children","targets":56},{"name":"political_affiliation","targets":57}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -405,79 +407,112 @@ Tip
 <div class="cell-output cell-output-stderr">
 <pre><code>#&gt; Continguency Table 
 #&gt;  
-#&gt;               No                              Yes                              
-#&gt; Decaf         "26 / 0.0073 / 0.208 / 0.2653"  "99 / 0.0279 / 0.792 / 0.0287"   
-#&gt; Full caffeine "66 / 0.0186 / 0.0203 / 0.6735" "3178 / 0.8957 / 0.9797 / 0.9212"
-#&gt; Half caff     "6 / 0.0017 / 0.0335 / 0.0612"  "173 / 0.0488 / 0.9665 / 0.0501" 
-#&gt; Col Totals    "98 / 0.0276"                   "3450 / 0.9724"                  
-#&gt;               Row Totals     
-#&gt; Decaf         "125 / 0.0352" 
-#&gt; Full caffeine "3244 / 0.9143"
-#&gt; Half caff     "179 / 0.0505" 
-#&gt; Col Totals    "Total: 3548"  
-#&gt; 
-#&gt; Cell Contents: n / tbl % / row % / col % 
-#&gt; Col Totals Contents: n / row % 
-#&gt; Row Totals Contents: n / col % 
 #&gt; Column Variable: coffee$taste
 #&gt; Row Variable: coffee$caffeine</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; $frequency
+#&gt;                
+#&gt;                   No  Yes
+#&gt;   Decaf           26   99
+#&gt;   Full caffeine   66 3178
+#&gt;   Half caff        6  173
+#&gt; 
+#&gt; $table_prop
+#&gt;                
+#&gt;                     No    Yes
+#&gt;   Decaf         0.0073 0.0279
+#&gt;   Full caffeine 0.0186 0.8957
+#&gt;   Half caff     0.0017 0.0488
+#&gt; 
+#&gt; $row_prop
+#&gt;                
+#&gt;                     No    Yes
+#&gt;   Decaf         0.2080 0.7920
+#&gt;   Full caffeine 0.0203 0.9797
+#&gt;   Half caff     0.0335 0.9665
+#&gt; 
+#&gt; $col_prop
+#&gt;                
+#&gt;                     No    Yes
+#&gt;   Decaf         0.2653 0.0287
+#&gt;   Full caffeine 0.6735 0.9212
+#&gt;   Half caff     0.0612 0.0501</code></pre>
 </div>
 </div>
 <p><strong>Table proportions</strong> (each cell ÷ grand total):</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat_stats</span>(coffee<span class="sc">$</span>caffeine, coffee<span class="sc">$</span>taste, <span class="at">prop =</span> <span class="st">"table"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat_stats</span>(coffee<span class="sc">$</span>caffeine, coffee<span class="sc">$</span>taste, <span class="at">prop =</span> <span class="st">"table"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>#&gt; Continguency Table 
 #&gt;  
-#&gt;               No            Yes             Row Totals     
-#&gt; Decaf         "26 / 0.0073" "99 / 0.0279"   "125 / 0.0352" 
-#&gt; Full caffeine "66 / 0.0186" "3178 / 0.8957" "3244 / 0.9143"
-#&gt; Half caff     "6 / 0.0017"  "173 / 0.0488"  "179 / 0.0505" 
-#&gt; Col Totals    "98 / 0.0276" "3450 / 0.9724" "Total: 3548"  
-#&gt; 
-#&gt; Cell Contents: n / tbl % 
-#&gt; Col Totals Contents: n / row % 
-#&gt; Row Totals Contents: n / col % 
 #&gt; Column Variable: coffee$taste
 #&gt; Row Variable: coffee$caffeine</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; $frequency
+#&gt;                
+#&gt;                   No  Yes
+#&gt;   Decaf           26   99
+#&gt;   Full caffeine   66 3178
+#&gt;   Half caff        6  173
+#&gt; 
+#&gt; $table_prop
+#&gt;                
+#&gt;                     No    Yes
+#&gt;   Decaf         0.0073 0.0279
+#&gt;   Full caffeine 0.0186 0.8957
+#&gt;   Half caff     0.0017 0.0488</code></pre>
 </div>
 </div>
 <p><strong>Row proportions</strong> (each cell ÷ its row total):</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat_stats</span>(coffee<span class="sc">$</span>caffeine, coffee<span class="sc">$</span>taste, <span class="at">prop =</span> <span class="st">"row"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat_stats</span>(coffee<span class="sc">$</span>caffeine, coffee<span class="sc">$</span>taste, <span class="at">prop =</span> <span class="st">"row"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>#&gt; Continguency Table 
 #&gt;  
-#&gt;               No            Yes             Row Totals     
-#&gt; Decaf         "26 / 0.208"  "99 / 0.792"    "125 / 0.0352" 
-#&gt; Full caffeine "66 / 0.0203" "3178 / 0.9797" "3244 / 0.9143"
-#&gt; Half caff     "6 / 0.0335"  "173 / 0.9665"  "179 / 0.0505" 
-#&gt; Col Totals    "98 / 0.0276" "3450 / 0.9724" "Total: 3548"  
-#&gt; 
-#&gt; Cell Contents: n / row % 
-#&gt; Col Totals Contents: n / row % 
-#&gt; Row Totals Contents: n / col % 
 #&gt; Column Variable: coffee$taste
 #&gt; Row Variable: coffee$caffeine</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; $frequency
+#&gt;                
+#&gt;                   No  Yes
+#&gt;   Decaf           26   99
+#&gt;   Full caffeine   66 3178
+#&gt;   Half caff        6  173
+#&gt; 
+#&gt; $row_prop
+#&gt;                
+#&gt;                     No    Yes
+#&gt;   Decaf         0.2080 0.7920
+#&gt;   Full caffeine 0.0203 0.9797
+#&gt;   Half caff     0.0335 0.9665</code></pre>
 </div>
 </div>
 <p><strong>Column proportions</strong> (each cell ÷ its column total):</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat_stats</span>(coffee<span class="sc">$</span>caffeine, coffee<span class="sc">$</span>taste, <span class="at">prop =</span> <span class="st">"col"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat_stats</span>(coffee<span class="sc">$</span>caffeine, coffee<span class="sc">$</span>taste, <span class="at">prop =</span> <span class="st">"col"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>#&gt; Continguency Table 
 #&gt;  
-#&gt;               No            Yes             Row Totals     
-#&gt; Decaf         "26 / 0.2653" "99 / 0.0287"   "125 / 0.0352" 
-#&gt; Full caffeine "66 / 0.6735" "3178 / 0.9212" "3244 / 0.9143"
-#&gt; Half caff     "6 / 0.0612"  "173 / 0.0501"  "179 / 0.0505" 
-#&gt; Col Totals    "98 / 0.0276" "3450 / 0.9724" "Total: 3548"  
-#&gt; 
-#&gt; Cell Contents: n / col % 
-#&gt; Col Totals Contents: n / row % 
-#&gt; Row Totals Contents: n / col % 
 #&gt; Column Variable: coffee$taste
 #&gt; Row Variable: coffee$caffeine</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; $frequency
+#&gt;                
+#&gt;                   No  Yes
+#&gt;   Decaf           26   99
+#&gt;   Full caffeine   66 3178
+#&gt;   Half caff        6  173
+#&gt; 
+#&gt; $col_prop
+#&gt;                
+#&gt;                     No    Yes
+#&gt;   Decaf         0.2653 0.0287
+#&gt;   Full caffeine 0.6735 0.9212
+#&gt;   Half caff     0.0612 0.0501</code></pre>
 </div>
 </div>
 </section>
@@ -489,13 +524,13 @@ Tip
 <section id="frequency-bar-plot" class="level3" data-number="6.1.1">
 <h3 data-number="6.1.1" class="anchored" data-anchor-id="frequency-bar-plot"><span class="header-section-number">6.1.1</span> Frequency bar plot</h3>
 <p><strong>Template (frequency):</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ggplot() + geom_bar() counts rows per category by default</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(<span class="at">x =</span> VAR)) <span class="sc">+</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ggplot() + geom_bar() counts rows per category by default</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(<span class="at">x =</span> VAR)) <span class="sc">+</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>Example:</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(coffee, <span class="fu">aes</span>(<span class="at">x =</span> caffeine)) <span class="sc">+</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(coffee, <span class="fu">aes</span>(<span class="at">x =</span> caffeine)) <span class="sc">+</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -508,13 +543,13 @@ Tip
 <section id="relative-frequency-bar-plot" class="level3" data-number="6.1.2">
 <h3 data-number="6.1.2" class="anchored" data-anchor-id="relative-frequency-bar-plot"><span class="header-section-number">6.1.2</span> Relative frequency bar plot</h3>
 <p><strong>Template (proportion):</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># after_stat(prop) computes proportions within the layer</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(<span class="at">x =</span> VAR, <span class="at">y =</span> <span class="fu">after_stat</span>(prop), <span class="at">group =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># after_stat(prop) computes proportions within the layer</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(<span class="at">x =</span> VAR, <span class="at">y =</span> <span class="fu">after_stat</span>(prop), <span class="at">group =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>Example:</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(coffee, <span class="fu">aes</span>(<span class="at">x =</span> caffeine, <span class="at">y =</span> <span class="fu">after_stat</span>(prop), <span class="at">group =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(coffee, <span class="fu">aes</span>(<span class="at">x =</span> caffeine, <span class="at">y =</span> <span class="fu">after_stat</span>(prop), <span class="at">group =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -541,12 +576,12 @@ Note
 <section id="stacked-bar-plots" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="stacked-bar-plots"><span class="header-section-number">6.2</span> Stacked bar plots</h2>
 <p><strong>Template:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(<span class="at">x =</span> VAR1, <span class="at">fill =</span> VAR2)) <span class="sc">+</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(<span class="at">x =</span> VAR1, <span class="at">fill =</span> VAR2)) <span class="sc">+</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>Example (stacked counts):</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(coffee, <span class="fu">aes</span>(<span class="at">x =</span> caffeine, <span class="at">fill =</span> taste)) <span class="sc">+</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(coffee, <span class="fu">aes</span>(<span class="at">x =</span> caffeine, <span class="at">fill =</span> taste)) <span class="sc">+</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -557,8 +592,8 @@ Note
 </div>
 <p><strong>Example (horizontal):</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(coffee, <span class="fu">aes</span>(<span class="at">y =</span> caffeine, <span class="at">fill =</span> taste)) <span class="sc">+</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(coffee, <span class="fu">aes</span>(<span class="at">y =</span> caffeine, <span class="at">fill =</span> taste)) <span class="sc">+</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -568,26 +603,54 @@ Note
 </div>
 </div>
 <p><strong>Template (stacked proportions):</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(<span class="at">x =</span> VAR1, <span class="at">fill =</span> VAR2)) <span class="sc">+</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Proportion"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(<span class="at">x =</span> VAR1, <span class="at">fill =</span> VAR2)) <span class="sc">+</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Proportion"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="pie-charts-use-sparingly" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="pie-charts-use-sparingly"><span class="header-section-number">6.3</span> Pie charts (use sparingly)</h2>
-<p><strong>Note:</strong> Pie charts can be harder to compare precisely than bars. If you use them, label clearly.</p>
+<section id="dodged-bar-plot" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="dodged-bar-plot"><span class="header-section-number">6.3</span> Dodged Bar Plot</h2>
 <p><strong>Template:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>df_pie <span class="ot">&lt;-</span> <span class="fu">cat_stats</span>(DATA<span class="sc">$</span>VAR, <span class="at">tbl_df =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>table</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df_pie, <span class="fu">aes</span>(<span class="at">cat =</span> Category, <span class="at">val =</span> n, <span class="at">fill =</span> Category)) <span class="sc">+</span></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_pie</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Example:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(<span class="at">x =</span> VAR1, <span class="at">fill =</span> VAR2)) <span class="sc">+</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position=</span><span class="fu">position_dodge</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Example (dodged counts):</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>coffee_pie <span class="ot">&lt;-</span> <span class="fu">cat_stats</span>(coffee<span class="sc">$</span>caffeine, <span class="at">tbl_df =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>table</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(coffee_pie, <span class="fu">aes</span>(<span class="at">cat =</span> Category, <span class="at">val =</span> n, <span class="at">fill =</span> Category)) <span class="sc">+</span></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_pie</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(coffee, <span class="fu">aes</span>(<span class="at">x =</span> caffeine, <span class="at">fill =</span> taste)) <span class="sc">+</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
 <p><img src="cat_stats_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Example (horizontal):</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(coffee, <span class="fu">aes</span>(<span class="at">y =</span> caffeine, <span class="at">fill =</span> taste)) <span class="sc">+</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="cat_stats_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="pie-charts-use-sparingly" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="pie-charts-use-sparingly"><span class="header-section-number">6.4</span> Pie charts (use sparingly)</h2>
+<p><strong>Note:</strong> Pie charts can be harder to compare precisely than bars. If you use them, label clearly.</p>
+<p><strong>Template:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(<span class="at">fill =</span> VAR)) <span class="sc">+</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_pie</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Example:</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(coffee, <span class="fu">aes</span>(<span class="at">fill =</span> caffeine)) <span class="sc">+</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_pie</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="cat_stats_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -599,7 +662,7 @@ Note
 <p>Each template below has <strong>placeholders</strong> in ALL CAPS (e.g., <code>DATA</code>, <code>VAR</code>, <code>VAR1</code>, <code>VAR2</code>). Replace them with your own dataset name and variable names.</p>
 <section id="frequency-table" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="frequency-table"><span class="header-section-number">7.1</span> Frequency table</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat_stats</span>(DATA<span class="sc">$</span>VAR)   </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat_stats</span>(DATA<span class="sc">$</span>VAR)   </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>DATA</code> → the name of your dataset (e.g., <code>coffee</code>).</li>
 <li><code>VAR</code> → a single categorical variable (e.g., <code>caffeine</code>).</li>
@@ -607,7 +670,7 @@ Note
 </section>
 <section id="proportions-only" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="proportions-only"><span class="header-section-number">7.2</span> Proportions only</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat_stats</span>(DATA<span class="sc">$</span>VAR, <span class="at">prop_only =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat_stats</span>(DATA<span class="sc">$</span>VAR, <span class="at">prop_only =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>DATA</code> → the name of your dataset (e.g., <code>coffee</code>).</li>
 <li><code>VAR</code> → a single categorical variable (e.g., <code>caffeine</code>).</li>
@@ -615,8 +678,8 @@ Note
 </section>
 <section id="bar-plot-frequency" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="bar-plot-frequency"><span class="header-section-number">7.3</span> Bar Plot: Frequency</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(<span class="at">x =</span> VAR)) <span class="sc">+</span> </span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(<span class="at">x =</span> VAR)) <span class="sc">+</span> </span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>DATA</code> → the name of your dataset (e.g., <code>coffee</code>).</li>
 <li><code>VAR</code> → a single categorical variable (e.g., <code>caffeine</code>).</li>
@@ -624,8 +687,8 @@ Note
 </section>
 <section id="bar-plot-proportion" class="level2" data-number="7.4">
 <h2 data-number="7.4" class="anchored" data-anchor-id="bar-plot-proportion"><span class="header-section-number">7.4</span> Bar Plot: Proportion</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(<span class="at">x =</span> VAR, <span class="at">y =</span> <span class="fu">after_stat</span>(prop), <span class="at">group =</span> <span class="dv">1</span>)) <span class="sc">+</span> </span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(<span class="at">x =</span> VAR, <span class="at">y =</span> <span class="fu">after_stat</span>(prop), <span class="at">group =</span> <span class="dv">1</span>)) <span class="sc">+</span> </span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>DATA</code> → the name of your dataset (e.g., <code>coffee</code>).</li>
 <li><code>VAR</code> → a single categorical variable (e.g., <code>caffeine</code>).</li>
@@ -633,7 +696,7 @@ Note
 </section>
 <section id="cross-tabulations-all" class="level2" data-number="7.5">
 <h2 data-number="7.5" class="anchored" data-anchor-id="cross-tabulations-all"><span class="header-section-number">7.5</span> Cross-tabulations (all)</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat_stats</span>(DATA<span class="sc">$</span>VAR1, DATA<span class="sc">$</span>VAR2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat_stats</span>(DATA<span class="sc">$</span>VAR1, DATA<span class="sc">$</span>VAR2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>DATA</code> → the name of your dataset (e.g., <code>coffee</code>).</li>
 <li><code>VAR1</code> → a single categorical variable (e.g., <code>caffeine</code>).</li>
@@ -642,9 +705,9 @@ Note
 </section>
 <section id="cross-tabulations-proportions" class="level2" data-number="7.6">
 <h2 data-number="7.6" class="anchored" data-anchor-id="cross-tabulations-proportions"><span class="header-section-number">7.6</span> Cross-tabulations (proportions)</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat_stats</span>(DATA<span class="sc">$</span>VAR1, DATA<span class="sc">$</span>VAR2, <span class="at">prop =</span> <span class="st">"table"</span>)</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat_stats</span>(DATA<span class="sc">$</span>VAR1, DATA<span class="sc">$</span>VAR2, <span class="at">prop =</span> <span class="st">"row"</span>)</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cat_stats</span>(DATA<span class="sc">$</span>VAR1, DATA<span class="sc">$</span>VAR2, <span class="at">prop =</span> <span class="st">"col"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat_stats</span>(DATA<span class="sc">$</span>VAR1, DATA<span class="sc">$</span>VAR2, <span class="at">prop =</span> <span class="st">"table"</span>)</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat_stats</span>(DATA<span class="sc">$</span>VAR1, DATA<span class="sc">$</span>VAR2, <span class="at">prop =</span> <span class="st">"row"</span>)</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cat_stats</span>(DATA<span class="sc">$</span>VAR1, DATA<span class="sc">$</span>VAR2, <span class="at">prop =</span> <span class="st">"col"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>DATA</code> → the name of your dataset (e.g., <code>coffee</code>).</li>
 <li><code>VAR1</code> → a single categorical variable (e.g., <code>caffeine</code>).</li>
@@ -652,8 +715,8 @@ Note
 </ul>
 </section>
 <section id="stacked-bar-counts" class="level2" data-number="7.7">
-<h2 data-number="7.7" class="anchored" data-anchor-id="stacked-bar-counts"><span class="header-section-number">7.7</span> Stacked bar (counts)</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(<span class="at">x =</span> VAR1, <span class="at">fill =</span> VAR2)) <span class="sc">+</span> <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<h2 data-number="7.7" class="anchored" data-anchor-id="stacked-bar-counts"><span class="header-section-number">7.7</span> Stacked Bar (counts)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(<span class="at">x =</span> VAR1, <span class="at">fill =</span> VAR2)) <span class="sc">+</span> <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>DATA</code> → the name of your dataset (e.g., <code>coffee</code>).</li>
 <li><code>VAR1</code> → a single categorical variable (e.g., <code>caffeine</code>).</li>
@@ -661,20 +724,29 @@ Note
 </ul>
 </section>
 <section id="stacked-bar-proportions" class="level2" data-number="7.8">
-<h2 data-number="7.8" class="anchored" data-anchor-id="stacked-bar-proportions"><span class="header-section-number">7.8</span> Stacked bar (proportions)</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(<span class="at">x =</span> VAR1, <span class="at">fill =</span> VAR2)) <span class="sc">+</span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Proportion"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<h2 data-number="7.8" class="anchored" data-anchor-id="stacked-bar-proportions"><span class="header-section-number">7.8</span> Stacked Bar (proportions)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(<span class="at">x =</span> VAR1, <span class="at">fill =</span> VAR2)) <span class="sc">+</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Proportion"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>DATA</code> → the name of your dataset (e.g., <code>coffee</code>).</li>
 <li><code>VAR1</code> → a single categorical variable (e.g., <code>caffeine</code>).</li>
 <li><code>VAR2</code> → a single categorical variable (e.g., <code>taste</code>).</li>
 </ul>
 </section>
-<section id="pie-chart" class="level2" data-number="7.9">
-<h2 data-number="7.9" class="anchored" data-anchor-id="pie-chart"><span class="header-section-number">7.9</span> Pie Chart</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>df_pie <span class="ot">&lt;-</span> <span class="fu">cat_stats</span>(DATA<span class="sc">$</span>VAR, <span class="at">tbl_df =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>table</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df_pie, <span class="fu">aes</span>(<span class="at">cat =</span> Category, <span class="at">val =</span> n, <span class="at">fill =</span> Category)) <span class="sc">+</span> </span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_pie</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="dodeged-bar-plot" class="level2" data-number="7.9">
+<h2 data-number="7.9" class="anchored" data-anchor-id="dodeged-bar-plot"><span class="header-section-number">7.9</span> Dodeged Bar Plot</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(<span class="at">x =</span> VAR1, <span class="at">fill =</span> VAR2)) <span class="sc">+</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position=</span><span class="fu">position_dodge</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li><code>DATA</code> → the name of your dataset (e.g., <code>coffee</code>).</li>
+<li><code>VAR1</code> → a single categorical variable (e.g., <code>caffeine</code>).</li>
+<li><code>VAR2</code> → a single categorical variable (e.g., <code>taste</code>).</li>
+</ul>
+</section>
+<section id="pie-chart" class="level2" data-number="7.10">
+<h2 data-number="7.10" class="anchored" data-anchor-id="pie-chart"><span class="header-section-number">7.10</span> Pie Chart</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(<span class="at">fill =</span> VAR)) <span class="sc">+</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_pie</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>DATA</code> → the name of your dataset (e.g., <code>coffee</code>).</li>
 <li><code>VAR</code> → a single categorical variable (e.g., <code>caffeine</code>).</li>

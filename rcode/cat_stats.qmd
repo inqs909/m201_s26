@@ -271,21 +271,40 @@ ggplot(DATA, aes(x = VAR1, fill = VAR2)) +
   labs(y = "Proportion")
 ```
 
+## Dodged Bar Plot
+
+**Template:**
+```r
+ggplot(DATA, aes(x = VAR1, fill = VAR2)) +
+  geom_bar(position=position_dodge())
+```
+
+**Example (dodged counts):**
+```{r}
+ggplot(coffee, aes(x = caffeine, fill = taste)) +
+geom_bar(position = position_dodge())
+```
+
+**Example (horizontal):**
+```{r}
+ggplot(coffee, aes(y = caffeine, fill = taste)) +
+geom_bar(position = position_dodge())
+```
+
+
 ## Pie charts (use sparingly)
 
 **Note:** Pie charts can be harder to compare precisely than bars. If you use them, label clearly.
 
 **Template:**
 ```r
-df_pie <- cat_stats(DATA$VAR, tbl_df = TRUE)$table
-ggplot(df_pie, aes(cat = Category, val = n, fill = Category)) +
+ggplot(DATA, aes(fill = VAR)) +
   geom_pie()
 ```
 
 **Example:**
 ```{r}
-coffee_pie <- cat_stats(coffee$caffeine, tbl_df = TRUE)$table
-ggplot(coffee_pie, aes(cat = Category, val = n, fill = Category)) +
+ggplot(coffee, aes(fill = caffeine)) +
   geom_pie()
 ```
 
@@ -357,7 +376,7 @@ cat_stats(DATA$VAR1, DATA$VAR2, prop = "col")
 - `VAR1` → a single categorical variable (e.g., `caffeine`).
 - `VAR2` → a single categorical variable (e.g., `taste`).
 
-## Stacked bar (counts)
+## Stacked Bar (counts)
 
 ```r
 ggplot(DATA, aes(x = VAR1, fill = VAR2)) + geom_bar()
@@ -367,7 +386,7 @@ ggplot(DATA, aes(x = VAR1, fill = VAR2)) + geom_bar()
 - `VAR1` → a single categorical variable (e.g., `caffeine`).
 - `VAR2` → a single categorical variable (e.g., `taste`).
 
-## Stacked bar (proportions)
+## Stacked Bar (proportions)
 
 ```r
 ggplot(DATA, aes(x = VAR1, fill = VAR2)) +
@@ -378,12 +397,23 @@ ggplot(DATA, aes(x = VAR1, fill = VAR2)) +
 - `VAR1` → a single categorical variable (e.g., `caffeine`).
 - `VAR2` → a single categorical variable (e.g., `taste`).
 
+## Dodeged Bar Plot
+
+```r
+ggplot(DATA, aes(x = VAR1, fill = VAR2)) +
+  geom_bar(position=position_dodge())
+```
+
+- `DATA` → the name of your dataset (e.g., `coffee`).
+- `VAR1` → a single categorical variable (e.g., `caffeine`).
+- `VAR2` → a single categorical variable (e.g., `taste`).
+
+
 ## Pie Chart
 
 ```r
-df_pie <- cat_stats(DATA$VAR, tbl_df = TRUE)$table
-ggplot(df_pie, aes(cat = Category, val = n, fill = Category)) + 
-    geom_pie()
+ggplot(DATA, aes(fill = VAR)) +
+  geom_pie()
 ```
 
 - `DATA` → the name of your dataset (e.g., `coffee`).

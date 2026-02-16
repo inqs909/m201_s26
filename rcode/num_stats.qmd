@@ -467,3 +467,28 @@ ggplot(DATA, aes(x = VAR1, y = VAR2)) +
 - `DATA` → the name of your dataset (e.g., `trashwheel`).
 - `VAR1` → a single categorical variable (e.g., `PlasticBottles`).
 - `VAR2` → a single categorical variable (e.g., `PlasticBags`).
+
+
+## Vertical Lines
+
+```{r}
+ggplot(DATA, aes(VAR)) +
+  geom_density() +
+  geom_vline(xintercept = XVAL)
+```
+
+- `DATA` → Name of your dataset (e.g., `trashwheel`).
+- `VAR` → Name of the variable to create the plot (e.g., `PlasticBottles`).
+- `XVAL` → Number to place the vertical line (e.g., `1525`).
+
+## Horizontal Lines
+
+```{r}
+ggplot(DATA, aes(VAR)) +
+  geom_density() +
+  geom_hline(yintercept = YVAL)
+```
+
+- `DATA` → Name of your dataset (e.g., `trashwheel`).
+- `VAR` → Name of the variable to create the plot (e.g., `PlasticBottles`).
+- `YVAL` → Number to place the vertical line (e.g., `0.3`).

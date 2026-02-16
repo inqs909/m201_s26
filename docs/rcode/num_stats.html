@@ -205,6 +205,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#dot-plot" id="toc-dot-plot" class="nav-link" data-scroll-target="#dot-plot"><span class="header-section-number">6.9</span> Dot plot</a></li>
   <li><a href="#scatter-plot" id="toc-scatter-plot" class="nav-link" data-scroll-target="#scatter-plot"><span class="header-section-number">6.10</span> Scatter Plot</a></li>
   <li><a href="#scatter-plot-trend-line" id="toc-scatter-plot-trend-line" class="nav-link" data-scroll-target="#scatter-plot-trend-line"><span class="header-section-number">6.11</span> Scatter Plot + trend line</a></li>
+  <li><a href="#vertical-lines" id="toc-vertical-lines" class="nav-link" data-scroll-target="#vertical-lines"><span class="header-section-number">6.12</span> Vertical Lines</a></li>
+  <li><a href="#horizontal-lines" id="toc-horizontal-lines" class="nav-link" data-scroll-target="#horizontal-lines"><span class="header-section-number">6.13</span> Horizontal Lines</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -287,8 +289,8 @@ Tip
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-ea5a0b2967bd36d76171" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-ea5a0b2967bd36d76171">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10"],["mister","gwynnda","professor","mister","mister","gwynnda","mister","gwynnda","mister","professor"],["Mister Trash Wheel","Gwynnda Trash Wheel","Professor Trash Wheel","Mister Trash Wheel","Mister Trash Wheel","Gwynnda Trash Wheel","Mister Trash Wheel","Gwynnda Trash Wheel","Mister Trash Wheel","Professor Trash Wheel"],[39,57,45,246,23,153,554,146,242,78],["November","March","March","April","July","June","September","May","April","July"],[2014,2022,2019,2018,2014,2023,2022,2023,2018,2021],["11/17/14","3/10/22","3/23/19","4/18/2018","7/15/2014","6/29/23","9/14/2022","5/1/23","4/17/2018","7/2/21"],[3.25,2.76,1.37,3.38,2.79,3.45,3.69,3.22,3.04,2.33],[18,15,15,15,14,15,15,15,15,15],[1250,2300,8800,760,3200,4900,640,1600,670,4200],[2730,300,7800,870,3840,540,50,110,840,1100],[46000,4200,14000,6000,98000,4800,1800,2100,7000,6400],[28,null,6,3,25,null,24,null,2,24],[1130,1800,2300,240,1464,410,140,140,230,1480],[2340,null,9800,720,2684,3500,500,1200,620,4900],[7,null,null,1,6,null,6,null,3,null],[0,46,23,56,0,58,62,54,51,39]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>ID<\/th>\n      <th>Name<\/th>\n      <th>Dumpster<\/th>\n      <th>Month<\/th>\n      <th>Year<\/th>\n      <th>Date<\/th>\n      <th>Weight<\/th>\n      <th>Volume<\/th>\n      <th>PlasticBottles<\/th>\n      <th>Polystyrene<\/th>\n      <th>CigaretteButts<\/th>\n      <th>GlassBottles<\/th>\n      <th>PlasticBags<\/th>\n      <th>Wrappers<\/th>\n      <th>SportsBalls<\/th>\n      <th>HomesPowered<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"p","pageLength":5,"columnDefs":[{"className":"dt-right","targets":[3,5,7,8,9,10,11,12,13,14,15,16]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"ID","targets":1},{"name":"Name","targets":2},{"name":"Dumpster","targets":3},{"name":"Month","targets":4},{"name":"Year","targets":5},{"name":"Date","targets":6},{"name":"Weight","targets":7},{"name":"Volume","targets":8},{"name":"PlasticBottles","targets":9},{"name":"Polystyrene","targets":10},{"name":"CigaretteButts","targets":11},{"name":"GlassBottles","targets":12},{"name":"PlasticBags","targets":13},{"name":"Wrappers","targets":14},{"name":"SportsBalls","targets":15},{"name":"HomesPowered","targets":16}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-cbdc099da2f80a4fc666" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-cbdc099da2f80a4fc666">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10"],["gwynnda","mister","professor","gwynnda","mister","mister","mister","mister","mister","mister"],["Gwynnda Trash Wheel","Mister Trash Wheel","Professor Trash Wheel","Gwynnda Trash Wheel","Mister Trash Wheel","Mister Trash Wheel","Mister Trash Wheel","Mister Trash Wheel","Mister Trash Wheel","Mister Trash Wheel"],[35,98,38,141,111,198,245,170,564,236],["November","August","October","April","December","May","April","March","December","April"],[2021,2015,2018,2023,2015,2017,2018,2017,2022,2018],["11/3/21","8/26/2015","10/15/18","4/6/23","12/24/2015","5/22/2017","4/18/2018","3/30/2017","12/17/2022","4/16/2018"],[2.97,3.39,1.57,2.35,2.9,3.84,3.65,2.14,2.79,2.91],[15,15,15,15,18,18,15,15,15,15],[1800,640,8400,2700,1850,2540,820,2570,1000,970],[120,780,4400,240,2670,2410,980,2930,48,1100],[1800,32000,11000,3200,33000,15000,7000,23000,2100,8000],[null,18,9,null,36,16,5,28,8,2],[300,350,1240,200,2770,1980,170,2650,64,300],[null,560,10400,1200,3240,2230,590,2910,900,800],[null,3,null,null,13,5,5,14,14,1],[50,0,26,39,48,64,61,36,47,49]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>ID<\/th>\n      <th>Name<\/th>\n      <th>Dumpster<\/th>\n      <th>Month<\/th>\n      <th>Year<\/th>\n      <th>Date<\/th>\n      <th>Weight<\/th>\n      <th>Volume<\/th>\n      <th>PlasticBottles<\/th>\n      <th>Polystyrene<\/th>\n      <th>CigaretteButts<\/th>\n      <th>GlassBottles<\/th>\n      <th>PlasticBags<\/th>\n      <th>Wrappers<\/th>\n      <th>SportsBalls<\/th>\n      <th>HomesPowered<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"p","pageLength":5,"columnDefs":[{"className":"dt-right","targets":[3,5,7,8,9,10,11,12,13,14,15,16]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"ID","targets":1},{"name":"Name","targets":2},{"name":"Dumpster","targets":3},{"name":"Month","targets":4},{"name":"Year","targets":5},{"name":"Date","targets":6},{"name":"Weight","targets":7},{"name":"Volume","targets":8},{"name":"PlasticBottles","targets":9},{"name":"Polystyrene","targets":10},{"name":"CigaretteButts","targets":11},{"name":"GlassBottles","targets":12},{"name":"PlasticBags","targets":13},{"name":"Wrappers","targets":14},{"name":"SportsBalls","targets":15},{"name":"HomesPowered","targets":16}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -692,6 +694,40 @@ Tip
 <li><code>DATA</code> → the name of your dataset (e.g., <code>trashwheel</code>).</li>
 <li><code>VAR1</code> → a single categorical variable (e.g., <code>PlasticBottles</code>).</li>
 <li><code>VAR2</code> → a single categorical variable (e.g., <code>PlasticBags</code>).</li>
+</ul>
+</section>
+<section id="vertical-lines" class="level2" data-number="6.12">
+<h2 data-number="6.12" class="anchored" data-anchor-id="vertical-lines"><span class="header-section-number">6.12</span> Vertical Lines</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(VAR)) <span class="sc">+</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> XVAL)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<pre><code>#&gt; Error:
+#&gt; ! object 'DATA' not found</code></pre>
+</div>
+</div>
+<ul>
+<li><code>DATA</code> → Name of your dataset (e.g., <code>trashwheel</code>).</li>
+<li><code>VAR</code> → Name of the variable to create the plot (e.g., <code>PlasticBottles</code>).</li>
+<li><code>XVAL</code> → Number to place the vertical line (e.g., <code>1525</code>).</li>
+</ul>
+</section>
+<section id="horizontal-lines" class="level2" data-number="6.13">
+<h2 data-number="6.13" class="anchored" data-anchor-id="horizontal-lines"><span class="header-section-number">6.13</span> Horizontal Lines</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(DATA, <span class="fu">aes</span>(VAR)) <span class="sc">+</span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> YVAL)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<pre><code>#&gt; Error:
+#&gt; ! object 'DATA' not found</code></pre>
+</div>
+</div>
+<ul>
+<li><code>DATA</code> → Name of your dataset (e.g., <code>trashwheel</code>).</li>
+<li><code>VAR</code> → Name of the variable to create the plot (e.g., <code>PlasticBottles</code>).</li>
+<li><code>YVAL</code> → Number to place the vertical line (e.g., <code>0.3</code>).</li>
 </ul>
 
 
