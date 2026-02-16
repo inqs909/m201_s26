@@ -3812,13 +3812,6 @@
     "href": "lectures/4.html#empirical-rule-to-the-normal-dist.",
     "title": "Distribution Functions",
     "section": "Empirical Rule to the Normal Dist.",
-    "text": "Empirical Rule to the Normal Dist.\nLet’s define the key terms and apply the empirical rule to the normal distribution.\n\nMean (μ): This is the central point of the normal distribution where the data clusters around.\nStandard Deviation (σ): This is a measure of how spread out the data points are from the mean."
-  },
-  {
-    "objectID": "lectures/4.html#empirical-rule-to-the-normal-dist.-1",
-    "href": "lectures/4.html#empirical-rule-to-the-normal-dist.-1",
-    "title": "Distribution Functions",
-    "section": "Empirical Rule to the Normal Dist.",
     "text": "Empirical Rule to the Normal Dist.\nIn a normal distribution:\n\n68% of data lies between \\((\\mu - \\sigma)\\) and \\((\\mu + \\sigma)\\).\n95% of data lies between \\((\\mu - 2\\sigma)\\) and \\((\\mu + 2\\sigma)\\).\n99.7% of data lies between \\((\\mu - 3\\sigma)\\) and \\((\\mu + 3\\sigma)\\).\n\nThese intervals allow us to estimate probabilities for data within each range without needing to calculate exact probabilities."
   },
   {
@@ -3826,7 +3819,7 @@
     "href": "lectures/4.html#visualizing-the-empirical-rule",
     "title": "Distribution Functions",
     "section": "Visualizing the Empirical Rule",
-    "text": "Visualizing the Empirical Rule\nTo better understand the empirical rule, imagine a symmetric, bell-shaped normal curve. Here’s how it would look based on the empirical rule:\n\nThe 68% region represents the middle of the curve, starting one standard deviation left of the mean and ending one standard deviation right.\nThe 95% region stretches further out, covering almost the entire curve except for the outer tails.\nThe 99.7% region includes nearly all data points, covering the entire curve except for a tiny fraction at each extreme.\n\nThis visualization shows how the data is most concentrated around the mean, with less data appearing as we move further away."
+    "text": "Visualizing the Empirical Rule"
   },
   {
     "objectID": "lectures/4.html#using-the-empirical-rule-for-probabilities",
@@ -3834,20 +3827,6 @@
     "title": "Distribution Functions",
     "section": "Using the Empirical Rule for Probabilities",
     "text": "Using the Empirical Rule for Probabilities\nThe empirical rule helps us answer questions like:\n\nWhat percentage of data points fall within a certain range?\nHow unusual is a data point located far from the mean?"
-  },
-  {
-    "objectID": "lectures/4.html#examples",
-    "href": "lectures/4.html#examples",
-    "title": "Distribution Functions",
-    "section": "Examples",
-    "text": "Examples\n\nIf we know that a data point lies more than two standard deviations away from the mean, we know it’s in the outer 5% of the distribution, making it relatively rare.\nUsing the rule, we can estimate that around 95% of values should lie within two standard deviations of the mean. If we observe data points outside of this range, we might consider them outliers."
-  },
-  {
-    "objectID": "lectures/4.html#more-examples",
-    "href": "lectures/4.html#more-examples",
-    "title": "Distribution Functions",
-    "section": "More Examples",
-    "text": "More Examples\n\nExam ScoresHeights of Adults\n\n\nSuppose exam scores are normally distributed with a mean of 70 and a standard deviation of 10.\n\n68% of students scored between 60 and 80 (70 ± 10).\n95% of students scored between 50 and 90 (70 ± 20).\n99.7% of students scored between 40 and 100 (70 ± 30).\n\n\n\nAssume that adult heights follow a normal distribution with a mean height of 170 cm and a standard deviation of 8 cm.\n\n68% of adults have heights between 162 cm and 178 cm (170 ± 8).\n95% of adults have heights between 154 cm and 186 cm (170 ± 16).\n99.7% of adults have heights between 146 cm and 194 cm (170 ± 24)."
   },
   {
     "objectID": "lectures/4.html#binomial-distribution-1",
@@ -3983,15 +3962,15 @@
     "text": "Probabilities\nR can compute the probabilities of a distribution given the correct parameters:\n\nCummulative probability: p is used in front of the distribution R function\nProbability for a discrete distribution: d is used in front of the distribution R function\n\nNote: Continuous Distribution Functions will not yield a valid probability value."
   },
   {
-    "objectID": "lectures/4.html#examples-1",
-    "href": "lectures/4.html#examples-1",
+    "objectID": "lectures/4.html#examples",
+    "href": "lectures/4.html#examples",
     "title": "Distribution Functions",
     "section": "Examples",
     "text": "Examples\n\n123\n\n\nFind \\(P(X \\leq 5 )\\) where \\(X \\sim N(6,2)\\).\n\n\nCode\npnorm(5, mean = 6, sd = 2)\n\n\n\n\nFind \\(P(X \\geq 7 )\\) where \\(X \\sim N(6,2)\\).\n\n\nCode\n1 - pnorm(7, mean = 6, sd = 2)\n\n\n\n\nFind \\(P(X = 20 )\\) where \\(X \\sim Bin(30,0.8)\\).\n\n\nCode\ndbinom(20, size = 30, prob = 0.8)"
   },
   {
-    "objectID": "lectures/4.html#more-examples-1",
-    "href": "lectures/4.html#more-examples-1",
+    "objectID": "lectures/4.html#more-examples",
+    "href": "lectures/4.html#more-examples",
     "title": "Distribution Functions",
     "section": "More Examples",
     "text": "More Examples\n\n123\n\n\nFind \\(P(2 \\leq X \\leq 5 )\\) where \\(X \\sim N(6,2)\\).\n\n\nCode\npnorm(5, 6, 2) - pnorm(2, 6, 2) \n\n\n\n\nFind \\(P(14 &lt; X &lt; 20)\\) where \\(X \\sim Pois(16)\\).\n\n\nCode\nppois(19, lambda = 16) - ppois(14, lambda = 16)\n\n## OR\n\ndpois(15, 16) + dpois(16, 16) + dpois(17, 16) + dpois(18, 16) + dpois(19, 16)\n\n\n\n\nFind \\(P(23 &lt; X)\\) where \\(X \\sim Pois(12)\\).\n\n\nCode\n1 - ppois(23, 12)"
@@ -4004,8 +3983,8 @@
     "text": "Percentiles\nFinding the values (percentiles) for any distributions can be found by using the q-based distribution R function such as qnorm(), qpois(), and qbinom() functions."
   },
   {
-    "objectID": "lectures/4.html#examples-2",
-    "href": "lectures/4.html#examples-2",
+    "objectID": "lectures/4.html#examples-1",
+    "href": "lectures/4.html#examples-1",
     "title": "Distribution Functions",
     "section": "Examples",
     "text": "Examples\n\n123\n\n\nFinding the \\(95^{th}\\) percentile from \\(N(0,1)\\), we will use the qnorm().\n\n\nCode\nqnorm(.95, 0, 1)\n\n\n\n\nFinding the \\(95^{th}\\) percentile from a Poisson distribution with \\(\\lambda = 9.5\\).\n\n\nCode\nqpois(.95, 9.5)\n\n\n\n\nFinding the \\(75^{th}\\) percentile for \\(Bin(45,.4)\\).\n\n\nCode\nqbinom(.75, 45, .4)"
@@ -4018,11 +3997,25 @@
     "text": "Random Number Generator\nR is capable of generating random numbers. For example if we want to generate a random sample of size fifty from a normal distribution with mean eight and variance three, we will use the rnorm(). If we want to generate a random sample from any distribution, use the distribution function with r in front of it."
   },
   {
-    "objectID": "lectures/4.html#examples-3",
-    "href": "lectures/4.html#examples-3",
+    "objectID": "lectures/4.html#examples-2",
+    "href": "lectures/4.html#examples-2",
     "title": "Distribution Functions",
     "section": "Examples",
     "text": "Examples\n\n1234\n\n\nLet’s first generate the random sample of fifty from \\(X \\sim N(8,3)\\).\n\n\nCode\nrnorm(50, 8, sqrt(3))\n\n\n\n\nGenerate a random sample of 100 form an \\(X \\sim Gamma (2,3)\\).\n\n\nCode\nrgamma(100, 2,3)\n\n\n\n\nGenerate a random sample of 100 form an \\(X \\sim Binom (25,.23)\\).\n\n\nCode\nrbinom(n = 100, size  = 25, prob = 0.23)\n\n\n\n\nGenerate a random sample of 100 form an \\(X \\sim Pois (34.4)\\).\n\n\nCode\nrpois(n = 100, lambda = 34.4)"
+  },
+  {
+    "objectID": "lectures/4.html#binomial-examples",
+    "href": "lectures/4.html#binomial-examples",
+    "title": "Distribution Functions",
+    "section": "Binomial Examples",
+    "text": "Binomial Examples\n\nQuality ControlSportsClinical Trials\n\n\nA factory produces lightbulbs, and 95% of them meet quality standards. If you randomly test 10 bulbs, what is the probability that exactly 8 bulbs pass the test?\nHere:\n\n\\(n = 10\\), \\(p = 0.95\\), \\(k = 8\\).\n\n\\[\nP(X = 8) = \\binom{10}{8} (0.95)^8 (0.05)^2\n\\]\n\n\nA basketball player has a 60% chance of making a free throw. If they take 5 shots, what is the probability of making at least 3 shots?\nHere: - \\(n = 5\\), \\(p = 0.6\\).\n\\[\nP(X \\geq 3) = P(X = 3) + P(X = 4) + P(X = 5)\n\\]\n\n\nIn a clinical trial, a new drug has a 70% success rate. If 15 patients are treated, what is the probability that exactly 10 respond positively to the treatment?"
+  },
+  {
+    "objectID": "lectures/4.html#poisson-examples",
+    "href": "lectures/4.html#poisson-examples",
+    "title": "Distribution Functions",
+    "section": "Poisson Examples",
+    "text": "Poisson Examples\n\nCall CenterTraffic FlowDefective Products\n\n\nSuppose a call center receives an average of 10 calls per hour (\\(\\lambda = 10\\)). What is the probability of receiving exactly 7 calls in the next hour ($ k = 7 $)?\n\\[\nP(X = 7) = \\frac{10^7 e^{-10}}{7!}\n\\]\n\n\nA toll booth observes an average of 3 cars passing through every 5 minutes (\\(\\lambda = 3\\)). What is the probability of seeing exactly 5 cars in the next 5 minutes?\nUsing the formula: \\[\nP(X = 5) = \\frac{3^5 e^{-3}}{5!} = \\frac{243 \\cdot 0.0498}{120} \\approx 0.1008\n\\]\n\n\nA factory produces an average of 2 defective items per day (\\(\\lambda = 2\\)). What is the probability of finding no defective items in a day (\\(k = 0\\))?\n\\[\nP(X = 0) = \\frac{2^0 e^{-2}}{0!} = e^{-2} \\approx 0.1353\n\\]"
   },
   {
     "objectID": "lectures/6.html#r-packages",

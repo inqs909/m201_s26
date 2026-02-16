@@ -1212,14 +1212,6 @@ P(a \leq X \leq b) = P(a &lt; X &lt; b) = \int_a^b \frac{1}{\sqrt{2\pi\sigma^2}}
 </section>
 <section id="empirical-rule-to-the-normal-dist." class="slide level2">
 <h2>Empirical Rule to the Normal Dist.</h2>
-<p>Let’s define the key terms and apply the empirical rule to the normal distribution.</p>
-<ul>
-<li><strong>Mean (μ)</strong>: This is the central point of the normal distribution where the data clusters around.</li>
-<li><strong>Standard Deviation (σ)</strong>: This is a measure of how spread out the data points are from the mean.</li>
-</ul>
-</section>
-<section id="empirical-rule-to-the-normal-dist.-1" class="slide level2">
-<h2>Empirical Rule to the Normal Dist.</h2>
 <p>In a normal distribution:</p>
 <ul>
 <li><strong>68% of data</strong> lies between <span class="math inline">\((\mu - \sigma)\)</span> and <span class="math inline">\((\mu + \sigma)\)</span>.</li>
@@ -1228,16 +1220,10 @@ P(a \leq X \leq b) = P(a &lt; X &lt; b) = \int_a^b \frac{1}{\sqrt{2\pi\sigma^2}}
 </ul>
 <p>These intervals allow us to estimate probabilities for data within each range without needing to calculate exact probabilities.</p>
 </section>
-<section id="visualizing-the-empirical-rule" class="slide level2 scrollable">
+<section id="visualizing-the-empirical-rule" class="slide level2">
 <h2>Visualizing the Empirical Rule</h2>
-<p>To better understand the empirical rule, imagine a symmetric, bell-shaped normal curve. Here’s how it would look based on the empirical rule:</p>
-<ol type="1">
-<li>The <strong>68% region</strong> represents the middle of the curve, starting one standard deviation left of the mean and ending one standard deviation right.</li>
-<li>The <strong>95% region</strong> stretches further out, covering almost the entire curve except for the outer tails.</li>
-<li>The <strong>99.7% region</strong> includes nearly all data points, covering the entire curve except for a tiny fraction at each extreme.</li>
-</ol>
-<p>This visualization shows how the data is most concentrated around the mean, with less data appearing as we move further away.</p>
-</section>
+
+<img data-src="4_files/figure-revealjs/unnamed-chunk-7-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="using-the-empirical-rule-for-probabilities" class="slide level2">
 <h2>Using the Empirical Rule for Probabilities</h2>
 <p>The empirical rule helps us answer questions like:</p>
@@ -1245,37 +1231,6 @@ P(a \leq X \leq b) = P(a &lt; X &lt; b) = \int_a^b \frac{1}{\sqrt{2\pi\sigma^2}}
 <li><strong>What percentage of data points fall within a certain range?</strong></li>
 <li><strong>How unusual is a data point located far from the mean?</strong></li>
 </ul>
-</section>
-<section id="examples" class="slide level2">
-<h2>Examples</h2>
-<ul>
-<li>If we know that a data point lies more than two standard deviations away from the mean, we know it’s in the outer 5% of the distribution, making it relatively rare.</li>
-<li>Using the rule, we can estimate that around 95% of values should lie within two standard deviations of the mean. If we observe data points outside of this range, we might consider them outliers.</li>
-</ul>
-</section>
-<section id="more-examples" class="slide level2">
-<h2>More Examples</h2>
-<div class="panel-tabset">
-<ul id="tabset-9" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-9-1">Exam Scores</a></li><li><a href="#tabset-9-2">Heights of Adults</a></li></ul>
-<div class="tab-content">
-<div id="tabset-9-1">
-<p>Suppose exam scores are normally distributed with a mean of 70 and a standard deviation of 10.</p>
-<ul>
-<li><strong>68% of students</strong> scored between <strong>60 and 80</strong> (70 ± 10).</li>
-<li><strong>95% of students</strong> scored between <strong>50 and 90</strong> (70 ± 20).</li>
-<li><strong>99.7% of students</strong> scored between <strong>40 and 100</strong> (70 ± 30).</li>
-</ul>
-</div>
-<div id="tabset-9-2">
-<p>Assume that adult heights follow a normal distribution with a mean height of 170 cm and a standard deviation of 8 cm.</p>
-<ul>
-<li><strong>68% of adults</strong> have heights between <strong>162 cm and 178 cm</strong> (170 ± 8).</li>
-<li><strong>95% of adults</strong> have heights between <strong>154 cm and 186 cm</strong> (170 ± 16).</li>
-<li><strong>99.7% of adults</strong> have heights between <strong>146 cm and 194 cm</strong> (170 ± 24).</li>
-</ul>
-</div>
-</div>
-</div>
 </section></section>
 <section>
 <section id="binomial-distribution" class="title-slide slide level1 agenda-slide center">
@@ -1371,7 +1326,7 @@ P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}
 <section id="binomial-distribution-2" class="slide level2">
 <h2>Binomial Distribution</h2>
 
-<img data-src="4_files/figure-revealjs/unnamed-chunk-7-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="4_files/figure-revealjs/unnamed-chunk-8-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="example-calculation" class="slide level2">
 <h2>Example Calculation</h2>
 <p>Suppose you flip a fair coin 5 times (<span class="math inline">\(n = 5, p = 0.5\)</span>) and want to know the probability of getting exactly 3 heads (<span class="math inline">\(k = 3\)</span>).</p>
@@ -1384,9 +1339,9 @@ P(X = 3) = \binom{5}{3} (0.5)^3 (1-0.5)^{5-3}
 <section id="properties-of-the-binomial-dist." class="slide level2">
 <h2>Properties of the Binomial Dist.</h2>
 <div class="panel-tabset">
-<ul id="tabset-10" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-10-1">Mean and Variance</a></li><li><a href="#tabset-10-2">Shape of the Distribution</a></li></ul>
+<ul id="tabset-9" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-9-1">Mean and Variance</a></li><li><a href="#tabset-9-2">Shape of the Distribution</a></li></ul>
 <div class="tab-content">
-<div id="tabset-10-1">
+<div id="tabset-9-1">
 <p>For a binomial random variable <span class="math inline">\(X\)</span>:</p>
 <ul>
 <li><strong>Mean (Expected Value)</strong>: <span class="math inline">\(\mu = n \cdot p\)</span></li>
@@ -1394,7 +1349,7 @@ P(X = 3) = \binom{5}{3} (0.5)^3 (1-0.5)^{5-3}
 <li><strong>Standard Deviation</strong>: <span class="math inline">\(\sigma = \sqrt{n \cdot p \cdot (1-p)}\)</span></li>
 </ul>
 </div>
-<div id="tabset-10-2">
+<div id="tabset-9-2">
 <ul>
 <li>If <span class="math inline">\(p = 0.5\)</span>, the distribution is symmetric.</li>
 <li>If <span class="math inline">\(p &gt; 0.5\)</span>, the distribution is skewed left.</li>
@@ -1407,9 +1362,9 @@ P(X = 3) = \binom{5}{3} (0.5)^3 (1-0.5)^{5-3}
 <section id="applications-2" class="slide level2">
 <h2>Applications</h2>
 <div class="panel-tabset">
-<ul id="tabset-11" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-11-1">Quality Control</a></li><li><a href="#tabset-11-2">Sports</a></li><li><a href="#tabset-11-3">Clinical Trials</a></li></ul>
+<ul id="tabset-10" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-10-1">Quality Control</a></li><li><a href="#tabset-10-2">Sports</a></li><li><a href="#tabset-10-3">Clinical Trials</a></li></ul>
 <div class="tab-content">
-<div id="tabset-11-1">
+<div id="tabset-10-1">
 <p>A factory produces lightbulbs, and 95% of them meet quality standards. If you randomly test 10 bulbs, what is the probability that exactly 8 bulbs pass the test?</p>
 <p>Here:</p>
 <ul>
@@ -1419,14 +1374,14 @@ P(X = 3) = \binom{5}{3} (0.5)^3 (1-0.5)^{5-3}
 P(X = 8) = \binom{10}{8} (0.95)^8 (0.05)^2
 \]</span></p>
 </div>
-<div id="tabset-11-2">
+<div id="tabset-10-2">
 <p>A basketball player has a 60% chance of making a free throw. If they take 5 shots, what is the probability of making at least 3 shots?</p>
 <p>Here: - <span class="math inline">\(n = 5\)</span>, <span class="math inline">\(p = 0.6\)</span>.</p>
 <p><span class="math display">\[
 P(X \geq 3) = P(X = 3) + P(X = 4) + P(X = 5)
 \]</span></p>
 </div>
-<div id="tabset-11-3">
+<div id="tabset-10-3">
 <p>In a clinical trial, a new drug has a 70% success rate. If 15 patients are treated, what is the probability that exactly 10 respond positively to the treatment?</p>
 </div>
 </div>
@@ -1520,7 +1475,7 @@ P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}
 <section id="poisson-distribution-2" class="slide level2">
 <h2>Poisson Distribution</h2>
 
-<img data-src="4_files/figure-revealjs/unnamed-chunk-8-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="4_files/figure-revealjs/unnamed-chunk-9-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="example-calculation-1" class="slide level2">
 <h2>Example Calculation</h2>
 <p>Suppose a call center receives an average of 10 calls per hour (<span class="math inline">\(\lambda = 10\)</span>). What is the probability of receiving exactly 7 calls in the next hour ($ k = 7 $)?</p>
@@ -1539,15 +1494,15 @@ P(X = 7) = \frac{10^7 e^{-10}}{7!}
 <section id="applications-3" class="slide level2">
 <h2>Applications</h2>
 <div class="panel-tabset">
-<ul id="tabset-12" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-12-1">Traffic Flow</a></li><li><a href="#tabset-12-2">Defective Products</a></li></ul>
+<ul id="tabset-11" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-11-1">Traffic Flow</a></li><li><a href="#tabset-11-2">Defective Products</a></li></ul>
 <div class="tab-content">
-<div id="tabset-12-1">
+<div id="tabset-11-1">
 <p>A toll booth observes an average of 3 cars passing through every 5 minutes (<span class="math inline">\(\lambda = 3\)</span>). What is the probability of seeing exactly 5 cars in the next 5 minutes?</p>
 <p>Using the formula: <span class="math display">\[
 P(X = 5) = \frac{3^5 e^{-3}}{5!} = \frac{243 \cdot 0.0498}{120} \approx 0.1008
 \]</span></p>
 </div>
-<div id="tabset-12-2">
+<div id="tabset-11-2">
 <p>A factory produces an average of 2 defective items per day (<span class="math inline">\(\lambda = 2\)</span>). What is the probability of finding no defective items in a day (<span class="math inline">\(k = 0\)</span>)?</p>
 <p><span class="math display">\[
 P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
@@ -1634,12 +1589,12 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
 </ul></li>
 </ul>
 </section>
-<section id="examples-1" class="slide level2">
+<section id="examples" class="slide level2">
 <h2>Examples</h2>
 <div class="panel-tabset">
-<ul id="tabset-13" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-13-1">1</a></li><li><a href="#tabset-13-2">2</a></li><li><a href="#tabset-13-3">3</a></li></ul>
+<ul id="tabset-12" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-12-1">1</a></li><li><a href="#tabset-12-2">2</a></li><li><a href="#tabset-12-3">3</a></li></ul>
 <div class="tab-content">
-<div id="tabset-13-1">
+<div id="tabset-12-1">
 <p>Find <span class="math inline">\(P(X \leq 5 )\)</span> where <span class="math inline">\(X \sim N(6,2)\)</span>.</p>
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
@@ -1648,7 +1603,7 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
 </details>
 </div>
 </div>
-<div id="tabset-13-2">
+<div id="tabset-12-2">
 <p>Find <span class="math inline">\(P(X \geq 7 )\)</span> where <span class="math inline">\(X \sim N(6,2)\)</span>.</p>
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
@@ -1657,7 +1612,7 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
 </details>
 </div>
 </div>
-<div id="tabset-13-3">
+<div id="tabset-12-3">
 <p>Find <span class="math inline">\(P(X = 20 )\)</span> where <span class="math inline">\(X \sim Bin(30,0.8)\)</span>.</p>
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
@@ -1669,12 +1624,12 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
 </div>
 </div>
 </section>
-<section id="more-examples-1" class="slide level2">
+<section id="more-examples" class="slide level2">
 <h2>More Examples</h2>
 <div class="panel-tabset">
-<ul id="tabset-14" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-14-1">1</a></li><li><a href="#tabset-14-2">2</a></li><li><a href="#tabset-14-3">3</a></li></ul>
+<ul id="tabset-13" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-13-1">1</a></li><li><a href="#tabset-13-2">2</a></li><li><a href="#tabset-13-3">3</a></li></ul>
 <div class="tab-content">
-<div id="tabset-14-1">
+<div id="tabset-13-1">
 <p>Find <span class="math inline">\(P(2 \leq X \leq 5 )\)</span> where <span class="math inline">\(X \sim N(6,2)\)</span>.</p>
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
@@ -1683,7 +1638,7 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
 </details>
 </div>
 </div>
-<div id="tabset-14-2">
+<div id="tabset-13-2">
 <p>Find <span class="math inline">\(P(14 &lt; X &lt; 20)\)</span> where <span class="math inline">\(X \sim Pois(16)\)</span>.</p>
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
@@ -1696,7 +1651,7 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
 </details>
 </div>
 </div>
-<div id="tabset-14-3">
+<div id="tabset-13-3">
 <p>Find <span class="math inline">\(P(23 &lt; X)\)</span> where <span class="math inline">\(X \sim Pois(12)\)</span>.</p>
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
@@ -1712,12 +1667,12 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
 <h2>Percentiles</h2>
 <p>Finding the values (percentiles) for any distributions can be found by using the q-based distribution R function such as <code>qnorm()</code>, <code>qpois()</code>, and <code>qbinom()</code> functions.</p>
 </section>
-<section id="examples-2" class="slide level2">
+<section id="examples-1" class="slide level2">
 <h2>Examples</h2>
 <div class="panel-tabset">
-<ul id="tabset-15" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-15-1">1</a></li><li><a href="#tabset-15-2">2</a></li><li><a href="#tabset-15-3">3</a></li></ul>
+<ul id="tabset-14" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-14-1">1</a></li><li><a href="#tabset-14-2">2</a></li><li><a href="#tabset-14-3">3</a></li></ul>
 <div class="tab-content">
-<div id="tabset-15-1">
+<div id="tabset-14-1">
 <p>Finding the <span class="math inline">\(95^{th}\)</span> percentile from <span class="math inline">\(N(0,1)\)</span>, we will use the <code>qnorm()</code>.</p>
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
@@ -1726,7 +1681,7 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
 </details>
 </div>
 </div>
-<div id="tabset-15-2">
+<div id="tabset-14-2">
 <p>Finding the <span class="math inline">\(95^{th}\)</span> percentile from a Poisson distribution with <span class="math inline">\(\lambda = 9.5\)</span>.</p>
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
@@ -1735,7 +1690,7 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
 </details>
 </div>
 </div>
-<div id="tabset-15-3">
+<div id="tabset-14-3">
 <p>Finding the <span class="math inline">\(75^{th}\)</span> percentile for <span class="math inline">\(Bin(45,.4)\)</span>.</p>
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
@@ -1751,12 +1706,12 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
 <h2>Random Number Generator</h2>
 <p>R is capable of generating random numbers. For example if we want to generate a random sample of size fifty from a normal distribution with mean eight and variance three, we will use the <code>rnorm()</code>. If we want to generate a random sample from any distribution, use the distribution function with <code>r</code> in front of it.</p>
 </section>
-<section id="examples-3" class="slide level2">
+<section id="examples-2" class="slide level2">
 <h2>Examples</h2>
 <div class="panel-tabset">
-<ul id="tabset-16" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-16-1">1</a></li><li><a href="#tabset-16-2">2</a></li><li><a href="#tabset-16-3">3</a></li><li><a href="#tabset-16-4">4</a></li></ul>
+<ul id="tabset-15" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-15-1">1</a></li><li><a href="#tabset-15-2">2</a></li><li><a href="#tabset-15-3">3</a></li><li><a href="#tabset-15-4">4</a></li></ul>
 <div class="tab-content">
-<div id="tabset-16-1">
+<div id="tabset-15-1">
 <p>Let’s first generate the random sample of fifty from <span class="math inline">\(X \sim N(8,3)\)</span>.</p>
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
@@ -1765,7 +1720,7 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
 </details>
 </div>
 </div>
-<div id="tabset-16-2">
+<div id="tabset-15-2">
 <p>Generate a random sample of 100 form an <span class="math inline">\(X \sim Gamma (2,3)\)</span>.</p>
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
@@ -1774,7 +1729,7 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
 </details>
 </div>
 </div>
-<div id="tabset-16-3">
+<div id="tabset-15-3">
 <p>Generate a random sample of 100 form an <span class="math inline">\(X \sim Binom (25,.23)\)</span>.</p>
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
@@ -1783,7 +1738,7 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
 </details>
 </div>
 </div>
-<div id="tabset-16-4">
+<div id="tabset-15-4">
 <p>Generate a random sample of 100 form an <span class="math inline">\(X \sim Pois (34.4)\)</span>.</p>
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
@@ -1791,6 +1746,60 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">rpois</span>(<span class="at">n =</span> <span class="dv">100</span>, <span class="at">lambda =</span> <span class="fl">34.4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
+</div>
+</div>
+</div>
+</section>
+<section id="binomial-examples" class="slide level2">
+<h2>Binomial Examples</h2>
+<div class="panel-tabset">
+<ul id="tabset-16" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-16-1">Quality Control</a></li><li><a href="#tabset-16-2">Sports</a></li><li><a href="#tabset-16-3">Clinical Trials</a></li></ul>
+<div class="tab-content">
+<div id="tabset-16-1">
+<p>A factory produces lightbulbs, and 95% of them meet quality standards. If you randomly test 10 bulbs, what is the probability that exactly 8 bulbs pass the test?</p>
+<p>Here:</p>
+<ul>
+<li><span class="math inline">\(n = 10\)</span>, <span class="math inline">\(p = 0.95\)</span>, <span class="math inline">\(k = 8\)</span>.</li>
+</ul>
+<p><span class="math display">\[
+P(X = 8) = \binom{10}{8} (0.95)^8 (0.05)^2
+\]</span></p>
+</div>
+<div id="tabset-16-2">
+<p>A basketball player has a 60% chance of making a free throw. If they take 5 shots, what is the probability of making at least 3 shots?</p>
+<p>Here: - <span class="math inline">\(n = 5\)</span>, <span class="math inline">\(p = 0.6\)</span>.</p>
+<p><span class="math display">\[
+P(X \geq 3) = P(X = 3) + P(X = 4) + P(X = 5)
+\]</span></p>
+</div>
+<div id="tabset-16-3">
+<p>In a clinical trial, a new drug has a 70% success rate. If 15 patients are treated, what is the probability that exactly 10 respond positively to the treatment?</p>
+</div>
+</div>
+</div>
+</section>
+<section id="poisson-examples" class="slide level2">
+<h2>Poisson Examples</h2>
+<div class="panel-tabset">
+<ul id="tabset-17" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-17-1">Call Center</a></li><li><a href="#tabset-17-2">Traffic Flow</a></li><li><a href="#tabset-17-3">Defective Products</a></li></ul>
+<div class="tab-content">
+<div id="tabset-17-1">
+<p>Suppose a call center receives an average of 10 calls per hour (<span class="math inline">\(\lambda = 10\)</span>). What is the probability of receiving exactly 7 calls in the next hour ($ k = 7 $)?</p>
+<p><span class="math display">\[
+P(X = 7) = \frac{10^7 e^{-10}}{7!}
+\]</span></p>
+</div>
+<div id="tabset-17-2">
+<p>A toll booth observes an average of 3 cars passing through every 5 minutes (<span class="math inline">\(\lambda = 3\)</span>). What is the probability of seeing exactly 5 cars in the next 5 minutes?</p>
+<p>Using the formula: <span class="math display">\[
+P(X = 5) = \frac{3^5 e^{-3}}{5!} = \frac{243 \cdot 0.0498}{120} \approx 0.1008
+\]</span></p>
+</div>
+<div id="tabset-17-3">
+<p>A factory produces an average of 2 defective items per day (<span class="math inline">\(\lambda = 2\)</span>). What is the probability of finding no defective items in a day (<span class="math inline">\(k = 0\)</span>)?</p>
+<p><span class="math display">\[
+P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
+\]</span></p>
 </div>
 </div>
 </div>

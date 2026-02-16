@@ -53,7 +53,7 @@ theme_set(theme_bw() +
               axis.text.x = element_text(size = 28),
               axis.text.y = element_text(size = 22),
               axis.title = element_text(size = 30),
-              plot.title = element_text(size = 48),
+              plot.title = element_text(size = 38),
               strip.text = element_text(size = 20),
               legend.title = element_blank(),
               legend.text = element_text(size = 24)))
@@ -764,13 +764,6 @@ The empirical rule is very helpful because, with just the mean and standard devi
 
 ## Empirical Rule to the Normal Dist.
 
-Let's define the key terms and apply the empirical rule to the normal distribution.
-
-- **Mean (μ)**: This is the central point of the normal distribution where the data clusters around.
-- **Standard Deviation (σ)**: This is a measure of how spread out the data points are from the mean.
-
-## Empirical Rule to the Normal Dist.
-
 In a normal distribution:
 
 - **68% of data** lies between $(\mu - \sigma)$ and $(\mu + \sigma)$.
@@ -782,13 +775,23 @@ These intervals allow us to estimate probabilities for data within each range wi
 
 ## Visualizing the Empirical Rule
 
-To better understand the empirical rule, imagine a symmetric, bell-shaped normal curve. Here’s how it would look based on the empirical rule:
+```{r}
+#| code-fold: false
+#| echo: false
 
-1. The **68% region** represents the middle of the curve, starting one standard deviation left of the mean and ending one standard deviation right.
-2. The **95% region** stretches further out, covering almost the entire curve except for the outer tails.
-3. The **99.7% region** includes nearly all data points, covering the entire curve except for a tiny fraction at each extreme.
 
-This visualization shows how the data is most concentrated around the mean, with less data appearing as we move further away.
+mean <- 0  # Mean of the distribution
+sd <- 1   # Standard deviation of the distribution
+
+# Generate data points for the curve (more points = smoother curve)
+x <- seq(mean - 3*sd, mean + 3*sd, length.out = 100)  # Range covering most of the distribution
+y <- dnorm(x, mean = mean, sd = sd)  # Calculate the density at each x value
+
+# Create the plot
+ggplot(data = data.frame(x, y), aes(x = x, y = y)) +
+  geom_line(color = "palegreen4", size = 1) +  # Line for the distribution curve
+  scale_x_continuous(breaks = seq(mean - 3*sd, mean + 3*sd, by = sd)) # Ticks at standard deviations
+```
 
 
 ## Using the Empirical Rule for Probabilities
@@ -798,31 +801,6 @@ The empirical rule helps us answer questions like:
 - **What percentage of data points fall within a certain range?**
 - **How unusual is a data point located far from the mean?**
 
-## Examples
-
-- If we know that a data point lies more than two standard deviations away from the mean, we know it’s in the outer 5% of the distribution, making it relatively rare.
-- Using the rule, we can estimate that around 95% of values should lie within two standard deviations of the mean. If we observe data points outside of this range, we might consider them outliers.
-
-
-## More Examples
-
-::: panel-tabset
-
-### Exam Scores
-Suppose exam scores are normally distributed with a mean of 70 and a standard deviation of 10.
-
-- **68% of students** scored between **60 and 80** (70 ± 10).
-- **95% of students** scored between **50 and 90** (70 ± 20).
-- **99.7% of students** scored between **40 and 100** (70 ± 30).
-
-### Heights of Adults
-Assume that adult heights follow a normal distribution with a mean height of 170 cm and a standard deviation of 8 cm.
-
-- **68% of adults** have heights between **162 cm and 178 cm** (170 ± 8).
-- **95% of adults** have heights between **154 cm and 186 cm** (170 ± 16).
-- **99.7% of adults** have heights between **146 cm and 194 cm** (170 ± 24).
-
-:::
 
 # Binomial Distribution
 
@@ -1281,3 +1259,71 @@ rpois(n = 100, lambda = 34.4)
 
 :::
 
+## Binomial Examples
+
+::: panel-tabset
+
+### Quality Control
+A factory produces lightbulbs, and 95% of them meet quality standards. If you randomly test 10 bulbs, what is the probability that exactly 8 bulbs pass the test?
+
+Here:
+
+- $n = 10$, $p = 0.95$, $k = 8$.
+
+
+$$
+P(X = 8) = \binom{10}{8} (0.95)^8 (0.05)^2
+$$
+
+### Sports
+A basketball player has a 60% chance of making a free throw. If they take 5 shots, what is the probability of making at least 3 shots?
+
+Here:
+- $n = 5$, $p = 0.6$.
+
+$$ 
+P(X \geq 3) = P(X = 3) + P(X = 4) + P(X = 5) 
+$$
+
+### Clinical Trials
+
+In a clinical trial, a new drug has a 70% success rate. If 15 patients are treated, what is the probability that exactly 10 respond positively to the treatment?
+
+:::
+
+
+## Poisson Examples
+
+::: panel-tabset
+
+### Call Center
+
+Suppose a call center receives an average of 10 calls per hour ($\lambda = 10$). What is the probability of receiving exactly 7 calls in the next hour ($ k = 7 $)?
+
+$$
+P(X = 7) = \frac{10^7 e^{-10}}{7!}
+$$
+
+
+### Traffic Flow
+A toll booth observes an average of 3 cars passing through every 5 minutes ($\lambda = 3$). What is the probability of seeing exactly 5 cars in the next 5 minutes?
+
+Using the formula:
+$$
+P(X = 5) = \frac{3^5 e^{-3}}{5!} = \frac{243 \cdot 0.0498}{120} \approx 0.1008
+$$
+
+
+### Defective Products
+
+A factory produces an average of 2 defective items per day ($\lambda = 2$). What is the probability of finding no defective items in a day ($k = 0$)?
+
+$$
+P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
+$$
+
+
+
+
+
+:::
