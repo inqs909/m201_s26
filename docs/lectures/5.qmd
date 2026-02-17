@@ -365,14 +365,12 @@ plot_ly(
   x = kde$x,
   y = kde$y,
   z = kde$z
-) %>%
-  add_surface() %>%
+) |>
+  add_surface() |>
   layout(
-    title = "3D Density Plot",
     scene = list(
       xaxis = list(title = "Flipper Length"),
-      yaxis = list(title = "Body MAss"),
-      zaxis = list(title = "Density")
+      yaxis = list(title = "Body MAss")
     )
   )
 ```
