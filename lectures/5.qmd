@@ -49,6 +49,7 @@ editor: source
 #| message: false
 library(tidyverse)
 library(rcistats)
+library(plotly)
 penguins <- penguins |> drop_na()
 theme_set(theme_bw() + 
           theme(axis.text = element_text(size = 24),
@@ -80,10 +81,6 @@ theme_set(theme_bw() +
 
 :::
 ::: 
-
-## Variables of Interest
-
-
 
 
 # Modeling Relationships
@@ -350,6 +347,34 @@ Thus, the linear model is born.
 #| code-fold: true
 ggplot(penguins, aes(body_mass)) +
   geom_density()
+```
+
+### 1 $\rightarrow$ 2
+
+```{r}
+#| code-fold: false
+#| echo: false
+x <- penguins$flipper_len
+y <- penguins$body_mass
+
+# Compute 2D kernel density estimate
+kde <- MASS::kde2d(x, y, h = c(38.59,1068.536), n = 50)
+
+# Create interactive 3D surface plot
+plot_ly(
+  x = kde$x,
+  y = kde$y,
+  z = kde$z
+) %>%
+  add_surface() %>%
+  layout(
+    title = "3D Density Plot",
+    scene = list(
+      xaxis = list(title = "Flipper Length"),
+      yaxis = list(title = "Body MAss"),
+      zaxis = list(title = "Density")
+    )
+  )
 ```
 
 ### 2-Dimensional
