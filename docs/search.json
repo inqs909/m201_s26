@@ -889,18 +889,11 @@
     "text": "A Simple Model\n\\[\nY = \\_\\_\\_ + error\n\\]"
   },
   {
-    "objectID": "lectures/5.html#notation",
-    "href": "lectures/5.html#notation",
-    "title": "Simple  Linear Regression",
-    "section": "Notation",
-    "text": "Notation\n\\[\nY = \\ \\ \\ \\ \\ \\ \\ \\ \\ + \\varepsilon\n\\]"
-  },
-  {
     "objectID": "lectures/5.html#the-simple-generated-model",
     "href": "lectures/5.html#the-simple-generated-model",
     "title": "Simple  Linear Regression",
     "section": "The Simple Generated Model",
-    "text": "The Simple Generated Model\n\\[\nY \\sim \\beta_0 + \\varepsilon\n\\]\n\\[\n\\varepsilon \\sim DGP_2\n\\]\n\n\\(DGP_2\\) is not the same as the \\(DGP_1\\), it is transformed due \\(\\beta_0\\). Consider this the NULL \\(DGP\\)."
+    "text": "The Simple Generated Model\n\\[\nY = \\beta_0 + \\varepsilon\n\\]\n\\[\n\\varepsilon \\sim DGP_2\n\\]\n\n\\(DGP_2\\) is not the same as the \\(DGP_1\\), it is transformed due \\(\\beta_0\\). Consider this the NULL \\(DGP\\)."
   },
   {
     "objectID": "lectures/5.html#observing-data",
@@ -917,8 +910,8 @@
     "text": "Estimated Line\n\\[\n\\hat Y=\\hat\\beta_0\n\\]"
   },
   {
-    "objectID": "lectures/5.html#notation-1",
-    "href": "lectures/5.html#notation-1",
+    "objectID": "lectures/5.html#notation",
+    "href": "lectures/5.html#notation",
     "title": "Simple  Linear Regression",
     "section": "Notation",
     "text": "Notation\n\n\nObserved\n\\[\nY = \\beta_0 + \\varepsilon\n\\]\n\nEstimated\n\\[\n\\hat Y = \\hat \\beta_0\n\\]"
@@ -1082,7 +1075,7 @@
     "href": "lectures/5.html#interpreting-example-1",
     "title": "Simple  Linear Regression",
     "section": "Interpreting Example",
-    "text": "Interpreting Example\n\\[\n\\hat Y_i = -5872.09 + 50.15 X_i\n\\]\nWhen flipper length increases by 1 mm, the body mass will increase by 50.15 grams."
+    "text": "Interpreting Example\n\\[\n\\hat Y_i = -5872.09 + 50.15 X_i\n\\]\nWhen flipper length increases by 1 mm, the body mass will increase by an average of 50.15 grams."
   },
   {
     "objectID": "lectures/5.html#statistical-model",

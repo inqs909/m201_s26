@@ -163,16 +163,11 @@ $$
 Y = \_\_\_ + error
 $$
 
-## Notation
-
-$$
-Y = \ \ \ \ \ \ \ \ \ + \varepsilon 
-$$
 
 ## The Simple Generated Model
 
 $$
-Y \sim \beta_0 + \varepsilon
+Y = \beta_0 + \varepsilon
 $$
 
 $$
@@ -215,7 +210,7 @@ $$
 :::
 :::
 
-# Modelling Data
+# Estimating Models
 
 ## Indexing Data
 
@@ -511,7 +506,7 @@ $$
 \hat Y_i = -5872.09 + 50.15 X_i
 $$
 
-When flipper length increases by 1 mm, the body mass will increase by 50.15 grams.
+When flipper length increases by 1 mm, the body mass will increase by an average of 50.15 grams.
 
 
 # Prediction
@@ -534,7 +529,7 @@ Using the equation $\hat Y$, we can give it a value of $X$ and then, in return, 
 ```{r}
 #| echo: true
 #| eval: false
-
+#| code-fold: show
 xlm <- lm(Y ~ X,
             data = DATA)
 
