@@ -4022,14 +4022,14 @@
     "href": "lectures/6.html#modeling-binary-outcomes-1",
     "title": "Simple  Logistic Regression",
     "section": "Modeling Binary Outcomes",
-    "text": "Modeling Binary Outcomes\n\n\n#&gt; `geom_smooth()` using formula = 'y ~ x'"
+    "text": "Modeling Binary Outcomes"
   },
   {
     "objectID": "lectures/6.html#modeling-binary-outcomes-2",
     "href": "lectures/6.html#modeling-binary-outcomes-2",
     "title": "Simple  Logistic Regression",
     "section": "Modeling Binary Outcomes",
-    "text": "Modeling Binary Outcomes\n\n\n#&gt; `geom_smooth()` using formula = 'y ~ x'"
+    "text": "Modeling Binary Outcomes"
   },
   {
     "objectID": "lectures/6.html#mathematical-model",
@@ -4127,7 +4127,7 @@
     "href": "lectures/6.html#interpreting-hat-beta",
     "title": "Simple  Logistic Regression",
     "section": "Interpreting \\(\\hat \\beta\\)",
-    "text": "Interpreting \\(\\hat \\beta\\)\nFor a continuous predictor variable:\nAs X increases by 1 unit, the odds of observing the first category (\\(Y = 1\\)) increases by a factor of \\(e^{\\hat\\beta}\\)."
+    "text": "Interpreting \\(\\hat \\beta\\)\nFor a continuous predictor variable:\nAs X increases by 1 unit, the odds of observing the first category (\\(Y = 1\\)) increases/decreases by a factor of \\(e^{\\hat\\beta}\\)."
   },
   {
     "objectID": "lectures/6.html#logistic-regression-in-r-1",
@@ -4155,14 +4155,14 @@
     "href": "lectures/6.html#example",
     "title": "Simple  Logistic Regression",
     "section": "Example",
-    "text": "Example\nModelling disease by age:\n\n\nCode\nxglm &lt;- glm(disease ~ cp + age + sex + restecg + fbs,\n            data = heart_disease,\n            family = binomial())\nmodel_info(xglm)\n\n\n#&gt; Outcome Variable: disease\n\n\n#&gt;   Modeling Probability: yes\n\n\n#&gt; Numerical Predictors: \n#&gt;    age\n\n\n#&gt; Categorical Predictors: \n#&gt;   cp: \n#&gt;      Asymptomatic (Reference)  \n#&gt;      Non-anginal Pain  \n#&gt;      Atypical Angina  \n#&gt;      Typical Angina  \n#&gt;   sex: \n#&gt;      Female (Reference)  \n#&gt;      Male  \n#&gt;   restecg: \n#&gt;      Normal (Reference)  \n#&gt;      ST-T wave Abnormality  \n#&gt;      Left Ventricular Hypertrophy  \n#&gt;   fbs: \n#&gt;      Fasting Blood Sugar &lt;= 120 (Reference)  \n#&gt;      Fasting Blood Sugar &gt;120\n\n\nCode\nxglm\n\n\n#&gt; \n#&gt; Call:  glm(formula = disease ~ cp + age + sex + restecg + fbs, family = binomial(), \n#&gt;     data = heart_disease)\n#&gt; \n#&gt; Coefficients:\n#&gt;                         (Intercept)                   cpNon-anginal Pain  \n#&gt;                            -3.97563                             -2.30854  \n#&gt;                   cpAtypical Angina                     cpTypical Angina  \n#&gt;                            -2.38883                             -2.31736  \n#&gt;                                 age                              sexMale  \n#&gt;                             0.06316                              1.77141  \n#&gt;        restecgST-T wave Abnormality  restecgLeft Ventricular Hypertrophy  \n#&gt;                             1.62429                              0.50215  \n#&gt;         fbsFasting Blood Sugar &gt;120  \n#&gt;                             0.08444  \n#&gt; \n#&gt; Degrees of Freedom: 296 Total (i.e. Null);  288 Residual\n#&gt; Null Deviance:       409.9 \n#&gt; Residual Deviance: 286.6     AIC: 304.6"
+    "text": "Example\nModelling disease by age:\n\n\nCode\nxglm &lt;- glm(disease ~ age,\n            data = heart_disease,\n            family = binomial())\nmodel_info(xglm)\nxglm\n\n\n#&gt; \n#&gt; Call:  glm(formula = disease ~ age, family = binomial(), data = heart_disease)\n#&gt; \n#&gt; Coefficients:\n#&gt; (Intercept)          age  \n#&gt;    -3.05122      0.05291  \n#&gt; \n#&gt; Degrees of Freedom: 296 Total (i.e. Null);  295 Residual\n#&gt; Null Deviance:       409.9 \n#&gt; Residual Deviance: 394.3     AIC: 398.3"
   },
   {
-    "objectID": "lectures/6.html#section",
-    "href": "lectures/6.html#section",
+    "objectID": "lectures/6.html#estimated-model",
+    "href": "lectures/6.html#estimated-model",
     "title": "Simple  Logistic Regression",
-    "section": "",
-    "text": "\\[\nlo(disease) = -3.0512 + 0.0529 (age)\n\\]"
+    "section": "Estimated Model",
+    "text": "Estimated Model\n\\[\nlo(disease) = -3.0512 + 0.0529 (age)\n\\]"
   },
   {
     "objectID": "lectures/6.html#interpretation",
