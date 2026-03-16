@@ -18,7 +18,7 @@
 <link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.27">
 
-  <title>MATH 201 – Group   Regression</title>
+  <title>MATH 201 – Group   Models</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -205,7 +205,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Group <br> Regression</h1>
+  <h1 class="title">Group <br> Models</h1>
 
 <div class="quarto-title-authors">
 </div>
@@ -285,7 +285,7 @@
 </details>
 
 </div>
-<img data-src="7_files/figure-html/unnamed-chunk-2-1.png" width="672" class="r-stretch"></section>
+<img data-src="7_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
 <section id="linear-categorical-variables" class="slide level2">
 <h2>Linear: Categorical Variables</h2>
 <div class="cell">
@@ -296,7 +296,7 @@
 </details>
 
 </div>
-<img data-src="7_files/figure-html/unnamed-chunk-3-1.png" width="672" class="r-stretch"></section>
+<img data-src="7_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
 <section id="explainging-binary-variables" class="slide level2">
 <h2>Explainging Binary Variables</h2>
 <div class="cell">
@@ -308,7 +308,7 @@
 </details>
 
 </div>
-<img data-src="7_files/figure-html/unnamed-chunk-4-1.png" width="672" class="r-stretch"></section>
+<img data-src="7_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
 <section id="logistic-categorical-variables" class="slide level2">
 <h2>Logistic: Categorical Variables</h2>
 <div class="cell">
@@ -320,7 +320,7 @@
 </details>
 
 </div>
-<img data-src="7_files/figure-html/unnamed-chunk-5-1.png" width="672" class="r-stretch"></section></section>
+<img data-src="7_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section></section>
 <section>
 <section id="group-statistics" class="title-slide slide level1 agenda-slide center">
 <h1>Group Statistics</h1>
@@ -1183,6 +1183,44 @@ lo(disease) = -1.233 + 1.926 (Fixed) + 2.415 (Reversible)
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
