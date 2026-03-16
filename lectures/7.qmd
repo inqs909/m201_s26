@@ -174,22 +174,21 @@ num_by_cat_stats(DATA, NUM, CAT)
 
 ## Continous Data
 
+Find the numerical statistics of `body_mass` for each penguins `species`, for the `penguins` data set.
+
+::: fragment
+
 ```{r}
 #| code-fold: false
 num_by_cat_stats(penguins, body_mass, species)
 ```
 
+:::
 
-## Continuous Data
-
-```r
-cat_stats(DATA$Y, DATA$X, prop = "row")
-```
-
-OR
+## Binary Data
 
 ```r
-cat_stats(DATA$X, DATA$Y, prop = "col")
+cat_stats(DATA$Y, DATA$X)
 ```
 
 
@@ -199,11 +198,16 @@ cat_stats(DATA$X, DATA$Y, prop = "col")
 
 ## Binary Data
 
+Find the descriptive statistics for each `disease` based on the `thal` condition in the `heart_disease` data set.
+
+::: fragment
+
 ```{r}
 #| code-fold: false
-cat_stats(heart_disease$disease, heart_disease$thal, prop = "row")
+cat_stats(heart_disease$disease, heart_disease$thal)
 ```
 
+:::
 
 # Group Models
 
@@ -265,22 +269,62 @@ Binary variables are variable that can only take on the value 0 or 1.
 $$
 D_i = \left\{
 \begin{array}{cc}
-1 & Category\\
+1 & Category\ i\\
 0 & Other
 \end{array}
 \right.
 $$
 
-
 ## Example
 
-If we have 4 categories, we will need 3 dummy variables:
+::: {.columns}
+::: {.column}
 
-|         | Cat 1 | Cat 2 | Cat 3 | Cat 4 |
-|---------|-------|-------|-------|-------|
-| Dummy 1 | 1     | 0     | 0     | 0     |
-| Dummy 2 | 0     | 1     | 0     | 0     |
-| Dummy 2 | 0     | 0     | 1     | 0     |
+### Linear
+
+$$
+Chinstrap = \left\{
+\begin{array}{cc}
+1 & Chinstrap\\
+0 & Other
+\end{array}
+\right.
+$$
+
+$$
+Gentoo = \left\{
+\begin{array}{cc}
+1 & Gentoo\\
+0 & Other
+\end{array}
+\right.
+$$
+
+:::
+::: {.column}
+
+### Logistic
+
+$$
+Fixed = \left\{
+\begin{array}{cc}
+1 & Fixed\\
+0 & Other
+\end{array}
+\right.
+$$
+
+$$
+Reversible = \left\{
+\begin{array}{cc}
+1 & Reversible\\
+0 & Other
+\end{array}
+\right.
+$$
+
+:::
+:::
 
 
 ## Species Dummy Variables
@@ -296,6 +340,17 @@ If we have 4 categories, we will need 3 dummy variables:
 |---------|-------|-------|-------|
 | $Fixed$ | 1     | 0     | 0     |
 | $Reversible$ | 0     | 1     | 0     |
+
+## Example
+
+If we have 4 categories, we will need 3 dummy variables:
+
+|         | Cat 1 | Cat 2 | Cat 3 | Cat 4 |
+|---------|-------|-------|-------|-------|
+| Dummy 1 | 1     | 0     | 0     | 0     |
+| Dummy 2 | 0     | 1     | 0     | 0     |
+| Dummy 2 | 0     | 0     | 1     | 0     |
+
 
 ## LM: Penguins
 
@@ -315,7 +370,7 @@ $\hat \beta_2$ indicates how body mass changes from Adelie to Gentoo.
 $\hat \beta_0$ represents the baseline level, in this case the body mass of Adelie.
 :::
 
-## GLM: Penguins
+## GLM: Heart Disease
 
 $$
 lo(disease) = \hat \beta_0 + \hat\beta_1 (Fixed) + \hat\beta_2 (Reversible)
@@ -361,7 +416,7 @@ $$
 :::
 ::: 
 
-On average, CAT1 has a larger/smaller Y than REF by about $\beta_1$.
+On average, CAT has a larger/smaller Y than REF by about $\beta_1$.
 
 ## GLM: Interpreting $\beta$
 
