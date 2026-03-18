@@ -14,7 +14,8 @@ format:
     controls-tutorial: true
     slide-number: true
     pointer:
-      pointerSize: 32
+      pointerSize: 48
+      color: blue
     incremental: false 
     chalkboard:
       theme: whiteboard
@@ -133,6 +134,14 @@ ggplot(penguins, aes(x = flipper_len, y = body_mass)) +
 ### Species
 
 ```{r}
+ggplot(penguins, aes(body_mass, fill = species)) +
+  geom_density(alpha = .5)
+```
+
+
+### Sp + FL
+
+```{r}
 ggplot(penguins, aes(x = flipper_len, y = body_mass, color = species)) +
   geom_point() +
   stat_density_2d(aes(fill = after_stat(level))) +
@@ -166,6 +175,17 @@ ggplot(heart_disease, aes(disease)) +
 
 ```
 
+### thal
+
+```{r}
+#| code-fold: true
+# Fit logistic model
+
+heart_disease |> 
+  ggplot(aes(disease, fill = thal)) +
+  geom_bar()
+
+```
 
 ### thalach
 
@@ -184,7 +204,7 @@ ggplot(hdf, aes(thalach, plot)) +
 
 ```
 
-### thal
+### thal + thalach
 
 ```{r}
 #| code-fold: true
@@ -278,6 +298,17 @@ $$
 $$
 
 
+## Interpreting $\hat \beta_j$
+
+For a continuous predictor variable:
+
+As X increases by 1 unit, Y will increases/decrease by an average of $\hat\beta_j$, adjusting for all the other predictor variables.
+
+For a categorical predictor variable (first dummy variable):
+
+On average, the average Y in category 1 (D = 1) is $\hat\beta_j$ higher/lower than the reference category (D = 0), adjusting for the other predictor variables.
+
+
 ## Fitting a LM in R
 
 ```r
@@ -287,7 +318,7 @@ xlm
 
 - `DATA`: Name of the data frame
 - `Y`: Outcome Variable of Interest in the data frame `DATA`
-- `X1`, `X2`, ... , `X_p` : Predictor variables in the data frame `DATA`
+- `X1`, `X2`, ... , `Xp` : Predictor variables in the data frame `DATA`
 
 
 
@@ -335,11 +366,11 @@ Exponentiating the estimate ($e^{\hat \beta}$) will give you the relationship be
 
 For a continuous predictor variable:
 
-As X increases by 1 unit, the odds of observing the first category ($Y = 1$) increases by a factor of $e^{\hat\beta_j}$, adjusting for alll the other predictor variables.
+As X increases by 1 unit, the odds of observing the first category ($Y = 1$) increases by a factor of $e^{\hat\beta_j}$, adjusting for all the other predictor variables.
 
 For a categorical predictor variable (first dummy variable):
 
-The odds of observing the first category ($Y = 1$) in the indicated category ($D=1$) is $e^{\hat\beta_j}$ times higher/lower compared to the reference category ($D=0$), adjusting for alll the other predictor variables.
+The odds of observing the first category ($Y = 1$) in the indicated category ($D=1$) is $e^{\hat\beta_j}$ times higher/lower compared to the reference category ($D=0$), adjusting for all the other predictor variables.
 
 ## Fitting a GLM in R
 
@@ -352,13 +383,13 @@ xglm
 
 - `DATA`: Name of the data frame
 - `Y`: Outcome Variable of Interest in the data frame `DATA`
-- `X1`, `X2`, ... , `X_p` : Predictor variables in the data frame `DATA`
+- `X1`, `X2`, ... , `Xp` : Predictor variables in the data frame `DATA`
 
 
 
-# Modelling Body Mass
+# Modeling Body Mass
 
-## Modelling Body Mass
+## Modeling Body Mass
 
 $$
 body\_mass = \beta_0 + \boldsymbol \beta_1 (species) + \beta_2 (flipper\_len)
@@ -372,6 +403,10 @@ $$
 #| message: true
 xlm <- lm(body_mass ~ species + flipper_len, 
           data = penguins)
+```
+
+```{r}
+#| code-fold: false
 model_info(xlm)
 ```
 
@@ -414,17 +449,30 @@ On average, the body mass of a Chinstrap species is 205.6 grams lower than an Ad
 
 ### Gentoo
 
-On average, the body mass of a Gentoo species is 205.6 grams higher than an Adelie species, adjusting for flipper length.
+On average, the body mass of a Gentoo species is 284.5 grams higher than an Adelie species, adjusting for flipper length.
 
 :::
 
+
+## Predicting Body Mass
+
+Let's predict the body mass for a Adelie penguin with a flipper length of 190.
+
+::: {.fragment}
+
+```{r}
+#| code-fold: false
+df <- data.frame(species = "Adelie", flipper_len =  190)
+predict(xlm, df)
+```
+:::
 
 # Modeling Heart Disease
 
 ## Modelling Heart Disease
 
 $$
-lo(disease) = \beta_0 + \boldsymbol \beta_1 (thal)\\ + \beta_2 (thalach)
+lo(disease) = \beta_0 + \boldsymbol \beta_1 (thal) + \beta_2 (thalach)
 $$
 
 
@@ -433,7 +481,7 @@ $$
 ```{r}
 #| code-fold: false
 #| message: true
-xglm <- lm(disease ~ thal + thalach, 
+xglm <- glm(disease ~ thal + thalach, 
            data = heart_disease,
            family = binomial)
 model_info(xglm)
@@ -447,7 +495,7 @@ xglm
 ## Estimated Model
 
 $$
-lo(disease) = 2.255 + 0.305 (Fixed) + 0.46 (Reversible)\\ - 0.006 (thalach)
+lo(disease) = 4.70 + 1.38 (Fixed) + 2.29 (Reversible)\\ - 0.04 (thalach)
 $$
 
 
@@ -455,21 +503,22 @@ $$
 ## Intepreting $thalach$ coefficient
 
 $$
-lo(disease) = 2.255 + 0.305 (Fixed) + 0.46 (Reversible)\\ - 0.006 (thalach)
+lo(disease) = 4.70 + 1.38 (Fixed) + 2.29 (Reversible)\\ - 0.04 (thalach)
 $$
+
 
 
 ```{r}
 #| code-fold: false
-exp(-0.006)
+exp(-0.04)
 ```
 
-As maximum heart rate achieved increases by 1 unit, the odds of having heart disease decresease by a factor of 0.994, adjusting for thallium stress test results.
+As maximum heart rate achieved increases by 1 unit, the odds of having heart disease decresease by a factor of 0.951, adjusting for thallium stress test results.
 
 ## Intepreting $thal$ coefficient
 
 $$
-lo(disease) = 2.255 + 0.305 (Fixed) + 0.46 (Reversible)\\ - 0.006 (thalach)
+lo(disease) = 4.70 + 1.38 (Fixed) + 2.29 (Reversible)\\ - 0.04 (thalach)
 $$
 
 ::: panel-tabset
@@ -478,20 +527,34 @@ $$
 
 ```{r}
 #| code-fold: false
-exp(0.305)
+exp(1.38)
 ```
 
-The odds of having heart disease is 1.356 times higher in patients with fixed defects thallium stress results than patients with normal thallium stress results, adjusting for maximum heart rate achieved. 
+The odds of having heart disease is 3.97 times higher in patients with fixed defects thallium stress results than patients with normal thallium stress results, adjusting for maximum heart rate achieved. 
 
 ### Reversible Defect
 
 ```{r}
 #| code-fold: false
-exp(0.46)
+exp(2.289)
+
 ```
 
-The odds of having heart disease is 1.584 times higher in patients with reversible defects thallium stress results than patients with normal thallium stress results, adjusting for maximum heart rate achieved. 
+The odds of having heart disease is 9.865 times higher in patients with reversible defects thallium stress results than patients with normal thallium stress results, adjusting for maximum heart rate achieved. 
 
+:::
+
+##  Predicting Heart Disease
+
+Predict the probability of geting heart disease for a patient who has a fixed defect and thalach of 145.
+
+::: {.fragment}
+
+```{r}
+#| code-fold: false
+df <- data.frame(thal = "Fixed Defect", thalach =  145)
+predict(xglm, df)
+```
 :::
 
 # Model Building
