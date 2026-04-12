@@ -109,7 +109,7 @@ Notebook assignments are designed to expand your statistical knowledge. These wi
 
 #### Exams
 
-There will be three in exams. Exam #1 will be on March 3, 2026, Exam #2 will be on April 16, 2026, and **Exam #3 will be on May 19, 2026 from 4-6 PM in Gateway 2501.** While the exams are not considered cumulative, the material builds on each other. Developing a strong understanding of the material through out the course is important for your success. At the end of the semester, your lowest exam grade will be replaced by your median average of all 3 exam grades. This course will operate under a zero-tolerance policy. Talking during the time of the exam, sharing materials, looking at another students' exam, or not following directions given will be subject to the University's academic integrity policy.
+There will be three in exams. Exam #1 will be on March 3, 2026, Exam #2 will be on April 21, 2026, and **Exam #3 will be on May 19, 2026 from 4-6 PM in Gateway 2501.** While the exams are not considered cumulative, the material builds on each other. Developing a strong understanding of the material through out the course is important for your success. At the end of the semester, your lowest exam grade will be replaced by your median average of all 3 exam grades. This course will operate under a zero-tolerance policy. Talking during the time of the exam, sharing materials, looking at another students' exam, or not following directions given will be subject to the University's academic integrity policy.
 
 #### Extra Credit
 
@@ -131,12 +131,12 @@ The following outline may be subject to change. Any changes will be announced in
 | 3/16  | Spring Break                     |       |        |           |
 | 3/23  | Simple Logistic Regression       | 6     | 7      | 7         |
 | 3/30  | Holiday/ Group Models            |       | 8      | 8         |
-| 4/6   | Multivariable Regression         | 7     | 9      |           |
-| 4/13  | Modeling Approaches/**Exam 2**   | 8     |        | 9         |
-| 4/20  | Sampling Distributions           | 9     | 10     | 10        |
-| 4/27  | Inference                        | 10    | 11     | 11        |
-| 5/4   | Inference                        | 11    | 12     | 12        |
-| 5/11  | Inference                        | 12    |        |           |
+| 4/6   | Multivariable Regression         | 7     | 8      |           |
+| 4/13  | Sampling Distributions           | 8     | 9      | 9         |
+| 4/20  | **Exam 2**/Inference             |       |        |           |
+| 4/27  | Inference                        | 9     | 10     | 11        |
+| 5/4   | Inference                        | 10    | 11     | 12        |
+| 5/11  | Inference                        | 11    |        |           |
 | 5/18  | **Exam 3**                       |       |        |           |
 
 ### Generative Artificial Intelligence Policy

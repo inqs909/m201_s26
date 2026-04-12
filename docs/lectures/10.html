@@ -232,13 +232,7 @@
 <p>Linear Regression Inference in R</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Linear Regression Example</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
 <p>Logistic Regression Inference in R</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Logistic Regression Example</p>
 </div></li>
 </ul>
 </div>
@@ -359,7 +353,8 @@
 <section id="confidence-intervals" class="slide level2">
 <h2>Confidence Intervals</h2>
 <ul>
-<li>A range where we expect the true value to fall</li>
+<li>A range of plausible values that may contain the true parameter.</li>
+<li>The “Confidence” part indicates the probability that the method will work in capturing the true mean.</li>
 </ul>
 <aside class="notes">
 <p>Clarify interpretation: it’s not about the probability the parameter is inside the interval, but about the method producing accurate intervals in the long run.</p>
@@ -396,13 +391,7 @@
 <p>Linear Regression Inference in R</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Linear Regression Example</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
 <p>Logistic Regression Inference in R</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Logistic Regression Example</p>
 </div></li>
 </ul>
 </div>
@@ -529,7 +518,7 @@
 </details>
 
 </div>
-<img data-src="10_files/figure-html/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center r-stretch" alt="A normal distribution demonstrating the rejection regions." width="672"></section></section>
+<img data-src="10_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center r-stretch" alt="A normal distribution demonstrating the rejection regions." width="960"></section></section>
 <section>
 <section id="decision-making" class="title-slide slide level1 agenda-slide center">
 <h1>Decision Making</h1>
@@ -551,13 +540,7 @@
 <p>Linear Regression Inference in R</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Linear Regression Example</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
 <p>Logistic Regression Inference in R</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Logistic Regression Example</p>
 </div></li>
 </ul>
 </div>
@@ -610,13 +593,7 @@
 <p>Linear Regression Inference in R</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Linear Regression Example</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
 <p>Logistic Regression Inference in R</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Logistic Regression Example</p>
 </div></li>
 </ul>
 </div>
@@ -627,19 +604,6 @@
 <li>A confidence interval gives a <strong>range of plausible values</strong> for a population parameter.</li>
 <li>It reflects <strong>uncertainty</strong> in point estimates from sample data.</li>
 </ul>
-<aside class="notes">
-<p>Introduce confidence intervals as the natural next step after understanding sampling variability and standard error. Emphasize that point estimates are useful, but intervals give a more complete picture.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
 <section id="interpretation" class="slide level2">
 <h2>Interpretation</h2>
@@ -715,13 +679,7 @@
 <p>Linear Regression Inference in R</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Linear Regression Example</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
 <p>Logistic Regression Inference in R</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Logistic Regression Example</p>
 </div></li>
 </ul>
 </div>
@@ -790,53 +748,6 @@
 </div>
 </section></section>
 <section>
-<section id="linear-regression-example" class="title-slide slide level1 agenda-slide center">
-<h1>Linear Regression Example</h1>
-<div class="agenda">
-<ul>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Statistical Inference</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Hypothesis Testing</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Decision Making</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Confidence Intervals</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Linear Regression Inference in R</p>
-</div></li>
-<li><div class="agenda-active">
-<p>Linear Regression Example</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Logistic Regression Inference in R</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Logistic Regression Example</p>
-</div></li>
-</ul>
-</div>
-</section>
-<section id="mammals-sleep-data-set" class="slide level2">
-<h2>Mammals Sleep Data Set</h2>
-<p>The <a href="https://ggplot2.tidyverse.org/reference/msleep.html"><code>msleep</code></a> data set contains information on sleeping patterns for mammals. We are interested in understanding the relationship of the length of sleep cycle (<code>sleep_cycle</code>; in hours) and rem sleep (<code>sleep_rem</code>; rapid eye movement; in hours).</p>
-</section>
-<section id="red-wine-data" class="slide level2">
-<h2>Red Wine Data</h2>
-<p>The <a href="https://archive.ics.uci.edu/dataset/186/wine+quality">Wine Quality</a> data set contains data on information on both red and white wine from North Portugal. We are interested in seeing if <code>pH</code> of the red wine (predictor variable) affects the <code>quality</code> (outcome variable).</p>
-<div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv"</span></span>
-<span id="cb9-2"><a></a>wine <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(url, <span class="at">delim =</span> <span class="st">";"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
-</section></section>
-<section>
 <section id="logistic-regression-inference-in-r" class="title-slide slide level1 agenda-slide center">
 <h1>Logistic Regression Inference in R</h1>
 <div class="agenda">
@@ -856,22 +767,16 @@
 <li><div class="agenda-inactive agenda-pre-active">
 <p>Linear Regression Inference in R</p>
 </div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Linear Regression Example</p>
-</div></li>
 <li><div class="agenda-active">
 <p>Logistic Regression Inference in R</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Logistic Regression Example</p>
 </div></li>
 </ul>
 </div>
 </section>
 <section id="conducting-ht-of-beta_j-1" class="slide level2">
 <h2>Conducting HT of <span class="math inline">\(\beta_j\)</span></h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>XLM <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> DATA, <span class="at">family =</span> <span class="fu">binomial</span>())</span>
-<span id="cb10-2"><a></a><span class="fu">tidy</span>(XLM)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>XLM <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> DATA, <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb9-2"><a></a><span class="fu">tidy</span>(XLM)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>XLM</code>: Object where the model is stored</li>
 <li><code>Y</code>: Name of the outcome variable in <code>DATA</code></li>
@@ -888,8 +793,8 @@
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>m1 <span class="ot">&lt;-</span> <span class="fu">glm</span>(disease <span class="sc">~</span> trestbps, heart_disease, <span class="at">family =</span> <span class="fu">binomial</span>())</span>
-<span id="cb11-2"><a></a><span class="fu">tidy</span>(m1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>m1 <span class="ot">&lt;-</span> <span class="fu">glm</span>(disease <span class="sc">~</span> trestbps, heart_disease, <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb10-2"><a></a><span class="fu">tidy</span>(m1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; # A tibble: 2 × 5
@@ -902,7 +807,7 @@
 </section>
 <section id="confidence-interval-1" class="slide level2">
 <h2>Confidence Interval</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">tidy</span>(XLM, <span class="at">conf.int =</span> <span class="cn">TRUE</span>, <span class="at">conf.level =</span> LEVEL)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">tidy</span>(XLM, <span class="at">conf.int =</span> <span class="cn">TRUE</span>, <span class="at">conf.level =</span> LEVEL)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>XLM</code>: Object where the model is stored</li>
 <li><code>LEVEL</code>: A number between 0 and 1 to specify confidence level</li>
@@ -914,7 +819,7 @@
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">tidy</span>(m1, <span class="at">conf.int =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">tidy</span>(m1, <span class="at">conf.int =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; # A tibble: 2 × 7
@@ -927,7 +832,7 @@
 </section>
 <section id="odds-ratio-confidence-intervat" class="slide level2">
 <h2>Odds Ratio &amp; Confidence Intervat</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">tidy</span>(XLM, <span class="at">exponentiate =</span> <span class="cn">TRUE</span>, <span class="at">conf.int =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">tidy</span>(XLM, <span class="at">exponentiate =</span> <span class="cn">TRUE</span>, <span class="at">conf.int =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>XLM</code>: Object where the model is stored</li>
 </ul>
@@ -937,7 +842,7 @@
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">tidy</span>(m1, <span class="at">exponentiate =</span> <span class="cn">TRUE</span>, <span class="at">conf.int =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">tidy</span>(m1, <span class="at">exponentiate =</span> <span class="cn">TRUE</span>, <span class="at">conf.int =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; # A tibble: 2 × 7
@@ -946,70 +851,6 @@
 #&gt; 1 (Intercept)   0.0826   0.905       -2.76 0.00586   0.0135     0.474
 #&gt; 2 trestbps      1.02     0.00681      2.61 0.00914   1.00       1.03</code></pre>
 </div>
-</div>
-</section></section>
-<section>
-<section id="logistic-regression-example" class="title-slide slide level1 agenda-slide center">
-<h1>Logistic Regression Example</h1>
-<div class="agenda">
-<ul>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Statistical Inference</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Hypothesis Testing</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Decision Making</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Confidence Intervals</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Linear Regression Inference in R</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Linear Regression Example</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Logistic Regression Inference in R</p>
-</div></li>
-<li><div class="agenda-active">
-<p>Logistic Regression Example</p>
-</div></li>
-</ul>
-</div>
-</section>
-<section id="breast-cancer-data" class="slide level2">
-<h2>Breast Cancer Data</h2>
-<p>The <a href="https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic">Breast Cancer</a> data set contains information about image diagnosis of individuals from Wisconsin. We are interested if breast cancer <code>diagnosis</code> (outcome variable; Benign or Malignant), is affected by tumor <code>radius</code>.</p>
-<div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/wdbc.data"</span></span>
-<span id="cb19-2"><a></a>bc <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(url, <span class="at">header =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb19-3"><a></a></span>
-<span id="cb19-4"><a></a><span class="co"># Add column names</span></span>
-<span id="cb19-5"><a></a><span class="fu">colnames</span>(bc) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"id"</span>, <span class="st">"diagnosis"</span>, <span class="st">"radius"</span>, <span class="st">"texture"</span>, <span class="st">"perimeter"</span>, <span class="st">"area"</span>, <span class="st">"smoothness"</span>,</span>
-<span id="cb19-6"><a></a>                  <span class="st">"compactness"</span>, <span class="st">"concavity"</span>, <span class="fu">paste0</span>(<span class="st">"V"</span>, <span class="dv">10</span><span class="sc">:</span><span class="dv">32</span>))</span>
-<span id="cb19-7"><a></a></span>
-<span id="cb19-8"><a></a><span class="co"># Convert diagnosis to factor</span></span>
-<span id="cb19-9"><a></a>bc<span class="sc">$</span>diagnosis <span class="ot">&lt;-</span> <span class="fu">factor</span>(bc<span class="sc">$</span>diagnosis, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"B"</span>, <span class="st">"M"</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Benign"</span>, <span class="st">"Malignant"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
-</section>
-<section id="bank-note-classification" class="slide level2">
-<h2>Bank Note Classification</h2>
-<p>The <a href="https://archive.ics.uci.edu/dataset/267/banknote+authentication">Bank Note</a> data set contains information about bank note authentication based on images. We are interested in seeing if <code>class</code> (outcome variable; real or fake) is associated by image <code>entropy</code> (predictor).</p>
-<div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>url <span class="ot">&lt;-</span> <span class="st">"https://archive.ics.uci.edu/ml/machine-learning-databases/00267/data_banknote_authentication.txt"</span></span>
-<span id="cb20-2"><a></a>bank <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(url, <span class="at">header =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb20-3"><a></a></span>
-<span id="cb20-4"><a></a><span class="fu">colnames</span>(bank) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"variance"</span>, <span class="st">"skewness"</span>, <span class="st">"curtosis"</span>, <span class="st">"entropy"</span>, <span class="st">"class"</span>)</span>
-<span id="cb20-5"><a></a>bank<span class="sc">$</span>class <span class="ot">&lt;-</span> <span class="fu">factor</span>(bank<span class="sc">$</span>class, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Genuine"</span>, <span class="st">"Forged"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
 </div>
 
 
@@ -1247,6 +1088,44 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

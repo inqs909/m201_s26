@@ -14,7 +14,8 @@ format:
     controls-tutorial: true
     slide-number: true
     pointer:
-      pointerSize: 32
+      pointerSize: 48
+      color: blue
     incremental: false 
     chalkboard:
       theme: whiteboard
@@ -23,14 +24,12 @@ knitr:
   opts_chunk: 
     echo: true
     eval: true
-    message: false
     code-fold: true
     warnings: false
     comment: "#>" 
     
 revealjs-plugins:
   - pointer
-  - verticator
   
 filters:
   - reveal-header

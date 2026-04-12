@@ -126,7 +126,8 @@ These three concepts are foundational. Understanding them helps us assess how re
 
 ## Confidence Intervals
 
--   A range where we expect the true value to fall
+- A range of plausible values that may contain the true parameter.
+- The "Confidence" part indicates the probability that the method will work in capturing the true mean.
 
 ::: notes
 Clarify interpretation: it's not about the probability the parameter is inside the interval, but about the method producing accurate intervals in the long run.
@@ -253,9 +254,6 @@ Typically, we want this error rate to be small ($\alpha = 0.05$).
 - A confidence interval gives a **range of plausible values** for a population parameter.
 - It reflects **uncertainty** in point estimates from sample data.
 
-::: notes
-Introduce confidence intervals as the natural next step after understanding sampling variability and standard error. Emphasize that point estimates are useful, but intervals give a more complete picture.
-:::
 
 ## Interpretation
 
@@ -343,25 +341,6 @@ tidy(XLM, conf.int = TRUE, conf.level = X)
 tidy(m1, conf.int = TRUE, conf.level = 0.9)
 ```
 
-# Linear Regression Example
-
-## Mammals Sleep Data Set
-
-The [`msleep`](https://ggplot2.tidyverse.org/reference/msleep.html) data set contains information on sleeping patterns for mammals. We are interested in understanding the relationship of the length of sleep cycle (`sleep_cycle`; in hours) and rem sleep (`sleep_rem`; rapid eye movement; in hours).
-
-
-## Red Wine Data
-
-The [Wine Quality](https://archive.ics.uci.edu/dataset/186/wine+quality) data set contains data on information on both red and white wine from North Portugal. We are interested in seeing if `pH` of the red wine (predictor variable) affects the `quality` (outcome variable).
-
-```{r}
-#| code-fold: show
-#| eval: false
-
-url <- "https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv"
-wine <- read_delim(url, delim = ";")
-
-```
 
 # Logistic Regression Inference in R
 
@@ -433,42 +412,4 @@ tidy(XLM, exponentiate = TRUE, conf.int = TRUE)
 
 tidy(m1, exponentiate = TRUE, conf.int = TRUE)
 
-```
-
-# Logistic Regression Example
-
-## Breast Cancer Data
-
-The [Breast Cancer](https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic) data set contains information about image diagnosis of individuals from Wisconsin. We are interested if breast cancer `diagnosis` (outcome variable; Benign or Malignant), is affected by tumor `radius`.
-
-```{r}
-#| code-fold: show
-#| eval: false
-
-
-url <- "https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/wdbc.data"
-bc <- read.csv(url, header = FALSE)
-
-# Add column names
-colnames(bc) <- c("id", "diagnosis", "radius", "texture", "perimeter", "area", "smoothness",
-                  "compactness", "concavity", paste0("V", 10:32))
-
-# Convert diagnosis to factor
-bc$diagnosis <- factor(bc$diagnosis, levels = c("B", "M"), labels = c("Benign", "Malignant"))
-
-```
-
-## Bank Note Classification
-
-The [Bank Note](https://archive.ics.uci.edu/dataset/267/banknote+authentication) data set contains information about bank note authentication based on images. We are interested in seeing if `class` (outcome variable; real or fake) is associated by image `entropy` (predictor).  
-
-```{r}
-#| code-fold: show
-#| eval: false
-
-url <- "https://archive.ics.uci.edu/ml/machine-learning-databases/00267/data_banknote_authentication.txt"
-bank <- read.csv(url, header = FALSE)
-
-colnames(bank) <- c("variance", "skewness", "curtosis", "entropy", "class")
-bank$class <- factor(bank$class, levels = c(0, 1), labels = c("Genuine", "Forged"))
 ```
