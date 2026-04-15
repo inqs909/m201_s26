@@ -1,0 +1,850 @@
+---
+title: "Numerical Data"
+description: |
+  Provides an overview descriptive statistics and data visualization techniques for numerical data.
+format:
+  revealjs:
+    width: 1200
+    toc: false
+    scrollable: true
+    sc-sb-title: false
+    footer: m201.inqs.info/lectures/3
+    theme: [default, styles.scss]
+    navigation-mode: vertical
+    controls-layout: edges
+    controls-tutorial: true
+    slide-number: true
+    pointer:
+      pointerSize: 32
+    incremental: false 
+    chalkboard:
+      theme: whiteboard
+      chalk-width: 4
+knitr:
+  opts_chunk: 
+    echo: true
+    eval: true
+    fig-align: center
+    message: false
+    code-fold: show
+    warnings: false
+    comment: "#>" 
+    
+revealjs-plugins:
+  - pointer
+
+filters: 
+  - reveal-header
+  - reveal-auto-agenda
+
+editor: source
+---
+
+## R Packages
+
+```{r}
+#| echo: false
+#| eval: true
+
+library(rcistats)
+library(tidyverse)
+library(patchwork)
+
+
+penguins <- penguins |> drop_na()
+
+theme_set(theme_bw() + 
+            theme(
+              axis.text.x = element_text(size = 28),
+              axis.text.y = element_text(size = 22),
+              axis.title = element_text(size = 30),
+              plot.title = element_text(size = 48),
+              strip.text = element_text(size = 20),
+              legend.title = element_blank(),
+              legend.text = element_text(size = 24)))
+```
+
+-   rcistats
+-   tidyverse
+
+# Palmer Penguins
+
+## Palmer Penguins
+
+
+::: {.columns}
+::: {.column}
+
+The `penguins` data set was contains information on penguins from the [Palmer Station](https://lternet.edu/site/palmer-antarctica-lter/) located in Antartica. You can learn more about the data set [here](https://allisonhorst.github.io/palmerpenguins/articles/intro.html).
+
+:::
+::: {.column}
+![Artwork by @allison_horst](img/penguins.png){fig-alt="An image of several penguins in Antartica."}
+
+:::
+::: 
+
+## Variables of Interest
+
+- `flipper_len`: Flipper Length in [millimeters](https://en.wikipedia.org/wiki/Millimetre)
+- `body_mass`: Body mass in [grams](https://en.wikipedia.org/wiki/Gram)
+
+# Describing numerical data
+
+## What is numerical data?
+
+```{r}
+#| code-fold: true
+#| eval: true
+
+penguins |> 
+  slice(1:7) |> 
+  pull(flipper_len)
+
+```
+
+
+## Central Tendency
+
+```{r}
+#| code-fold: true
+#| eval: true
+
+penguins |> 
+  slice(1:7) |> 
+  pull(flipper_len)
+
+```
+
+
+
+## Variation
+
+```{r}
+#| code-fold: true
+#| eval: true
+
+penguins |> 
+  slice(1:7) |> 
+  pull(flipper_len)
+
+```
+
+
+# Summary Statistics
+
+## Summary Statistics
+
+Summary statistics are used to describe the distribution of data.
+
+## Central Tendency
+
+Central tendency is a statistical concept that refers to the central or typical value around which a set of data points tends to cluster. It is used to summarize and describe a data set by identifying a single representative value that provides insights into the data's overall characteristics.
+
+## Variation
+
+Variation in statistics refers to the extent to which data points in a dataset deviate or differ from a central tendency measure. Understanding variation is crucial for making informed decisions, drawing meaningful conclusions, and assessing the reliability of statistical analyses.
+
+## Minimum
+
+The minimum (min) is the smallest value in the data.
+
+## Maximum
+
+The maximum (max) is the largest value in the data.
+
+## Quartiles
+
+Quartiles are three values (Q1, Q2, Q3) that divides the data into four subsets.
+
+::: fragment
+![](https://i.postimg.cc/p2BbKK5t/image.png){fig-align="center"}
+:::
+
+## Q1
+
+Q1 is the value signifying that a quarter of the data (25%) is lower than it.
+
+```{r}
+#| code-fold: false
+#| echo: false
+#| fig-alt: |
+#|   A density plot of flipper length for each penguin.
+#|   The lower 25% of the of the density plot is shaded.
+#|   This shading represents the location to the 25th percentile.
+
+density_plot <- ggplot(penguins, aes(flipper_len)) +
+  geom_density()
+
+dpb <- ggplot_build(density_plot)
+
+x1 <- 1
+x2 <- max(which(dpb$data[[1]]$x <=quantile(penguins$flipper_len, 0.25)))
+
+density_plot +
+  geom_area(data=data.frame(x = dpb$data[[1]]$x[x1:x2],
+                            y = dpb$data[[1]]$y[x1:x2]),
+            aes(x=x, y=y), fill="palevioletred")
+```
+
+
+## Q2 - Median ($\tilde{x}$)
+
+Q2 is the value signifying that half of the data (50%) is below it.
+
+::: fragment
+The median also represents the central tendency of the data.
+:::
+
+```{r}
+#| code-fold: false
+#| echo: false
+#| fig-alt: |
+#|   A density plot of flipper length for each penguin.
+#|   The lower 50% of the of the density plot is shaded.
+#|   This shading represents the location to the 50th percentile.
+
+
+density_plot <- ggplot(penguins, aes(flipper_len)) +
+  geom_density()
+
+dpb <- ggplot_build(density_plot)
+
+x1 <- 1
+x2 <- max(which(dpb$data[[1]]$x <=quantile(penguins$flipper_len, 0.5)))
+
+density_plot +
+  geom_area(data=data.frame(x = dpb$data[[1]]$x[x1:x2],
+                            y = dpb$data[[1]]$y[x1:x2]),
+            aes(x=x, y=y), fill="palevioletred")
+```
+
+
+
+## Q3
+
+Q3 is the value signifying that 3 quarters (75%) of the data is below it.
+
+
+
+```{r}
+#| code-fold: false
+#| echo: false
+#| fig-alt: |
+#|   A density plot of flipper length for each penguin.
+#|   The lower 75% of the of the density plot is shaded.
+#|   This shading represents the location to the 75th percentile.
+
+density_plot <- ggplot(penguins, aes(flipper_len)) +
+  geom_density()
+
+dpb <- ggplot_build(density_plot)
+
+x1 <- 1
+x2 <- max(which(dpb$data[[1]]$x <=quantile(penguins$flipper_len, 0.75)))
+
+density_plot +
+  geom_area(data=data.frame(x = dpb$data[[1]]$x[x1:x2],
+                            y = dpb$data[[1]]$y[x1:x2]),
+            aes(x=x, y=y), fill="palevioletred")
+```
+
+
+
+## Interquartile Range
+
+
+$$
+IQR = Q_3 - Q_1
+$$
+
+
+```{r}
+#| code-fold: false
+#| echo: false
+#| fig-alt: |
+#|   A density plot of flipper length for each penguin.
+#|   The middle 50% of the data is shaded.
+#|   This shading represents interquartile range.
+
+density_plot <- ggplot(penguins, aes(flipper_len)) +
+  geom_density()
+
+dpb <- ggplot_build(density_plot)
+
+x1 <- min(which(dpb$data[[1]]$x >=quantile(penguins$flipper_len, 0.25)))
+x2 <- max(which(dpb$data[[1]]$x <=quantile(penguins$flipper_len, 0.75)))
+
+density_plot +
+  geom_area(data=data.frame(x = dpb$data[[1]]$x[x1:x2],
+                            y = dpb$data[[1]]$y[x1:x2]),
+            aes(x=x, y=y), fill="palevioletred")
+```
+
+## Range
+
+::: fragment
+$$
+R = \mathrm{max} - \mathrm{min}
+$$
+:::
+
+## How to identify the quartiles?
+
+1.  Sort the data
+2.  ID Max and Min
+3.  Find the amount of data the makes a quarter:
+    1.  $K=N/4$
+4.  Create 4 groups using the sorted data
+    1.  group by data size
+    2.  If $K$ has a decimal, the $Kth$ value is quartile of each group.
+
+## Mean ($\bar{x}$)
+
+Describe how you will find the mean of these numbers:
+
+```{r}
+#| echo: false
+
+rpois(5, 15)
+
+```
+
+## Mean ($\bar{x}$)
+
+The mean is another measurement for central tendency.
+
+$$
+\bar X = \frac{1}{n}\sum^n_{i=1}X_i
+$$
+
+-   $n$: total data points
+
+-   $X_i$: data points
+
+-   $i$: indexing data
+
+-   $\sum$: add all from first (bottom) to last (up)
+
+## Variance
+
+The variance is a measurement on the average squared distance the data points are from the central tendency.
+
+$$
+s^2 = \frac{1}{n-1}\sum^n_{i=1}(X_i-\bar X)^2
+$$
+
+## Standard Deviation
+
+The standard deviation is a measurement on the average distance the data points are from the central tendency.
+
+$$
+s=\sqrt{s^2}
+$$
+
+
+## Mean vs Median
+
+::: {.columns}
+::: {.column}
+
+### Mean
+
+$$
+\bar X = \frac{1}{n}\sum^n_{i=1}x_i
+$$
+
+:::
+::: {.column}
+
+### Median
+
+$$
+P(X \leq \tilde{X}) = 0.5
+$$
+
+
+:::
+:::
+
+## Mean vs Median
+
+Mean (blue line) vs Median (red line)
+
+```{r}
+#| code-fold: false
+#| echo: false
+#| fig-alt: |
+#|   A density plot of flipper length for each penguin.
+#|   The mean and median are repsesented as vertical lines.
+#|   The mean is located at approximately 201.
+#|   The median is located at approximately 197.
+
+ggplot(penguins, aes(flipper_len)) +
+  geom_density() +
+  geom_vline(xintercept = mean(penguins$flipper_len), col  = "blue") +
+  geom_vline(xintercept = median(penguins$flipper_len), col = "red")
+
+```
+
+## Outliers
+
+These are data points that seem to be highly distant from all other variables.
+
+::: fragment
+![](https://miro.medium.com/v2/resize:fit:697/0*_k9tUMfs2P4CGUA3.png){fig-alt="An image of a scatter plot with the points following an exponential curve. One point is far from the curve." fig-align="center"}
+:::
+
+# Numerical Statistics in R
+
+## Numerical Statistics in R
+
+R has several built in functions to compute statistics.
+
+```r
+FUNCTION(DATA$VAR)
+```
+
+- `FUNCTION`: Name of function for a statistic you are interested in computing (eg: `mean`) 
+- `DATA`: Name of the data frame (eg: `penguins`)
+- `VAR`: Name of the variable to create a plot (eg: `flipper_len`)
+
+## Mean
+
+```r
+mean(DATA$VAR)
+```
+
+- `DATA`: Name of the data frame (eg: `penguins`)
+- `VAR`: Name of the variable to create a plot (eg: `flipper_len`)
+
+## Median
+
+```r
+median(DATA$VAR)
+```
+
+- `DATA`: Name of the data frame (eg: `penguins`)
+- `VAR`: Name of the variable to create a plot (eg: `flipper_len`)
+
+## Standard Deviation
+
+```r
+sd(DATA$VAR)
+```
+
+- `DATA`: Name of the data frame (eg: `penguins`)
+- `VAR`: Name of the variable to create a plot (eg: `flipper_len`)
+
+## Variance
+
+```r
+var(DATA$VAR)
+```
+
+- `DATA`: Name of the data frame (eg: `penguins`)
+- `VAR`: Name of the variable to create a plot (eg: `flipper_len`)
+
+## Quartiles
+
+```r
+quantile(DATA$VAR, probs = c(0.25, 0.5, 0.75))
+```
+- `DATA`: Name of the data frame (eg: `penguins`)
+- `VAR`: Name of the variable to create a plot (eg: `flipper_len`)
+
+## Max and Min
+
+```r
+max(DATA$VAR)
+min(DATA$VAR)
+```
+
+- `DATA`: Name of the data frame (eg: `penguins`)
+- `VAR`: Name of the variable to create a plot (eg: `flipper_len`)
+
+## Summary Statistics
+
+```r
+num_stats(DATA$VAR)
+```
+
+- `DATA`: Name of the data frame (eg: `penguins`)
+- `VAR`: Name of the variable to create a plot (eg: `flipper_len`)
+
+## Penguins 
+
+```{r}
+num_stats(penguins$flipper_len)
+```
+
+# Data Visualization
+
+## Histogram
+
+A histogram is a graphical representation of the distribution or frequency of data points in a dataset. It provides a visual way to understand the shape, central tendency, and spread of a dataset by dividing the data into intervals or bins and showing how many data points fall into each bin as a bar.
+
+## Histogram R Code
+
+```r
+ggplot(DATA, aes(VAR)) +
+  geom_histogram()
+```
+
+To change bins:
+
+```r
+ggplot(DATA, aes(VAR)) +
+  geom_histogram(bins = VAL)
+```
+
+- `DATA`: Name of the data frame (eg: `penguins`)
+- `VAR`: Name of the variable to create a plot (eg: `flipper_len`)
+- `VAL`: Numerical value to change the bin width.
+
+## Histogram
+
+```{r}
+#| code-fold: true
+#| eval: true
+y <- rnorm(1000)
+ggplot(tibble(y), aes(y)) +
+  geom_histogram(bins = 15)
+
+```
+
+## Histogram
+
+```{r}
+#| code-fold: true
+#| eval: true
+
+y <- rgamma(1000, 2)
+ggplot(tibble(y), aes(y)) +
+  geom_histogram(bins = 15)
+
+
+```
+
+## Histograms
+
+```{r}
+#| code-fold: true
+#| eval: true
+
+y <- rbeta(1000, 5, 1)
+ggplot(tibble(y), aes(y)) +
+  geom_histogram(bins = 15)
+```
+
+## Histograms
+
+```{r}
+#| code-fold: true
+#| eval: true
+y <- rbinom(1000, 1, 0.4)
+z <- (y == 0) * rnorm(1000, 23) + (y == 1) * rnorm(1000, 27)
+ggplot(tibble(z), aes(z)) +
+  geom_histogram(bins = 15)
+```
+
+## Penguins
+
+```{r}
+#| code-fold: false
+ggplot(penguins, aes(flipper_len)) +
+  geom_histogram()
+```
+
+## Box Plot
+
+A box plot, also known as a box-and-whisker plot, is a graphical representation of the distribution and key statistical characteristics of a dataset. It provides a visual summary of the data's central tendency, spread, and potential outliers.
+
+## Box Plot
+
+![](https://miro.medium.com/max/9000/1*2c21SkzJMf3frPXPAR_gZA.png){fig-align="center"}
+
+## Box Plot R Code
+
+```r
+ggplot(DATA, aes(VAR)) +
+  geom_boxplot()
+```
+
+- `DATA`: Name of the data frame (eg: `penguins`)
+- `VAR`: Name of the variable to create a plot (eg: `flipper_len`)
+
+## Box Plot
+
+```{r}
+#| code-fold: false
+ggplot(penguins, aes(flipper_len)) +
+  geom_boxplot() 
+
+```
+
+## Box Plot
+
+```{r}
+#| code-fold: false
+ggplot(penguins, aes(y = flipper_len)) +
+  geom_boxplot() 
+```
+
+## Dot Plots
+
+Dot Plots are similar to histograms, but they incorporate dots to count how many data points fall within bins.
+
+## Dot Plots in R
+
+```r
+ggplot(DATA, aes(VAR)) +
+  geom_dotplot()
+```
+
+To change binwidth
+
+```r
+ggplot(DATA, aes(VAR)) +
+  geom_dotplot(binwidth = VAL)
+```
+
+- `DATA`: Name of the data frame (eg: `penguins`)
+- `VAR`: Name of the variable to create a plot (eg: `flipper_len`)
+- `VAL`: Numerical value to change the bin width.
+
+## Dot Plots
+
+```{r}
+#| code-fold: false
+#| eval: true
+
+ggplot(penguins, aes(flipper_len)) +
+  geom_dotplot(binwidth = 1)
+
+```
+
+## Density Plot
+
+## Density Plot
+
+A density plot is a way to visualize the distribution of a continuous variable — it shows where data values are concentrated (dense) and where they are sparse via the height of the graph.
+
+## Density Plot in R
+
+```r
+ggplot(DATA, aes(VAR)) +
+  geom_density()
+```
+
+- `DATA`: Name of the data frame (eg: `penguins`)
+- `VAR`: Name of the variable to create a plot (eg: `flipper_len`)
+
+
+## Density Plot
+
+```{r}
+#| code-fold: false
+ggplot(penguins, aes(flipper_len)) +
+  geom_density() 
+```
+
+## Adding Vertical Lines
+
+```r
+ggplot(DATA, aes(VAR)) +
+  geom_density() +
+  geom_vline(xintercept = XVAL)
+```
+
+- `DATA`: Name of the data frame (eg: `penguins`)
+- `VAR`: Name of the variable to create a plot (eg: `flipper_len`)
+- `XVAL`: Number to place the vertical line (eg: `5`)
+
+
+## Vertical Lines
+
+```{r}
+#| code-fold: false
+ggplot(penguins, aes(flipper_len)) +
+  geom_density() +
+  geom_vline(xintercept = mean(penguins$flipper_len), col  = "blue") +
+  geom_vline(xintercept = median(penguins$flipper_len), col = "red")
+
+```
+
+## Adding Horizontal Lines
+
+```r
+ggplot(DATA, aes(VAR)) +
+  geom_density() +
+  geom_hline(yintercept = YVAL)
+```
+
+- `DATA`: Name of the data frame (eg: `penguins`)
+- `VAR`: Name of the variable to create a plot (eg: `flipper_len`)
+- `YVAL`: Number to place the horizontal line (eg: `2`)
+
+## Horizontal Lines
+
+```{r}
+#| code-fold: false
+ggplot(penguins, aes(flipper_len)) +
+  geom_density() +
+  geom_hline(yintercept = 0.01, col  = "blue") +
+  geom_hline(yintercept = 0.02, col = "red")
+
+```
+
+
+
+# Skeweness
+
+## Skeweness
+
+Skewness is a statistical measure to determine if unimodal data follows a symmetric distribution, skewed to the left, or skewed to the right.
+
+## Symmetric Distribution
+
+A symmetric distribution will look bell shaped and the mean (red line) and median (dashed blue line) will overlap each other.
+
+```{r}
+#| code-fold: true
+#| fig-alt: "A bell shaped curve where the mean and the median are represented as lines and overlap each other."
+y <- rnorm(100000)
+ggplot(tibble(y), aes(y)) +
+  geom_density() +
+  geom_vline(xintercept = mean(y), col = "red") +
+  geom_vline(xintercept = median(y), col = "blue", lty = 2)
+
+```
+
+## Right Skewed Distribution
+
+
+A right skewed distribution looks asymetric and the mean (red line) is to the right of the median (dashed blue line).
+
+```{r}
+#| fig-alt: "A bell shaped curve where the mean and the median are represented as lines and overlap each other."
+#| code-fold: true
+y <- rgamma(100000, shape = 4)
+ggplot(tibble(y), aes(y)) +
+  geom_density() +
+  geom_vline(xintercept = mean(y), col = "red") +
+  geom_vline(xintercept = median(y), col = "blue", lty = 2)
+
+```
+
+## left Skewed Distribution
+
+
+A left skewed distribution looks asymetric and the mean (red line) is to the left of the median (dashed blue line).
+
+```{r}
+#| fig-alt: "A bell shaped curve where the mean and the median are represented as lines and overlap each other."
+#| code-fold: true
+
+y <- rbeta(100000, shape1 = 5, shape2 = 1.25)
+ggplot(tibble(y), aes(y)) +
+  geom_density() +
+  geom_vline(xintercept = mean(y), col = "red") +
+  geom_vline(xintercept = median(y), col = "blue", lty = 2)
+
+```
+
+
+# Scatter Plots
+
+## Scatter Plots
+
+Scatter plots demonstrate how two variables behave with each other. They can tell you any postive or negative trends, if they exist, with the combination of the plots.
+
+## Positive Relationship
+
+```{r}
+#| echo: false
+#| eval: true
+
+x <- rnorm(1000, mean = 3, sd = 1)
+y <- 4 + 4 * x + rnorm(1000, sd = 2.5)
+
+ggplot(tibble(x, y), aes(x, y)) +
+  geom_point() + 
+  theme_bw()
+
+```
+
+## Negative Relationship
+
+```{r}
+#| echo: false
+#| eval: true
+
+x <- rnorm(1000, mean = 3, sd = 1)
+y <- 4 - 4 * x + rnorm(1000, sd = 2.5)
+
+ggplot(tibble(x, y), aes(x, y)) +
+  geom_point() + 
+  theme_bw()
+
+```
+
+## No Relationship
+
+```{r}
+#| echo: false
+#| eval: true
+
+x <- rnorm(1000, mean = 3, sd = 1)
+y <- 4 + rnorm(1000, sd = 2.5)
+
+ggplot(tibble(x, y), aes(x, y)) +
+  geom_point() + 
+  theme_bw()
+
+```
+
+## Weak Relationship
+
+```{r}
+#| echo: false
+#| eval: true
+
+x <- rnorm(1000, mean = 3, sd = 1)
+y <- 4 + 2 * x + rnorm(1000, sd = 6)
+yy <- 4 - 2 * x + rnorm(1000, sd = 6)
+
+p1 <- ggplot(tibble(x, y = y), aes(x, y)) +
+  geom_point() +
+  ggtitle("Weak Positive") +
+  theme_bw() +
+  theme(plot.title = element_text(size = 24))
+
+p2 <- ggplot(tibble(x, y = yy), aes(x, y)) +
+  geom_point() + 
+  ggtitle("Weak Negative") +
+  theme_bw() +
+  theme(plot.title = element_text(size = 24))
+
+p1 + p2
+
+```
+
+## Scatter Plots in R
+
+```r
+ggplot(DATA, aes(x = VAR1, y = VAR2)) +
+  geom_point()
+```
+
+- `DATA`: Name of the data frame (eg: `penguins`)
+- `VAR1`: Name of the X variable to create a plot (eg: `flipper_len`)
+- `VAR2`: Name of the Y variable to create a plot (eg: `body_mass`)
+
+## Penguins
+
+```{r}
+ggplot(penguins, aes(flipper_len, body_mass)) +
+  geom_point()
+```
+

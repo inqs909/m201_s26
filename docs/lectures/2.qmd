@@ -1,0 +1,532 @@
+---
+title: "Categorical Data"
+description: |
+  Provides an overview descriptive statistics and data visualization techniques for categorical data.
+format:
+  revealjs:
+    width: 1200
+    scrollable: true
+    sc-sb-title: true
+    footer: m201.inqs.info/lectures/2
+    theme: [default, styles.scss]
+    navigation-mode: vertical
+    controls-layout: edges
+    controls-tutorial: true
+    slide-number: true
+    pointer:
+      pointerSize: 32
+    incremental: false 
+    chalkboard:
+      theme: whiteboard
+      chalk-width: 4
+knitr:
+  opts_chunk: 
+    echo: true
+    fig-align: center
+    eval: true
+    message: true
+    code-fold: true
+    warnings: false
+    comment: "#>" 
+    
+revealjs-plugins:
+  - pointer
+  
+filters: 
+  - reveal-header
+  - code-fullscreen
+  - reveal-auto-agenda
+
+editor: source
+---
+
+## R Packages
+
+```{r}
+#| echo: false
+#| eval: true
+#| message: false
+
+library(rcistats)
+library(tidyverse)
+library(ggthemes)
+
+theme_set(theme_bw() + 
+            theme(
+              axis.text.x = element_text(size = 28),
+              axis.text.y = element_text(size = 22),
+              axis.title = element_text(size = 30),
+              plot.title = element_text(size = 48),
+              strip.text = element_text(size = 20),
+              legend.title = element_blank(),
+              legend.text = element_text(size = 24)))
+
+heart_disease <- kmed::heart
+heart_disease$disease <- factor(ifelse(heart_disease$class == 0, "no", "yes")) 
+heart_disease$sex <- ifelse(heart_disease$sex == T, "Male", "Female") |> factor()
+heart_disease$cp <- ifelse(heart_disease$cp == 1, "Typical Angina",
+                           ifelse(heart_disease$cp == 2, "Atypical Angina", 
+                                  ifelse(heart_disease$cp == 3, "Non-anginal Pain", "Asymptomatic"))) |> 
+                    factor(levels = c("Asymptomatic", "Non-anginal Pain", "Atypical Angina", "Typical Angina"))
+heart_disease$fbs <- ifelse(heart_disease$fbs == T, "Fasting Blood Sugar >120" , "Fasting Blood Sugar <= 120") |> factor()
+heart_disease$restecg <- ifelse(heart_disease$restecg == 0, "Normal",
+                                ifelse(heart_disease$restecg == 1, "ST-T wave Abnormality", "Left Ventricular Hypertrophy")) |> 
+                          factor(levels = c("Normal", "ST-T wave Abnormality", "Left Ventricular Hypertrophy"))
+heart_disease$slope <- ifelse(heart_disease$slope == 1, "Positive Slope",
+                              ifelse(heart_disease$slope == 2, "Zero Slope", "Negative Slope")) |> 
+                              factor(levels = c("Zero Slope", "Positive Slope", "Negative Slope"))
+heart_disease$thal <- ifelse(heart_disease$thal==3, "Normal",
+                             ifelse(heart_disease$thal == 6, "Fixed Defect", "Reversible Defect")) |> 
+                              factor(levels = c("Normal", "Fixed Defect", "Reversible Defect"))
+```
+
+
+-   rcistats
+-   tidyverse
+-   ggthemes
+
+# Heart Disease
+
+## Heart Disease Data
+
+::: {.columns}
+::: {.column}
+The [`heart_disease`](https://archive.ics.uci.edu/dataset/45/heart+disease) data set provides heart disease information on patients from Cleveland, Ohio. The data was originally published in the [American Journal or Cardiology](https://pubmed.ncbi.nlm.nih.gov/2756873/).
+
+:::
+::: {.column}
+![](img/heart_df.png){fig-alt="An image of a graph and a heart."}
+
+:::
+:::
+
+## Data
+
+```{r}
+heart_disease |> 
+  DT::datatable(options = list(dom = "t",
+                pageLength = 4))
+```
+
+## Variables of Interest
+
+- `cp`: Type of Chest Pain
+- `disease`: Indicating if they have heart disease
+
+# Categorical Data
+
+## Categorical Data
+
+Categorical data are data recordings that represented a category.
+
+::: fragment
+Data may be recorded as a "character" or "string" data.
+:::
+
+::: fragment
+Data may be recorded as a whole number, with an attached code book indicating the categories each number belongs to.
+:::
+
+## Examples of Categorical Data
+
+::: incremental
+
+-   Are you a student?
+
+-   What city do you live in?
+
+-   What is your major?
+
+:::
+
+## Likert Scale
+
+Likert scales are the rating systems you may have answered in surveys.
+
+::: fragment
+1.    Strongly Disagree
+2.    Disagree
+3.    Neutral
+4.    Agree
+5.    Strongly Agree
+:::
+
+## Likert Scales
+
+Likert scales may be treated as numerical data if the jumps between scales are equal.
+
+## Summarizing Categorical Data
+
+Once we have the data, how do we summarize it to other people.
+
+# Continguency Tables
+
+## Continguency Tables
+
+Continguency tables display how often a category is seen in the data.
+
+::: fragment
+There are two types of statistics that are reported in a table, the frequency and proportion. 
+:::
+
+
+## Frequencey
+
+Frequency represents the count of observing a specific category in your sample. 
+
+```{r}
+#| echo: false
+sample(heart_disease$cp, 8)
+```
+
+## Proportions (relative frequencey)
+
+Proportions represent the percentage that the category represents the sample.
+
+::: fragment
+This allows you to generalize your sample to the population, regardless of sample size.
+:::
+
+## Continguency Tables in R
+
+```r
+cat_stats(DATA$VAR)
+```
+
+- `DATA`: Name of the data frame (eg: `heart_disease`)
+- `VAR`: Name of the variable to create a plot (eg: `cp`)
+
+## Example
+
+The variable `cp` indicates the type of chest pain.
+
+```{r}
+#| code-fold: false
+
+cat_stats(heart_disease$cp)
+```
+
+
+# Bar Plots
+
+## Plotting in R
+
+Plotting in R can be done via the [ggplot2](https://ggplot2.tidyverse.org/), a powerful library based on the [Grammar of Graphics](https://link.springer.com/book/10.1007/0-387-28695-0).
+
+## Plotting in R
+
+1.    You need to create a base plot using the `ggplot()`
+2.    Use the `+` to change the look of the base plot 
+3.    Indicate how to transform the base plot to the desired plot
+      1. `geom_*`
+      2. `stat_*`
+4.    Change the look of the plot with other functions
+5.    Use a `theme_*` function to add a theme to the plot
+
+
+
+## Bar Plots
+
+Bar Plots can be used to display the frequency or proportions on the data.
+
+```{r}
+#| echo: false
+#| fig-width: 15
+ggplot(heart_disease) +
+  geom_bar(aes(cp)) 
+```
+
+## Frequency Bar Plots in R
+
+```r
+ggplot(data = DATA, aes(x = VAR)) +
+  geom_bar()
+```
+
+- `DATA`: Name of the data frame (eg: `heart_disease`)
+- `VAR`: Name of the variable to create a plot (eg: `cp`)
+
+
+## Frequency Bar Plots in R
+
+
+```{r}
+#| code-fold: true
+#| eval: true
+#| fig-width: 15
+ggplot(heart_disease, aes(cp)) +
+  geom_bar() 
+```
+
+
+## Relative Frequency Bar Plots in R
+
+```r
+ggplot(data = DATA, aes(x = VAR, y = after_stat(prop), group = 1)) +
+  geom_bar()
+```
+
+- `DATA`: Name of the data frame (eg: `heart_disease`)
+- `VAR`: Name of the variable to create a plot (eg: `cp`)
+
+
+
+## Relative Frequency Bar Plots in R
+
+```{r}
+#| code-fold: true
+#| eval: true
+#| fig-width: 15
+
+ggplot(heart_disease, aes(cp, after_stat(prop), group = 1)) +
+  geom_bar() 
+```
+
+# Cross-Tabulation
+
+## Data
+
+The variable `disease` indicates if a patient has heart disease.
+
+```{r}
+#| code-fold: false
+cat_stats(heart_disease$disease)
+```
+
+## Cross-Tabulation
+
+**Cross-tabulations**, also known as **contingency tables**, are statistical tools used to analyze the relationship between two or more categorical variables by displaying their frequency distribution in a table format. Each cell in the table represents the count or frequency of observations that fall into a particular combination of categories for the variables.
+
+## Key Features of Cross-Tabulations
+
+1. **Rows and Columns**: 
+   - Rows represent the categories of one variable.
+   - Columns represent the categories of another variable.
+2. **Cells**:
+   - Each cell displays the frequency or count of data points that belong to the intersection of a row and column category.
+
+
+## Cross-Tabulations in R
+
+```r
+cat_stats(DATA$VAR1, DATA$VAR2)
+```
+- `DATA`: Name of the data frame (eg: `heart_disease`)
+- `VAR1`: Name of the first variable to create the cross-tab (eg: `cp`)
+- `VAR2`: Name of the second variable to create the cross-tab (eg: `disease`)
+
+
+## Cross-Tabs Example
+
+```{r}
+#| code-fold: false
+#| eval: true
+cat_stats(heart_disease$cp, heart_disease$disease)
+```
+
+
+## Types of Props in Cross-Tabs
+
+1. **Row Proportions**: Show the percentage of each row total represented by a cell.
+2. **Column Proportions**: Show the percentage of each column total represented by a cell.
+3. **Table Proportions**: Show the percentage of the overall total represented by a cell.
+
+
+## Table Proportions
+
+Table proportions in cross-tabulations refer to the relative frequency or percentage of counts within the entire table, calculated by dividing each cell’s count by the total sum of all counts in the table. These proportions allow you to examine the contribution of each cell to the overall data set.
+
+## Table Proportions
+
+```{r}
+#| code-fold: false
+cat_stats(heart_disease$cp, heart_disease$disease, prop = "table")
+```
+
+## Row Proportions
+
+Row proportions refer to the relative frequency or percentage of counts within each row of a contingency table. In a cross-tabulation, row proportions allow you to compare how the distribution of one variable varies within each category of another variable, within a row.
+
+## Row Proportions
+
+```{r}
+#| code-fold: false
+cat_stats(heart_disease$cp, heart_disease$disease, prop = "row")
+```
+
+## Column Proportions
+
+Column proportions refer to the relative frequency or percentage of counts within each column of a contingency table. These proportions allow you to compare how the distribution of one variable varies across different categories of another variable, within a column.
+
+## Column Proportions
+
+```{r}
+#| code-fold: false
+cat_stats(heart_disease$cp, heart_disease$disease, prop = "col")
+```
+
+## Stacked Bar Plot in R
+
+```r
+ggplot(DATA, aes(x = VAR1, y = after_stat(count), fill = VAR2)) +
+  geom_bar()
+```
+
+OR
+
+```r
+ggplot(DATA, aes(y = VAR1, x = after_stat(count), fill = VAR2)) +
+  geom_bar()
+```
+
+
+- `DATA`: Name of the data frame (eg: `heart_disease`)
+- `VAR1`: Name of the first variable to create the cross-tab (eg: `cp`)
+- `VAR2`: Name of the second variable to create the cross-tab (eg: `disease`)
+
+
+## Stacked Bar Plot in R
+
+```{r}
+#| code-fold: true
+#| fig-width: 18
+ggplot(heart_disease, aes(x = cp, y = after_stat(count), fill = disease)) +
+  geom_bar() 
+```
+
+## Stacked Bar Plot in R
+
+```{r}
+#| code-fold: true
+#| fig-width: 15
+ggplot(heart_disease, aes(y = cp, x = after_stat(count), fill = disease)) +
+  geom_bar() 
+
+```
+
+
+# Pie Charts
+
+## Pie Charts
+
+A **pie chart** is a circular statistical graphic divided into slices, where each slice represents a proportion or percentage of the whole. The size of each slice is proportional to the relative frequency or magnitude of the category it represents.
+
+## Pie Charts
+
+```{r}
+#| echo: false
+#| eval: true
+ggplot(heart_disease, aes(fill = cp)) +
+  geom_pie() +
+  theme( # Used to change legend
+    legend.title = element_text(size = 36), # Increse title font
+    legend.text = element_text(size = 30) # Increase text font
+  )
+```
+
+
+## Key Features of Pie Charts
+1. **Circular Format**: 
+   - The chart is shaped like a circle, symbolizing a whole (100% or 1).
+2. **Slices**:
+   - Each slice corresponds to a category and its size represents the contribution of that category to the total.
+3. **Labels**:
+   - Slices are often labeled with the category name and the percentage or value they represent.
+
+
+## Pie Chart in R
+
+```r
+ggplot(DATA, aes(fill = VAR)) +
+  geom_pie()
+```
+
+- `DATA`: Name of the data frame (eg: `heart_disease`)
+- `VAR`: Name of the variable to create a plot (eg: `cp`)
+
+
+## Pie Chart in R
+
+```{r}
+#| code-fold: false
+#| eval: true
+ggplot(heart_disease, aes(fill = slope)) +
+  geom_pie() +
+  theme( # Used to change legend
+    legend.title = element_text(size = 36), # Increse title font
+    legend.text = element_text(size = 30) # Increase text font
+  )
+```
+
+
+
+# Theming
+
+## Themes
+
+The R package `ggthemes` allows you to change the overall look of a plot.
+
+::: fragment
+All you need to do is add the theme to the plot.
+:::
+
+## Installing Themes in R
+
+
+Install once on your computer or new session in google colab:
+
+```r
+rcistats::install_themes()
+```
+
+Then, load libraries:
+
+
+```r
+library(ggthemes)
+```
+
+## Black and White Theme
+
+```{r}
+#| code-fold: false
+#| fig-alt: A bar chart with a black and white theme.
+ggplot(heart_disease, aes(y = cp, x = after_stat(count), fill = disease)) +
+  geom_bar() +
+  theme_bw()
+```
+
+
+## Excel Theme
+
+```{r}
+#| code-fold: false
+#| fig-alt: A bar chart with an excel theme.
+ggplot(heart_disease, aes(y = cp, x = after_stat(count), fill = disease)) +
+  geom_bar() +
+  theme_excel()
+```
+
+
+## WSJ Theme
+
+```{r}
+#| code-fold: false
+#| fig-alt: A bar chart with a Wall Street Journal theme.
+
+ggplot(heart_disease, aes(y = cp, x = after_stat(count), fill = disease)) +
+  geom_bar() +
+  theme_wsj()
+```
+
+## Stata Theme
+
+```{r}
+#| code-fold: false
+#| fig-alt: A bar chart with a Stata theme.
+
+ggplot(heart_disease, aes(y = cp, x = after_stat(count), fill = disease)) +
+  geom_bar() +
+  theme_stata()
+```
+

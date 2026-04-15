@@ -1,0 +1,1704 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<link href="../img/logo.png" rel="icon" type="image/png">
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.js" defer="true"></script>
+<link href="../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/sc-sb-title-1.0.0/sc_sb_title.js" defer="true"></script>
+<link href="../site_libs/quarto-contrib/grid-no-htext-1.0.0/grid_no_htext.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.27">
+
+  <title>MATH 201 – Sampling Distribution</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-6f5b614b6a3118c6041d924b0a2771f9.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Sampling Distribution</h1>
+
+<div class="quarto-title-authors">
+</div>
+
+</section>
+<section>
+<section id="sampling-distribution" class="title-slide slide level1 agenda-slide center">
+<h1>Sampling Distribution</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-active">
+<p>Sampling Distribution</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Simulating Unicorns</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Central Limit Theorem</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Common Sampling Distributions</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Sampling Distributions for Regression Models</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Scientific Notation</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="sampling-distribution-1" class="slide level2">
+<h2>Sampling Distribution</h2>
+<p>Sampling Distribution is the idea that the statistics that you generate (slopes and intercepts) have their own data generation process.</p>
+<div class="fragment">
+<p>In other words, the numerical values you obtain from the <code>lm</code> and <code>glm</code> function can be different if we got a different data set.</p>
+</div>
+<div class="fragment">
+<p>Some values will be more common than others. Because of this, they have their own data generating process, like the outcome of interest has it’s own data generating process.</p>
+</div>
+</section>
+<section id="sampling-distributions" class="slide level2">
+<h2>Sampling Distributions</h2>
+<ul>
+<li><p>Distribution of a statistic over repeated samples</p></li>
+<li><p>Different Samples yield different statistics</p></li>
+</ul>
+<aside class="notes">
+<p>If we took many samples, the statistics (like mean) would vary. Their distribution helps us quantify uncertainty.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="standard-error" class="slide level2">
+<h2>Standard Error</h2>
+<p>The Standard Error (SE) is the standard deviation of a statistic itself.</p>
+<div class="fragment">
+<p>SE tells us how much a statistic varies from sample to sample. Smaller SE = more precision.</p>
+</div>
+</section>
+<section id="modelling-the-data" class="slide level2">
+<h2>Modelling the Data</h2>
+<p><span class="math display">\[
+Y_i = \beta_0 + \beta_1 X_i + \varepsilon_i
+\]</span></p>
+<ul>
+<li><span class="math inline">\(Y_i\)</span>: Outcome data</li>
+<li><span class="math inline">\(X_i\)</span>: Predictor data</li>
+<li><span class="math inline">\(\beta_0, \beta_1\)</span>: parameters</li>
+<li><span class="math inline">\(\varepsilon_i\)</span>: error term</li>
+</ul>
+</section>
+<section id="error-term" class="slide level2">
+<h2>Error Term</h2>
+<p><span class="math display">\[
+\varepsilon_i \sim DGP
+\]</span></p>
+<aside class="notes">
+<ul>
+<li>The error terms forces the outcome variable to be different from the mathematical model.</li>
+<li>The numbers being generated are random and cannot be predicted.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="randomness-effect" class="slide level2">
+<h2>Randomness Effect</h2>
+<p>The randomness effect is a sampling phenomenom where you will get different samples every time you sample a population.</p>
+<div class="fragment">
+<p>Getting different samples means you will get different statistics.</p>
+</div>
+<div class="fragment">
+<p>These statistics will have a distribution on their own.</p>
+</div>
+</section>
+<section id="randomness-effect-1" class="slide level2">
+<h2>Randomness Effect 1</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>)</span>
+<span id="cb1-2"><a></a>y <span class="ot">&lt;-</span> <span class="dv">4</span> <span class="sc">+</span> <span class="dv">5</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>)</span>
+<span id="cb1-3"><a></a>bb <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">b</span>(<span class="fu">lm</span>(y <span class="sc">~</span> x),<span class="dv">1</span>),<span class="dv">2</span>)</span>
+<span id="cb1-4"><a></a><span class="fu">ggplot</span>(<span class="fu">tibble</span>(<span class="at">x =</span> x, <span class="at">y =</span> y), <span class="fu">aes</span>(x,y)) <span class="sc">+</span></span>
+<span id="cb1-5"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb1-6"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, </span>
+<span id="cb1-7"><a></a>           <span class="at">x =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">y =</span> <span class="dv">15</span>, </span>
+<span id="cb1-8"><a></a>           <span class="at">label =</span> <span class="fu">TeX</span>(<span class="fu">sprintf</span>(r<span class="st">'($\hat{</span><span class="sc">\b</span><span class="st">eta} = %g$)'</span>, bb),</span>
+<span id="cb1-9"><a></a>                       <span class="at">output =</span> <span class="st">"character"</span>),</span>
+<span id="cb1-10"><a></a>           <span class="at">parse =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb1-11"><a></a>           <span class="at">size =</span> <span class="dv">8</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+
+</div>
+<img data-src="9_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
+<section id="randomness-effect-2" class="slide level2">
+<h2>Randomness Effect 2</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>)</span>
+<span id="cb2-2"><a></a>y <span class="ot">&lt;-</span> <span class="dv">4</span> <span class="sc">+</span> <span class="dv">5</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>)</span>
+<span id="cb2-3"><a></a>bb <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">b</span>(<span class="fu">lm</span>(y <span class="sc">~</span> x),<span class="dv">1</span>),<span class="dv">2</span>)</span>
+<span id="cb2-4"><a></a><span class="fu">ggplot</span>(<span class="fu">tibble</span>(<span class="at">x =</span> x, <span class="at">y =</span> y), <span class="fu">aes</span>(x,y)) <span class="sc">+</span></span>
+<span id="cb2-5"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb2-6"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, </span>
+<span id="cb2-7"><a></a>           <span class="at">x =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">y =</span> <span class="dv">15</span>, </span>
+<span id="cb2-8"><a></a>           <span class="at">label =</span> <span class="fu">TeX</span>(<span class="fu">sprintf</span>(r<span class="st">'($\hat{</span><span class="sc">\b</span><span class="st">eta} = %g$)'</span>, bb),</span>
+<span id="cb2-9"><a></a>                       <span class="at">output =</span> <span class="st">"character"</span>),</span>
+<span id="cb2-10"><a></a>           <span class="at">parse =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb2-11"><a></a>           <span class="at">size =</span> <span class="dv">8</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+
+</div>
+<img data-src="9_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
+<section id="randomness-effect-3" class="slide level2">
+<h2>Randomness Effect 3</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>)</span>
+<span id="cb3-2"><a></a>y <span class="ot">&lt;-</span> <span class="dv">4</span> <span class="sc">+</span> <span class="dv">5</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>)</span>
+<span id="cb3-3"><a></a>bb <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">b</span>(<span class="fu">lm</span>(y <span class="sc">~</span> x),<span class="dv">1</span>),<span class="dv">2</span>)</span>
+<span id="cb3-4"><a></a><span class="fu">ggplot</span>(<span class="fu">tibble</span>(<span class="at">x =</span> x, <span class="at">y =</span> y), <span class="fu">aes</span>(x,y)) <span class="sc">+</span></span>
+<span id="cb3-5"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb3-6"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, </span>
+<span id="cb3-7"><a></a>           <span class="at">x =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">y =</span> <span class="dv">15</span>, </span>
+<span id="cb3-8"><a></a>           <span class="at">label =</span> <span class="fu">TeX</span>(<span class="fu">sprintf</span>(r<span class="st">'($\hat{</span><span class="sc">\b</span><span class="st">eta} = %g$)'</span>, bb),</span>
+<span id="cb3-9"><a></a>                       <span class="at">output =</span> <span class="st">"character"</span>),</span>
+<span id="cb3-10"><a></a>           <span class="at">parse =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb3-11"><a></a>           <span class="at">size =</span> <span class="dv">8</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+
+</div>
+<img data-src="9_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
+<section id="randomness-effect-4" class="slide level2">
+<h2>Randomness Effect 4</h2>
+<div class="cell" data-ecode-fold="true">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>)</span>
+<span id="cb4-2"><a></a>y <span class="ot">&lt;-</span> <span class="dv">4</span> <span class="sc">+</span> <span class="dv">5</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>)</span>
+<span id="cb4-3"><a></a>bb <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">b</span>(<span class="fu">lm</span>(y <span class="sc">~</span> x),<span class="dv">1</span>),<span class="dv">2</span>)</span>
+<span id="cb4-4"><a></a><span class="fu">ggplot</span>(<span class="fu">tibble</span>(<span class="at">x =</span> x, <span class="at">y =</span> y), <span class="fu">aes</span>(x,y)) <span class="sc">+</span></span>
+<span id="cb4-5"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb4-6"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, </span>
+<span id="cb4-7"><a></a>           <span class="at">x =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">y =</span> <span class="dv">15</span>, </span>
+<span id="cb4-8"><a></a>           <span class="at">label =</span> <span class="fu">TeX</span>(<span class="fu">sprintf</span>(r<span class="st">'($\hat{</span><span class="sc">\b</span><span class="st">eta} = %g$)'</span>, bb),</span>
+<span id="cb4-9"><a></a>                       <span class="at">output =</span> <span class="st">"character"</span>),</span>
+<span id="cb4-10"><a></a>           <span class="at">parse =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb4-11"><a></a>           <span class="at">size =</span> <span class="dv">8</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+
+</div>
+<img data-src="9_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
+<section id="randomness-effect-5" class="slide level2">
+<h2>Randomness Effect 5</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>)</span>
+<span id="cb5-2"><a></a>y <span class="ot">&lt;-</span> <span class="dv">4</span> <span class="sc">+</span> <span class="dv">5</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>)</span>
+<span id="cb5-3"><a></a>bb <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">b</span>(<span class="fu">lm</span>(y <span class="sc">~</span> x),<span class="dv">1</span>),<span class="dv">2</span>)</span>
+<span id="cb5-4"><a></a><span class="fu">ggplot</span>(<span class="fu">tibble</span>(<span class="at">x =</span> x, <span class="at">y =</span> y), <span class="fu">aes</span>(x,y)) <span class="sc">+</span></span>
+<span id="cb5-5"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb5-6"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, </span>
+<span id="cb5-7"><a></a>           <span class="at">x =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">y =</span> <span class="dv">15</span>, </span>
+<span id="cb5-8"><a></a>           <span class="at">label =</span> <span class="fu">TeX</span>(<span class="fu">sprintf</span>(r<span class="st">'($\hat{</span><span class="sc">\b</span><span class="st">eta} = %g$)'</span>, bb),</span>
+<span id="cb5-9"><a></a>                       <span class="at">output =</span> <span class="st">"character"</span>),</span>
+<span id="cb5-10"><a></a>           <span class="at">parse =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb5-11"><a></a>           <span class="at">size =</span> <span class="dv">8</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+
+</div>
+<img data-src="9_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section></section>
+<section>
+<section id="simulating-unicorns" class="title-slide slide level1 agenda-slide center">
+<h1>Simulating Unicorns</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Sampling Distribution</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Simulating Unicorns</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Central Limit Theorem</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Common Sampling Distributions</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Sampling Distributions for Regression Models</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Scientific Notation</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="simulating-unicorns-1" class="slide level2">
+<h2>Simulating Unicorns</h2>
+<p>To better understand the variation in statistics, let’s simulate a data set of unicorn characteristics to visualize and understand the variation.</p>
+<div class="fragment">
+<p>We will simulate a data set using the <code>unicorns</code> function and only we need to specify how many unicorns you want to simulate.</p>
+</div>
+</section>
+<section id="simulating-unicorn-data" class="slide level2">
+<h2>Simulating Unicorn Data</h2>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">unicorns</span>(<span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt;    Unicorn_ID Age      Gender  Color Type_of_Unicorn Type_of_Horn Horn_Length
+#&gt; 1           1   2        Male  White           Ruvas   Aquamarine    5.252488
+#&gt; 2           2  17        Male  White           Ember   Aquamarine    4.783155
+#&gt; 3           3  15      Female  White         Rainbow         Opal    4.946505
+#&gt; 4           4  17      Female  White         Rainbow         Opal    5.049020
+#&gt; 5           5  20      Female   Pink           Jewel         Opal    4.701441
+#&gt; 6           6   1        Male  Black         Rainbow   Aquamarine    4.440727
+#&gt; 7           7  11     Agender  Brown           Ember         Opal    4.634137
+#&gt; 8           8  17 Genderfluid  White           Jewel         Opal    4.979150
+#&gt; 9           9  13      Female Silver         Rainbow   Aquamarine    4.529756
+#&gt; 10         10  12  Non-binary Silver           Ruvas   Aquamarine    5.213085
+#&gt;    Horn_Strength   Weight Health_Score Personality_Score Magical_Score
+#&gt; 1       24.85229 113.9856            9       1.183902424      10737.22
+#&gt; 2       26.23869 120.2016            1       2.044704452      11163.87
+#&gt; 3       23.85160 135.9732           10       1.897555290      11111.50
+#&gt; 4       21.60476 145.7667            3       0.595216495      11191.37
+#&gt; 5       33.41421 136.9529            2       0.009992097      11300.04
+#&gt; 6       24.08349 135.8345            2       1.388375009      10698.68
+#&gt; 7       29.53704 136.3892            6       0.703409610      11021.38
+#&gt; 8       26.76388 172.4365            5       0.178614516      11209.74
+#&gt; 9       27.34136 120.1815            8       1.111573637      11023.91
+#&gt; 10      27.60964 106.2185            2       0.083262416      11032.58
+#&gt;    Elusiveness_Score Gentleness_Score Nature_Score
+#&gt; 1           40.65927         32.75353     914.3863
+#&gt; 2           35.65254         34.41668     967.5333
+#&gt; 3           34.96719         15.77102     961.0693
+#&gt; 4           37.84365         14.67627     970.9279
+#&gt; 5           38.06095         14.31415     984.7190
+#&gt; 6           35.55699         15.27329     909.6810
+#&gt; 7           34.46055         30.07244     949.9633
+#&gt; 8           35.71911         28.84209     973.4976
+#&gt; 9           33.19145         20.32982     950.0024
+#&gt; 10          34.62286         66.45185     950.9861</code></pre>
+</div>
+</div>
+</section>
+<section id="unicorn-data-variables" class="slide level2">
+<h2>Unicorn Data Variables</h2>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">names</span>(<span class="fu">unicorns</span>(<span class="dv">10</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt;  [1] "Unicorn_ID"        "Age"               "Gender"           
+#&gt;  [4] "Color"             "Type_of_Unicorn"   "Type_of_Horn"     
+#&gt;  [7] "Horn_Length"       "Horn_Strength"     "Weight"           
+#&gt; [10] "Health_Score"      "Personality_Score" "Magical_Score"    
+#&gt; [13] "Elusiveness_Score" "Gentleness_Score"  "Nature_Score"</code></pre>
+</div>
+</div>
+<p>We will only look at <code>Magical_Score</code> and <code>Nature_Score</code>.</p>
+</section>
+<section id="magical-and-nature-score" class="slide level2">
+<h2>Magical and Nature Score</h2>
+<p><span class="math display">\[
+Magical =  3423 + 8 \times Nature + \varepsilon
+\]</span></p>
+<p><span class="math display">\[
+\varepsilon \sim N(0, 3.24)
+\]</span></p>
+</section>
+<section id="simulating-n0-3.24" class="slide level2">
+<h2>Simulating <span class="math inline">\(N(0, 3.24)\)</span></h2>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="fu">sqrt</span>(<span class="fl">3.24</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; [1] -1.190288</code></pre>
+</div>
+</div>
+</section>
+<section id="collecting" class="slide level2">
+<h2>Collecting</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">unicorns</span>(<span class="dv">10</span>) <span class="sc">|&gt;</span> <span class="fu">select</span>(Nature_Score, Magical_Score)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt;    Nature_Score Magical_Score
+#&gt; 1      940.4580      10943.42
+#&gt; 2      925.6546      10831.09
+#&gt; 3      935.6329      10909.92
+#&gt; 4      914.6725      10740.97
+#&gt; 5      979.8745      11263.81
+#&gt; 6      941.4362      10956.67
+#&gt; 7      933.4553      10889.81
+#&gt; 8      957.0568      11080.10
+#&gt; 9      938.4551      10930.84
+#&gt; 10     943.7094      10973.45</code></pre>
+</div>
+</div>
+</section>
+<section id="dgp-of-magical-score-1" class="slide level2">
+<h2>DGP of Magical Score 1</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">ggplot</span>(<span class="fu">unicorns</span>(<span class="dv">500</span>), <span class="fu">aes</span>(Magical_Score)) <span class="sc">+</span></span>
+<span id="cb14-2"><a></a>  <span class="fu">geom_density</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+
+</div>
+<img data-src="9_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
+<section id="dgp-of-magical-score-2" class="slide level2">
+<h2>DGP of Magical Score 2</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">ggplot</span>(<span class="fu">unicorns</span>(<span class="dv">500</span>), <span class="fu">aes</span>(Magical_Score)) <span class="sc">+</span></span>
+<span id="cb15-2"><a></a>  <span class="fu">geom_density</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+
+</div>
+<img data-src="9_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section>
+<section id="estimating-beta_1-via-lm" class="slide level2">
+<h2>Estimating <span class="math inline">\(\beta_1\)</span> via <code>lm</code></h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>u1 <span class="ot">&lt;-</span> <span class="fu">unicorns</span>(<span class="dv">500</span>)</span>
+<span id="cb16-2"><a></a><span class="fu">lm</span>(Magical_Score <span class="sc">~</span> Nature_Score, u1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; 
+#&gt; Call:
+#&gt; lm(formula = Magical_Score ~ Nature_Score, data = u1)
+#&gt; 
+#&gt; Coefficients:
+#&gt;  (Intercept)  Nature_Score  
+#&gt;     3425.680         7.997</code></pre>
+</div>
+</div>
+</section>
+<section id="collecting-a-new-sample" class="slide level2">
+<h2>Collecting a new sample</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>u2 <span class="ot">&lt;-</span> <span class="fu">unicorns</span>(<span class="dv">500</span>)</span>
+<span id="cb18-2"><a></a><span class="fu">lm</span>(Magical_Score <span class="sc">~</span> Nature_Score, u2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; 
+#&gt; Call:
+#&gt; lm(formula = Magical_Score ~ Nature_Score, data = u2)
+#&gt; 
+#&gt; Coefficients:
+#&gt;  (Intercept)  Nature_Score  
+#&gt;     3425.147         7.998</code></pre>
+</div>
+</div>
+</section>
+<section id="collecting-a-new-sample-1" class="slide level2">
+<h2>Collecting a new sample</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>u3 <span class="ot">&lt;-</span> <span class="fu">unicorns</span>(<span class="dv">500</span>)</span>
+<span id="cb20-2"><a></a><span class="fu">lm</span>(Magical_Score <span class="sc">~</span> Nature_Score, u3)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; 
+#&gt; Call:
+#&gt; lm(formula = Magical_Score ~ Nature_Score, data = u3)
+#&gt; 
+#&gt; Coefficients:
+#&gt;  (Intercept)  Nature_Score  
+#&gt;     3424.723         7.998</code></pre>
+</div>
+</div>
+</section>
+<section id="collecting-a-new-sample-2" class="slide level2">
+<h2>Collecting a new sample</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>u4 <span class="ot">&lt;-</span> <span class="fu">unicorns</span>(<span class="dv">500</span>)</span>
+<span id="cb22-2"><a></a><span class="fu">lm</span>(Magical_Score <span class="sc">~</span> Nature_Score, u4)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; 
+#&gt; Call:
+#&gt; lm(formula = Magical_Score ~ Nature_Score, data = u4)
+#&gt; 
+#&gt; Coefficients:
+#&gt;  (Intercept)  Nature_Score  
+#&gt;     3420.155         8.003</code></pre>
+</div>
+</div>
+</section>
+<section id="replicating-processes" class="slide level2">
+<h2>Replicating Processes</h2>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="fu">replicate</span>(N, CODE)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<ul>
+<li><code>N</code>: number of times to repeat a process</li>
+<li><code>CODE</code>: what is to repeated</li>
+</ul>
+</section>
+<section id="extracting-hat-beta-coefficeints" class="slide level2">
+<h2>Extracting <span class="math inline">\(\hat \beta\)</span> Coefficeints</h2>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">b</span>(MODEL, INDEX)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<ul>
+<li><code>MODEL</code>: a model that can be used to extract components</li>
+<li><code>INDEX</code>: which component do you want to use
+<ul>
+<li><code>0</code>: Intercept</li>
+<li><code>1</code>: first slope</li>
+<li><code>2</code>: second slope</li>
+<li><code>...</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="collecting-1000-samples" class="slide level2">
+<h2>Collecting 1000 Samples</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a>betas <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">1000</span>,</span>
+<span id="cb26-2"><a></a>                   <span class="fu">b</span>(<span class="fu">lm</span>(Magical_Score <span class="sc">~</span> Nature_Score, <span class="fu">unicorns</span>(<span class="dv">500</span>)), <span class="dv">1</span>))</span>
+<span id="cb26-3"><a></a></span>
+<span id="cb26-4"><a></a>betas</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt;    [1] 8.001750 8.000196 8.002544 8.003610 8.004941 7.993941 8.000202 8.001889
+#&gt;    [9] 7.995223 7.996585 8.005601 7.996862 8.005245 8.002126 8.003863 8.006201
+#&gt;   [17] 7.995829 8.005916 8.001577 8.002696 7.997474 8.006545 7.994883 7.997685
+#&gt;   [25] 7.998124 8.001361 8.000445 7.990884 8.000819 7.997941 8.004574 7.992591
+#&gt;   [33] 7.994828 8.002954 7.997476 8.004013 7.998982 8.002983 8.007485 8.000276
+#&gt;   [41] 7.990225 7.997356 8.005741 8.002959 8.010491 8.001355 7.988881 7.999071
+#&gt;   [49] 7.999367 7.999205 8.001313 7.996718 7.998428 8.001515 8.001404 7.999331
+#&gt;   [57] 8.009248 7.993134 7.994091 8.002019 8.001409 7.999285 8.006359 7.995733
+#&gt;   [65] 7.994764 7.997579 7.997997 8.006028 7.996608 7.999970 8.001317 7.996735
+#&gt;   [73] 7.994408 8.007499 8.005809 7.993246 7.995656 7.997313 7.998228 7.998621
+#&gt;   [81] 8.001574 7.999941 8.001153 7.998415 8.005937 8.000156 8.000439 7.994368
+#&gt;   [89] 7.996846 7.998843 8.001328 7.994832 7.998650 8.001165 8.000315 8.002754
+#&gt;   [97] 8.000865 7.999526 8.002046 7.999420 8.003239 7.995923 7.997977 7.995787
+#&gt;  [105] 8.000503 7.998786 8.007085 8.000355 8.003273 8.000267 8.005196 7.997830
+#&gt;  [113] 7.999516 7.994712 8.003408 8.003972 7.992896 7.999705 7.999406 7.994645
+#&gt;  [121] 7.996974 7.997542 7.997118 7.996966 8.004585 7.998092 8.000079 7.997141
+#&gt;  [129] 8.004462 8.001521 8.001116 7.995929 7.998996 8.003708 8.001011 8.001502
+#&gt;  [137] 7.998432 8.002622 7.994285 8.007927 7.999664 8.000101 7.997901 8.001362
+#&gt;  [145] 7.998164 8.001277 8.003743 8.003569 7.999147 7.993218 8.005203 8.002120
+#&gt;  [153] 7.998742 8.002137 7.998372 8.005566 7.996324 7.996819 7.999278 7.999635
+#&gt;  [161] 7.998820 8.001944 7.991813 7.998039 8.000255 7.997407 8.005962 8.011353
+#&gt;  [169] 8.004090 7.998938 8.005676 7.997926 7.998614 7.995960 8.002341 8.003535
+#&gt;  [177] 7.997486 8.000444 7.997063 7.992066 8.003982 7.998901 8.001156 7.993568
+#&gt;  [185] 7.996167 7.999730 8.001320 7.994328 7.990948 7.996388 7.998042 8.003235
+#&gt;  [193] 7.998684 8.001680 8.002045 8.006812 8.006604 7.994703 7.995760 8.006165
+#&gt;  [201] 7.998140 7.999437 7.999598 8.007477 7.995132 8.004552 8.003836 7.995080
+#&gt;  [209] 8.003225 7.998576 8.006866 8.001810 8.004090 7.996938 7.998299 8.001967
+#&gt;  [217] 7.994657 8.000767 7.999163 7.993956 8.002666 7.999934 7.995976 8.002478
+#&gt;  [225] 7.995369 7.996404 7.998246 8.000693 8.004246 7.996359 7.998525 8.001986
+#&gt;  [233] 8.003837 8.003258 8.002959 8.004890 7.999976 8.005410 8.001885 7.997567
+#&gt;  [241] 8.003065 8.006074 7.998371 7.997624 8.004379 7.999293 8.000144 8.006415
+#&gt;  [249] 7.999093 8.004773 8.000632 8.001312 8.008969 8.002309 8.005700 8.001584
+#&gt;  [257] 8.000356 7.999279 8.006743 8.000048 8.000661 7.993913 8.002547 7.995947
+#&gt;  [265] 7.995326 7.995269 7.989742 8.001999 8.004924 7.997581 8.000105 7.999744
+#&gt;  [273] 7.994698 8.000144 7.993029 8.001566 7.995333 8.005318 8.002011 7.993200
+#&gt;  [281] 7.999340 8.002905 7.998772 8.007809 7.998704 8.003762 8.004854 7.988998
+#&gt;  [289] 8.005430 8.002211 8.002643 7.997168 7.994431 7.999675 8.002752 7.995793
+#&gt;  [297] 7.998467 7.998952 8.000008 7.997238 7.997103 7.996573 7.995034 7.999961
+#&gt;  [305] 7.996990 8.000856 7.999775 8.005729 7.996826 8.007240 8.001422 8.002067
+#&gt;  [313] 7.999576 8.004559 7.996971 7.993131 7.997763 7.992480 7.999336 7.991151
+#&gt;  [321] 7.999376 7.998350 8.001570 7.996503 8.004555 7.993807 7.996222 7.995595
+#&gt;  [329] 7.998992 8.001599 7.999616 7.993253 7.997079 7.999279 8.006571 7.995797
+#&gt;  [337] 8.001595 7.993967 7.997048 8.008748 7.999945 8.002158 8.000930 7.990018
+#&gt;  [345] 8.007725 7.996968 8.002777 8.005409 7.997811 7.993801 7.993288 7.993162
+#&gt;  [353] 7.996903 7.993784 8.002563 7.998344 7.993796 7.996405 7.996496 8.007446
+#&gt;  [361] 8.001431 8.001656 8.007141 7.998854 7.993023 7.995320 8.001713 7.989932
+#&gt;  [369] 7.998534 7.998239 8.004139 8.001478 8.002226 8.001422 7.999855 7.999145
+#&gt;  [377] 8.002522 8.009337 7.997033 8.004633 7.999912 8.001660 7.994840 8.001678
+#&gt;  [385] 7.998177 7.999718 8.004869 7.996978 7.997350 7.998621 7.998318 7.999637
+#&gt;  [393] 7.993236 8.005418 7.995085 8.006341 7.997273 7.995670 7.994570 7.999471
+#&gt;  [401] 7.996421 7.999281 8.004455 8.000219 8.002787 8.004832 8.003437 8.001597
+#&gt;  [409] 7.999781 8.003518 8.002018 7.996776 8.005656 7.998652 7.996495 7.999328
+#&gt;  [417] 8.006161 8.004154 7.999635 7.996204 8.002715 7.999795 7.998725 7.999145
+#&gt;  [425] 7.993918 7.998948 7.998864 7.992411 7.998702 8.003784 8.005355 8.001593
+#&gt;  [433] 8.003261 8.001250 7.999030 7.998189 7.995648 8.002892 7.999161 7.998456
+#&gt;  [441] 8.005973 7.997440 7.999637 8.008334 8.000519 8.003782 8.006330 7.995694
+#&gt;  [449] 7.997962 8.001364 7.997973 8.000159 8.003613 8.011624 7.992206 7.999645
+#&gt;  [457] 8.001192 7.996914 8.005043 8.003919 8.001589 8.000003 7.995526 8.003759
+#&gt;  [465] 7.995978 7.996789 7.999308 7.993585 8.004527 8.002497 8.004671 7.998705
+#&gt;  [473] 7.998551 8.005500 7.996522 7.999256 8.002474 8.006564 7.992152 8.003592
+#&gt;  [481] 8.004981 8.003936 8.008093 8.000760 7.995503 8.007033 8.000498 8.005089
+#&gt;  [489] 7.995228 8.003689 8.001831 8.009637 7.999867 8.004415 8.002855 8.010280
+#&gt;  [497] 7.997217 7.998686 7.998130 8.000712 7.996439 7.999513 8.003567 8.007648
+#&gt;  [505] 7.994132 8.002537 8.000496 8.001487 8.007104 7.998221 7.998060 7.991094
+#&gt;  [513] 8.001339 7.995963 7.998725 7.997727 8.002509 7.999970 8.008322 8.008554
+#&gt;  [521] 7.995407 7.999279 8.002247 7.998750 8.001258 7.996934 7.998483 8.004021
+#&gt;  [529] 8.000195 7.996663 8.002275 8.005227 8.000665 7.991921 8.001262 8.002659
+#&gt;  [537] 7.993338 8.005354 8.001237 8.003077 7.999901 7.993531 7.998054 7.992552
+#&gt;  [545] 7.991906 8.000562 8.005929 8.001833 7.996750 8.005678 7.999457 7.998622
+#&gt;  [553] 7.996363 8.000510 8.001655 7.999878 8.000770 8.003534 8.002423 8.002532
+#&gt;  [561] 8.001957 8.000388 8.004797 8.004892 7.997009 8.003955 8.002009 8.001054
+#&gt;  [569] 8.002491 8.008278 8.010098 7.993958 7.997711 7.996882 8.002106 8.000628
+#&gt;  [577] 7.998439 7.996841 7.996457 7.997677 8.002535 8.001988 8.002577 8.000184
+#&gt;  [585] 8.001475 7.996840 8.002043 7.997277 7.997168 7.998338 7.996370 7.994774
+#&gt;  [593] 7.995370 8.012116 8.003132 7.999447 8.010097 7.996000 7.999252 7.994600
+#&gt;  [601] 7.999802 7.996771 7.999653 8.007075 8.001168 8.002229 8.001222 8.000828
+#&gt;  [609] 7.997749 8.003790 8.002268 8.005920 8.000744 7.999516 7.997439 7.996139
+#&gt;  [617] 8.004026 8.000181 7.994791 7.996598 7.999734 8.006638 7.999308 7.995251
+#&gt;  [625] 7.996386 8.000385 8.004942 8.004860 8.004543 8.002977 8.002110 8.000506
+#&gt;  [633] 7.998715 7.997102 8.005819 7.994894 7.996560 8.000667 8.002072 7.996689
+#&gt;  [641] 8.005538 8.003692 8.001781 7.996962 7.993246 8.006436 7.995363 8.001564
+#&gt;  [649] 7.994207 8.001447 7.998459 7.995211 7.999775 7.998365 8.003026 7.995681
+#&gt;  [657] 8.003216 7.993917 8.006459 7.998351 7.995993 8.001193 8.003641 8.001503
+#&gt;  [665] 8.002125 8.002019 8.003476 7.997571 8.004358 7.998322 8.000277 7.993531
+#&gt;  [673] 8.005123 7.994626 7.999903 7.991804 7.997696 7.999744 8.006788 8.007100
+#&gt;  [681] 8.002207 8.003291 8.001559 7.992866 7.998410 7.999328 8.000964 8.003254
+#&gt;  [689] 7.998597 8.009060 7.996217 7.997748 7.999730 7.998834 7.999390 8.002318
+#&gt;  [697] 8.003839 8.004596 8.002957 8.003162 8.000170 8.001004 7.988143 7.998756
+#&gt;  [705] 8.004350 8.008008 8.003537 7.995187 8.002982 7.999899 7.998774 8.002787
+#&gt;  [713] 8.001755 8.002397 8.003831 7.998584 8.003097 8.003185 7.996925 8.017316
+#&gt;  [721] 8.006672 8.006867 7.998593 8.005964 7.997711 7.997925 7.999272 7.997968
+#&gt;  [729] 8.003754 8.004546 8.005834 8.002313 7.996025 8.000854 8.004896 7.996529
+#&gt;  [737] 7.999752 8.004034 8.001204 7.999484 7.997283 8.004746 8.002340 8.000577
+#&gt;  [745] 7.998080 8.000974 7.998657 8.003835 8.000570 8.000164 7.996962 8.004217
+#&gt;  [753] 8.001877 7.996191 7.999096 7.997922 8.001589 7.999556 8.000258 7.996767
+#&gt;  [761] 8.002158 8.002120 7.998320 7.995298 7.997464 7.999662 8.006183 8.004107
+#&gt;  [769] 7.997477 8.003315 8.010755 8.003562 8.003005 8.004293 7.995563 7.999890
+#&gt;  [777] 8.002131 7.998194 7.989564 8.000196 8.000652 8.003892 7.995955 7.993680
+#&gt;  [785] 8.003760 7.998593 7.999715 8.003131 8.010781 7.999342 8.004377 8.007578
+#&gt;  [793] 7.995175 8.000168 7.997784 7.998130 8.004329 7.999324 7.996739 8.006320
+#&gt;  [801] 7.997752 8.000898 8.003429 8.003830 8.004568 8.001204 8.011343 7.997303
+#&gt;  [809] 7.998936 8.005525 7.997424 7.993925 7.999250 8.005429 8.006849 8.003679
+#&gt;  [817] 7.993131 7.999472 7.996878 8.002110 8.001208 8.006624 7.996955 7.999611
+#&gt;  [825] 8.004304 8.001256 8.000137 8.001381 7.998866 7.996160 7.998900 8.002816
+#&gt;  [833] 7.999879 7.998387 8.002454 8.003838 7.997773 7.995853 7.996611 8.007454
+#&gt;  [841] 7.993432 7.998207 7.997683 7.992255 7.993084 7.993976 8.004330 7.994649
+#&gt;  [849] 8.004601 8.003579 8.004381 7.997450 8.001092 8.001627 7.999366 7.999853
+#&gt;  [857] 7.998225 8.005472 8.004160 7.995965 7.987712 8.000963 8.002317 8.005101
+#&gt;  [865] 7.995580 8.002913 8.005695 7.992480 7.999222 8.008186 7.999338 8.001811
+#&gt;  [873] 8.002693 8.003321 7.994740 7.998708 8.002806 7.999633 8.005086 7.996356
+#&gt;  [881] 8.002631 7.999378 7.999286 8.003146 7.999951 8.002068 8.001658 7.996313
+#&gt;  [889] 8.001857 8.002224 8.000065 7.996524 8.001734 8.002424 8.001867 7.997435
+#&gt;  [897] 8.006790 7.996472 8.000436 7.998525 8.001259 8.002969 7.996915 8.004431
+#&gt;  [905] 7.999948 7.999038 8.000571 8.004143 8.006077 7.996670 7.991970 8.000686
+#&gt;  [913] 7.996349 7.999062 7.995961 7.998076 7.992246 7.998011 7.996984 7.999550
+#&gt;  [921] 8.004956 7.995240 8.000981 8.000841 7.998974 7.997813 7.998098 7.999040
+#&gt;  [929] 7.999046 7.999194 8.002354 7.999055 7.996800 8.000071 7.999289 7.995069
+#&gt;  [937] 8.004334 8.000692 8.000010 7.999357 8.004030 8.001699 7.998832 7.989761
+#&gt;  [945] 8.003029 8.000063 8.006441 7.996407 8.000649 7.997513 7.995562 8.000720
+#&gt;  [953] 7.996850 7.999024 7.994457 8.005461 7.995998 7.999460 7.998185 8.000012
+#&gt;  [961] 8.009022 8.002124 7.995652 7.991826 8.003530 7.994587 7.998642 7.993853
+#&gt;  [969] 8.000931 8.003518 7.996810 8.004981 7.998713 7.994196 7.999158 7.998787
+#&gt;  [977] 7.997754 8.000959 8.003984 8.002186 7.997910 8.003660 7.999484 7.999660
+#&gt;  [985] 8.000153 8.002003 7.993762 8.003998 7.994365 7.995112 7.999880 7.995370
+#&gt;  [993] 8.000633 7.996234 8.001247 7.998788 8.009178 7.996708 7.997526 8.003279</code></pre>
+</div>
+</div>
+</section>
+<section id="distributions-of-hat-beta_1" class="slide level2">
+<h2>Distributions of <span class="math inline">\(\hat \beta_1\)</span></h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> betas), <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
+<span id="cb28-2"><a></a>  <span class="fu">geom_density</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+
+</div>
+<img data-src="9_files/figure-revealjs/unnamed-chunk-20-1.png" width="960" class="r-stretch"></section></section>
+<section>
+<section id="central-limit-theorem" class="title-slide slide level1 agenda-slide center">
+<h1>Central Limit Theorem</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Sampling Distribution</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Simulating Unicorns</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Central Limit Theorem</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Common Sampling Distributions</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Sampling Distributions for Regression Models</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Scientific Notation</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="central-limit-theorem-1" class="slide level2">
+<h2>Central Limit Theorem</h2>
+<p>The Central Limit Theorem (CLT) is a fundamental concept in probability and statistics. It states that the distribution of the sum (or average) of a large number of independent, identically distributed (i.i.d.) random variables will be approximately normal, regardless of the underlying distribution of those individual variables.</p>
+</section>
+<section id="formal-statement-of-the-clt" class="slide level2">
+<h2>Formal Statement of the CLT</h2>
+<ul>
+<li>Let <span class="math inline">\(X_1\)</span>, <span class="math inline">\(X_2\)</span>, …, <span class="math inline">\(X_n\)</span> be a sequence of i.i.d. random variables with mean <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma\)</span>.</li>
+<li>Let <span class="math inline">\(\bar X\)</span> be the sample mean of these variables.</li>
+<li>As n (the sample size) approaches infinity, the distribution of <span class="math inline">\(\bar X\)</span> approaches a normal distribution with:
+<ul>
+<li>Mean: <span class="math inline">\(\mu\)</span></li>
+<li>Standard Deviation: <span class="math inline">\(\sigma/\sqrt{n}\)</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="clt-example" class="slide level2">
+<h2>CLT Example</h2>
+<ul>
+<li><strong>Imagine:</strong> You’re flipping a fair coin many times.
+<ul>
+<li>Each flip is an independent event (heads or tails).</li>
+<li>The probability of heads/tails is the same for each flip.</li>
+</ul></li>
+<li><strong>Now:</strong> Calculate the average number of heads after each set of 10 flips, then each set of 100 flips, and so on.</li>
+<li><strong>Observation:</strong> As the number of flips in each set increases, the distribution of these averages will start to resemble a bell-shaped curve (normal distribution), even though the individual coin flips are not normally distributed.</li>
+</ul>
+</section>
+<section id="clt-implications" class="slide level2">
+<h2>CLT Implications</h2>
+<ul>
+<li><strong>Approximation:</strong> Even if the underlying data is not normally distributed, the distribution of the sample means will be approximately normal for large enough sample sizes.</li>
+<li><strong>Practical Rule:</strong> A common rule of thumb is that the sample size (n) should be at least 30 for the CLT to provide a good approximation. However, this is a guideline, and the actual required sample size can vary depending on the shape of the original distribution.</li>
+</ul>
+</section>
+<section id="normal-example-n-10" class="slide level2">
+<h2>Normal Example <span class="math inline">\(n = 10\)</span></h2>
+<p>Simulating 500 samples of size 10 from a normal distribution with mean 5 and standard deviation of 2.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="co">#rnorm(10, 5, 2)</span></span>
+<span id="cb29-2"><a></a>sims <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">500</span>, <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">2</span>))</span>
+<span id="cb29-3"><a></a>sims_mean <span class="ot">&lt;-</span> <span class="fu">colMeans</span>(sims)</span>
+<span id="cb29-4"><a></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> sims_mean), <span class="fu">aes</span>(x)) <span class="sc">+</span></span>
+<span id="cb29-5"><a></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb29-6"><a></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dnorm, </span>
+<span id="cb29-7"><a></a>                <span class="at">args =</span> <span class="fu">list</span>(<span class="at">mean =</span> <span class="dv">5</span>, <span class="at">sd =</span> <span class="dv">2</span> <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="dv">10</span>)),</span>
+<span id="cb29-8"><a></a>                <span class="at">col =</span> <span class="st">"red"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+
+</div>
+<img data-src="9_files/figure-revealjs/unnamed-chunk-21-1.png" width="960" class="r-stretch"></section>
+<section id="normal-example-n-30" class="slide level2">
+<h2>Normal Example <span class="math inline">\(n = 30\)</span></h2>
+<p>Simulating 500 samples of size 30 from a normal distribution with mean 5 and standard deviation of 2.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a><span class="co"># rnorm(30, 5, 2)</span></span>
+<span id="cb30-2"><a></a>sims <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">500</span>, <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="dv">5</span>, <span class="dv">2</span>))</span>
+<span id="cb30-3"><a></a>sims_mean <span class="ot">&lt;-</span> <span class="fu">colMeans</span>(sims)</span>
+<span id="cb30-4"><a></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> sims_mean), <span class="fu">aes</span>(x)) <span class="sc">+</span></span>
+<span id="cb30-5"><a></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb30-6"><a></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dnorm, </span>
+<span id="cb30-7"><a></a>                <span class="at">args =</span> <span class="fu">list</span>(<span class="at">mean =</span> <span class="dv">5</span>, <span class="at">sd =</span> <span class="dv">2</span> <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="dv">30</span>)),</span>
+<span id="cb30-8"><a></a>                <span class="at">col =</span> <span class="st">"red"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+
+</div>
+<img data-src="9_files/figure-revealjs/unnamed-chunk-22-1.png" width="960" class="r-stretch"></section>
+<section id="normal-example-n-50" class="slide level2">
+<h2>Normal Example <span class="math inline">\(n = 50\)</span></h2>
+<p>Simulating 500 samples of size 50 from a normal distribution with mean 5 and standard deviation of 2.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a><span class="co"># rnorm(50, 5, 2)</span></span>
+<span id="cb31-2"><a></a>sims <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">500</span>, <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="dv">5</span>, <span class="dv">2</span>))</span>
+<span id="cb31-3"><a></a>sims_mean <span class="ot">&lt;-</span> <span class="fu">colMeans</span>(sims)</span>
+<span id="cb31-4"><a></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> sims_mean), <span class="fu">aes</span>(x)) <span class="sc">+</span></span>
+<span id="cb31-5"><a></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb31-6"><a></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dnorm, </span>
+<span id="cb31-7"><a></a>                <span class="at">args =</span> <span class="fu">list</span>(<span class="at">mean =</span> <span class="dv">5</span>, <span class="at">sd =</span> <span class="dv">2</span> <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="dv">50</span>)),</span>
+<span id="cb31-8"><a></a>                <span class="at">col =</span> <span class="st">"red"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+
+</div>
+<img data-src="9_files/figure-revealjs/unnamed-chunk-23-1.png" width="960" class="r-stretch"></section>
+<section id="normal-example-n-100" class="slide level2">
+<h2>Normal Example <span class="math inline">\(n = 100\)</span></h2>
+<p>Simulating 500 samples of size 100 from a normal distribution with mean 5 and standard deviation of 2.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a><span class="co"># rnorm(100, 5, 2)</span></span>
+<span id="cb32-2"><a></a>sims <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">500</span>, <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">5</span>, <span class="dv">2</span>))</span>
+<span id="cb32-3"><a></a>sims_mean <span class="ot">&lt;-</span> <span class="fu">colMeans</span>(sims)</span>
+<span id="cb32-4"><a></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> sims_mean), <span class="fu">aes</span>(x)) <span class="sc">+</span></span>
+<span id="cb32-5"><a></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb32-6"><a></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dnorm, </span>
+<span id="cb32-7"><a></a>                <span class="at">args =</span> <span class="fu">list</span>(<span class="at">mean =</span> <span class="dv">5</span>, <span class="at">sd =</span> <span class="dv">2</span> <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="dv">100</span>)),</span>
+<span id="cb32-8"><a></a>                <span class="at">col =</span> <span class="st">"red"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+
+</div>
+<img data-src="9_files/figure-revealjs/unnamed-chunk-24-1.png" width="960" class="r-stretch"></section></section>
+<section>
+<section id="common-sampling-distributions" class="title-slide slide level1 agenda-slide center">
+<h1>Common Sampling Distributions</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Sampling Distribution</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Simulating Unicorns</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Central Limit Theorem</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Common Sampling Distributions</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Sampling Distributions for Regression Models</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Scientific Notation</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="normal-dgp" class="slide level2">
+<h2>Normal DGP</h2>
+<p>When the data is said to have a normal distribution (DGP), there are special properties with both the mean and standard deviation, regardless of sample size.</p>
+</section>
+<section id="statistics" class="slide level2">
+<h2>Statistics</h2>
+<div class="columns">
+<div class="column">
+<p><strong>Mean</strong> <span class="math display">\[
+\bar X = \sum ^n_{i=1} X_i
+\]</span></p>
+</div><div class="column">
+<p><strong>Standard Deviation</strong> <span class="math display">\[
+s^2 = \frac{1}{n}\sum ^n_{i=1} (X_i - \bar X)^2
+\]</span></p>
+</div></div>
+</section>
+<section id="when-the-true-mu-and-sigma-are-known" class="slide level2">
+<h2>When the true <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span> are known</h2>
+<p>A data sample of size <span class="math inline">\(n\)</span> is generated from: <span class="math display">\[
+X_i \sim N(\mu, \sigma)
+\]</span></p>
+</section>
+<section id="distribution-of-bar-x" class="slide level2">
+<h2>Distribution of <span class="math inline">\(\bar X\)</span></h2>
+<p><span class="math display">\[
+\bar X \sim N(\mu, \sigma/\sqrt{n})
+\]</span></p>
+</section>
+<section id="distribution-of-z" class="slide level2">
+<h2>Distribution of Z</h2>
+<p><span class="math display">\[
+Z = \frac{\bar X - \mu}{\sigma/\sqrt{n}} \sim N(0,1)
+\]</span></p>
+</section>
+<section id="when-the-true-mu-and-sigma-are-unknown" class="slide level2">
+<h2>When the true <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span> are unknown</h2>
+<p>A data sample of size <span class="math inline">\(n\)</span> is generated from: <span class="math display">\[
+X_i \sim N(\mu, \sigma)
+\]</span></p>
+</section>
+<section id="distribution-of-s2-unknown-mu" class="slide level2">
+<h2>Distribution of <span class="math inline">\(s^2\)</span> (unknown <span class="math inline">\(\mu\)</span>)</h2>
+<p><span class="math display">\[
+(n-1)s^2/\sigma^2 \sim \chi^2(n-1)
+\]</span></p>
+</section>
+<section id="distribution-of-z-unknown-sigma" class="slide level2">
+<h2>Distribution of Z (unknown <span class="math inline">\(\sigma\)</span>)</h2>
+<p><span class="math display">\[
+Z = \frac{\bar X - \mu}{\sigma/\sqrt{n}} \rightarrow \frac{\bar X - \mu}{s/\sqrt{n}} \sim t(n-1)
+\]</span></p>
+</section></section>
+<section>
+<section id="sampling-distributions-for-regression-models" class="title-slide slide level1 agenda-slide center">
+<h1>Sampling Distributions for Regression Models</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Sampling Distribution</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Simulating Unicorns</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Central Limit Theorem</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Common Sampling Distributions</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Sampling Distributions for Regression Models</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Scientific Notation</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="regression-coefficients" class="slide level2">
+<h2>Regression Coefficients</h2>
+<p>The estimates of regression coefficients (slopes) have a distribution!</p>
+<div class="fragment">
+<p>Based on our outcome, we will have 2 different distributions to work with: Normal or t.</p>
+</div>
+</section>
+<section id="linear-regression" class="slide level2">
+<h2>Linear Regression</h2>
+<p><span class="math display">\[
+\frac{\hat\beta_j-\beta_j}{\mathrm{se}(\hat\beta_j)} \sim t_{n-p^\prime}
+\]</span></p>
+</section>
+<section id="beta_j-0" class="slide level2">
+<h2><span class="math inline">\(\beta_j = 0\)</span></h2>
+<p><span class="math display">\[
+\frac{\hat\beta_j}{\mathrm{se}(\hat\beta_j)} \sim t_{n-p^\prime}
+\]</span></p>
+</section>
+<section id="logistic-regression" class="slide level2">
+<h2>Logistic Regression</h2>
+<p><span class="math display">\[
+\frac{\hat\beta_j - \beta_j}{\mathrm{se}(\hat\beta_j)} \sim N(0,1)
+\]</span></p>
+</section>
+<section id="beta_j-0-1" class="slide level2">
+<h2><span class="math inline">\(\beta_j = 0\)</span></h2>
+<p><span class="math display">\[
+\frac{\hat\beta_j}{\mathrm{se}(\hat\beta_j)} \sim N(0,1)
+\]</span></p>
+</section></section>
+<section>
+<section id="scientific-notation" class="title-slide slide level1 agenda-slide center">
+<h1>Scientific Notation</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Sampling Distribution</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Simulating Unicorns</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Central Limit Theorem</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Common Sampling Distributions</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Sampling Distributions for Regression Models</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Scientific Notation</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="scientific-notation-1" class="slide level2">
+<h2>Scientific Notation</h2>
+<p>We often work with <strong>very large</strong> or <strong>very small</strong> numbers.</p>
+<ul>
+<li>Earth → Sun distance: 150,000,000 km<br>
+</li>
+<li>Diameter of a hydrogen atom: 0.0000000001 m</li>
+</ul>
+<p>Problems with standard form:</p>
+<ul>
+<li>Hard to <strong>read</strong></li>
+<li>Easy to <strong>copy wrong</strong></li>
+<li>Difficult to <strong>compare</strong></li>
+</ul>
+<p><strong>Scientific notation</strong> makes numbers compact and standardized.</p>
+</section>
+<section id="the-scientific-notation-form" class="slide level2">
+<h2>The Scientific Notation Form</h2>
+<p>A number is in scientific notation if:</p>
+<p><span class="math display">\[
+a \times 10^n
+\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(a\)</span> is <strong>at least 1 and less than 10</strong></li>
+<li><span class="math inline">\(n\)</span> is an integer (positive, negative, or zero)</li>
+<li><span class="math inline">\(10^n\)</span> is a <strong>power of ten</strong></li>
+</ul>
+</section>
+<section id="example-large-number" class="slide level2">
+<h2>Example: Large Number</h2>
+<p>Write 45,000 in scientific notation.</p>
+<p>Move decimal:</p>
+<p><span class="math display">\[
+45000 \rightarrow 4.5
+\]</span></p>
+<p>Moved <strong>4 places left</strong>:</p>
+<p><span class="math display">\[
+4.5 \times 10^4
+\]</span></p>
+</section>
+<section id="example-small-number" class="slide level2">
+<h2>Example: Small Number</h2>
+<p>Write 0.00072 in scientific notation.</p>
+<p>Move decimal:</p>
+<p><span class="math display">\[
+0.00072 \rightarrow 7.2
+\]</span></p>
+<p>Moved <strong>4 places right</strong>:</p>
+<p><span class="math display">\[
+7.2 \times 10^{-4}
+\]</span></p>
+</section>
+<section id="understanding-positive-exponent" class="slide level2">
+<h2>Understanding Positive Exponent</h2>
+<p>Positive exponents → big numbers</p>
+<ul>
+<li><span class="math inline">\(10^3 = 1{,}000\)</span></li>
+<li><span class="math inline">\(10^6 = 1{,}000{,}000\)</span></li>
+</ul>
+<p>Example:</p>
+<p><span class="math display">\[
+2.1 \times 10^6 = 2{,}100{,}000
+\]</span></p>
+</section>
+<section id="understanding-negative-exponent" class="slide level2">
+<h2>Understanding Negative Exponent</h2>
+<p>Negative exponents → small numbers</p>
+<ul>
+<li><span class="math inline">\(10^{-2} = 0.01\)</span></li>
+<li><span class="math inline">\(10^{-5} = 0.00001\)</span></li>
+</ul>
+<p>Example:</p>
+<p><span class="math display">\[
+4.3 \times 10^{-3} = 0.0043
+\]</span></p>
+</section>
+<section id="converting-back-to-standard-form" class="slide level2">
+<h2>Converting Back to Standard Form</h2>
+<p>Rule:</p>
+<ul>
+<li><span class="math inline">\(10^{+n}\)</span>: move decimal <strong>right</strong> <span class="math inline">\(n\)</span> places</li>
+<li><span class="math inline">\(10^{-n}\)</span>: move decimal <strong>left</strong> <span class="math inline">\(n\)</span> places</li>
+</ul>
+</section>
+<section id="convert-example-positive-exponent" class="slide level2">
+<h2>Convert Example (Positive Exponent)</h2>
+<p><span class="math display">\[
+6.2 \times 10^5
+\]</span></p>
+<p>Move decimal 5 places right:</p>
+<p><span class="math display">\[
+620{,}000
+\]</span></p>
+</section>
+<section id="convert-example-negative-exponent" class="slide level2">
+<h2>Convert Example (Negative Exponent)</h2>
+<p><span class="math display">\[
+9.1 \times 10^{-4}
+\]</span></p>
+<p>Move decimal 4 places left:</p>
+<p><span class="math display">\[
+0.00091
+\]</span></p>
+</section>
+<section id="comparing-numbers-in-scientific-notation" class="slide level2">
+<h2>Comparing Numbers in Scientific Notation</h2>
+<p>Step 1: Compare exponents</p>
+<ul>
+<li>Bigger exponent → bigger number</li>
+</ul>
+<p>Step 2: If exponents match, compare coefficients <span class="math inline">\(a\)</span></p>
+<p>Example:</p>
+<ul>
+<li><span class="math inline">\(3.2 \times 10^5\)</span></li>
+<li><span class="math inline">\(7.1 \times 10^4\)</span></li>
+</ul>
+<p>Since <span class="math inline">\(10^5 &gt; 10^4\)</span>, the first number is larger.</p>
+</section>
+<section id="scientific-notation-in-r" class="slide level2">
+<h2>Scientific Notation in R</h2>
+<p>R often displays very large/small numbers using <strong><code>e</code> notation</strong>.</p>
+<p><span class="math display">\[
+a \times 10^n \quad \text{is shown as} \quad a\text{e}n
+\]</span></p>
+<p>Examples:</p>
+<ul>
+<li><code>3e+06</code> means <span class="math inline">\(3 \times 10^6\)</span></li>
+<li><code>4.5e-04</code> means <span class="math inline">\(4.5 \times 10^{-4}\)</span></li>
+</ul>
+
+
+<div class="reveal-header">
+<div class="header-logo">
+<img data-src="">
+</div>
+<div class="sc-title">
+<p> </p>
+</div>
+<div class="header-text">
+<p> </p>
+</div>
+<div class="sb-title">
+<p> </p>
+</div>
+</div>
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>m201.inqs.info/lectures/9</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true,"theme":"whiteboard","chalkWidth":4},
+'pointer': {"key":"q","color":"blue","pointerSize":48,"alwaysVisible":false},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'h.v',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1200,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealPointer, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp("www\.inqs\.info\/m201_s26");
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

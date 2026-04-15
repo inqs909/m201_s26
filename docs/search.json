@@ -1,0 +1,240 @@
+[
+  {
+    "objectID": "lectures.html",
+    "href": "lectures.html",
+    "title": "Lectures",
+    "section": "",
+    "text": "Data Generating Process\n\n\n\n\n\nProvides a brief introduction of data, study design, and the data generating process.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Inference\n\n\n\n\n\nBegin the discussion of statistical inference.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Inference\n\n\nGroup Model Inference\n\n\nTesting the difference in groups.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical  Modeling\n\n\n\n\n\nFinish the discussion on model inference.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstalling R and Positron\n\n\nClass Lecture\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMath 201\n\n\nElementary Statistics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCategorical Data\n\n\n\n\n\nProvides an overview descriptive statistics and data visualization techniques for categorical data.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nResearch Questions\n\n\n\n\n\nLearn how to create research questions.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNumerical Data\n\n\n\n\n\nProvides an overview descriptive statistics and data visualization techniques for numerical data.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDistribution Functions\n\n\n\n\n\nProvides an overview distribution function (mathematical models).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSimple  Linear Regression\n\n\n\n\n\nBegins the discussion for linear regression.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSimple  Logistic Regression\n\n\n\n\n\nBegins the discussion for logistic regression.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGroup  Models\n\n\n\n\n\nDiscuss using categorical predictor variables.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMultivariable  Regression\n\n\n\n\n\nDiscuss how to model multivariable predictors to a single outcome.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSampling Distribution\n\n\n\n\n\nDiscuss for sampling distributions.\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "lectures/1.html#observations",
+    "href": "lectures/1.html#observations",
+    "title": "Data Generating Process",
+    "section": "Observations",
+    "text": "Observations\nAn observation is the unit which contains information to be obtained.\n\nAlso known as experimental unit."
+  },
+  {
+    "objectID": "lectures/1.html#data-1",
+    "href": "lectures/1.html#data-1",
+    "title": "Data Generating Process",
+    "section": "Data",
+    "text": "Data\nData is information from a particular experimental unit. There can be more that one piece of information per experimental unit."
+  },
+  {
+    "objectID": "lectures/1.html#data-structure",
+    "href": "lectures/1.html#data-structure",
+    "title": "Data Generating Process",
+    "section": "Data Structure",
+    "text": "Data Structure\nThe structure of the data can be represented in various forms:\n\nA list of long numbers\nTable"
+  },
+  {
+    "objectID": "lectures/1.html#tabular-form",
+    "href": "lectures/1.html#tabular-form",
+    "title": "Data Generating Process",
+    "section": "Tabular Form",
+    "text": "Tabular Form"
+  },
+  {
+    "objectID": "lectures/1.html#measurements-1",
+    "href": "lectures/1.html#measurements-1",
+    "title": "Data Generating Process",
+    "section": "Measurements",
+    "text": "Measurements\nMeasurements are the processes where we represent an attribute of an experimental unit as either a number or category."
+  },
+  {
+    "objectID": "lectures/1.html#quantitative-measurements",
+    "href": "lectures/1.html#quantitative-measurements",
+    "title": "Data Generating Process",
+    "section": "Quantitative Measurements",
+    "text": "Quantitative Measurements\nQuantitative measurements are data measurements that take a numeric form."
+  },
+  {
+    "objectID": "lectures/1.html#qualitative-measurements",
+    "href": "lectures/1.html#qualitative-measurements",
+    "title": "Data Generating Process",
+    "section": "Qualitative Measurements",
+    "text": "Qualitative Measurements\nQualitative measurements are data measurements that take a certain category."
+  },
+  {
+    "objectID": "lectures/1.html#value",
+    "href": "lectures/1.html#value",
+    "title": "Data Generating Process",
+    "section": "Value",
+    "text": "Value\nA value is a description (number or category) of a specific attribute of an experimental unit."
+  },
+  {
+    "objectID": "lectures/1.html#variable",
+    "href": "lectures/1.html#variable",
+    "title": "Data Generating Process",
+    "section": "Variable",
+    "text": "Variable\nA variable is the descriptive attribute that we want to obtain from an experimental unit. In terms of a data set, the variable contains all the values of specific attribute in a sample."
+  },
+  {
+    "objectID": "lectures/1.html#research-question",
+    "href": "lectures/1.html#research-question",
+    "title": "Data Generating Process",
+    "section": "Research Question",
+    "text": "Research Question\n\nA research question is designed to create new knowledge of certain phenomenons observed in the world.\nThis is designed by conducting a research project that systematically answers the question.\nThe study design is the procedure in which data is collected to answer the question, while reducing any potential bias while conducting the study."
+  },
+  {
+    "objectID": "lectures/1.html#study-design-1",
+    "href": "lectures/1.html#study-design-1",
+    "title": "Data Generating Process",
+    "section": "Study Design",
+    "text": "Study Design\n\nThis is the procedure designed to answer a research question.\nEntails procedures to collect data that answers a research question.\nDictates how the data will be analyzed.\nDetermines how the data is quantified and what is the experimental unit."
+  },
+  {
+    "objectID": "lectures/1.html#sampling-1",
+    "href": "lectures/1.html#sampling-1",
+    "title": "Data Generating Process",
+    "section": "Sampling",
+    "text": "Sampling\nThe process of a selecting a small subset from a large population.\n\n\n\n\n\n\n\nImage Provided by Simply Psychology."
+  },
+  {
+    "objectID": "lectures/1.html#sampling-2",
+    "href": "lectures/1.html#sampling-2",
+    "title": "Data Generating Process",
+    "section": "Sampling",
+    "text": "Sampling\nWhen Sampling you want to maintain these properties:\n\nRepresentative sample\nLarge enough sample size"
+  },
+  {
+    "objectID": "lectures/1.html#sampling-example",
+    "href": "lectures/1.html#sampling-example",
+    "title": "Data Generating Process",
+    "section": "Sampling Example",
+    "text": "Sampling Example\nWe want to answer the question, are people happy?"
+  },
+  {
+    "objectID": "lectures/1.html#random-sampling",
+    "href": "lectures/1.html#random-sampling",
+    "title": "Data Generating Process",
+    "section": "Random Sampling",
+    "text": "Random Sampling\nWhen sampling, we strive for random sampling\n\nEach unit in the population of interest must have an equal probability of being selected for the study.\nThis ensures a representative population"
+  },
+  {
+    "objectID": "lectures/1.html#independent-sampling",
+    "href": "lectures/1.html#independent-sampling",
+    "title": "Data Generating Process",
+    "section": "Independent Sampling",
+    "text": "Independent Sampling\nIn addition to random sampling, we strive to make sure each unit is independent from each other.\n\nThe probability of UNIT A being sampled will not affect the probability of UNIT B to be sampled."
+  },
+  {
+    "objectID": "lectures/1.html#sampling-variation",
+    "href": "lectures/1.html#sampling-variation",
+    "title": "Data Generating Process",
+    "section": "Sampling Variation",
+    "text": "Sampling Variation\n\nRandom samples may vary from the population of interest.\nDue to randomness, samples many not look the same or biased.\nHowever, this is to be expected as the sample will not be biased in one way or another.\nSamples are then considered unbiased as long as experimental units were collected randomly."
+  },
+  {
+    "objectID": "lectures/1.html#data-2",
+    "href": "lectures/1.html#data-2",
+    "title": "Data Generating Process",
+    "section": "Data",
+    "text": "Data\nThe measurement collected from an experimental unit."
+  },
+  {
+    "objectID": "lectures/1.html#data-distribution",
+    "href": "lectures/1.html#data-distribution",
+    "title": "Data Generating Process",
+    "section": "Data Distribution",
+    "text": "Data Distribution\nWhen thinking about data, we know an attribute is allowed to vary. With this variation, some numbers are more likely to be observed than others."
+  },
+  {
+    "objectID": "lectures/1.html#forest-from-the-trees",
+    "href": "lectures/1.html#forest-from-the-trees",
+    "title": "Data Generating Process",
+    "section": "Forest from the trees",
+    "text": "Forest from the trees\n\n\n\n\n\n\n\nImage Provided by Pexels"
+  },
+  {
+    "objectID": "lectures/1.html#sample",
+    "href": "lectures/1.html#sample",
+    "title": "Data Generating Process",
+    "section": "Sample",
+    "text": "Sample\nWhen inspecting data:\n\nDo not focus on one individual data point.\nSee how data points is in relation to other data points.\nSee what is common\nSee what is rare"
+  },
+  {
+    "objectID": "lectures/1.html#data-generation-process-dgp",
+    "href": "lectures/1.html#data-generation-process-dgp",
+    "title": "Data Generating Process",
+    "section": "Data Generation Process (DGP)",
+    "text": "Data Generation Process (DGP)\nThe data generation process is understanding how variation from the population is transferred to the data collected.\n\nA population has a mechanism to produce data, understanding this mechanism is essential understanding the data."
+  },
+  {
+    "objectID": "lectures/1.html#dgp",
+    "href": "lectures/1.html#dgp",
+    "title": "Data Generating Process",
+    "section": "DGP",
+    "text": "DGP\nA populations DGP can be defined with the following characteristics:\n\nThe potential outcomes that can be observed when measuring\nEach potential outcome will have a probability of being observed\n\nThe probability must be between 0 and 1\n\nSum of all the probabilities of each outcome will add up to 1"
+  },
+  {
+    "objectID": "lectures/1.html#flipping-a-coin",
+    "href": "lectures/1.html#flipping-a-coin",
+    "title": "Data Generating Process",
+    "section": "Flipping a Coin",
+    "text": "Flipping a Coin\n\nFlipping a coin results in either heads or tail.\nThe probability for heads is 50%\nThe DGP of flipping a coin is the process of selecting an outcome, given the probability of both options are 50%."
+  },
+  {
+    "objectID": "lectures/1.html#rolling-a-die",
+    "href": "lectures/1.html#rolling-a-die",
+    "title": "Data Generating Process",
+    "section": "Rolling a die",
+    "text": "Rolling a die\n\n\n\n\n\nImage Provided by Pexels"
+  },
+  {
+    "objectID": "lectures/1.html#measuring-body-temperature",
+    "href": "lectures/1.html#measuring-body-temperature",
+    "title": "Data Generating Process",
+    "section": "Measuring Body Temperature",
+    "text": "Measuring Body Temperature\n\n\n\n\n\nImage Provided by Pexels"
+  },
+  {
+    "objectID": "lectures/1.html#inference",
+    "href": "lectures/1.html#inference",
+    "title": "Data Generating Process",
+    "section": "Inference",
+    "text": "Inference\n\nHow do we use DGP and sampling to understand the world?\nWe can use a sample to understand the DGP.\nWe can use the DGP to understand the sample."
+  },
+  {
+    "objectID": "lectures/1.html#visualizing-a-dgp",
+    "href": "lectures/1.html#visualizing-a-dgp",
+    "title": "Data Generating Process",
+    "section": "Visualizing a DGP",
+    "text": "Visualizing a DGP\n\n\n\n#&gt; This chart has title 'DGP'.\n#&gt; It has x-axis '' with labels 0.00, 0.25, 0.50, 0.75 and 1.00.\n#&gt; It has y-axis 'Density' with labels 0.0, 0.5, 1.0, 1.5, 2.0 and 2.5.\n#&gt; The chart is a set of 1 line.\n#&gt; Line 1 connects 1000 points."
+  },
+  {
+    "objectID": "lectures/1.html#visualizing-dgp",
+    "href": "lectures/1.html#visualizing-dgp",
+    "title": "Data Generating Process",
+    "section": "Visualizing DGP",
+    "text": "Visualizing DGP\n\n\n\n#&gt; This chart has title 'DGP'.\n#&gt; It has x-axis '' with labels 0, 5, 10 and 15.\n#&gt; It has y-axis 'Frequency' with labels 0, 10000, 20000, 30000 and 40000.\n#&gt; The chart is a bar chart with 15 vertical bars."
+  },
+  {
+    "objectID": "lectures/1.html#example",
+    "href": "lectures/1.html#example",
+    "title": "Data Generating Process",
+    "section": "Example",
+    "text": "Example"
+  },
+  {
+    "objectID": "lectures/1.html#statistical-model-1",
+    "href": "lectures/1.html#statistical-model-1",
+    "title": "Data Generating Process",
+    "section": "Statistical Model",
+    "text": "Statistical Model\n\\[\nY \\sim F(\\theta)\n\\]\n\n\\(Y\\): A data value generated for DGP\n\\(F\\): A generic mathematical model that describes the DGP\n\\(\\theta\\): Parameter controlling the shape and form of the DGP"
+  },
+  {
+    "objectID": "lectures/1.html#statistical-model-2",
+    "href": "lectures/1.html#statistical-model-2",
+    "title": "Data Generating Process",
+    "section": "Statistical Model",
+    "text": "Statistical Model\n\\[\nY = \\beta + \\varepsilon\n\\]\n\n\\(\\beta\\): The average value we expect to see\n\\(\\varepsilon \\sim F(\\cdot)\\): Error Term"
+  },
+  {
+    "objectID": "lectures/1.html#statistical-model-3",
+    "href": "lectures/1.html#statistical-model-3",
+    "title": "Data Generating Process",
+    "section": "Statistical Model",
+    "text": "Statistical Model\n\\[\nY = \\beta + \\varepsilon\n\\]\n\n\n\\(\\beta\\): Explained Part\n\nThis is what we expect to see if we took an educated guess\nThe educated guess can incorporate information that is related to \\(Y\\)\n\n\n\\(\\varepsilon\\): Unexplained Part\n\nRandomness\nIncorporates several types of variation\n\nMeasurement Error\nBiological Error\nEnvironmental Error"
+  }
+]

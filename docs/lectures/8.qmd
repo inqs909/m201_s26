@@ -1,0 +1,581 @@
+---
+title: "Multivariable <br> Regression"
+description: |
+  Discuss how to model multivariable predictors to a single outcome.
+format:
+  revealjs:
+    width: 1200
+    scrollable: true
+    sc-sb-title: true
+    footer: m201.inqs.info/lectures/8
+    theme: [default, styles.scss]
+    navigation-mode: vertical
+    controls-layout: edges
+    controls-tutorial: true
+    slide-number: true
+    pointer:
+      pointerSize: 48
+      color: blue
+    incremental: false 
+    chalkboard:
+      theme: whiteboard
+      chalk-width: 4
+knitr:
+  opts_chunk: 
+    echo: true
+    eval: true
+    code-fold: true
+    warnings: false
+    comment: "#>" 
+    
+revealjs-plugins:
+  - pointer
+  
+filters:
+  - reveal-header
+  - reveal-auto-agenda
+
+editor: source
+---
+## R Packages
+
+```{r}
+#| include: false
+#| message: false
+library(tidyverse)
+library(rcistats)
+
+penguins <- penguins |> drop_na()
+heart_disease <- kmed::heart
+heart_disease$disease <- factor(ifelse(heart_disease$class == 0, "no", "yes")) 
+heart_disease$sex <- ifelse(heart_disease$sex == T, "Male", "Female") |> factor()
+heart_disease$cp <- ifelse(heart_disease$cp == 1, "Typical Angina",
+                           ifelse(heart_disease$cp == 2, "Atypical Angina", 
+                                  ifelse(heart_disease$cp == 3, "Non-anginal Pain", "Asymptomatic"))) |> 
+                    factor(levels = c("Asymptomatic", "Non-anginal Pain", "Atypical Angina", "Typical Angina"))
+heart_disease$fbs <- ifelse(heart_disease$fbs == T, "Fasting Blood Sugar >120" , "Fasting Blood Sugar <= 120") |> factor()
+heart_disease$restecg <- ifelse(heart_disease$restecg == 0, "Normal",
+                                ifelse(heart_disease$restecg == 1, "ST-T wave Abnormality", "Left Ventricular Hypertrophy")) |> 
+                          factor(levels = c("Normal", "ST-T wave Abnormality", "Left Ventricular Hypertrophy"))
+heart_disease$slope <- ifelse(heart_disease$slope == 1, "Positive Slope",
+                              ifelse(heart_disease$slope == 2, "Zero Slope", "Negative Slope")) |> 
+                              factor(levels = c("Zero Slope", "Positive Slope", "Negative Slope"))
+heart_disease$thal <- ifelse(heart_disease$thal==3, "Normal",
+                             ifelse(heart_disease$thal == 6, "Fixed Defect", "Reversible Defect")) |> 
+                              factor(levels = c("Normal", "Fixed Defect", "Reversible Defect"))
+theme_set(theme_bw() + 
+          theme(axis.text = element_text(size = 24),
+                axis.title = element_text(size = 30),
+                plot.title = element_text(size = 48),
+                strip.text = element_text(size = 20),
+                legend.title = element_blank(),
+                legend.text = element_text(size = 24)))
+```
+
+-   rcistats
+-   tidyverse
+
+## Palmer Penguins Data
+
+::: {.columns}
+::: {.column}
+
+### Variables of Interest
+
+- `species`: Penguin species
+- `flipper_len`: Flipper Length in [millimeters](https://en.wikipedia.org/wiki/Millimetre)
+- `body_mass`: Body mass in [grams](https://en.wikipedia.org/wiki/Gram)
+
+:::
+::: {.column}
+![Artwork by @allison_horst](img/penguins.png){fig-alt="An image of several penguins in Antartica."}
+
+:::
+::: 
+
+## Heart Disease Data
+
+::: {.columns}
+::: {.column}
+
+### Variables of Interest
+
+- `thal`: Thallium stress test result
+- `thalach`: Maximum heart rate achieved
+- `disease`: Indicating if they have heart disease
+
+:::
+::: {.column}
+![](img/heart_df.png){fig-alt="An image of a graph and a heart."}
+:::
+:::
+
+# Visualizations
+
+## Penguins: Body Mass
+
+::: panel-tabset
+
+### Body Mass
+
+```{r}
+ggplot(penguins, aes(body_mass)) +
+  geom_density()
+```
+
+### Flipper Length
+
+```{r}
+ggplot(penguins, aes(x = flipper_len, y = body_mass)) +
+  geom_point()
+```
+
+### Species
+
+```{r}
+ggplot(penguins, aes(body_mass, fill = species)) +
+  geom_density(alpha = .5)
+```
+
+
+### Sp + FL
+
+```{r}
+ggplot(penguins, aes(x = flipper_len, y = body_mass, color = species)) +
+  geom_point() +
+  stat_density_2d(aes(fill = after_stat(level))) +
+  xlim(c(170, 236)) +
+  ylim(c(2500, 6250))
+```
+
+### Lines
+
+```{r}
+ggplot(penguins, aes(x = flipper_len, y = body_mass, color = species)) +
+  geom_point() +
+  stat_smooth(method = "lm")
+```
+
+:::
+
+
+## Heart Disease
+
+::: panel-tabset
+
+### Disease
+```{r}
+#| code-fold: true
+# Fit logistic model
+
+ggplot(heart_disease, aes(disease)) +
+  geom_bar() +
+  labs(x = NULL, y = NULL)
+
+```
+
+### thal
+
+```{r}
+#| code-fold: true
+# Fit logistic model
+
+heart_disease |> 
+  ggplot(aes(disease, fill = thal)) +
+  geom_bar()
+
+```
+
+### thalach
+
+```{r}
+#| code-fold: true
+# Fit logistic model
+
+hdf <- heart_disease
+hdf$plot <- ifelse(hdf$disease=="yes", 1, 0)
+ggplot(hdf, aes(thalach, plot)) +
+  geom_point(alpha = 0.3) +
+  stat_smooth(method = "glm",
+              method.args = list(family = "binomial"),
+              se = FALSE) +
+  labs(x = NULL, y = NULL)
+
+```
+
+### thal + thalach
+
+```{r}
+#| code-fold: true
+# Fit logistic model
+
+ggplot(hdf, aes(thalach, plot, col = thal)) +
+  geom_point(alpha = 0.3) +
+  stat_smooth(method = "glm",
+              method.args = list(family = "binomial"),
+              se = FALSE) +
+  labs(x = NULL, y = NULL)
+
+```
+
+:::
+
+
+# Multivariable Linear Regression
+
+## Multivariable Linear Regression
+
+Multivariable Linear Regression (MLR) is used to model an outcome variable ($Y$) by multiple predictor variables ($X_1, X_2, \ldots, X_p$).
+
+
+::: fragment
+Using MLR, you propose that the ouctome variable was constructed from a set of predictors, with their corresponding regression coefficients ($\beta$), and a bit of error
+:::
+
+
+::: fragment
+$$
+Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_p X_p + \varepsilon
+$$
+
+$$
+\varepsilon \sim DGP
+$$
+:::
+
+## Model Data
+
+$$
+Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_p X_p + \varepsilon
+$$
+
+$$
+\varepsilon \sim DGP
+$$
+
+::: fragment
+
+$$
+Y_i = \beta_0 + \beta_1 X_{i1} + \beta_2 X_{i2} + \cdots + \beta_p X_{ip} + \varepsilon_i
+$$
+
+$$
+\varepsilon_i \sim DGP
+$$
+
+:::
+
+## Unknown Parameters
+
+$$
+Y_i = \beta_0 + \beta_1 X_{i1} + \beta_2 X_{i2} + \cdots + \beta_p X_{ip} + \varepsilon_i
+$$
+
+::: fragment
+$$
+\beta_0, \beta_1, \beta_2, \beta_3, \ldots, \beta_p
+$$
+:::
+
+## Estimated Model
+
+$$
+Y_i = \beta_0 + \beta_1 X_{i1} + \beta_2 X_{i2} + \cdots + \beta_p X_{ip} + \varepsilon_i
+$$
+
+$$
+\hat Y_i = \hat\beta_0 + \hat\beta_1 X_{i1} + \hat\beta_2 X_{i2} + \cdots + \hat\beta_p X_{ip} 
+$$
+
+## Estimating Prameters
+
+$\beta_0, \beta_1, \beta_2, \beta_3, \ldots, \beta_p$ are estimated by minimizing the following function:
+
+
+$$
+\sum^n_{i=1} (Y_i-\hat Y_i)^2
+$$
+
+
+## Interpreting $\hat \beta_j$
+
+For a continuous predictor variable:
+
+As X increases by 1 unit, Y will increases/decrease by an average of $\hat\beta_j$, adjusting for all the other predictor variables.
+
+For a categorical predictor variable (first dummy variable):
+
+On average, the average Y in category 1 (D = 1) is $\hat\beta_j$ higher/lower than the reference category (D = 0), adjusting for the other predictor variables.
+
+
+## Fitting a LM in R
+
+```r
+xlm <- lm(Y ~ X1 + X2 + ... + Xp, data = DATA)
+xlm
+```
+
+- `DATA`: Name of the data frame
+- `Y`: Outcome Variable of Interest in the data frame `DATA`
+- `X1`, `X2`, ... , `Xp` : Predictor variables in the data frame `DATA`
+
+
+
+# Multivariable Logistic Regression
+
+## Multivariable Logistic Regression
+
+Multivariable Logistic Regression is used to model a binary outcome variable ($Y$) with multiple predictor variables ($X_1, X_2, \ldots, X_p$).
+
+
+::: fragment
+Using Multivariable Logistic Regression, you propose that the ouctome variable was constructed from a set of predictors, with their corresponding regression coefficients ($\beta_j$), and generated from a Bernoulli model.
+:::
+
+## Logistic Model
+
+$$
+lo(Y=1) = \beta_0 + \beta_1X_1 + \cdots + \beta_p X_p
+$$
+
+## Regression Coefficients $\beta$
+
+The regression coefficients quantify how a specific predictor changes the odds of observing the first category of the outcome ($Y = 1$)
+
+## Estimating $\beta$
+
+To obtain the numerical value for $\beta_j$, denoted as $\hat \beta_j$, we will be finding the values of $\hat \beta_j$ that maximizes the likelihood function:
+
+$$
+L(\boldsymbol \beta) = \prod_{i=1}^n \left(\frac{e^{\beta_0 + \beta_1X_1 + \cdots + \beta_p X_p}}{1 + e^{\beta_0 + \beta_1X_1 + \cdots + \beta_p X_p}}\right)^{Y_i}\left(\frac{1}{1 + e^{\beta_0 + \beta_1X_1 + \cdots + \beta_p X_p}}\right)^{1-Y_i}
+$$
+
+The likelihood function can be thought as the probability of observing the entire data set. Therefore, we want to choose the values the $\beta_0$ and $\beta_1$ that will result in the highest probability of observing the data.
+
+
+## Estimated Parameters
+
+The values you obtain ($\hat \beta$) tell you the relationship between the a predictor variable and the log odds of observing the first category of the outcome $Y=1$, adjusting for all the other covariates.
+
+::: fragment
+Exponentiating the estimate ($e^{\hat \beta}$) will give you the relationship between a predictor variable and the odds of observing the first category of the outcome $Y=1$, adjusting for all the other covariates.
+:::
+
+## Interpreting $\hat \beta_j$
+
+For a continuous predictor variable:
+
+As X increases by 1 unit, the odds of observing the first category ($Y = 1$) increases by a factor of $e^{\hat\beta_j}$, adjusting for all the other predictor variables.
+
+For a categorical predictor variable (first dummy variable):
+
+The odds of observing the first category ($Y = 1$) in the indicated category ($D=1$) is $e^{\hat\beta_j}$ times higher/lower compared to the reference category ($D=0$), adjusting for all the other predictor variables.
+
+## Fitting a GLM in R
+
+```r
+xglm <- glm(Y ~ X1 + X2 + ... + Xp, 
+           data = DATA,
+           family = binomial)
+xglm
+```
+
+- `DATA`: Name of the data frame
+- `Y`: Outcome Variable of Interest in the data frame `DATA`
+- `X1`, `X2`, ... , `Xp` : Predictor variables in the data frame `DATA`
+
+
+
+# Modeling Body Mass
+
+## Modeling Body Mass
+
+$$
+body\_mass = \beta_0 + \boldsymbol \beta_1 (species) + \beta_2 (flipper\_len)
+$$
+
+
+## Fitting Model
+
+```{r}
+#| code-fold: false
+#| message: true
+xlm <- lm(body_mass ~ species + flipper_len, 
+          data = penguins)
+```
+
+```{r}
+#| code-fold: false
+model_info(xlm)
+```
+
+```{r}
+#| code-fold: false
+xlm
+```
+
+## Estimated Model
+
+$$
+body\_mass = -4013.18 -205.38 (Chinstrap)\\ + 284.52 (Gentoo) + 40.61 (flipper\_len)
+$$
+
+
+
+
+## Intepreting $flipper\_len$ coefficient
+
+$$
+body\_mass = -4013.18 -205.38 (Chinstrap)\\ + 284.52 (Gentoo) + 40.61 (flipper\_len)
+$$
+
+As flipper length increased by 1 unit, body mass increases by an **average** of 40.61, adjusting for penguin species.
+
+
+
+## Intepreting $species$ coefficient
+
+$$
+body\_mass = -4013.18 -205.38 (Chinstrap)\\ + 284.52 (Gentoo) + 40.61 (flipper\_len)
+$$
+
+
+::: panel-tabset
+
+### Chinstrap
+
+On average, the body mass of a Chinstrap species is 205.6 grams lower than an Adelie species, adjusting for flipper length.
+
+### Gentoo
+
+On average, the body mass of a Gentoo species is 284.5 grams higher than an Adelie species, adjusting for flipper length.
+
+:::
+
+
+## Predicting Body Mass
+
+Let's predict the body mass for a Adelie penguin with a flipper length of 190.
+
+::: {.fragment}
+
+```{r}
+#| code-fold: false
+df <- data.frame(species = "Adelie", flipper_len =  190)
+predict(xlm, df)
+```
+:::
+
+# Modeling Heart Disease
+
+## Modelling Heart Disease
+
+$$
+lo(disease) = \beta_0 + \boldsymbol \beta_1 (thal) + \beta_2 (thalach)
+$$
+
+
+## Fitting Model
+
+```{r}
+#| code-fold: false
+#| message: true
+xglm <- glm(disease ~ thal + thalach, 
+           data = heart_disease,
+           family = binomial)
+model_info(xglm)
+```
+
+```{r}
+#| code-fold: false
+xglm
+```
+
+## Estimated Model
+
+$$
+lo(disease) = 4.70 + 1.38 (Fixed) + 2.29 (Reversible)\\ - 0.04 (thalach)
+$$
+
+
+
+## Intepreting $thalach$ coefficient
+
+$$
+lo(disease) = 4.70 + 1.38 (Fixed) + 2.29 (Reversible)\\ - 0.04 (thalach)
+$$
+
+
+
+```{r}
+#| code-fold: false
+exp(-0.04)
+```
+
+As maximum heart rate achieved increases by 1 unit, the odds of having heart disease decresease by a factor of 0.951, adjusting for thallium stress test results.
+
+## Intepreting $thal$ coefficient
+
+$$
+lo(disease) = 4.70 + 1.38 (Fixed) + 2.29 (Reversible)\\ - 0.04 (thalach)
+$$
+
+::: panel-tabset
+
+### Fixed Defect
+
+```{r}
+#| code-fold: false
+exp(1.38)
+```
+
+The odds of having heart disease is 3.97 times higher in patients with fixed defects thallium stress results than patients with normal thallium stress results, adjusting for maximum heart rate achieved. 
+
+### Reversible Defect
+
+```{r}
+#| code-fold: false
+exp(2.289)
+
+```
+
+The odds of having heart disease is 9.865 times higher in patients with reversible defects thallium stress results than patients with normal thallium stress results, adjusting for maximum heart rate achieved. 
+
+:::
+
+##  Predicting Heart Disease
+
+Predict the probability of geting heart disease for a patient who has a fixed defect and thalach of 145.
+
+::: {.fragment}
+
+```{r}
+#| code-fold: false
+df <- data.frame(thal = "Fixed Defect", thalach =  145)
+predict(xglm, df)
+```
+:::
+
+# Model Building
+
+## Model Building
+
+Model Building is the process of obtaining a "final" model containing all the necessary predictors, and eliminating any that are not necessary.
+
+## Forward Selection
+
+Begin with the null model ($Y\sim 1$) and add predictor variables until a final model is chosen.
+
+## Backward Selection
+
+Begin with the full model, and remove predictor variable until the final model is chosen.
+
+## Hybrid Selection
+
+A hybrid approach between the forward and backward building approach.
+
+## About Model Selection
+
+Generally, it is not a good idea to conduct model selection. The predictor variables in your model should be guided by a literature review that illustrates important predictor variables in a model. Add predictor variables based on consultation with experts and a literature review.
+
+
