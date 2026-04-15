@@ -2559,7 +2559,7 @@
     "href": "lectures/1.html#visualizing-dgp",
     "title": "Data Generating Process",
     "section": "Visualizing DGP",
-    "text": "Visualizing DGP\n\n\n\n#&gt; This chart has title 'DGP'.\n#&gt; It has x-axis '' with labels 0, 5 and 10.\n#&gt; It has y-axis 'Frequency' with labels 0, 10000, 20000, 30000 and 40000.\n#&gt; The chart is a bar chart with 14 vertical bars."
+    "text": "Visualizing DGP\n\n\n\n#&gt; This chart has title 'DGP'.\n#&gt; It has x-axis '' with labels 0, 5, 10 and 15.\n#&gt; It has y-axis 'Frequency' with labels 0, 10000, 20000, 30000 and 40000.\n#&gt; The chart is a bar chart with 15 vertical bars."
   },
   {
     "objectID": "lectures/1.html#example",
