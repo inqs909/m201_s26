@@ -5,13 +5,15 @@ description: |
 format:
   revealjs:
     width: 1200
-    menu: false
     scrollable: false
     theme: [default, styles.scss]
     slide-number: true
     pointer:
       pointerSize: 32
-    incremental: false 
+    incremental: false
+    chalkboard:
+      theme: whiteboard
+      chalk-width: 4
 knitr:
   opts_chunk: 
     echo: true
