@@ -33,7 +33,6 @@ revealjs-plugins:
   
 filters:
   - reveal-header
-  - code-fullscreen
   - reveal-auto-agenda
 
 editor: source
@@ -44,6 +43,7 @@ editor: source
 library(tidyverse)
 library(rcistats)
 library(broom)
+library
 theme_set(theme_bw() + 
             theme(
               axis.text.x = element_text(size = 24),

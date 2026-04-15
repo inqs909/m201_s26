@@ -32,7 +32,6 @@ revealjs-plugins:
   
 filters:
   - reveal-header
-  - code-fullscreen
   - reveal-auto-agenda
 
 editor: source
@@ -45,7 +44,7 @@ library(tidyverse)
 library(rcistats)
 library(broom)
 library(patchwork)
-
+library(BrailleR)
 theme_set(theme_bw() + 
             theme(
               axis.text.x = element_text(size = 24),
@@ -54,6 +53,52 @@ theme_set(theme_bw() +
               strip.text = element_text(size = 20),
               legend.title = element_blank(),
               legend.text = element_text(size = 24)))
+
+
+gg1 <- seq(0, 1, length.out = 1000) |> 
+  dbeta(shape1 = 2, shape2 = 5) |> 
+  tibble(x = seq(0, 1, length.out = 1000), y = _) |>
+  ggplot(aes(x, y)) + geom_line() + 
+  ggtitle("DGP") + ylab("Density") 
+
+gg1a <- gg1 +
+  labs(alt = VI(gg1)) 
+
+
+gg2 <- rbinom(200000, size = 20, prob = 1/5) |> 
+  tibble(y = _) |>
+  ggplot(aes(y)) + geom_bar() + 
+  ggtitle("DGP") + ylab("Frequency") 
+
+gg2a <- gg2 +
+  labs(alt = VI(gg2)) 
+
+
+g1 <- seq(0, 1, length.out = 1000) |> 
+  dbeta(shape1 = 2, shape2 = 5) |> 
+  tibble(x = seq(0, 1, length.out = 1000), y = _) |>
+  ggplot(aes(x, y)) + geom_line() + 
+  ggtitle("DGP") + ylab("Density") 
+
+gg1a <- gg1 +
+  labs(alt = VI(gg1)) 
+
+
+g2 <- rbeta(100, shape1 = 2, shape2 = 5) |> 
+  tibble(y = _) |>
+  ggplot(aes(y)) + 
+    geom_histogram(aes(y = ..density..), col = "gray70", fill = "gray") +
+    geom_density(col = "red", lwd = 1) +
+    ggtitle("Sample") + ylab("Density") 
+
+VI(g2)
+gg3 <- g1 + g2 
+VI(gg3)
+
+
+
+
+
 ```
 
 # Data
@@ -262,6 +307,7 @@ A populations DGP can be defined with the following characteristics:
 
 ```{r}
 #| echo: false
+#| fig-alt: !expr ggplot2::get_alt_text(gg1a)
 
 seq(0, 1, length.out = 1000) |> 
   dbeta(shape1 = 2, shape2 = 5) |> 
@@ -274,6 +320,8 @@ seq(0, 1, length.out = 1000) |>
 
 ```{r}
 #| echo: false
+#| fig-alt: !expr ggplot2::get_alt_text(gg2a)
+
 rbinom(200000, size = 20, prob = 1/5) |> 
   tibble(y = _) |>
   ggplot(aes(y)) + geom_bar() + 
@@ -284,6 +332,8 @@ rbinom(200000, size = 20, prob = 1/5) |>
 
 ```{r}
 #| echo: false
+#| fig-alt: !expr ggplot2::get_alt_text(gg3a)
+
 
 g1 <- seq(0, 1, length.out = 1000) |> 
   dbeta(shape1 = 2, shape2 = 5) |> 
