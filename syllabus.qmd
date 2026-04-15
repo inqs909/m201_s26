@@ -72,6 +72,8 @@ Install [Google Chrome](https://www.google.com/chrome/) or any other chromium-ba
 | Exam 1               | 15%        |
 | Exam 2               | 15%        |
 | Exam 3               | 15%        |
+: Course Grading
+
 
 At the end of the quarter, course grades will be assigned according to the following scale:
 
@@ -80,7 +82,7 @@ At the end of the quarter, course grades will be assigned according to the follo
 | **A+**  | 98 -- 100  | **B+** | 87 -- \<90 | **C+**  | 77 -- \<80 | **D+**  | 67 -- \<70 |       |       |
 | **A**   | 93 -- \<98 | **B**  | 83 -- \<87 | **C**   | 73 -- \<77 | **D**   | 63 -- \<67 | **F** | \< 60 |
 | **A--** | 90 - \<93  | **B-** | 80 -- \<83 | **C--** | 70 -- \<73 | **D--** | 60 -- \<63 |       |       |
-
+: Grade Scheme
 ### Class Attendance
 
 Students are expected to attend in-person to class to learn the material.
@@ -139,6 +141,7 @@ The following outline may be subject to change. Any changes will be announced in
 | 5/4   | Inference                        | 10    | 11     | 12        |
 | 5/11  | Inference                        | 11    |        |           |
 | 5/18  | **Exam 3**                       |       |        |           |
+: Class Schedule
 
 ### Generative Artificial Intelligence Policy
 
