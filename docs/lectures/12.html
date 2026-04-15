@@ -10,7 +10,6 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.css" rel="stylesheet">
-<script src="../site_libs/quarto-contrib/sc-sb-title-1.0.0/sc_sb_title.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/grid-no-htext-1.0.0/grid_no_htext.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.27">
@@ -104,8 +103,6 @@
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
@@ -119,7 +116,6 @@
     }
     .reveal .slide:not(.center) {
       height: 100%;
-      overflow-y: auto;
     }
     .reveal .slide.scrollable {
       overflow-y: auto;
@@ -238,7 +234,7 @@
 <p>You will just need to specify the hypothesis tests are adjusted for the other covariates.</p>
 </div>
 </section>
-<section id="hypothesis-testing-steps" class="slide level2 scrollable">
+<section id="hypothesis-testing-steps" class="slide level2">
 <h2>Hypothesis Testing Steps</h2>
 <ol type="1">
 <li>State <span class="math inline">\(H_0\)</span> and <span class="math inline">\(H_1\)</span></li>
@@ -554,7 +550,7 @@ p = 0.00967 &lt; 0.05 = \alpha
           display:block!important;
       }</style></aside>
 </section>
-<section id="what-affects-power" class="slide level2 scrollable">
+<section id="what-affects-power" class="slide level2">
 <h2>What Affects Power?</h2>
 <ol type="1">
 <li><strong>Effect Size</strong>
@@ -863,12 +859,12 @@ p = 0.00967 &lt; 0.05 = \alpha
 #&gt; 5     -0.6366106     -2.717940              -1.259993        -2.476175
 #&gt; 6     -0.5787181     -2.884425              -1.426478        -2.433842
 #&gt;   std_pear_resid std_dev_resid stud_dev_resid quantile_resid   leverages
-#&gt; 1     -0.6962858    -0.8927274     -0.8846616     -0.5183695 0.045927133
-#&gt; 2      0.4562301     0.6153377      0.6134136      0.9771682 0.013866647
-#&gt; 3      0.6910541     0.8843093      0.8827424      1.0741986 0.009094376
-#&gt; 4     -0.5199246    -0.6922325     -0.6903935     -2.1926929 0.012173676
-#&gt; 5     -0.4789686    -0.6433536     -0.6403567      0.1821857 0.020852010
-#&gt; 6     -0.4311339    -0.5843756     -0.5818043     -0.4339098 0.019268922
+#&gt; 1     -0.6962858    -0.8927274     -0.8846616     0.09902973 0.045927133
+#&gt; 2      0.4562301     0.6153377      0.6134136     0.55903230 0.013866647
+#&gt; 3      0.6910541     0.8843093      0.8827424     0.63537257 0.009094376
+#&gt; 4     -0.5199246    -0.6922325     -0.6903935    -0.33780203 0.012173676
+#&gt; 5     -0.4789686    -0.6433536     -0.6403567    -0.41059095 0.020852010
+#&gt; 6     -0.4311339    -0.5843756     -0.5818043     0.36915717 0.019268922
 #&gt;          cooks
 #&gt; 1 0.0046675922
 #&gt; 2 0.0005853744
@@ -926,7 +922,7 @@ p = 0.00967 &lt; 0.05 = \alpha
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p>m201.inqs.info/lectures/12</p>
+
 </div>
 </div></div>
 
@@ -937,7 +933,6 @@ p = 0.00967 &lt; 0.05 = \alpha
   <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
   <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
@@ -960,8 +955,7 @@ p = 0.00967 &lt; 0.05 = \alpha
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'chalkboard': {"buttons":true,"theme":"whiteboard","chalkWidth":4},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":false},
 'pointer': {"key":"q","color":"red","pointerSize":32,"alwaysVisible":false},
 'smaller': false,
  
@@ -970,7 +964,7 @@ p = 0.00967 &lt; 0.05 = \alpha
 
         // Help the user learn the controls by providing hints, for example by
         // bouncing the down arrow when they first encounter a vertical slide
-        controlsTutorial: true,
+        controlsTutorial: false,
 
         // Determines where controls appear, "edges" or "bottom-right"
         controlsLayout: 'edges',
@@ -983,7 +977,7 @@ p = 0.00967 &lt; 0.05 = \alpha
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: 'h.v',
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -1024,7 +1018,7 @@ p = 0.00967 &lt; 0.05 = \alpha
         rtl: false,
 
         // see https://revealjs.com/vertical-slides/#navigation-mode
-        navigationMode: 'default',
+        navigationMode: 'linear',
 
         // Randomizes the order of slides each time the presentation loads
         shuffle: false,
@@ -1133,7 +1127,7 @@ p = 0.00967 &lt; 0.05 = \alpha
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealPointer, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealPointer, QuartoSupport,
 
           RevealMath,
           RevealNotes,

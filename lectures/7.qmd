@@ -6,20 +6,13 @@ description: |
 format:
   revealjs:
     width: 1200
-    scrollable: true
-    sc-sb-title: true
-    footer: m201.inqs.info/lectures/7
+    menu: false
+    scrollable: false
     theme: [default, styles.scss]
-    navigation-mode: vertical
-    controls-layout: edges
-    controls-tutorial: true
     slide-number: true
     pointer:
       pointerSize: 32
     incremental: false 
-    chalkboard:
-      theme: whiteboard
-      chalk-width: 4
 knitr:
   opts_chunk: 
     echo: true

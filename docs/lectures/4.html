@@ -10,7 +10,6 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.css" rel="stylesheet">
-<script src="../site_libs/quarto-contrib/sc-sb-title-1.0.0/sc_sb_title.js" defer="true"></script>
 <link href="../site_libs/quarto-contrib/grid-no-htext-1.0.0/grid_no_htext.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.27">
@@ -104,8 +103,6 @@
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
@@ -119,7 +116,6 @@
     }
     .reveal .slide:not(.center) {
       height: 100%;
-      overflow-y: auto;
     }
     .reveal .slide.scrollable {
       overflow-y: auto;
@@ -335,7 +331,7 @@ P(A^c) = 1 - P(A)
 </div>
 </div>
 </section>
-<section id="applications" class="slide level2 scrollable">
+<section id="applications" class="slide level2">
 <h2>Applications</h2>
 <div class="panel-tabset">
 <ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Drawing a Card</a></li><li><a href="#tabset-3-2">Tossing a Coin Twice</a></li><li><a href="#tabset-3-3">Traffic Lights</a></li></ul>
@@ -641,7 +637,7 @@ P(X &gt; 1)
 F_X(x) = P(X \leq x)
 \]</span></p>
 </section>
-<section id="properties-of-the-cdf" class="slide level2 scrollable">
+<section id="properties-of-the-cdf" class="slide level2">
 <h2>Properties of the CDF</h2>
 <ol type="1">
 <li><p><strong>Range</strong>: The CDF is always between 0 and 1: <span class="math display">\[
@@ -703,7 +699,7 @@ f_X(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 P(X = x) = p_X(x)
 \]</span></p>
 </section>
-<section id="properties-of-the-pmf" class="slide level2 scrollable">
+<section id="properties-of-the-pmf" class="slide level2">
 <h2>Properties of the PMF</h2>
 <ol type="1">
 <li><p><strong>Non-Negative</strong>: <span class="math display">\[
@@ -746,7 +742,7 @@ p_X(x) = \frac{1}{6}, \quad x \in \{1, 2, 3, 4, 5, 6\}
 
 </div>
 <img data-src="4_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-<section id="applications-1" class="slide level2 scrollable">
+<section id="applications-1" class="slide level2">
 <h2>Applications</h2>
 <div class="panel-tabset">
 <ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">PMF of a Coin Toss</a></li><li><a href="#tabset-6-2">CDF of an Exp. Dist.</a></li><li><a href="#tabset-6-3">Apps. in Real Life</a></li></ul>
@@ -1052,7 +1048,7 @@ F_X(x) =
 </div>
 </div>
 </section>
-<section id="properties" class="slide level2 scrollable">
+<section id="properties" class="slide level2">
 <h2>Properties</h2>
 <ol type="1">
 <li><strong>Symmetry</strong>: It is perfectly symmetric about the mean, meaning the left side is a mirror image of the right.</li>
@@ -1130,7 +1126,7 @@ Z = \frac{X - \mu}{\sigma}
 <li>Using Z-scores, we can compare values across different normal distributions or find the probability associated with a particular score.</li>
 </ul>
 </section>
-<section id="why-the-normal-distribution-is-important" class="slide level2 scrollable">
+<section id="why-the-normal-distribution-is-important" class="slide level2">
 <h2>Why the Normal Distribution is Important</h2>
 <ol type="1">
 <li><strong>It Describes Many Natural Phenomena</strong>: Heights, weights, test scores, measurement errors, and countless other variables follow a normal distribution, especially when influenced by many small, random factors.</li>
@@ -1196,7 +1192,7 @@ P(a \leq X \leq b) = P(a &lt; X &lt; b) = \int_a^b \frac{1}{\sqrt{2\pi\sigma^2}}
 </ul>
 </div>
 </section>
-<section id="what-is-the-empirical-rule" class="slide level2 scrollable">
+<section id="what-is-the-empirical-rule" class="slide level2">
 <h2>What is the Empirical Rule?</h2>
 <p>The <strong>Empirical Rule</strong> provides a way to understand the spread of data in a normal distribution by describing how data points cluster around the mean. According to this rule:</p>
 <ol type="1">
@@ -1283,7 +1279,7 @@ P(a \leq X \leq b) = P(a &lt; X &lt; b) = \int_a^b \frac{1}{\sqrt{2\pi\sigma^2}}
 </ul>
 </div>
 </section>
-<section id="conditions-for-a-binomial-experiment" class="slide level2 scrollable">
+<section id="conditions-for-a-binomial-experiment" class="slide level2">
 <h2>Conditions for a Binomial Experiment</h2>
 <ol type="1">
 <li><strong>Fixed Number of Trials</strong> (<span class="math inline">\(n\)</span>):
@@ -1434,7 +1430,7 @@ P(X \geq 3) = P(X = 3) + P(X = 4) + P(X = 5)
 </ul>
 </div>
 </section>
-<section id="conditions-for-the-poisson-dist." class="slide level2 scrollable">
+<section id="conditions-for-the-poisson-dist." class="slide level2">
 <h2>Conditions for the Poisson Dist.</h2>
 <ol type="1">
 <li><strong>Events Occur Randomly</strong>:
@@ -1819,7 +1815,7 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p>m201.inqs.info/lectures/4</p>
+
 </div>
 </div></div>
 
@@ -1830,7 +1826,6 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
   <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
   <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
@@ -1853,8 +1848,7 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'chalkboard': {"buttons":true,"theme":"whiteboard","chalkWidth":4},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":false},
 'pointer': {"key":"q","color":"red","pointerSize":32,"alwaysVisible":false},
 'smaller': false,
  
@@ -1863,7 +1857,7 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
 
         // Help the user learn the controls by providing hints, for example by
         // bouncing the down arrow when they first encounter a vertical slide
-        controlsTutorial: true,
+        controlsTutorial: false,
 
         // Determines where controls appear, "edges" or "bottom-right"
         controlsLayout: 'edges',
@@ -1876,7 +1870,7 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: 'h.v',
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -1917,7 +1911,7 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
         rtl: false,
 
         // see https://revealjs.com/vertical-slides/#navigation-mode
-        navigationMode: 'default',
+        navigationMode: 'linear',
 
         // Randomizes the order of slides each time the presentation loads
         shuffle: false,
@@ -2026,7 +2020,7 @@ P(X = 0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealPointer, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealPointer, QuartoSupport,
 
           RevealMath,
           RevealNotes,

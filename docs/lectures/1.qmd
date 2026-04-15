@@ -25,7 +25,6 @@ revealjs-plugins:
   - pointer
   
 filters:
-  - reveal-header
   - reveal-auto-agenda
 
 editor: source
