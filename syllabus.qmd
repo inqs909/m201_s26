@@ -6,11 +6,11 @@ format:
   html: 
     code-fold: true
     html-math-method: katex
+    toc: false
   typst:
     margin:
       x: 1cm
       y: 1cm
-  docx: default
 ---
 
 ## Math 201: Elementary Statistics
