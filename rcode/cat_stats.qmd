@@ -10,6 +10,7 @@ format:
     smooth-scroll: true
 editor: source
 image: img/cat.png
+image-alt: "A stacked bar plot shoing the counts for each penguin species and their respective island they live on."
 knitr:
   opts_chunk: 
     echo: true
@@ -219,6 +220,10 @@ ggplot(DATA, aes(x = VAR)) +
 
 **Example:**
 ```{r}
+#| fig-alt: |
+#|  A bar chart showing the frequency of each caffeinated coffee type: 
+#|  Decaf, Full Caffeine, Half calf, and NA. Th most common type is Full Caffeine.
+
 ggplot(coffee, aes(x = caffeine)) +
   geom_bar()
 ```
@@ -234,6 +239,9 @@ ggplot(DATA, aes(x = VAR, y = after_stat(prop), group = 1)) +
 
 **Example:**
 ```{r}
+#| fig-alt: |
+#|  A bar chart showing the proportion of each caffeinated coffee type: 
+#|  Decaf, Full Caffeine, Half calf, and NA. Th most common type is Full Caffeine.
 ggplot(coffee, aes(x = caffeine, y = after_stat(prop), group = 1)) +
   geom_bar()
 ```
@@ -260,6 +268,7 @@ ggplot(coffee, aes(x = caffeine, fill = taste)) +
 
 **Example (horizontal):**
 ```{r}
+#| fig-alt: A bar plot showing the caffeine levels by different tastes. The bars are layed horizontal instead of vertical.
 ggplot(coffee, aes(y = caffeine, fill = taste)) +
   geom_bar()
 ```
@@ -281,12 +290,14 @@ ggplot(DATA, aes(x = VAR1, fill = VAR2)) +
 
 **Example (dodged counts):**
 ```{r}
+#| fig-alt: A bar plot showing the caffeine levels by different tastes. The different tastes are side-by-side instead of stacked.
 ggplot(coffee, aes(x = caffeine, fill = taste)) +
 geom_bar(position = position_dodge())
 ```
 
 **Example (horizontal):**
 ```{r}
+#| fig-alt: A bar plot showing the caffeine levels by different tastes. The different tastes are side-by-side instead of stacked. The bars are positioned horizontally.
 ggplot(coffee, aes(y = caffeine, fill = taste)) +
 geom_bar(position = position_dodge())
 ```
@@ -304,6 +315,7 @@ ggplot(DATA, aes(fill = VAR)) +
 
 **Example:**
 ```{r}
+#| fig-alt: A pie chart displaying the how common each caffeine type. 
 ggplot(coffee, aes(fill = caffeine)) +
   geom_pie()
 ```

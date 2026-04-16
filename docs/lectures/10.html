@@ -99,7 +99,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-6f5b614b6a3118c6041d924b0a2771f9.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-b2181daa1b98e428a4e4857ed90de7cb.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -204,11 +204,105 @@
 </div>
 
 </section>
+<section id="r-packages" class="slide level2">
+<h2>R Packages</h2>
+<ul>
+<li>Tidyverse</li>
+<li>rcistats</li>
+<li>broom</li>
+</ul>
+</section>
+<section>
+<section id="data-motivation" class="title-slide slide level1 agenda-slide center">
+<h1>Data &amp; Motivation</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-active">
+<p>Data &amp; Motivation</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Statistical Inference</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Hypothesis Testing</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Decision Making</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Confidence Intervals</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Regression Coefficient Inference</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Linear Regression Inference in R</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Logistic Regression Inference in R</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="palmer-penguins-data" class="slide level2">
+<h2>Palmer Penguins Data</h2>
+<div class="columns">
+<div class="column">
+<h3 id="variables-of-interest">Variables of Interest</h3>
+<ul>
+<li><code>species</code>: Penguin species</li>
+<li><code>body_mass</code>: Body mass in <a href="https://en.wikipedia.org/wiki/Gram">grams</a></li>
+</ul>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/penguins.png" alt="An image of several penguins in Antartica."></p>
+<figcaption>Artwork by <span class="citation" data-cites="allison_horst">@allison_horst</span></figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="heart-disease-data" class="slide level2">
+<h2>Heart Disease Data</h2>
+<div class="columns">
+<div class="column">
+<h3 id="variables-of-interest-1">Variables of Interest</h3>
+<ul>
+<li><code>thal</code>: Thallium stress test result</li>
+<li><code>disease</code>: Indicating if they have heart disease</li>
+</ul>
+</div><div class="column">
+<p><img data-src="img/heart_df.png" alt="An image of a graph and a heart."></p>
+</div></div>
+</section>
+<section id="no-association" class="slide level2">
+<h2>No Association</h2>
+
+<img data-src="10_files/figure-revealjs/unnamed-chunk-2-1.png" alt="A scatter plot of data points where that do not show  a positive nor negative trend. A flat line is going  from left to right through the data points. " width="960" class="r-stretch"></section>
+<section id="an-association" class="slide level2">
+<h2>An Association</h2>
+
+<img data-src="10_files/figure-revealjs/unnamed-chunk-3-1.png" alt="A 2 side-by-side scatter plots of data points  that demonstrate a positive or negative trend, respectively. Each plot contains a line demonstrating  the relationship of the data. " width="960" class="r-stretch"></section>
+<section id="association" class="slide level2">
+<h2>Association?</h2>
+
+<img data-src="10_files/figure-revealjs/unnamed-chunk-4-1.png" alt="A scatter plot of data points where there is a  positive trend. A flat line is going  from left to right through the data points. " width="960" class="r-stretch"></section>
+<section id="association-1" class="slide level2">
+<h2>Association?</h2>
+
+<img data-src="10_files/figure-revealjs/unnamed-chunk-5-1.png" alt="A scatter plot of data points where there is a  slight positive trend. A flat line is going  from left to right through the data points. " width="960" class="r-stretch"></section>
+<section id="association-2" class="slide level2">
+<h2>Association?</h2>
+
+<img data-src="10_files/figure-revealjs/unnamed-chunk-6-1.png" alt="A scatter plot of data points where there is a  slight positive trend. A flat line is going  from left to right through the data points. " width="960" class="r-stretch"></section></section>
 <section>
 <section id="statistical-inference" class="title-slide slide level1 agenda-slide center">
 <h1>Statistical Inference</h1>
 <div class="agenda">
 <ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Data &amp; Motivation</p>
+</div></li>
 <li><div class="agenda-active">
 <p>Statistical Inference</p>
 </div></li>
@@ -220,6 +314,9 @@
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Confidence Intervals</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Regression Coefficient Inference</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Linear Regression Inference in R</p>
@@ -237,19 +334,6 @@
 <li>Population = entire group</li>
 <li>Sample = subset</li>
 </ul>
-<aside class="notes">
-<p>Introduce the big idea: We want to make st</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
 <section id="two-main-types-of-inference" class="slide level2">
 <h2>Two Main Types of Inference</h2>
@@ -275,7 +359,7 @@
 <h2>Estimation</h2>
 <ul>
 <li><strong>Point Estimate</strong>: Single best guess (e.g., <span class="math inline">\(\hat \beta_1\)</span>)</li>
-<li><strong>Interval Estimate</strong>: Range likely to contain the true value</li>
+<li><strong>Interval Estimate</strong>: Range of values likely to contain the true value</li>
 </ul>
 <aside class="notes">
 <p>Point estimates are easy but not very informative. Intervals give us a sense of uncertainty, which is critical in inference.</p>
@@ -291,31 +375,9 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="hypothesis-testing" class="slide level2">
-<h2>Hypothesis Testing</h2>
-<ul>
-<li><span class="math inline">\(H_0\)</span>: No effect or difference<br>
-</li>
-<li><span class="math inline">\(H_1\)</span>: Some effect or difference<br>
-</li>
-<li>We use sample data to support or reject <span class="math inline">\(H_0\)</span></li>
-</ul>
-<aside class="notes">
-<p>Mention that <span class="math inline">\(H_0\)</span> is the default assumption. We only reject it if the data give us strong enough evidence.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
 <section id="key-concepts-and-tools" class="slide level2">
 <h2>Key Concepts and Tools</h2>
+<p>To conduct a hypothesis test, we need to know the following:</p>
 <ul>
 <li>Sampling Distribution</li>
 <li>Central Limit Theorem</li>
@@ -334,40 +396,15 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section>
-<section id="p-values" class="slide level2">
-<h2>p-values</h2>
-<ul>
-<li><p>Probability of observing data as extreme as this if <span class="math inline">\(H_0\)</span> is true</p></li>
-<li><p>Misinterpretation of p-values is common.</p></li>
-<li><p>Emphasize: low p-value means data is unusual under <span class="math inline">\(H_0\)</span>.</p></li>
-</ul>
-</section>
-<section id="confidence-intervals" class="slide level2">
-<h2>Confidence Intervals</h2>
-<ul>
-<li>A range of plausible values that may contain the true parameter.</li>
-<li>The “Confidence” part indicates the probability that the method will work in capturing the true mean.</li>
-</ul>
-<aside class="notes">
-<p>Clarify interpretation: it’s not about the probability the parameter is inside the interval, but about the method producing accurate intervals in the long run.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section></section>
 <section>
-<section id="hypothesis-testing-1" class="title-slide slide level1 agenda-slide center">
+<section id="hypothesis-testing" class="title-slide slide level1 agenda-slide center">
 <h1>Hypothesis Testing</h1>
 <div class="agenda">
 <ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Data &amp; Motivation</p>
+</div></li>
 <li><div class="agenda-inactive agenda-pre-active">
 <p>Statistical Inference</p>
 </div></li>
@@ -379,6 +416,9 @@
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Confidence Intervals</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Regression Coefficient Inference</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Linear Regression Inference in R</p>
@@ -506,17 +546,19 @@
 <span id="cb1-13"><a></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"deepskyblue"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
 <span id="cb1-14"><a></a>  <span class="fu">geom_area</span>(<span class="at">data =</span> <span class="fu">subset</span>(df, x <span class="sc">&lt;=</span> <span class="sc">-</span>z_critical), <span class="fu">aes</span>(<span class="at">y =</span> y), <span class="at">fill =</span> <span class="st">"firebrick"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
 <span id="cb1-15"><a></a>  <span class="fu">geom_area</span>(<span class="at">data =</span> <span class="fu">subset</span>(df, x <span class="sc">&gt;=</span> z_critical), <span class="fu">aes</span>(<span class="at">y =</span> y), <span class="at">fill =</span> <span class="st">"firebrick"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb1-16"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">c</span>(<span class="sc">-</span>z_critical, z_critical), <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb1-17"><a></a>  <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-16"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">c</span>(<span class="sc">-</span>z_critical, z_critical), <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"black"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 
 </div>
-<img data-src="10_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center r-stretch" alt="A normal distribution demonstrating the rejection regions." width="960"></section></section>
+<img data-src="10_files/figure-revealjs/unnamed-chunk-7-1.png" class="quarto-figure quarto-figure-center r-stretch" alt="A normal distribution demonstrating the rejection regions." width="960"></section></section>
 <section>
 <section id="decision-making" class="title-slide slide level1 agenda-slide center">
 <h1>Decision Making</h1>
 <div class="agenda">
 <ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Data &amp; Motivation</p>
+</div></li>
 <li><div class="agenda-inactive agenda-pre-active">
 <p>Statistical Inference</p>
 </div></li>
@@ -528,6 +570,9 @@
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Confidence Intervals</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Regression Coefficient Inference</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Linear Regression Inference in R</p>
@@ -566,10 +611,13 @@
 </div>
 </section></section>
 <section>
-<section id="confidence-intervals-1" class="title-slide slide level1 agenda-slide center">
+<section id="confidence-intervals" class="title-slide slide level1 agenda-slide center">
 <h1>Confidence Intervals</h1>
 <div class="agenda">
 <ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Data &amp; Motivation</p>
+</div></li>
 <li><div class="agenda-inactive agenda-pre-active">
 <p>Statistical Inference</p>
 </div></li>
@@ -583,6 +631,9 @@
 <p>Confidence Intervals</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
+<p>Regression Coefficient Inference</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
 <p>Linear Regression Inference in R</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
@@ -591,7 +642,7 @@
 </ul>
 </div>
 </section>
-<section id="confidence-intervals-2" class="slide level2">
+<section id="confidence-intervals-1" class="slide level2">
 <h2>Confidence Intervals</h2>
 <ul>
 <li>A confidence interval gives a <strong>range of plausible values</strong> for a population parameter.</li>
@@ -652,10 +703,13 @@
 </div>
 </section></section>
 <section>
-<section id="linear-regression-inference-in-r" class="title-slide slide level1 agenda-slide center">
-<h1>Linear Regression Inference in R</h1>
+<section id="regression-coefficient-inference" class="title-slide slide level1 agenda-slide center">
+<h1>Regression Coefficient Inference</h1>
 <div class="agenda">
 <ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Data &amp; Motivation</p>
+</div></li>
 <li><div class="agenda-inactive agenda-pre-active">
 <p>Statistical Inference</p>
 </div></li>
@@ -667,6 +721,100 @@
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
 <p>Confidence Intervals</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Regression Coefficient Inference</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Linear Regression Inference in R</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Logistic Regression Inference in R</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="testing-association" class="slide level2">
+<h2>Testing Association</h2>
+<p><span class="math display">\[
+Y =  \beta_0 + \beta_1 X
+\]</span></p>
+<p>In an equation, the coefficient multiplied (<span class="math inline">\(\beta_1\)</span>) to the variable <span class="math inline">\(X\)</span> determines if there is an association between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>.</p>
+</section>
+<section id="coefficient-inference" class="slide level2">
+<h2>Coefficient Inference</h2>
+<div class="columns">
+<div class="column">
+<h3 id="no-association-1">No Association</h3>
+<p><span class="math display">\[
+\beta_1 = 0
+\]</span></p>
+</div><div class="column">
+<h3 id="association-3">Association</h3>
+<p><span class="math display">\[
+\beta_1 \ne 0
+\]</span></p>
+</div></div>
+</section>
+<section id="hypothesis-test" class="slide level2">
+<h2>Hypothesis Test</h2>
+<div class="columns">
+<div class="column">
+<h3 id="null-hypothesis">Null Hypothesis</h3>
+<p><span class="math display">\[
+H_0:\ \beta_1 = 0
+\]</span></p>
+</div><div class="column">
+<h3 id="alternative-hypothesis">Alternative Hypothesis</h3>
+<p><span class="math display">\[
+H_1:\ \beta_1 \ne 0
+\]</span></p>
+</div></div>
+</section>
+<section id="testing-association-1" class="slide level2">
+<h2>Testing Association</h2>
+<p><span class="math display">\[
+Y =  \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3  
+\]</span></p>
+<p>In an equation, the coefficient multiplied (<span class="math inline">\(\beta_2\)</span>) to the variable <span class="math inline">\(X_2\)</span> determines if there is an association between <span class="math inline">\(X_2\)</span> and <span class="math inline">\(Y\)</span>.</p>
+</section>
+<section id="hypothesis-test-1" class="slide level2">
+<h2>Hypothesis Test</h2>
+<div class="columns">
+<div class="column">
+<h3 id="null-hypothesis-1">Null Hypothesis</h3>
+<p><span class="math display">\[
+H_0:\ \beta_2 = 0
+\]</span></p>
+</div><div class="column">
+<h3 id="alternative-hypothesis-1">Alternative Hypothesis</h3>
+<p><span class="math display">\[
+H_1:\ \beta_2 \ne 0
+\]</span></p>
+</div></div>
+</section></section>
+<section>
+<section id="linear-regression-inference-in-r" class="title-slide slide level1 agenda-slide center">
+<h1>Linear Regression Inference in R</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Data &amp; Motivation</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Statistical Inference</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Hypothesis Testing</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Decision Making</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Confidence Intervals</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Regression Coefficient Inference</p>
 </div></li>
 <li><div class="agenda-active">
 <p>Linear Regression Inference in R</p>
@@ -697,8 +845,9 @@
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>m1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass <span class="sc">~</span> flipper_len, penguins)</span>
-<span id="cb3-2"><a></a><span class="fu">tidy</span>(m1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>m1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass <span class="sc">~</span> flipper_len, </span>
+<span id="cb3-2"><a></a>         penguins)</span>
+<span id="cb3-3"><a></a><span class="fu">tidy</span>(m1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; # A tibble: 2 × 5
@@ -710,15 +859,18 @@
 </div>
 </section>
 <section id="confidence-interval" class="slide level2">
-<h2>Confidence Interval</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">tidy</span>(XLM, <span class="at">conf.int =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<h2>95% Confidence Interval</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">tidy</span>(XLM, </span>
+<span id="cb5-2"><a></a>     <span class="at">conf.int =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>XLM</code>: Object where the model is stored</li>
 </ul>
 </section>
 <section id="x-confidence-interval" class="slide level2">
 <h2>X% Confidence Interval</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">tidy</span>(XLM, <span class="at">conf.int =</span> <span class="cn">TRUE</span>, <span class="at">conf.level =</span> X)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">tidy</span>(XLM, </span>
+<span id="cb6-2"><a></a>     <span class="at">conf.int =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb6-3"><a></a>     <span class="at">conf.level =</span> X)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>XLM</code>: Object where the model is stored</li>
 <li><code>X</code>: A number between 0 and 1 to specify confidence level</li>
@@ -729,7 +881,9 @@
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">tidy</span>(m1, <span class="at">conf.int =</span> <span class="cn">TRUE</span>, <span class="at">conf.level =</span> <span class="fl">0.9</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">tidy</span>(m1, </span>
+<span id="cb7-2"><a></a>     <span class="at">conf.int =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb7-3"><a></a>     <span class="at">conf.level =</span> <span class="fl">0.9</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; # A tibble: 2 × 7
@@ -746,6 +900,9 @@
 <div class="agenda">
 <ul>
 <li><div class="agenda-inactive agenda-pre-active">
+<p>Data &amp; Motivation</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
 <p>Statistical Inference</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
@@ -758,6 +915,9 @@
 <p>Confidence Intervals</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
+<p>Regression Coefficient Inference</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
 <p>Linear Regression Inference in R</p>
 </div></li>
 <li><div class="agenda-active">
@@ -768,8 +928,10 @@
 </section>
 <section id="conducting-ht-of-beta_j-1" class="slide level2">
 <h2>Conducting HT of <span class="math inline">\(\beta_j\)</span></h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>XLM <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> DATA, <span class="at">family =</span> <span class="fu">binomial</span>())</span>
-<span id="cb9-2"><a></a><span class="fu">tidy</span>(XLM)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>XLM <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X, </span>
+<span id="cb9-2"><a></a>           <span class="at">data =</span> DATA, </span>
+<span id="cb9-3"><a></a>           <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb9-4"><a></a><span class="fu">tidy</span>(XLM)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>XLM</code>: Object where the model is stored</li>
 <li><code>Y</code>: Name of the outcome variable in <code>DATA</code></li>
@@ -786,8 +948,10 @@
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>m1 <span class="ot">&lt;-</span> <span class="fu">glm</span>(disease <span class="sc">~</span> trestbps, heart_disease, <span class="at">family =</span> <span class="fu">binomial</span>())</span>
-<span id="cb10-2"><a></a><span class="fu">tidy</span>(m1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>m1 <span class="ot">&lt;-</span> <span class="fu">glm</span>(disease <span class="sc">~</span> trestbps, </span>
+<span id="cb10-2"><a></a>          <span class="at">data =</span> heart_disease, </span>
+<span id="cb10-3"><a></a>          <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb10-4"><a></a><span class="fu">tidy</span>(m1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; # A tibble: 2 × 5
@@ -800,19 +964,22 @@
 </section>
 <section id="confidence-interval-1" class="slide level2">
 <h2>Confidence Interval</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">tidy</span>(XLM, <span class="at">conf.int =</span> <span class="cn">TRUE</span>, <span class="at">conf.level =</span> LEVEL)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">tidy</span>(XLM, </span>
+<span id="cb12-2"><a></a>     <span class="at">conf.int =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb12-3"><a></a>     <span class="at">conf.level =</span> LEVEL)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>XLM</code>: Object where the model is stored</li>
 <li><code>LEVEL</code>: A number between 0 and 1 to specify confidence level</li>
 <li>defaults to 0.95</li>
 </ul>
 </section>
-<section id="example-5" class="slide level2">
-<h2>Example</h2>
+<section id="ex-95-confidence-interval" class="slide level2">
+<h2>EX: 95% Confidence Interval</h2>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">tidy</span>(m1, <span class="at">conf.int =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">tidy</span>(m1, </span>
+<span id="cb13-2"><a></a>     <span class="at">conf.int =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; # A tibble: 2 × 7
@@ -825,17 +992,21 @@
 </section>
 <section id="odds-ratio-confidence-intervat" class="slide level2">
 <h2>Odds Ratio &amp; Confidence Intervat</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">tidy</span>(XLM, <span class="at">exponentiate =</span> <span class="cn">TRUE</span>, <span class="at">conf.int =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">tidy</span>(XLM, </span>
+<span id="cb15-2"><a></a>     <span class="at">exponentiate =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb15-3"><a></a>     <span class="at">conf.int =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>XLM</code>: Object where the model is stored</li>
 </ul>
 </section>
-<section id="example-6" class="slide level2">
+<section id="example-5" class="slide level2">
 <h2>Example</h2>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">tidy</span>(m1, <span class="at">exponentiate =</span> <span class="cn">TRUE</span>, <span class="at">conf.int =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">tidy</span>(m1, </span>
+<span id="cb16-2"><a></a>     <span class="at">exponentiate =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb16-3"><a></a>     <span class="at">conf.int =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; # A tibble: 2 × 7

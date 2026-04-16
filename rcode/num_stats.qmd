@@ -10,6 +10,7 @@ format:
     smooth-scroll: true
 editor: source
 image: img/num.png
+image-alt: "A density plot showing the density of flipper length for 3 different penguins species."
 knitr:
   opts_chunk: 
     echo: true

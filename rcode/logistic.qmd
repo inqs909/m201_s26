@@ -13,6 +13,7 @@ format:
     smooth-scroll: true
 editor: source
 image: img/logistic.png
+image-alt: "A sigmoidal line starting from the bottom to the top. Data points are scattered at 0 and 1 of the y-axis."
 execute:
   echo: true
   warning: false

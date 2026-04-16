@@ -11,6 +11,7 @@ format:
     smooth-scroll: true
 editor: source
 image: img/linear.png
+image-alt: "A scatter plot for flipper length and body mass, color coded for each penguin type. A linear model is embedded in the plot for each species."
 execute:
   echo: true
   warning: false

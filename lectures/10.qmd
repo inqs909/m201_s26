@@ -38,11 +38,13 @@ editor: source
 library(tidyverse)
 library(rcistats)
 library(broom)
+library(patchwork)
 
 
 theme_set(theme_bw() +
   theme(
-    axis.text.x = element_text(size = 24),
+    axis.text.x = element_text(size = 20),
+    axis.text.y = element_text(size = 20),
     axis.title = element_text(size = 30),
     plot.title = element_text(size = 48),
     strip.text = element_text(size = 20),
@@ -52,10 +54,164 @@ theme_set(theme_bw() +
 
 heart_disease <- kmed::heart
 heart_disease$disease <- factor(ifelse(heart_disease$class == 0, "no", "yes")) 
-
+heart_disease$sex <- ifelse(heart_disease$sex == T, "Male", "Female") |> factor()
+heart_disease$cp <- ifelse(heart_disease$cp == 1, "Typical Angina",
+                           ifelse(heart_disease$cp == 2, "Atypical Angina", 
+                                  ifelse(heart_disease$cp == 3, "Non-anginal Pain", "Asymptomatic"))) |> 
+                    factor(levels = c("Asymptomatic", "Non-anginal Pain", "Atypical Angina", "Typical Angina"))
+heart_disease$fbs <- ifelse(heart_disease$fbs == T, "Fasting Blood Sugar >120" , "Fasting Blood Sugar <= 120") |> factor()
+heart_disease$restecg <- ifelse(heart_disease$restecg == 0, "Normal",
+                                ifelse(heart_disease$restecg == 1, "ST-T wave Abnormality", "Left Ventricular Hypertrophy")) |> 
+                          factor(levels = c("Normal", "ST-T wave Abnormality", "Left Ventricular Hypertrophy"))
+heart_disease$slope <- ifelse(heart_disease$slope == 1, "Positive Slope",
+                              ifelse(heart_disease$slope == 2, "Zero Slope", "Negative Slope")) |> 
+                              factor(levels = c("Zero Slope", "Positive Slope", "Negative Slope"))
+heart_disease$thal <- ifelse(heart_disease$thal==3, "Normal",
+                             ifelse(heart_disease$thal == 6, "Fixed Defect", "Reversible Defect")) |> 
+                              factor(levels = c("Normal", "Fixed Defect", "Reversible Defect"))
 
 ```
 
+## R Packages
+
+- Tidyverse
+- rcistats
+- broom
+
+# Data & Motivation
+
+## Palmer Penguins Data
+
+::: {.columns}
+::: {.column}
+
+### Variables of Interest
+
+- `species`: Penguin species
+- `body_mass`: Body mass in [grams](https://en.wikipedia.org/wiki/Gram)
+
+:::
+::: {.column}
+![Artwork by @allison_horst](img/penguins.png){fig-alt="An image of several penguins in Antartica."}
+
+:::
+::: 
+
+## Heart Disease Data
+
+::: {.columns}
+::: {.column}
+
+### Variables of Interest
+
+- `thal`: Thallium stress test result
+- `disease`: Indicating if they have heart disease
+
+:::
+::: {.column}
+![](img/heart_df.png){fig-alt="An image of a graph and a heart."}
+:::
+:::
+
+## No Association
+
+```{r}
+#| echo: false
+#| fig-alt: |
+#|  A scatter plot of data points where that do not show 
+#|  a positive nor negative trend. A flat line is going 
+#|  from left to right through the data points. 
+
+x <- rnorm(1000)
+y <- rnorm(1000)
+
+ggplot(tibble(x, y), aes(x, y)) +
+  geom_point() +
+  stat_smooth(method = "lm", se = F)
+
+```
+
+## An Association
+
+```{r}
+#| echo: false
+#| fig-alt: |
+#|  A 2 side-by-side scatter plots of data points 
+#|  that demonstrate a positive or negative trend,
+#|  respectively. Each plot contains a line demonstrating 
+#|  the relationship of the data. 
+
+x <- rnorm(1000)
+y1 <- 3 + 4 * x + rnorm(1000)
+y2 <- 8 - 2 * x + rnorm(1000)
+
+g1 <- ggplot(tibble(x = x, y = y1), aes(x, y)) +
+  geom_point() +
+  stat_smooth(method = "lm", se = F)
+
+g2 <- ggplot(tibble(x = x, y = y2), aes(x, y)) +
+  geom_point() +
+  stat_smooth(method = "lm", se = F)
+
+g1 + g2 +
+  plot_layout(axes = "collect")
+
+```
+
+## Association?
+
+```{r}
+#| echo: false
+#| fig-alt: |
+#|  A scatter plot of data points where there is a 
+#|  positive trend. A flat line is going 
+#|  from left to right through the data points. 
+
+x <- rnorm(1000)
+y <- -2.8 + 0.4 *x + rnorm(1000)
+
+ggplot(tibble(x, y), aes(x, y)) +
+  geom_point() +
+  stat_smooth(method = "lm", se = F)
+
+```
+
+## Association?
+
+```{r}
+#| echo: false
+#| fig-alt: |
+#|  A scatter plot of data points where there is a 
+#|  slight positive trend. A flat line is going 
+#|  from left to right through the data points. 
+set.seed(890)
+x <- rnorm(1000)
+y <- -2.8 + 0.4 *x + rnorm(1000, sd = 5)
+
+ggplot(tibble(x, y), aes(x, y)) +
+  geom_point() +
+  stat_smooth(method = "lm", se = F)
+
+```
+
+## Association?
+
+```{r}
+#| echo: false
+#| fig-alt: |
+#|  A scatter plot of data points where there is a 
+#|  slight positive trend. A flat line is going 
+#|  from left to right through the data points. 
+
+set.seed(909)
+x <- rnorm(1000)
+y <- -2.8 + 0.4 *x + rnorm(1000, sd = 35)
+
+ggplot(tibble(x, y), aes(x, y)) +
+  geom_point() +
+  stat_smooth(method = "lm", se = F)
+
+```
 
 
 # Statistical Inference
@@ -66,9 +222,7 @@ heart_disease$disease <- factor(ifelse(heart_disease$class == 0, "no", "yes"))
 -   Population = entire group
 -   Sample = subset
 
-::: notes
-Introduce the big idea: We want to make st
-:::
+
 
 ## Two Main Types of Inference
 
@@ -82,23 +236,16 @@ We'll be focusing on two fundamental techniques in inference. First, estimating 
 ## Estimation
 
 - **Point Estimate**: Single best guess (e.g., $\hat \beta_1$)
-- **Interval Estimate**: Range likely to contain the true value
+- **Interval Estimate**: Range of values likely to contain the true value
 
 ::: notes
 Point estimates are easy but not very informative. Intervals give us a sense of uncertainty, which is critical in inference.
 :::
 
-## Hypothesis Testing
-
-- $H_0$: No effect or difference\
-- $H_1$: Some effect or difference\
-- We use sample data to support or reject $H_0$
-
-::: notes
-Mention that $H_0$ is the default assumption. We only reject it if the data give us strong enough evidence.
-:::
 
 ## Key Concepts and Tools
+
+To conduct a hypothesis test, we need to know the following:
 
 - Sampling Distribution
 - Central Limit Theorem
@@ -108,22 +255,7 @@ Mention that $H_0$ is the default assumption. We only reject it if the data give
 These three concepts are foundational. Understanding them helps us assess how reliable our estimates are.
 :::
 
-## p-values
 
--   Probability of observing data as extreme as this if $H_0$ is true
-
--   Misinterpretation of p-values is common. 
-
--   Emphasize: low p-value means data is unusual under $H_0$.
-
-## Confidence Intervals
-
-- A range of plausible values that may contain the true parameter.
-- The "Confidence" part indicates the probability that the method will work in capturing the true mean.
-
-::: notes
-Clarify interpretation: it's not about the probability the parameter is inside the interval, but about the method producing accurate intervals in the long run.
-:::
 
 # Hypothesis Testing
 
@@ -199,8 +331,7 @@ ggplot(df, aes(x = x, y = y)) +
   geom_line(color = "deepskyblue", linewidth = 1) +
   geom_area(data = subset(df, x <= -z_critical), aes(y = y), fill = "firebrick", alpha = 0.5) +
   geom_area(data = subset(df, x >= z_critical), aes(y = y), fill = "firebrick", alpha = 0.5) +
-  geom_vline(xintercept = c(-z_critical, z_critical), linetype = "dashed", color = "black") +
-  theme_bw()
+  geom_vline(xintercept = c(-z_critical, z_critical), linetype = "dashed", color = "black") 
 ```
 
 
@@ -276,6 +407,103 @@ The confidence interval approach can evaluate a hypothesis test where the altern
 **If $\beta^*$ is in $(LB, UB)$, then you fail to reject $H_0$. If $\beta^*$ is not in $(LB,UB)$, then you reject $H_0$.**
 :::
 
+# Regression Coefficient Inference
+
+## Testing Association
+
+$$
+Y =  \beta_0 + \beta_1 X
+$$
+
+In an equation, the coefficient multiplied ($\beta_1$) to the variable $X$ determines if there is an association between $X$ and $Y$.
+
+## Coefficient Inference
+
+::: {.columns}
+
+::: {.column}
+
+### No Association
+
+$$
+\beta_1 = 0
+$$
+
+:::
+
+::: {.column}
+
+### Association
+
+$$
+\beta_1 \ne 0
+$$
+
+:::
+
+:::
+
+## Hypothesis Test
+
+::: {.columns}
+
+::: {.column}
+
+### Null Hypothesis
+
+$$
+H_0:\ \beta_1 = 0
+$$
+
+:::
+
+::: {.column}
+
+### Alternative Hypothesis
+
+$$
+H_1:\ \beta_1 \ne 0
+$$
+
+:::
+
+:::
+
+
+## Testing Association
+
+$$
+Y =  \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3  
+$$
+
+In an equation, the coefficient multiplied ($\beta_2$) to the variable $X_2$ determines if there is an association between $X_2$ and $Y$.
+
+
+## Hypothesis Test
+
+::: {.columns}
+
+::: {.column}
+
+### Null Hypothesis
+
+$$
+H_0:\ \beta_2 = 0
+$$
+
+:::
+
+::: {.column}
+
+### Alternative Hypothesis
+
+$$
+H_1:\ \beta_2 \ne 0
+$$
+
+:::
+
+:::
 
 # Linear Regression Inference in R
 
@@ -302,14 +530,16 @@ Is there a significant relationship between penguin body mass (outcome; `body_ma
 #| code-fold: show
 #| eval: true
 
-m1 <- lm(body_mass ~ flipper_len, penguins)
+m1 <- lm(body_mass ~ flipper_len, 
+         penguins)
 tidy(m1)
 ```
 
-## Confidence Interval
+## 95% Confidence Interval
 
 ```r
-tidy(XLM, conf.int = TRUE)
+tidy(XLM, 
+     conf.int = TRUE)
 ```
 
 -   `XLM`: Object where the model is stored
@@ -318,7 +548,9 @@ tidy(XLM, conf.int = TRUE)
 ## X% Confidence Interval
 
 ```r
-tidy(XLM, conf.int = TRUE, conf.level = X)
+tidy(XLM, 
+     conf.int = TRUE, 
+     conf.level = X)
 ```
 
 -   `XLM`: Object where the model is stored
@@ -330,7 +562,9 @@ tidy(XLM, conf.int = TRUE, conf.level = X)
 #| code-fold: show
 #| eval: true
 
-tidy(m1, conf.int = TRUE, conf.level = 0.9)
+tidy(m1, 
+     conf.int = TRUE, 
+     conf.level = 0.9)
 ```
 
 
@@ -339,7 +573,9 @@ tidy(m1, conf.int = TRUE, conf.level = 0.9)
 ## Conducting HT of $\beta_j$
 
 ```r
-XLM <- glm(Y ~ X, data = DATA, family = binomial())
+XLM <- glm(Y ~ X, 
+           data = DATA, 
+           family = binomial())
 tidy(XLM)
 ```
 
@@ -359,28 +595,32 @@ Is there a significant association between heart disease (outcome; `disease`) an
 #| code-fold: show
 #| eval: true
 
-m1 <- glm(disease ~ trestbps, heart_disease, family = binomial())
+m1 <- glm(disease ~ trestbps, 
+          data = heart_disease, 
+          family = binomial())
 tidy(m1)
-
 ```
 
 ## Confidence Interval
 
 ```r
-tidy(XLM, conf.int = TRUE, conf.level = LEVEL)
+tidy(XLM, 
+     conf.int = TRUE, 
+     conf.level = LEVEL)
 ```
 
 -   `XLM`: Object where the model is stored
 -   `LEVEL`: A number between 0 and 1 to specify confidence level
   - defaults to 0.95
 
-## Example
+## EX: 95% Confidence Interval
 
 ```{r}
 #| code-fold: show
 #| eval: true
 
-tidy(m1, conf.int = TRUE)
+tidy(m1, 
+     conf.int = TRUE)
 
 ```
 
@@ -389,7 +629,9 @@ tidy(m1, conf.int = TRUE)
 ## Odds Ratio & Confidence Intervat 
 
 ```r
-tidy(XLM, exponentiate = TRUE, conf.int = TRUE)
+tidy(XLM, 
+     exponentiate = TRUE, 
+     conf.int = TRUE)
 ```
 
 -   `XLM`: Object where the model is stored
@@ -402,6 +644,8 @@ tidy(XLM, exponentiate = TRUE, conf.int = TRUE)
 #| code-fold: show
 #| eval: true
 
-tidy(m1, exponentiate = TRUE, conf.int = TRUE)
+tidy(m1, 
+     exponentiate = TRUE, 
+     conf.int = TRUE)
 
 ```

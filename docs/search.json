@@ -2559,14 +2559,14 @@
     "href": "lectures/1.html#visualizing-dgp",
     "title": "Data Generating Process",
     "section": "Visualizing DGP",
-    "text": "Visualizing DGP\n\n\n\n#&gt; This chart has title 'DGP'.\n#&gt; It has x-axis '' with labels 0, 5, 10 and 15.\n#&gt; It has y-axis 'Frequency' with labels 0, 10000, 20000, 30000 and 40000.\n#&gt; The chart is a bar chart with 15 vertical bars."
+    "text": "Visualizing DGP\n\n\n\n#&gt; This chart has title 'DGP'.\n#&gt; It has x-axis '' with labels 0, 5 and 10.\n#&gt; It has y-axis 'Frequency' with labels 0, 10000, 20000, 30000 and 40000.\n#&gt; The chart is a bar chart with 14 vertical bars."
   },
   {
     "objectID": "lectures/1.html#example",
     "href": "lectures/1.html#example",
     "title": "Data Generating Process",
     "section": "Example",
-    "text": "Example"
+    "text": "Example\n\n\n#&gt; Warning: The dot-dot notation (`..density..`) was deprecated in ggplot2 3.4.0.\n#&gt; ℹ Please use `after_stat(density)` instead."
   },
   {
     "objectID": "lectures/1.html#statistical-model-1",
@@ -2632,11 +2632,67 @@
     "text": "Data Generating Process\n\n\n\n\n\nProvides a brief introduction of data, study design, and the data generating process.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Inference\n\n\n\n\n\nBegin the discussion of statistical inference.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical Inference\n\n\nGroup Model Inference\n\n\nTesting the difference in groups.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStatistical  Modeling\n\n\n\n\n\nFinish the discussion on model inference.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstalling R and Positron\n\n\nClass Lecture\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMath 201\n\n\nElementary Statistics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCategorical Data\n\n\n\n\n\nProvides an overview descriptive statistics and data visualization techniques for categorical data.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nResearch Questions\n\n\n\n\n\nLearn how to create research questions.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNumerical Data\n\n\n\n\n\nProvides an overview descriptive statistics and data visualization techniques for numerical data.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDistribution Functions\n\n\n\n\n\nProvides an overview distribution function (mathematical models).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSimple  Linear Regression\n\n\n\n\n\nBegins the discussion for linear regression.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSimple  Logistic Regression\n\n\n\n\n\nBegins the discussion for logistic regression.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGroup  Models\n\n\n\n\n\nDiscuss using categorical predictor variables.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMultivariable  Regression\n\n\n\n\n\nDiscuss how to model multivariable predictors to a single outcome.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSampling Distribution\n\n\n\n\n\nDiscuss for sampling distributions.\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
+    "objectID": "lectures/10.html#r-packages",
+    "href": "lectures/10.html#r-packages",
+    "title": "Statistical Inference",
+    "section": "R Packages",
+    "text": "R Packages\n\nTidyverse\nrcistats\nbroom"
+  },
+  {
+    "objectID": "lectures/10.html#palmer-penguins-data",
+    "href": "lectures/10.html#palmer-penguins-data",
+    "title": "Statistical Inference",
+    "section": "Palmer Penguins Data",
+    "text": "Palmer Penguins Data\n\n\nVariables of Interest\n\nspecies: Penguin species\nbody_mass: Body mass in grams\n\n\n\n\n\nArtwork by @allison_horst"
+  },
+  {
+    "objectID": "lectures/10.html#heart-disease-data",
+    "href": "lectures/10.html#heart-disease-data",
+    "title": "Statistical Inference",
+    "section": "Heart Disease Data",
+    "text": "Heart Disease Data\n\n\nVariables of Interest\n\nthal: Thallium stress test result\ndisease: Indicating if they have heart disease"
+  },
+  {
+    "objectID": "lectures/10.html#no-association",
+    "href": "lectures/10.html#no-association",
+    "title": "Statistical Inference",
+    "section": "No Association",
+    "text": "No Association"
+  },
+  {
+    "objectID": "lectures/10.html#an-association",
+    "href": "lectures/10.html#an-association",
+    "title": "Statistical Inference",
+    "section": "An Association",
+    "text": "An Association"
+  },
+  {
+    "objectID": "lectures/10.html#association",
+    "href": "lectures/10.html#association",
+    "title": "Statistical Inference",
+    "section": "Association?",
+    "text": "Association?"
+  },
+  {
+    "objectID": "lectures/10.html#association-1",
+    "href": "lectures/10.html#association-1",
+    "title": "Statistical Inference",
+    "section": "Association?",
+    "text": "Association?"
+  },
+  {
+    "objectID": "lectures/10.html#association-2",
+    "href": "lectures/10.html#association-2",
+    "title": "Statistical Inference",
+    "section": "Association?",
+    "text": "Association?"
+  },
+  {
     "objectID": "lectures/10.html#what-is-statistical-inference",
     "href": "lectures/10.html#what-is-statistical-inference",
     "title": "Statistical Inference",
     "section": "What is Statistical Inference?",
-    "text": "What is Statistical Inference?\n\nDrawing conclusions about a population based on a sample\nPopulation = entire group\nSample = subset\n\n\nIntroduce the big idea: We want to make st"
+    "text": "What is Statistical Inference?\n\nDrawing conclusions about a population based on a sample\nPopulation = entire group\nSample = subset"
   },
   {
     "objectID": "lectures/10.html#two-main-types-of-inference",
@@ -2650,35 +2706,14 @@
     "href": "lectures/10.html#estimation",
     "title": "Statistical Inference",
     "section": "Estimation",
-    "text": "Estimation\n\nPoint Estimate: Single best guess (e.g., \\(\\hat \\beta_1\\))\nInterval Estimate: Range likely to contain the true value\n\n\nPoint estimates are easy but not very informative. Intervals give us a sense of uncertainty, which is critical in inference."
-  },
-  {
-    "objectID": "lectures/10.html#hypothesis-testing",
-    "href": "lectures/10.html#hypothesis-testing",
-    "title": "Statistical Inference",
-    "section": "Hypothesis Testing",
-    "text": "Hypothesis Testing\n\n\\(H_0\\): No effect or difference\n\n\\(H_1\\): Some effect or difference\n\nWe use sample data to support or reject \\(H_0\\)\n\n\nMention that \\(H_0\\) is the default assumption. We only reject it if the data give us strong enough evidence."
+    "text": "Estimation\n\nPoint Estimate: Single best guess (e.g., \\(\\hat \\beta_1\\))\nInterval Estimate: Range of values likely to contain the true value\n\n\nPoint estimates are easy but not very informative. Intervals give us a sense of uncertainty, which is critical in inference."
   },
   {
     "objectID": "lectures/10.html#key-concepts-and-tools",
     "href": "lectures/10.html#key-concepts-and-tools",
     "title": "Statistical Inference",
     "section": "Key Concepts and Tools",
-    "text": "Key Concepts and Tools\n\nSampling Distribution\nCentral Limit Theorem\nStandard Error\n\n\nThese three concepts are foundational. Understanding them helps us assess how reliable our estimates are."
-  },
-  {
-    "objectID": "lectures/10.html#p-values",
-    "href": "lectures/10.html#p-values",
-    "title": "Statistical Inference",
-    "section": "p-values",
-    "text": "p-values\n\nProbability of observing data as extreme as this if \\(H_0\\) is true\nMisinterpretation of p-values is common.\nEmphasize: low p-value means data is unusual under \\(H_0\\)."
-  },
-  {
-    "objectID": "lectures/10.html#confidence-intervals",
-    "href": "lectures/10.html#confidence-intervals",
-    "title": "Statistical Inference",
-    "section": "Confidence Intervals",
-    "text": "Confidence Intervals\n\nA range of plausible values that may contain the true parameter.\nThe “Confidence” part indicates the probability that the method will work in capturing the true mean.\n\n\nClarify interpretation: it’s not about the probability the parameter is inside the interval, but about the method producing accurate intervals in the long run."
+    "text": "Key Concepts and Tools\nTo conduct a hypothesis test, we need to know the following:\n\nSampling Distribution\nCentral Limit Theorem\nStandard Error\n\n\nThese three concepts are foundational. Understanding them helps us assess how reliable our estimates are."
   },
   {
     "objectID": "lectures/10.html#hypothesis-tests",
@@ -2734,7 +2769,7 @@
     "href": "lectures/10.html#rejection-region-1",
     "title": "Statistical Inference",
     "section": "Rejection Region",
-    "text": "Rejection Region\n\n\nCode\nalpha &lt;- 0.05\n\n# Critical values for two-tailed test\nz_critical &lt;- qnorm(1 - alpha / 2)\n\n# Create data for the normal curve\nx &lt;- seq(-4, 4, length = 1000)\ny &lt;- dnorm(x)\n\ndf &lt;- data.frame(x = x, y = y)\n\nggplot(df, aes(x = x, y = y)) +\n  geom_line(color = \"deepskyblue\", linewidth = 1) +\n  geom_area(data = subset(df, x &lt;= -z_critical), aes(y = y), fill = \"firebrick\", alpha = 0.5) +\n  geom_area(data = subset(df, x &gt;= z_critical), aes(y = y), fill = \"firebrick\", alpha = 0.5) +\n  geom_vline(xintercept = c(-z_critical, z_critical), linetype = \"dashed\", color = \"black\") +\n  theme_bw()"
+    "text": "Rejection Region\n\n\nCode\nalpha &lt;- 0.05\n\n# Critical values for two-tailed test\nz_critical &lt;- qnorm(1 - alpha / 2)\n\n# Create data for the normal curve\nx &lt;- seq(-4, 4, length = 1000)\ny &lt;- dnorm(x)\n\ndf &lt;- data.frame(x = x, y = y)\n\nggplot(df, aes(x = x, y = y)) +\n  geom_line(color = \"deepskyblue\", linewidth = 1) +\n  geom_area(data = subset(df, x &lt;= -z_critical), aes(y = y), fill = \"firebrick\", alpha = 0.5) +\n  geom_area(data = subset(df, x &gt;= z_critical), aes(y = y), fill = \"firebrick\", alpha = 0.5) +\n  geom_vline(xintercept = c(-z_critical, z_critical), linetype = \"dashed\", color = \"black\")"
   },
   {
     "objectID": "lectures/10.html#decision-making-1",
@@ -2758,8 +2793,8 @@
     "text": "Significance Level \\(\\alpha\\)\nThe significance level \\(\\alpha\\) is the probability you will reject the null hypothesis given that it was true.\n\nIn other words, \\(\\alpha\\) is the error rate that a researcher controls.\n\n\nTypically, we want this error rate to be small (\\(\\alpha = 0.05\\))."
   },
   {
-    "objectID": "lectures/10.html#confidence-intervals-2",
-    "href": "lectures/10.html#confidence-intervals-2",
+    "objectID": "lectures/10.html#confidence-intervals-1",
+    "href": "lectures/10.html#confidence-intervals-1",
     "title": "Statistical Inference",
     "section": "Confidence Intervals",
     "text": "Confidence Intervals\n\nA confidence interval gives a range of plausible values for a population parameter.\nIt reflects uncertainty in point estimates from sample data."
@@ -2786,6 +2821,41 @@
     "text": "Decision Making: Confidence Interval Approach\nThe confidence interval approach can evaluate a hypothesis test where the alternative hypothesis is \\(\\beta\\ne\\beta^*\\). The confidence interval approach will result in a lower and upper bound denoted as: \\((LB, UB)\\).\n\nIf \\(\\beta^*\\) is in \\((LB, UB)\\), then you fail to reject \\(H_0\\). If \\(\\beta^*\\) is not in \\((LB,UB)\\), then you reject \\(H_0\\)."
   },
   {
+    "objectID": "lectures/10.html#testing-association",
+    "href": "lectures/10.html#testing-association",
+    "title": "Statistical Inference",
+    "section": "Testing Association",
+    "text": "Testing Association\n\\[\nY =  \\beta_0 + \\beta_1 X\n\\]\nIn an equation, the coefficient multiplied (\\(\\beta_1\\)) to the variable \\(X\\) determines if there is an association between \\(X\\) and \\(Y\\)."
+  },
+  {
+    "objectID": "lectures/10.html#coefficient-inference",
+    "href": "lectures/10.html#coefficient-inference",
+    "title": "Statistical Inference",
+    "section": "Coefficient Inference",
+    "text": "Coefficient Inference\n\n\nNo Association\n\\[\n\\beta_1 = 0\n\\]\n\nAssociation\n\\[\n\\beta_1 \\ne 0\n\\]"
+  },
+  {
+    "objectID": "lectures/10.html#hypothesis-test",
+    "href": "lectures/10.html#hypothesis-test",
+    "title": "Statistical Inference",
+    "section": "Hypothesis Test",
+    "text": "Hypothesis Test\n\n\nNull Hypothesis\n\\[\nH_0:\\ \\beta_1 = 0\n\\]\n\nAlternative Hypothesis\n\\[\nH_1:\\ \\beta_1 \\ne 0\n\\]"
+  },
+  {
+    "objectID": "lectures/10.html#testing-association-1",
+    "href": "lectures/10.html#testing-association-1",
+    "title": "Statistical Inference",
+    "section": "Testing Association",
+    "text": "Testing Association\n\\[\nY =  \\beta_0 + \\beta_1 X_1 + \\beta_2 X_2 + \\beta_3 X_3  \n\\]\nIn an equation, the coefficient multiplied (\\(\\beta_2\\)) to the variable \\(X_2\\) determines if there is an association between \\(X_2\\) and \\(Y\\)."
+  },
+  {
+    "objectID": "lectures/10.html#hypothesis-test-1",
+    "href": "lectures/10.html#hypothesis-test-1",
+    "title": "Statistical Inference",
+    "section": "Hypothesis Test",
+    "text": "Hypothesis Test\n\n\nNull Hypothesis\n\\[\nH_0:\\ \\beta_2 = 0\n\\]\n\nAlternative Hypothesis\n\\[\nH_1:\\ \\beta_2 \\ne 0\n\\]"
+  },
+  {
     "objectID": "lectures/10.html#conducting-ht-of-beta_j",
     "href": "lectures/10.html#conducting-ht-of-beta_j",
     "title": "Statistical Inference",
@@ -2804,35 +2874,35 @@
     "href": "lectures/10.html#example-1",
     "title": "Statistical Inference",
     "section": "Example",
-    "text": "Example\n\n\nCode\nm1 &lt;- lm(body_mass ~ flipper_len, penguins)\ntidy(m1)\n\n\n#&gt; # A tibble: 2 × 5\n#&gt;   term        estimate std.error statistic   p.value\n#&gt;   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n#&gt; 1 (Intercept)  -5781.     306.       -18.9 5.59e- 55\n#&gt; 2 flipper_len     49.7      1.52      32.7 4.37e-107"
+    "text": "Example\n\n\nCode\nm1 &lt;- lm(body_mass ~ flipper_len, \n         penguins)\ntidy(m1)\n\n\n#&gt; # A tibble: 2 × 5\n#&gt;   term        estimate std.error statistic   p.value\n#&gt;   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n#&gt; 1 (Intercept)  -5781.     306.       -18.9 5.59e- 55\n#&gt; 2 flipper_len     49.7      1.52      32.7 4.37e-107"
   },
   {
     "objectID": "lectures/10.html#confidence-interval",
     "href": "lectures/10.html#confidence-interval",
     "title": "Statistical Inference",
-    "section": "Confidence Interval",
-    "text": "Confidence Interval\ntidy(XLM, conf.int = TRUE)\n\nXLM: Object where the model is stored"
+    "section": "95% Confidence Interval",
+    "text": "95% Confidence Interval\ntidy(XLM, \n     conf.int = TRUE)\n\nXLM: Object where the model is stored"
   },
   {
     "objectID": "lectures/10.html#x-confidence-interval",
     "href": "lectures/10.html#x-confidence-interval",
     "title": "Statistical Inference",
     "section": "X% Confidence Interval",
-    "text": "X% Confidence Interval\ntidy(XLM, conf.int = TRUE, conf.level = X)\n\nXLM: Object where the model is stored\nX: A number between 0 and 1 to specify confidence level"
+    "text": "X% Confidence Interval\ntidy(XLM, \n     conf.int = TRUE, \n     conf.level = X)\n\nXLM: Object where the model is stored\nX: A number between 0 and 1 to specify confidence level"
   },
   {
     "objectID": "lectures/10.html#example-2",
     "href": "lectures/10.html#example-2",
     "title": "Statistical Inference",
     "section": "Example",
-    "text": "Example\n\n\nCode\ntidy(m1, conf.int = TRUE, conf.level = 0.9)\n\n\n#&gt; # A tibble: 2 × 7\n#&gt;   term        estimate std.error statistic   p.value conf.low conf.high\n#&gt;   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n#&gt; 1 (Intercept)  -5781.     306.       -18.9 5.59e- 55  -6285.    -5276. \n#&gt; 2 flipper_len     49.7      1.52      32.7 4.37e-107     47.2      52.2"
+    "text": "Example\n\n\nCode\ntidy(m1, \n     conf.int = TRUE, \n     conf.level = 0.9)\n\n\n#&gt; # A tibble: 2 × 7\n#&gt;   term        estimate std.error statistic   p.value conf.low conf.high\n#&gt;   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n#&gt; 1 (Intercept)  -5781.     306.       -18.9 5.59e- 55  -6285.    -5276. \n#&gt; 2 flipper_len     49.7      1.52      32.7 4.37e-107     47.2      52.2"
   },
   {
     "objectID": "lectures/10.html#conducting-ht-of-beta_j-1",
     "href": "lectures/10.html#conducting-ht-of-beta_j-1",
     "title": "Statistical Inference",
     "section": "Conducting HT of \\(\\beta_j\\)",
-    "text": "Conducting HT of \\(\\beta_j\\)\nXLM &lt;- glm(Y ~ X, data = DATA, family = binomial())\ntidy(XLM)\n\nXLM: Object where the model is stored\nY: Name of the outcome variable in DATA\nX: Name of the Predictor Variable(s) in DATA\nDATA: Name of the data set"
+    "text": "Conducting HT of \\(\\beta_j\\)\nXLM &lt;- glm(Y ~ X, \n           data = DATA, \n           family = binomial())\ntidy(XLM)\n\nXLM: Object where the model is stored\nY: Name of the outcome variable in DATA\nX: Name of the Predictor Variable(s) in DATA\nDATA: Name of the data set"
   },
   {
     "objectID": "lectures/10.html#example-3",
@@ -2846,35 +2916,35 @@
     "href": "lectures/10.html#example-4",
     "title": "Statistical Inference",
     "section": "Example",
-    "text": "Example\n\n\nCode\nm1 &lt;- glm(disease ~ trestbps, heart_disease, family = binomial())\ntidy(m1)\n\n\n#&gt; # A tibble: 2 × 5\n#&gt;   term        estimate std.error statistic p.value\n#&gt;   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;\n#&gt; 1 (Intercept)  -2.49     0.905       -2.76 0.00586\n#&gt; 2 trestbps      0.0177   0.00681      2.61 0.00914"
+    "text": "Example\n\n\nCode\nm1 &lt;- glm(disease ~ trestbps, \n          data = heart_disease, \n          family = binomial())\ntidy(m1)\n\n\n#&gt; # A tibble: 2 × 5\n#&gt;   term        estimate std.error statistic p.value\n#&gt;   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;\n#&gt; 1 (Intercept)  -2.49     0.905       -2.76 0.00586\n#&gt; 2 trestbps      0.0177   0.00681      2.61 0.00914"
   },
   {
     "objectID": "lectures/10.html#confidence-interval-1",
     "href": "lectures/10.html#confidence-interval-1",
     "title": "Statistical Inference",
     "section": "Confidence Interval",
-    "text": "Confidence Interval\ntidy(XLM, conf.int = TRUE, conf.level = LEVEL)\n\nXLM: Object where the model is stored\nLEVEL: A number between 0 and 1 to specify confidence level\ndefaults to 0.95"
+    "text": "Confidence Interval\ntidy(XLM, \n     conf.int = TRUE, \n     conf.level = LEVEL)\n\nXLM: Object where the model is stored\nLEVEL: A number between 0 and 1 to specify confidence level\ndefaults to 0.95"
   },
   {
-    "objectID": "lectures/10.html#example-5",
-    "href": "lectures/10.html#example-5",
+    "objectID": "lectures/10.html#ex-95-confidence-interval",
+    "href": "lectures/10.html#ex-95-confidence-interval",
     "title": "Statistical Inference",
-    "section": "Example",
-    "text": "Example\n\n\nCode\ntidy(m1, conf.int = TRUE)\n\n\n#&gt; # A tibble: 2 × 7\n#&gt;   term        estimate std.error statistic p.value conf.low conf.high\n#&gt;   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n#&gt; 1 (Intercept)  -2.49     0.905       -2.76 0.00586 -4.31      -0.747 \n#&gt; 2 trestbps      0.0177   0.00681      2.61 0.00914  0.00461    0.0314"
+    "section": "EX: 95% Confidence Interval",
+    "text": "EX: 95% Confidence Interval\n\n\nCode\ntidy(m1, \n     conf.int = TRUE)\n\n\n#&gt; # A tibble: 2 × 7\n#&gt;   term        estimate std.error statistic p.value conf.low conf.high\n#&gt;   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n#&gt; 1 (Intercept)  -2.49     0.905       -2.76 0.00586 -4.31      -0.747 \n#&gt; 2 trestbps      0.0177   0.00681      2.61 0.00914  0.00461    0.0314"
   },
   {
     "objectID": "lectures/10.html#odds-ratio-confidence-intervat",
     "href": "lectures/10.html#odds-ratio-confidence-intervat",
     "title": "Statistical Inference",
     "section": "Odds Ratio & Confidence Intervat",
-    "text": "Odds Ratio & Confidence Intervat\ntidy(XLM, exponentiate = TRUE, conf.int = TRUE)\n\nXLM: Object where the model is stored"
+    "text": "Odds Ratio & Confidence Intervat\ntidy(XLM, \n     exponentiate = TRUE, \n     conf.int = TRUE)\n\nXLM: Object where the model is stored"
   },
   {
-    "objectID": "lectures/10.html#example-6",
-    "href": "lectures/10.html#example-6",
+    "objectID": "lectures/10.html#example-5",
+    "href": "lectures/10.html#example-5",
     "title": "Statistical Inference",
     "section": "Example",
-    "text": "Example\n\n\nCode\ntidy(m1, exponentiate = TRUE, conf.int = TRUE)\n\n\n#&gt; # A tibble: 2 × 7\n#&gt;   term        estimate std.error statistic p.value conf.low conf.high\n#&gt;   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n#&gt; 1 (Intercept)   0.0826   0.905       -2.76 0.00586   0.0135     0.474\n#&gt; 2 trestbps      1.02     0.00681      2.61 0.00914   1.00       1.03"
+    "text": "Example\n\n\nCode\ntidy(m1, \n     exponentiate = TRUE, \n     conf.int = TRUE)\n\n\n#&gt; # A tibble: 2 × 7\n#&gt;   term        estimate std.error statistic p.value conf.low conf.high\n#&gt;   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n#&gt; 1 (Intercept)   0.0826   0.905       -2.76 0.00586   0.0135     0.474\n#&gt; 2 trestbps      1.02     0.00681      2.61 0.00914   1.00       1.03"
   },
   {
     "objectID": "lectures/12.html#hypothesis-tests",

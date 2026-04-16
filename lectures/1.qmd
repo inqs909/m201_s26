@@ -12,8 +12,6 @@ format:
     pointer:
       pointerSize: 32
     incremental: false
-    chalkboard:
-      buttons: false
 knitr:
   opts_chunk: 
     echo: true
@@ -54,30 +52,20 @@ gg1 <- seq(0, 1, length.out = 1000) |>
   dbeta(shape1 = 2, shape2 = 5) |> 
   tibble(x = seq(0, 1, length.out = 1000), y = _) |>
   ggplot(aes(x, y)) + geom_line() + 
-  ggtitle("DGP") + ylab("Density") 
-
-gg1a <- gg1 +
-  labs(alt = VI(gg1)) 
-
+  ggtitle("DGP") + ylab("Density") +
+  labs(alt = "A density plot displaying a right-skewed distribution from the values 0 to 1.") 
 
 gg2 <- rbinom(200000, size = 20, prob = 1/5) |> 
   tibble(y = _) |>
   ggplot(aes(y)) + geom_bar() + 
-  ggtitle("DGP") + ylab("Frequency") 
-
-gg2a <- gg2 +
-  labs(alt = VI(gg2)) 
-
+  ggtitle("DGP") + ylab("Frequency") +
+  labs(alt = "A bar chart displaying the frequency of data points between 0 to 10. The most common number is 4") 
 
 g1 <- seq(0, 1, length.out = 1000) |> 
   dbeta(shape1 = 2, shape2 = 5) |> 
   tibble(x = seq(0, 1, length.out = 1000), y = _) |>
   ggplot(aes(x, y)) + geom_line() + 
   ggtitle("DGP") + ylab("Density") 
-
-gg1a <- gg1 +
-  labs(alt = VI(gg1)) 
-
 
 g2 <- rbeta(100, shape1 = 2, shape2 = 5) |> 
   tibble(y = _) |>
@@ -86,14 +74,11 @@ g2 <- rbeta(100, shape1 = 2, shape2 = 5) |>
     geom_density(col = "red", lwd = 1) +
     ggtitle("Sample") + ylab("Density") 
 
-# VI(g2)
+
 gg3 <- g1 + g2 
-# VI(gg3)
-gg3a <- gg3 +
+
+gg3 <- gg3 +
   labs(alt =  "There are 2 side-by-side plots indicating the Data Generating Process (left) and sample plot (right). The sample plot contains a density plot showing how the data is similar to the DGP.")
-
-
-
 
 ```
 
@@ -303,7 +288,8 @@ A populations DGP can be defined with the following characteristics:
 
 ```{r}
 #| echo: false
-#| fig-alt: !expr ggplot2::get_alt_text(gg1a)
+#| fig-alt: !expr ggplot2::get_alt_text(gg1)
+#| message: false
 
 seq(0, 1, length.out = 1000) |> 
   dbeta(shape1 = 2, shape2 = 5) |> 
@@ -316,7 +302,7 @@ seq(0, 1, length.out = 1000) |>
 
 ```{r}
 #| echo: false
-#| fig-alt: !expr ggplot2::get_alt_text(gg2a)
+#| fig-alt: !expr ggplot2::get_alt_text(gg2)
 
 rbinom(200000, size = 20, prob = 1/5) |> 
   tibble(y = _) |>
@@ -328,7 +314,7 @@ rbinom(200000, size = 20, prob = 1/5) |>
 
 ```{r}
 #| echo: false
-#| fig-alt: !expr ggplot2::get_alt_text(gg3a)
+#| fig-alt: !expr ggplot2::get_alt_text(gg3)
 
 
 g1 <- seq(0, 1, length.out = 1000) |> 
