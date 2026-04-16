@@ -4,6 +4,6 @@ editor: source
 listing:
   contents: lectures
   sort: false
-  type: default
+  fields: [title]
 ---
 
