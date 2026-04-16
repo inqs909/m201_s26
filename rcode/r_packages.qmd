@@ -2,6 +2,7 @@
 title: "R Packages"
 format: html
 description: "A list of R packages used to run this course."
+draft: true
 ---
 
 $$

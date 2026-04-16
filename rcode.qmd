@@ -3,6 +3,7 @@ title: "R Code Reference Page"
 editor: source
 listing:
   contents: rcode
+  type: grid
   fields: [image, title]
 ---
 
