@@ -87,7 +87,7 @@ heart_disease$thal <- ifelse(heart_disease$thal==3, "Normal",
 
 ### Variables of Interest
 
-- `species`: Penguin species
+- `fliper_len`: Flipper Length
 - `body_mass`: Body mass in [grams](https://en.wikipedia.org/wiki/Gram)
 
 :::
@@ -104,7 +104,7 @@ heart_disease$thal <- ifelse(heart_disease$thal==3, "Normal",
 
 ### Variables of Interest
 
-- `thal`: Thallium stress test result
+- `trestbps`: Resting Blood Pressure
 - `disease`: Indicating if they have heart disease
 
 :::

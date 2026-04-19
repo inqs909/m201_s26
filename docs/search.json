@@ -2643,14 +2643,14 @@
     "href": "lectures/10.html#palmer-penguins-data",
     "title": "Statistical Inference",
     "section": "Palmer Penguins Data",
-    "text": "Palmer Penguins Data\n\n\nVariables of Interest\n\nspecies: Penguin species\nbody_mass: Body mass in grams\n\n\n\n\n\nArtwork by @allison_horst"
+    "text": "Palmer Penguins Data\n\n\nVariables of Interest\n\nfliper_len: Flipper Length\nbody_mass: Body mass in grams\n\n\n\n\n\nArtwork by @allison_horst"
   },
   {
     "objectID": "lectures/10.html#heart-disease-data",
     "href": "lectures/10.html#heart-disease-data",
     "title": "Statistical Inference",
     "section": "Heart Disease Data",
-    "text": "Heart Disease Data\n\n\nVariables of Interest\n\nthal: Thallium stress test result\ndisease: Indicating if they have heart disease"
+    "text": "Heart Disease Data\n\n\nVariables of Interest\n\ntrestbps: Resting Blood Pressure\ndisease: Indicating if they have heart disease"
   },
   {
     "objectID": "lectures/10.html#no-association",
