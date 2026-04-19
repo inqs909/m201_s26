@@ -249,3 +249,42 @@ predict(m, newdata = new_df, type = "response")
 -   **`Y`** → the outcome variable (e.g., `dead`)
 -   **`X1`, `X2`, ..., `Xp`** → predictor variables (e.g `age`, `thickness`)
 -   **`VAL1`, `VAL2`, ..., `VALp`** → predictor values (e.g `55`, `2.8`)
+
+
+## Conducting HT of $\beta_j$
+
+```r
+XLM <- glm(Y ~ X1 + X2 + ... + Xp, 
+           data = DATA, 
+           family = binomial())
+tidy(XLM)
+```
+
+-   `XLM`: Object where the model is stored
+-   `Y`: Name of the outcome variable in `DATA`
+-   `X1`, `X2`, ..., `Xp`: predictor variables (e.g `age`, `thickness`) found in `DATA`
+-   `DATA`: Name of the data set
+
+
+## Confidence Interval
+
+```r
+tidy(XLM, 
+     conf.int = TRUE, 
+     conf.level = LEVEL)
+```
+
+-   `XLM`: Object where the model is stored
+-   `LEVEL`: A number between 0 and 1 to specify confidence level
+  - defaults to 0.95
+
+## Odds Ratio & Confidence Intervat 
+
+```r
+tidy(XLM, 
+     exponentiate = TRUE, 
+     conf.int = TRUE)
+```
+
+-   `XLM`: Object where the model is stored
+

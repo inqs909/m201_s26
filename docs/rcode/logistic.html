@@ -207,6 +207,9 @@ window.Quarto = {
   <li><a href="#logistic-regression" id="toc-logistic-regression" class="nav-link" data-scroll-target="#logistic-regression"><span class="header-section-number">5.2</span> Logistic Regression</a></li>
   <li><a href="#odds-ratio" id="toc-odds-ratio" class="nav-link" data-scroll-target="#odds-ratio"><span class="header-section-number">5.3</span> Odds Ratio</a></li>
   <li><a href="#predict-probabilities" id="toc-predict-probabilities" class="nav-link" data-scroll-target="#predict-probabilities"><span class="header-section-number">5.4</span> Predict Probabilities</a></li>
+  <li><a href="#conducting-ht-of-beta_j" id="toc-conducting-ht-of-beta_j" class="nav-link" data-scroll-target="#conducting-ht-of-beta_j"><span class="header-section-number">5.5</span> Conducting HT of <span class="math inline">\(\beta_j\)</span></a></li>
+  <li><a href="#confidence-interval" id="toc-confidence-interval" class="nav-link" data-scroll-target="#confidence-interval"><span class="header-section-number">5.6</span> Confidence Interval</a></li>
+  <li><a href="#odds-ratio-confidence-intervat" id="toc-odds-ratio-confidence-intervat" class="nav-link" data-scroll-target="#odds-ratio-confidence-intervat"><span class="header-section-number">5.7</span> Odds Ratio &amp; Confidence Intervat</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -456,6 +459,39 @@ window.Quarto = {
 <li><strong><code>Y</code></strong> → the outcome variable (e.g., <code>dead</code>)</li>
 <li><strong><code>X1</code>, <code>X2</code>, …, <code>Xp</code></strong> → predictor variables (e.g <code>age</code>, <code>thickness</code>)</li>
 <li><strong><code>VAL1</code>, <code>VAL2</code>, …, <code>VALp</code></strong> → predictor values (e.g <code>55</code>, <code>2.8</code>)</li>
+</ul>
+</section>
+<section id="conducting-ht-of-beta_j" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="conducting-ht-of-beta_j"><span class="header-section-number">5.5</span> Conducting HT of <span class="math inline">\(\beta_j\)</span></h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>XLM <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X1 <span class="sc">+</span> X2 <span class="sc">+</span> ... <span class="sc">+</span> Xp, </span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">data =</span> DATA, </span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(XLM)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li><code>XLM</code>: Object where the model is stored</li>
+<li><code>Y</code>: Name of the outcome variable in <code>DATA</code></li>
+<li><code>X1</code>, <code>X2</code>, …, <code>Xp</code>: predictor variables (e.g <code>age</code>, <code>thickness</code>) found in <code>DATA</code></li>
+<li><code>DATA</code>: Name of the data set</li>
+</ul>
+</section>
+<section id="confidence-interval" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="confidence-interval"><span class="header-section-number">5.6</span> Confidence Interval</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(XLM, </span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">conf.int =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">conf.level =</span> LEVEL)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li><code>XLM</code>: Object where the model is stored</li>
+<li><code>LEVEL</code>: A number between 0 and 1 to specify confidence level</li>
+<li>defaults to 0.95</li>
+</ul>
+</section>
+<section id="odds-ratio-confidence-intervat" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="odds-ratio-confidence-intervat"><span class="header-section-number">5.7</span> Odds Ratio &amp; Confidence Intervat</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(XLM, </span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">exponentiate =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">conf.int =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li><code>XLM</code>: Object where the model is stored</li>
 </ul>
 
 
@@ -916,257 +952,295 @@ window.Quarto = {
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Logistic Regression Models"</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> |</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co">  The logistic regression model, interpreting coefficients (odds &amp; odds ratios), fitting</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="co">  models in R, and predicting probabilities.</span></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-depth: 3</span></span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: true</span></span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: false</span></span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="co">    smooth-scroll: true</span></span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a><span class="an">editor:</span><span class="co"> source</span></span>
-<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> img/logistic.png</span></span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a><span class="an">image-alt:</span><span class="co"> "A sigmoidal line starting from the bottom to the top. Data points are scattered at 0 and 1 of the y-axis."</span></span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
-<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a><span class="co">  echo: true</span></span>
-<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
-<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a><span class="co">  message: false</span></span>
-<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a><span class="co">  error: true</span></span>
-<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a><span class="an">jupyter:</span><span class="co"> r</span></span>
-<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a><span class="an">knitr:</span></span>
-<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a><span class="co">  opts_chunk:</span></span>
-<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a><span class="co">    comment: "#&gt;"</span></span>
-<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
-<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
-<span id="cb21-33"><a href="#cb21-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-34"><a href="#cb21-34" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb21-35"><a href="#cb21-35" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rcistats)</span>
-<span id="cb21-36"><a href="#cb21-36" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
-<span id="cb21-37"><a href="#cb21-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-38"><a href="#cb21-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Outcome: 1 = died from Melanoma, 0 = did not</span></span>
-<span id="cb21-39"><a href="#cb21-39" aria-hidden="true" tabindex="-1"></a>Melanoma<span class="sc">$</span>dead <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(Melanoma<span class="sc">$</span>status <span class="sc">==</span> <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
-<span id="cb21-40"><a href="#cb21-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-41"><a href="#cb21-41" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-42"><a href="#cb21-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-43"><a href="#cb21-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-44"><a href="#cb21-44" aria-hidden="true" tabindex="-1"></a><span class="fu"># Google Colab</span></span>
-<span id="cb21-45"><a href="#cb21-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-46"><a href="#cb21-46" aria-hidden="true" tabindex="-1"></a>Copy the following code and put it in a code cell in Google Colab. Only do this if you are using a completely new notebook.</span>
-<span id="cb21-47"><a href="#cb21-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-48"><a href="#cb21-48" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb21-49"><a href="#cb21-49" aria-hidden="true" tabindex="-1"></a><span class="co"># This code will load the R packages we will use</span></span>
-<span id="cb21-50"><a href="#cb21-50" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"rcistats"</span>),</span>
-<span id="cb21-51"><a href="#cb21-51" aria-hidden="true" tabindex="-1"></a>                 <span class="at">repos =</span> <span class="fu">c</span>(<span class="st">"https://inqs909.r-universe.dev"</span>, </span>
-<span id="cb21-52"><a href="#cb21-52" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"https://cloud.r-project.org"</span>))</span>
-<span id="cb21-53"><a href="#cb21-53" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb21-54"><a href="#cb21-54" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(csucistats)</span>
-<span id="cb21-55"><a href="#cb21-55" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
-<span id="cb21-56"><a href="#cb21-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-57"><a href="#cb21-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-58"><a href="#cb21-58" aria-hidden="true" tabindex="-1"></a><span class="co"># Uncomment and run for themes</span></span>
-<span id="cb21-59"><a href="#cb21-59" aria-hidden="true" tabindex="-1"></a><span class="co"># csucistats::install_themes()</span></span>
-<span id="cb21-60"><a href="#cb21-60" aria-hidden="true" tabindex="-1"></a><span class="co"># library(ThemePark)</span></span>
-<span id="cb21-61"><a href="#cb21-61" aria-hidden="true" tabindex="-1"></a><span class="co"># library(ggthemes)</span></span>
-<span id="cb21-62"><a href="#cb21-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-63"><a href="#cb21-63" aria-hidden="true" tabindex="-1"></a><span class="co"># Outcome: 1 = died from Melanoma, 0 = did not</span></span>
-<span id="cb21-64"><a href="#cb21-64" aria-hidden="true" tabindex="-1"></a>Melanoma<span class="sc">$</span>dead <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(Melanoma<span class="sc">$</span>status <span class="sc">==</span> <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
-<span id="cb21-65"><a href="#cb21-65" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-66"><a href="#cb21-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-67"><a href="#cb21-67" aria-hidden="true" tabindex="-1"></a><span class="fu"># Data</span></span>
-<span id="cb21-68"><a href="#cb21-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-69"><a href="#cb21-69" aria-hidden="true" tabindex="-1"></a><span class="fu">## Melanoma</span></span>
-<span id="cb21-70"><a href="#cb21-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-71"><a href="#cb21-71" aria-hidden="true" tabindex="-1"></a>Melanoma is a type of skin cancer arising from melanin‑producing cells. It is dangerous because it can metastasize to other parts of the body.</span>
-<span id="cb21-72"><a href="#cb21-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-73"><a href="#cb21-73" aria-hidden="true" tabindex="-1"></a><span class="fu">## Outcome of interest</span></span>
-<span id="cb21-74"><a href="#cb21-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-75"><a href="#cb21-75" aria-hidden="true" tabindex="-1"></a>We want to understand **how predictors affect survival** during a study period. We therefore code a **binary outcome** <span class="in">`dead`</span>.</span>
-<span id="cb21-76"><a href="#cb21-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-77"><a href="#cb21-77" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data</span></span>
-<span id="cb21-78"><a href="#cb21-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-79"><a href="#cb21-79" aria-hidden="true" tabindex="-1"></a>We use <span class="in">`MASS::Melanoma`</span> with:- <span class="in">`dead`</span> (1 = died of Melanoma, 0 = otherwise),- <span class="in">`sex`</span> (1 = male, 0 = female),- <span class="in">`age`</span> (years),- <span class="in">`thickness`</span> (tumour thickness in mm),- <span class="in">`ulcer`</span> (1 = present, 0 = absent).</span>
-<span id="cb21-80"><a href="#cb21-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-81"><a href="#cb21-81" aria-hidden="true" tabindex="-1"></a><span class="fu">## Plot</span></span>
-<span id="cb21-82"><a href="#cb21-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-85"><a href="#cb21-85" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-86"><a href="#cb21-86" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
-<span id="cb21-87"><a href="#cb21-87" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(Melanoma, <span class="fu">aes</span>(thickness, dead)) <span class="sc">+</span></span>
-<span id="cb21-88"><a href="#cb21-88" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb21-89"><a href="#cb21-89" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Tumour thickness (mm)"</span>, <span class="at">y =</span> <span class="st">"Dead (1=yes, 0=no)"</span>) <span class="sc">+</span></span>
-<span id="cb21-90"><a href="#cb21-90" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">"glm"</span>,</span>
-<span id="cb21-91"><a href="#cb21-91" aria-hidden="true" tabindex="-1"></a>              <span class="at">se =</span> F,</span>
-<span id="cb21-92"><a href="#cb21-92" aria-hidden="true" tabindex="-1"></a>              <span class="at">method.args =</span> <span class="fu">list</span>(<span class="at">family =</span> <span class="st">"binomial"</span>),</span>
-<span id="cb21-93"><a href="#cb21-93" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb21-94"><a href="#cb21-94" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span>
-<span id="cb21-95"><a href="#cb21-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-96"><a href="#cb21-96" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-97"><a href="#cb21-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-98"><a href="#cb21-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-99"><a href="#cb21-99" aria-hidden="true" tabindex="-1"></a><span class="fu"># Logistic regression in R</span></span>
-<span id="cb21-100"><a href="#cb21-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-101"><a href="#cb21-101" aria-hidden="true" tabindex="-1"></a>**Logistic regression** models the relationship between predictors and a **binary** outcome by making the **log‑odds** a linear function of the predictors.</span>
-<span id="cb21-102"><a href="#cb21-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-103"><a href="#cb21-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-104"><a href="#cb21-104" aria-hidden="true" tabindex="-1"></a><span class="fu">## Fitting Model</span></span>
-<span id="cb21-105"><a href="#cb21-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-106"><a href="#cb21-106" aria-hidden="true" tabindex="-1"></a>**Template:**</span>
-<span id="cb21-107"><a href="#cb21-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-108"><a href="#cb21-108" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb21-109"><a href="#cb21-109" aria-hidden="true" tabindex="-1"></a><span class="co"># Logistic regression (binomial GLM)</span></span>
-<span id="cb21-110"><a href="#cb21-110" aria-hidden="true" tabindex="-1"></a><span class="fu">glm</span>(Y <span class="sc">~</span> X1 <span class="sc">+</span> X2 <span class="sc">+</span> ... <span class="sc">+</span> Xp,</span>
-<span id="cb21-111"><a href="#cb21-111" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> DATA,</span>
-<span id="cb21-112"><a href="#cb21-112" aria-hidden="true" tabindex="-1"></a>    <span class="at">family =</span> <span class="fu">binomial</span>())</span>
-<span id="cb21-113"><a href="#cb21-113" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-114"><a href="#cb21-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-115"><a href="#cb21-115" aria-hidden="true" tabindex="-1"></a>**Example (Melanoma):**</span>
-<span id="cb21-116"><a href="#cb21-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-117"><a href="#cb21-117" aria-hidden="true" tabindex="-1"></a>Model <span class="in">`dead`</span> by <span class="in">`sex`</span>, <span class="in">`age`</span>, <span class="in">`thickness`</span>, and <span class="in">`ulcer`</span>:</span>
-<span id="cb21-118"><a href="#cb21-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-121"><a href="#cb21-121" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-122"><a href="#cb21-122" aria-hidden="true" tabindex="-1"></a><span class="fu">glm</span>(dead <span class="sc">~</span> sex <span class="sc">+</span> age <span class="sc">+</span> thickness <span class="sc">+</span> ulcer,</span>
-<span id="cb21-123"><a href="#cb21-123" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> Melanoma,</span>
-<span id="cb21-124"><a href="#cb21-124" aria-hidden="true" tabindex="-1"></a>    <span class="at">family =</span> <span class="fu">binomial</span>())</span>
-<span id="cb21-125"><a href="#cb21-125" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-126"><a href="#cb21-126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-127"><a href="#cb21-127" aria-hidden="true" tabindex="-1"></a>The fitted logit equation can be written generically as</span>
-<span id="cb21-128"><a href="#cb21-128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-129"><a href="#cb21-129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-130"><a href="#cb21-130" aria-hidden="true" tabindex="-1"></a><span class="fu">## Odds ratios (exponentiated coefficients)</span></span>
-<span id="cb21-131"><a href="#cb21-131" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-132"><a href="#cb21-132" aria-hidden="true" tabindex="-1"></a>**Template:**</span>
-<span id="cb21-133"><a href="#cb21-133" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-134"><a href="#cb21-134" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb21-135"><a href="#cb21-135" aria-hidden="true" tabindex="-1"></a><span class="co"># Logistic regression (binomial GLM)</span></span>
-<span id="cb21-136"><a href="#cb21-136" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X1 <span class="sc">+</span> X2 <span class="sc">+</span> ... <span class="sc">+</span> Xp,</span>
-<span id="cb21-137"><a href="#cb21-137" aria-hidden="true" tabindex="-1"></a>         <span class="at">data =</span> DATA,</span>
-<span id="cb21-138"><a href="#cb21-138" aria-hidden="true" tabindex="-1"></a>         <span class="at">family =</span> <span class="fu">binomial</span>())</span>
-<span id="cb21-139"><a href="#cb21-139" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">coef</span>(m))</span>
-<span id="cb21-140"><a href="#cb21-140" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-141"><a href="#cb21-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-142"><a href="#cb21-142" aria-hidden="true" tabindex="-1"></a>**Example:**</span>
-<span id="cb21-143"><a href="#cb21-143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-146"><a href="#cb21-146" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-147"><a href="#cb21-147" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">glm</span>(dead <span class="sc">~</span> sex <span class="sc">+</span> age <span class="sc">+</span> thickness <span class="sc">+</span> ulcer,</span>
-<span id="cb21-148"><a href="#cb21-148" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> Melanoma,</span>
-<span id="cb21-149"><a href="#cb21-149" aria-hidden="true" tabindex="-1"></a>    <span class="at">family =</span> <span class="fu">binomial</span>())</span>
-<span id="cb21-150"><a href="#cb21-150" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">coef</span>(m))</span>
-<span id="cb21-151"><a href="#cb21-151" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-152"><a href="#cb21-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-153"><a href="#cb21-153" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-154"><a href="#cb21-154" aria-hidden="true" tabindex="-1"></a><span class="fu"># Prediction with models</span></span>
-<span id="cb21-155"><a href="#cb21-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-156"><a href="#cb21-156" aria-hidden="true" tabindex="-1"></a><span class="fu">## Model</span></span>
-<span id="cb21-157"><a href="#cb21-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-158"><a href="#cb21-158" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb21-159"><a href="#cb21-159" aria-hidden="true" tabindex="-1"></a>\hat P(Y=1) = \frac{e^{\hat\beta_0 + \hat\beta_1 X_1 + \cdots + \hat\beta_p X_p}}{1 + e^{\hat\beta_0 + \hat\beta_1 X_1 + \cdots + \hat\beta_p X_p}}.</span>
-<span id="cb21-160"><a href="#cb21-160" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb21-161"><a href="#cb21-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-162"><a href="#cb21-162" aria-hidden="true" tabindex="-1"></a>**Template:**</span>
-<span id="cb21-163"><a href="#cb21-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-164"><a href="#cb21-164" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb21-165"><a href="#cb21-165" aria-hidden="true" tabindex="-1"></a>xglm <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X1 <span class="sc">+</span> X2 <span class="sc">+</span> ... <span class="sc">+</span> Xp,</span>
-<span id="cb21-166"><a href="#cb21-166" aria-hidden="true" tabindex="-1"></a>            <span class="at">data =</span> DATA,</span>
-<span id="cb21-167"><a href="#cb21-167" aria-hidden="true" tabindex="-1"></a>            <span class="at">family =</span> <span class="fu">binomial</span>())</span>
-<span id="cb21-168"><a href="#cb21-168" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-169"><a href="#cb21-169" aria-hidden="true" tabindex="-1"></a>new_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">X1 =</span> VAL1, <span class="at">X2 =</span> VAL2, ..., <span class="at">Xp =</span> VALp)</span>
-<span id="cb21-170"><a href="#cb21-170" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(xglm, <span class="at">newdata =</span> new_df, <span class="at">type =</span> <span class="st">"response"</span>)  <span class="co"># probabilities</span></span>
-<span id="cb21-171"><a href="#cb21-171" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-172"><a href="#cb21-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-173"><a href="#cb21-173" aria-hidden="true" tabindex="-1"></a>**Examples (Melanoma):**</span>
-<span id="cb21-174"><a href="#cb21-174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-175"><a href="#cb21-175" aria-hidden="true" tabindex="-1"></a>0) **Fit a model with gender, age, thickness, and ulcer present**</span>
-<span id="cb21-176"><a href="#cb21-176" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-177"><a href="#cb21-177" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-180"><a href="#cb21-180" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-181"><a href="#cb21-181" aria-hidden="true" tabindex="-1"></a>xglm <span class="ot">&lt;-</span> <span class="fu">glm</span>(dead <span class="sc">~</span> sex <span class="sc">+</span> age <span class="sc">+</span> thickness <span class="sc">+</span> ulcer,</span>
-<span id="cb21-182"><a href="#cb21-182" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> Melanoma,</span>
-<span id="cb21-183"><a href="#cb21-183" aria-hidden="true" tabindex="-1"></a>    <span class="at">family =</span> <span class="fu">binomial</span>())</span>
-<span id="cb21-184"><a href="#cb21-184" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-185"><a href="#cb21-185" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-186"><a href="#cb21-186" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-187"><a href="#cb21-187" aria-hidden="true" tabindex="-1"></a>1) **Male, age 75, thickness 2.9, ulcer present**</span>
-<span id="cb21-188"><a href="#cb21-188" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-191"><a href="#cb21-191" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-192"><a href="#cb21-192" aria-hidden="true" tabindex="-1"></a>new1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">sex =</span> <span class="dv">1</span>, <span class="at">age =</span> <span class="dv">75</span>, <span class="at">thickness =</span> <span class="fl">2.9</span>, <span class="at">ulcer =</span> <span class="dv">1</span>)</span>
-<span id="cb21-193"><a href="#cb21-193" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(xglm, new1, <span class="at">type =</span> <span class="st">"response"</span>)</span>
-<span id="cb21-194"><a href="#cb21-194" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-195"><a href="#cb21-195" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-196"><a href="#cb21-196" aria-hidden="true" tabindex="-1"></a>2) **Male, age 75, thickness 2.9, ulcer absent**</span>
-<span id="cb21-197"><a href="#cb21-197" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-200"><a href="#cb21-200" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-201"><a href="#cb21-201" aria-hidden="true" tabindex="-1"></a>new2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">sex =</span> <span class="dv">1</span>, <span class="at">age =</span> <span class="dv">75</span>, <span class="at">thickness =</span> <span class="fl">2.9</span>, <span class="at">ulcer =</span> <span class="dv">0</span>)</span>
-<span id="cb21-202"><a href="#cb21-202" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(xglm, new2, <span class="at">type =</span> <span class="st">"response"</span>)</span>
-<span id="cb21-203"><a href="#cb21-203" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-204"><a href="#cb21-204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-205"><a href="#cb21-205" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-206"><a href="#cb21-206" aria-hidden="true" tabindex="-1"></a>3) **Female, thickness 2.9, ulcer present — compare ages 55 vs 75**</span>
-<span id="cb21-207"><a href="#cb21-207" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-210"><a href="#cb21-210" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-211"><a href="#cb21-211" aria-hidden="true" tabindex="-1"></a>new3 <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">sex =</span> <span class="dv">0</span>, <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">55</span>, <span class="dv">75</span>), <span class="at">thickness =</span> <span class="fl">2.9</span>, <span class="at">ulcer =</span> <span class="dv">1</span>)</span>
-<span id="cb21-212"><a href="#cb21-212" aria-hidden="true" tabindex="-1"></a>pred3 <span class="ot">&lt;-</span> <span class="fu">predict</span>(xglm, new3, <span class="at">type =</span> <span class="st">"response"</span>)</span>
-<span id="cb21-213"><a href="#cb21-213" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(<span class="at">age =</span> new3<span class="sc">$</span>age, <span class="at">probability =</span> scales<span class="sc">::</span><span class="fu">percent</span>(pred3, <span class="at">accuracy =</span> <span class="fl">0.1</span>))</span>
-<span id="cb21-214"><a href="#cb21-214" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-215"><a href="#cb21-215" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-216"><a href="#cb21-216" aria-hidden="true" tabindex="-1"></a><span class="fu"># Appendix: quick reference (copy‑paste)</span></span>
-<span id="cb21-217"><a href="#cb21-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-218"><a href="#cb21-218" aria-hidden="true" tabindex="-1"></a><span class="fu">## Simple Logistic Regression</span></span>
-<span id="cb21-219"><a href="#cb21-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-220"><a href="#cb21-220" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb21-221"><a href="#cb21-221" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit</span></span>
-<span id="cb21-222"><a href="#cb21-222" aria-hidden="true" tabindex="-1"></a><span class="fu">glm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> DATA, <span class="at">family =</span> <span class="fu">binomial</span>())</span>
-<span id="cb21-223"><a href="#cb21-223" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-224"><a href="#cb21-224" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-225"><a href="#cb21-225" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`DATA`** → your data frame (e.g., <span class="in">`Melanoma`</span>)</span>
-<span id="cb21-226"><a href="#cb21-226" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`Y`** → the outcome variable (e.g., <span class="in">`dead`</span>)</span>
-<span id="cb21-227"><a href="#cb21-227" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`X`** → predictor variables (e.g <span class="in">`thickness`</span>)</span>
-<span id="cb21-228"><a href="#cb21-228" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-229"><a href="#cb21-229" aria-hidden="true" tabindex="-1"></a><span class="fu">## Logistic Regression</span></span>
-<span id="cb21-230"><a href="#cb21-230" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-231"><a href="#cb21-231" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb21-232"><a href="#cb21-232" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit</span></span>
-<span id="cb21-233"><a href="#cb21-233" aria-hidden="true" tabindex="-1"></a><span class="fu">glm</span>(Y <span class="sc">~</span> X1 <span class="sc">+</span> X2 <span class="sc">+</span> ... <span class="sc">+</span> Xp, <span class="at">data =</span> DATA, <span class="at">family =</span> <span class="fu">binomial</span>())</span>
-<span id="cb21-234"><a href="#cb21-234" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-235"><a href="#cb21-235" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-236"><a href="#cb21-236" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`DATA`** → your data frame (e.g., <span class="in">`Melanoma`</span>)</span>
-<span id="cb21-237"><a href="#cb21-237" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`Y`** → the outcome variable (e.g., <span class="in">`dead`</span>)</span>
-<span id="cb21-238"><a href="#cb21-238" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`X1`, `X2`, ..., `Xp`** → predictor variables (e.g <span class="in">`age`</span>, <span class="in">`thickness`</span>)</span>
-<span id="cb21-239"><a href="#cb21-239" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-240"><a href="#cb21-240" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-241"><a href="#cb21-241" aria-hidden="true" tabindex="-1"></a><span class="fu">## Odds Ratio</span></span>
-<span id="cb21-242"><a href="#cb21-242" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-243"><a href="#cb21-243" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb21-244"><a href="#cb21-244" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X1 <span class="sc">+</span> X2 <span class="sc">+</span> ... <span class="sc">+</span> Xp, <span class="at">data =</span> DATA, <span class="at">family =</span> <span class="fu">binomial</span>())</span>
-<span id="cb21-245"><a href="#cb21-245" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-246"><a href="#cb21-246" aria-hidden="true" tabindex="-1"></a><span class="co"># Odds Ratio</span></span>
-<span id="cb21-247"><a href="#cb21-247" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">coef</span>(m))</span>
-<span id="cb21-248"><a href="#cb21-248" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-249"><a href="#cb21-249" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-250"><a href="#cb21-250" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`DATA`** → your data frame (e.g., <span class="in">`Melanoma`</span>)</span>
-<span id="cb21-251"><a href="#cb21-251" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`Y`** → the outcome variable (e.g., <span class="in">`dead`</span>)</span>
-<span id="cb21-252"><a href="#cb21-252" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`X1`, `X2`, ..., `Xp`** → predictor variables (e.g <span class="in">`age`</span>, <span class="in">`thickness`</span>)</span>
-<span id="cb21-253"><a href="#cb21-253" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-254"><a href="#cb21-254" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-255"><a href="#cb21-255" aria-hidden="true" tabindex="-1"></a><span class="fu">## Predict Probabilities</span></span>
-<span id="cb21-256"><a href="#cb21-256" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-257"><a href="#cb21-257" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb21-258"><a href="#cb21-258" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X1 <span class="sc">+</span> X2 <span class="sc">+</span> ... <span class="sc">+</span> Xp, <span class="at">data =</span> DATA, <span class="at">family =</span> <span class="fu">binomial</span>())</span>
-<span id="cb21-259"><a href="#cb21-259" aria-hidden="true" tabindex="-1"></a><span class="co"># Predict probabilities</span></span>
-<span id="cb21-260"><a href="#cb21-260" aria-hidden="true" tabindex="-1"></a>new_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">X1 =</span> VAL1, <span class="at">X2 =</span> VAL2, ...,  <span class="at">Xp =</span> VALp)</span>
-<span id="cb21-261"><a href="#cb21-261" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(m, <span class="at">newdata =</span> new_df, <span class="at">type =</span> <span class="st">"response"</span>)</span>
-<span id="cb21-262"><a href="#cb21-262" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-263"><a href="#cb21-263" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-264"><a href="#cb21-264" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`DATA`** → your data frame (e.g., <span class="in">`Melanoma`</span>)</span>
-<span id="cb21-265"><a href="#cb21-265" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`Y`** → the outcome variable (e.g., <span class="in">`dead`</span>)</span>
-<span id="cb21-266"><a href="#cb21-266" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`X1`, `X2`, ..., `Xp`** → predictor variables (e.g <span class="in">`age`</span>, <span class="in">`thickness`</span>)</span>
-<span id="cb21-267"><a href="#cb21-267" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`VAL1`, `VAL2`, ..., `VALp`** → predictor values (e.g <span class="in">`55`</span>, <span class="in">`2.8`</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Logistic Regression Models"</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> |</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co">  The logistic regression model, interpreting coefficients (odds &amp; odds ratios), fitting</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co">  models in R, and predicting probabilities.</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-depth: 3</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: true</span></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: false</span></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a><span class="co">    smooth-scroll: true</span></span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="an">editor:</span><span class="co"> source</span></span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> img/logistic.png</span></span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a><span class="an">image-alt:</span><span class="co"> "A sigmoidal line starting from the bottom to the top. Data points are scattered at 0 and 1 of the y-axis."</span></span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a><span class="co">  echo: true</span></span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a><span class="co">  message: false</span></span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a><span class="co">  error: true</span></span>
+<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a><span class="an">jupyter:</span><span class="co"> r</span></span>
+<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a><span class="an">knitr:</span></span>
+<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a><span class="co">  opts_chunk:</span></span>
+<span id="cb24-25"><a href="#cb24-25" aria-hidden="true" tabindex="-1"></a><span class="co">    comment: "#&gt;"</span></span>
+<span id="cb24-26"><a href="#cb24-26" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb24-27"><a href="#cb24-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-30"><a href="#cb24-30" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb24-31"><a href="#cb24-31" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
+<span id="cb24-32"><a href="#cb24-32" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb24-33"><a href="#cb24-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-34"><a href="#cb24-34" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb24-35"><a href="#cb24-35" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rcistats)</span>
+<span id="cb24-36"><a href="#cb24-36" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
+<span id="cb24-37"><a href="#cb24-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-38"><a href="#cb24-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Outcome: 1 = died from Melanoma, 0 = did not</span></span>
+<span id="cb24-39"><a href="#cb24-39" aria-hidden="true" tabindex="-1"></a>Melanoma<span class="sc">$</span>dead <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(Melanoma<span class="sc">$</span>status <span class="sc">==</span> <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb24-40"><a href="#cb24-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-41"><a href="#cb24-41" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-42"><a href="#cb24-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-43"><a href="#cb24-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-44"><a href="#cb24-44" aria-hidden="true" tabindex="-1"></a><span class="fu"># Google Colab</span></span>
+<span id="cb24-45"><a href="#cb24-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-46"><a href="#cb24-46" aria-hidden="true" tabindex="-1"></a>Copy the following code and put it in a code cell in Google Colab. Only do this if you are using a completely new notebook.</span>
+<span id="cb24-47"><a href="#cb24-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-48"><a href="#cb24-48" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb24-49"><a href="#cb24-49" aria-hidden="true" tabindex="-1"></a><span class="co"># This code will load the R packages we will use</span></span>
+<span id="cb24-50"><a href="#cb24-50" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"rcistats"</span>),</span>
+<span id="cb24-51"><a href="#cb24-51" aria-hidden="true" tabindex="-1"></a>                 <span class="at">repos =</span> <span class="fu">c</span>(<span class="st">"https://inqs909.r-universe.dev"</span>, </span>
+<span id="cb24-52"><a href="#cb24-52" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"https://cloud.r-project.org"</span>))</span>
+<span id="cb24-53"><a href="#cb24-53" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb24-54"><a href="#cb24-54" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(csucistats)</span>
+<span id="cb24-55"><a href="#cb24-55" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
+<span id="cb24-56"><a href="#cb24-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-57"><a href="#cb24-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-58"><a href="#cb24-58" aria-hidden="true" tabindex="-1"></a><span class="co"># Uncomment and run for themes</span></span>
+<span id="cb24-59"><a href="#cb24-59" aria-hidden="true" tabindex="-1"></a><span class="co"># csucistats::install_themes()</span></span>
+<span id="cb24-60"><a href="#cb24-60" aria-hidden="true" tabindex="-1"></a><span class="co"># library(ThemePark)</span></span>
+<span id="cb24-61"><a href="#cb24-61" aria-hidden="true" tabindex="-1"></a><span class="co"># library(ggthemes)</span></span>
+<span id="cb24-62"><a href="#cb24-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-63"><a href="#cb24-63" aria-hidden="true" tabindex="-1"></a><span class="co"># Outcome: 1 = died from Melanoma, 0 = did not</span></span>
+<span id="cb24-64"><a href="#cb24-64" aria-hidden="true" tabindex="-1"></a>Melanoma<span class="sc">$</span>dead <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(Melanoma<span class="sc">$</span>status <span class="sc">==</span> <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb24-65"><a href="#cb24-65" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-66"><a href="#cb24-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-67"><a href="#cb24-67" aria-hidden="true" tabindex="-1"></a><span class="fu"># Data</span></span>
+<span id="cb24-68"><a href="#cb24-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-69"><a href="#cb24-69" aria-hidden="true" tabindex="-1"></a><span class="fu">## Melanoma</span></span>
+<span id="cb24-70"><a href="#cb24-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-71"><a href="#cb24-71" aria-hidden="true" tabindex="-1"></a>Melanoma is a type of skin cancer arising from melanin‑producing cells. It is dangerous because it can metastasize to other parts of the body.</span>
+<span id="cb24-72"><a href="#cb24-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-73"><a href="#cb24-73" aria-hidden="true" tabindex="-1"></a><span class="fu">## Outcome of interest</span></span>
+<span id="cb24-74"><a href="#cb24-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-75"><a href="#cb24-75" aria-hidden="true" tabindex="-1"></a>We want to understand **how predictors affect survival** during a study period. We therefore code a **binary outcome** <span class="in">`dead`</span>.</span>
+<span id="cb24-76"><a href="#cb24-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-77"><a href="#cb24-77" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data</span></span>
+<span id="cb24-78"><a href="#cb24-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-79"><a href="#cb24-79" aria-hidden="true" tabindex="-1"></a>We use <span class="in">`MASS::Melanoma`</span> with:- <span class="in">`dead`</span> (1 = died of Melanoma, 0 = otherwise),- <span class="in">`sex`</span> (1 = male, 0 = female),- <span class="in">`age`</span> (years),- <span class="in">`thickness`</span> (tumour thickness in mm),- <span class="in">`ulcer`</span> (1 = present, 0 = absent).</span>
+<span id="cb24-80"><a href="#cb24-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-81"><a href="#cb24-81" aria-hidden="true" tabindex="-1"></a><span class="fu">## Plot</span></span>
+<span id="cb24-82"><a href="#cb24-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-85"><a href="#cb24-85" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb24-86"><a href="#cb24-86" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
+<span id="cb24-87"><a href="#cb24-87" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(Melanoma, <span class="fu">aes</span>(thickness, dead)) <span class="sc">+</span></span>
+<span id="cb24-88"><a href="#cb24-88" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb24-89"><a href="#cb24-89" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Tumour thickness (mm)"</span>, <span class="at">y =</span> <span class="st">"Dead (1=yes, 0=no)"</span>) <span class="sc">+</span></span>
+<span id="cb24-90"><a href="#cb24-90" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">"glm"</span>,</span>
+<span id="cb24-91"><a href="#cb24-91" aria-hidden="true" tabindex="-1"></a>              <span class="at">se =</span> F,</span>
+<span id="cb24-92"><a href="#cb24-92" aria-hidden="true" tabindex="-1"></a>              <span class="at">method.args =</span> <span class="fu">list</span>(<span class="at">family =</span> <span class="st">"binomial"</span>),</span>
+<span id="cb24-93"><a href="#cb24-93" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb24-94"><a href="#cb24-94" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span>
+<span id="cb24-95"><a href="#cb24-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-96"><a href="#cb24-96" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-97"><a href="#cb24-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-98"><a href="#cb24-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-99"><a href="#cb24-99" aria-hidden="true" tabindex="-1"></a><span class="fu"># Logistic regression in R</span></span>
+<span id="cb24-100"><a href="#cb24-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-101"><a href="#cb24-101" aria-hidden="true" tabindex="-1"></a>**Logistic regression** models the relationship between predictors and a **binary** outcome by making the **log‑odds** a linear function of the predictors.</span>
+<span id="cb24-102"><a href="#cb24-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-103"><a href="#cb24-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-104"><a href="#cb24-104" aria-hidden="true" tabindex="-1"></a><span class="fu">## Fitting Model</span></span>
+<span id="cb24-105"><a href="#cb24-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-106"><a href="#cb24-106" aria-hidden="true" tabindex="-1"></a>**Template:**</span>
+<span id="cb24-107"><a href="#cb24-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-108"><a href="#cb24-108" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb24-109"><a href="#cb24-109" aria-hidden="true" tabindex="-1"></a><span class="co"># Logistic regression (binomial GLM)</span></span>
+<span id="cb24-110"><a href="#cb24-110" aria-hidden="true" tabindex="-1"></a><span class="fu">glm</span>(Y <span class="sc">~</span> X1 <span class="sc">+</span> X2 <span class="sc">+</span> ... <span class="sc">+</span> Xp,</span>
+<span id="cb24-111"><a href="#cb24-111" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> DATA,</span>
+<span id="cb24-112"><a href="#cb24-112" aria-hidden="true" tabindex="-1"></a>    <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb24-113"><a href="#cb24-113" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-114"><a href="#cb24-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-115"><a href="#cb24-115" aria-hidden="true" tabindex="-1"></a>**Example (Melanoma):**</span>
+<span id="cb24-116"><a href="#cb24-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-117"><a href="#cb24-117" aria-hidden="true" tabindex="-1"></a>Model <span class="in">`dead`</span> by <span class="in">`sex`</span>, <span class="in">`age`</span>, <span class="in">`thickness`</span>, and <span class="in">`ulcer`</span>:</span>
+<span id="cb24-118"><a href="#cb24-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-121"><a href="#cb24-121" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb24-122"><a href="#cb24-122" aria-hidden="true" tabindex="-1"></a><span class="fu">glm</span>(dead <span class="sc">~</span> sex <span class="sc">+</span> age <span class="sc">+</span> thickness <span class="sc">+</span> ulcer,</span>
+<span id="cb24-123"><a href="#cb24-123" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> Melanoma,</span>
+<span id="cb24-124"><a href="#cb24-124" aria-hidden="true" tabindex="-1"></a>    <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb24-125"><a href="#cb24-125" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-126"><a href="#cb24-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-127"><a href="#cb24-127" aria-hidden="true" tabindex="-1"></a>The fitted logit equation can be written generically as</span>
+<span id="cb24-128"><a href="#cb24-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-129"><a href="#cb24-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-130"><a href="#cb24-130" aria-hidden="true" tabindex="-1"></a><span class="fu">## Odds ratios (exponentiated coefficients)</span></span>
+<span id="cb24-131"><a href="#cb24-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-132"><a href="#cb24-132" aria-hidden="true" tabindex="-1"></a>**Template:**</span>
+<span id="cb24-133"><a href="#cb24-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-134"><a href="#cb24-134" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb24-135"><a href="#cb24-135" aria-hidden="true" tabindex="-1"></a><span class="co"># Logistic regression (binomial GLM)</span></span>
+<span id="cb24-136"><a href="#cb24-136" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X1 <span class="sc">+</span> X2 <span class="sc">+</span> ... <span class="sc">+</span> Xp,</span>
+<span id="cb24-137"><a href="#cb24-137" aria-hidden="true" tabindex="-1"></a>         <span class="at">data =</span> DATA,</span>
+<span id="cb24-138"><a href="#cb24-138" aria-hidden="true" tabindex="-1"></a>         <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb24-139"><a href="#cb24-139" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">coef</span>(m))</span>
+<span id="cb24-140"><a href="#cb24-140" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-141"><a href="#cb24-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-142"><a href="#cb24-142" aria-hidden="true" tabindex="-1"></a>**Example:**</span>
+<span id="cb24-143"><a href="#cb24-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-146"><a href="#cb24-146" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb24-147"><a href="#cb24-147" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">glm</span>(dead <span class="sc">~</span> sex <span class="sc">+</span> age <span class="sc">+</span> thickness <span class="sc">+</span> ulcer,</span>
+<span id="cb24-148"><a href="#cb24-148" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> Melanoma,</span>
+<span id="cb24-149"><a href="#cb24-149" aria-hidden="true" tabindex="-1"></a>    <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb24-150"><a href="#cb24-150" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">coef</span>(m))</span>
+<span id="cb24-151"><a href="#cb24-151" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-152"><a href="#cb24-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-153"><a href="#cb24-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-154"><a href="#cb24-154" aria-hidden="true" tabindex="-1"></a><span class="fu"># Prediction with models</span></span>
+<span id="cb24-155"><a href="#cb24-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-156"><a href="#cb24-156" aria-hidden="true" tabindex="-1"></a><span class="fu">## Model</span></span>
+<span id="cb24-157"><a href="#cb24-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-158"><a href="#cb24-158" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb24-159"><a href="#cb24-159" aria-hidden="true" tabindex="-1"></a>\hat P(Y=1) = \frac{e^{\hat\beta_0 + \hat\beta_1 X_1 + \cdots + \hat\beta_p X_p}}{1 + e^{\hat\beta_0 + \hat\beta_1 X_1 + \cdots + \hat\beta_p X_p}}.</span>
+<span id="cb24-160"><a href="#cb24-160" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb24-161"><a href="#cb24-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-162"><a href="#cb24-162" aria-hidden="true" tabindex="-1"></a>**Template:**</span>
+<span id="cb24-163"><a href="#cb24-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-164"><a href="#cb24-164" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb24-165"><a href="#cb24-165" aria-hidden="true" tabindex="-1"></a>xglm <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X1 <span class="sc">+</span> X2 <span class="sc">+</span> ... <span class="sc">+</span> Xp,</span>
+<span id="cb24-166"><a href="#cb24-166" aria-hidden="true" tabindex="-1"></a>            <span class="at">data =</span> DATA,</span>
+<span id="cb24-167"><a href="#cb24-167" aria-hidden="true" tabindex="-1"></a>            <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb24-168"><a href="#cb24-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-169"><a href="#cb24-169" aria-hidden="true" tabindex="-1"></a>new_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">X1 =</span> VAL1, <span class="at">X2 =</span> VAL2, ..., <span class="at">Xp =</span> VALp)</span>
+<span id="cb24-170"><a href="#cb24-170" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(xglm, <span class="at">newdata =</span> new_df, <span class="at">type =</span> <span class="st">"response"</span>)  <span class="co"># probabilities</span></span>
+<span id="cb24-171"><a href="#cb24-171" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-172"><a href="#cb24-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-173"><a href="#cb24-173" aria-hidden="true" tabindex="-1"></a>**Examples (Melanoma):**</span>
+<span id="cb24-174"><a href="#cb24-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-175"><a href="#cb24-175" aria-hidden="true" tabindex="-1"></a>0) **Fit a model with gender, age, thickness, and ulcer present**</span>
+<span id="cb24-176"><a href="#cb24-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-177"><a href="#cb24-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-180"><a href="#cb24-180" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb24-181"><a href="#cb24-181" aria-hidden="true" tabindex="-1"></a>xglm <span class="ot">&lt;-</span> <span class="fu">glm</span>(dead <span class="sc">~</span> sex <span class="sc">+</span> age <span class="sc">+</span> thickness <span class="sc">+</span> ulcer,</span>
+<span id="cb24-182"><a href="#cb24-182" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> Melanoma,</span>
+<span id="cb24-183"><a href="#cb24-183" aria-hidden="true" tabindex="-1"></a>    <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb24-184"><a href="#cb24-184" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-185"><a href="#cb24-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-186"><a href="#cb24-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-187"><a href="#cb24-187" aria-hidden="true" tabindex="-1"></a>1) **Male, age 75, thickness 2.9, ulcer present**</span>
+<span id="cb24-188"><a href="#cb24-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-191"><a href="#cb24-191" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb24-192"><a href="#cb24-192" aria-hidden="true" tabindex="-1"></a>new1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">sex =</span> <span class="dv">1</span>, <span class="at">age =</span> <span class="dv">75</span>, <span class="at">thickness =</span> <span class="fl">2.9</span>, <span class="at">ulcer =</span> <span class="dv">1</span>)</span>
+<span id="cb24-193"><a href="#cb24-193" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(xglm, new1, <span class="at">type =</span> <span class="st">"response"</span>)</span>
+<span id="cb24-194"><a href="#cb24-194" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-195"><a href="#cb24-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-196"><a href="#cb24-196" aria-hidden="true" tabindex="-1"></a>2) **Male, age 75, thickness 2.9, ulcer absent**</span>
+<span id="cb24-197"><a href="#cb24-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-200"><a href="#cb24-200" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb24-201"><a href="#cb24-201" aria-hidden="true" tabindex="-1"></a>new2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">sex =</span> <span class="dv">1</span>, <span class="at">age =</span> <span class="dv">75</span>, <span class="at">thickness =</span> <span class="fl">2.9</span>, <span class="at">ulcer =</span> <span class="dv">0</span>)</span>
+<span id="cb24-202"><a href="#cb24-202" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(xglm, new2, <span class="at">type =</span> <span class="st">"response"</span>)</span>
+<span id="cb24-203"><a href="#cb24-203" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-204"><a href="#cb24-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-205"><a href="#cb24-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-206"><a href="#cb24-206" aria-hidden="true" tabindex="-1"></a>3) **Female, thickness 2.9, ulcer present — compare ages 55 vs 75**</span>
+<span id="cb24-207"><a href="#cb24-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-210"><a href="#cb24-210" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb24-211"><a href="#cb24-211" aria-hidden="true" tabindex="-1"></a>new3 <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">sex =</span> <span class="dv">0</span>, <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">55</span>, <span class="dv">75</span>), <span class="at">thickness =</span> <span class="fl">2.9</span>, <span class="at">ulcer =</span> <span class="dv">1</span>)</span>
+<span id="cb24-212"><a href="#cb24-212" aria-hidden="true" tabindex="-1"></a>pred3 <span class="ot">&lt;-</span> <span class="fu">predict</span>(xglm, new3, <span class="at">type =</span> <span class="st">"response"</span>)</span>
+<span id="cb24-213"><a href="#cb24-213" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(<span class="at">age =</span> new3<span class="sc">$</span>age, <span class="at">probability =</span> scales<span class="sc">::</span><span class="fu">percent</span>(pred3, <span class="at">accuracy =</span> <span class="fl">0.1</span>))</span>
+<span id="cb24-214"><a href="#cb24-214" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-215"><a href="#cb24-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-216"><a href="#cb24-216" aria-hidden="true" tabindex="-1"></a><span class="fu"># Appendix: quick reference (copy‑paste)</span></span>
+<span id="cb24-217"><a href="#cb24-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-218"><a href="#cb24-218" aria-hidden="true" tabindex="-1"></a><span class="fu">## Simple Logistic Regression</span></span>
+<span id="cb24-219"><a href="#cb24-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-220"><a href="#cb24-220" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb24-221"><a href="#cb24-221" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit</span></span>
+<span id="cb24-222"><a href="#cb24-222" aria-hidden="true" tabindex="-1"></a><span class="fu">glm</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> DATA, <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb24-223"><a href="#cb24-223" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-224"><a href="#cb24-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-225"><a href="#cb24-225" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`DATA`** → your data frame (e.g., <span class="in">`Melanoma`</span>)</span>
+<span id="cb24-226"><a href="#cb24-226" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`Y`** → the outcome variable (e.g., <span class="in">`dead`</span>)</span>
+<span id="cb24-227"><a href="#cb24-227" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`X`** → predictor variables (e.g <span class="in">`thickness`</span>)</span>
+<span id="cb24-228"><a href="#cb24-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-229"><a href="#cb24-229" aria-hidden="true" tabindex="-1"></a><span class="fu">## Logistic Regression</span></span>
+<span id="cb24-230"><a href="#cb24-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-231"><a href="#cb24-231" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb24-232"><a href="#cb24-232" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit</span></span>
+<span id="cb24-233"><a href="#cb24-233" aria-hidden="true" tabindex="-1"></a><span class="fu">glm</span>(Y <span class="sc">~</span> X1 <span class="sc">+</span> X2 <span class="sc">+</span> ... <span class="sc">+</span> Xp, <span class="at">data =</span> DATA, <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb24-234"><a href="#cb24-234" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-235"><a href="#cb24-235" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-236"><a href="#cb24-236" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`DATA`** → your data frame (e.g., <span class="in">`Melanoma`</span>)</span>
+<span id="cb24-237"><a href="#cb24-237" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`Y`** → the outcome variable (e.g., <span class="in">`dead`</span>)</span>
+<span id="cb24-238"><a href="#cb24-238" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`X1`, `X2`, ..., `Xp`** → predictor variables (e.g <span class="in">`age`</span>, <span class="in">`thickness`</span>)</span>
+<span id="cb24-239"><a href="#cb24-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-240"><a href="#cb24-240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-241"><a href="#cb24-241" aria-hidden="true" tabindex="-1"></a><span class="fu">## Odds Ratio</span></span>
+<span id="cb24-242"><a href="#cb24-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-243"><a href="#cb24-243" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb24-244"><a href="#cb24-244" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X1 <span class="sc">+</span> X2 <span class="sc">+</span> ... <span class="sc">+</span> Xp, <span class="at">data =</span> DATA, <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb24-245"><a href="#cb24-245" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-246"><a href="#cb24-246" aria-hidden="true" tabindex="-1"></a><span class="co"># Odds Ratio</span></span>
+<span id="cb24-247"><a href="#cb24-247" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">coef</span>(m))</span>
+<span id="cb24-248"><a href="#cb24-248" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-249"><a href="#cb24-249" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-250"><a href="#cb24-250" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`DATA`** → your data frame (e.g., <span class="in">`Melanoma`</span>)</span>
+<span id="cb24-251"><a href="#cb24-251" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`Y`** → the outcome variable (e.g., <span class="in">`dead`</span>)</span>
+<span id="cb24-252"><a href="#cb24-252" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`X1`, `X2`, ..., `Xp`** → predictor variables (e.g <span class="in">`age`</span>, <span class="in">`thickness`</span>)</span>
+<span id="cb24-253"><a href="#cb24-253" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-254"><a href="#cb24-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-255"><a href="#cb24-255" aria-hidden="true" tabindex="-1"></a><span class="fu">## Predict Probabilities</span></span>
+<span id="cb24-256"><a href="#cb24-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-257"><a href="#cb24-257" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb24-258"><a href="#cb24-258" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X1 <span class="sc">+</span> X2 <span class="sc">+</span> ... <span class="sc">+</span> Xp, <span class="at">data =</span> DATA, <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb24-259"><a href="#cb24-259" aria-hidden="true" tabindex="-1"></a><span class="co"># Predict probabilities</span></span>
+<span id="cb24-260"><a href="#cb24-260" aria-hidden="true" tabindex="-1"></a>new_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">X1 =</span> VAL1, <span class="at">X2 =</span> VAL2, ...,  <span class="at">Xp =</span> VALp)</span>
+<span id="cb24-261"><a href="#cb24-261" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(m, <span class="at">newdata =</span> new_df, <span class="at">type =</span> <span class="st">"response"</span>)</span>
+<span id="cb24-262"><a href="#cb24-262" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-263"><a href="#cb24-263" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-264"><a href="#cb24-264" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`DATA`** → your data frame (e.g., <span class="in">`Melanoma`</span>)</span>
+<span id="cb24-265"><a href="#cb24-265" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`Y`** → the outcome variable (e.g., <span class="in">`dead`</span>)</span>
+<span id="cb24-266"><a href="#cb24-266" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`X1`, `X2`, ..., `Xp`** → predictor variables (e.g <span class="in">`age`</span>, <span class="in">`thickness`</span>)</span>
+<span id="cb24-267"><a href="#cb24-267" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`VAL1`, `VAL2`, ..., `VALp`** → predictor values (e.g <span class="in">`55`</span>, <span class="in">`2.8`</span>)</span>
+<span id="cb24-268"><a href="#cb24-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-269"><a href="#cb24-269" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-270"><a href="#cb24-270" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conducting HT of $\beta_j$</span></span>
+<span id="cb24-271"><a href="#cb24-271" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-272"><a href="#cb24-272" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb24-273"><a href="#cb24-273" aria-hidden="true" tabindex="-1"></a>XLM <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> X1 <span class="sc">+</span> X2 <span class="sc">+</span> ... <span class="sc">+</span> Xp, </span>
+<span id="cb24-274"><a href="#cb24-274" aria-hidden="true" tabindex="-1"></a>           <span class="at">data =</span> DATA, </span>
+<span id="cb24-275"><a href="#cb24-275" aria-hidden="true" tabindex="-1"></a>           <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb24-276"><a href="#cb24-276" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(XLM)</span>
+<span id="cb24-277"><a href="#cb24-277" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-278"><a href="#cb24-278" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-279"><a href="#cb24-279" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`XLM`</span>: Object where the model is stored</span>
+<span id="cb24-280"><a href="#cb24-280" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`Y`</span>: Name of the outcome variable in <span class="in">`DATA`</span></span>
+<span id="cb24-281"><a href="#cb24-281" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`X1`</span>, <span class="in">`X2`</span>, ..., <span class="in">`Xp`</span>: predictor variables (e.g <span class="in">`age`</span>, <span class="in">`thickness`</span>) found in <span class="in">`DATA`</span></span>
+<span id="cb24-282"><a href="#cb24-282" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`DATA`</span>: Name of the data set</span>
+<span id="cb24-283"><a href="#cb24-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-284"><a href="#cb24-284" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-285"><a href="#cb24-285" aria-hidden="true" tabindex="-1"></a><span class="fu">## Confidence Interval</span></span>
+<span id="cb24-286"><a href="#cb24-286" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-287"><a href="#cb24-287" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb24-288"><a href="#cb24-288" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(XLM, </span>
+<span id="cb24-289"><a href="#cb24-289" aria-hidden="true" tabindex="-1"></a>     <span class="at">conf.int =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb24-290"><a href="#cb24-290" aria-hidden="true" tabindex="-1"></a>     <span class="at">conf.level =</span> LEVEL)</span>
+<span id="cb24-291"><a href="#cb24-291" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-292"><a href="#cb24-292" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-293"><a href="#cb24-293" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`XLM`</span>: Object where the model is stored</span>
+<span id="cb24-294"><a href="#cb24-294" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`LEVEL`</span>: A number between 0 and 1 to specify confidence level</span>
+<span id="cb24-295"><a href="#cb24-295" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>defaults to 0.95</span>
+<span id="cb24-296"><a href="#cb24-296" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-297"><a href="#cb24-297" aria-hidden="true" tabindex="-1"></a><span class="fu">## Odds Ratio &amp; Confidence Intervat </span></span>
+<span id="cb24-298"><a href="#cb24-298" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-299"><a href="#cb24-299" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb24-300"><a href="#cb24-300" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(XLM, </span>
+<span id="cb24-301"><a href="#cb24-301" aria-hidden="true" tabindex="-1"></a>     <span class="at">exponentiate =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb24-302"><a href="#cb24-302" aria-hidden="true" tabindex="-1"></a>     <span class="at">conf.int =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb24-303"><a href="#cb24-303" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb24-304"><a href="#cb24-304" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-305"><a href="#cb24-305" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`XLM`</span>: Object where the model is stored</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

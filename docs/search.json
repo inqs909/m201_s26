@@ -105,6 +105,27 @@
     "text": "5.4 Predict Probabilities\nm &lt;- glm(Y ~ X1 + X2 + ... + Xp, data = DATA, family = binomial())\n# Predict probabilities\nnew_df &lt;- data.frame(X1 = VAL1, X2 = VAL2, ...,  Xp = VALp)\npredict(m, newdata = new_df, type = \"response\")\n\nDATA → your data frame (e.g., Melanoma)\nY → the outcome variable (e.g., dead)\nX1, X2, …, Xp → predictor variables (e.g age, thickness)\nVAL1, VAL2, …, VALp → predictor values (e.g 55, 2.8)"
   },
   {
+    "objectID": "rcode/logistic.html#conducting-ht-of-beta_j",
+    "href": "rcode/logistic.html#conducting-ht-of-beta_j",
+    "title": "Logistic Regression Models",
+    "section": "5.5 Conducting HT of \\(\\beta_j\\)",
+    "text": "5.5 Conducting HT of \\(\\beta_j\\)\nXLM &lt;- glm(Y ~ X1 + X2 + ... + Xp, \n           data = DATA, \n           family = binomial())\ntidy(XLM)\n\nXLM: Object where the model is stored\nY: Name of the outcome variable in DATA\nX1, X2, …, Xp: predictor variables (e.g age, thickness) found in DATA\nDATA: Name of the data set"
+  },
+  {
+    "objectID": "rcode/logistic.html#confidence-interval",
+    "href": "rcode/logistic.html#confidence-interval",
+    "title": "Logistic Regression Models",
+    "section": "5.6 Confidence Interval",
+    "text": "5.6 Confidence Interval\ntidy(XLM, \n     conf.int = TRUE, \n     conf.level = LEVEL)\n\nXLM: Object where the model is stored\nLEVEL: A number between 0 and 1 to specify confidence level\ndefaults to 0.95"
+  },
+  {
+    "objectID": "rcode/logistic.html#odds-ratio-confidence-intervat",
+    "href": "rcode/logistic.html#odds-ratio-confidence-intervat",
+    "title": "Logistic Regression Models",
+    "section": "5.7 Odds Ratio & Confidence Intervat",
+    "text": "5.7 Odds Ratio & Confidence Intervat\ntidy(XLM, \n     exponentiate = TRUE, \n     conf.int = TRUE)\n\nXLM: Object where the model is stored"
+  },
+  {
     "objectID": "rcode.html",
     "href": "rcode.html",
     "title": "R Code Reference Page",
@@ -5031,5 +5052,19 @@
     "title": "Linear Regression Models",
     "section": "8.15 Multiple Box Plots (Continous vs Categorical)",
     "text": "8.15 Multiple Box Plots (Continous vs Categorical)\nggplot(DATA, aes(x = NUM, y = CAT)) + \n    geom_boxplot() \n\nDATA → the name of your dataset (e.g., penguins).\nNUM → a single numerical variable (e.g., body_mass).\nCAT → a single categorical variable (e.g., species)."
+  },
+  {
+    "objectID": "rcode/regression.html#conducting-ht-of-beta_j",
+    "href": "rcode/regression.html#conducting-ht-of-beta_j",
+    "title": "Linear Regression Models",
+    "section": "8.16 Conducting HT of \\(\\beta_j\\)",
+    "text": "8.16 Conducting HT of \\(\\beta_j\\)\nXLM &lt;- lm(Y ~ X1 + X2 + ... + Xp, \n          data = DATA)\ntidy(XLM)\n\nXLM: Object where the model is stored\nY: Name of the outcome variable in DATA\nX1, X2, …, Xp: predictor variables (e.g flipper_len, species) found in DATA\nDATA: Name of the data set ## 95% Confidence Interval\n\ntidy(XLM, \n     conf.int = TRUE)\n\nXLM: Object where the model is stored"
+  },
+  {
+    "objectID": "rcode/regression.html#x-confidence-interval",
+    "href": "rcode/regression.html#x-confidence-interval",
+    "title": "Linear Regression Models",
+    "section": "8.17 X% Confidence Interval",
+    "text": "8.17 X% Confidence Interval\ntidy(XLM, \n     conf.int = TRUE, \n     conf.level = X)\n\nXLM: Object where the model is stored\nX: A number between 0 and 1 to specify confidence level"
   }
 ]

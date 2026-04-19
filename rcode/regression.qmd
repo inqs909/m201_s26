@@ -643,3 +643,35 @@ ggplot(DATA, aes(x = NUM, y = CAT)) +
 - `NUM` → a single numerical variable (e.g., `body_mass`).
 - `CAT` → a single categorical variable (e.g., `species`).
 
+## Conducting HT of $\beta_j$
+
+```r
+XLM <- lm(Y ~ X1 + X2 + ... + Xp, 
+          data = DATA)
+tidy(XLM)
+```
+
+-   `XLM`: Object where the model is stored
+-   `Y`: Name of the outcome variable in `DATA`
+-   `X1`, `X2`, ..., `Xp`: predictor variables (e.g `flipper_len`, `species`) found in `DATA`
+-   `DATA`: Name of the data set
+## 95% Confidence Interval
+
+```r
+tidy(XLM, 
+     conf.int = TRUE)
+```
+
+-   `XLM`: Object where the model is stored
+
+
+## X% Confidence Interval
+
+```r
+tidy(XLM, 
+     conf.int = TRUE, 
+     conf.level = X)
+```
+
+-   `XLM`: Object where the model is stored
+-   `X`: A number between 0 and 1 to specify confidence level
