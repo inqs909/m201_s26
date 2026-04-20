@@ -13,7 +13,9 @@ format:
     slide-number: true
     pointer:
       pointerSize: 32
-    incremental: false 
+    incremental: false
+    verticator:
+      clickable: false 
 knitr:
   opts_chunk: 
     echo: true
@@ -24,6 +26,7 @@ knitr:
     
 revealjs-plugins:
   - pointer
+  - verticator
   
 filters:
   - reveal-header
