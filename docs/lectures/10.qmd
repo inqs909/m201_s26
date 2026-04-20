@@ -12,7 +12,9 @@ format:
     slide-number: true
     pointer:
       pointerSize: 32
+      color: green
     incremental: false 
+
 knitr:
   opts_chunk: 
     echo: true
@@ -25,8 +27,7 @@ knitr:
 revealjs-plugins:
   - pointer
   
-filters:
-  - reveal-header
+filters: 
   - reveal-auto-agenda
 
 editor: source

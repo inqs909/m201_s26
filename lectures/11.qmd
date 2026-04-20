@@ -115,9 +115,6 @@ heart_disease |> ggplot(aes(x=cp, fill = disease)) +
 
 # Group Model Inference
 
-## Group Model Inference
-
-
 
 ## Group Model Inference
 
