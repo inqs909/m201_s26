@@ -14,8 +14,7 @@ format:
     pointer:
       pointerSize: 32
     incremental: false
-    verticator:
-      clickable: false 
+
 knitr:
   opts_chunk: 
     echo: true
@@ -29,7 +28,6 @@ revealjs-plugins:
   - verticator
   
 filters:
-  - reveal-header
   - reveal-auto-agenda
 
 editor: source
