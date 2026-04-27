@@ -2086,6 +2086,27 @@
     "text": "Downloading Data\n\nu1 &lt;- \"https://www.inqs.info/p/plotathon/owenWilsonWows.csv\"\nu2 &lt;- \"https://www.inqs.info/p/plotathon/owenWilsonWows.xlsx\"\n\ndownload.file(u1,\n              file.path(getwd(), basename(u1)))\ndownload.file(u2,\n              file.path(getwd(), basename(u2)))"
   },
   {
+    "objectID": "lectures/11.html#r-packages",
+    "href": "lectures/11.html#r-packages",
+    "title": "Statistical Inference",
+    "section": "R Packages",
+    "text": "R Packages\n\nTidyverse\nrcistats\nbroom\nemmeans"
+  },
+  {
+    "objectID": "lectures/11.html#palmer-penguins-data",
+    "href": "lectures/11.html#palmer-penguins-data",
+    "title": "Statistical Inference",
+    "section": "Palmer Penguins Data",
+    "text": "Palmer Penguins Data\n\n\nVariables of Interest\n\nspecies\nbody_mass: Body mass in grams\n\n\n\n\n\nArtwork by @allison_horst"
+  },
+  {
+    "objectID": "lectures/11.html#heart-disease-data",
+    "href": "lectures/11.html#heart-disease-data",
+    "title": "Statistical Inference",
+    "section": "Heart Disease Data",
+    "text": "Heart Disease Data\n\n\nVariables of Interest\n\ncp: Chest Pain\ndisease: Indicating if they have heart disease"
+  },
+  {
     "objectID": "lectures/11.html#species-and-body-mass",
     "href": "lectures/11.html#species-and-body-mass",
     "title": "Statistical Inference",
@@ -2132,7 +2153,7 @@
     "href": "lectures/11.html#generalized-linear-models",
     "title": "Statistical Inference",
     "section": "Generalized Linear Models",
-    "text": "Generalized Linear Models\n\n\nFull Model\n\\[\nY =  \\beta_0 + \\beta_1 D_1 + \\cdots + \\beta_p D_p\n\\]\n\n\\(D_1, \\cdots, D_p\\): Dummy variables for categorical variables\n\\(\\beta_0, \\beta_1, \\cdots, \\beta_p\\): Regression coefficients\n\n\nReduced Model\n\\[\nlo(Y) =  \\hat p\n\\]\n\n\\(\\hat p\\): Sample proportion of the outcome"
+    "text": "Generalized Linear Models\n\n\nFull Model\n\\[\nlo(Y) =  \\beta_0 + \\beta_1 D_1 + \\cdots + \\beta_p D_p\n\\]\n\n\\(D_1, \\cdots, D_p\\): Dummy variables for categorical variables\n\\(\\beta_0, \\beta_1, \\cdots, \\beta_p\\): Regression coefficients\n\n\nReduced Model\n\\[\nlo(Y) =  \\hat p\n\\]\n\n\\(\\hat p\\): Sample proportion of the outcome"
   },
   {
     "objectID": "lectures/11.html#null-and-alt-hypothesis",
@@ -2140,41 +2161,6 @@
     "title": "Statistical Inference",
     "section": "Null and Alt Hypothesis",
     "text": "Null and Alt Hypothesis\n\\(H_0\\): The different categories do not have significantly different means/proportions from each other.\n\\(H_a\\): At least two categories have significantly different means/proportions from each other."
-  },
-  {
-    "objectID": "lectures/11.html#motivation",
-    "href": "lectures/11.html#motivation",
-    "title": "Statistical Inference",
-    "section": "Motivation",
-    "text": "Motivation\n\nIn multiple hypothesis testing, we test several hypotheses simultaneously.\nThe probability of making at least one Type I error increases with the number of tests.\nHence, we need error control methods."
-  },
-  {
-    "objectID": "lectures/11.html#type-i-error-and-its-rate",
-    "href": "lectures/11.html#type-i-error-and-its-rate",
-    "title": "Statistical Inference",
-    "section": "Type I Error and Its Rate",
-    "text": "Type I Error and Its Rate\nType I Error (False Positive): Rejecting a null hypothesis (\\(H_0\\)), when it is true.\nType I Error Rate (\\(\\alpha\\)): The probability of making a Type I error in a single hypothesis test.\n\\[\n\\alpha = P(\\text{Reject } H_0 \\mid H_0 \\text{ is true})\n\\]\nTypically, \\(\\alpha = 0.05\\), meaning a 5% chance of incorrectly rejecting a true null hypothesis."
-  },
-  {
-    "objectID": "lectures/11.html#definition-of-fwer",
-    "href": "lectures/11.html#definition-of-fwer",
-    "title": "Statistical Inference",
-    "section": "Definition of FWER",
-    "text": "Definition of FWER\nFamily-Wise Error Rate (FWER): The probability of making one or more Type I errors among all hypotheses tested.\n\\[\n\\text{FWER} = P(\\text{At least one false rejection}) = P(V \\ge 1)\n\\]\nwhere:\n\n\\(V\\) = number of false positives (incorrect rejections)"
-  },
-  {
-    "objectID": "lectures/11.html#why-control-fwer",
-    "href": "lectures/11.html#why-control-fwer",
-    "title": "Statistical Inference",
-    "section": "Why Control FWER?",
-    "text": "Why Control FWER?\n\nMaintains overall confidence in conclusions.\nAvoids claiming false discoveries when many tests are run.\nTrade-off: Strong control of FWER reduces power (increases Type II error)."
-  },
-  {
-    "objectID": "lectures/11.html#methods-to-control-fwer",
-    "href": "lectures/11.html#methods-to-control-fwer",
-    "title": "Statistical Inference",
-    "section": "Methods to Control FWER",
-    "text": "Methods to Control FWER\n\nBonferroni Correction\nHolm-Bonferroni Procedure (Step-down)\nTukey’s Honest Significant Difference (HSD)"
   },
   {
     "objectID": "lectures/11.html#linear-model-inference-1",
@@ -2275,6 +2261,48 @@
     "text": "Example: LRT\n\n\nCode\nxglm &lt;- glm(disease ~ cp, data = heart_disease,\n            family = binomial)\nanova(xglm)\n\n\n#&gt; Analysis of Deviance Table\n#&gt; \n#&gt; Model: binomial, link: logit\n#&gt; \n#&gt; Response: disease\n#&gt; \n#&gt; Terms added sequentially (first to last)\n#&gt; \n#&gt; \n#&gt;      Df Deviance Resid. Df Resid. Dev  Pr(&gt;Chi)    \n#&gt; NULL                   296     409.95              \n#&gt; cp    3   81.195       293     328.75 &lt; 2.2e-16 ***\n#&gt; ---\n#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
   },
   {
+    "objectID": "lectures/11.html#multiple-hypothesis-testing",
+    "href": "lectures/11.html#multiple-hypothesis-testing",
+    "title": "Statistical Inference",
+    "section": "Multiple Hypothesis Testing",
+    "text": "Multiple Hypothesis Testing\n\nWith both ANOVA an LRT, we only know if there is one group pairing are different from each other.\nWe want to know which group pairing are different.\nThis can be done with multiple hypothesis testing.\nHowever, we need to overcome some challenges."
+  },
+  {
+    "objectID": "lectures/11.html#challenges",
+    "href": "lectures/11.html#challenges",
+    "title": "Statistical Inference",
+    "section": "Challenges",
+    "text": "Challenges\n\nIn multiple hypothesis testing, we test several hypotheses simultaneously.\nThe probability of making at least one Type I error increases with the number of tests.\nHence, we need error control methods."
+  },
+  {
+    "objectID": "lectures/11.html#type-i-error-and-its-rate",
+    "href": "lectures/11.html#type-i-error-and-its-rate",
+    "title": "Statistical Inference",
+    "section": "Type I Error and Its Rate",
+    "text": "Type I Error and Its Rate\nType I Error (False Positive): Rejecting a null hypothesis (\\(H_0\\)), when it is true.\nType I Error Rate (\\(\\alpha\\)): The probability of making a Type I error in a single hypothesis test.\n\\[\n\\alpha = P(\\text{Reject } H_0 \\mid H_0 \\text{ is true})\n\\]\nTypically, \\(\\alpha = 0.05\\), meaning a 5% chance of incorrectly rejecting a true null hypothesis."
+  },
+  {
+    "objectID": "lectures/11.html#definition-of-fwer",
+    "href": "lectures/11.html#definition-of-fwer",
+    "title": "Statistical Inference",
+    "section": "Definition of FWER",
+    "text": "Definition of FWER\nFamily-Wise Error Rate (FWER): The probability of making one or more Type I errors among all hypotheses tested.\n\\[\n\\text{FWER} = P(\\text{At least one false rejection}) = P(V \\ge 1)\n\\]\nwhere:\n\n\\(V\\) = number of false positives (incorrect rejections)"
+  },
+  {
+    "objectID": "lectures/11.html#why-control-fwer",
+    "href": "lectures/11.html#why-control-fwer",
+    "title": "Statistical Inference",
+    "section": "Why Control FWER?",
+    "text": "Why Control FWER?\n\nMaintains overall confidence in conclusions.\nAvoids claiming false discoveries when many tests are run.\nTrade-off: Strong control of FWER reduces power (increases Type II error)."
+  },
+  {
+    "objectID": "lectures/11.html#methods-to-control-fwer",
+    "href": "lectures/11.html#methods-to-control-fwer",
+    "title": "Statistical Inference",
+    "section": "Methods to Control FWER",
+    "text": "Methods to Control FWER\n\nBonferroni Correction\nHolm-Bonferroni Procedure (Step-down)\nTukey’s Honest Significant Difference (HSD)"
+  },
+  {
     "objectID": "lectures/11.html#post-hoc-analysis-1",
     "href": "lectures/11.html#post-hoc-analysis-1",
     "title": "Statistical Inference",
@@ -2322,6 +2350,20 @@
     "title": "Statistical Inference",
     "section": "Multiple Comparisons Test",
     "text": "Multiple Comparisons Test\n\nA multi-comparison test can be achieved by using the pairs function from the output of the emmeans function.\nThis function will automatically adjust the p-values using Tukey’s method to fix the family-wise error rate."
+  },
+  {
+    "objectID": "lectures/11.html#mct-hypothesis-mean",
+    "href": "lectures/11.html#mct-hypothesis-mean",
+    "title": "Statistical Inference",
+    "section": "MCT: Hypothesis Mean",
+    "text": "MCT: Hypothesis Mean\n\n\\(H_0\\): The mean of group A is the same of group B.\n\\(H_1\\): The mean of group A is different of group B."
+  },
+  {
+    "objectID": "lectures/11.html#mct-hypothesis-proportion",
+    "href": "lectures/11.html#mct-hypothesis-proportion",
+    "title": "Statistical Inference",
+    "section": "MCT: Hypothesis Proportion",
+    "text": "MCT: Hypothesis Proportion\n\n\\(H_0\\): The proportion of group A is the same of group B.\n\\(H_1\\): The proportion of group A is different of group B."
   },
   {
     "objectID": "lectures/11.html#multi-comparison-test-means",
@@ -3136,11 +3178,18 @@
     "text": "Boosting Power\n\nPower = Probability of rejecting \\(H_0\\) when it’s false\nHelps avoid Type II Errors\nDriven by:\n\nSample size\nEffect size\n\\(\\alpha\\)\nVariability\n\nAim for 80% or higher"
   },
   {
-    "objectID": "lectures/12.html#simpsons-paradox-1",
-    "href": "lectures/12.html#simpsons-paradox-1",
+    "objectID": "lectures/12.html#penguins-bill-depth-vs-flipper-length",
+    "href": "lectures/12.html#penguins-bill-depth-vs-flipper-length",
     "title": "Statistical  Modeling",
-    "section": "Simpson’s Paradox",
-    "text": "Simpson’s Paradox"
+    "section": "Penguins Bill Depth vs Flipper Length",
+    "text": "Penguins Bill Depth vs Flipper Length\n\n\nCode\npenguins |&gt; \n  ggplot(aes(bill_dep, flipper_len)) +\n  geom_point() +\n  stat_smooth(method = \"lm\")"
+  },
+  {
+    "objectID": "lectures/12.html#penguins-bill-depth-vs-flipper-length-by-species",
+    "href": "lectures/12.html#penguins-bill-depth-vs-flipper-length-by-species",
+    "title": "Statistical  Modeling",
+    "section": "Penguins Bill Depth vs Flipper Length by Species",
+    "text": "Penguins Bill Depth vs Flipper Length by Species\n\n\nCode\npenguins |&gt; \n  ggplot(aes(bill_dep, flipper_len, color = species)) +\n  geom_point()+\n  stat_smooth(method = \"lm\")"
   },
   {
     "objectID": "lectures/12.html#model-conditions-1",
@@ -3252,7 +3301,7 @@
     "href": "lectures/12.html#heart-example",
     "title": "Statistical  Modeling",
     "section": "Heart: Example",
-    "text": "Heart: Example\n\n\nCode\nm4 &lt;- glm(disease ~ trestbps + cp, heart_disease, family = binomial())\ntidy(m4)\n\n\n#&gt; # A tibble: 5 × 5\n#&gt;   term        estimate std.error statistic   p.value\n#&gt;   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n#&gt; 1 (Intercept)  -3.80     1.25       -3.04  0.00234  \n#&gt; 2 trestbps      0.0209   0.00807     2.59  0.00967  \n#&gt; 3 cp2          -0.409    0.601      -0.681 0.496    \n#&gt; 4 cp3          -0.236    0.540      -0.437 0.662    \n#&gt; 5 cp4           2.04     0.512       3.99  0.0000674\n\n\nCode\ndfm4 &lt;- resid_df(m4)\nhead(dfm4)\n\n\n#&gt;   obs disease trestbps cp    fitted        eta  raw_resid pearson_resid\n#&gt; 1   1      no      145  1 0.3162617 -0.7710053 -0.3162617    -0.6801087\n#&gt; 2   2     yes      160  4 0.8296967  1.5834796  0.1703033     0.4530559\n#&gt; 3   3     yes      120  4 0.6787886  0.7482102  0.3212114     0.6879046\n#&gt; 4   4      no      130  3 0.2107532 -1.3203915 -0.2107532    -0.5167502\n#&gt; 5   5      no      130  2 0.1834250 -1.4933128 -0.1834250    -0.4739486\n#&gt; 6   6      no      120  2 0.1541873 -1.7021301 -0.1541873    -0.4269600\n#&gt;   deviance_resid working_resid partial_resid.trestbps partial_resid.cp\n#&gt; 1     -0.8719863     -2.233553              -1.184687        -2.305014\n#&gt; 2      0.6110565      2.788739               1.796346         2.404052\n#&gt; 3      0.8802790      2.221423               1.229030         2.672005\n#&gt; 4     -0.6880061     -2.587422              -1.302396        -2.345657\n#&gt; 5     -0.6366106     -2.717940              -1.259993        -2.476175\n#&gt; 6     -0.5787181     -2.884425              -1.426478        -2.433842\n#&gt;   std_pear_resid std_dev_resid stud_dev_resid quantile_resid   leverages\n#&gt; 1     -0.6962858    -0.8927274     -0.8846616     0.09902973 0.045927133\n#&gt; 2      0.4562301     0.6153377      0.6134136     0.55903230 0.013866647\n#&gt; 3      0.6910541     0.8843093      0.8827424     0.63537257 0.009094376\n#&gt; 4     -0.5199246    -0.6922325     -0.6903935    -0.33780203 0.012173676\n#&gt; 5     -0.4789686    -0.6433536     -0.6403567    -0.41059095 0.020852010\n#&gt; 6     -0.4311339    -0.5843756     -0.5818043     0.36915717 0.019268922\n#&gt;          cooks\n#&gt; 1 0.0046675922\n#&gt; 2 0.0005853744\n#&gt; 3 0.0008765864\n#&gt; 4 0.0006662724\n#&gt; 5 0.0009771107\n#&gt; 6 0.0007304018\n\n\n\n\nCode\nggplot(dfm4, aes(fitted, quantile_resid)) +\n  geom_point() +\n  geom_hline(yintercept = 0, col = \"red\")\n\n\n\n\n\n\n\n\n\nCode\nggplot(dfm4, aes(sample = quantile_resid)) + \n  stat_qq() +\n  stat_qq_line()"
+    "text": "Heart: Example\n\n\nCode\nm4 &lt;- glm(disease ~ trestbps + cp, heart_disease, family = binomial())\ntidy(m4)\n\n\n#&gt; # A tibble: 5 × 5\n#&gt;   term        estimate std.error statistic   p.value\n#&gt;   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n#&gt; 1 (Intercept)  -3.80     1.25       -3.04  0.00234  \n#&gt; 2 trestbps      0.0209   0.00807     2.59  0.00967  \n#&gt; 3 cp2          -0.409    0.601      -0.681 0.496    \n#&gt; 4 cp3          -0.236    0.540      -0.437 0.662    \n#&gt; 5 cp4           2.04     0.512       3.99  0.0000674\n\n\nCode\ndfm4 &lt;- resid_df(m4)\nhead(dfm4)\n\n\n#&gt;   obs disease trestbps cp    fitted        eta  raw_resid pearson_resid\n#&gt; 1   1      no      145  1 0.3162617 -0.7710053 -0.3162617    -0.6801087\n#&gt; 2   2     yes      160  4 0.8296967  1.5834796  0.1703033     0.4530559\n#&gt; 3   3     yes      120  4 0.6787886  0.7482102  0.3212114     0.6879046\n#&gt; 4   4      no      130  3 0.2107532 -1.3203915 -0.2107532    -0.5167502\n#&gt; 5   5      no      130  2 0.1834250 -1.4933128 -0.1834250    -0.4739486\n#&gt; 6   6      no      120  2 0.1541873 -1.7021301 -0.1541873    -0.4269600\n#&gt;   deviance_resid working_resid partial_resid.trestbps partial_resid.cp\n#&gt; 1     -0.8719863     -2.233553              -1.184687        -2.305014\n#&gt; 2      0.6110565      2.788739               1.796346         2.404052\n#&gt; 3      0.8802790      2.221423               1.229030         2.672005\n#&gt; 4     -0.6880061     -2.587422              -1.302396        -2.345657\n#&gt; 5     -0.6366106     -2.717940              -1.259993        -2.476175\n#&gt; 6     -0.5787181     -2.884425              -1.426478        -2.433842\n#&gt;   std_pear_resid std_dev_resid stud_dev_resid quantile_resid   leverages\n#&gt; 1     -0.6962858    -0.8927274     -0.8846616     -1.5023135 0.045927133\n#&gt; 2      0.4562301     0.6153377      0.6134136      1.3374358 0.013866647\n#&gt; 3      0.6910541     0.8843093      0.8827424      0.5208945 0.009094376\n#&gt; 4     -0.5199246    -0.6922325     -0.6903935      0.7138916 0.012173676\n#&gt; 5     -0.4789686    -0.6433536     -0.6403567     -0.3217776 0.020852010\n#&gt; 6     -0.4311339    -0.5843756     -0.5818043     -0.2751618 0.019268922\n#&gt;          cooks\n#&gt; 1 0.0046675922\n#&gt; 2 0.0005853744\n#&gt; 3 0.0008765864\n#&gt; 4 0.0006662724\n#&gt; 5 0.0009771107\n#&gt; 6 0.0007304018\n\n\n\n\nCode\nggplot(dfm4, aes(fitted, quantile_resid)) +\n  geom_point() +\n  geom_hline(yintercept = 0, col = \"red\")\n\n\n\n\n\n\n\n\n\nCode\nggplot(dfm4, aes(sample = quantile_resid)) + \n  stat_qq() +\n  stat_qq_line()"
   },
   {
     "objectID": "lectures/1a.html#slides",

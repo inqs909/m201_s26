@@ -13,8 +13,10 @@ format:
     slide-number: true
     pointer:
       pointerSize: 32
+      color: green
     incremental: false
-
+    verticator:
+      clickable: false 
 knitr:
   opts_chunk: 
     echo: true
@@ -65,6 +67,47 @@ theme_set(theme_bw() +
                 legend.title = element_blank(),
                 legend.text = element_text(size = 24)))
 ```
+
+## R Packages
+
+- Tidyverse
+- rcistats
+- broom
+- emmeans
+
+## Palmer Penguins Data
+
+::: {.columns}
+::: {.column}
+
+### Variables of Interest
+
+- `species`
+- `body_mass`: Body mass in [grams](https://en.wikipedia.org/wiki/Gram)
+
+:::
+::: {.column}
+![Artwork by @allison_horst](img/penguins.png){fig-alt="An image of several penguins in Antartica."}
+
+:::
+::: 
+
+## Heart Disease Data
+
+::: {.columns}
+::: {.column}
+
+### Variables of Interest
+
+- `cp`: Chest Pain
+- `disease`: Indicating if they have heart disease
+
+:::
+::: {.column}
+![](img/heart_df.png){fig-alt="An image of a graph and a heart."}
+:::
+:::
+
 
 # Motivating Example
 
@@ -177,7 +220,7 @@ $$
 #### Full Model
 
 $$
-Y =  \beta_0 + \beta_1 D_1 + \cdots + \beta_p D_p
+lo(Y) =  \beta_0 + \beta_1 D_1 + \cdots + \beta_p D_p
 $$
 
 - $D_1, \cdots, D_p$: Dummy variables for categorical variables
@@ -202,58 +245,6 @@ $$
 $H_0$: The different categories do not have significantly different means/proportions from each other.
 
 $H_a$: At least two categories have significantly different means/proportions from each other. 
-
-
-# Family-wise Error Rate
-
-## Motivation
-
-* In multiple hypothesis testing, we test several hypotheses simultaneously.
-* The probability of making **at least one Type I error** increases with the number of tests.
-* Hence, we need **error control** methods.
-
-
-## Type I Error and Its Rate
-
-**Type I Error (False Positive):** Rejecting a null hypothesis ($H_0$), when it is true.
-
-**Type I Error Rate ($\alpha$):**
-The probability of making a Type I error in a single hypothesis test.
-
-$$
-\alpha = P(\text{Reject } H_0 \mid H_0 \text{ is true})
-$$
-
-Typically, $\alpha = 0.05$, meaning a 5% chance of incorrectly rejecting a true null hypothesis.
-
-
-## Definition of FWER
-
-**Family-Wise Error Rate (FWER):**
-The probability of making **one or more Type I errors** among all hypotheses tested.
-
-$$
-\text{FWER} = P(\text{At least one false rejection}) = P(V \ge 1)
-$$
-
-where:
-
-* $V$ = number of false positives (incorrect rejections)
-
-## Why Control FWER?
-
-* Maintains overall confidence in conclusions.
-* Avoids claiming false discoveries when many tests are run.
-* Trade-off: Strong control of FWER reduces **power** (increases Type II error).
-
-
-## Methods to Control FWER
-
-1. Bonferroni Correction
-
-2. Holm-Bonferroni Procedure (Step-down)
-
-3. Tukey’s Honest Significant Difference (HSD)
 
 
 
@@ -454,6 +445,70 @@ anova(xglm)
 ```
 
 
+# Family-wise Error Rate
+
+## Multiple Hypothesis Testing
+
+- With both ANOVA an LRT, we only know if there is one group pairing are different from each other.
+
+- We want to know which group pairing are different.
+
+- This can be done with multiple hypothesis testing.
+
+- However, we need to overcome some challenges.
+
+## Challenges
+
+* In multiple hypothesis testing, we test several hypotheses simultaneously.
+* The probability of making **at least one Type I error** increases with the number of tests.
+* Hence, we need **error control** methods.
+
+
+## Type I Error and Its Rate
+
+**Type I Error (False Positive):** Rejecting a null hypothesis ($H_0$), when it is true.
+
+**Type I Error Rate ($\alpha$):**
+The probability of making a Type I error in a single hypothesis test.
+
+$$
+\alpha = P(\text{Reject } H_0 \mid H_0 \text{ is true})
+$$
+
+Typically, $\alpha = 0.05$, meaning a 5% chance of incorrectly rejecting a true null hypothesis.
+
+
+## Definition of FWER
+
+**Family-Wise Error Rate (FWER):**
+The probability of making **one or more Type I errors** among all hypotheses tested.
+
+$$
+\text{FWER} = P(\text{At least one false rejection}) = P(V \ge 1)
+$$
+
+where:
+
+* $V$ = number of false positives (incorrect rejections)
+
+## Why Control FWER?
+
+* Maintains overall confidence in conclusions.
+* Avoids claiming false discoveries when many tests are run.
+* Trade-off: Strong control of FWER reduces **power** (increases Type II error).
+
+
+## Methods to Control FWER
+
+1. Bonferroni Correction
+
+2. Holm-Bonferroni Procedure (Step-down)
+
+3. Tukey’s Honest Significant Difference (HSD)
+
+
+
+
 # Post-Hoc Analysis
 
 ## Post-Hoc Analysis
@@ -511,6 +566,18 @@ emmeans(m2, ~ cp, type = "response")
 - A multi-comparison test can be achieved by using the `pairs` function from the output of the `emmeans` function.
 
 - This function will automatically adjust the p-values using Tukey's method to fix the family-wise error rate.
+
+## MCT: Hypothesis Mean
+
+- $H_0$: The mean of group A is the same of group B.
+
+- $H_1$: The mean of group A is different of group B.
+
+## MCT: Hypothesis Proportion
+
+- $H_0$: The proportion of group A is the same of group B.
+
+- $H_1$: The proportion of group A is different of group B.
 
 ## Multi-Comparison Test: Means
 

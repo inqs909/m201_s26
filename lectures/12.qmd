@@ -11,7 +11,10 @@ format:
     slide-number: true
     pointer:
       pointerSize: 32
-    incremental: false 
+    incremental: false
+    verticator:
+      clickable: false
+
 knitr:
   opts_chunk: 
     echo: true
@@ -23,9 +26,9 @@ knitr:
     
 revealjs-plugins:
   - pointer
+  - verticator
   
 filters:
-  - reveal-header
   - reveal-auto-agenda
 
 editor: source
@@ -289,7 +292,32 @@ There's a trade-off between these errors. We can't eliminate both, but we can **
 
 # Simpson's Paradox
 
-## Simpson's Paradox
+## Penguins Bill Depth vs Flipper Length
+
+```{r}
+#| fig-alt: |
+#|   The plot shows a scatter plot between penguin bill depth versus flipper length. 
+#|   A line is overlayed on the plot indicating a negative relationship.
+penguins |> 
+  ggplot(aes(bill_dep, flipper_len)) +
+  geom_point() +
+  stat_smooth(method = "lm")
+```
+
+## Penguins Bill Depth vs Flipper Length by Species
+
+```{r}
+#| fig-alt: |
+#|   The plot shows a scatter plot between penguin bill depth versus flipper length color-coded by species. 
+#|   Three each species has a line are overlayed indicating a positive relationship.
+
+penguins |> 
+  ggplot(aes(bill_dep, flipper_len, color = species)) +
+  geom_point()+
+  stat_smooth(method = "lm")
+
+```
+
 
 # Model Conditions
 

@@ -203,6 +203,46 @@
 </div>
 
 </section>
+<section id="r-packages" class="slide level2">
+<h2>R Packages</h2>
+<ul>
+<li>Tidyverse</li>
+<li>rcistats</li>
+<li>broom</li>
+<li>emmeans</li>
+</ul>
+</section>
+<section id="palmer-penguins-data" class="slide level2">
+<h2>Palmer Penguins Data</h2>
+<div class="columns">
+<div class="column">
+<h3 id="variables-of-interest">Variables of Interest</h3>
+<ul>
+<li><code>species</code></li>
+<li><code>body_mass</code>: Body mass in <a href="https://en.wikipedia.org/wiki/Gram">grams</a></li>
+</ul>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/penguins.png" alt="An image of several penguins in Antartica."></p>
+<figcaption>Artwork by <span class="citation" data-cites="allison_horst">@allison_horst</span></figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="heart-disease-data" class="slide level2">
+<h2>Heart Disease Data</h2>
+<div class="columns">
+<div class="column">
+<h3 id="variables-of-interest-1">Variables of Interest</h3>
+<ul>
+<li><code>cp</code>: Chest Pain</li>
+<li><code>disease</code>: Indicating if they have heart disease</li>
+</ul>
+</div><div class="column">
+<p><img data-src="img/heart_df.png" alt="An image of a graph and a heart."></p>
+</div></div>
+</section>
 <section>
 <section id="motivating-example" class="title-slide slide level1 agenda-slide center">
 <h1>Motivating Example</h1>
@@ -215,13 +255,13 @@
 <p>Group Model Inference</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Family-wise Error Rate</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
 <p>Linear Model Inference</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Logistic Model Inference</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Family-wise Error Rate</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Post-Hoc Analysis</p>
@@ -295,13 +335,13 @@
 <p>Group Model Inference</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
-<p>Family-wise Error Rate</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
 <p>Linear Model Inference</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Logistic Model Inference</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Family-wise Error Rate</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Post-Hoc Analysis</p>
@@ -361,7 +401,7 @@ Y =  \bar y
 <div class="column">
 <h4 id="full-model-1">Full Model</h4>
 <p><span class="math display">\[
-Y =  \beta_0 + \beta_1 D_1 + \cdots + \beta_p D_p
+lo(Y) =  \beta_0 + \beta_1 D_1 + \cdots + \beta_p D_p
 \]</span></p>
 <ul>
 <li><span class="math inline">\(D_1, \cdots, D_p\)</span>: Dummy variables for categorical variables</li>
@@ -383,76 +423,6 @@ lo(Y) =  \hat p
 <p><span class="math inline">\(H_a\)</span>: At least two categories have significantly different means/proportions from each other.</p>
 </section></section>
 <section>
-<section id="family-wise-error-rate" class="title-slide slide level1 agenda-slide center">
-<h1>Family-wise Error Rate</h1>
-<div class="agenda">
-<ul>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Motivating Example</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Group Model Inference</p>
-</div></li>
-<li><div class="agenda-active">
-<p>Family-wise Error Rate</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Linear Model Inference</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Logistic Model Inference</p>
-</div></li>
-<li><div class="agenda-inactive agenda-post-active">
-<p>Post-Hoc Analysis</p>
-</div></li>
-</ul>
-</div>
-</section>
-<section id="motivation" class="slide level2">
-<h2>Motivation</h2>
-<ul>
-<li>In multiple hypothesis testing, we test several hypotheses simultaneously.</li>
-<li>The probability of making <strong>at least one Type I error</strong> increases with the number of tests.</li>
-<li>Hence, we need <strong>error control</strong> methods.</li>
-</ul>
-</section>
-<section id="type-i-error-and-its-rate" class="slide level2">
-<h2>Type I Error and Its Rate</h2>
-<p><strong>Type I Error (False Positive):</strong> Rejecting a null hypothesis (<span class="math inline">\(H_0\)</span>), when it is true.</p>
-<p><strong>Type I Error Rate (<span class="math inline">\(\alpha\)</span>):</strong> The probability of making a Type I error in a single hypothesis test.</p>
-<p><span class="math display">\[
-\alpha = P(\text{Reject } H_0 \mid H_0 \text{ is true})
-\]</span></p>
-<p>Typically, <span class="math inline">\(\alpha = 0.05\)</span>, meaning a 5% chance of incorrectly rejecting a true null hypothesis.</p>
-</section>
-<section id="definition-of-fwer" class="slide level2">
-<h2>Definition of FWER</h2>
-<p><strong>Family-Wise Error Rate (FWER):</strong> The probability of making <strong>one or more Type I errors</strong> among all hypotheses tested.</p>
-<p><span class="math display">\[
-\text{FWER} = P(\text{At least one false rejection}) = P(V \ge 1)
-\]</span></p>
-<p>where:</p>
-<ul>
-<li><span class="math inline">\(V\)</span> = number of false positives (incorrect rejections)</li>
-</ul>
-</section>
-<section id="why-control-fwer" class="slide level2">
-<h2>Why Control FWER?</h2>
-<ul>
-<li>Maintains overall confidence in conclusions.</li>
-<li>Avoids claiming false discoveries when many tests are run.</li>
-<li>Trade-off: Strong control of FWER reduces <strong>power</strong> (increases Type II error).</li>
-</ul>
-</section>
-<section id="methods-to-control-fwer" class="slide level2">
-<h2>Methods to Control FWER</h2>
-<ol type="1">
-<li><p>Bonferroni Correction</p></li>
-<li><p>Holm-Bonferroni Procedure (Step-down)</p></li>
-<li><p>Tukey’s Honest Significant Difference (HSD)</p></li>
-</ol>
-</section></section>
-<section>
 <section id="linear-model-inference" class="title-slide slide level1 agenda-slide center">
 <h1>Linear Model Inference</h1>
 <div class="agenda">
@@ -463,14 +433,14 @@ lo(Y) =  \hat p
 <li><div class="agenda-inactive agenda-pre-active">
 <p>Group Model Inference</p>
 </div></li>
-<li><div class="agenda-inactive agenda-pre-active">
-<p>Family-wise Error Rate</p>
-</div></li>
 <li><div class="agenda-active">
 <p>Linear Model Inference</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Logistic Model Inference</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Family-wise Error Rate</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Post-Hoc Analysis</p>
@@ -629,13 +599,13 @@ lo(Y) =  \hat p
 <p>Group Model Inference</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Family-wise Error Rate</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
 <p>Linear Model Inference</p>
 </div></li>
 <li><div class="agenda-active">
 <p>Logistic Model Inference</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Family-wise Error Rate</p>
 </div></li>
 <li><div class="agenda-inactive agenda-post-active">
 <p>Post-Hoc Analysis</p>
@@ -748,6 +718,85 @@ g(\hat Y) = \bar y
 </div>
 </section></section>
 <section>
+<section id="family-wise-error-rate" class="title-slide slide level1 agenda-slide center">
+<h1>Family-wise Error Rate</h1>
+<div class="agenda">
+<ul>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Motivating Example</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Group Model Inference</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Linear Model Inference</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Logistic Model Inference</p>
+</div></li>
+<li><div class="agenda-active">
+<p>Family-wise Error Rate</p>
+</div></li>
+<li><div class="agenda-inactive agenda-post-active">
+<p>Post-Hoc Analysis</p>
+</div></li>
+</ul>
+</div>
+</section>
+<section id="multiple-hypothesis-testing" class="slide level2">
+<h2>Multiple Hypothesis Testing</h2>
+<ul>
+<li><p>With both ANOVA an LRT, we only know if there is one group pairing are different from each other.</p></li>
+<li><p>We want to know which group pairing are different.</p></li>
+<li><p>This can be done with multiple hypothesis testing.</p></li>
+<li><p>However, we need to overcome some challenges.</p></li>
+</ul>
+</section>
+<section id="challenges" class="slide level2">
+<h2>Challenges</h2>
+<ul>
+<li>In multiple hypothesis testing, we test several hypotheses simultaneously.</li>
+<li>The probability of making <strong>at least one Type I error</strong> increases with the number of tests.</li>
+<li>Hence, we need <strong>error control</strong> methods.</li>
+</ul>
+</section>
+<section id="type-i-error-and-its-rate" class="slide level2">
+<h2>Type I Error and Its Rate</h2>
+<p><strong>Type I Error (False Positive):</strong> Rejecting a null hypothesis (<span class="math inline">\(H_0\)</span>), when it is true.</p>
+<p><strong>Type I Error Rate (<span class="math inline">\(\alpha\)</span>):</strong> The probability of making a Type I error in a single hypothesis test.</p>
+<p><span class="math display">\[
+\alpha = P(\text{Reject } H_0 \mid H_0 \text{ is true})
+\]</span></p>
+<p>Typically, <span class="math inline">\(\alpha = 0.05\)</span>, meaning a 5% chance of incorrectly rejecting a true null hypothesis.</p>
+</section>
+<section id="definition-of-fwer" class="slide level2">
+<h2>Definition of FWER</h2>
+<p><strong>Family-Wise Error Rate (FWER):</strong> The probability of making <strong>one or more Type I errors</strong> among all hypotheses tested.</p>
+<p><span class="math display">\[
+\text{FWER} = P(\text{At least one false rejection}) = P(V \ge 1)
+\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(V\)</span> = number of false positives (incorrect rejections)</li>
+</ul>
+</section>
+<section id="why-control-fwer" class="slide level2">
+<h2>Why Control FWER?</h2>
+<ul>
+<li>Maintains overall confidence in conclusions.</li>
+<li>Avoids claiming false discoveries when many tests are run.</li>
+<li>Trade-off: Strong control of FWER reduces <strong>power</strong> (increases Type II error).</li>
+</ul>
+</section>
+<section id="methods-to-control-fwer" class="slide level2">
+<h2>Methods to Control FWER</h2>
+<ol type="1">
+<li><p>Bonferroni Correction</p></li>
+<li><p>Holm-Bonferroni Procedure (Step-down)</p></li>
+<li><p>Tukey’s Honest Significant Difference (HSD)</p></li>
+</ol>
+</section></section>
+<section>
 <section id="post-hoc-analysis" class="title-slide slide level1 agenda-slide center">
 <h1>Post-Hoc Analysis</h1>
 <div class="agenda">
@@ -759,13 +808,13 @@ g(\hat Y) = \bar y
 <p>Group Model Inference</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
-<p>Family-wise Error Rate</p>
-</div></li>
-<li><div class="agenda-inactive agenda-pre-active">
 <p>Linear Model Inference</p>
 </div></li>
 <li><div class="agenda-inactive agenda-pre-active">
 <p>Logistic Model Inference</p>
+</div></li>
+<li><div class="agenda-inactive agenda-pre-active">
+<p>Family-wise Error Rate</p>
 </div></li>
 <li><div class="agenda-active">
 <p>Post-Hoc Analysis</p>
@@ -847,6 +896,20 @@ g(\hat Y) = \bar y
 <ul>
 <li><p>A multi-comparison test can be achieved by using the <code>pairs</code> function from the output of the <code>emmeans</code> function.</p></li>
 <li><p>This function will automatically adjust the p-values using Tukey’s method to fix the family-wise error rate.</p></li>
+</ul>
+</section>
+<section id="mct-hypothesis-mean" class="slide level2">
+<h2>MCT: Hypothesis Mean</h2>
+<ul>
+<li><p><span class="math inline">\(H_0\)</span>: The mean of group A is the same of group B.</p></li>
+<li><p><span class="math inline">\(H_1\)</span>: The mean of group A is different of group B.</p></li>
+</ul>
+</section>
+<section id="mct-hypothesis-proportion" class="slide level2">
+<h2>MCT: Hypothesis Proportion</h2>
+<ul>
+<li><p><span class="math inline">\(H_0\)</span>: The proportion of group A is the same of group B.</p></li>
+<li><p><span class="math inline">\(H_1\)</span>: The proportion of group A is different of group B.</p></li>
 </ul>
 </section>
 <section id="multi-comparison-test-means" class="slide level2">
@@ -953,8 +1016,8 @@ g(\hat Y) = \bar y
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":false},
-'pointer': {"key":"q","color":"red","pointerSize":32,"alwaysVisible":false},
-'verticator': {"themetag":"h1","color":"","inversecolor":"","skipuncounted":false,"clickable":true,"position":"auto","offset":"3vmin","autogenerate":true,"tooltip":false,"scale":1,"debug":true},
+'pointer': {"key":"q","color":"green","pointerSize":32,"alwaysVisible":false},
+'verticator': {"themetag":"h1","color":"","inversecolor":"","skipuncounted":false,"clickable":false,"position":"auto","offset":"3vmin","autogenerate":true,"tooltip":false,"scale":1,"debug":true},
 'smaller': false,
  
         // Display controls in the bottom right corner

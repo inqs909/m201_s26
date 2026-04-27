@@ -8,9 +8,6 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.js" defer="true"></script>
-<link href="../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/grid-no-htext-1.0.0/grid_no_htext.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/reveal-auto-agenda-0.0.3/reveal-auto-agenda.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.27">
 
@@ -104,6 +101,7 @@
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/verticator/verticator.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
@@ -609,9 +607,32 @@ p = 0.00967 &lt; 0.05 = \alpha
 </ul>
 </div>
 </section>
-<section id="simpsons-paradox-1" class="slide level2">
-<h2>Simpson’s Paradox</h2>
-</section></section>
+<section id="penguins-bill-depth-vs-flipper-length" class="slide level2">
+<h2>Penguins Bill Depth vs Flipper Length</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb7-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(bill_dep, flipper_len)) <span class="sc">+</span></span>
+<span id="cb7-3"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb7-4"><a></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+
+</div>
+<img data-src="12_files/figure-revealjs/unnamed-chunk-4-1.png" alt="The plot shows a scatter plot between penguin bill depth versus flipper length.  A line is overlayed on the plot indicating a negative relationship." width="960" class="r-stretch"></section>
+<section id="penguins-bill-depth-vs-flipper-length-by-species" class="slide level2">
+<h2>Penguins Bill Depth vs Flipper Length by Species</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb8-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(bill_dep, flipper_len, <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb8-3"><a></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb8-4"><a></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+
+</div>
+<img data-src="12_files/figure-revealjs/unnamed-chunk-5-1.png" alt="The plot shows a scatter plot between penguin bill depth versus flipper length color-coded by species.  Three each species has a line are overlayed indicating a positive relationship." width="960" class="r-stretch"></section></section>
 <section>
 <section id="model-conditions" class="title-slide slide level1 agenda-slide center">
 <h1>Model Conditions</h1>
@@ -709,7 +730,7 @@ p = 0.00967 &lt; 0.05 = \alpha
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>rdf <span class="ot">&lt;-</span> <span class="fu">resid_df</span>(OBJECT)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>rdf <span class="ot">&lt;-</span> <span class="fu">resid_df</span>(OBJECT)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section>
@@ -718,14 +739,14 @@ p = 0.00967 &lt; 0.05 = \alpha
 <div class="columns">
 <div class="column">
 <h3 id="linear">Linear</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">ggplot</span>(RDF, <span class="fu">aes</span>(fitted, resid)) <span class="sc">+</span></span>
-<span id="cb8-2"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb8-3"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">"red"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">ggplot</span>(RDF, <span class="fu">aes</span>(fitted, resid)) <span class="sc">+</span></span>
+<span id="cb10-2"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb10-3"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">"red"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <h3 id="logistic">Logistic</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">ggplot</span>(RDF, <span class="fu">aes</span>(fitted, quantile_resid)) <span class="sc">+</span></span>
-<span id="cb9-2"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb9-3"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">"red"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">ggplot</span>(RDF, <span class="fu">aes</span>(fitted, quantile_resid)) <span class="sc">+</span></span>
+<span id="cb11-2"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb11-3"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">"red"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></div>
 <ul>
 <li><code>RDF</code>: Name of object from <code>resid_df()</code></li>
@@ -736,14 +757,14 @@ p = 0.00967 &lt; 0.05 = \alpha
 <div class="columns">
 <div class="column">
 <h3 id="linear-1">Linear</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">ggplot</span>(RDF, <span class="fu">aes</span>(<span class="at">sample =</span> resid)) <span class="sc">+</span> </span>
-<span id="cb10-2"><a></a>  <span class="fu">stat_qq</span>() <span class="sc">+</span></span>
-<span id="cb10-3"><a></a>  <span class="fu">stat_qq_line</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">ggplot</span>(RDF, <span class="fu">aes</span>(<span class="at">sample =</span> resid)) <span class="sc">+</span> </span>
+<span id="cb12-2"><a></a>  <span class="fu">stat_qq</span>() <span class="sc">+</span></span>
+<span id="cb12-3"><a></a>  <span class="fu">stat_qq_line</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <h3 id="logistic-1">Logistic</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">ggplot</span>(RDF, <span class="fu">aes</span>(<span class="at">sample =</span> quantile_resid)) <span class="sc">+</span> </span>
-<span id="cb11-2"><a></a>  <span class="fu">stat_qq</span>() <span class="sc">+</span></span>
-<span id="cb11-3"><a></a>  <span class="fu">stat_qq_line</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">ggplot</span>(RDF, <span class="fu">aes</span>(<span class="at">sample =</span> quantile_resid)) <span class="sc">+</span> </span>
+<span id="cb13-2"><a></a>  <span class="fu">stat_qq</span>() <span class="sc">+</span></span>
+<span id="cb13-3"><a></a>  <span class="fu">stat_qq_line</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></div>
 <ul>
 <li><code>RDF</code>: Name of object from <code>resid_df()</code></li>
@@ -754,9 +775,9 @@ p = 0.00967 &lt; 0.05 = \alpha
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>m3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass <span class="sc">~</span>   island <span class="sc">+</span> species <span class="sc">+</span> flipper_len,</span>
-<span id="cb12-2"><a></a>          penguins)</span>
-<span id="cb12-3"><a></a><span class="fu">tidy</span>(m3)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>m3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass <span class="sc">~</span>   island <span class="sc">+</span> species <span class="sc">+</span> flipper_len,</span>
+<span id="cb14-2"><a></a>          penguins)</span>
+<span id="cb14-3"><a></a><span class="fu">tidy</span>(m3)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; # A tibble: 6 × 5
@@ -771,8 +792,8 @@ p = 0.00967 &lt; 0.05 = \alpha
 </div>
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>dfm3 <span class="ot">&lt;-</span> <span class="fu">resid_df</span>(m3)</span>
-<span id="cb14-2"><a></a><span class="fu">head</span>(dfm3)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>dfm3 <span class="ot">&lt;-</span> <span class="fu">resid_df</span>(m3)</span>
+<span id="cb16-2"><a></a><span class="fu">head</span>(dfm3)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt;   obs body_mass    island species flipper_len     resid   fitted      sresid
@@ -794,27 +815,27 @@ p = 0.00967 &lt; 0.05 = \alpha
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">ggplot</span>(dfm3, <span class="fu">aes</span>(fitted, resid)) <span class="sc">+</span></span>
-<span id="cb16-2"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb16-3"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">"red"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">ggplot</span>(dfm3, <span class="fu">aes</span>(fitted, resid)) <span class="sc">+</span></span>
+<span id="cb18-2"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb18-3"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">"red"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="12_files/figure-revealjs/unnamed-chunk-6-1.png" width="960"></p>
+<p><img data-src="12_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">ggplot</span>(dfm3, <span class="fu">aes</span>(<span class="at">sample =</span> resid)) <span class="sc">+</span> </span>
-<span id="cb17-2"><a></a>  <span class="fu">stat_qq</span>() <span class="sc">+</span></span>
-<span id="cb17-3"><a></a>  <span class="fu">stat_qq_line</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">ggplot</span>(dfm3, <span class="fu">aes</span>(<span class="at">sample =</span> resid)) <span class="sc">+</span> </span>
+<span id="cb19-2"><a></a>  <span class="fu">stat_qq</span>() <span class="sc">+</span></span>
+<span id="cb19-3"><a></a>  <span class="fu">stat_qq_line</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="12_files/figure-revealjs/unnamed-chunk-6-2.png" width="960"></p>
+<p><img data-src="12_files/figure-revealjs/unnamed-chunk-8-2.png" width="960"></p>
 </figure>
 </div>
 </div>
@@ -825,8 +846,8 @@ p = 0.00967 &lt; 0.05 = \alpha
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>m4 <span class="ot">&lt;-</span> <span class="fu">glm</span>(disease <span class="sc">~</span> trestbps <span class="sc">+</span> cp, heart_disease, <span class="at">family =</span> <span class="fu">binomial</span>())</span>
-<span id="cb18-2"><a></a><span class="fu">tidy</span>(m4)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>m4 <span class="ot">&lt;-</span> <span class="fu">glm</span>(disease <span class="sc">~</span> trestbps <span class="sc">+</span> cp, heart_disease, <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb20-2"><a></a><span class="fu">tidy</span>(m4)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt; # A tibble: 5 × 5
@@ -840,8 +861,8 @@ p = 0.00967 &lt; 0.05 = \alpha
 </div>
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>dfm4 <span class="ot">&lt;-</span> <span class="fu">resid_df</span>(m4)</span>
-<span id="cb20-2"><a></a><span class="fu">head</span>(dfm4)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>dfm4 <span class="ot">&lt;-</span> <span class="fu">resid_df</span>(m4)</span>
+<span id="cb22-2"><a></a><span class="fu">head</span>(dfm4)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>#&gt;   obs disease trestbps cp    fitted        eta  raw_resid pearson_resid
@@ -859,12 +880,12 @@ p = 0.00967 &lt; 0.05 = \alpha
 #&gt; 5     -0.6366106     -2.717940              -1.259993        -2.476175
 #&gt; 6     -0.5787181     -2.884425              -1.426478        -2.433842
 #&gt;   std_pear_resid std_dev_resid stud_dev_resid quantile_resid   leverages
-#&gt; 1     -0.6962858    -0.8927274     -0.8846616     0.09902973 0.045927133
-#&gt; 2      0.4562301     0.6153377      0.6134136     0.55903230 0.013866647
-#&gt; 3      0.6910541     0.8843093      0.8827424     0.63537257 0.009094376
-#&gt; 4     -0.5199246    -0.6922325     -0.6903935    -0.33780203 0.012173676
-#&gt; 5     -0.4789686    -0.6433536     -0.6403567    -0.41059095 0.020852010
-#&gt; 6     -0.4311339    -0.5843756     -0.5818043     0.36915717 0.019268922
+#&gt; 1     -0.6962858    -0.8927274     -0.8846616     -1.5023135 0.045927133
+#&gt; 2      0.4562301     0.6153377      0.6134136      1.3374358 0.013866647
+#&gt; 3      0.6910541     0.8843093      0.8827424      0.5208945 0.009094376
+#&gt; 4     -0.5199246    -0.6922325     -0.6903935      0.7138916 0.012173676
+#&gt; 5     -0.4789686    -0.6433536     -0.6403567     -0.3217776 0.020852010
+#&gt; 6     -0.4311339    -0.5843756     -0.5818043     -0.2751618 0.019268922
 #&gt;          cooks
 #&gt; 1 0.0046675922
 #&gt; 2 0.0005853744
@@ -877,47 +898,33 @@ p = 0.00967 &lt; 0.05 = \alpha
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">ggplot</span>(dfm4, <span class="fu">aes</span>(fitted, quantile_resid)) <span class="sc">+</span></span>
-<span id="cb22-2"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb22-3"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">"red"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="fu">ggplot</span>(dfm4, <span class="fu">aes</span>(fitted, quantile_resid)) <span class="sc">+</span></span>
+<span id="cb24-2"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb24-3"><a></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">"red"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="12_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
+<p><img data-src="12_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">ggplot</span>(dfm4, <span class="fu">aes</span>(<span class="at">sample =</span> quantile_resid)) <span class="sc">+</span> </span>
-<span id="cb23-2"><a></a>  <span class="fu">stat_qq</span>() <span class="sc">+</span></span>
-<span id="cb23-3"><a></a>  <span class="fu">stat_qq_line</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">ggplot</span>(dfm4, <span class="fu">aes</span>(<span class="at">sample =</span> quantile_resid)) <span class="sc">+</span> </span>
+<span id="cb25-2"><a></a>  <span class="fu">stat_qq</span>() <span class="sc">+</span></span>
+<span id="cb25-3"><a></a>  <span class="fu">stat_qq_line</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="12_files/figure-revealjs/unnamed-chunk-8-2.png" width="960"></p>
+<p><img data-src="12_files/figure-revealjs/unnamed-chunk-10-2.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
 
 
-<div class="reveal-header">
-<div class="header-logo">
-<img data-src="">
-</div>
-<div class="sc-title">
-<p> </p>
-</div>
-<div class="header-text">
-<p> </p>
-</div>
-<div class="sb-title">
-<p> </p>
-</div>
-</div>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
@@ -934,6 +941,7 @@ p = 0.00967 &lt; 0.05 = \alpha
   <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
   <script src="../site_libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
+  <script src="../site_libs/revealjs/plugin/verticator/verticator.js"></script>
   <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -957,6 +965,7 @@ p = 0.00967 &lt; 0.05 = \alpha
 'jumpToSlide': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":false},
 'pointer': {"key":"q","color":"red","pointerSize":32,"alwaysVisible":false},
+'verticator': {"themetag":"h1","color":"","inversecolor":"","skipuncounted":false,"clickable":false,"position":"auto","offset":"3vmin","autogenerate":true,"tooltip":false,"scale":1,"debug":true},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -1127,7 +1136,7 @@ p = 0.00967 &lt; 0.05 = \alpha
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealPointer, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealPointer, Verticator, QuartoSupport,
 
           RevealMath,
           RevealNotes,
