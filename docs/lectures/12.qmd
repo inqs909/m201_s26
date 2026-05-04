@@ -1,5 +1,6 @@
 ---
 title: "Statistical <br> Modeling"
+subtitle: "Inference and Beyond"
 description: |
   Finish the discussion on model inference.
 format:
@@ -8,9 +9,11 @@ format:
     menu: false
     scrollable: false
     theme: [default, styles.scss]
-    slide-number: true
+    navigation-mode: vertical
+    controls-layout: bottom-right
     pointer:
       pointerSize: 32
+      color: green
     incremental: false
     verticator:
       clickable: false
@@ -39,21 +42,75 @@ editor: source
 library(tidyverse)
 library(rcistats)
 library(broom)
-library
-theme_set(theme_bw() + 
-            theme(
-              axis.text.x = element_text(size = 24),
-              axis.title = element_text(size = 30),
-              plot.title = element_text(size = 48),
-              strip.text = element_text(size = 20),
-              legend.title = element_blank(),
-              legend.text = element_text(size = 24)))
+library(emmeans)
 
+penguins <- penguins |> drop_na()
 heart_disease <- kmed::heart
 heart_disease$disease <- factor(ifelse(heart_disease$class == 0, "no", "yes")) 
+heart_disease$sex <- ifelse(heart_disease$sex == T, "Male", "Female") |> factor()
+heart_disease$cp <- ifelse(heart_disease$cp == 1, "Typical Angina",
+                           ifelse(heart_disease$cp == 2, "Atypical Angina", 
+                                  ifelse(heart_disease$cp == 3, "Non-anginal Pain", "Asymptomatic"))) |> 
+                    factor(levels = c("Asymptomatic", "Non-anginal Pain", "Atypical Angina", "Typical Angina"))
+heart_disease$fbs <- ifelse(heart_disease$fbs == T, "Fasting Blood Sugar >120" , "Fasting Blood Sugar <= 120") |> factor()
+heart_disease$restecg <- ifelse(heart_disease$restecg == 0, "Normal",
+                                ifelse(heart_disease$restecg == 1, "ST-T wave Abnormality", "Left Ventricular Hypertrophy")) |> 
+                          factor(levels = c("Normal", "ST-T wave Abnormality", "Left Ventricular Hypertrophy"))
+heart_disease$slope <- ifelse(heart_disease$slope == 1, "Positive Slope",
+                              ifelse(heart_disease$slope == 2, "Zero Slope", "Negative Slope")) |> 
+                              factor(levels = c("Zero Slope", "Positive Slope", "Negative Slope"))
+heart_disease$thal <- ifelse(heart_disease$thal==3, "Normal",
+                             ifelse(heart_disease$thal == 6, "Fixed Defect", "Reversible Defect")) |> 
+                              factor(levels = c("Normal", "Fixed Defect", "Reversible Defect"))
+theme_set(theme_bw() + 
+          theme(axis.text = element_text(size = 24),
+                axis.title = element_text(size = 30),
+                plot.title = element_text(size = 48),
+                strip.text = element_text(size = 20),
+                legend.title = element_blank(),
+                legend.text = element_text(size = 24)))
 
 ```
 
+## R Packages
+
+- Tidyverse
+- rcistats
+- broom
+- emmeans
+
+## Palmer Penguins Data
+
+::: {.columns}
+::: {.column}
+
+### Variables of Interest
+
+- `species`, `flipper_len`
+- `body_mass`: Body mass in [grams](https://en.wikipedia.org/wiki/Gram)
+
+:::
+::: {.column}
+![Artwork by @allison_horst](img/penguins.png){fig-alt="An image of several penguins in Antartica."}
+
+:::
+::: 
+
+## Heart Disease Data
+
+::: {.columns}
+::: {.column}
+
+### Variables of Interest
+
+- `cp`, `trestbps`
+- `disease`: Indicating if they have heart disease
+
+:::
+::: {.column}
+![](img/heart_df.png){fig-alt="An image of a graph and a heart."}
+:::
+:::
 
 
 # Hypothesis Tests: Multi Regression
@@ -155,7 +212,7 @@ tidy(m1)
 ## Penguins: Decision Making
 
 $$
-p = 1.4e-32 < 5e-2 = 0.05 = \alpha
+p = 3.64e-32 < 5e-2 = 0.05 = \alpha
 $$
 
 
@@ -174,7 +231,7 @@ Is there a significant association between heart disease (outcome; `disease`) an
 
 $H_0$: There is no relationship between heart disease probability and resting blood pressure, adjusting for chest pain ($\beta_{bp} = 0$)
 
-$H_1$: There is no relationship between heart disease probability and resting blood pressure, adjusting for chest pain ($\beta_{bp} \ne 0$)
+$H_1$: There is a relationship between heart disease probability and resting blood pressure, adjusting for chest pain ($\beta_{bp} \ne 0$)
 
 ## Heart: $\alpha$-level
 
@@ -205,9 +262,6 @@ $$
 
 There is a significant association between heart disease and resting blood pressure, after adjusting for chest pain (p < 0.00967; $\beta = 0.0209$). As resting blood pressure increases by 1 unit, the odds of having heart disease increases by a factor of 1.02, adjusting for chest pain.
 
-# Model Inference
-
-## Model Inference
 
 
 # Power Analysis
@@ -318,6 +372,9 @@ penguins |>
 
 ```
 
+## Simpson's Paradox
+
+Simpson's paradox is a phenomenon in probability and statistics in which a trend appears in several groups of data but disappears or reverses when the groups are combined. 
 
 # Model Conditions
 
@@ -407,9 +464,6 @@ rdf <- resid_df(OBJECT)
 
 ## Residual vs Fitted Plot
 
-::: {.columns}
-::: {.column}
-
 ### Linear
 
 ```r
@@ -418,8 +472,6 @@ ggplot(RDF, aes(fitted, resid)) +
   geom_hline(yintercept = 0, col = "red")
 ```
 
-:::
-::: {.column}
 
 ### Logistic
 
@@ -429,15 +481,10 @@ ggplot(RDF, aes(fitted, quantile_resid)) +
   geom_hline(yintercept = 0, col = "red")
 ```
 
-:::
-:::
 
 - `RDF`: Name of object from `resid_df()`
 
 ## QQ Plot
-
-::: {.columns}
-::: {.column}
 
 ### Linear
 
@@ -447,8 +494,6 @@ ggplot(RDF, aes(sample = resid)) +
   stat_qq_line() 
 ```
 
-:::
-::: {.column}
 
 ### Logistic
 
@@ -457,8 +502,6 @@ ggplot(RDF, aes(sample = quantile_resid)) +
   stat_qq() +
   stat_qq_line() 
 ```
-:::
-:::
 
 - `RDF`: Name of object from `resid_df()`
 
@@ -468,11 +511,11 @@ ggplot(RDF, aes(sample = quantile_resid)) +
 #| code-fold: show
 m3 <- lm(body_mass ~   island + species + flipper_len,
           penguins)
-tidy(m3)
-
 dfm3 <- resid_df(m3)
 head(dfm3)
 ```
+
+## Penguins: Residual vs Fitted Plots
 
 ```{r}
 #| code-fold: show
@@ -480,21 +523,30 @@ ggplot(dfm3, aes(fitted, resid)) +
   geom_point() +
   geom_hline(yintercept = 0, col = "red")
 
+```
+
+
+## Penguins: QQ Plot
+
+```{r}
+#| code-fold: show
 ggplot(dfm3, aes(sample = resid)) + 
   stat_qq() +
   stat_qq_line() 
 ```
+
+
 
 ## Heart: Example
 
 ```{r}
 #| code-fold: show
 m4 <- glm(disease ~ trestbps + cp, heart_disease, family = binomial())
-tidy(m4)
-
 dfm4 <- resid_df(m4)
 head(dfm4)
 ```
+
+## Heart: Residual vs Fitted Plots
 
 ```{r}
 #| code-fold: show
@@ -502,8 +554,12 @@ ggplot(dfm4, aes(fitted, quantile_resid)) +
   geom_point() +
   geom_hline(yintercept = 0, col = "red")
 
+```
+
+## Heart: QQ Plot
+```{r}
+#| code-fold: show
 ggplot(dfm4, aes(sample = quantile_resid)) + 
   stat_qq() +
   stat_qq_line() 
 ```
-
